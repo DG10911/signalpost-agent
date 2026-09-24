@@ -82,6 +82,14 @@ def render_company(profile: dict) -> str:
     reg = _ev(profile, "registry")
     sections: list[str] = []
 
+    # Evidence-grounded summary (synthesis dimension).
+    summary = profile.get("summary") or {}
+    if summary.get("narrative"):
+        unk = summary.get("unknowns") or []
+        unk_html = f'<div class="src">Not found: {esc(", ".join(unk))}</div>' if unk else ""
+        sections.append(f'<div class="card"><h2>Summary</h2><div>{esc(summary["narrative"])}</div>{unk_html}'
+                        f'<div class="src">{esc(summary.get("policy",""))}</div></div>')
+
     # Identity
     ident = "".join(
         f'<div class="k">{esc(k)}</div><div>{esc(v)}</div>'

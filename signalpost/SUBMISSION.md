@@ -59,6 +59,20 @@ in the filing (dual org-number binding: report URL + in-document). Add
 `tesseract`; slower). It abstains — never guesses — when the org number or an
 employee phrase is absent, so it adds zero wrong-company risk.
 
+### Evidence-grounded summaries (synthesis dimension)
+
+New batch runs include a deterministic `profile["summary"]` automatically. To add
+summaries to an existing run without re-crawling:
+
+```bash
+uv run python scripts/add_summaries.py --profiles out/profiles.jsonl --envelopes out/envelopes.jsonl
+```
+
+Each summary is a template over verified structured facts only — no LLM, no
+inference — where every statement cites its evidence field and source, and
+absent categories are listed explicitly as unknowns (`synthesis.py`; covered by
+`tests/test_synthesis.py`).
+
 ### Browsable, verifiable profile site (usability dimension)
 
 ```bash
@@ -123,6 +137,9 @@ are quarantined (kept raw, withheld from published claims).
    zero (`batch.py`; covered by `tests/test_batch_resilience.py`).
 9. **Usability site** — `scripts/build_profile_site.py` renders a browsable,
    searchable, source-linked profile site (see above).
+11. **Evidence-grounded synthesis** — deterministic summaries from verified
+    facts only (no inference); every statement cites its evidence, unknowns are
+    explicit (`synthesis.py`, `tests/test_synthesis.py`).
 
 10. **Refresh hardening** — the added coverage fields (jobs/news/structured
     facts) are now refresh-tracked, and website lists (social/jobs/news) are

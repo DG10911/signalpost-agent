@@ -16,6 +16,7 @@ from norway_company_agent.identity import apply_website_identity_gate  # noqa: E
 from norway_company_agent.official import fetch_official_modules  # noqa: E402
 from norway_company_agent.website import fetch_website  # noqa: E402
 from norway_company_agent.external_footprint import aggregate_footprint, publishable_observation  # noqa: E402
+from norway_company_agent.synthesis import summarize_profile  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "scripts"))
 import run_annual_report_workforce_connector as workforce  # noqa: E402
@@ -91,6 +92,8 @@ def main() -> None:
             }
             if wf_diag.get("cache_hit") is False and wf_diag.get("status") not in {"registry_count_already_available", "no_annual_report"}:
                 workforce_requests = 1
+        # Deterministic, evidence-grounded synthesis (no network, no inference).
+        profile["summary"] = summarize_profile(profile)
         metric = {
             "requests": len(metrics) + website_metrics["requests"] + workforce_requests,
             "bytes": sum(item.bytes_received for item in metrics) + website_metrics["bytes"],
