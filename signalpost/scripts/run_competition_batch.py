@@ -53,6 +53,8 @@ def main() -> None:
                         help="Write all published external-footprint observations to this JSONL (for external scoring).")
     parser.add_argument("--require-exact-identity", action="store_true",
                         help="Fail the build unless EVERY profile has exact registry_live identity (official_identity_complete gate).")
+    parser.add_argument("--nav-index",
+                        help="Path to a pre-built NAV orgnr->jobs index (scripts/build_nav_index.py) for exact-entity job_posting observations.")
     parser.add_argument("--workforce-ocr-dpi", type=int, default=200)
     args = parser.parse_args()
 
@@ -73,6 +75,11 @@ def main() -> None:
     workforce_cache = Path(args.profiles_output).parent / ".cache" / "annual-reports"
     if args.external_workforce:
         workforce_cache.mkdir(parents=True, exist_ok=True)
+    # Pre-built NAV index (built outside the eval window); O(1) orgnr lookup.
+    nav_index = {}
+    if args.nav_index:
+        from norway_company_agent.nav_jobs import load_index
+        nav_index = load_index(args.nav_index)
 
     def enrich(profile: dict) -> tuple[dict, dict]:
         records, metrics = fetch_official_modules(profile["organisation_number"], fetch_modules)
@@ -85,7 +92,7 @@ def main() -> None:
         # Company-owned external observations (company_profile, profile_handle,
         # job_posting) from the already-identity-verified website. Zero extra
         # requests; every observation inherits the exact-entity gate.
-        candidates = build_observations(profile)
+        candidates = build_observations(profile, nav_index=nav_index, retrieved_at=started_at)
         wf_diag = {"status": "disabled"}
         if args.external_workforce:
             # OCR optional (--workforce-ocr-pages). The connector abstains unless

@@ -33,17 +33,25 @@ def _sha64(value: str | None, seed: str) -> str:
     return hashlib.sha256((value or seed).encode("utf-8")).hexdigest()
 
 
-def build_observations(profile: dict[str, Any]) -> list[dict[str, Any]]:
+def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None,
+                       retrieved_at: str | None = None) -> list[dict[str, Any]]:
     org = str(profile.get("organisation_number") or "")
     if not org.isdigit():
         return []
+
+    # NAV official job-board postings (exact orgnr match; independent of website).
+    nav_obs: list[dict[str, Any]] = []
+    if nav_index:
+        from .nav_jobs import observations_for
+        nav_obs = observations_for(nav_index, org, retrieved_at=retrieved_at or "1970-01-01T00:00:00Z")
+
     web = (profile.get("evidence", {}) or {}).get("website", {}) or {}
     if web.get("status") != "available":
-        return []
+        return [o for o in nav_obs if publishable_observation(o)]
     value = web.get("value") or {}
     assessment = value.get("identity_assessment") or {}
     if not assessment.get("publishable"):
-        return []
+        return [o for o in nav_obs if publishable_observation(o)]
 
     final_url = value.get("final_url")
     retrieved_at = web.get("retrieved_at")
@@ -110,4 +118,4 @@ def build_observations(profile: dict[str, Any]) -> list[dict[str, Any]]:
         ))
 
     # Only return observations that clear the full publication validator.
-    return [obs for obs in observations if publishable_observation(obs)]
+    return [obs for obs in observations + nav_obs if publishable_observation(obs)]
