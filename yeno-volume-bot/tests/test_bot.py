@@ -214,5 +214,28 @@ class PacingTest(unittest.TestCase):
         self.assertEqual(b._aggression(10.0, self._rules(), volume=0.0), 1.0)
 
 
+class RobustnessInvariantTest(unittest.TestCase):
+    """Across adverse regimes the bot must stay contract-safe: always finish
+    terminal-flat and never emit an invalid action. Uses short windows so the
+    test is fast; scenarios.py runs the full-length battery."""
+
+    def test_flat_and_no_invalid_actions_across_regimes(self):
+        from simulator import SimConfig, simulate_path
+        regimes = [
+            dict(),
+            dict(base_spread=0.06),                       # wide spread
+            dict(depth=5.0, base_spread=0.05),            # low liquidity
+            dict(latency_move_sd=0.05),                   # heavy adverse fills
+            dict(annual_vol=1.6),                         # high vol
+            dict(reference_lead_seconds=0.0),             # no edge
+        ]
+        for overrides in regimes:
+            sc = SimConfig(window_hours=0.5, **overrides)  # short window = fast
+            for seed in range(4):
+                r = simulate_path(botmod.Bot(), 5000 + seed, sc)
+                self.assertTrue(r.terminal_flat, f"not flat in {overrides}")
+                self.assertEqual(r.invalid_actions, 0, f"invalid action in {overrides}")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

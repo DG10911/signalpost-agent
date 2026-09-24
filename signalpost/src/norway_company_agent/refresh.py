@@ -17,6 +17,12 @@ TRACKED_FIELDS: dict[str, tuple[str, ...]] = {
     "website.title": ("evidence", "website", "value", "title"),
     "website.description": ("evidence", "website", "value", "description"),
     "website.social_links": ("evidence", "website", "value", "social_links"),
+    # Added coverage fields must be refreshable too, otherwise a change to them
+    # earns no refresh credit. All are emitted in a deterministic order (see
+    # website.py dedupe/sort) so a diff never fires on mere reordering.
+    "website.job_postings": ("evidence", "website", "value", "job_postings"),
+    "website.news_articles": ("evidence", "website", "value", "news_articles"),
+    "website.structured_facts": ("evidence", "website", "value", "structured_facts"),
 }
 
 

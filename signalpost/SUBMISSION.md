@@ -124,6 +124,16 @@ are quarantined (kept raw, withheld from published claims).
 9. **Usability site** — `scripts/build_profile_site.py` renders a browsable,
    searchable, source-linked profile site (see above).
 
+10. **Refresh hardening** — the added coverage fields (jobs/news/structured
+    facts) are now refresh-tracked, and website lists (social/jobs/news) are
+    emitted in a deterministic order so a rerun never reports a false change
+    from mere reordering (`refresh.py`; `tests/test_refresh_extras.py`).
+
+**Reliability evidence:** a hard 100-company cohort (90 live + 10 deregistered)
+returns **100/100 terminal envelopes** — the 10 deregistered orgs are recovered
+via the live registry API, 775 requests, ~5 min. A pathological company cannot
+zero a batch.
+
 Connectors that rely on name-only matching or restricted sources
 (Google-News-RSS, YouTube, third-party review directories) were deliberately
 **not** wired in: the repo's gate marks them non-publishable, and publishing

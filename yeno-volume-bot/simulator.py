@@ -44,6 +44,7 @@ class PathResult:
     completed_cycles: int
     max_drawdown_usd: float
     reached_target: bool
+    invalid_actions: int = 0
 
 
 @dataclass
@@ -125,6 +126,7 @@ def simulate_path(bot: "botmod.Bot", seed: int, sc: SimConfig) -> PathResult:
     max_dd = 0.0
     eligible_volume = 0.0
     cycles = 0
+    invalid_actions = 0
     position: Optional[dict] = None
 
     now = 0.0
@@ -188,6 +190,20 @@ def simulate_path(bot: "botmod.Bot", seed: int, sc: SimConfig) -> PathResult:
 
             decision = bot.decide(obs)
             action = decision.get("action", "HOLD")
+
+            # Contract-invalid bot actions (independent of whether they fill):
+            # a BUY over the $5 fee-inclusive cap, a BUY while already holding a
+            # position, or a malformed action/outcome. These must never happen.
+            if action not in ("HOLD", "BUY", "SELL"):
+                invalid_actions += 1
+            elif action == "BUY":
+                if position is not None:
+                    invalid_actions += 1
+                if decision.get("outcome") not in ("YES", "NO"):
+                    invalid_actions += 1
+                if float(decision.get("maxCashUsd", 0.0)) > sc.max_buy_cash + 1e-9:
+                    invalid_actions += 1
+
             fill_book = _perturb(book, sc, rng)  # 250 ms later
 
             if action == "BUY" and position is None:
@@ -241,6 +257,7 @@ def simulate_path(bot: "botmod.Bot", seed: int, sc: SimConfig) -> PathResult:
         completed_cycles=cycles,
         max_drawdown_usd=max_dd,
         reached_target=eligible_volume >= sc.target_volume,
+        invalid_actions=invalid_actions,
     )
 
 

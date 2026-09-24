@@ -407,6 +407,8 @@ def _dedupe_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
             continue
         seen.add(key)
         out.append(article)
+    # Deterministic order so a refresh diff never fires on mere reordering.
+    out.sort(key=lambda a: (str(a.get("date_published") or ""), str(a.get("headline") or "").casefold()))
     return out[:25]
 
 
@@ -419,6 +421,8 @@ def _dedupe_job_postings(postings: list[dict[str, Any]]) -> list[dict[str, Any]]
             continue
         seen.add(key)
         out.append(posting)
+    # Deterministic order so a refresh diff never fires on mere reordering.
+    out.sort(key=lambda p: (str(p.get("date_posted") or ""), str(p.get("title") or "").casefold(), str(p.get("url") or "")))
     return out[:25]
 
 
@@ -510,7 +514,11 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
             elif page_error:
                 crawl_errors.append({"url": page_url, "error": page_error})
         value["pages"] = pages
-        value["social_links"] = list({(item["platform"], item["url"]): item for item in social}.values())
+        # Deterministic order so a refresh diff never fires on mere reordering.
+        value["social_links"] = sorted(
+            {(item["platform"], item["url"]): item for item in social}.values(),
+            key=lambda item: (item["platform"], item["url"]),
+        )
         value["structured_facts"] = structured_facts
         value["job_postings"] = _dedupe_job_postings(job_postings)
         value["news_articles"] = _dedupe_articles(news_articles)

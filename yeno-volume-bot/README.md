@@ -25,9 +25,17 @@ dependencies, no model/API calls, no network. Expected external cost: $0.**
 
 ```bash
 python server.py                      # serves POST http://127.0.0.1:8080/decide
-python -m unittest discover -s tests  # 16 tests, all pass
+python -m unittest discover -s tests  # 21 tests, all pass
 python simulator.py --paths 30        # synthetic sanity/stress harness
+python scenarios.py --paths 40        # adversarial regime battery (see below)
 ```
+
+`scenarios.py` runs the strategy across 10 adverse regimes (wide spread, thin
+depth, heavy adverse fills, high vol, no-edge, strong trend, …) and asserts the
+invariants that decide qualification: **terminal-flat 100%** and **0 invalid
+actions** in every regime (verified). It also prints median volume / ending
+cash / drawdown per regime — SYNTHETIC only (qualification volume is not
+provable without real frames; use `replay.py`).
 
 Official contract smoke test (from the starter kit) passes against this server:
 
