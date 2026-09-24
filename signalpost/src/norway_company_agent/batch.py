@@ -55,6 +55,22 @@ def read_organisation_numbers(path: str | Path) -> list[str]:
     return [record["organisation_number"] for record in read_organisation_inputs(path)]
 
 
+def exact_registry_identity(profile: dict[str, Any]) -> bool:
+    """True iff the live registry record resolves to this exact organisation
+    number. The competition's official_identity_complete gate requires this for
+    EVERY submitted profile; a single miss zeroes the whole awardable score."""
+    live = (profile.get("evidence", {}) or {}).get("registry_live", {}) or {}
+    return str((live.get("value") or {}).get("organisation_number")) == str(profile.get("organisation_number"))
+
+
+def official_identity_complete(profiles: Iterable[dict[str, Any]]) -> tuple[float, list[str]]:
+    """Return (exact_registry_ratio, failing_organisation_numbers)."""
+    profiles = list(profiles)
+    failures = [str(p.get("organisation_number")) for p in profiles if not exact_registry_identity(p)]
+    ratio = (len(profiles) - len(failures)) / len(profiles) if profiles else 0.0
+    return ratio, failures
+
+
 def profiles_from_bulk(path: str | Path, organisation_numbers: Iterable[str]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     requested = list(organisation_numbers)
     wanted = set(requested)

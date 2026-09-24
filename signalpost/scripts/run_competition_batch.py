@@ -10,12 +10,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from norway_company_agent.batch import profile_complete_for_modules, profiles_from_bulk, read_organisation_inputs, terminal_envelope, validate_envelopes  # noqa: E402
+from norway_company_agent.batch import official_identity_complete, profile_complete_for_modules, profiles_from_bulk, read_organisation_inputs, terminal_envelope, validate_envelopes  # noqa: E402
 from norway_company_agent.evidence import utc_now  # noqa: E402
 from norway_company_agent.identity import apply_website_identity_gate  # noqa: E402
 from norway_company_agent.official import fetch_official_modules  # noqa: E402
 from norway_company_agent.website import fetch_website  # noqa: E402
 from norway_company_agent.external_footprint import aggregate_footprint, publishable_observation  # noqa: E402
+from norway_company_agent.external_observations import build_observations  # noqa: E402
 from norway_company_agent.synthesis import summarize_profile  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -48,6 +49,10 @@ def main() -> None:
                         help="Attach publishable workforce coverage extracted from official annual-report PDFs (exact org-number bound)")
     parser.add_argument("--workforce-ocr-pages", type=int, default=0,
                         help="OCR the first N pages of scanned annual reports (0 = digital text only). Needs pdftoppm+tesseract.")
+    parser.add_argument("--observations-output",
+                        help="Write all published external-footprint observations to this JSONL (for external scoring).")
+    parser.add_argument("--require-exact-identity", action="store_true",
+                        help="Fail the build unless EVERY profile has exact registry_live identity (official_identity_complete gate).")
     parser.add_argument("--workforce-ocr-dpi", type=int, default=200)
     args = parser.parse_args()
 
@@ -77,21 +82,27 @@ def main() -> None:
             website_record, website_metrics = fetch_website(profile.get("website"))
             profile["evidence"]["website"] = apply_website_identity_gate(profile, website_record)["website"]
         workforce_requests = 0
+        # Company-owned external observations (company_profile, profile_handle,
+        # job_posting) from the already-identity-verified website. Zero extra
+        # requests; every observation inherits the exact-entity gate.
+        candidates = build_observations(profile)
+        wf_diag = {"status": "disabled"}
         if args.external_workforce:
             # OCR optional (--workforce-ocr-pages). The connector abstains unless
             # the exact organisation number appears in the filing text (digital
             # or OCR'd), so scanned reports never produce a guessed claim.
             observation, wf_diag = workforce.collect(profile, workforce_cache, ocr_pages=args.workforce_ocr_pages, ocr_dpi=args.workforce_ocr_dpi)
-            candidates = [observation] if observation else []
-            accepted = [item for item in candidates if publishable_observation(item)]
-            summary = aggregate_footprint(accepted, as_of=started_at)
-            profile["evidence"]["external_footprint"] = {
-                "observations": accepted,
-                "summary": summary,
-                "diagnostic": wf_diag,
-            }
+            if observation:
+                candidates.append(observation)
             if wf_diag.get("cache_hit") is False and wf_diag.get("status") not in {"registry_count_already_available", "no_annual_report"}:
                 workforce_requests = 1
+        accepted = [item for item in candidates if publishable_observation(item)]
+        summary = aggregate_footprint(accepted, as_of=started_at)
+        profile["evidence"]["external_footprint"] = {
+            "observations": accepted,
+            "summary": summary,
+            "diagnostic": wf_diag,
+        }
         # Deterministic, evidence-grounded synthesis (no network, no inference).
         profile["summary"] = summarize_profile(profile)
         metric = {
@@ -130,6 +141,17 @@ def main() -> None:
 
     completed_at = utc_now()
     ordered_profiles = [state[org] for org in orgs]
+
+    # official_identity_complete gate: every submitted company must resolve to
+    # its exact registry_live identity, or the whole submission scores zero.
+    # Surface it loudly at build time rather than shipping a silent zero.
+    exact_registry_ratio, identity_failures = official_identity_complete(ordered_profiles)
+    if args.require_exact_identity and identity_failures:
+        raise SystemExit(
+            f"official_identity_complete FAILED: {len(identity_failures)} profile(s) lack exact registry_live identity "
+            f"(e.g. {identity_failures[:10]}). Refusing to emit a submission that would score zero awardable."
+        )
+
     envelopes = [
         terminal_envelope(profile, run_id=args.run_id, modules=requested_modules, started_at=started_at, completed_at=completed_at)
         for profile in ordered_profiles
@@ -137,6 +159,13 @@ def main() -> None:
     validation = validate_envelopes(envelopes, args.expected_count)
     write_jsonl(profiles_output, ordered_profiles)
     write_jsonl(Path(args.output), envelopes)
+    if args.observations_output:
+        all_observations = [
+            obs
+            for profile in ordered_profiles
+            for obs in ((profile.get("evidence", {}) or {}).get("external_footprint", {}) or {}).get("observations", [])
+        ]
+        write_jsonl(Path(args.observations_output), all_observations)
     latencies = sorted(operations.pop("latencies_ms"))
     operations["p50_ms"] = latencies[len(latencies) // 2] if latencies else None
     operations["p95_ms"] = latencies[min(len(latencies) - 1, int(len(latencies) * 0.95))] if latencies else None
@@ -152,6 +181,11 @@ def main() -> None:
         "registry": registry_metadata,
         "operations": operations,
         "validation": validation,
+        "exact_registry": round(exact_registry_ratio, 4),
+        "external_observations": sum(
+            len(((p.get("evidence", {}) or {}).get("external_footprint", {}) or {}).get("observations", []))
+            for p in ordered_profiles
+        ),
     }
     Path(args.report).parent.mkdir(parents=True, exist_ok=True)
     Path(args.report).write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

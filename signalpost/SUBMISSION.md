@@ -1,4 +1,41 @@
-# Signalpost submission
+# Signalpost submission — V2
+
+**Real-scorer note (from the kit's own `score_competition_v3.py`):** the true
+rubric is external-footprint **55** / foundation 15 / research 10 / refresh 12 /
+UX 8, and `awardable_score` is **0** unless publishable exact-entity external
+observations pass the audit gates. V2 publishes company-owned external
+observations (`company_profile`, `profile_handle`, `job_posting`) from
+already-identity-verified sites, which unlocks the gates.
+
+Measured with the actual evaluator (self-labelled audit; real competition uses
+the organiser's held-out labels):
+
+| | raw | awardable | gates |
+|---|---|---|---|
+| baseline (no observations) | 37.996 | **0** | fail |
+| **V2** | 48.156 | **48.156** | **all pass** |
+
+V2 clears every qualification gate but sits below the 65 bar; the remaining
+points are external coverage (breadth/workforce_jobs/reviews/buzz/sentiment)
+targeted by V3+. Run it yourself:
+
+```bash
+uv run python scripts/run_competition_batch.py --organisations entry-companies.jsonl \
+  --bulk brreg-enheter.csv.gz --profiles-output out/profiles.jsonl --output out/envelopes.jsonl \
+  --report out/run-report.json --run-id v2 --expected-count 1000 \
+  --observations-output out/observations.jsonl --require-exact-identity
+uv run python scripts/build_profile_site.py --profiles out/profiles.jsonl --output out/site
+uv run python scripts/evaluate_external_footprint.py --profiles out/profiles.jsonl \
+  --observations out/observations.jsonl --labels <organiser-labels> --output out/external-report.json
+```
+
+`--require-exact-identity` fails the build if any profile lacks exact
+`registry_live` identity (the `official_identity_complete` gate — one miss zeroes
+the whole score).
+
+---
+
+# Signalpost submission (reference)
 
 Norwegian company-research agent. Given an organisation number it anchors
 identity in Brønnøysundregistrene, fetches official financials/roles/group/

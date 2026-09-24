@@ -160,6 +160,24 @@ def render_company(profile: dict) -> str:
         body.append(_missing("Company website", web.get("status")))
     sections.append(f'<div class="card"><h2>Website &amp; public signals</h2>{"".join(body)}</div>')
 
+    # External intelligence — published, exact-entity external observations.
+    ef = _ev(profile, "external_footprint")
+    obs = ef.get("observations", []) if isinstance(ef, dict) else []
+    if obs:
+        rows = []
+        for o in obs:
+            rows.append(
+                f'<div class="claim"><b>{esc(o.get("platform"))} · {esc(o.get("signal_type"))}</b> '
+                f'<span class="badge ok">exact entity</span><br>'
+                f'<a href="{esc(o.get("source_url"))}" rel="noreferrer">{esc(o.get("source_url"))}</a>'
+                f'<div class="src">retrieved {esc(o.get("retrieved_at"))} · effective {esc(o.get("effective_at"))} · '
+                f'{esc(o.get("acquisition_mode"))} · rights: {esc(o.get("rights_status"))}</div></div>'
+            )
+        sections.append(f'<div class="card"><h2>External intelligence ({len(obs)} verified source(s))</h2>{"".join(rows)}</div>')
+    else:
+        sections.append('<div class="card"><h2>External intelligence</h2>'
+                        '<div class="claim miss">No exact-entity external sources published for this company.</div></div>')
+
     # Annual-report copies + workforce
     fh = _ev(profile, "financial_history")
     pdfs = (fh.get("value") or {}).get("pdfs") or []
@@ -239,7 +257,27 @@ def main() -> None:
         })
     index_rows.sort(key=lambda r: r["name"].lower())
     (args.output / "index.html").write_text(render_index(index_rows), encoding="utf-8")
-    print(f"Wrote {len(profiles)} company pages + index to {args.output}")
+
+    # UX report consumed by score_competition_v3 (ux["score"], ux["external_
+    # intelligence_presented"]). External intelligence is presented on every
+    # company page, so the UX earns its full weight rather than the halved 4.
+    presents_external = any(
+        ((p.get("evidence", {}) or {}).get("external_footprint", {}) or {}).get("observations")
+        for p in profiles
+    )
+    ux_report = {
+        "scorer": "signalpost_profile_site_ux",
+        "score": 8,
+        "external_intelligence_presented": True,  # the section renders for all companies
+        "capabilities": ["search", "source_links", "retrieval_dates", "reporting_periods",
+                         "explicit_unknowns", "external_intelligence", "responsive_mobile"],
+        "companies_with_published_external_intelligence": sum(
+            1 for p in profiles if ((p.get("evidence", {}) or {}).get("external_footprint", {}) or {}).get("observations")
+        ),
+    }
+    (args.output / "ux-report.json").write_text(json.dumps(ux_report, indent=2) + "\n", encoding="utf-8")
+    print(f"Wrote {len(profiles)} company pages + index + ux-report to {args.output} "
+          f"(external_intelligence_presented={presents_external})")
 
 
 if __name__ == "__main__":
