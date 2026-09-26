@@ -34,16 +34,25 @@ def _sha64(value: str | None, seed: str) -> str:
 
 
 def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None,
+                       wikidata_index: dict | None = None,
                        retrieved_at: str | None = None) -> list[dict[str, Any]]:
     org = str(profile.get("organisation_number") or "")
     if not org.isdigit():
         return []
+    rat = retrieved_at or "1970-01-01T00:00:00Z"
 
     # NAV official job-board postings (exact orgnr match; independent of website).
     nav_obs: list[dict[str, Any]] = []
     if nav_index:
         from .nav_jobs import observations_for
-        nav_obs = observations_for(nav_index, org, retrieved_at=retrieved_at or "1970-01-01T00:00:00Z")
+        nav_obs = observations_for(nav_index, org, retrieved_at=rat)
+
+    # Wikidata exact-entity facts (P2333 org-number match; independent of website).
+    wd_obs: list[dict[str, Any]] = []
+    if wikidata_index and org in wikidata_index:
+        from .wikidata import observations_for as wd_observations
+        wd_obs = wd_observations(wikidata_index[org], org, retrieved_at=rat)
+    nav_obs = nav_obs + wd_obs
 
     web = (profile.get("evidence", {}) or {}).get("website", {}) or {}
     if web.get("status") != "available":

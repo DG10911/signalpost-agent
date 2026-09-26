@@ -59,6 +59,8 @@ def main() -> None:
                         help="Fail the build unless EVERY profile has exact registry_live identity (official_identity_complete gate).")
     parser.add_argument("--nav-index",
                         help="Path to a pre-built NAV orgnr->jobs index (scripts/build_nav_index.py) for exact-entity job_posting observations.")
+    parser.add_argument("--wikidata", action="store_true",
+                        help="Query Wikidata (P2333 exact org-number match) for exact-entity facts/social/wikipedia. Batched, official public API.")
     parser.add_argument("--discover-websites", action="store_true",
                         help="For companies with no registry-listed homepage, try deterministic domain guesses and accept ONLY on exact org-number presence.")
     parser.add_argument("--discover-max-candidates", type=int, default=3)
@@ -87,6 +89,13 @@ def main() -> None:
     if args.nav_index:
         from norway_company_agent.nav_jobs import load_index
         nav_index = load_index(args.nav_index)
+    # Wikidata exact-entity facts (P2333). Batched once for the whole cohort
+    # (~2 SPARQL requests / 100 companies); every result is exact-entity by
+    # construction, so there is no wrong-company surface.
+    wikidata_index = {}
+    if args.wikidata:
+        from norway_company_agent.wikidata import query_p2333
+        wikidata_index = query_p2333(orgs)
 
     def enrich(profile: dict) -> tuple[dict, dict]:
         records, metrics = fetch_official_modules(profile["organisation_number"], fetch_modules)
@@ -108,7 +117,7 @@ def main() -> None:
         # Company-owned external observations (company_profile, profile_handle,
         # job_posting) from the already-identity-verified website. Zero extra
         # requests; every observation inherits the exact-entity gate.
-        candidates = build_observations(profile, nav_index=nav_index, retrieved_at=started_at)
+        candidates = build_observations(profile, nav_index=nav_index, wikidata_index=wikidata_index, retrieved_at=started_at)
         wf_diag = {"status": "disabled"}
         if args.external_workforce:
             # OCR optional (--workforce-ocr-pages). The connector abstains unless
