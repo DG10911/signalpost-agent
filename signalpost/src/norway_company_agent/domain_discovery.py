@@ -74,6 +74,29 @@ def orgnr_verdict(org: str, value: dict[str, Any]) -> str:
     return "none"
 
 
+def _host(url: str) -> str:
+    import urllib.parse
+    return (urllib.parse.urlparse(url).hostname or "").lower().removeprefix("www.")
+
+
+def contact_verdict(fingerprint: dict[str, Any], value: dict[str, Any], final_url: str) -> bool:
+    """Secondary exact-entity signal for a discovered site (used ONLY when there
+    is no conflicting org number): the site carries the company's registry email
+    domain, or the registry phone number. These are contact details the company
+    itself published in the official register — a strong self-attribution."""
+    text = _page_text(value)
+    digits = re.sub(r"\D", "", text)
+    reg_phone = re.sub(r"\D", "", str(fingerprint.get("phone") or ""))
+    if len(reg_phone) >= 8 and reg_phone in digits:
+        return True
+    email = str(fingerprint.get("email") or "").lower()
+    if "@" in email:
+        dom = email.split("@", 1)[1].strip()
+        if dom and (dom in text.lower() or dom == _host(final_url)):
+            return True
+    return False
+
+
 def discover_website(
     profile: dict[str, Any],
     fetch_website: Callable[[str], tuple[dict[str, Any], dict[str, Any]]],
@@ -87,6 +110,9 @@ def discover_website(
     diag = {"candidates": [], "requests": 0, "verdict": "no_candidate"}
     if not org.isdigit():
         return None, diag
+    reg_value = (profile.get("evidence", {}) or {}).get("registry", {}).get("value") or {}
+    fingerprint = {"email": reg_value.get("epostadresse"),
+                   "phone": reg_value.get("telefon") or reg_value.get("mobil")}
     for domain in candidate_domains(profile.get("name") or "", max_candidates=max_candidates):
         diag["candidates"].append(domain)
         record, metrics = fetch_website("https://" + domain)
@@ -95,14 +121,22 @@ def discover_website(
             continue
         value = record.get("value") or {}
         verdict = orgnr_verdict(org, value)
-        if verdict == "match":
-            value["discovered"] = True
-            value["discovery_identity"] = {"method": "exact_org_number_on_discovered_site", "organisation_number": org}
-            record["value"] = value
-            diag["verdict"] = "verified_orgnr"
-            return record, diag
         if verdict == "conflict":
-            diag["verdict"] = "rejected_conflicting_orgnr"   # never bind; keep searching other candidates
+            diag["verdict"] = "rejected_conflicting_orgnr"   # never bind; try other candidates
+            continue
+        method = None
+        if verdict == "match":
+            method = "exact_org_number_on_discovered_site"
+        elif contact_verdict(fingerprint, value, value.get("final_url") or ("https://" + domain)):
+            # No conflicting org number AND the site carries the registry email
+            # domain or phone -> strong company self-attribution.
+            method = "registry_contact_on_discovered_site"
+        if method:
+            value["discovered"] = True
+            value["discovery_identity"] = {"method": method, "organisation_number": org}
+            record["value"] = value
+            diag["verdict"] = "verified_" + ("orgnr" if verdict == "match" else "contact")
+            return record, diag
     if diag["verdict"] not in ("rejected_conflicting_orgnr",):
-        diag["verdict"] = "no_orgnr_match"
+        diag["verdict"] = "no_match"
     return None, diag

@@ -50,12 +50,36 @@ def test_reject_conflicting_orgnr():
     assert diag["verdict"] == "rejected_conflicting_orgnr"
 
 
+def _prof(email=None, phone=None):
+    return {"organisation_number": OURS, "name": "Example AS",
+            "evidence": {"registry": {"value": {"epostadresse": email, "telefon": phone}}}}
+
+
 def test_reject_name_only():
-    # Name matches but NO org number on the page -> must NOT bind (wrong-company trap).
-    prof = {"organisation_number": OURS, "name": "Example AS"}
-    rec, diag = dd.discover_website(prof, _fetch("Welcome to Example AS, the best example."), max_candidates=1)
+    # Name matches but NO org number and NO registry contact -> must NOT bind.
+    rec, diag = dd.discover_website(_prof(), _fetch("Welcome to Example AS, the best example."), max_candidates=1)
     assert rec is None
-    assert diag["verdict"] == "no_orgnr_match"
+    assert diag["verdict"] == "no_match"
+
+
+def test_accept_on_registry_email_domain():
+    prof = _prof(email="post@example.no")
+    rec, diag = dd.discover_website(prof, _fetch("Contact: post@example.no. Example AS."), max_candidates=1)
+    assert rec is not None and diag["verdict"] == "verified_contact"
+    assert rec["value"]["discovery_identity"]["method"] == "registry_contact_on_discovered_site"
+
+
+def test_accept_on_registry_phone():
+    prof = _prof(phone="22 50 07 37")
+    rec, diag = dd.discover_website(prof, _fetch("Ring oss: 22500737. Example AS."), max_candidates=1)
+    assert rec is not None and diag["verdict"] == "verified_contact"
+
+
+def test_conflicting_orgnr_overrides_contact_match():
+    # Even if the registry email is on the page, a DIFFERENT valid org number vetoes.
+    prof = _prof(email="post@example.no")
+    rec, diag = dd.discover_website(prof, _fetch(f"post@example.no. Org.nr {OTHER}."), max_candidates=1)
+    assert rec is None and diag["verdict"] == "rejected_conflicting_orgnr"
 
 
 def test_orgnr_verdict_helpers():
