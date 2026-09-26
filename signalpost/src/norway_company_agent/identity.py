@@ -94,6 +94,29 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
     else:
         score = 0.3
         reasons.append("registry-linked URL lacks strong exact-entity identity evidence")
+    # Corroboration escalation (do NOT lower the 0.9 threshold): a review-band
+    # name match is promoted to exact only when an INDEPENDENT official registry
+    # signal (registered phone, email domain, or postcode+town) ALSO appears on
+    # the page. Two independent registry-derived signals coinciding on one page
+    # is decisive exact-entity evidence a namesake would not satisfy.
+    corroboration: list[str] = []
+    if 0.65 <= score < 0.9 and len(overlap) >= 2:
+        reg_val = (profile.get("evidence", {}) or {}).get("registry", {}).get("value") or {}
+        phone = re.sub(r"\D", "", str(reg_val.get("telefon") or reg_val.get("mobil") or ""))
+        if len(phone) >= 8 and phone in compact_candidate:
+            corroboration.append("registry_phone")
+        email = str(reg_val.get("epostadresse") or "").lower()
+        if "@" in email:
+            dom = email.split("@", 1)[1].strip()
+            if dom and dom in candidate_text.lower():
+                corroboration.append("registry_email_domain")
+        postnr = re.sub(r"\D", "", str(reg_val.get("forretningsadresse.postnummer") or ""))
+        town = str(reg_val.get("forretningsadresse.poststed") or "").strip().casefold()
+        if len(postnr) == 4 and postnr in compact_candidate and town and town in normalized_raw:
+            corroboration.append("registry_postcode_town")
+        if corroboration:
+            score = 0.95
+            reasons.append("corroborated to exact by independent registry signal(s): " + ", ".join(corroboration))
     status = "exact" if score >= 0.9 else "review" if score >= 0.8 else "related_or_uncertain"
     return {
         "status": status,
@@ -102,7 +125,8 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
         "legal_name_tokens": core,
         "matched_tokens": overlap,
         "reasons": reasons,
-        "method": "deterministic_name_org_evidence_v2",
+        "corroboration": corroboration,
+        "method": "deterministic_name_org_evidence_v3",
     }
 
 
