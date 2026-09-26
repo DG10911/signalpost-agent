@@ -18,6 +18,7 @@ from norway_company_agent.website import fetch_website  # noqa: E402
 from norway_company_agent.external_footprint import aggregate_footprint, publishable_observation  # noqa: E402
 from norway_company_agent.external_observations import build_observations  # noqa: E402
 from norway_company_agent.synthesis import summarize_profile  # noqa: E402
+from norway_company_agent.registry_claims import registry_claims  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "scripts"))
 import run_annual_report_workforce_connector as workforce  # noqa: E402
@@ -55,6 +56,9 @@ def main() -> None:
                         help="Fail the build unless EVERY profile has exact registry_live identity (official_identity_complete gate).")
     parser.add_argument("--nav-index",
                         help="Path to a pre-built NAV orgnr->jobs index (scripts/build_nav_index.py) for exact-entity job_posting observations.")
+    parser.add_argument("--discover-websites", action="store_true",
+                        help="For companies with no registry-listed homepage, try deterministic domain guesses and accept ONLY on exact org-number presence.")
+    parser.add_argument("--discover-max-candidates", type=int, default=3)
     parser.add_argument("--workforce-ocr-dpi", type=int, default=200)
     args = parser.parse_args()
 
@@ -85,8 +89,17 @@ def main() -> None:
         records, metrics = fetch_official_modules(profile["organisation_number"], fetch_modules)
         profile["evidence"].update(records)
         website_metrics = {"requests": 0, "bytes": 0, "latencies_ms": []}
+        discovery_requests = 0
         if "website" in requested_modules:
             website_record, website_metrics = fetch_website(profile.get("website"))
+            # For a site-less company, try safe domain discovery (org-number-only gate).
+            if args.discover_websites and website_record.get("status") != "available":
+                from norway_company_agent.domain_discovery import discover_website
+                discovered, ddiag = discover_website(
+                    profile, lambda u: fetch_website(u), max_candidates=args.discover_max_candidates)
+                discovery_requests = int(ddiag.get("requests", 0) or 0)
+                if discovered is not None:
+                    website_record = discovered
             profile["evidence"]["website"] = apply_website_identity_gate(profile, website_record)["website"]
         workforce_requests = 0
         # Company-owned external observations (company_profile, profile_handle,
@@ -110,10 +123,12 @@ def main() -> None:
             "summary": summary,
             "diagnostic": wf_diag,
         }
-        # Deterministic, evidence-grounded synthesis (no network, no inference).
+        # Formalise official registry fields into evidence-backed claims (zero
+        # network, exact-entity provenance) and deterministic synthesis.
+        profile["registry_claims"] = registry_claims(profile)
         profile["summary"] = summarize_profile(profile)
         metric = {
-            "requests": len(metrics) + website_metrics["requests"] + workforce_requests,
+            "requests": len(metrics) + website_metrics["requests"] + workforce_requests + discovery_requests,
             "bytes": sum(item.bytes_received for item in metrics) + website_metrics["bytes"],
             "latencies_ms": [item.elapsed_ms for item in metrics] + website_metrics["latencies_ms"],
         }
