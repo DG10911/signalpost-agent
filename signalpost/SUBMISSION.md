@@ -1,3 +1,29 @@
+# Signalpost submission — V5
+
+**Evaluator-facing output is the OUTPUT_CONTRACT shape.** Our rich internal
+envelope (module states) is kept for tooling, but the scored artifact is
+`out/submission-contract.jsonl` — one flat object per company with
+`claims[]` / `evidence[]` / `changes` / `errors` / `operations` and ONLY the six
+availability states (available / not_available / blocked / not_applicable /
+ambiguous / failed). Produced by `--contract-output`. This exposes ~20 evidenced
+claims/profile (registry fields, financials, roles, locations, website layer,
+external observations) that the internal format left uncounted.
+
+Run command (adds `--contract-output`):
+```
+uv run python scripts/run_competition_batch.py --organisations entry-companies.jsonl \
+  --bulk brreg-enheter.csv.gz --profiles-output out/profiles.jsonl --output out/envelopes.jsonl \
+  --report out/run-report.json --run-id v5 --expected-count 1000 \
+  --observations-output out/observations.jsonl --contract-output out/submission-contract.jsonl \
+  --require-exact-identity
+```
+
+Adds over V4: `output_contract.py` (contract transform), `registry_claims.py`
+(V4, official fields as claims), `domain_discovery.py` (safe discovery, off by
+default). 142 tests. Baselines untouched.
+
+---
+
 # Signalpost submission — V3
 
 Adds the official **NAV `pam-stilling-feed`** job connector (exact-entity by

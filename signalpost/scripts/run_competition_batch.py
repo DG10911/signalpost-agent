@@ -19,6 +19,7 @@ from norway_company_agent.external_footprint import aggregate_footprint, publish
 from norway_company_agent.external_observations import build_observations  # noqa: E402
 from norway_company_agent.synthesis import summarize_profile  # noqa: E402
 from norway_company_agent.registry_claims import registry_claims  # noqa: E402
+from norway_company_agent.output_contract import to_contract  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "scripts"))
 import run_annual_report_workforce_connector as workforce  # noqa: E402
@@ -52,6 +53,8 @@ def main() -> None:
                         help="OCR the first N pages of scanned annual reports (0 = digital text only). Needs pdftoppm+tesseract.")
     parser.add_argument("--observations-output",
                         help="Write all published external-footprint observations to this JSONL (for external scoring).")
+    parser.add_argument("--contract-output",
+                        help="Write results in the exact OUTPUT_CONTRACT.md shape (flat claims/evidence/6-state availability) — the evaluator-facing artifact.")
     parser.add_argument("--require-exact-identity", action="store_true",
                         help="Fail the build unless EVERY profile has exact registry_live identity (official_identity_complete gate).")
     parser.add_argument("--nav-index",
@@ -181,6 +184,13 @@ def main() -> None:
     validation = validate_envelopes(envelopes, args.expected_count)
     write_jsonl(profiles_output, ordered_profiles)
     write_jsonl(Path(args.output), envelopes)
+    if args.contract_output:
+        contract_rows = [
+            to_contract(profile, run_id=args.run_id, started_at=started_at, completed_at=completed_at,
+                        terminal_status="completed" if envelope["state"] == "complete" else envelope["state"])
+            for profile, envelope in zip(ordered_profiles, envelopes)
+        ]
+        write_jsonl(Path(args.contract_output), contract_rows)
     if args.observations_output:
         all_observations = [
             obs
