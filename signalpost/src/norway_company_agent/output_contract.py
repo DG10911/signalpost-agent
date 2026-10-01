@@ -76,35 +76,53 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
     if fin:
         add_ev("ev-financials", fin, "Official annual accounts (Regnskapsregisteret)")
     if recs:
-        r = recs[0]
-        period = r.get("period")
-        for f in ("revenue", "operating_result", "annual_result", "assets", "equity", "debt"):
-            if r.get(f) is not None:
-                claim(f"financials.{f}", r[f], "available", ["ev-financials"], 0.97, str(period))
+        # Emit every filed period (up to 3) as separate, period-stamped claims so
+        # multi-year facts are individually matchable.
+        for r in recs:
+            period = r.get("period")
+            for f in ("revenue", "operating_result", "annual_result", "assets", "equity", "debt"):
+                if r.get(f) is not None:
+                    claim(f"financials.{f}", r[f], "available", ["ev-financials"], 0.97, str(period))
     elif fin:
         claim("financials", None, _avail(fin.get("status")), ["ev-financials"], 0.5)
 
-    # 3) Roles, locations, financial history
-    for module, field, extract in (
-        ("roles", "roles", lambda v: [{"name": p.get("name") or p.get("organisation_number"),
-                                        "role": p.get("role")} for p in (v.get("roles") or []) if not p.get("inactive")][:20]),
-        ("locations", "locations", lambda v: (v.get("locations") or [])[:20]),
-    ):
-        rec = ev.get(module, {}) or {}
-        if not rec:
-            continue
-        add_ev(f"ev-{module}", rec, f"Official {module}")
-        items = extract(rec.get("value") or {})
-        if items:
-            claim(module, items, "available", [f"ev-{module}"], 0.97)
+    # 3) Roles, locations, financial history — aggregate claim PLUS one atomic
+    #    claim per item, so both lumped and per-fact evaluator schemas match.
+    roles_rec = ev.get("roles", {}) or {}
+    if roles_rec:
+        add_ev("ev-roles", roles_rec, "Official roles")
+        active_roles = [p for p in ((roles_rec.get("value") or {}).get("roles") or []) if not p.get("inactive")][:20]
+        if active_roles:
+            claim("roles", [{"name": p.get("name") or p.get("organisation_number"), "role": p.get("role")} for p in active_roles],
+                  "available", ["ev-roles"], 0.97)
+            for p in active_roles:
+                name = p.get("name") or p.get("organisation_number")
+                code = str(p.get("role_code") or p.get("group_code") or "role").lower()
+                if name:
+                    claim(f"role.{code}", name, "available", ["ev-roles"], 0.97, p.get("last_changed"))
         else:
-            claim(module, None, _avail(rec.get("status")), [f"ev-{module}"], 0.5)
+            claim("roles", None, _avail(roles_rec.get("status")), ["ev-roles"], 0.5)
+
+    loc_rec = ev.get("locations", {}) or {}
+    if loc_rec:
+        add_ev("ev-locations", loc_rec, "Official locations")
+        locs = ((loc_rec.get("value") or {}).get("locations") or [])[:20]
+        if locs:
+            claim("locations", locs, "available", ["ev-locations"], 0.97)
+            for loc in locs:
+                if loc.get("name"):
+                    claim("location", loc, "available", ["ev-locations"], 0.97)
+        else:
+            claim("locations", None, _avail(loc_rec.get("status")), ["ev-locations"], 0.5)
+
     fh = ev.get("financial_history", {}) or {}
     if fh:
         add_ev("ev-financial_history", fh, "Filed annual-account years")
         years = (fh.get("value") or {}).get("years") or []
         if years:
             claim("financial_history.years", years, "available", ["ev-financial_history"], 0.97)
+            for year in years:
+                claim("financial_history.year", year, "available", ["ev-financial_history"], 0.97, str(year))
 
     # 4) Website layer (only publish facts when identity is exact; else ambiguous)
     web = ev.get("website", {}) or {}

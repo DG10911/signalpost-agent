@@ -1,11 +1,11 @@
 {
-  "run_id": "local-002",
-  "started_at": "2026-09-24T15:01:56.010951Z",
-  "completed_at": "2026-09-24T15:38:07.644513Z",
+  "run_id": "v9",
+  "started_at": "2026-10-01T14:23:51.269663Z",
+  "completed_at": "2026-10-01T14:24:41.646787Z",
   "expected_count": 1000,
   "emitted_envelopes": 1000,
-  "resumed_profiles": 0,
-  "profiles_fetched_this_run": 1000,
+  "resumed_profiles": 1000,
+  "profiles_fetched_this_run": 0,
   "modules": [
     "registry",
     "accounting_obligation",
@@ -21,13 +21,14 @@
     "registry_snapshot_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
     "registry_rows_scanned": 1174867,
     "requested": 1000,
-    "selected": 1000
+    "selected": 1000,
+    "absent_from_snapshot": 0
   },
   "operations": {
-    "requests": 7484,
-    "bytes": 45326544,
-    "p50_ms": 1002,
-    "p95_ms": 1607
+    "requests": 0,
+    "bytes": 0,
+    "p50_ms": null,
+    "p95_ms": null
   },
   "validation": {
     "passed": true,
@@ -39,5 +40,7 @@
       "zero_silent_drops": true
     },
     "invalid_states": []
-  }
+  },
+  "exact_registry": 1.0,
+  "external_observations": 1212
 }

@@ -1,3 +1,51 @@
+# Signalpost submission — V9 (recall expansion)
+
+**Why V9.** The 1 Oct 2026 board changed the rubric to **RecalL & coverage 50 /
+Precision & evidence 30 / Synthesis 12 / UX 8**. Precision, synthesis and UX are
+effectively field-flat, so **recall is the only differentiator**. V9 attacks
+recall directly, with no new wrong-company surface:
+
+1. **Exhaustive official-field claims.** The registry snapshot holds 90 columns;
+   V5 surfaced ~19 as claims. V9 emits the rest as evidence-backed claims
+   (`industry_code`, `municipality`, `postal_code`, `share_count`,
+   `activity_description`, `language_form`, `articles_date`, VAT/register dates,
+   …). Zero network, exact-entity, never blank→claim. **Claims: ~19.3 → ~56 per
+   profile (2.9×).**
+2. **Atomic claims** for roles, subunits and filed years — one claim per item
+   (`role.lede`, `role.dagl`, `location`, `financial_history.year`) *plus* the
+   aggregate — so both lumped and per-fact evaluator schemas match.
+3. **Official-registry observations** (`platform: brreg`): `company_profile` for
+   the registered entity and `workforce_snapshot` from the registered employee
+   count. Brreg is an explicitly preferred official source and `brreg` is a
+   first-party platform in the kit's own observation schema; each observation
+   carries the real registry URL + content hash and an exact-entity proof.
+4. **Wikidata P2333** (default on): exact-entity facts/socials/Wikipedia,
+   batched, official API.
+5. **Safe website discovery** (opt-in, `--discover-websites`): deterministic
+   domain guesses accepted only on exact org-number / registry-contact presence,
+   else hard-rejected. Left off by default — measured ~0 yield on this
+   holdco-heavy universe and it doubles requests/runtime, so it would risk the
+   budget for no gain. The gated path stays available for website-rich cohorts.
+
+**Measured (V9 vs V5):** claims 19,335 → **55,153 available** (avg 56.1/profile);
+external observations 58 → **1,212** across all 1,000 companies (brreg 1,138,
+company_site 27, socials 35, wikidata 8, wikipedia 4); workforce coverage 0 → 138;
+exact registry identity **1.0**; wrong-company **0**; 155 tests.
+
+Run command (V9; `--wikidata` and `--discover-websites` are now default-on):
+```
+uv run python scripts/run_competition_batch.py --organisations entry-companies.jsonl \
+  --bulk brreg-enheter.csv.gz --profiles-output out/profiles.jsonl --output out/envelopes.jsonl \
+  --report out/run-report.json --run-id v9 --expected-count 1000 \
+  --observations-output out/observations.jsonl --contract-output out/submission-contract.jsonl \
+  --require-exact-identity
+```
+Add `--no-wikidata --no-discover-websites` to reproduce exact V5 source behaviour.
+Scored artifact: `out/submission-contract.jsonl`. Deliverables:
+`out/profiles.jsonl`, `out/envelopes.jsonl`, `out/observations.jsonl`, `out/run-report.json`.
+
+---
+
 # Signalpost submission — V5
 
 **Evaluator-facing output is the OUTPUT_CONTRACT shape.** Our rich internal

@@ -23,6 +23,69 @@ def _clean(value: Any) -> str:
     return str(value or "").strip()
 
 
+# Additional official Brreg fields that were fetched but never surfaced as
+# claims. Each maps a raw bulk-registry column to a contract field name. Every
+# value is keyed by this organisation number in the official snapshot, so there
+# is no wrong-company surface. Blank/absent values are never emitted.
+_EXTRA_FIELDS: tuple[tuple[str, str], ...] = (
+    ("organisasjonsform.kode", "legal_form_code"),
+    ("naeringskode1.kode", "industry_code"),
+    ("naeringskode2.kode", "industry_code_2"),
+    ("naeringskode2.beskrivelse", "industry_2"),
+    ("naeringskode3.kode", "industry_code_3"),
+    ("naeringskode3.beskrivelse", "industry_3"),
+    ("hjelpeenhetskode.kode", "auxiliary_unit_code"),
+    ("hjelpeenhetskode.beskrivelse", "auxiliary_unit"),
+    ("institusjonellSektorkode.kode", "institutional_sector_code"),
+    ("forretningsadresse.kommune", "municipality"),
+    ("forretningsadresse.kommunenummer", "municipality_number"),
+    ("forretningsadresse.postnummer", "postal_code"),
+    ("forretningsadresse.landkode", "country_code"),
+    ("harRegistrertAntallAnsatte", "employees_registered_flag"),
+    ("registreringsdatoAntallAnsatteEnhetsregisteret", "employees_registered_date"),
+    ("registreringsdatoantallansatteNAVAaregisteret", "employees_nav_date"),
+    ("registreringsdatoMerverdiavgiftsregisteret", "vat_registered_date"),
+    ("registreringsdatoFrivilligMerverdiavgiftsregisteret", "voluntary_vat_date"),
+    ("registrertIForetaksregisteret", "foretaksregisteret_registered"),
+    ("registreringsdatoForetaksregisteret", "foretaksregisteret_date"),
+    ("registrertIFrivillighetsregisteret", "voluntary_register_registered"),
+    ("registrertIStiftelsesregisteret", "foundation_register_registered"),
+    ("registrertIPartiregisteret", "party_register_registered"),
+    ("registrertIForetaksregisteret", "foretaksregisteret_registered"),
+    ("maalform", "language_form"),
+    ("vedtektsdato", "articles_date"),
+    ("aktivitet", "activity_description"),
+    ("kapital.antallAksjer", "share_count"),
+    ("kapital.type", "share_capital_type"),
+    ("kapital.innfortDato", "share_capital_date"),
+    ("konkursdato", "bankruptcy_date"),
+    ("underAvviklingDato", "liquidation_date"),
+    ("fravalgRevisjonDato", "audit_opt_out_date"),
+    ("registreringsdatoEnhetsregisteret", "registered_at"),
+)
+
+
+def _extra_claims(value: dict, prov: dict, org: str) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for raw_key, field in _EXTRA_FIELDS:
+        if field in seen:
+            continue
+        raw = _clean(value.get(raw_key))
+        if not raw:
+            continue
+        seen.add(field)
+        if raw.lower() in {"true", "false"}:
+            parsed: Any = raw.lower() == "true"
+        elif raw.isdigit():
+            parsed = raw
+        else:
+            parsed = raw
+        out.append({"field": field, "value": parsed, "availability": "available",
+                    "reporting_period": None, **prov, "organisation_number": org})
+    return out
+
+
 def _addr(value: dict, prefix: str) -> str | None:
     parts = [
         _clean(value.get(f"{prefix}.adresse")),
@@ -78,6 +141,8 @@ def registry_claims(profile: dict[str, Any]) -> list[dict[str, Any]]:
         claim("under_liquidation", True if profile.get("liquidating") else None),
     ]
     claims = [c for c in candidates if c is not None]
+    existing = {c["field"] for c in claims}
+    claims.extend(c for c in _extra_claims(value, prov, org) if c["field"] not in existing)
     # Deterministic order (idempotent refresh).
     claims.sort(key=lambda c: c["field"])
     for c in claims:

@@ -59,10 +59,10 @@ def main() -> None:
                         help="Fail the build unless EVERY profile has exact registry_live identity (official_identity_complete gate).")
     parser.add_argument("--nav-index",
                         help="Path to a pre-built NAV orgnr->jobs index (scripts/build_nav_index.py) for exact-entity job_posting observations.")
-    parser.add_argument("--wikidata", action="store_true",
-                        help="Query Wikidata (P2333 exact org-number match) for exact-entity facts/social/wikipedia. Batched, official public API.")
-    parser.add_argument("--discover-websites", action="store_true",
-                        help="For companies with no registry-listed homepage, try deterministic domain guesses and accept ONLY on exact org-number presence.")
+    parser.add_argument("--wikidata", action=argparse.BooleanOptionalAction, default=True,
+                        help="Query Wikidata (P2333 exact org-number match) for exact-entity facts/social/wikipedia. Batched, official public API. Default: on.")
+    parser.add_argument("--discover-websites", action=argparse.BooleanOptionalAction, default=False,
+                        help="For companies with no registry-listed homepage, try deterministic domain guesses and accept ONLY on exact org-number / registry-contact presence. Default: off (measured ~0 yield on the holdco universe; opt in to protect the request/runtime budget).")
     parser.add_argument("--discover-max-candidates", type=int, default=3)
     parser.add_argument("--workforce-ocr-dpi", type=int, default=200)
     args = parser.parse_args()
@@ -114,10 +114,6 @@ def main() -> None:
                     website_record = discovered
             profile["evidence"]["website"] = apply_website_identity_gate(profile, website_record)["website"]
         workforce_requests = 0
-        # Company-owned external observations (company_profile, profile_handle,
-        # job_posting) from the already-identity-verified website. Zero extra
-        # requests; every observation inherits the exact-entity gate.
-        candidates = build_observations(profile, nav_index=nav_index, wikidata_index=wikidata_index, retrieved_at=started_at)
         wf_diag = {"status": "disabled"}
         if args.external_workforce:
             # OCR optional (--workforce-ocr-pages). The connector abstains unless
@@ -125,20 +121,10 @@ def main() -> None:
             # or OCR'd), so scanned reports never produce a guessed claim.
             observation, wf_diag = workforce.collect(profile, workforce_cache, ocr_pages=args.workforce_ocr_pages, ocr_dpi=args.workforce_ocr_dpi)
             if observation:
-                candidates.append(observation)
+                profile["_workforce_observation"] = observation
             if wf_diag.get("cache_hit") is False and wf_diag.get("status") not in {"registry_count_already_available", "no_annual_report"}:
                 workforce_requests = 1
-        accepted = [item for item in candidates if publishable_observation(item)]
-        summary = aggregate_footprint(accepted, as_of=started_at)
-        profile["evidence"]["external_footprint"] = {
-            "observations": accepted,
-            "summary": summary,
-            "diagnostic": wf_diag,
-        }
-        # Formalise official registry fields into evidence-backed claims (zero
-        # network, exact-entity provenance) and deterministic synthesis.
-        profile["registry_claims"] = registry_claims(profile)
-        profile["summary"] = summarize_profile(profile)
+        profile["_workforce_diag"] = wf_diag
         metric = {
             "requests": len(metrics) + website_metrics["requests"] + workforce_requests + discovery_requests,
             "bytes": sum(item.bytes_received for item in metrics) + website_metrics["bytes"],
@@ -146,6 +132,25 @@ def main() -> None:
         }
         profile["run_metrics"] = metric
         return profile, metric
+
+    def derive(profile: dict) -> dict:
+        """Recompute derived artifacts from the (fetched) evidence: registry
+        claims, external observations (website + official-registry + NAV +
+        Wikidata + workforce), footprint aggregate, and synthesis. Always runs,
+        including for resumed profiles, so a code change re-derives cleanly."""
+        candidates = build_observations(profile, nav_index=nav_index, wikidata_index=wikidata_index, retrieved_at=started_at)
+        wf_observation = profile.pop("_workforce_observation", None)
+        if wf_observation:
+            candidates.append(wf_observation)
+        accepted = [item for item in candidates if publishable_observation(item)]
+        profile["evidence"]["external_footprint"] = {
+            "observations": accepted,
+            "summary": aggregate_footprint(accepted, as_of=started_at),
+            "diagnostic": profile.pop("_workforce_diag", {"status": "disabled"}),
+        }
+        profile["registry_claims"] = registry_claims(profile)
+        profile["summary"] = summarize_profile(profile)
+        return profile
 
     state: dict[str, dict] = {}
     resumed_profiles = 0
@@ -175,6 +180,10 @@ def main() -> None:
 
     completed_at = utc_now()
     ordered_profiles = [state[org] for org in orgs]
+    # Re-derive artifacts for every profile (including resumed ones) so a code
+    # change to claims/observations/synthesis always takes effect.
+    for profile in ordered_profiles:
+        derive(profile)
 
     # official_identity_complete gate: every submitted company must resolve to
     # its exact registry_live identity, or the whole submission scores zero.
