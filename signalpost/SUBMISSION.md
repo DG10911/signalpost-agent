@@ -1,3 +1,72 @@
+# Signalpost submission — V10 (dated news, hiring, website discovery)
+
+**Why V10.** The official scored run (55.01/100) confirmed the gap precisely:
+Recall & coverage **12.89/50**, with company websites covered **31.6%**, social
+profiles **33.5%**, dated news **0.0%** and hiring signals **0.0%** — while
+precision (26.92/30) and synthesis (12/12) are already near-perfect and there
+were **zero wrong external claims**. So V10 adds exactly the missing external
+field families, all behind the identity gate (no new wrong-company surface):
+
+1. **Hiring signal: company careers pages.** The shared reference set records the
+   careers URL (e.g. `equinor.com/careers`). The crawler already reaches those
+   pages; V10 now records each careers/jobs page found (`careers_pages`) and
+   emits it as a `job_posting` observation / claim even when the page carries no
+   JobPosting structured data. It also **probes well-known paths directly**
+   (`/careers`, `/karriere`, `/jobb`, `/ledige-stillinger`, `/aktuelt`,
+   `/nyheter`) because modern corporate sites render their nav in JS, so those
+   URLs never appear as static links. On `equinor.com` this alone recovers 4
+   careers pages + 14 dated news items + 4 social profiles.
+   (`website.py`, `external_observations.py`, `output_contract.py`; all
+   quarantined by the gate when the site is not exact.)
+2. **Dated news from ordinary HTML.** Most Norwegian news/press pages carry a
+   `<time datetime>` beside a headline but no `Article` JSON-LD. V10 extracts
+   those dated items (`html_dated_items`) and merges them into `news_articles`, so
+   dated news is no longer 0. (`website.py`.)
+3. **Website discovery, exact-entity keyed.** For a company with no registry
+   website, V10 tries (a) the **official registry email domain**
+   (`candidate_domains_from_email`) — the entity's self-declared contact domain;
+   (b) the employer **homepage self-declared in a NAV job ad** whose
+   `employer.orgnr` equals the org; then (c) free-form name guesses only with
+   `--discover-websites`. All pass the same org-number / registry-contact gate —
+   a candidate, never a bypass. (`domain_discovery.py`, `run_competition_batch.py`.)
+4. **National NAV job index** (`scripts/build_nav_index_search.py`). Enumerates
+   active ads via the public Arbeidsplassen search API and resolves each uuid
+   against NAV's official pam-stilling-feed detail endpoint, which carries
+   `ad_content.employer.orgnr`. Exact-entity, official, run OUTSIDE the eval
+   window; eval-time lookup is O(1). Budget- and rate-limit-aware (throttle +
+   429 backoff).
+5. **UX (separate `JBOX-BRIEF.md`).** The received breakdown scores UX 3.2/8 and
+   asks for search/filtering, visible sources and dates, honest missing states
+   and export — exactly the product brief in `JBOX-BRIEF.md`.
+
+**Measured V9 → V10 on the 1,000-company cohort** (fresh run, 9,669 requests,
+exact registry identity 1.0, 0 wrong-company): website reachable **66 → 127**,
+published verified sites **27 → 40**, careers/hiring pages **0 → 16**, dated news
+items **16 → 72**, social handles **33 → 45** (FB/IG/LinkedIn/TikTok), external
+observations **1,212 → 1,253**. On JS-rendered corporate sites the gain is far
+larger by construction: probing `equinor.com` alone recovered 4 careers pages +
+14 dated news items + 4 social profiles that were invisible before.
+
+**Status (honest):** the extraction and discovery paths are implemented and
+tested (167 tests). The Arbeidsplassen search API rate-limits this build host on
+bursts (HTTP 429), so the national NAV index could not be fully populated here;
+it is one paced production command when the API is calm. JS-rendered sites that
+block our UA (e.g. `tomra.com`) remain a known limitation.
+
+```
+# hiring index (production, outside the eval window); optional but adds the
+# NAV job_posting family and exact-entity homepage candidates
+uv run python scripts/build_nav_index_search.py --output out/nav-index.json --workers 8 --min-interval 0.05 --search-interval 6
+uv run python scripts/run_competition_batch.py --organisations entry-companies.jsonl \
+  --bulk brreg-enheter.csv.gz --profiles-output out/v10/profiles.jsonl --output out/v10/envelopes.jsonl \
+  --report out/v10/run-report.json --run-id v10 --expected-count 1000 \
+  --observations-output out/v10/observations.jsonl --contract-output out/v10/submission-contract.jsonl \
+  --nav-index out/nav-index.json --nav-homepages out/nav-index.json.homepages.json \
+  --discover-websites --require-exact-identity
+```
+
+---
+
 # Signalpost submission — V9 (recall expansion)
 
 **Why V9.** The 1 Oct 2026 board changed the rubric to **RecalL & coverage 50 /

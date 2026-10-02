@@ -8,9 +8,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from norway_company_agent import nav_jobs  # noqa: E402
 from norway_company_agent.external_footprint import publishable_observation  # noqa: E402
+from build_nav_index_search import _feed_entry  # noqa: E402
 
 
 def _entry(uuid, orgnr, title="Role", status="ACTIVE", updated="2026-09-01T00:00:00+02:00",
@@ -85,3 +87,26 @@ def test_freshness_uses_publication_date():
     stale_idx = nav_jobs.build_index([_entry("j2", "812345670", published="2020-01-01T00:00:00+02:00")])
     assert nav_jobs.fresh_coverage(["923609016"], fresh_idx, as_of=now, freshness_days=45) == 1.0
     assert nav_jobs.fresh_coverage(["812345670"], stale_idx, as_of=now, freshness_days=45) == 0.0
+
+
+def test_search_builder_converts_ad_content_to_feed_entry():
+    # The search-index builder resolves ad_content; it must produce the same
+    # feed-entry shape the index parser (and observation builder) expects.
+    detail = {"status": "ACTIVE", "ad_content": {
+        "uuid": "u1", "title": "Kokk", "published": "2026-09-02T10:00:00+02:00",
+        "updated": "2026-09-02T11:00:00+02:00",
+        "employer": {"name": "Example AS", "orgnr": "923609016", "homepage": "https://example.no"},
+        "workLocations": [{"municipal": "OSLO"}],
+    }}
+    entry = _feed_entry(detail, {"uuid": "u1", "title": "Kokk", "businessName": "Example AS"})
+    assert entry is not None
+    index = nav_jobs.build_index([entry])
+    assert "923609016" in index
+    obs = nav_jobs.observations_for(index, "923609016", retrieved_at="2026-10-01T00:00:00Z")
+    assert obs and publishable_observation(obs[0])
+    assert obs[0]["platform"] == "job_board" and obs[0]["signal_type"] == "job_posting"
+
+
+def test_search_builder_skips_non_active_or_unbound():
+    assert _feed_entry({"status": "INACTIVE", "ad_content": {"employer": {"orgnr": "923609016"}}}, {}) is None
+    assert _feed_entry({"status": "ACTIVE", "ad_content": {"employer": {}}}, {}) is None

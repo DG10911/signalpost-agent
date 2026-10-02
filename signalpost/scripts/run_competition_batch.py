@@ -58,7 +58,9 @@ def main() -> None:
     parser.add_argument("--require-exact-identity", action="store_true",
                         help="Fail the build unless EVERY profile has exact registry_live identity (official_identity_complete gate).")
     parser.add_argument("--nav-index",
-                        help="Path to a pre-built NAV orgnr->jobs index (scripts/build_nav_index.py) for exact-entity job_posting observations.")
+                        help="Path to a pre-built NAV orgnr->jobs index (scripts/build_nav_index_search.py) for exact-entity job_posting observations.")
+    parser.add_argument("--nav-homepages",
+                        help="Path to the NAV orgnr->homepage map (written next to --nav-index). Exact-entity website candidates for companies with no registry site.")
     parser.add_argument("--wikidata", action=argparse.BooleanOptionalAction, default=True,
                         help="Query Wikidata (P2333 exact org-number match) for exact-entity facts/social/wikipedia. Batched, official public API. Default: on.")
     parser.add_argument("--discover-websites", action=argparse.BooleanOptionalAction, default=False,
@@ -89,6 +91,10 @@ def main() -> None:
     if args.nav_index:
         from norway_company_agent.nav_jobs import load_index
         nav_index = load_index(args.nav_index)
+    # NAV employer homepages: exact-entity website candidates keyed by orgnr.
+    nav_homepages: dict[str, str] = {}
+    if args.nav_homepages and Path(args.nav_homepages).exists():
+        nav_homepages = json.loads(Path(args.nav_homepages).read_text(encoding="utf-8"))
     # Wikidata exact-entity facts (P2333). Batched once for the whole cohort
     # (~2 SPARQL requests / 100 companies); every result is exact-entity by
     # construction, so there is no wrong-company surface.
@@ -104,14 +110,30 @@ def main() -> None:
         discovery_requests = 0
         if "website" in requested_modules:
             website_record, website_metrics = fetch_website(profile.get("website"))
-            # For a site-less company, try safe domain discovery (org-number-only gate).
-            if args.discover_websites and website_record.get("status") != "available":
+            # For a site-less company, try safe discovery. Exact-entity NAV
+            # homepages (keyed by orgnr from an official ad) are strong
+            # candidates and always tried; free-form domain guesses only when
+            # --discover-websites is enabled (measured low yield, budget risk).
+            nav_home = nav_homepages.get(str(profile["organisation_number"]))
+            extra = [nav_home] if nav_home else []
+            # Official registry email domain: the entity's self-declared contact
+            # domain — a strong, official candidate (still gated).
+            from norway_company_agent.domain_discovery import candidate_domains_from_email
+            reg_value = (profile.get("evidence", {}) or {}).get("registry", {}).get("value") or {}
+            extra.extend(candidate_domains_from_email(reg_value.get("epostadresse")))
+            if (args.discover_websites or extra) and website_record.get("status") != "available":
                 from norway_company_agent.domain_discovery import discover_website
+                # Probe the homepage only (cheap): name guesses / email domains
+                # can be wrong and must not consume the deep-crawl budget. Only a
+                # candidate that passes the identity gate is deep-crawled.
                 discovered, ddiag = discover_website(
-                    profile, lambda u: fetch_website(u), max_candidates=args.discover_max_candidates)
+                    profile, lambda u: fetch_website(u, max_secondary_pages=0),
+                    max_candidates=args.discover_max_candidates, extra_candidates=extra)
                 discovery_requests = int(ddiag.get("requests", 0) or 0)
                 if discovered is not None:
-                    website_record = discovered
+                    full_record, full_metrics = fetch_website(discovered.get("value", {}).get("final_url"))
+                    discovery_requests += int(full_metrics.get("requests", 0) or 0)
+                    website_record = full_record if full_record.get("status") == "available" else discovered
             profile["evidence"]["website"] = apply_website_identity_gate(profile, website_record)["website"]
         workforce_requests = 0
         wf_diag = {"status": "disabled"}

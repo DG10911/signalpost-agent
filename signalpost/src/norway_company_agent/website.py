@@ -190,6 +190,22 @@ def normalize_social_url(url: str) -> dict[str, str] | None:
     return {"platform": platform, "url": f"https://{canonical_host}/{'/'.join(parts)}"}
 
 
+# Well-known paths probed directly on the homepage's own domain. Modern
+# corporate sites (Equinor, Tomra, …) render their nav in JS, so the careers /
+# news pages never appear as static <a> links; the shared reference set still
+# records those URLs. Bounded and same-domain, so it cannot stray off-site.
+CANONICAL_PROBE_PATHS = ("careers", "karriere", "jobb", "ledige-stillinger", "aktuelt", "nyheter")
+
+
+def _canonical_probe_urls(base_url: str) -> list[str]:
+    parsed = urllib.parse.urlparse(base_url)
+    out = []
+    for path in CANONICAL_PROBE_PATHS:
+        url = urllib.parse.urlunparse((parsed.scheme, parsed.netloc, "/" + path, "", "", ""))
+        out.append(url)
+    return out
+
+
 def _priority_links(base_url: str, soup: BeautifulSoup, limit: int = 6) -> list[str]:
     base = urllib.parse.urlparse(base_url)
     candidates: dict[str, int] = {}
@@ -211,7 +227,7 @@ def _priority_links(base_url: str, soup: BeautifulSoup, limit: int = 6) -> list[
 
 
 def _fetch_secondary_page(url: str, *, homepage_domain: str, timeout: float, max_bytes: int) -> tuple[dict[str, Any] | None, list[dict[str, str]], int, int, int, str | None, dict[str, Any]]:
-    empty_extras: dict[str, Any] = {"job_postings": [], "structured_social": [], "structured_facts": {}, "news_articles": []}
+    empty_extras: dict[str, Any] = {"job_postings": [], "structured_social": [], "structured_facts": {}, "news_articles": [], "careers": False}
     if not _robots_allowed(url, timeout):
         return None, [], 1, 0, 0, "robots.txt disallows page", empty_extras
     started = time.monotonic()
@@ -234,16 +250,19 @@ def _fetch_secondary_page(url: str, *, homepage_domain: str, timeout: float, max
             "main_text_excerpt": page_text[:5000],
             "content_sha256": __import__("hashlib").sha256(raw).hexdigest(),
         }
+        page_title = page.get("title") or ""
         try:
             structured = extruct.extract(page_html, base_url=final_url, syntaxes=["json-ld", "microdata", "opengraph"])
             extras = {
                 "job_postings": _jsonld_jobpostings(structured),
                 "structured_social": structured_social_links(structured.get("json-ld", [])),
                 "structured_facts": _jsonld_facts(_jsonld_organisations(structured)),
-                "news_articles": _jsonld_articles(structured),
+                "news_articles": _jsonld_articles(structured) + html_dated_items(page_soup, final_url),
+                "careers": is_careers_page(final_url, page_title),
             }
         except Exception:
-            extras = empty_extras
+            extras = dict(empty_extras)
+            extras["careers"] = is_careers_page(final_url, page_title)
         return page, _social_links(final_url, page_soup), 2, len(raw), elapsed, None, extras
     except Exception as exc:
         return None, [], 2, 0, int((time.monotonic() - started) * 1000), f"{type(exc).__name__}: {str(exc)[:120]}", empty_extras
@@ -398,6 +417,58 @@ def _jsonld_articles(metadata: dict[str, Any]) -> list[dict[str, Any]]:
     return articles[:25]
 
 
+CAREERS_TERMS = ("careers", "career", "jobb", "jobber", "ledige-stillinger",
+                 "stilling", "stillinger", "vacancies", "karriere", "arbeid-hos-oss")
+
+
+def is_careers_page(url: str, title: str = "") -> bool:
+    haystack = (str(url or "") + " " + str(title or "")).casefold()
+    return any(term in haystack for term in CAREERS_TERMS)
+
+
+_ARTICLE_PATH_TERMS = ("/nyhet", "/aktuelt", "/news", "/press", "/blog", "/artikkel", "/story")
+
+
+def html_dated_items(soup: BeautifulSoup, base_url: str) -> list[dict[str, Any]]:
+    """Extract dated news/activity items from ordinary HTML (no JSON-LD).
+
+    Most Norwegian company news pages carry a ``<time datetime="...">`` next to a
+    headline link but no structured Article data. Reading those dated items is
+    what turns "0.0% dated news" into real coverage — the item is company-owned
+    and downstream identity-gated, so no wrong-company surface is added."""
+    out: list[dict[str, Any]] = []
+    date_re = re.compile(r"\d{4}-\d{2}-\d{2}|\d{1,2}[.\-/]\d{1,2}[.\-/]\d{2,4}|\b(?:19|20)\d{2}\b")
+    for node in soup.select("time[datetime], time[pubdate]"):
+        date = str(node.get("datetime") or node.get("pubdate") or "").strip()
+        if not date or not date_re.search(date):
+            continue
+        anchor = node.find_parent("a") or node.find("a")
+        if anchor is None:
+            parent = node.parent
+            anchor = parent.find("a") if parent else None
+        headline = (anchor.get_text(" ", strip=True) if anchor else "") or node.get_text(" ", strip=True)
+        href = anchor.get("href") if anchor is not None else None
+        url = urllib.parse.urljoin(base_url, str(href)) if href else base_url
+        if headline:
+            out.append({"headline": headline[:300], "date_published": date[:40], "url": url})
+    # Fallback: article-looking links whose surrounding text carries a date.
+    if not out:
+        for anchor in soup.select("a[href]"):
+            url = urllib.parse.urljoin(base_url, str(anchor.get("href") or ""))
+            if not any(term in urllib.parse.urlparse(url).path.casefold() for term in _ARTICLE_PATH_TERMS):
+                continue
+            parent = anchor.find_parent(["li", "article", "div"])
+            if parent is None:
+                continue
+            text = parent.get_text(" ", strip=True)
+            match = re.search(r"\b(\d{1,2}[.\-/]\d{1,2}[.\-/]\d{2,4}|\d{4}-\d{2}-\d{2})\b", text)
+            if match:
+                headline = anchor.get_text(" ", strip=True)
+                if headline:
+                    out.append({"headline": headline[:300], "date_published": match.group(1), "url": url})
+    return out[:25]
+
+
 def _dedupe_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
     seen: set[tuple[str, str]] = set()
     out: list[dict[str, Any]] = []
@@ -430,7 +501,8 @@ def _extraction_state(text: str, soup: BeautifulSoup) -> str:
     return "js_fallback_candidate" if len(text.strip()) < 100 and len(soup.select("script[src]")) >= 2 else "static_complete"
 
 
-def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_000_000) -> tuple[dict[str, Any], dict[str, Any]]:
+def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_000_000,
+                  max_secondary_pages: int | None = None) -> tuple[dict[str, Any], dict[str, Any]]:
     supplied_url = str(url or "").strip()
     supplied_scheme = bool(re.match(r"^https?://", supplied_url, re.I))
     normalized = normalize_homepage(url)
@@ -483,14 +555,24 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         pages = [{"url": final_url, "title": title[:500], "main_text_excerpt": text[:5000], "content_sha256": value["content_sha256"]}]
         social = list(value["social_links"]) + homepage_structured_social
         job_postings = list(value["job_postings"])
-        news_articles = list(value["news_articles"])
+        news_articles = list(value["news_articles"]) + html_dated_items(soup, final_url)
         structured_facts = dict(value["structured_facts"])
+        careers_pages: list[dict[str, Any]] = []
+        if is_careers_page(final_url, title):
+            careers_pages.append({"url": final_url, "title": title[:200]})
         crawl_errors = []
         requests = 2
         bytes_received = len(raw)
         page_latencies = [elapsed]
         homepage_domain = value["registered_domain"]
-        for page_url in _priority_links(final_url, soup):
+        secondary_urls = _priority_links(final_url, soup)
+        seen_secondary = {u.rstrip("/") for u in secondary_urls}
+        for probe in _canonical_probe_urls(final_url):
+            if probe.rstrip("/") not in seen_secondary:
+                secondary_urls.append(probe)
+                seen_secondary.add(probe.rstrip("/"))
+        cap = len(secondary_urls) if max_secondary_pages is None else max(0, max_secondary_pages)
+        for page_url in secondary_urls[:cap]:
             page, page_social, page_requests, page_bytes, page_elapsed, page_error, page_extras = _fetch_secondary_page(
                 page_url,
                 homepage_domain=homepage_domain,
@@ -507,6 +589,8 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
                 social.extend(page_extras.get("structured_social", []))
                 job_postings.extend(page_extras.get("job_postings", []))
                 news_articles.extend(page_extras.get("news_articles", []))
+                if page_extras.get("careers"):
+                    careers_pages.append({"url": page["url"], "title": (page.get("title") or "")[:200]})
                 # Fill missing structured facts from secondary pages (contact
                 # and locations pages often carry richer JSON-LD than the home).
                 for key, val in page_extras.get("structured_facts", {}).items():
@@ -522,6 +606,10 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         value["structured_facts"] = structured_facts
         value["job_postings"] = _dedupe_job_postings(job_postings)
         value["news_articles"] = _dedupe_articles(news_articles)
+        value["careers_pages"] = sorted(
+            {(item["url"], item["title"]): item for item in careers_pages}.values(),
+            key=lambda item: (item["url"], item["title"]),
+        )
         value["crawl_errors"] = crawl_errors
         return evidence("website", "available", "registry_linked_company_website", final_url, value=value, note="Company-controlled claim layer; not an official registry fact", content_sha256=value["content_sha256"]), {"requests": requests, "bytes": bytes_received, "latencies_ms": page_latencies}
     except urllib.error.HTTPError as exc:

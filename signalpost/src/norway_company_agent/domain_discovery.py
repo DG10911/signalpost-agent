@@ -51,6 +51,30 @@ def candidate_domains(name: str, *, max_candidates: int = 6) -> list[str]:
     return out[:max_candidates]
 
 
+FREEMAIL_DOMAINS = {
+    "gmail.com", "googlemail.com", "hotmail.com", "hotmail.no", "outlook.com",
+    "live.com", "live.no", "yahoo.com", "yahoo.no", "icloud.com", "me.com",
+    "online.no", "broadpark.no", "start.no", "getmail.no", "c2i.net",
+}
+
+
+def candidate_domains_from_email(email: str | None) -> list[str]:
+    """Company website candidates derived from the OFFICIAL registry email.
+
+    The address is the entity's self-declared contact in the Enhetsregisteret, so
+    its domain is an official self-attribution — a strong candidate, but still
+    passed through the same org-number / registry-contact gate (a shared
+    franchise or group address can point at a parent). Free-mail providers are
+    dropped (they carry no domain identity)."""
+    value = str(email or "").strip().lower()
+    if "@" not in value:
+        return []
+    domain = value.rsplit("@", 1)[1].strip().strip(".")
+    if not domain or domain in FREEMAIL_DOMAINS or "." not in domain:
+        return []
+    return ["https://" + domain + "/"]
+
+
 def _page_text(value: dict[str, Any]) -> str:
     parts = [value.get("title") or "", value.get("description") or "", value.get("main_text_excerpt") or ""]
     for org in value.get("structured_organisations") or []:
@@ -102,10 +126,17 @@ def discover_website(
     fetch_website: Callable[[str], tuple[dict[str, Any], dict[str, Any]]],
     *,
     max_candidates: int = 4,
+    extra_candidates: list[str] | None = None,
 ) -> tuple[Optional[dict[str, Any]], dict[str, Any]]:
     """Try discovered candidates; return a verified website evidence record only
     when the exact organisation number appears on the page. Returns
-    (record_or_None, diagnostics). Registry-listed sites are handled elsewhere."""
+    (record_or_None, diagnostics). Registry-listed sites are handled elsewhere.
+
+    ``extra_candidates`` are exact-entity URLs already keyed to this organisation
+    number by an official source (e.g. the employer homepage self-declared in a
+    NAV job ad whose ``employer.orgnr`` equals this org). They are tried first,
+    but still go through the same org-number / registry-contact gate — an
+    official self-declaration is a strong candidate, never a bypass."""
     org = str(profile.get("organisation_number") or "")
     diag = {"candidates": [], "requests": 0, "verdict": "no_candidate"}
     if not org.isdigit():
@@ -113,9 +144,18 @@ def discover_website(
     reg_value = (profile.get("evidence", {}) or {}).get("registry", {}).get("value") or {}
     fingerprint = {"email": reg_value.get("epostadresse"),
                    "phone": reg_value.get("telefon") or reg_value.get("mobil")}
+    urls: list[str] = []
+    for url in extra_candidates or []:
+        url = str(url or "").strip()
+        if url and url not in urls:
+            urls.append(url if "://" in url else "https://" + url)
     for domain in candidate_domains(profile.get("name") or "", max_candidates=max_candidates):
-        diag["candidates"].append(domain)
-        record, metrics = fetch_website("https://" + domain)
+        url = "https://" + domain
+        if url not in urls:
+            urls.append(url)
+    for url in urls:
+        diag["candidates"].append(url)
+        record, metrics = fetch_website(url)
         diag["requests"] += int(metrics.get("requests", 0) or 0)
         if record.get("status") != "available":
             continue
@@ -127,7 +167,7 @@ def discover_website(
         method = None
         if verdict == "match":
             method = "exact_org_number_on_discovered_site"
-        elif contact_verdict(fingerprint, value, value.get("final_url") or ("https://" + domain)):
+        elif contact_verdict(fingerprint, value, value.get("final_url") or url):
             # No conflicting org number AND the site carries the registry email
             # domain or phone -> strong company self-attribution.
             method = "registry_contact_on_discovered_site"

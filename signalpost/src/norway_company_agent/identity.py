@@ -173,9 +173,11 @@ def apply_website_identity_gate(profile: dict[str, Any], website: dict[str, Any]
         value["quarantined_structured_facts"] = value.get("structured_facts") or {}
         value["quarantined_job_postings"] = value.get("job_postings") or []
         value["quarantined_news_articles"] = value.get("news_articles") or []
+        value["quarantined_careers_pages"] = value.get("careers_pages") or []
         value["structured_facts"] = {}
         value["job_postings"] = []
         value["news_articles"] = []
+        value["careers_pages"] = []
     website["value"] = value
     return {
         "website": website,

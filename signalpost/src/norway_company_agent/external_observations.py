@@ -186,5 +186,17 @@ def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None
             metrics={"title": job.get("title"), "date_posted": job.get("date_posted")},
         ))
 
+    # 3b) Company careers/jobs pages are themselves hiring signals (the shared
+    #     reference set records the careers URL), even without JobPosting data.
+    for i, page in enumerate(value.get("careers_pages") or []):
+        observations.append(base(
+            id=f"careers-{org}-{i}",
+            platform="company_site",
+            signal_type="job_posting",
+            source_url=page.get("url") or final_url,
+            evidence_span=(page.get("title") or "")[:300] or None,
+            metrics={"kind": "careers_page", "title": page.get("title")},
+        ))
+
     # Only return observations that clear the full publication validator.
     return [obs for obs in observations + reg_obs + nav_obs if publishable_observation(obs)]

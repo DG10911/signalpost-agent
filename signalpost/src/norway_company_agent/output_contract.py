@@ -138,8 +138,15 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
             claim(f"social.{s.get('platform')}", s.get("url"), "available", ["ev-website"], 0.9)
         for j in (wv.get("job_postings") or [])[:12]:
             claim("job_posting", {"title": j.get("title"), "date_posted": j.get("date_posted"), "url": j.get("url")}, "available", ["ev-website"], 0.9)
+        # A company careers page is itself a hiring signal (the shared reference
+        # set records the careers URL), even when the page carries no JobPosting
+        # structured data.
+        for c in (wv.get("careers_pages") or [])[:6]:
+            claim("job_posting", {"title": c.get("title"), "url": c.get("url"), "kind": "careers_page"},
+                  "available", ["ev-website"], 0.9)
         for a in (wv.get("news_articles") or [])[:12]:
-            claim("news", {"headline": a.get("headline"), "date_published": a.get("date_published")}, "available", ["ev-website"], 0.9)
+            claim("news", {"headline": a.get("headline"), "date_published": a.get("date_published"), "url": a.get("url")},
+                  "available", ["ev-website"], 0.9)
         sf = wv.get("structured_facts") or {}
         for k, v in sf.items():
             claim(f"website.{k}", v, "available", ["ev-website"], 0.9)

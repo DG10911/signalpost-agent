@@ -118,3 +118,67 @@ def test_gate_quarantines_new_fields_when_not_exact():
     assert result["quarantined_job_postings"] == 1
     assert result["quarantined_news_articles"] == 1
     assert value["quarantined_structured_facts"]["telephone"] == "+47 00 00 00 00"
+
+
+def test_html_dated_items_from_time_tags():
+    from bs4 import BeautifulSoup
+    html = """
+    <ul><li><time datetime="2025-09-22">22.09.2025</time>
+      <a href="/nyheter/bedre-sosial-funksjon">Bedre sosial funksjon etter hjerneskade</a></li></ul>
+    """
+    items = website.html_dated_items(BeautifulSoup(html, "lxml"), "https://example.no/aktuelt")
+    assert items and items[0]["headline"] == "Bedre sosial funksjon etter hjerneskade"
+    assert items[0]["date_published"] == "2025-09-22"
+    assert items[0]["url"] == "https://example.no/nyheter/bedre-sosial-funksjon"
+
+
+def test_html_dated_items_fallback_on_article_links():
+    from bs4 import BeautifulSoup
+    html = '<article><a href="/aktuelt/ny-kunde">Ny kunde</a><span>12.03.2025</span></article>'
+    items = website.html_dated_items(BeautifulSoup(html, "lxml"), "https://example.no/")
+    assert any(i["headline"] == "Ny kunde" for i in items)
+
+
+def test_is_careers_page_detects_norwegian_and_english():
+    assert website.is_careers_page("https://x.no/careers")
+    assert website.is_careers_page("https://x.no/karriere")
+    assert website.is_careers_page("https://x.no/om-oss/ledige-stillinger")
+    assert not website.is_careers_page("https://x.no/kontakt")
+
+
+def _verified_profile(value):
+    value = dict(value)
+    value["identity_assessment"] = {"publishable": True, "status": "exact", "score": 1.0}
+    return {"organisation_number": "923609016",
+            "evidence": {"website": {"status": "available", "value": value,
+                                     "source_url": "https://example.no", "retrieved_at": "2026-10-01T00:00:00Z",
+                                     "content_sha256": "a" * 64}}}
+
+
+def test_careers_page_becomes_a_job_posting_observation():
+    from norway_company_agent.external_observations import build_observations
+    from norway_company_agent.external_footprint import publishable_observation
+    prof = _verified_profile({"registered_domain": "example.no", "careers_pages": [{"url": "https://example.no/careers", "title": "Ledige stillinger"}]})
+    obs = [o for o in build_observations(prof) if o["signal_type"] == "job_posting" and o.get("metrics", {}).get("kind") == "careers_page"]
+    assert obs and publishable_observation(obs[0])
+    assert obs[0]["organisation_number"] == "923609016"
+
+
+def test_gate_quarantines_careers_pages_when_not_exact():
+    web = {"status": "available", "value": {"careers_pages": [{"url": "https://x.no/careers"}]}}
+    out = apply_website_identity_gate({"organisation_number": "923609016", "evidence": {}}, web)
+    assert out["website"]["value"]["careers_pages"] == []
+    assert out["website"]["value"]["quarantined_careers_pages"]
+
+
+def test_canonical_probe_urls_stay_on_homepage_domain():
+    urls = website._canonical_probe_urls("https://www.equinor.com/")
+    assert "https://www.equinor.com/careers" in urls
+    assert "https://www.equinor.com/karriere" in urls
+    assert all(u.startswith("https://www.equinor.com/") for u in urls)
+
+
+def test_html_dated_items_ignores_time_only_values():
+    from bs4 import BeautifulSoup
+    html = '<ul><li><time datetime="08:00">08:00</time><a href="/nyheter/x">Åpningstider</a></li></ul>'
+    assert website.html_dated_items(BeautifulSoup(html, "lxml"), "https://x.no/") == []
