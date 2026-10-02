@@ -35,9 +35,13 @@ field families, all behind the identity gate (no new wrong-company surface):
    `ad_content.employer.orgnr`. Exact-entity, official, run OUTSIDE the eval
    window; eval-time lookup is O(1). Budget- and rate-limit-aware (throttle +
    429 backoff).
-5. **UX (separate `JBOX-BRIEF.md`).** The received breakdown scores UX 3.2/8 and
-   asks for search/filtering, visible sources and dates, honest missing states
-   and export — exactly the product brief in `JBOX-BRIEF.md`.
+5. **UX.** The received breakdown scores UX 3.2/8 and asks for search/filtering,
+   visible sources and dates, honest missing states and export. `build_profile_site.py`
+   now ships **search + filters (coverage / municipality / industry), a result
+   count, a CSV export of the index, a per-company JSON download**, and surfaces
+   the new **dated-news and hiring-page** signals (each still next to its source
+   URL and date, with the six availability states shown honestly). `JBOX-BRIEF.md`
+   is the paste-ready brief for a richer hosted Next.js UI (the JBOX bonus path).
 
 **Measured V9 → V10 on the 1,000-company cohort** (fresh run, 9,669 requests,
 exact registry identity 1.0, 0 wrong-company): website reachable **66 → 127**,
@@ -63,6 +67,9 @@ uv run python scripts/run_competition_batch.py --organisations entry-companies.j
   --observations-output out/v10/observations.jsonl --contract-output out/v10/submission-contract.jsonl \
   --nav-index out/nav-index.json --nav-homepages out/nav-index.json.homepages.json \
   --discover-websites --require-exact-identity
+
+# browsable, searchable, filterable, exportable profile site (UX dimension)
+uv run python scripts/build_profile_site.py --profiles out/v10/profiles.jsonl --output out/site
 ```
 
 ---

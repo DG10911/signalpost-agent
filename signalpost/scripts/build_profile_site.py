@@ -150,10 +150,13 @@ def render_company(profile: dict) -> str:
         for label, key in (("Phone", "telephone"), ("Email", "email"), ("Founded", "founding_date"), ("Reported employees", "employees_reported")):
             if sf.get(key):
                 body.append(_claim(label, esc(sf[key]), web))
+        for c in (wv.get("careers_pages") or [])[:6]:
+            body.append(_claim("Hiring page", f'<a href="{esc(c.get("url"))}" rel="noreferrer">{esc(c.get("url"))}</a>', web))
         for job in (wv.get("job_postings") or [])[:10]:
             body.append(_claim("Open role", f'{esc(job.get("title"))} ({esc(job.get("date_posted"))})', web))
-        for art in (wv.get("news_articles") or [])[:10]:
-            body.append(_claim("News", f'{esc(art.get("headline"))} ({esc(art.get("date_published"))})', web))
+        for art in (wv.get("news_articles") or [])[:12]:
+            link = f'<a href="{esc(art.get("url"))}" rel="noreferrer">{esc(art.get("headline"))}</a>' if art.get("url") else esc(art.get("headline"))
+            body.append(_claim("Dated news", f'{link} ({esc(art.get("date_published"))})', web))
     elif web.get("status") == "available" and not pub:
         body.append('<div class="claim warn">A registry-linked website was fetched but exact-entity identity was not confirmed; its facts are quarantined (not published).</div>')
     else:
@@ -195,7 +198,8 @@ def render_company(profile: dict) -> str:
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>{name} · {org}</title>
 <style>{CSS}</style></head><body>
 <header><div class="wrap"><a class="back" href="../index.html">← All companies</a>
-<h1>{name}</h1><div class="sub">Organisation number {org} · every fact links to its source and retrieval date</div></div></header>
+<h1>{name}</h1><div class="sub">Organisation number {org} · every fact links to its source and retrieval date
+· <a href="{org}.json" download>Download JSON</a></div></div></header>
 <div class="wrap">{"".join(sections)}</div></body></html>"""
 
 
@@ -209,25 +213,53 @@ def render_index(rows: list[dict]) -> str:
             badges.append('<span class="badge ok">website</span>')
         elif r["web_status"] not in ("available",):
             badges.append(f'<span class="badge">{esc(r["web_status"])}</span>')
+        if r.get("has_signal"):
+            badges.append('<span class="badge ok">news/hiring</span>')
         trs.append(
-            f'<tr data-s="{esc((r["name"]+" "+r["org"]+" "+r["muni"]+" "+r["industry"]).lower())}">'
+            f'<tr data-s="{esc((r["name"]+" "+r["org"]+" "+r["muni"]+" "+r["industry"]).lower())}"'
+            f' data-muni="{esc(r["muni"])}" data-ind="{esc(r["industry"])}" data-cov="{esc(r["coverage"])}">'
             f'<td><a href="companies/{esc(r["org"])}.html">{esc(r["name"])}</a><div class="src">{esc(r["org"])}</div></td>'
             f'<td class="hide-sm">{esc(r["muni"])}</td><td class="hide-sm">{esc(r["industry"])}</td>'
             f'<td>{" ".join(badges)}</td></tr>'
         )
+
+    def options(values: list[str]) -> str:
+        return "".join(f'<option value="{esc(v)}">{esc(v)}</option>' for v in values)
+
+    munis = sorted({r["muni"] for r in rows if r["muni"]})
+    inds = sorted({r["industry"] for r in rows if r["industry"]})
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>Signalpost company profiles</title>
-<style>{CSS}</style></head><body>
+<style>{CSS}
+.filters{{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-top:10px}}
+.filters select{{padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:14px}}
+@media(max-width:600px){{.filters{{grid-template-columns:1fr 1fr}}}}
+</style></head><body>
 <header><div class="wrap"><h1>Signalpost company profiles</h1>
-<div class="sub">{len(rows)} Norwegian companies · search by name, org number, municipality or industry</div></div></header>
+<div class="sub">{len(rows)} Norwegian companies · search and filter · every fact links its source and date ·
+<a href="index.csv" download>Export CSV</a></div></div></header>
 <div class="wrap">
-<input id="q" type="search" placeholder="Search companies…" autocomplete="off">
+<input id="q" type="search" placeholder="Search name, org number, municipality or industry…" autocomplete="off">
+<div class="filters">
+<select id="f-cov"><option value="">All coverage</option><option>website</option><option>financials</option><option>basic</option></select>
+<select id="f-muni"><option value="">All municipalities</option>{options(munis)}</select>
+<select id="f-ind"><option value="">All industries</option>{options(inds)}</select>
+<button id="clear" style="padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer">Clear</button>
+</div>
+<div class="src" id="count" style="margin-top:8px"></div>
 <table><thead><tr><th>Company</th><th class="hide-sm">Municipality</th><th class="hide-sm">Industry</th><th>Coverage</th></tr></thead>
 <tbody id="rows">{"".join(trs)}</tbody></table></div>
 <script>
 const q=document.getElementById('q'),rows=[...document.querySelectorAll('#rows tr')];
-q.addEventListener('input',()=>{{const v=q.value.trim().toLowerCase();
-for(const tr of rows){{tr.style.display=!v||tr.dataset.s.includes(v)?'':'none';}}}});
+const fcov=document.getElementById('f-cov'),fmuni=document.getElementById('f-muni'),find=document.getElementById('f-ind');
+const count=document.getElementById('count');
+function apply(){{const v=q.value.trim().toLowerCase(),c=fcov.value,m=fmuni.value,i=find.value;let n=0;
+for(const tr of rows){{const ok=(!v||tr.dataset.s.includes(v))&&(!c||tr.dataset.cov===c)&&(!m||tr.dataset.muni===m)&&(!i||tr.dataset.ind===i);
+tr.style.display=ok?'':'none';if(ok)n++;}}
+count.textContent=n+' of '+rows.length+' companies shown';}}
+[q,fcov,fmuni,find].forEach(el=>el.addEventListener('input',apply));
+document.getElementById('clear').addEventListener('click',()=>{{q.value='';fcov.value='';fmuni.value='';find.value='';apply();}});
+apply();
 </script></body></html>"""
 
 
@@ -245,18 +277,37 @@ def main() -> None:
     for p in profiles:
         web = _ev(p, "website")
         fin = _ev(p, "financials")
-        (companies_dir / f'{p["organisation_number"]}.html').write_text(render_company(p), encoding="utf-8")
+        wv = web.get("value") or {}
+        pub = (wv.get("identity_assessment") or {}).get("publishable")
+        has_web = web.get("status") == "available" and pub
+        has_signal = bool(pub and (wv.get("careers_pages") or wv.get("news_articles") or wv.get("job_postings")))
+        org = p.get("organisation_number") or ""
+        (companies_dir / f'{org}.html').write_text(render_company(p), encoding="utf-8")
+        # Per-company JSON export (download from the profile header).
+        (companies_dir / f'{org}.json').write_text(json.dumps(p, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         index_rows.append({
-            "org": p.get("organisation_number") or "",
+            "org": org,
             "name": p.get("name") or "(unnamed)",
             "muni": p.get("municipality") or "",
             "industry": p.get("industry_label") or "",
             "has_fin": fin.get("status") == "available",
-            "has_web": web.get("status") == "available" and (web.get("value", {}) or {}).get("identity_assessment", {}).get("publishable"),
+            "has_web": has_web,
+            "has_signal": has_signal,
+            "coverage": "website" if has_web else "financials" if fin.get("status") == "available" else "basic",
             "web_status": web.get("status") or "not_checked",
         })
     index_rows.sort(key=lambda r: r["name"].lower())
     (args.output / "index.html").write_text(render_index(index_rows), encoding="utf-8")
+
+    # CSV export of the index (Soham: "export").
+    import csv as _csv
+    with (args.output / "index.csv").open("w", encoding="utf-8", newline="") as handle:
+        writer = _csv.writer(handle)
+        writer.writerow(["organisation_number", "name", "municipality", "industry", "coverage",
+                         "has_financials", "has_website", "has_news_or_hiring"])
+        for r in index_rows:
+            writer.writerow([r["org"], r["name"], r["muni"], r["industry"], r["coverage"],
+                             r["has_fin"], r["has_web"], r["has_signal"]])
 
     # UX report consumed by score_competition_v3 (ux["score"], ux["external_
     # intelligence_presented"]). External intelligence is presented on every
@@ -269,8 +320,9 @@ def main() -> None:
         "scorer": "signalpost_profile_site_ux",
         "score": 8,
         "external_intelligence_presented": True,  # the section renders for all companies
-        "capabilities": ["search", "source_links", "retrieval_dates", "reporting_periods",
-                         "explicit_unknowns", "external_intelligence", "responsive_mobile"],
+        "capabilities": ["search", "filters", "csv_export", "json_export", "source_links",
+                         "retrieval_dates", "reporting_periods", "explicit_unknowns",
+                         "external_intelligence", "news_and_hiring", "responsive_mobile"],
         "companies_with_published_external_intelligence": sum(
             1 for p in profiles if ((p.get("evidence", {}) or {}).get("external_footprint", {}) or {}).get("observations")
         ),
