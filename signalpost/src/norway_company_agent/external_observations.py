@@ -122,7 +122,7 @@ def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None
     if not assessment.get("publishable"):
         return [o for o in reg_obs + nav_obs if publishable_observation(o)]
 
-    final_url = value.get("final_url")
+    final_url = value.get("final_url") or web.get("source_url")
     retrieved_at = web.get("retrieved_at")
     page_hash = _sha64(web.get("content_sha256") or value.get("content_sha256"), seed=org + (final_url or ""))
     identity_proof = [{
@@ -198,5 +198,80 @@ def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None
             metrics={"kind": "careers_page", "title": page.get("title")},
         ))
 
+    # 4) Dated public activity from the verified site (news/blog/press items).
+    for i, art in enumerate(value.get("news_articles") or []):
+        headline = (art.get("headline") or "").strip()
+        if not headline:
+            continue
+        observations.append(base(
+            id=f"news-{org}-{i}",
+            platform="company_site",
+            signal_type="public_post",
+            source_url=art.get("url") or final_url,
+            effective_at=art.get("date_published") or retrieved_at,
+            evidence_span=headline[:300],
+            metrics={"headline": headline, "date_published": art.get("date_published")},
+        ))
+
+    # 5) Customer reviews / aggregate ratings published by the company itself
+    #    (schema.org AggregateRating / Review on a verified company site). These
+    #    are exact-entity (the site already passed the gate) and rights-approved
+    #    (`permitted_public_page`), so no wrong-company or rights surface.
+    for i, org_node in enumerate(value.get("structured_organisations") or []):
+        if not isinstance(org_node, dict):
+            continue
+        rating = org_node.get("aggregateRating")
+        if isinstance(rating, dict):
+            try:
+                value_num = float(rating.get("ratingValue") or 0)
+                count = int(rating.get("reviewCount") or rating.get("ratingCount") or 0)
+                best = float(rating.get("bestRating") or 5.0) or 5.0
+                normalized = round(value_num * (5.0 / best), 2)
+                if 0 < normalized <= 5.0 and count > 0:
+                    observations.append(base(
+                        id=f"rating-{org}-{i}",
+                        platform="company_site",
+                        signal_type="review_summary",
+                        source_class="customer_review",
+                        evidence_span=f"Customer rating {normalized:.1f}/5 from {count} reviews on the verified company site.",
+                        metrics={"rating": normalized, "review_count": count, "rating_scale": 5},
+                    ))
+            except (TypeError, ValueError):
+                pass
+        raw_reviews = org_node.get("review") or org_node.get("reviews") or []
+        if isinstance(raw_reviews, dict):
+            raw_reviews = [raw_reviews]
+        for j, rev in enumerate(raw_reviews if isinstance(raw_reviews, list) else []):
+            if not isinstance(rev, dict):
+                continue
+            text = str(rev.get("reviewBody") or rev.get("description") or "").strip()
+            if not text:
+                continue
+            observations.append(base(
+                id=f"review-{org}-{i}-{j}",
+                platform="company_site",
+                signal_type="review",
+                source_class="customer_review",
+                evidence_span=text[:1200],
+                effective_at=str(rev.get("datePublished") or rev.get("dateCreated") or retrieved_at),
+                reviewer_id=str((rev.get("author") or {}).get("name") if isinstance(rev.get("author"), dict) else rev.get("author") or f"reviewer-{j}"),
+                metrics={"rating": _review_rating(rev)},
+            ))
+
     # Only return observations that clear the full publication validator.
     return [obs for obs in observations + reg_obs + nav_obs if publishable_observation(obs)]
+
+
+def _review_rating(rev: dict[str, Any]) -> float | None:
+    rating = rev.get("reviewRating")
+    try:
+        if isinstance(rating, dict):
+            value_num = float(rating.get("ratingValue") or 0)
+            best = float(rating.get("bestRating") or 5.0) or 5.0
+        else:
+            value_num = float(rating or rev.get("ratingValue") or 0)
+            best = 5.0
+        normalized = round(value_num * (5.0 / best), 2)
+        return normalized if 0 < normalized <= 5.0 else None
+    except (TypeError, ValueError):
+        return None

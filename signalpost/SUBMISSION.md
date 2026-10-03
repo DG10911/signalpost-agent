@@ -1,3 +1,29 @@
+# Signalpost submission — V11 (interactive app + ratings/reviews + dated activity)
+
+**V11 adds the two factors the board shows are still live: UX (we were 3.20/8,
+the leaders 8.00/8) and the remaining external families.**
+
+6. **Interactive app (`app.py`).** A real product, not a static page:
+   *Research* (any organisation number → full profile with an evidence drawer on
+   every fact: source URL, retrieval date, availability state, reporting period),
+   *Search* (name / org no. / municipality / industry / coverage, with a CSV
+   export), and *Compare* (2–4 companies side by side), plus a per-company JSON
+   export and honest `not_available` / `blocked` / `ambiguous` states. Run:
+   `uv run --with streamlit streamlit run app.py`.
+7. **Company-site ratings/reviews + dated activity as observations.** Schema.org
+   `AggregateRating`/`Review` on a verified company site → `review_summary` /
+   `review` observations; each dated news/blog item → a `public_post` observation
+   (the "dated public activity" family). All gated, `permitted_public_page`,
+   rights-approved. On the 1,000 cohort this took external observations
+   **1,253 → 1,325** (72 dated-activity items) with 0 wrong-company.
+
+Measured **V9 → V11** (1,000 cohort): website reachable **66 → 127**, published
+sites **27 → 40**, careers/hiring pages **0 → 16**, dated news **16 → 72**,
+social handles **33 → 45**, external observations **1,212 → 1,325**; exact
+registry identity **1.0**, wrong-company **0**, 168 tests.
+
+---
+
 # Signalpost submission — V10 (dated news, hiring, website discovery)
 
 **Why V10.** The official scored run (55.01/100) confirmed the gap precisely:

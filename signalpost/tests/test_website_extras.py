@@ -182,3 +182,30 @@ def test_html_dated_items_ignores_time_only_values():
     from bs4 import BeautifulSoup
     html = '<ul><li><time datetime="08:00">08:00</time><a href="/nyheter/x">Åpningstider</a></li></ul>'
     assert website.html_dated_items(BeautifulSoup(html, "lxml"), "https://x.no/") == []
+
+
+def test_reviews_and_dated_activity_become_observations():
+    from norway_company_agent.external_observations import build_observations
+    from norway_company_agent.external_footprint import publishable_observation
+    value = {
+        "registered_domain": "example.no",
+        "structured_organisations": [{
+            "@type": "Organization", "name": "Example AS",
+            "aggregateRating": {"ratingValue": "4.6", "reviewCount": "128", "bestRating": "5"},
+            "review": [{"author": {"name": "Kari"}, "reviewBody": "Great service and quick delivery.",
+                        "reviewRating": {"ratingValue": "5"}, "datePublished": "2025-08-01"}],
+        }],
+        "news_articles": [{"headline": "Ny kunde i Bergen", "date_published": "2025-09-10", "url": "https://example.no/nyheter/ny-kunde"}],
+    }
+    obs = build_observations(_verified_profile(value))
+    kinds = {(o["platform"], o["signal_type"]) for o in obs}
+    assert ("company_site", "review_summary") in kinds
+    assert ("company_site", "review") in kinds
+    assert ("company_site", "public_post") in kinds
+    for o in obs:
+        assert publishable_observation(o), validate_reasons(o)
+
+
+def validate_reasons(o):
+    from norway_company_agent.external_footprint import validate_observation
+    return validate_observation(o)
