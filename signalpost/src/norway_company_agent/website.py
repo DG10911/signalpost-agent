@@ -194,7 +194,12 @@ def normalize_social_url(url: str) -> dict[str, str] | None:
 # corporate sites (Equinor, Tomra, …) render their nav in JS, so the careers /
 # news pages never appear as static <a> links; the shared reference set still
 # records those URLs. Bounded and same-domain, so it cannot stray off-site.
-CANONICAL_PROBE_PATHS = ("careers", "karriere", "jobb", "ledige-stillinger", "aktuelt", "nyheter")
+CANONICAL_PROBE_PATHS = (
+    # hiring
+    "careers", "karriere", "jobb", "ledige-stillinger",
+    # dated activity / news (Norwegian + English compound slugs)
+    "aktuelt", "nyheter", "siste-nytt", "blogg", "pressemeldinger", "presserom", "news", "press",
+)
 
 
 def _canonical_probe_urls(base_url: str) -> list[str]:
@@ -426,7 +431,8 @@ def is_careers_page(url: str, title: str = "") -> bool:
     return any(term in haystack for term in CAREERS_TERMS)
 
 
-_ARTICLE_PATH_TERMS = ("/nyhet", "/aktuelt", "/news", "/press", "/blog", "/artikkel", "/story")
+_ARTICLE_PATH_TERMS = ("/nyhet", "/aktuelt", "/news", "/press", "/blog", "/artikkel", "/story",
+                       "/siste-nytt", "/blogg", "/pressemelding", "/presserom")
 
 
 def html_dated_items(soup: BeautifulSoup, base_url: str) -> list[dict[str, Any]]:
@@ -565,13 +571,15 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         bytes_received = len(raw)
         page_latencies = [elapsed]
         homepage_domain = value["registered_domain"]
-        secondary_urls = _priority_links(final_url, soup)
+        # Keep the most relevant discovered links, then ALWAYS try the canonical
+        # careers/news paths (JS sites hide these from static links).
+        secondary_urls = _priority_links(final_url, soup)[:6]
         seen_secondary = {u.rstrip("/") for u in secondary_urls}
         for probe in _canonical_probe_urls(final_url):
             if probe.rstrip("/") not in seen_secondary:
                 secondary_urls.append(probe)
                 seen_secondary.add(probe.rstrip("/"))
-        cap = len(secondary_urls) if max_secondary_pages is None else max(0, max_secondary_pages)
+        cap = min(len(secondary_urls), 14) if max_secondary_pages is None else max(0, max_secondary_pages)
         for page_url in secondary_urls[:cap]:
             page, page_social, page_requests, page_bytes, page_elapsed, page_error, page_extras = _fetch_secondary_page(
                 page_url,

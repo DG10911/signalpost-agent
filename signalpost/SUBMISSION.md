@@ -17,10 +17,15 @@ the leaders 8.00/8) and the remaining external families.**
    rights-approved. On the 1,000 cohort this took external observations
    **1,253 → 1,325** (72 dated-activity items) with 0 wrong-company.
 
-Measured **V9 → V11** (1,000 cohort): website reachable **66 → 127**, published
-sites **27 → 40**, careers/hiring pages **0 → 16**, dated news **16 → 72**,
-social handles **33 → 45**, external observations **1,212 → 1,325**; exact
-registry identity **1.0**, wrong-company **0**, 168 tests.
+Measured **V9 → V12** (fresh 1,000-company run): website reachable **66 → ~130**,
+published sites **27 → 42**, careers/hiring pages **0 → 11+**, dated news
+**16 → 120** (widened Norwegian news slugs + 4 discovered links + canonical
+paths per site, capped at 14 pages to stay inside the request budget), social
+handles **33 → 53** (FB 24 / IG 16 / LinkedIn 10 / X 2 / TikTok 1), external
+observations **1,212 → 1,376** (120 `public_post` dated-activity items); exact
+registry identity **1.0**, wrong-company **0**, 168 tests. (The committed
+`out/` artifact is this run; the official evaluation runs the *agent* fresh on
+its own batches, so the code — not the precomputed profiles — is what scores.)
 
 ---
 

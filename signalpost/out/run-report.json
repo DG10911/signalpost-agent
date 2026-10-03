@@ -1,11 +1,11 @@
 {
-  "run_id": "v11",
-  "started_at": "2026-10-03T08:45:15.234046Z",
-  "completed_at": "2026-10-03T08:45:46.511052Z",
+  "run_id": "v12",
+  "started_at": "2026-10-03T08:48:07.068166Z",
+  "completed_at": "2026-10-03T09:26:20.143775Z",
   "expected_count": 1000,
   "emitted_envelopes": 1000,
-  "resumed_profiles": 1000,
-  "profiles_fetched_this_run": 0,
+  "resumed_profiles": 0,
+  "profiles_fetched_this_run": 1000,
   "modules": [
     "registry",
     "accounting_obligation",
@@ -25,10 +25,10 @@
     "absent_from_snapshot": 0
   },
   "operations": {
-    "requests": 0,
-    "bytes": 0,
-    "p50_ms": null,
-    "p95_ms": null
+    "requests": 10491,
+    "bytes": 59452220,
+    "p50_ms": 861,
+    "p95_ms": 1418
   },
   "validation": {
     "passed": true,
@@ -42,5 +42,5 @@
     "invalid_states": []
   },
   "exact_registry": 1.0,
-  "external_observations": 1325
+  "external_observations": 1376
 }
