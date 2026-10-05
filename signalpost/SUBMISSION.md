@@ -1,3 +1,39 @@
+# Signalpost submission — V13 (registry website + handle-verified socials)
+
+**V13 targets the exact remaining gaps in the 60.11 breakdown** (dated news 0%,
+hiring 0%, company website 33.7%). The scored run's representative misses
+(ELOPAK `elopak.com`, G3 `linkedin.com/company/g3-gausdal-treindustrier-sa`,
+EQUINOR `equinor.com/careers`, SUNNAAS news) were reproduced locally and fixed:
+
+1. **Registry-listed website is published as an official fact.** The registry's
+   own `hjemmeside` authoritatively associates the domain with the organisation
+   number, so `official_website` is emitted `available` even when the (often
+   JS-rendered) page cannot self-verify the entity. ELOPAK (gate 0.30) and G3
+   (gate 0.85) now publish `www.elopak.com` / `www.g3i.no`; crawl-derived facts
+   stay gated.
+2. **Social handles publish on their own identity proof.** A handle that
+   contains the full legal-name sequence (e.g.
+   `linkedin.com/company/g3-gausdal-treindustrier-sa`) is exact-entity evidence
+   on its own, independent of the homepage text gate. This recovers G3's missed
+   LinkedIn and many footer-only handles. Parent/aggregator handles still fail
+   the handle check.
+
+Verified on the four official practice-sample companies: all four now emit
+`official_website`, G3 emits its LinkedIn, EQUINOR emits careers + news + 4
+socials, SUNNAAS emits LinkedIn + careers + news. A fresh **100-company batch**
+ran in **4.5 min / 1,064 requests** — inside the 2,000-request / 45-min budget.
+169 tests, exact identity 1.0, 0 wrong-company.
+
+**The remaining structural lever is website *discovery*** (the random universe
+is holdco-heavy: only ~10% carry a registry website, while the checked
+collection covers ~34%). Deterministic discovery (registry email domain, name
+guesses, NAV homepage) is already on and bounded; the next tier needs a
+permitted **Google Places / Brave Search** key (see the key request to the
+organiser). The connectors are wired key-gated so they activate the moment a
+key is supplied.
+
+---
+
 # Signalpost submission — V11 (interactive app + ratings/reviews + dated activity)
 
 **V11 adds the two factors the board shows are still live: UX (we were 3.20/8,

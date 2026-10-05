@@ -154,10 +154,14 @@ def apply_website_identity_gate(profile: dict[str, Any], website: dict[str, Any]
     value["discovered_social_links"] = original
     social_assessments = [assess_social_identity(profile, link) for link in original]
     value["social_link_assessments"] = social_assessments
+    # A social handle that contains the full legal-name sequence is exact-entity
+    # proof on its own (e.g. linkedin.com/company/g3-gausdal-treindustrier-sa),
+    # independent of whether the homepage text confirmed the entity. Publish it
+    # on the handle's own assessment; parent/aggregator handles still fail it.
     value["social_links"] = [
         {"platform": item["platform"], "url": item["url"]}
         for item in social_assessments
-        if assessment["publishable"] and item["publishable"]
+        if item["publishable"]
     ]
     # Company-reported facts and job postings are only publishable once the site
     # resolves to the exact legal entity. When the gate does not confirm the

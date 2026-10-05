@@ -119,8 +119,13 @@ def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None
         return [o for o in reg_obs + nav_obs if publishable_observation(o)]
     value = web.get("value") or {}
     assessment = value.get("identity_assessment") or {}
-    if not assessment.get("publishable"):
-        return [o for o in reg_obs + nav_obs if publishable_observation(o)]
+    # The page-level gate covers company-profile / jobs / news / reviews. Social
+    # handles carry their OWN exact-entity proof (the handle contains the legal
+    # name, e.g. linkedin.com/company/g3-gausdal-treindustrier-sa), so a
+    # handle-verified profile is published even when the homepage itself is only
+    # a partial name match. ``value["social_links"]`` is already filtered to
+    # handle-publishable links by the identity gate.
+    website_verified = bool(assessment.get("publishable"))
 
     final_url = value.get("final_url") or web.get("source_url")
     retrieved_at = web.get("retrieved_at")
@@ -150,8 +155,14 @@ def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None
 
     observations: list[dict[str, Any]] = []
 
+    # Rich page-level facts publish only when the homepage passed the exact gate;
+    # handle-verified socials publish independently (their own proof).
+    def append_rich(record: dict[str, Any]) -> None:
+        if website_verified:
+            observations.append(record)
+
     # 1) Verified official web presence.
-    observations.append(base(
+    append_rich(base(
         id=f"company-profile-{org}",
         platform="company_site",
         signal_type="company_profile",
@@ -176,7 +187,7 @@ def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None
 
     # 3) Job postings from the verified site's structured data.
     for i, job in enumerate(value.get("job_postings") or []):
-        observations.append(base(
+        append_rich(base(
             id=f"job-{org}-{i}",
             platform="company_site",
             signal_type="job_posting",
@@ -189,7 +200,7 @@ def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None
     # 3b) Company careers/jobs pages are themselves hiring signals (the shared
     #     reference set records the careers URL), even without JobPosting data.
     for i, page in enumerate(value.get("careers_pages") or []):
-        observations.append(base(
+        append_rich(base(
             id=f"careers-{org}-{i}",
             platform="company_site",
             signal_type="job_posting",
@@ -203,7 +214,7 @@ def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None
         headline = (art.get("headline") or "").strip()
         if not headline:
             continue
-        observations.append(base(
+        append_rich(base(
             id=f"news-{org}-{i}",
             platform="company_site",
             signal_type="public_post",
@@ -228,7 +239,7 @@ def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None
                 best = float(rating.get("bestRating") or 5.0) or 5.0
                 normalized = round(value_num * (5.0 / best), 2)
                 if 0 < normalized <= 5.0 and count > 0:
-                    observations.append(base(
+                    append_rich(base(
                         id=f"rating-{org}-{i}",
                         platform="company_site",
                         signal_type="review_summary",
@@ -247,7 +258,7 @@ def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None
             text = str(rev.get("reviewBody") or rev.get("description") or "").strip()
             if not text:
                 continue
-            observations.append(base(
+            append_rich(base(
                 id=f"review-{org}-{i}-{j}",
                 platform="company_site",
                 signal_type="review",

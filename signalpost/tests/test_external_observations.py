@@ -51,8 +51,20 @@ def test_observations_are_publishable_and_exact_entity():
 
 
 def test_no_observations_when_identity_not_verified():
-    # A fetched-but-unverified site must publish NOTHING (never name-only).
-    assert build_observations(_verified_profile(publishable=False)) == []
+    # A fetched-but-unverified site publishes no PAGE-level facts (never
+    # name-only). A social handle carries its own exact-entity proof and is
+    # filtered into value["social_links"] upstream, so the page gate does not
+    # govern it; with no such handle here, nothing is published.
+    profile = _verified_profile(publishable=False)
+    profile["evidence"]["website"]["value"]["social_links"] = []
+    assert build_observations(profile) == []
+
+
+def test_unverified_page_still_publishes_handle_verified_social():
+    profile = _verified_profile(publishable=False)
+    obs = build_observations(profile)
+    assert {o["signal_type"] for o in obs} == {"profile_handle"}
+    assert obs[0]["platform"] == "linkedin"
 
 
 def test_no_observations_when_website_missing():

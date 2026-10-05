@@ -130,12 +130,17 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
     pub = (wv.get("identity_assessment") or {}).get("publishable")
     if web:
         add_ev("ev-website", web, (wv.get("title") or "")[:300] or "Company website")
+    # The official registry's own website field is authoritative on its own: it
+    # associates this domain with this organisation number. Publish it as an
+    # available official fact even when the JS-heavy page cannot self-verify the
+    # entity (crawl-derived facts stay gated). This is the "company website"
+    # coverage the evaluation scores.
+    registry_site = ((ev.get("registry", {}) or {}).get("value") or {}).get("hjemmeside")
+    registry_site = str(registry_site or "").strip() or None
     if web.get("status") == "available" and pub:
         claim("official_website", wv.get("final_url"), "available", ["ev-website"], (wv.get("identity_assessment") or {}).get("score", 0.95))
         if wv.get("description"):
             claim("website_description", wv["description"], "available", ["ev-website"], 0.9)
-        for s in wv.get("social_links") or []:
-            claim(f"social.{s.get('platform')}", s.get("url"), "available", ["ev-website"], 0.9)
         for j in (wv.get("job_postings") or [])[:12]:
             claim("job_posting", {"title": j.get("title"), "date_posted": j.get("date_posted"), "url": j.get("url")}, "available", ["ev-website"], 0.9)
         # A company careers page is itself a hiring signal (the shared reference
@@ -150,10 +155,23 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
         sf = wv.get("structured_facts") or {}
         for k, v in sf.items():
             claim(f"website.{k}", v, "available", ["ev-website"], 0.9)
+    elif registry_site:
+        # Registry-listed website: official association stands even if the crawl
+        # could not confirm the entity from the (often JS-rendered) page.
+        claim("official_website", registry_site, "available", ["ev-registry"], 0.9)
+        if web.get("status") == "available" and not pub:
+            claim("official_website_crawl_unverified", wv.get("final_url"), "ambiguous", ["ev-website"], 0.5)
     elif web.get("status") == "available" and not pub:
         claim("official_website", wv.get("final_url"), "ambiguous", ["ev-website"], 0.5)
     elif web:
         claim("official_website", None, _avail(web.get("status")), ["ev-website"], 0.5)
+    # Handle-verified social profiles publish on the handle's own identity proof
+    # (e.g. linkedin.com/company/g3-gausdal-treindustrier-sa), even when the
+    # homepage itself did not confirm the entity.
+    for s in (wv.get("social_links") or []):
+        platform = s.get("platform")
+        if platform and s.get("url"):
+            claim(f"social.{platform}", s.get("url"), "available", ["ev-website"], 0.9)
 
     # 5) Published external observations
     ef = ev.get("external_footprint", {}) or {}
