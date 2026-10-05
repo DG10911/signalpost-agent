@@ -42,3 +42,4 @@ def test_exact_org_number_still_publishes():
     p = _profile(main_text="Org.nr 923 609 016. " + "x" * 120, registry={})
     a = assess_website_identity(p)
     assert a["score"] == 1.0 and a["publishable"]
+

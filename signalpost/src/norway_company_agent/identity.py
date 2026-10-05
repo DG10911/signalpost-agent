@@ -77,6 +77,9 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
         score = 0.3
         reasons.append("business sports-club entity points to the operating company's site without club evidence")
     elif org_digits and org_digits in compact_homepage_candidate:
+        # Homepage only. An interior page may be a group/parent contact page
+        # listing many subsidiaries' org numbers, so matching there is NOT exact
+        # (adversarial-audit case). The homepage is the entity's own statement.
         score = 1.0
         reasons.append("exact organisation number appears in homepage identity evidence")
     elif len(core) >= 2 and exact_homepage_name:
