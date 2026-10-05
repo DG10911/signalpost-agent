@@ -30,7 +30,21 @@ collection covers ~34%). Deterministic discovery (registry email domain, name
 guesses, NAV homepage) is already on and bounded; the next tier needs a
 permitted **Google Places / Brave Search** key (see the key request to the
 organiser). The connectors are wired key-gated so they activate the moment a
-key is supplied.
+key is supplied:
+
+- `GOOGLE_PLACES_API_KEY` → `places.py`: one Places (New) Text Search per
+  company (field-masked; ~$3/100 at list) returns `websiteUri` (a gated website
+  candidate for the ~90% with no registry site) and `rating`/`userRatingCount`
+  (a `place_summary` + `review_summary` observation). Accepted only on a
+  legal-name + municipality match.
+- `BRAVE_SEARCH_API_KEY` → `brave_discovery.py`: transient search → same-site
+  candidates, immediately fetched and passed through the org-number /
+  registry-contact gate. No search text, snippets or ranks are stored.
+
+Both are inert without their key (verified: a 4-company run emits no connector
+observations and behaves exactly as before). 172 tests.
+
+With either key, set the env var and rerun the documented command unchanged.
 
 ---
 

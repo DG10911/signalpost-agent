@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -67,7 +68,15 @@ def main() -> None:
                         help="For companies with no registry-listed homepage, try deterministic domain guesses and accept ONLY on exact org-number / registry-contact presence. Default: off (measured ~0 yield on the holdco universe; opt in to protect the request/runtime budget).")
     parser.add_argument("--discover-max-candidates", type=int, default=3)
     parser.add_argument("--workforce-ocr-dpi", type=int, default=200)
+    parser.add_argument("--google-places", action=argparse.BooleanOptionalAction, default=True,
+                        help="Use Google Places (New) for website discovery + ratings/reviews. Requires GOOGLE_PLACES_API_KEY; inert without it.")
+    parser.add_argument("--brave", action=argparse.BooleanOptionalAction, default=True,
+                        help="Use Brave Search for missing-website discovery. Requires BRAVE_SEARCH_API_KEY; inert without it.")
     args = parser.parse_args()
+
+    # Key-gated connectors: enabled by default only when the key is present.
+    places_key = os.environ.get("GOOGLE_PLACES_API_KEY") if args.google_places else None
+    brave_key = os.environ.get("BRAVE_SEARCH_API_KEY") if args.brave else None
 
     started_at = utc_now()
     organisation_inputs = read_organisation_inputs(args.organisations)
@@ -121,6 +130,22 @@ def main() -> None:
             from norway_company_agent.domain_discovery import candidate_domains_from_email
             reg_value = (profile.get("evidence", {}) or {}).get("registry", {}).get("value") or {}
             extra.extend(candidate_domains_from_email(reg_value.get("epostadresse")))
+            connector_requests = 0
+            # Google Places (key-gated): websiteUri candidate + ratings/reviews.
+            if places_key:
+                from norway_company_agent import places as places_mod
+                place = places_mod.query_places(profile, places_key)
+                connector_requests += 1
+                if place:
+                    profile["_places_observations"] = places_mod.observations_for(profile, place, retrieved_at=started_at)
+                    place_site = places_mod.website_candidate(place)
+                    if place_site:
+                        extra.append(place_site)
+            # Brave Search (key-gated): transient website candidates.
+            if brave_key and website_record.get("status") != "available":
+                from norway_company_agent.brave_discovery import candidate_urls
+                extra.extend(candidate_urls(profile, brave_key))
+                connector_requests += 1
             if (args.discover_websites or extra) and website_record.get("status") != "available":
                 from norway_company_agent.domain_discovery import discover_website
                 # Probe the homepage only (cheap): name guesses / email domains
@@ -134,6 +159,7 @@ def main() -> None:
                     full_record, full_metrics = fetch_website(discovered.get("value", {}).get("final_url"))
                     discovery_requests += int(full_metrics.get("requests", 0) or 0)
                     website_record = full_record if full_record.get("status") == "available" else discovered
+            discovery_requests += connector_requests
             profile["evidence"]["website"] = apply_website_identity_gate(profile, website_record)["website"]
         workforce_requests = 0
         wf_diag = {"status": "disabled"}
@@ -164,6 +190,8 @@ def main() -> None:
         wf_observation = profile.pop("_workforce_observation", None)
         if wf_observation:
             candidates.append(wf_observation)
+        # Google Places observations (key-gated) are already exact-entity gated.
+        candidates.extend(profile.pop("_places_observations", []) or [])
         accepted = [item for item in candidates if publishable_observation(item)]
         profile["evidence"]["external_footprint"] = {
             "observations": accepted,
