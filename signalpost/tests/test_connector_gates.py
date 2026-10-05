@@ -45,3 +45,16 @@ def test_brave_filters_social_and_directory_hosts(monkeypatch):
     assert "g3i.no" in hosts
     assert all("linkedin" not in h and "proff" not in h for h in hosts)
     assert len(urls) <= 3
+
+
+def test_osm_match_name_and_locality():
+    from norway_company_agent import osm_discovery as osm
+    prof = {"name": "G3 Gausdal Treindustrier SA", "municipality": "GAUSDAL"}
+    good = {"name": "G3 Gausdal Treindustrier", "address": {"municipality": "Gausdal"},
+            "extratags": {"website": "https://g3i.no/"}}
+    other = {"name": "Gausdal Bil", "address": {"municipality": "Gausdal"}}
+    wrong_loc = {"name": "G3 Gausdal Treindustrier", "address": {"municipality": "Oslo"}}
+    assert osm.osm_match(prof, good)
+    assert not osm.osm_match(prof, other)
+    assert not osm.osm_match(prof, wrong_loc)
+    assert osm._website(good) == "https://g3i.no/"

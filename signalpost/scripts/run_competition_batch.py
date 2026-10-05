@@ -72,6 +72,8 @@ def main() -> None:
                         help="Use Google Places (New) for website discovery + ratings/reviews. Requires GOOGLE_PLACES_API_KEY; inert without it.")
     parser.add_argument("--brave", action=argparse.BooleanOptionalAction, default=True,
                         help="Use Brave Search for missing-website discovery. Requires BRAVE_SEARCH_API_KEY; inert without it.")
+    parser.add_argument("--osm", action=argparse.BooleanOptionalAction, default=True,
+                        help="Use OpenStreetMap/Nominatim (free, ODbL) for missing-website discovery. Rate-limited to 1 req/s.")
     args = parser.parse_args()
 
     # Key-gated connectors: enabled by default only when the key is present.
@@ -145,6 +147,11 @@ def main() -> None:
             if brave_key and website_record.get("status") != "available":
                 from norway_company_agent.brave_discovery import candidate_urls
                 extra.extend(candidate_urls(profile, brave_key))
+                connector_requests += 1
+            # OpenStreetMap/Nominatim (free, ODbL): website tags for physical sites.
+            if args.osm and website_record.get("status") != "available" and profile.get("municipality"):
+                from norway_company_agent.osm_discovery import candidate_urls as osm_candidates
+                extra.extend(osm_candidates(profile))
                 connector_requests += 1
             if (args.discover_websites or extra) and website_record.get("status") != "available":
                 from norway_company_agent.domain_discovery import discover_website
