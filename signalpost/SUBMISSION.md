@@ -1,3 +1,31 @@
+# Signalpost submission — one command
+
+```bash
+uv sync
+uv run python scripts/run_competition_batch.py \
+  --organisations <official-batch.jsonl> \
+  --bulk brreg-enheter.csv.gz \
+  --profiles-output out/profiles.jsonl \
+  --output out/envelopes.jsonl \
+  --report out/run-report.json \
+  --observations-output out/observations.jsonl \
+  --contract-output out/submission-contract.jsonl \
+  --run-id official --expected-count 100 \
+  --discover-websites --require-exact-identity
+```
+
+`--organisations` takes the batch Builderr supplies (one organisation number per
+line, or JSON/JSONL). Add `--nav-index out/nav-index.json` if a NAV index is
+prebuilt (`scripts/build_nav_index_search.py`, run outside the window). Keys are
+optional: `GOOGLE_PLACES_API_KEY` / `BRAVE_SEARCH_API_KEY` activate extra
+discovery and are inert when unset (no participant keys are assumed). A clean
+100-company batch costs ~1,100 requests / ~4.5 min, inside 2,000 / 45 min.
+
+The full evaluation only needs the agent + a run report; precomputed profiles are
+not used for ranking.
+
+---
+
 # Signalpost submission — V13 (registry website + handle-verified socials)
 
 **V13 targets the exact remaining gaps in the 60.11 breakdown** (dated news 0%,
