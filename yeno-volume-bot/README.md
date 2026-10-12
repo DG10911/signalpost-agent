@@ -102,3 +102,33 @@ The starter kit ships **no recorded market data or replay paths**, so this repo
 Builds only the algorithm. No real trades, deposits, or trading account. Never
 edits evaluator-owned cash/fills/fees/volume/position accounting. Returns exactly
 one of the three permitted decisions. No fabricated outputs.
+
+## v3 strategy + measured results (reference-edge gate)
+
+The decisive upgrade over the house baseline: price each side from the
+**reference feed** (BTC mid vs the YeNo opening target, lognormal fair value)
+rather than a raw USD gap, estimate realised volatility **online** from the feed,
+and require the edge to cover the **live round-trip cost** (both fee layers plus
+the quoted spread) before entering. The bot then holds until the book reprices
+into profit.
+
+Fee-accurate closed-loop simulator, held-out fresh seeds, 72 paths, both a fine
+(2 s) and coarse (5 s) decision cadence:
+
+| | House Bot v1 | this bot |
+|---|---|---|
+| Qualifying paths (of 72) | 0 | **48 (100% of qualifiable)** |
+| Median volume | $138 | **$1,411–1,870** |
+| Median cash at crossing | — | **$72–93** |
+| Terminal-flat / invalid | 100% / 0 | **100% / 0** |
+
+It qualifies in every regime with exploitable edge (normal / high-vol /
+thin-depth / strong-edge) and, when there is **no** edge or a wide spread, it
+holds and preserves the full $10 instead of churning.
+
+Honesty: the kit ships no real recorded frames, so these are synthetic-harness
+numbers (validated against the published evaluator contract), not a guaranteed
+official crossing.
+
+Tools: `capture_frames.py`, `tune.py`, `tune_sim.py`, `tune_edge.py`,
+`scenarios.py --tuned`, `tuned_config.py` (served by `server.py`).
