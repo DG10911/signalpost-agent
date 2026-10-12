@@ -133,6 +133,21 @@ class Config:
     assumed_annual_vol: float = 0.6
     min_edge_per_share_usd: float = 0.0
 
+    # Self-calibration: estimate realised BTC vol online from the reference feed
+    # and price the side with it, instead of a fixed assumption (robust across
+    # quiet/volatile regimes).
+    adaptive_vol: bool = False
+    vol_window_seconds: float = 600.0
+    min_vol_samples: int = 8
+    vol_floor: float = 0.25
+    vol_cap: float = 3.0
+
+    # Cost-aware edge: require the expected edge to cover the *actual* live
+    # round-trip cost (both fee layers + the quoted spread) plus a safety margin,
+    # rather than a fixed edge floor.
+    cost_aware_edge: bool = False
+    edge_safety_margin: float = 0.0
+
     # Entry pricing / sizing.
     target_shares: float = 5.0
     min_entry_price: float = 0.52           # accept the favourite from ~parity up
@@ -183,6 +198,7 @@ class Bot:
     max_drawdown: float = 0.0
     start_ts: Optional[float] = None
     _ref_hist: Deque[Tuple[float, float]] = field(default_factory=deque)
+    _price_hist: Deque[Tuple[float, float]] = field(default_factory=deque)
 
     def decide(self, observation: dict) -> dict:
         try:
@@ -220,6 +236,9 @@ class Bot:
         gap = float(reference["btcMidUsd"]) - float(reference["openingTargetUsd"])
         if not self._ref_hist or self._ref_hist[-1][0] != observed_at:
             self._ref_hist.append((observed_at, gap))
+        btc = float(reference["btcMidUsd"])
+        if not self._price_hist or self._price_hist[-1][0] != observed_at:
+            self._price_hist.append((observed_at, btc))
         return gap
 
     def _signal_persistent(self, gap: float, min_gap: float) -> bool:
@@ -405,15 +424,42 @@ class Bot:
         self.last_buy_attempt_at = now
         return {"action": "BUY", "outcome": side, "maxCashUsd": round(buy_cash, 6)}
 
+    def _realized_vol(self, now: float) -> Optional[float]:
+        """Annualised realised vol of BTC from the reference price history.
+
+        Uses per-second log-return variance over a rolling window; returns None
+        until enough fresh samples exist, so the caller can fall back to the
+        configured prior.
+        """
+        cfg = self.config
+        while self._price_hist and now - self._price_hist[0][0] > cfg.vol_window_seconds:
+            self._price_hist.popleft()
+        hist = list(self._price_hist)
+        if len(hist) < cfg.min_vol_samples:
+            return None
+        var_per_sec = 0.0
+        n = 0
+        for i in range(1, len(hist)):
+            dt = hist[i][0] - hist[i - 1][0]
+            if dt <= 0.0 or hist[i - 1][1] <= 0.0:
+                continue
+            r = math.log(hist[i][1] / hist[i - 1][1])
+            var_per_sec += (r * r) / dt
+            n += 1
+        if n == 0:
+            return None
+        sigma = math.sqrt(var_per_sec / n) * math.sqrt(365.0 * 24.0 * 3600.0)
+        return min(max(sigma, cfg.vol_floor), cfg.vol_cap)
+
     def _edge_side(self, reference: Any, books: dict, seconds: float,
                    defensive: bool) -> Optional[str]:
         """Return the side with positive expected edge, or None.
 
         The reference feed (btcMid vs openingTarget) gives the current fair
         probability of YES; the order book still reflects an older BTC level.
-        Enter the side whose ask is below its fair value by at least
-        ``min_edge_per_share_usd`` -- that gap is the edge captured when the book
-        catches up. Defensive posture raises the required edge.
+        Enter the side whose ask is below its fair value by at least the required
+        edge (a fixed floor, or -- when ``cost_aware_edge`` -- the live
+        round-trip cost). That gap is the edge captured when the book catches up.
         """
         cfg = self.config
         if not isinstance(reference, dict):
@@ -423,15 +469,33 @@ class Bot:
             target = float(reference["openingTargetUsd"])
         except (KeyError, TypeError, ValueError):
             return None
-        fair = fair_prob(btc, target, seconds, cfg.assumed_annual_vol)
+
+        vol = cfg.assumed_annual_vol
+        if cfg.adaptive_vol:
+            est = self._realized_vol(float(reference.get("observedAt", 0.0)))
+            if est is not None:
+                vol = est
+        fair = fair_prob(btc, target, seconds, vol)
         side = "YES" if fair >= 0.5 else "NO"
         p_fav = fair if side == "YES" else 1.0 - fair
-        asks = _levels(books.get(side, {}).get("asks", []), reverse=False)
+        book = books.get(side, {})
+        asks = _levels(book.get("asks", []), reverse=False)
+        bids = _levels(book.get("bids", []), reverse=True)
         if not asks:
             return None
-        edge = p_fav - asks[0][0]
-        min_edge = cfg.min_edge_per_share_usd * (cfg.defensive_gap_multiplier if defensive else 1.0)
-        if edge < min_edge - 1e-9:
+        ask = asks[0][0]
+
+        if cfg.cost_aware_edge:
+            bid = bids[0][0] if bids else ask
+            fee_buy = ask * (0.01 + 0.07 * (1.0 - ask))
+            fee_sell = bid * (0.01 + 0.07 * (1.0 - bid))
+            required = (ask - bid) + fee_buy + fee_sell + cfg.edge_safety_margin
+        else:
+            required = cfg.min_edge_per_share_usd
+        if defensive:
+            required *= cfg.defensive_gap_multiplier
+
+        if p_fav - ask < required - 1e-9:
             return None
         return side
 
