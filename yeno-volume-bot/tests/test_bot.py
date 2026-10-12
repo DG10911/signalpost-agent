@@ -239,3 +239,37 @@ class RobustnessInvariantTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class TestSchemaRobustness(unittest.TestCase):
+    """The official request schema is undocumented for `timestamp` and the
+    position object, so the bot must not depend on our own field names."""
+
+    def _obs(self, position):
+        return {
+            "timestamp": 10.0, "market": {"id": "m", "secondsToClose": 30},
+            "account": {"cashUsd": 8.0, "eligibleVolumeUsd": 600, "position": position},
+            "rules": {"maximumBuyCashUsd": 5, "targetVolumeUsd": 1000, "evaluationWindowHours": 24},
+            "reference": {"btcMidUsd": 80050, "openingTargetUsd": 80000,
+                          "observedAt": 10.0, "targetObservedAt": 9.0, "targetProvisional": False},
+            "books": {"YES": {"bids": [[0.80, 100]], "asks": [[0.82, 100]], "minOrderSize": 5},
+                      "NO": {"bids": [[0.18, 100]], "asks": [[0.20, 100]], "minOrderSize": 5}},
+        }
+
+    def test_missing_top_level_timestamp_does_not_hold(self):
+        obs = self._obs(None)
+        del obs["timestamp"]  # official schema may omit it
+        obs["reference"]["observedAt"] = 5.0
+        obs["reference"]["targetObservedAt"] = 4.0
+        obs["reference"]["btcMidUsd"] = 80120  # strong favourite
+        cfg = botmod.Config(use_edge_gate=True, assumed_annual_vol=1.0)
+        self.assertEqual(botmod.Bot(config=cfg).decide(obs)["action"], "BUY")
+
+    def test_alt_position_schema_exits(self):
+        cfg = botmod.Config()
+        for pos in ({"side": "YES", "size": 5, "costUsd": 2.8},
+                    {"direction": "YES", "quantity": 5}):
+            self.assertEqual(botmod.Bot(config=cfg).decide(self._obs(pos))["action"], "SELL")
+
+    def test_uninterpretable_position_holds_not_crashes(self):
+        self.assertEqual(botmod.Bot(config=botmod.Config()).decide(self._obs({"foo": 1}))["action"], "HOLD")

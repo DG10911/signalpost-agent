@@ -106,6 +106,79 @@ def fair_prob(btc: float, target: float, seconds_left: float, annual_vol: float)
 
 
 # --------------------------------------------------------------------------- #
+# Defensive readers for the evaluator-owned position object (schema unverified).
+# --------------------------------------------------------------------------- #
+
+_SIDE_KEYS = ("outcome", "side", "direction", "result", "asset", "token", "instrument")
+_SHARE_KEYS = ("shares", "size", "quantity", "qty", "amount", "positionShares",
+               "position_shares", "positionSize", "sharesHeld")
+
+
+def _pos_side(position: Any) -> Optional[str]:
+    if not isinstance(position, dict):
+        return None
+    for key in _SIDE_KEYS:
+        val = position.get(key)
+        if isinstance(val, str):
+            up = val.upper()
+            if up == "YES" or "YES" in up:
+                return "YES"
+            if up == "NO" or "NO" in up:
+                if up == "NO" or up.endswith("NO") or "NO" in up.split():
+                    return "NO"
+    # scan string values for a YES/NO token
+    for val in position.values():
+        if isinstance(val, str):
+            up = val.upper()
+            if up == "YES":
+                return "YES"
+            if up == "NO":
+                return "NO"
+    return None
+
+
+def _pos_shares(position: Any) -> Optional[float]:
+    if not isinstance(position, dict):
+        return None
+    for key in _SHARE_KEYS:
+        val = position.get(key)
+        if val is not None:
+            try:
+                f = float(val)
+                if f > 0.0:
+                    return f
+            except (TypeError, ValueError):
+                continue
+    return None
+
+
+def _pos_paid(position: Any) -> Optional[float]:
+    """Fee-inclusive entry cost of the open position, if the position carries it."""
+    if not isinstance(position, dict):
+        return None
+    gross = None
+    for key in ("buy_gross_usd", "cost_usd", "costUsd", "entry_cost_usd",
+                "entryCostUsd", "cost_basis_usd", "notional_usd"):
+        if position.get(key) is not None:
+            try:
+                gross = float(position[key])
+                break
+            except (TypeError, ValueError):
+                continue
+    if gross is None:
+        return None
+    fees = 0.0
+    for key in ("buy_fees_usd", "fees_usd", "feesUsd", "entry_fees_usd"):
+        if position.get(key) is not None:
+            try:
+                fees = float(position[key])
+            except (TypeError, ValueError):
+                fees = 0.0
+            break
+    return gross + fees
+
+
+# --------------------------------------------------------------------------- #
 # Configuration
 # --------------------------------------------------------------------------- #
 
@@ -199,6 +272,7 @@ class Bot:
     start_ts: Optional[float] = None
     _ref_hist: Deque[Tuple[float, float]] = field(default_factory=deque)
     _price_hist: Deque[Tuple[float, float]] = field(default_factory=deque)
+    entry_cost: Optional[float] = None
 
     def decide(self, observation: dict) -> dict:
         try:
@@ -256,13 +330,31 @@ class Bot:
                 return False
         return True
 
+    @staticmethod
+    def _now(observation: dict) -> float:
+        """Derive 'now' from the observation without assuming a top-level
+        ``timestamp`` field (the official request schema does not guarantee one).
+
+        Preference order: top-level ``timestamp`` -> ``reference.observedAt``
+        (a receive-time stamp that is always present) -> 0.0.
+        """
+        for candidate in (observation.get("timestamp"),
+                          (observation.get("reference") or {}).get("observedAt")
+                          if isinstance(observation.get("reference"), dict) else None):
+            if candidate is not None:
+                try:
+                    return float(candidate)
+                except (TypeError, ValueError):
+                    continue
+        return 0.0
+
     def _decide(self, observation: dict) -> dict:
         cfg = self.config
         market = observation["market"]
         account = observation["account"]
         books = observation["books"]
         rules = observation.get("rules", {})
-        now = float(observation["timestamp"])
+        now = self._now(observation)
         seconds = float(market["secondsToClose"])
         market_id = str(market["id"])
         position = account.get("position")
@@ -283,6 +375,7 @@ class Bot:
         if position is None and self.position_was_open:
             self.completed_cycles += 1
             self.last_flat_at = now
+            self.entry_cost = None
         self.position_was_open = position is not None
 
         # ---------------- Exit path (position open) --------------------- #
@@ -319,8 +412,12 @@ class Bot:
 
     def _decide_exit(self, position: dict, books: dict, seconds: float) -> dict:
         cfg = self.config
-        side = str(position["outcome"])
-        shares = float(position["shares"])
+        # The evaluator owns the position object and its field names are not
+        # documented, so read them defensively (never crash -> never fail flat).
+        side = _pos_side(position)
+        shares = _pos_shares(position)
+        if side is None or shares is None or shares <= 0.0:
+            return {"action": "HOLD"}
         exit_quote = sell_proceeds(books.get(side, {}).get("bids", []), shares)
 
         # Force-flat window: sell if we can; a one-sided book can still fill a
@@ -332,7 +429,11 @@ class Bot:
             return {"action": "HOLD"}
 
         sell_gross, sell_fees = exit_quote
-        paid = float(position["buy_gross_usd"]) + float(position["buy_fees_usd"])
+        # Prefer the evaluator's cost basis if present; otherwise fall back to the
+        # entry cost we recorded when we issued the BUY. Never KeyError.
+        paid = _pos_paid(position)
+        if paid is None:
+            paid = self.entry_cost if self.entry_cost is not None else 0.0
         already = float(position.get("sell_gross_usd", 0.0)) - float(position.get("sell_fees_usd", 0.0))
         cycle_pnl = already + sell_gross - sell_fees - paid
 
@@ -422,6 +523,7 @@ class Bot:
             return {"action": "HOLD"}
 
         self.last_buy_attempt_at = now
+        self.entry_cost = buy_cash
         return {"action": "BUY", "outcome": side, "maxCashUsd": round(buy_cash, 6)}
 
     def _realized_vol(self, now: float) -> Optional[float]:
