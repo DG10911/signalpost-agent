@@ -16,7 +16,18 @@ import json
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
 
-from bot import decide
+from bot import Bot
+
+try:
+    from tuned_config import TUNED as _CONFIG
+except Exception:  # fall back to shipped defaults if tuned_config is absent
+    _CONFIG = None
+
+_BOT = Bot() if _CONFIG is None else Bot(config=_CONFIG)
+
+
+def decide(observation: dict) -> dict:
+    return _BOT.decide(observation)
 
 
 class Handler(BaseHTTPRequestHandler):

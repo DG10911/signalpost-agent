@@ -88,6 +88,23 @@ def sell_proceeds(bids: Any, shares: float) -> Optional[Tuple[float, float]]:
     return _walk_book(_levels(bids, reverse=True), shares)
 
 
+def fair_prob(btc: float, target: float, seconds_left: float, annual_vol: float) -> float:
+    """P(close > target) for a lognormal BTC walk -- the value of a YES share.
+
+    Used by the optional edge gate to price a side from the *reference feed*
+    (btcMid vs openingTarget) rather than from the stale order book, so the bot
+    can enter the side the book has not yet repriced to.
+    """
+    if seconds_left <= 0.0:
+        return 1.0 if btc > target else 0.0
+    years = seconds_left / (365.0 * 24.0 * 3600.0)
+    sigma = annual_vol * math.sqrt(max(years, 1e-12))
+    if sigma <= 1e-12:
+        return 1.0 if btc > target else 0.0
+    d = (math.log(btc / target) - 0.5 * sigma * sigma) / sigma
+    return 0.5 * (1.0 + math.erf(d / math.sqrt(2.0)))
+
+
 # --------------------------------------------------------------------------- #
 # Configuration
 # --------------------------------------------------------------------------- #
@@ -107,6 +124,14 @@ class Config:
     persistence_samples: int = 2            # recent same-sign gaps required
     reference_history: int = 8
     require_book_favorite_agreement: bool = True  # book must also favour the side
+
+    # Optional edge/value gate (off by default; frozen config may enable it).
+    # Prices a side from the reference feed via a lognormal fair value and only
+    # enters when the book ask is *below* that fair value by min_edge, i.e. there
+    # is a positive expected edge to capture as the book reprices.
+    use_edge_gate: bool = False
+    assumed_annual_vol: float = 0.6
+    min_edge_per_share_usd: float = 0.0
 
     # Entry pricing / sizing.
     target_shares: float = 5.0
@@ -321,17 +346,22 @@ class Bot:
         # never loosen (aggression capped at 1.0) while cash is below the floor.
         defensive = cash < cfg.cash_floor_usd
         effective_aggression = min(aggression, 1.0) if defensive else aggression
-        min_gap = cfg.min_reference_gap_usd * (cfg.defensive_gap_multiplier if defensive else 1.0)
-        min_gap = min_gap / max(effective_aggression, 1e-6)  # behind pace -> lower bar
         max_immediate_loss = cfg.max_immediate_roundtrip_loss_usd * effective_aggression
         max_price = cfg.defensive_max_entry_price if defensive else cfg.max_entry_price
 
-        if abs(gap) < min_gap - 1e-9:
-            return {"action": "HOLD"}
-        if not self._signal_persistent(gap, min_gap):
-            return {"action": "HOLD"}
+        if cfg.use_edge_gate:
+            side = self._edge_side(reference, books, seconds, defensive)
+            if side is None:
+                return {"action": "HOLD"}
+        else:
+            min_gap = cfg.min_reference_gap_usd * (cfg.defensive_gap_multiplier if defensive else 1.0)
+            min_gap = min_gap / max(effective_aggression, 1e-6)  # behind pace -> lower bar
+            if abs(gap) < min_gap - 1e-9:
+                return {"action": "HOLD"}
+            if not self._signal_persistent(gap, min_gap):
+                return {"action": "HOLD"}
+            side = "YES" if gap >= 0 else "NO"
 
-        side = "YES" if gap >= 0 else "NO"
         book = books.get(side, {})
         best_asks = _levels(book.get("asks", []), reverse=False)
         if not best_asks:
@@ -342,8 +372,9 @@ class Bot:
 
         # Book must agree the reference-favoured side is the favourite: its mid
         # should sit at/above parity. This rejects reference/book disagreement
-        # (a classic adverse-fill trap).
-        if cfg.require_book_favorite_agreement:
+        # (a classic adverse-fill trap). Skipped under the edge gate, which prices
+        # the side from the reference instead of trusting the (stale) book.
+        if cfg.require_book_favorite_agreement and not cfg.use_edge_gate:
             best_bids = _levels(book.get("bids", []), reverse=True)
             mid = (best_ask + best_bids[0][0]) / 2.0 if best_bids else best_ask
             if mid < 0.5 - 1e-9:
@@ -373,6 +404,36 @@ class Bot:
 
         self.last_buy_attempt_at = now
         return {"action": "BUY", "outcome": side, "maxCashUsd": round(buy_cash, 6)}
+
+    def _edge_side(self, reference: Any, books: dict, seconds: float,
+                   defensive: bool) -> Optional[str]:
+        """Return the side with positive expected edge, or None.
+
+        The reference feed (btcMid vs openingTarget) gives the current fair
+        probability of YES; the order book still reflects an older BTC level.
+        Enter the side whose ask is below its fair value by at least
+        ``min_edge_per_share_usd`` -- that gap is the edge captured when the book
+        catches up. Defensive posture raises the required edge.
+        """
+        cfg = self.config
+        if not isinstance(reference, dict):
+            return None
+        try:
+            btc = float(reference["btcMidUsd"])
+            target = float(reference["openingTargetUsd"])
+        except (KeyError, TypeError, ValueError):
+            return None
+        fair = fair_prob(btc, target, seconds, cfg.assumed_annual_vol)
+        side = "YES" if fair >= 0.5 else "NO"
+        p_fav = fair if side == "YES" else 1.0 - fair
+        asks = _levels(books.get(side, {}).get("asks", []), reverse=False)
+        if not asks:
+            return None
+        edge = p_fav - asks[0][0]
+        min_edge = cfg.min_edge_per_share_usd * (cfg.defensive_gap_multiplier if defensive else 1.0)
+        if edge < min_edge - 1e-9:
+            return None
+        return side
 
     def _size(self, book: dict, cash: float, rules: dict) -> float:
         """Largest share count (respecting minOrderSize) that fits the $5 cap

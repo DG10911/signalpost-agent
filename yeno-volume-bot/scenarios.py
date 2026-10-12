@@ -46,7 +46,7 @@ def _pct(xs: List[float]) -> str:
     return "%d%%" % round(100.0 * (sum(1 for x in xs if x) / len(xs)))
 
 
-def run(paths: int, seed0: int) -> int:
+def run(paths: int, seed0: int, config: "botmod.Config") -> int:
     hdr = ("regime", "flat%", "invalid", "qual%", "med_vol", "medΔcash", "max_dd")
     print("Adversarial regimes (SYNTHETIC — robustness/contract only, not official)")
     print("%-18s %6s %8s %6s %8s %9s %7s" % hdr)
@@ -54,7 +54,7 @@ def run(paths: int, seed0: int) -> int:
     all_flat = True
     for name, overrides in SCENARIOS.items():
         sc = SimConfig(**overrides)
-        results = [simulate_path(botmod.Bot(), seed0 + i, sc) for i in range(paths)]
+        results = [simulate_path(botmod.Bot(config=config), seed0 + i, sc) for i in range(paths)]
         flat = [r.terminal_flat for r in results]
         invalid = sum(r.invalid_actions for r in results)
         vols = [r.eligible_volume_usd for r in results]
@@ -81,8 +81,14 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--paths", type=int, default=40)
     ap.add_argument("--seed", type=int, default=2024)
+    ap.add_argument("--tuned", action="store_true",
+                    help="use the tuned Config from tuned_config.py")
     args = ap.parse_args()
-    raise SystemExit(run(args.paths, args.seed))
+    config = botmod.Config()
+    if args.tuned:
+        from tuned_config import TUNED
+        config = TUNED
+    raise SystemExit(run(args.paths, args.seed, config))
 
 
 if __name__ == "__main__":
