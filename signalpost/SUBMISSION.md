@@ -55,6 +55,10 @@ uv run python scripts/run_competition_batch.py ... \
 This is the recommended next push if a breakdown still shows hiring as a weak
 family — it costs no eval-time requests, so it cannot risk completion.
 
+Verified: a bounded build produces an exact-entity index (orgs → jobs →
+homepages). Run the **full** build (drop `--max-pages` or raise it) on a calm
+host outside the eval window; then pass `--nav-index` to the official run.
+
 ### Lean profiles (step down if the primary run is tight)
 
 Completion is mandatory — an over-budget run scores nothing. If the primary
