@@ -62,8 +62,8 @@ def main() -> None:
                         help="Path to a pre-built NAV orgnr->jobs index (scripts/build_nav_index_search.py) for exact-entity job_posting observations.")
     parser.add_argument("--nav-homepages",
                         help="Path to the NAV orgnr->homepage map (written next to --nav-index). Exact-entity website candidates for companies with no registry site.")
-    parser.add_argument("--wikidata", action=argparse.BooleanOptionalAction, default=True,
-                        help="Query Wikidata (P2333 exact org-number match) for exact-entity facts/social/wikipedia. Batched, official public API. Default: on.")
+    parser.add_argument("--wikidata", action=argparse.BooleanOptionalAction, default=False,
+                        help="Query Wikidata (P2333 exact org-number match) for exact-entity facts/social/wikipedia. Batched, official public API. Default: OFF — the batch SPARQL query delays large runs (time budget).")
     parser.add_argument("--discover-websites", action=argparse.BooleanOptionalAction, default=False,
                         help="For companies with no registry-listed homepage, try deterministic domain guesses and accept ONLY on exact org-number / registry-contact presence. Default: off (measured ~0 yield on the holdco universe; opt in to protect the request/runtime budget).")
     parser.add_argument("--discover-max-candidates", type=int, default=3)

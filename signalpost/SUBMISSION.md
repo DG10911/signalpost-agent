@@ -11,9 +11,15 @@ uv run python scripts/run_competition_batch.py \
   --observations-output out/observations.jsonl \
   --contract-output out/submission-contract.jsonl \
   --run-id official --expected-count 1000 \
-  --no-osm --no-discover-websites \
+  --no-osm --no-discover-websites --no-wikidata \
   --request-budget 9500 --require-exact-identity
 ```
+
+**Measured (live, on this host):** a 200-company run with these exact flags =
+**1,422 requests (7.11/company) → ≈7,110 for 1,000 companies**, `exact_registry 1.0`,
+validation passed, **~38 min**. Comfortably under the 10,000-request ceiling.
+(`--no-wikidata` is important: Wikidata's batch SPARQL query for a large cohort
+delays the run, so it defaults off.)
 
 **Request efficiency (the binding constraint).** The official run has a
 **10,000-request ceiling**; the run must complete a full sample under it. This
