@@ -426,8 +426,9 @@ CAREERS_TERMS = ("careers", "career", "jobb", "jobber", "ledige-stillinger",
                  "stilling", "stillinger", "vacancies", "karriere", "arbeid-hos-oss")
 
 # Request-efficiency: the per-site secondary crawl is the dominant cost, so cap
-# it tightly by default (was 14). Override per call via max_secondary_pages.
-DEFAULT_MAX_SECONDARY_PAGES = 6
+# it (was 14). Canonical careers/news probes are crawled first, so this keeps the
+# highest-value recall per request. Override per call via max_secondary_pages.
+DEFAULT_MAX_SECONDARY_PAGES = 8
 
 
 def is_careers_page(url: str, title: str = "") -> bool:
@@ -577,12 +578,21 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         homepage_domain = value["registered_domain"]
         # Keep the most relevant discovered links, then ALWAYS try the canonical
         # careers/news paths (JS sites hide these from static links).
-        secondary_urls = _priority_links(final_url, soup)[:6]
-        seen_secondary = {u.rstrip("/") for u in secondary_urls}
+        # Canonical careers/news probes FIRST (highest-value families, and hidden
+        # from static links on JS sites), then the best discovered same-domain
+        # links. Ordering matters under a tight request cap.
+        secondary_urls: list[str] = []
+        seen_secondary: set[str] = set()
         for probe in _canonical_probe_urls(final_url):
-            if probe.rstrip("/") not in seen_secondary:
+            key = probe.rstrip("/")
+            if key not in seen_secondary:
                 secondary_urls.append(probe)
-                seen_secondary.add(probe.rstrip("/"))
+                seen_secondary.add(key)
+        for link in _priority_links(final_url, soup):
+            key = link.rstrip("/")
+            if key not in seen_secondary:
+                secondary_urls.append(link)
+                seen_secondary.add(key)
         cap = min(len(secondary_urls), DEFAULT_MAX_SECONDARY_PAGES) if max_secondary_pages is None else max(0, max_secondary_pages)
         for page_url in secondary_urls[:cap]:
             page, page_social, page_requests, page_bytes, page_elapsed, page_error, page_extras = _fetch_secondary_page(

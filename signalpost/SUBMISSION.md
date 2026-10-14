@@ -11,7 +11,7 @@ uv run python scripts/run_competition_batch.py \
   --observations-output out/observations.jsonl \
   --contract-output out/submission-contract.jsonl \
   --run-id official --expected-count 1000 \
-  --no-osm --no-discover-websites --max-secondary-pages 6 \
+  --no-osm --no-discover-websites --max-secondary-pages 8 \
   --request-budget 9500 --require-exact-identity
 ```
 
@@ -22,7 +22,7 @@ command is deliberately lean:
 - `--no-discover-websites` (default off) — website discovery measured ~0 yield on
   the holdco-heavy universe and multiplies requests. It is opt-in only.
 - `--no-osm` (default off) — OpenStreetMap discovery is off by default.
-- `--max-secondary-pages 6` — caps the per-site crawl (was 14).
+- `--max-secondary-pages 8` — caps the per-site crawl (was 14).
 - `--request-budget 9500` — a self-imposed ceiling; the run prints a loud warning
   and sets `request_budget_exceeded` in the report if exceeded, leaving headroom
   under the official 10,000.
