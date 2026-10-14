@@ -82,20 +82,20 @@ def main() -> None:
 
     # Auto-scale the per-site crawl to the batch so a large official batch still
     # completes under the request budget (completion is mandatory: an over-budget
-    # run is not scored). Reserve a base of ~6 live module requests + 2 for the
-    # homepage/robots, and never go below 2 pages so the canonical careers/news
-    # probes still run for site-bearing companies.
+    # run is not scored). Allowance minus a base of ~6 live module requests +
+    # homepage/robots; floor of 3 keeps the canonical careers/news probes running.
     if args.max_secondary_pages is None:
         from norway_company_agent.website import DEFAULT_MAX_SECONDARY_PAGES
         allowance = max(1, args.request_budget // max(1, args.expected_count))
-        # Allowance minus a base of ~6 live module requests + homepage/robots;
-        # floor of 3 keeps the canonical careers/news probes running.
         args.max_secondary_pages = max(3, min(DEFAULT_MAX_SECONDARY_PAGES, allowance - 3))
-        print(json.dumps({
-            "request_plan": {"budget": args.request_budget, "companies": args.expected_count,
-                             "per_company_allowance": allowance,
-                             "max_secondary_pages": args.max_secondary_pages},
-        }))
+    request_plan = {
+        "budget": args.request_budget,
+        "companies": args.expected_count,
+        "per_company_allowance": max(1, args.request_budget // max(1, args.expected_count)),
+        "max_secondary_pages": args.max_secondary_pages,
+        "discover_websites": bool(args.discover_websites),
+        "osm": bool(args.osm),
+    }
 
     # Key-gated connectors: enabled by default only when the key is present.
     places_key = os.environ.get("GOOGLE_PLACES_API_KEY") if args.google_places else None
@@ -316,6 +316,7 @@ def main() -> None:
         "profiles_fetched_this_run": len(pending_profiles),
         "modules": requested_modules,
         "registry": registry_metadata,
+        "request_plan": request_plan,
         "operations": operations,
         "validation": validation,
         "request_budget_exceeded": budget_exceeded,
