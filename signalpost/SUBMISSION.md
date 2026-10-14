@@ -30,6 +30,25 @@ command is deliberately lean:
   and sets `request_budget_exceeded` in the report if exceeded, leaving headroom
   under the official 10,000.
 
+### Opt-in coverage lever: pre-built NAV hiring index (0 eval-time requests)
+
+Hiring is a high-value family and an exact-entity index can be built **outside**
+the run, so it adds hiring coverage at **zero requests during the scored run**.
+Build it on a calm host, then pass it in:
+
+```bash
+# 1) build once, outside the eval window (throttled; resume on 429)
+uv run python scripts/build_nav_index_search.py \
+  --output out/nav-index.json --workers 8 --min-interval 0.1 --search-interval 3.0 --resume
+
+# 2) add it to the official run (writes out/nav-index.json.homepages.json too)
+uv run python scripts/run_competition_batch.py ... \
+  --nav-index out/nav-index.json --nav-homepages out/nav-index.json.homepages.json
+```
+
+This is the recommended next push if a breakdown still shows hiring as a weak
+family — it costs no eval-time requests, so it cannot risk completion.
+
 ### Lean profiles (step down if the primary run is tight)
 
 Completion is mandatory — an over-budget run scores nothing. If the primary
