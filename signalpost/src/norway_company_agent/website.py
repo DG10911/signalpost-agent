@@ -231,6 +231,24 @@ def _priority_links(base_url: str, soup: BeautifulSoup, limit: int = 6) -> list[
     return [url for url, _ in sorted(candidates.items(), key=lambda item: (item[1], item[0]))[:limit]]
 
 
+def _ordered_secondary_urls(base_url: str, soup: BeautifulSoup) -> list[str]:
+    """Ordered, de-duplicated secondary crawl targets for a site.
+
+    Canonical careers/news probes come first (they carry the hiring + dated-news
+    recall and are often invisible to static link discovery on JS sites), then
+    the best discovered same-domain links. Under a tight request cap this keeps
+    the highest-value coverage per request.
+    """
+    ordered: list[str] = []
+    seen: set[str] = set()
+    for url in list(_canonical_probe_urls(base_url)) + list(_priority_links(base_url, soup)):
+        key = url.rstrip("/")
+        if key not in seen:
+            ordered.append(url)
+            seen.add(key)
+    return ordered
+
+
 def _fetch_secondary_page(url: str, *, homepage_domain: str, timeout: float, max_bytes: int) -> tuple[dict[str, Any] | None, list[dict[str, str]], int, int, int, str | None, dict[str, Any]]:
     empty_extras: dict[str, Any] = {"job_postings": [], "structured_social": [], "structured_facts": {}, "news_articles": [], "careers": False}
     if not _robots_allowed(url, timeout):
@@ -576,23 +594,10 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         bytes_received = len(raw)
         page_latencies = [elapsed]
         homepage_domain = value["registered_domain"]
-        # Keep the most relevant discovered links, then ALWAYS try the canonical
-        # careers/news paths (JS sites hide these from static links).
         # Canonical careers/news probes FIRST (highest-value families, and hidden
         # from static links on JS sites), then the best discovered same-domain
         # links. Ordering matters under a tight request cap.
-        secondary_urls: list[str] = []
-        seen_secondary: set[str] = set()
-        for probe in _canonical_probe_urls(final_url):
-            key = probe.rstrip("/")
-            if key not in seen_secondary:
-                secondary_urls.append(probe)
-                seen_secondary.add(key)
-        for link in _priority_links(final_url, soup):
-            key = link.rstrip("/")
-            if key not in seen_secondary:
-                secondary_urls.append(link)
-                seen_secondary.add(key)
+        secondary_urls = _ordered_secondary_urls(final_url, soup)
         cap = min(len(secondary_urls), DEFAULT_MAX_SECONDARY_PAGES) if max_secondary_pages is None else max(0, max_secondary_pages)
         for page_url in secondary_urls[:cap]:
             page, page_social, page_requests, page_bytes, page_elapsed, page_error, page_extras = _fetch_secondary_page(
