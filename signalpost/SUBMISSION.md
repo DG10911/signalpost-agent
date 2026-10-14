@@ -30,6 +30,34 @@ command is deliberately lean:
   and sets `request_budget_exceeded` in the report if exceeded, leaving headroom
   under the official 10,000.
 
+### Lean profiles (step down if the primary run is tight)
+
+Completion is mandatory — an over-budget run scores nothing. If the primary
+command reports `request_budget_exceeded: true` (or you're near the ceiling),
+drop through these in order; each strictly reduces requests while keeping one
+result per company:
+
+```bash
+# 1) ULTRA-LEAN — homepage + 2 secondary pages/site
+uv run python scripts/run_competition_batch.py \
+  --organisations <batch> --bulk brreg-enheter.csv.gz \
+  --profiles-output out/profiles.jsonl --output out/envelopes.jsonl \
+  --report out/run-report.json --contract-output out/submission-contract.jsonl \
+  --run-id official --expected-count 1000 \
+  --no-osm --no-discover-websites --max-secondary-pages 2 \
+  --request-budget 9000 --require-exact-identity
+
+# 2) HOMEPAGE-ONLY — no secondary crawl at all
+uv run python scripts/run_competition_batch.py ... --max-secondary-pages 0 \
+  --no-osm --no-discover-websites --request-budget 9000 --require-exact-identity
+
+# 3) EMERGENCY — drop the two heaviest live modules (group, financial_history)
+uv run python scripts/run_competition_batch.py ... \
+  --modules registry,accounting_obligation,registry_live,financials,roles,locations,website \
+  --max-secondary-pages 2 --no-osm --no-discover-websites \
+  --request-budget 9000 --require-exact-identity
+```
+
 `--organisations` takes the batch Builderr supplies (one organisation number per
 line, or JSON/JSONL). Add `--nav-index out/nav-index.json` if a NAV index is
 prebuilt (`scripts/build_nav_index_search.py`, run outside the window). Keys are
