@@ -72,8 +72,12 @@ def main() -> None:
                         help="Use Google Places (New) for website discovery + ratings/reviews. Requires GOOGLE_PLACES_API_KEY; inert without it.")
     parser.add_argument("--brave", action=argparse.BooleanOptionalAction, default=True,
                         help="Use Brave Search for missing-website discovery. Requires BRAVE_SEARCH_API_KEY; inert without it.")
-    parser.add_argument("--osm", action=argparse.BooleanOptionalAction, default=True,
-                        help="Use OpenStreetMap/Nominatim (free, ODbL) for missing-website discovery. Rate-limited to 1 req/s.")
+    parser.add_argument("--osm", action=argparse.BooleanOptionalAction, default=False,
+                        help="Use OpenStreetMap/Nominatim (free, ODbL) for missing-website discovery. Off by default (request-budget).")
+    parser.add_argument("--max-secondary-pages", type=int, default=None,
+                        help="Cap secondary pages crawled per site (request-efficiency knob). Default: website.DEFAULT_MAX_SECONDARY_PAGES.")
+    parser.add_argument("--request-budget", type=int, default=9500,
+                        help="Self-imposed ceiling on total outbound requests; the run warns loudly if exceeded. The official limit is 10,000.")
     args = parser.parse_args()
 
     # Key-gated connectors: enabled by default only when the key is present.
@@ -120,40 +124,40 @@ def main() -> None:
         website_metrics = {"requests": 0, "bytes": 0, "latencies_ms": []}
         discovery_requests = 0
         if "website" in requested_modules:
-            website_record, website_metrics = fetch_website(profile.get("website"))
-            # For a site-less company, try safe discovery. Exact-entity NAV
-            # homepages (keyed by orgnr from an official ad) are strong
-            # candidates and always tried; free-form domain guesses only when
-            # --discover-websites is enabled (measured low yield, budget risk).
-            nav_home = nav_homepages.get(str(profile["organisation_number"]))
-            extra = [nav_home] if nav_home else []
-            # Official registry email domain: the entity's self-declared contact
-            # domain — a strong, official candidate (still gated).
-            from norway_company_agent.domain_discovery import candidate_domains_from_email
-            reg_value = (profile.get("evidence", {}) or {}).get("registry", {}).get("value") or {}
-            extra.extend(candidate_domains_from_email(reg_value.get("epostadresse")))
-            connector_requests = 0
-            # Google Places (key-gated): websiteUri candidate + ratings/reviews.
-            if places_key:
-                from norway_company_agent import places as places_mod
-                place = places_mod.query_places(profile, places_key)
-                connector_requests += 1
-                if place:
-                    profile["_places_observations"] = places_mod.observations_for(profile, place, retrieved_at=started_at)
-                    place_site = places_mod.website_candidate(place)
-                    if place_site:
-                        extra.append(place_site)
-            # Brave Search (key-gated): transient website candidates.
-            if brave_key and website_record.get("status") != "available":
-                from norway_company_agent.brave_discovery import candidate_urls
-                extra.extend(candidate_urls(profile, brave_key))
-                connector_requests += 1
-            # OpenStreetMap/Nominatim (free, ODbL): website tags for physical sites.
-            if args.osm and website_record.get("status") != "available" and profile.get("municipality"):
-                from norway_company_agent.osm_discovery import candidate_urls as osm_candidates
-                extra.extend(osm_candidates(profile))
-                connector_requests += 1
-            if (args.discover_websites or extra) and website_record.get("status") != "available":
+            website_record, website_metrics = fetch_website(
+                profile.get("website"), max_secondary_pages=args.max_secondary_pages)
+            # Website discovery is OPT-IN. On the holdco-heavy universe it has
+            # measured ~0 yield and it multiplies requests, so it is off by
+            # default to stay inside the 10,000-request budget. When enabled, it
+            # uses exact-entity candidates (NAV ad homepage, registry-email
+            # domain, key-gated Places/Brave, OSM), each still gated.
+            if args.discover_websites and website_record.get("status") != "available":
+                nav_home = nav_homepages.get(str(profile["organisation_number"]))
+                extra = [nav_home] if nav_home else []
+                from norway_company_agent.domain_discovery import candidate_domains_from_email
+                reg_value = (profile.get("evidence", {}) or {}).get("registry", {}).get("value") or {}
+                extra.extend(candidate_domains_from_email(reg_value.get("epostadresse")))
+                connector_requests = 0
+                # Google Places (key-gated): websiteUri candidate + ratings/reviews.
+                if places_key:
+                    from norway_company_agent import places as places_mod
+                    place = places_mod.query_places(profile, places_key)
+                    connector_requests += 1
+                    if place:
+                        profile["_places_observations"] = places_mod.observations_for(profile, place, retrieved_at=started_at)
+                        place_site = places_mod.website_candidate(place)
+                        if place_site:
+                            extra.append(place_site)
+                # Brave Search (key-gated): transient website candidates.
+                if brave_key and website_record.get("status") != "available":
+                    from norway_company_agent.brave_discovery import candidate_urls
+                    extra.extend(candidate_urls(profile, brave_key))
+                    connector_requests += 1
+                # OpenStreetMap/Nominatim (free, ODbL): website tags for physical sites.
+                if args.osm and website_record.get("status") != "available" and profile.get("municipality"):
+                    from norway_company_agent.osm_discovery import candidate_urls as osm_candidates
+                    extra.extend(osm_candidates(profile))
+                    connector_requests += 1
                 from norway_company_agent.domain_discovery import discover_website
                 # Probe the homepage only (cheap): name guesses / email domains
                 # can be wrong and must not consume the deep-crawl budget. Only a
@@ -163,10 +167,12 @@ def main() -> None:
                     max_candidates=args.discover_max_candidates, extra_candidates=extra)
                 discovery_requests = int(ddiag.get("requests", 0) or 0)
                 if discovered is not None:
-                    full_record, full_metrics = fetch_website(discovered.get("value", {}).get("final_url"))
+                    full_record, full_metrics = fetch_website(
+                        discovered.get("value", {}).get("final_url"),
+                        max_secondary_pages=args.max_secondary_pages)
                     discovery_requests += int(full_metrics.get("requests", 0) or 0)
                     website_record = full_record if full_record.get("status") == "available" else discovered
-            discovery_requests += connector_requests
+                discovery_requests += connector_requests
             profile["evidence"]["website"] = apply_website_identity_gate(profile, website_record)["website"]
         workforce_requests = 0
         wf_diag = {"status": "disabled"}
@@ -276,6 +282,13 @@ def main() -> None:
     latencies = sorted(operations.pop("latencies_ms"))
     operations["p50_ms"] = latencies[len(latencies) // 2] if latencies else None
     operations["p95_ms"] = latencies[min(len(latencies) - 1, int(len(latencies) * 0.95))] if latencies else None
+    operations["request_budget"] = args.request_budget
+    budget_exceeded = operations["requests"] > args.request_budget
+    if budget_exceeded:
+        print(json.dumps({
+            "WARNING": "request budget exceeded — lower --max-secondary-pages or keep --discover-websites off",
+            "requests": operations["requests"], "budget": args.request_budget,
+        }))
     report = {
         "run_id": args.run_id,
         "started_at": started_at,
@@ -288,6 +301,7 @@ def main() -> None:
         "registry": registry_metadata,
         "operations": operations,
         "validation": validation,
+        "request_budget_exceeded": budget_exceeded,
         "exact_registry": round(exact_registry_ratio, 4),
         "external_observations": sum(
             len(((p.get("evidence", {}) or {}).get("external_footprint", {}) or {}).get("observations", []))

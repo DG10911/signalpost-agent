@@ -425,6 +425,10 @@ def _jsonld_articles(metadata: dict[str, Any]) -> list[dict[str, Any]]:
 CAREERS_TERMS = ("careers", "career", "jobb", "jobber", "ledige-stillinger",
                  "stilling", "stillinger", "vacancies", "karriere", "arbeid-hos-oss")
 
+# Request-efficiency: the per-site secondary crawl is the dominant cost, so cap
+# it tightly by default (was 14). Override per call via max_secondary_pages.
+DEFAULT_MAX_SECONDARY_PAGES = 6
+
 
 def is_careers_page(url: str, title: str = "") -> bool:
     haystack = (str(url or "") + " " + str(title or "")).casefold()
@@ -579,7 +583,7 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
             if probe.rstrip("/") not in seen_secondary:
                 secondary_urls.append(probe)
                 seen_secondary.add(probe.rstrip("/"))
-        cap = min(len(secondary_urls), 14) if max_secondary_pages is None else max(0, max_secondary_pages)
+        cap = min(len(secondary_urls), DEFAULT_MAX_SECONDARY_PAGES) if max_secondary_pages is None else max(0, max_secondary_pages)
         for page_url in secondary_urls[:cap]:
             page, page_social, page_requests, page_bytes, page_elapsed, page_error, page_extras = _fetch_secondary_page(
                 page_url,

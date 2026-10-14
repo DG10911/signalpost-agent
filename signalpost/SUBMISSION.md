@@ -10,16 +10,28 @@ uv run python scripts/run_competition_batch.py \
   --report out/run-report.json \
   --observations-output out/observations.jsonl \
   --contract-output out/submission-contract.jsonl \
-  --run-id official --expected-count 100 \
-  --discover-websites --require-exact-identity
+  --run-id official --expected-count 1000 \
+  --no-osm --no-discover-websites --max-secondary-pages 6 \
+  --request-budget 9500 --require-exact-identity
 ```
+
+**Request efficiency (the binding constraint).** The official run has a
+**10,000-request ceiling**; the run must complete a full sample under it. This
+command is deliberately lean:
+
+- `--no-discover-websites` (default off) — website discovery measured ~0 yield on
+  the holdco-heavy universe and multiplies requests. It is opt-in only.
+- `--no-osm` (default off) — OpenStreetMap discovery is off by default.
+- `--max-secondary-pages 6` — caps the per-site crawl (was 14).
+- `--request-budget 9500` — a self-imposed ceiling; the run prints a loud warning
+  and sets `request_budget_exceeded` in the report if exceeded, leaving headroom
+  under the official 10,000.
 
 `--organisations` takes the batch Builderr supplies (one organisation number per
 line, or JSON/JSONL). Add `--nav-index out/nav-index.json` if a NAV index is
 prebuilt (`scripts/build_nav_index_search.py`, run outside the window). Keys are
 optional: `GOOGLE_PLACES_API_KEY` / `BRAVE_SEARCH_API_KEY` activate extra
-discovery and are inert when unset (no participant keys are assumed). A clean
-100-company batch costs ~1,100 requests / ~4.5 min, inside 2,000 / 45 min.
+discovery and are inert when unset (no participant keys are assumed).
 
 The full evaluation only needs the agent + a run report; precomputed profiles are
 not used for ranking.
