@@ -80,6 +80,23 @@ def main() -> None:
                         help="Self-imposed ceiling on total outbound requests; the run warns loudly if exceeded. The official limit is 10,000.")
     args = parser.parse_args()
 
+    # Auto-scale the per-site crawl to the batch so a large official batch still
+    # completes under the request budget (completion is mandatory: an over-budget
+    # run is not scored). Reserve a base of ~6 live module requests + 2 for the
+    # homepage/robots, and never go below 2 pages so the canonical careers/news
+    # probes still run for site-bearing companies.
+    if args.max_secondary_pages is None:
+        from norway_company_agent.website import DEFAULT_MAX_SECONDARY_PAGES
+        allowance = max(1, args.request_budget // max(1, args.expected_count))
+        # Allowance minus a base of ~6 live module requests + homepage/robots;
+        # floor of 3 keeps the canonical careers/news probes running.
+        args.max_secondary_pages = max(3, min(DEFAULT_MAX_SECONDARY_PAGES, allowance - 3))
+        print(json.dumps({
+            "request_plan": {"budget": args.request_budget, "companies": args.expected_count,
+                             "per_company_allowance": allowance,
+                             "max_secondary_pages": args.max_secondary_pages},
+        }))
+
     # Key-gated connectors: enabled by default only when the key is present.
     places_key = os.environ.get("GOOGLE_PLACES_API_KEY") if args.google_places else None
     brave_key = os.environ.get("BRAVE_SEARCH_API_KEY") if args.brave else None
