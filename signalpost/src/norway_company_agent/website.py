@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import email.utils
 import ipaddress
 import re
 import socket
@@ -9,6 +10,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import urllib.robotparser
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from typing import Any
 
@@ -498,6 +500,95 @@ def html_dated_items(soup: BeautifulSoup, base_url: str) -> list[dict[str, Any]]
     return out[:25]
 
 
+def _feed_links(soup: BeautifulSoup, base_url: str) -> list[str]:
+    """Feed URLs the site declares for itself (``<link rel="alternate">``).
+
+    Only same-registered-domain RSS/Atom feeds are returned. This is what the
+    strongest public entries use to turn "0% dated news" into real coverage at
+    one request per site.
+    """
+    out: list[str] = []
+    base_domain = _registered_domain(base_url)
+    for link in soup.select('link[rel="alternate"]'):
+        typ = str(link.get("type") or "").lower()
+        href = link.get("href")
+        if not href or not any(k in typ for k in ("rss", "atom", "feed+json")):
+            continue
+        url = urllib.parse.urljoin(base_url, str(href))
+        if _registered_domain(url) == base_domain and url not in out:
+            out.append(url)
+    return out[:1]
+
+
+def _normalize_feed_date(value: str) -> str:
+    """Normalise RSS (RFC 822) / Atom (ISO 8601) dates to an ISO string."""
+    text = (value or "").strip()
+    if not text:
+        return ""
+    try:
+        parsed = email.utils.parsedate_to_datetime(text)
+        if parsed is not None:
+            return parsed.isoformat()
+    except (TypeError, ValueError):
+        pass
+    match = re.match(r"\d{4}-\d{2}-\d{2}", text)
+    return match.group(0) if match else text
+
+
+def _parse_feed(raw: bytes, base_url: str) -> list[dict[str, Any]]:
+    """Parse RSS ``<item>`` / Atom ``<entry>`` elements into article records."""
+    try:
+        root = ET.fromstring(raw)
+    except ET.ParseError:
+        return []
+
+    def local(tag: str) -> str:
+        return tag.rsplit("}", 1)[-1].lower()
+
+    items: list[dict[str, Any]] = []
+    for node in root.iter():
+        if local(node.tag) not in ("item", "entry"):
+            continue
+        title = link = date = None
+        for child in list(node):
+            name = local(child.tag)
+            if name == "title":
+                title = (child.text or "").strip()
+            elif name == "link":
+                href = child.get("href")
+                link = href if href else (child.text or "").strip()
+            elif name in ("pubdate", "published", "updated", "date"):
+                date = (child.text or "").strip()
+        if title and date:
+            items.append({
+                "headline": title[:300],
+                "date_published": _normalize_feed_date(date)[:40],
+                "url": urllib.parse.urljoin(base_url, link) if link else base_url,
+            })
+    return items[:25]
+
+
+def _fetch_feed(url: str, *, timeout: float, max_bytes: int) -> tuple[list[dict[str, Any]], int, int, int]:
+    """Fetch and parse one feed. Returns (items, requests, bytes, elapsed_ms)."""
+    if not _robots_allowed(url, timeout):
+        return [], 1, 0, 0
+    started = time.monotonic()
+    request = urllib.request.Request(url, headers={
+        "User-Agent": USER_AGENT,
+        "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
+    })
+    try:
+        with SAFE_OPENER.open(request, timeout=timeout) as response:
+            raw = response.read(max_bytes + 1)
+            elapsed = int((time.monotonic() - started) * 1000)
+            final_url = response.geturl()
+        if len(raw) > max_bytes:
+            return [], 2, len(raw), elapsed
+        return _parse_feed(raw, final_url), 2, len(raw), elapsed
+    except (urllib.error.URLError, OSError, ValueError):
+        return [], 2, 0, int((time.monotonic() - started) * 1000)
+
+
 def _dedupe_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
     seen: set[tuple[str, str]] = set()
     out: list[dict[str, Any]] = []
@@ -624,6 +715,18 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
                     structured_facts.setdefault(key, val)
             elif page_error:
                 crawl_errors.append({"url": page_url, "error": page_error})
+        # RSS/Atom feed the site declares for itself (one fetch): the highest
+        # dated-activity yield per request, and a technique the strongest public
+        # entries rely on.
+        for feed_url in _feed_links(soup, final_url):
+            feed_items, feed_requests, feed_bytes, feed_elapsed = _fetch_feed(
+                feed_url, timeout=timeout, max_bytes=min(max_bytes, 1_000_000))
+            requests += feed_requests
+            bytes_received += feed_bytes
+            if feed_elapsed:
+                page_latencies.append(feed_elapsed)
+            news_articles.extend(feed_items)
+            break
         value["pages"] = pages
         # Deterministic order so a refresh diff never fires on mere reordering.
         value["social_links"] = sorted(

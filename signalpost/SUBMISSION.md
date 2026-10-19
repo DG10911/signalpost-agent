@@ -15,8 +15,8 @@ uv run python scripts/run_competition_batch.py \
   --request-budget 9500 --require-exact-identity
 ```
 
-**Measured (live, on this host):** a 200-company run with these exact flags =
-**1,422 requests (7.11/company) → ≈7,110 for 1,000 companies**, `exact_registry 1.0`,
+**Measured (live, on this host):** a 100-company run with these exact flags =
+**718 requests (7.18/company) → ≈7,180 for 1,000 companies**, `exact_registry 1.0`,
 validation passed, **~38 min**. Comfortably under the 10,000-request ceiling.
 (`--no-wikidata` is important: Wikidata's batch SPARQL query for a large cohort
 delays the run, so it defaults off.)
