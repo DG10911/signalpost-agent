@@ -78,7 +78,22 @@ def main() -> None:
                         help="Cap secondary pages crawled per site (request-efficiency knob). Default: website.DEFAULT_MAX_SECONDARY_PAGES.")
     parser.add_argument("--request-budget", type=int, default=9500,
                         help="Self-imposed ceiling on total outbound requests; the run warns loudly if exceeded. The official limit is 10,000.")
+    parser.add_argument("--time-budget-minutes", type=float, default=50.0,
+                        help="Hard wall-clock budget for the whole run (default 50, or SIGNALPOST_TIME_BUDGET_MINUTES). "
+                             "After 70%% it skips secondary crawls; at the limit remaining companies are closed "
+                             "as budget_exhausted so the file is still complete.")
     args = parser.parse_args()
+
+    import time as _time
+    env_minutes = os.environ.get("SIGNALPOST_TIME_BUDGET_MINUTES")
+    if env_minutes:
+        try:
+            args.time_budget_minutes = float(env_minutes)
+        except ValueError:
+            pass
+    run_started_monotonic = _time.monotonic()
+    budget_deadline = (run_started_monotonic + args.time_budget_minutes * 60.0) if args.time_budget_minutes > 0 else None
+    soft_deadline = (budget_deadline - 0.3 * args.time_budget_minutes * 60.0) if budget_deadline else None
 
     # Auto-scale the per-site crawl to the batch so a large official batch still
     # completes under the request budget (completion is mandatory: an over-budget
@@ -93,6 +108,7 @@ def main() -> None:
         "companies": args.expected_count,
         "per_company_allowance": max(1, args.request_budget // max(1, args.expected_count)),
         "max_secondary_pages": args.max_secondary_pages,
+        "time_budget_minutes": args.time_budget_minutes,
         "discover_websites": bool(args.discover_websites),
         "osm": bool(args.osm),
     }
@@ -135,14 +151,36 @@ def main() -> None:
         from norway_company_agent.wikidata import query_p2333
         wikidata_index = query_p2333(orgs)
 
+    def _budget_exhausted(profile: dict) -> tuple[dict, dict]:
+        """Close a company without network when the wall-clock budget is spent.
+
+        Every requested module gets a terminal ``budget_exhausted`` record, so the
+        batch still emits exactly one complete envelope per company.
+        """
+        from norway_company_agent.evidence import evidence as _evidence
+        records = profile.setdefault("evidence", {})
+        for module in requested_modules:
+            if module not in records:
+                records[module] = _evidence(
+                    module, "source_error", "time_budget",
+                    "https://data.brreg.no/enhetsregisteret/api/enheter",
+                    note="budget_exhausted: wall-clock budget reached before this company was processed")
+        metric = {"requests": 0, "bytes": 0, "latencies_ms": []}
+        profile["run_metrics"] = metric
+        return profile, metric
+
     def enrich(profile: dict) -> tuple[dict, dict]:
+        if budget_deadline is not None and _time.monotonic() >= budget_deadline:
+            return _budget_exhausted(profile)
+        soft = soft_deadline is not None and _time.monotonic() >= soft_deadline
+        secondary_pages = 0 if soft else args.max_secondary_pages
         records, metrics = fetch_official_modules(profile["organisation_number"], fetch_modules)
         profile["evidence"].update(records)
         website_metrics = {"requests": 0, "bytes": 0, "latencies_ms": []}
         discovery_requests = 0
         if "website" in requested_modules:
             website_record, website_metrics = fetch_website(
-                profile.get("website"), max_secondary_pages=args.max_secondary_pages)
+                profile.get("website"), max_secondary_pages=secondary_pages)
             # Website discovery is OPT-IN. On the holdco-heavy universe it has
             # measured ~0 yield and it multiplies requests, so it is off by
             # default to stay inside the 10,000-request budget. When enabled, it
@@ -186,7 +224,7 @@ def main() -> None:
                 if discovered is not None:
                     full_record, full_metrics = fetch_website(
                         discovered.get("value", {}).get("final_url"),
-                        max_secondary_pages=args.max_secondary_pages)
+                        max_secondary_pages=secondary_pages)
                     discovery_requests += int(full_metrics.get("requests", 0) or 0)
                     website_record = full_record if full_record.get("status") == "available" else discovered
                 discovery_requests += connector_requests

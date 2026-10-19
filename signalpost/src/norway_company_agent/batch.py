@@ -134,6 +134,8 @@ def profiles_from_bulk(path: str | Path, organisation_numbers: Iterable[str]) ->
 def evidence_terminal_state(record: dict[str, Any] | None) -> str:
     if not record:
         return "submission_error"
+    if "budget_exhausted" in str(record.get("note") or "").casefold():
+        return "budget_exhausted"
     status = record.get("status")
     if status == "available":
         return "complete"

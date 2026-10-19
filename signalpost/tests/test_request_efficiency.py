@@ -39,3 +39,11 @@ class TestRequestEfficiency(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestTimeBudget(unittest.TestCase):
+    def test_budget_exhausted_is_terminal(self):
+        from norway_company_agent.batch import evidence_terminal_state, TERMINAL_STATES
+        state = evidence_terminal_state({"status": "source_error", "note": "budget_exhausted: wall-clock budget reached"})
+        self.assertEqual(state, "budget_exhausted")
+        self.assertIn(state, TERMINAL_STATES)

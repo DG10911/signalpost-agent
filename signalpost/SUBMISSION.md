@@ -12,7 +12,7 @@ uv run python scripts/run_competition_batch.py \
   --contract-output out/submission-contract.jsonl \
   --run-id official --expected-count 1000 \
   --no-osm --no-discover-websites --no-wikidata \
-  --request-budget 9500 --require-exact-identity
+  --request-budget 9500 --time-budget-minutes 50 --require-exact-identity
 ```
 
 **Measured (live, on this host):** a 100-company run with these exact flags =
@@ -32,6 +32,7 @@ command is deliberately lean:
   `--request-budget 9500` and `--expected-count 1000` it picks 6 pages/site, and
   it drops toward the floor of 3 for larger batches, so the run fits the ceiling
   at any size. (Override to pin it.) `website.DEFAULT_MAX_SECONDARY_PAGES` is 8.
+- `--time-budget-minutes 50` — a wall-clock guard: after 70% it skips secondary crawls; at the limit, remaining companies are closed as `budget_exhausted` so the file is still complete (a timeout means the run is not scored).
 - `--request-budget 9500` — a self-imposed ceiling; the run prints a loud warning
   and sets `request_budget_exceeded` in the report if exceeded, leaving headroom
   under the official 10,000.
