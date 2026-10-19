@@ -50,3 +50,25 @@ class TestFeedExtraction(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+SITEMAP = b"""<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://acme.no/nyheter/ny-rigg</loc><lastmod>2025-09-22T20:00:00+02:00</lastmod></url>
+<url><loc>https://acme.no/om-oss</loc><lastmod>2024-01-01</lastmod></url>
+</urlset>"""
+
+
+class TestSitemapExtraction(unittest.TestCase):
+    def test_sitemap_items(self):
+        items = website._parse_sitemap(SITEMAP, "https://acme.no/")
+        self.assertEqual(len(items), 2)
+        self.assertEqual(items[0]["headline"], "ny rigg")
+        self.assertEqual(items[0]["url"], "https://acme.no/nyheter/ny-rigg")
+        self.assertIn("2025-09-22", items[0]["date_published"])
+
+    def test_sitemap_candidate_convention(self):
+        links = website._sitemap_candidates(BeautifulSoup("<html></html>", "lxml"), "https://acme.no/")
+        self.assertEqual(links, ["https://acme.no/sitemap.xml"])
+
+    def test_malformed_sitemap_is_empty(self):
+        self.assertEqual(website._parse_sitemap(b"nope", "https://acme.no/"), [])

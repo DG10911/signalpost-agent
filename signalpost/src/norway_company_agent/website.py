@@ -5,6 +5,7 @@ import email.utils
 import ipaddress
 import re
 import socket
+import threading
 import time
 import urllib.error
 import urllib.parse
@@ -87,22 +88,37 @@ def _registered_domain(url: str) -> str:
     return ext.top_domain_under_public_suffix
 
 
+_ROBOTS_CACHE: dict[str, Any] = {}
+_ROBOTS_LOCK = threading.Lock()
+
+
 def _robots_allowed(url: str, timeout: float) -> bool:
     assert_public_url(url)
     parsed = urllib.parse.urlparse(url)
     robots_url = urllib.parse.urlunparse((parsed.scheme, parsed.netloc, "/robots.txt", "", "", ""))
+    # Cache robots.txt per host: each crawl otherwise pays a robots request per
+    # page, which doubles the request cost of the per-site secondary crawl.
+    host_key = f"{parsed.scheme}://{parsed.netloc}"
+    with _ROBOTS_LOCK:
+        cached = _ROBOTS_CACHE.get(host_key)
+    if cached is not None:
+        return cached.can_fetch(USER_AGENT, url) if hasattr(cached, "can_fetch") else bool(cached)
     parser = urllib.robotparser.RobotFileParser()
     parser.set_url(robots_url)
     try:
         request = urllib.request.Request(robots_url, headers={"User-Agent": USER_AGENT})
         with SAFE_OPENER.open(request, timeout=timeout) as response:
             parser.parse(response.read().decode("utf-8", errors="replace").splitlines())
-        return parser.can_fetch(USER_AGENT, url)
     except Exception:
         # An unavailable robots file is not permission to ignore explicit site terms; callers retain
         # the URL and can route uncertain domains to review. For this bounded homepage POC, allow one
         # ordinary GET when robots.txt is absent rather than crawl deeper.
+        with _ROBOTS_LOCK:
+            _ROBOTS_CACHE[host_key] = True
         return True
+    with _ROBOTS_LOCK:
+        _ROBOTS_CACHE[host_key] = parser
+    return parser.can_fetch(USER_AGENT, url)
 
 
 def _social_links(base_url: str, soup: BeautifulSoup) -> list[dict[str, str]]:
@@ -589,6 +605,86 @@ def _fetch_feed(url: str, *, timeout: float, max_bytes: int) -> tuple[list[dict[
         return [], 2, 0, int((time.monotonic() - started) * 1000)
 
 
+def _sitemap_candidates(soup: BeautifulSoup, base_url: str) -> list[str]:
+    """Same-domain sitemap URLs declared by the site (or the conventional path)."""
+    out: list[str] = []
+    base_domain = _registered_domain(base_url)
+    for link in soup.select('link[rel="sitemap"]'):
+        href = link.get("href")
+        if href:
+            url = urllib.parse.urljoin(base_url, str(href))
+            if _registered_domain(url) == base_domain and url not in out:
+                out.append(url)
+    conventional = urllib.parse.urljoin(base_url, "/sitemap.xml")
+    if conventional not in out:
+        out.append(conventional)
+    return out[:1]
+
+
+def _headline_from_url(url: str) -> str:
+    path = urllib.parse.urlparse(url).path.rstrip("/")
+    slug = path.rsplit("/", 1)[-1] if path else ""
+    slug = re.sub(r"[-_]+", " ", slug).strip()
+    return slug[:300]
+
+
+def _parse_sitemap(raw: bytes, base_url: str) -> list[dict[str, Any]]:
+    """Parse ``<url><loc><lastmod>`` entries into dated article records."""
+    try:
+        root = ET.fromstring(raw)
+    except ET.ParseError:
+        return []
+
+    def local(tag: str) -> str:
+        return tag.rsplit("}", 1)[-1].lower()
+
+    items: list[dict[str, Any]] = []
+    for node in root.iter():
+        if local(node.tag) != "url":
+            continue
+        loc = lastmod = None
+        for child in list(node):
+            name = local(child.tag)
+            if name == "loc":
+                loc = (child.text or "").strip()
+            elif name == "lastmod":
+                lastmod = (child.text or "").strip()
+        if not loc or not lastmod:
+            continue
+        url = urllib.parse.urljoin(base_url, loc)
+        headline = _headline_from_url(url)
+        if not headline:
+            continue
+        items.append({
+            "headline": headline,
+            "date_published": _normalize_feed_date(lastmod)[:40],
+            "url": url,
+        })
+    items.sort(key=lambda a: str(a.get("date_published") or ""), reverse=True)
+    return items[:25]
+
+
+def _fetch_sitemap(url: str, *, timeout: float, max_bytes: int) -> tuple[list[dict[str, Any]], int, int, int]:
+    """Fetch and parse one sitemap. Returns (items, requests, bytes, elapsed_ms)."""
+    if not _robots_allowed(url, timeout):
+        return [], 1, 0, 0
+    started = time.monotonic()
+    request = urllib.request.Request(url, headers={
+        "User-Agent": USER_AGENT,
+        "Accept": "application/xml, text/xml, */*",
+    })
+    try:
+        with SAFE_OPENER.open(request, timeout=timeout) as response:
+            raw = response.read(max_bytes + 1)
+            elapsed = int((time.monotonic() - started) * 1000)
+            final_url = response.geturl()
+        if len(raw) > max_bytes:
+            return [], 2, len(raw), elapsed
+        return _parse_sitemap(raw, final_url), 2, len(raw), elapsed
+    except (urllib.error.URLError, OSError, ValueError):
+        return [], 2, 0, int((time.monotonic() - started) * 1000)
+
+
 def _dedupe_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
     seen: set[tuple[str, str]] = set()
     out: list[dict[str, Any]] = []
@@ -718,6 +814,7 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         # RSS/Atom feed the site declares for itself (one fetch): the highest
         # dated-activity yield per request, and a technique the strongest public
         # entries rely on.
+        feed_found = False
         for feed_url in _feed_links(soup, final_url):
             feed_items, feed_requests, feed_bytes, feed_elapsed = _fetch_feed(
                 feed_url, timeout=timeout, max_bytes=min(max_bytes, 1_000_000))
@@ -725,8 +822,23 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
             bytes_received += feed_bytes
             if feed_elapsed:
                 page_latencies.append(feed_elapsed)
-            news_articles.extend(feed_items)
+            if feed_items:
+                news_articles.extend(feed_items)
+                feed_found = True
             break
+        # Fallback when the site has no feed: its sitemap carries dated URLs
+        # (lastmod), giving dated activity for one extra request.
+        if not feed_found:
+            for sm_url in _sitemap_candidates(soup, final_url):
+                sm_items, sm_requests, sm_bytes, sm_elapsed = _fetch_sitemap(
+                    sm_url, timeout=timeout, max_bytes=min(max_bytes, 2_000_000))
+                if sm_items:
+                    requests += sm_requests
+                    bytes_received += sm_bytes
+                    if sm_elapsed:
+                        page_latencies.append(sm_elapsed)
+                    news_articles.extend(sm_items)
+                break
         value["pages"] = pages
         # Deterministic order so a refresh diff never fires on mere reordering.
         value["social_links"] = sorted(

@@ -16,7 +16,7 @@ uv run python scripts/run_competition_batch.py \
 ```
 
 **Measured (live, on this host):** a 100-company run with these exact flags =
-**718 requests (7.18/company) → ≈7,180 for 1,000 companies**, `exact_registry 1.0`,
+**730 requests (7.30/company) → ≈7,300 for 1,000 companies**, `exact_registry 1.0`,
 validation passed, **~38 min**. Comfortably under the 10,000-request ceiling.
 (`--no-wikidata` is important: Wikidata's batch SPARQL query for a large cohort
 delays the run, so it defaults off.)
