@@ -206,6 +206,16 @@ class Config:
     assumed_annual_vol: float = 0.6
     min_edge_per_share_usd: float = 0.0
 
+    # Size every BUY to the fee-inclusive $5 cap (minus a small buffer) instead of
+    # a fixed share count: a cycle then carries ~$9.8 of volume rather than ~$6.9,
+    # so fewer cycles are needed to reach $1,000.
+    size_to_cap: bool = False
+    cap_buffer_usd: float = 0.01
+
+    # Once the volume target is met and we are flat, stop trading forever so the
+    # cash at the crossing is locked (ranking is cash at that first clean cross).
+    lock_after_target: bool = True
+
     # Self-calibration: estimate realised BTC vol online from the reference feed
     # and price the side with it, instead of a fixed assumption (robust across
     # quiet/volatile regimes).
@@ -377,6 +387,13 @@ class Bot:
             self.last_flat_at = now
             self.entry_cost = None
         self.position_was_open = position is not None
+
+        # Clean-crossing lock: once the volume target is reached and we are flat,
+        # never trade again — the ranking metric is cash at that first clean
+        # crossing, so further trading can only risk it.
+        target_volume = float(rules.get("targetVolumeUsd", 1000.0))
+        if cfg.lock_after_target and position is None and volume >= target_volume - 1e-9:
+            return {"action": "HOLD"}
 
         # ---------------- Exit path (position open) --------------------- #
         if position is not None:
@@ -602,27 +619,44 @@ class Bot:
         return side
 
     def _size(self, book: dict, cash: float, rules: dict) -> float:
-        """Largest share count (respecting minOrderSize) that fits the $5 cap
-        and available cash at the current best price."""
+        """Largest share count that fits the fee-inclusive BUY cap.
+
+        In ``size_to_cap`` mode this fills the cap (full ticket); otherwise it
+        targets ``target_shares`` and shrinks only if that would breach the cap.
+        """
         cfg = self.config
         min_order = float(book.get("minOrderSize", 0.0) or 0.0)
+        ceiling = min(cash, float(rules.get("maximumBuyCashUsd", 5.0)))
+        asks = book.get("asks", [])
+
+        if cfg.size_to_cap:
+            ceiling -= max(0.0, cfg.cap_buffer_usd)
+            levels = _levels(asks, reverse=False)
+            if not levels or ceiling <= 0.0:
+                return 0.0
+            best_ask = levels[0][0]
+            approx = int(ceiling / max(best_ask, 1e-9)) + 1
+            for shares in range(approx, 0, -1):
+                req = buy_cost(asks, float(shares))
+                if req is not None and req[0] + req[1] <= ceiling + 1e-9:
+                    if min_order and shares < min_order:
+                        return 0.0
+                    return float(shares)
+            return 0.0
+
         target = cfg.target_shares
         if min_order > 0:
             target = max(target, min_order)
-        # Confirm the target fits budget; if not, and we cannot go below the
-        # minimum order size, we simply cannot trade this book.
-        required = buy_cost(book.get("asks", []), target)
+        required = buy_cost(asks, target)
         if required is None:
             return 0.0
         gross, fees = required
-        ceiling = min(cash, float(rules.get("maximumBuyCashUsd", 5.0)))
         if gross + fees <= ceiling + 1e-9:
             return target
-        # Try shrinking down to the minimum order size in unit steps.
         floor = max(min_order, 1.0)
         shares = math.floor(target)
         while shares >= floor:
-            req = buy_cost(book.get("asks", []), float(shares))
+            req = buy_cost(asks, float(shares))
             if req is not None and req[0] + req[1] <= ceiling + 1e-9:
                 return float(shares)
             shares -= 1
