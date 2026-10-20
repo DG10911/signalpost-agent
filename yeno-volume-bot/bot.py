@@ -216,6 +216,15 @@ class Config:
     # cash at the crossing is locked (ranking is cash at that first clean cross).
     lock_after_target: bool = True
 
+    # Execution-quality gates (from the strongest public entries): reject wide
+    # spreads, require a real profit target rather than exiting at break-even,
+    # exit when the reference thesis flips, and stop trading a market after a
+    # loss so one bad regime cannot compound.
+    max_spread: float = 0.03
+    profit_floor_usd: float = 0.20
+    exit_on_thesis_flip: bool = True
+    abort_market_after_loss: bool = True
+
     # Self-calibration: estimate realised BTC vol online from the reference feed
     # and price the side with it, instead of a fixed assumption (robust across
     # quiet/volatile regimes).
@@ -283,6 +292,7 @@ class Bot:
     _ref_hist: Deque[Tuple[float, float]] = field(default_factory=deque)
     _price_hist: Deque[Tuple[float, float]] = field(default_factory=deque)
     entry_cost: Optional[float] = None
+    loss_in_market: bool = False
 
     def decide(self, observation: dict) -> dict:
         try:
@@ -299,6 +309,7 @@ class Bot:
         self.completed_cycles = 0
         self.last_flat_at = -math.inf
         self.last_buy_attempt_at = -math.inf
+        self.loss_in_market = False
         self._ref_hist = deque(maxlen=self.config.reference_history)
 
     def _record_reference(self, reference: Any, now: float) -> Optional[float]:
@@ -391,16 +402,22 @@ class Bot:
         # Clean-crossing lock: once the volume target is reached and we are flat,
         # never trade again — the ranking metric is cash at that first clean
         # crossing, so further trading can only risk it.
+        reference = observation.get("reference")
         target_volume = float(rules.get("targetVolumeUsd", 1000.0))
         if cfg.lock_after_target and position is None and volume >= target_volume - 1e-9:
             return {"action": "HOLD"}
 
         # ---------------- Exit path (position open) --------------------- #
         if position is not None:
-            return self._decide_exit(position, books, seconds)
+            current_gap = None
+            if isinstance(reference, dict):
+                try:
+                    current_gap = float(reference["btcMidUsd"]) - float(reference["openingTargetUsd"])
+                except (KeyError, TypeError, ValueError):
+                    current_gap = None
+            return self._decide_exit(position, books, seconds, current_gap)
 
         # ---------------- Entry path (flat) ----------------------------- #
-        reference = observation.get("reference")
         aggression = self._aggression(now, rules, volume)
         return self._decide_entry(reference, books, rules, now, seconds, cash, aggression)
 
@@ -427,7 +444,8 @@ class Bot:
             return max(cfg.min_aggression, 1.2 - 0.5 * (pace - 1.0))
         return min(cfg.max_aggression, 1.0 + 0.8 * (1.0 - pace))
 
-    def _decide_exit(self, position: dict, books: dict, seconds: float) -> dict:
+    def _decide_exit(self, position: dict, books: dict, seconds: float,
+                     current_gap: Optional[float] = None) -> dict:
         cfg = self.config
         # The evaluator owns the position object and its field names are not
         # documented, so read them defensively (never crash -> never fail flat).
@@ -454,9 +472,20 @@ class Bot:
         already = float(position.get("sell_gross_usd", 0.0)) - float(position.get("sell_fees_usd", 0.0))
         cycle_pnl = already + sell_gross - sell_fees - paid
 
-        if cycle_pnl >= cfg.min_profit_per_share_usd * shares - 1e-9:
+        target_profit = cfg.min_profit_per_share_usd * shares
+        if cfg.profit_floor_usd > 0.0:
+            target_profit = max(target_profit, cfg.profit_floor_usd)
+        if cycle_pnl >= target_profit - 1e-9:
             return {"action": "SELL"}
+        if cfg.exit_on_thesis_flip and current_gap is not None:
+            if side == "YES" and current_gap < 0.0 - 1e-9:
+                self.loss_in_market = True
+                return {"action": "SELL"}
+            if side == "NO" and current_gap > 0.0 + 1e-9:
+                self.loss_in_market = True
+                return {"action": "SELL"}
         if cycle_pnl <= -cfg.stop_loss_per_share_usd * shares + 1e-9:
+            self.loss_in_market = True
             return {"action": "SELL"}
         return {"action": "HOLD"}
 
@@ -467,6 +496,8 @@ class Bot:
         cfg = self.config
 
         if self.completed_cycles >= cfg.max_cycles_per_market:
+            return {"action": "HOLD"}
+        if cfg.abort_market_after_loss and self.loss_in_market:
             return {"action": "HOLD"}
         if now - self.last_flat_at < cfg.reentry_cooldown_seconds - 1e-9:
             return {"action": "HOLD"}
@@ -505,6 +536,9 @@ class Bot:
             return {"action": "HOLD"}
         best_ask = best_asks[0][0]
         if best_ask < cfg.min_entry_price - 1e-9 or best_ask > max_price + 1e-9:
+            return {"action": "HOLD"}
+        best_bids_for_spread = _levels(book.get("bids", []), reverse=True)
+        if best_bids_for_spread and best_ask - best_bids_for_spread[0][0] > cfg.max_spread + 1e-9:
             return {"action": "HOLD"}
 
         # Book must agree the reference-favoured side is the favourite: its mid
