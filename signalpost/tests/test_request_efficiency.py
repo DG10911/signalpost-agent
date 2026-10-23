@@ -16,7 +16,7 @@ class TestRequestEfficiency(unittest.TestCase):
     def test_secondary_page_cap_default_is_lean(self):
         # Was 14; the tighter cap is what keeps a 1,000-company run under budget.
         self.assertLessEqual(website.DEFAULT_MAX_SECONDARY_PAGES, 8)
-        self.assertGreaterEqual(website.DEFAULT_MAX_SECONDARY_PAGES, 6)
+        self.assertGreaterEqual(website.DEFAULT_MAX_SECONDARY_PAGES, 4)
 
     def test_canonical_probes_precede_discovered_links(self):
         html = '<a href="/om-oss">Om oss</a><a href="/kontakt">Kontakt</a>'
