@@ -11,6 +11,7 @@ evaluator reads them in the specified format instead of our internal module dump
 
 from __future__ import annotations
 
+import json
 from typing import Any
 
 # internal evidence status -> contract availability
@@ -56,6 +57,12 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
             seen_ev.add(ev_id)
         return ev_id
 
+    def add_fact(prefix: str, record: dict, span: str | None) -> str:
+        """One evidence entry with a fact-specific supporting quote."""
+        ev_id = f"{prefix}-{len(evidence)}"
+        evidence.append(_ev_entry(ev_id, record, span))
+        return ev_id
+
     def claim(field: str, value: Any, availability: str, ev_ids: list[str], confidence: float,
               reporting_period: str | None = None) -> None:
         claims.append({"field": field, "value": value, "availability": availability,
@@ -67,8 +74,12 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
     if reg:
         add_ev("ev-registry", reg, "Official Brønnøysund registry record")
     for rc in profile.get("registry_claims", []) or []:
-        claim(rc["field"], rc["value"], rc.get("availability", "available"), ["ev-registry"],
-              0.97, rc.get("reporting_period"))
+        try:
+            quote = f'"{rc["field"]}": ' + json.dumps(rc.get("value"), ensure_ascii=False)[:300]
+        except (TypeError, ValueError):
+            quote = str(rc.get("value"))[:300]
+        claim(rc["field"], rc["value"], rc.get("availability", "available"),
+              [add_fact("ev-registry", reg, quote)], 0.97, rc.get("reporting_period"))
 
     # 2) Financials
     fin = ev.get("financials", {}) or {}
@@ -82,7 +93,9 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
             period = r.get("period")
             for f in ("revenue", "operating_result", "annual_result", "assets", "equity", "debt"):
                 if r.get(f) is not None:
-                    claim(f"financials.{f}", r[f], "available", ["ev-financials"], 0.97, str(period))
+                    quote = f"{period} {f}: {r[f]}"
+                    claim(f"financials.{f}", r[f], "available",
+                          [add_fact("ev-fin", fin, quote)], 0.97, str(period))
     elif fin:
         claim("financials", None, _avail(fin.get("status")), ["ev-financials"], 0.5)
 
@@ -99,7 +112,9 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
                 name = p.get("name") or p.get("organisation_number")
                 code = str(p.get("role_code") or p.get("group_code") or "role").lower()
                 if name:
-                    claim(f"role.{code}", name, "available", ["ev-roles"], 0.97, p.get("last_changed"))
+                    quote = f"{name} — {p.get('role') or code}"
+                    claim(f"role.{code}", name, "available",
+                          [add_fact("ev-role", roles_rec, quote)], 0.97, p.get("last_changed"))
         else:
             claim("roles", None, _avail(roles_rec.get("status")), ["ev-roles"], 0.5)
 
@@ -111,7 +126,9 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
             claim("locations", locs, "available", ["ev-locations"], 0.97)
             for loc in locs:
                 if loc.get("name"):
-                    claim("location", loc, "available", ["ev-locations"], 0.97)
+                    quote = f"{loc.get('name') or ''} — {loc.get('address') or ''}".strip(" —")
+                    claim("location", loc, "available",
+                          [add_fact("ev-loc", loc_rec, quote)], 0.97)
         else:
             claim("locations", None, _avail(loc_rec.get("status")), ["ev-locations"], 0.5)
 
@@ -122,7 +139,8 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
         if years:
             claim("financial_history.years", years, "available", ["ev-financial_history"], 0.97)
             for year in years:
-                claim("financial_history.year", year, "available", ["ev-financial_history"], 0.97, str(year))
+                claim("financial_history.year", year, "available",
+                      [add_fact("ev-fh", fh, f"Filed year {year}")], 0.97, str(year))
 
     # 4) Website layer (only publish facts when identity is exact; else ambiguous)
     web = ev.get("website", {}) or {}
@@ -140,21 +158,24 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
     if web.get("status") == "available" and pub:
         claim("official_website", wv.get("final_url"), "available", ["ev-website"], (wv.get("identity_assessment") or {}).get("score", 0.95))
         if wv.get("description"):
-            claim("website_description", wv["description"], "available", ["ev-website"], 0.9)
+            claim("website_description", wv["description"], "available",
+                  [add_fact("ev-web", web, wv["description"][:300])], 0.9)
         for j in (wv.get("job_postings") or [])[:12]:
-            claim("job_posting", {"title": j.get("title"), "date_posted": j.get("date_posted"), "url": j.get("url")}, "available", ["ev-website"], 0.9)
+            claim("job_posting", {"title": j.get("title"), "date_posted": j.get("date_posted"), "url": j.get("url")}, "available",
+                  [add_fact("ev-web", web, f"{j.get('title') or ''} {j.get('date_posted') or ''}".strip())], 0.9)
         # A company careers page is itself a hiring signal (the shared reference
         # set records the careers URL), even when the page carries no JobPosting
         # structured data.
         for c in (wv.get("careers_pages") or [])[:6]:
             claim("job_posting", {"title": c.get("title"), "url": c.get("url"), "kind": "careers_page"},
-                  "available", ["ev-website"], 0.9)
+                  "available", [add_fact("ev-web", web, f"Careers: {c.get('title') or c.get('url') or ''}".strip())], 0.9)
         for a in (wv.get("news_articles") or [])[:12]:
             claim("news", {"headline": a.get("headline"), "date_published": a.get("date_published"), "url": a.get("url")},
-                  "available", ["ev-website"], 0.9)
+                  "available", [add_fact("ev-web", web, f"{a.get('headline') or ''} ({a.get('date_published') or ''})".strip())], 0.9)
         sf = wv.get("structured_facts") or {}
         for k, v in sf.items():
-            claim(f"website.{k}", v, "available", ["ev-website"], 0.9)
+            claim(f"website.{k}", v, "available",
+                  [add_fact("ev-web", web, f"{k}: {str(v)[:200]}")], 0.9)
     elif registry_site:
         # Registry-listed website: official association stands even if the crawl
         # could not confirm the entity from the (often JS-rendered) page.
@@ -171,7 +192,8 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
     for s in (wv.get("social_links") or []):
         platform = s.get("platform")
         if platform and s.get("url"):
-            claim(f"social.{platform}", s.get("url"), "available", ["ev-website"], 0.9)
+            claim(f"social.{platform}", s.get("url"), "available",
+                  [add_fact("ev-web", web, f"{platform}: {s.get('url')}")], 0.9)
 
     # 5) Published external observations
     ef = ev.get("external_footprint", {}) or {}

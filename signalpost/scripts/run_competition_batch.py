@@ -78,8 +78,8 @@ def main() -> None:
                         help="Cap secondary pages crawled per site (request-efficiency knob). Default: website.DEFAULT_MAX_SECONDARY_PAGES.")
     parser.add_argument("--request-budget", type=int, default=9500,
                         help="Self-imposed ceiling on total outbound requests; the run warns loudly if exceeded. The official limit is 10,000.")
-    parser.add_argument("--time-budget-minutes", type=float, default=50.0,
-                        help="Hard wall-clock budget for the whole run (default 50, or SIGNALPOST_TIME_BUDGET_MINUTES). "
+    parser.add_argument("--time-budget-minutes", type=float, default=43.0,
+                        help="Hard wall-clock budget for the whole run (default 42 to finish inside the official 45, or SIGNALPOST_TIME_BUDGET_MINUTES). "
                              "After 70%% it skips secondary crawls; at the limit remaining companies are closed "
                              "as budget_exhausted so the file is still complete.")
     args = parser.parse_args()

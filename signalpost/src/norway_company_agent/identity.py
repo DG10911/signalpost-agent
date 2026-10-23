@@ -80,8 +80,17 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
         # Homepage only. An interior page may be a group/parent contact page
         # listing many subsidiaries' org numbers, so matching there is NOT exact
         # (adversarial-audit case). The homepage is the entity's own statement.
-        score = 1.0
-        reasons.append("exact organisation number appears in homepage identity evidence")
+        homepage_org_numbers = set(re.findall(r"\b\d{9}\b", homepage_candidate_text))
+        if len(homepage_org_numbers) > 1 and ratio < 0.5:
+            # The registry-linked domain looks like a parent/group site: it lists
+            # several organisation numbers but its own identity does not carry
+            # this legal name. Publish the site association, but never its social
+            # accounts, news or jobs as this company's (evaluator audit rule).
+            score = 0.6
+            reasons.append("group/parent site lists multiple organisation numbers without matching this legal name; cross-entity facts quarantined")
+        else:
+            score = 1.0
+            reasons.append("exact organisation number appears in homepage identity evidence")
     elif len(core) >= 2 and exact_homepage_name:
         score = 0.95
         reasons.append("all normalized legal-name tokens appear together in homepage identity evidence")

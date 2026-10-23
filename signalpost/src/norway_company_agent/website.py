@@ -464,7 +464,7 @@ CAREERS_TERMS = ("careers", "career", "jobb", "jobber", "ledige-stillinger",
 # Request-efficiency: the per-site secondary crawl is the dominant cost, so cap
 # it (was 14). Canonical careers/news probes are crawled first, so this keeps the
 # highest-value recall per request. Override per call via max_secondary_pages.
-DEFAULT_MAX_SECONDARY_PAGES = 8
+DEFAULT_MAX_SECONDARY_PAGES = 5
 
 
 def is_careers_page(url: str, title: str = "") -> bool:
