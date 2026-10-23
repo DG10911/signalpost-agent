@@ -31,6 +31,7 @@ def fetch_json(url: str, *, timeout: float = 20.0, attempts: int = 3) -> FetchRe
     last_error = "request failed"
     for attempt in range(attempts):
         started = time.monotonic()
+        wait = 0.4 * (2 ** attempt)
         request = urllib.request.Request(
             url,
             headers={"Accept": "application/json", "User-Agent": "builderr-signalpost-poc/0.1 (+https://builderr.ai)"},
@@ -46,8 +47,15 @@ def fetch_json(url: str, *, timeout: float = 20.0, attempts: int = 3) -> FetchRe
             if exc.code in {404, 410}:
                 return FetchResult(url, exc.code, elapsed, len(raw), error=f"HTTP {exc.code}", content_sha256=hashlib.sha256(raw).hexdigest(), retrieved_at=_utc_now())
             last_error = f"HTTP {exc.code}"
+            if exc.code == 429:
+                # Honour Retry-After when the origin asks us to slow down.
+                retry_after = (exc.headers or {}).get("Retry-After") if getattr(exc, "headers", None) else None
+                try:
+                    wait = min(5.0, float(retry_after)) if retry_after is not None else 1.5 * (attempt + 1)
+                except (TypeError, ValueError):
+                    wait = 1.5 * (attempt + 1)
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
             last_error = type(exc).__name__
         if attempt + 1 < attempts:
-            time.sleep(0.4 * (2**attempt))
+            time.sleep(wait)
     return FetchResult(url, 0, 0, 0, error=last_error, retrieved_at=_utc_now())
