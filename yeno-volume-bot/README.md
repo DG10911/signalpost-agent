@@ -25,7 +25,7 @@ dependencies, no model/API calls, no network. Expected external cost: $0.**
 
 ```bash
 python server.py                      # serves POST http://127.0.0.1:8080/decide
-python -m unittest discover -s tests  # 27 tests, all pass
+python -m unittest discover -s tests  # 34 tests, all pass
 python simulator.py --paths 30        # synthetic sanity/stress harness
 python scenarios.py --paths 40        # adversarial regime battery (see below)
 ```
@@ -159,3 +159,30 @@ Expect fewer trades and lower volume; when no entry clears the margin the bot
 holds and keeps its cash. Synthetic battery: terminal-flat in all 10 regimes,
 0 invalid actions, 27 tests pass. No real order-book data was available, so the
 margin is estimated from one aggregate sample, not tuned.
+
+## v5 — terminal-flat safety + low-fee zone (25 Oct 2026)
+
+From a review of the active competitor bots and the current evaluator contract:
+
+1. **Never hold at market change.** Organisers have told builders that a
+   position still open at market change ends the whole replay. v5 SELLs at
+   once if the position's `market_id` differs from the current market, sells
+   into whatever bids exist (partial fills are allowed) once the book cannot
+   absorb the whole position, and starts the forced exit at **45 s** (was 25 s).
+   Entries stop 5 s before that window.
+2. **Exit depth at entry.** The favourite's best bid alone must hold at least
+   the shares we buy (Builderr hint cited by another entrant, 24 Oct).
+3. **Calibrated tail.** On 14 days of Binance 1 s BTC (55–150 s before close)
+   the fair-value model at vol ×1.0 was overconfident by 1–3 points whenever it
+   said ≥ 0.97. Vol ×1.2 brings that within ~0.6 points on both the first 10
+   days and the held-out last 4 (`vol_multiplier=1.2`).
+4. **Margin scales with price uncertainty.** The $0.045/share margin measured
+   on the real sample (average entry ≈ 0.74) now scales with p·(1−p), so it is
+   ~$0.011 at 0.95, where the fee fraction is lowest (1.35% per side vs 2.8%),
+   and ~$0.058 at parity. The entry ceiling rises to 0.969, also in defensive
+   mode, so low cash no longer forces mid-price, high-fee entries.
+
+Unchanged: no loosening when behind pace, profit-target exit, thesis-flip exit,
+abort after a loss, crossing lock. 34 tests pass; synthetic battery
+terminal-flat in all 10 regimes, 0 invalid actions; decisions take < 3 ms.
+The synthetic harness cannot predict real volume; expect fewer, cheaper trades.

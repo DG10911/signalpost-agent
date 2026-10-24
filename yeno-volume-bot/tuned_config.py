@@ -2,9 +2,15 @@
 from bot import Config
 
 TUNED = Config(
-    entry_window_seconds=120.0,
+    entry_window_seconds=150.0,
     final_guard_seconds=16.0,
-    forced_exit_seconds=25.0,
+    # v5: exit from 45 s (25 s was the latest of the active bots; an open
+    # position at market change ends the replay).
+    forced_exit_seconds=45.0,
+    entry_exit_gap_seconds=5.0,
+    exit_on_market_change=True,
+    sell_partial_when_thin=True,
+    min_exit_bid_multiple=1.0,
     min_reference_gap_usd=8.0,
     max_reference_age_seconds=1.5,
     persistence_samples=1,
@@ -32,9 +38,12 @@ TUNED = Config(
     # So >= ~$0.029/share of modelled edge is lost to latency/adverse fills;
     # the margin must exceed that for an entry to keep cash after fees and exit.
     edge_safety_margin=0.045,
+    margin_variance_scaled=True,
+    margin_ref_price=0.74,
+    vol_multiplier=1.2,
     target_shares=6.0,
     min_entry_price=0.4,
-    max_entry_price=0.93,
+    max_entry_price=0.969,
     max_cycles_per_market=8,
     reentry_cooldown_seconds=0.5,
     max_immediate_roundtrip_loss_usd=0.9,
@@ -43,7 +52,9 @@ TUNED = Config(
     stop_loss_per_share_usd=0.25,
     starting_cash_usd=10.0,
     cash_floor_usd=7.0,
-    defensive_max_entry_price=0.85,
+    # Low cash should not force us into mid prices (highest fee fraction);
+    # defensive mode keeps the x1.6 edge requirement instead.
+    defensive_max_entry_price=0.969,
     defensive_gap_multiplier=1.6,
     pacing_enabled=True,
     # Never lower the entry bar because volume is behind pace (organizer audit,

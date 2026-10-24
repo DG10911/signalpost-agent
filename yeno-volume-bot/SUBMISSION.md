@@ -15,7 +15,7 @@ Email `submit@builderr.ai` with the fields below.
 
 ## Before you submit
 
-1. `python -m unittest discover -s tests` → 27 passing.
+1. `python -m unittest discover -s tests` → 34 passing.
 2. `python server.py` then run the kit's `yeno-smoke-test.py` → `contractSmokePassed: true`.
 3. **Recommended:** capture real observation frames and run
    `python replay.py --frames real.jsonl --sweep` to freeze the best `Config` in

@@ -233,12 +233,22 @@ class Config:
     min_vol_samples: int = 8
     vol_floor: float = 0.25
     vol_cap: float = 3.0
+    # Multiplier on the vol used for fair value. Measured on 14 days of Binance
+    # 1 s BTC (55-150 s before close): x1.0 is overconfident by ~1-3 points
+    # when it says >= 0.97; x1.2 is within ~0.6 points on train and held-out.
+    vol_multiplier: float = 1.0
 
     # Cost-aware edge: require the expected edge to cover the *actual* live
     # round-trip cost (both fee layers + the quoted spread) plus a safety margin,
     # rather than a fixed edge floor.
     cost_aware_edge: bool = False
     edge_safety_margin: float = 0.0
+    # Scale the safety margin with p*(1-p) of the ask, normalised so it equals
+    # ``edge_safety_margin`` at ``margin_ref_price``. Adverse moves in a binary
+    # price shrink toward 0/1, so near-certain favourites (lowest fee fraction)
+    # need a smaller margin than parity-ish ones.
+    margin_variance_scaled: bool = False
+    margin_ref_price: float = 0.74
 
     # Entry pricing / sizing.
     target_shares: float = 5.0
@@ -252,6 +262,18 @@ class Config:
     # Risk gates.
     max_immediate_roundtrip_loss_usd: float = 0.35
     require_immediate_exit_depth: bool = True
+    # Enter only if the favourite's best bid alone holds this multiple of the
+    # shares we would buy (0 = off), so the exit never depends on deep levels.
+    min_exit_bid_multiple: float = 0.0
+    # Last entry must leave this many seconds before the forced-exit window.
+    entry_exit_gap_seconds: float = 0.0
+
+    # Terminal-flat safety. An open position at market change ends the whole
+    # replay, so: SELL at once if the position belongs to another market, and
+    # SELL into whatever bids exist (partial fills allowed) once the book can no
+    # longer absorb the whole position or the forced-exit window has started.
+    exit_on_market_change: bool = False
+    sell_partial_when_thin: bool = False
 
     # Exit.
     min_profit_per_share_usd: float = 0.0   # sell as soon as round trip >= this
@@ -415,6 +437,10 @@ class Bot:
                     current_gap = float(reference["btcMidUsd"]) - float(reference["openingTargetUsd"])
                 except (KeyError, TypeError, ValueError):
                     current_gap = None
+            if cfg.exit_on_market_change and isinstance(position, dict):
+                pos_market = position.get("market_id", position.get("marketId"))
+                if pos_market is not None and str(pos_market) != market_id:
+                    return {"action": "SELL"}
             return self._decide_exit(position, books, seconds, current_gap)
 
         # ---------------- Entry path (flat) ----------------------------- #
@@ -453,14 +479,20 @@ class Bot:
         shares = _pos_shares(position)
         if side is None or shares is None or shares <= 0.0:
             return {"action": "HOLD"}
-        exit_quote = sell_proceeds(books.get(side, {}).get("bids", []), shares)
+        bids = books.get(side, {}).get("bids", [])
+        exit_quote = sell_proceeds(bids, shares)
+        any_bid = bool(_levels(bids, reverse=True))
 
         # Force-flat window: sell if we can; a one-sided book can still fill a
         # SELL against bids even after asks vanish near expiry.
         if seconds <= cfg.forced_exit_seconds + 1e-9:
-            return {"action": "SELL"} if exit_quote is not None else {"action": "HOLD"}
+            if exit_quote is not None or (cfg.sell_partial_when_thin and any_bid):
+                return {"action": "SELL"}
+            return {"action": "HOLD"}
 
         if exit_quote is None:
+            if cfg.sell_partial_when_thin and any_bid:
+                return {"action": "SELL"}
             return {"action": "HOLD"}
 
         sell_gross, sell_fees = exit_quote
@@ -504,6 +536,9 @@ class Bot:
         if now - self.last_buy_attempt_at < cfg.reentry_cooldown_seconds - 1e-9:
             return {"action": "HOLD"}
         if not (cfg.final_guard_seconds < seconds <= cfg.entry_window_seconds):
+            return {"action": "HOLD"}
+        if cfg.entry_exit_gap_seconds > 0.0 and \
+                seconds <= cfg.forced_exit_seconds + cfg.entry_exit_gap_seconds + 1e-9:
             return {"action": "HOLD"}
 
         gap = self._record_reference(reference, now)
@@ -554,6 +589,10 @@ class Bot:
         shares = self._size(book, cash, rules)
         if shares <= 0:
             return {"action": "HOLD"}
+        if cfg.min_exit_bid_multiple > 0.0:
+            top_bids = _levels(book.get("bids", []), reverse=True)
+            if not top_bids or top_bids[0][1] < cfg.min_exit_bid_multiple * shares - 1e-9:
+                return {"action": "HOLD"}
 
         required = buy_cost(book.get("asks", []), shares)
         immediate_exit = sell_proceeds(book.get("bids", []), shares)
@@ -628,7 +667,7 @@ class Bot:
             est = self._realized_vol(float(reference.get("observedAt", 0.0)))
             if est is not None:
                 vol = est
-        fair = fair_prob(btc, target, seconds, vol)
+        fair = fair_prob(btc, target, seconds, vol * cfg.vol_multiplier)
         side = "YES" if fair >= 0.5 else "NO"
         p_fav = fair if side == "YES" else 1.0 - fair
         book = books.get(side, {})
@@ -642,7 +681,11 @@ class Bot:
             bid = bids[0][0] if bids else ask
             fee_buy = ask * (0.01 + 0.07 * (1.0 - ask))
             fee_sell = bid * (0.01 + 0.07 * (1.0 - bid))
-            required = (ask - bid) + fee_buy + fee_sell + cfg.edge_safety_margin
+            margin = cfg.edge_safety_margin
+            if cfg.margin_variance_scaled:
+                ref = cfg.margin_ref_price * (1.0 - cfg.margin_ref_price)
+                margin *= (ask * (1.0 - ask)) / max(ref, 1e-9)
+            required = (ask - bid) + fee_buy + fee_sell + margin
         else:
             required = cfg.min_edge_per_share_usd
         if defensive:

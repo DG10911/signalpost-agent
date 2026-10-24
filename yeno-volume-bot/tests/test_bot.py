@@ -287,19 +287,22 @@ class NetValueGateTest(unittest.TestCase):
     """The served config only enters when the modelled edge covers spread, both
     fee layers and the measured adverse-fill margin -- not just fees."""
 
-    def _edge_side(self, edge_over_costs):
+    def _edge_side(self, margin_fraction):
         from dataclasses import replace
         from tuned_config import TUNED
         cfg = replace(TUNED, adaptive_vol=False)
         ref = {"btcMidUsd": 80060.0, "openingTargetUsd": 80000.0}
         seconds = 60.0
-        p = botmod.fair_prob(80060.0, 80000.0, seconds, cfg.assumed_annual_vol)
-        # Find the ask whose edge over spread + fees equals ``edge_over_costs``.
+        p = botmod.fair_prob(80060.0, 80000.0, seconds,
+                             cfg.assumed_annual_vol * cfg.vol_multiplier)
+        ref_var = cfg.margin_ref_price * (1 - cfg.margin_ref_price)
+        # Walk the ask down until edge over spread + fees = margin_fraction x margin.
         ask = p
         while ask > 0.01:
             bid = ask - 0.01
             costs = 0.01 + ask * (0.01 + 0.07 * (1 - ask)) + bid * (0.01 + 0.07 * (1 - bid))
-            if p - ask >= costs + edge_over_costs:
+            margin = cfg.edge_safety_margin * ask * (1 - ask) / ref_var
+            if p - ask >= costs + margin_fraction * margin:
                 break
             ask -= 0.0005
         books = {"YES": {"asks": [[ask, 100]], "bids": [[ask - 0.01, 100]]},
@@ -307,8 +310,73 @@ class NetValueGateTest(unittest.TestCase):
         return botmod.Bot(config=cfg)._edge_side(ref, books, seconds, defensive=False)
 
     def test_rejects_edge_that_only_covers_fees(self):
-        # Clears the old 0.015 margin but not the measured adverse-fill loss.
-        self.assertIsNone(self._edge_side(0.025))
+        self.assertIsNone(self._edge_side(0.5))
 
     def test_accepts_edge_that_clears_the_margin(self):
-        self.assertEqual(self._edge_side(0.05), "YES")
+        self.assertEqual(self._edge_side(1.3), "YES")
+
+    def test_margin_shrinks_for_near_certain_favourites(self):
+        from tuned_config import TUNED
+        ref_var = TUNED.margin_ref_price * (1 - TUNED.margin_ref_price)
+        at_95 = TUNED.edge_safety_margin * 0.95 * 0.05 / ref_var
+        self.assertLess(at_95, 0.015)
+        self.assertAlmostEqual(TUNED.edge_safety_margin * 0.74 * 0.26 / ref_var, 0.045)
+
+
+class TerminalFlatSafetyTest(unittest.TestCase):
+    """An open position at market change ends the replay; v5 must never hold one."""
+
+    def _obs(self, seconds, position, bids, market="m2"):
+        return base_obs(market={"id": market, "secondsToClose": seconds},
+                        account={"cashUsd": 5.0, "eligibleVolumeUsd": 0.0,
+                                 "completedCycles": 0, "position": position},
+                        books={"YES": {"asks": [[0.97, 100]], "bids": bids},
+                               "NO": {"asks": [[0.04, 100]], "bids": [[0.02, 100]]}})
+
+    def _pos(self, market="m2", shares=5.0):
+        return {"market_id": market, "outcome": "YES", "shares": shares,
+                "buy_gross_usd": 4.75, "buy_fees_usd": 0.06,
+                "sell_gross_usd": 0.0, "sell_fees_usd": 0.0}
+
+    def _bot(self):
+        from tuned_config import TUNED
+        return botmod.Bot(config=TUNED)
+
+    def test_sells_position_left_from_previous_market(self):
+        d = self._bot().decide(self._obs(200.0, self._pos(market="m1"), [[0.96, 100]]))
+        self.assertEqual(d["action"], "SELL")
+
+    def test_forced_window_sells_into_thin_bids(self):
+        # Bids cannot absorb all 5 shares, but some exist: sell what we can.
+        d = self._bot().decide(self._obs(40.0, self._pos(), [[0.95, 2]]))
+        self.assertEqual(d["action"], "SELL")
+
+    def test_thin_book_before_window_sells(self):
+        d = self._bot().decide(self._obs(100.0, self._pos(), [[0.95, 2]]))
+        self.assertEqual(d["action"], "SELL")
+
+    def test_no_bids_holds_rather_than_spamming(self):
+        d = self._bot().decide(self._obs(40.0, self._pos(), []))
+        self.assertEqual(d["action"], "HOLD")
+
+    def test_no_entry_too_close_to_forced_exit(self):
+        from tuned_config import TUNED
+        b = self._bot()
+        seconds = TUNED.forced_exit_seconds + TUNED.entry_exit_gap_seconds - 1.0
+        d = b.decide(self._obs(seconds, None, [[0.96, 100]]))
+        self.assertEqual(d["action"], "HOLD")
+
+    def test_entry_requires_best_bid_depth(self):
+        from dataclasses import replace
+        from tuned_config import TUNED
+        cfg = replace(TUNED, use_edge_gate=False, require_book_favorite_agreement=False,
+                      persistence_samples=1, min_reference_gap_usd=1.0)
+        def obs(bids):
+            o = self._obs(100.0, None, bids)
+            o["books"]["YES"]["asks"] = [[0.96, 100]]
+            o["account"]["cashUsd"] = 10.0
+            return o
+        thin = botmod.Bot(config=cfg).decide(obs([[0.95, 1]]))
+        self.assertEqual(thin["action"], "HOLD")
+        deep = botmod.Bot(config=cfg).decide(obs([[0.95, 100]]))
+        self.assertEqual(deep["action"], "BUY")
