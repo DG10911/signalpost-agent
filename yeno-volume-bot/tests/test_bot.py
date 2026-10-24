@@ -281,3 +281,34 @@ class TestSchemaRobustness(unittest.TestCase):
 
     def test_uninterpretable_position_holds_not_crashes(self):
         self.assertEqual(botmod.Bot(config=botmod.Config()).decide(self._obs({"foo": 1}))["action"], "HOLD")
+
+
+class NetValueGateTest(unittest.TestCase):
+    """The served config only enters when the modelled edge covers spread, both
+    fee layers and the measured adverse-fill margin -- not just fees."""
+
+    def _edge_side(self, edge_over_costs):
+        from dataclasses import replace
+        from tuned_config import TUNED
+        cfg = replace(TUNED, adaptive_vol=False)
+        ref = {"btcMidUsd": 80060.0, "openingTargetUsd": 80000.0}
+        seconds = 60.0
+        p = botmod.fair_prob(80060.0, 80000.0, seconds, cfg.assumed_annual_vol)
+        # Find the ask whose edge over spread + fees equals ``edge_over_costs``.
+        ask = p
+        while ask > 0.01:
+            bid = ask - 0.01
+            costs = 0.01 + ask * (0.01 + 0.07 * (1 - ask)) + bid * (0.01 + 0.07 * (1 - bid))
+            if p - ask >= costs + edge_over_costs:
+                break
+            ask -= 0.0005
+        books = {"YES": {"asks": [[ask, 100]], "bids": [[ask - 0.01, 100]]},
+                 "NO": {"asks": [[1 - ask + 0.01, 100]], "bids": [[1 - ask, 100]]}}
+        return botmod.Bot(config=cfg)._edge_side(ref, books, seconds, defensive=False)
+
+    def test_rejects_edge_that_only_covers_fees(self):
+        # Clears the old 0.015 margin but not the measured adverse-fill loss.
+        self.assertIsNone(self._edge_side(0.025))
+
+    def test_accepts_edge_that_clears_the_margin(self):
+        self.assertEqual(self._edge_side(0.05), "YES")

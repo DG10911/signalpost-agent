@@ -26,7 +26,12 @@ TUNED = Config(
     vol_floor=0.25,
     vol_cap=3.0,
     cost_aware_edge=True,
-    edge_safety_margin=0.015,
+    # Measured on the real 12 h sample (8a66c5d: $459.38 vol, $13.00 fees,
+    # 59 cycles, $10 -> $1.15): entries cleared model edge >= spread + fees,
+    # yet realised only ~+$0.013/share before fees vs ~$0.042/share in fees.
+    # So >= ~$0.029/share of modelled edge is lost to latency/adverse fills;
+    # the margin must exceed that for an entry to keep cash after fees and exit.
+    edge_safety_margin=0.045,
     target_shares=6.0,
     min_entry_price=0.4,
     max_entry_price=0.93,

@@ -25,7 +25,7 @@ dependencies, no model/API calls, no network. Expected external cost: $0.**
 
 ```bash
 python server.py                      # serves POST http://127.0.0.1:8080/decide
-python -m unittest discover -s tests  # 21 tests, all pass
+python -m unittest discover -s tests  # 27 tests, all pass
 python simulator.py --paths 30        # synthetic sanity/stress harness
 python scenarios.py --paths 40        # adversarial regime battery (see below)
 ```
@@ -132,3 +132,30 @@ official crossing.
 
 Tools: `capture_frames.py`, `tune.py`, `tune_sim.py`, `tune_edge.py`,
 `scenarios.py --tuned`, `tuned_config.py` (served by `server.py`).
+
+## v4 — cash-first (organizer feedback, 24 Oct 2026)
+
+The real 12 h sample of `8a66c5d` made $459.38 of volume in 59 cycles but ended
+at $1.15 from $10 ($13.00 fees). The organizer's guidance was to keep cash, not
+lower the entry bar when volume is behind, and check net value after fees and
+the likely exit. Changes to the served config (`tuned_config.py`):
+
+1. **No behind-pace loosening.** `max_aggression=1.0`: being behind on volume
+   never widens the entry gates (tightening when ahead is kept).
+2. **Net-value margin from the real sample.** Entries already required modelled
+   edge ≥ spread + both fee layers. In the sample that realised only
+   ~+$0.013/share before fees against ~$0.042/share of fees, so ≥ ~$0.029/share
+   of modelled edge is lost to latency and adverse fills. `edge_safety_margin`
+   is now $0.045/share (was $0.015), so an entry has to clear spread, fees, the
+   measured shortfall and a small profit.
+
+The probability model itself was checked against 14 days of Binance BTCUSDT
+1-second prices (4,032 five-minute windows, 84,588 samples, last 4 days held
+out). It is calibrated: e.g. model 0.90–0.95 → 0.926 actual, 0.95–1.00 → 0.981,
+and a vol multiplier of 1.0 has the best held-out log loss. The losses come from
+execution, not from mispriced probabilities, which is why the fix is the margin.
+
+Expect fewer trades and lower volume; when no entry clears the margin the bot
+holds and keeps its cash. Synthetic battery: terminal-flat in all 10 regimes,
+0 invalid actions, 27 tests pass. No real order-book data was available, so the
+margin is estimated from one aggregate sample, not tuned.
