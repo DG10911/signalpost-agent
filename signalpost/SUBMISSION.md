@@ -10,32 +10,41 @@ uv run python scripts/run_competition_batch.py \
   --report out/run-report.json \
   --observations-output out/observations.jsonl \
   --contract-output out/submission-contract.jsonl \
-  --run-id official --expected-count 1000 \
+  --run-id official --expected-count <N> \
   --no-osm --no-discover-websites --no-wikidata \
-  --request-budget 9500 --time-budget-minutes 50 --require-exact-identity
+  --request-budget <9.5 x N> --time-budget-minutes 43 --require-exact-identity
 ```
 
-**Measured (live, on this host):** a 100-company run with these exact flags =
-**730 requests (7.30/company) → ≈7,300 for 1,000 companies**, `exact_registry 1.0`,
-validation passed, **~38 min**. Comfortably under the 10,000-request ceiling.
-(`--no-wikidata` is important: Wikidata's batch SPARQL query for a large cohort
-delays the run, so it defaults off.)
+`<N>` is the number of companies in the batch (e.g. `--expected-count 1000
+--request-budget 9500`).
 
-**Request efficiency (the binding constraint).** The official run has a
-**10,000-request ceiling**; the run must complete a full sample under it. This
-command is deliberately lean:
+**Official limits:** 45 minutes per run and 2,000 requests per 100 companies,
+backing off when a site answers "too many requests".
 
-- `--no-discover-websites` (default off) — website discovery measured ~0 yield on
-  the holdco-heavy universe and multiplies requests. It is opt-in only.
-- `--no-osm` (default off) — OpenStreetMap discovery is off by default.
-- `--max-secondary-pages` **auto-scales to the batch** (default): with
-  `--request-budget 9500` and `--expected-count 1000` it picks 6 pages/site, and
-  it drops toward the floor of 3 for larger batches, so the run fits the ceiling
-  at any size. (Override to pin it.) `website.DEFAULT_MAX_SECONDARY_PAGES` is 8.
-- `--time-budget-minutes 50` — a wall-clock guard: after 70% it skips secondary crawls; at the limit, remaining companies are closed as `budget_exhausted` so the file is still complete (a timeout means the run is not scored).
-- `--request-budget 9500` — a self-imposed ceiling; the run prints a loud warning
-  and sets `request_budget_exceeded` in the report if exceeded, leaving headroom
-  under the official 10,000.
+**Measured (live, 25 Oct 2026, fresh random 100 companies, these flags):**
+854 requests (8.5 per company, including the live NAV feed), 5 min 6 s,
+`exact_registry 1.0`, validation passed. That is under half of the 2,000
+allowance. 1,000-company runs measured ~38 min before the NAV feed was added;
+the feed runs in a background thread, so it does not extend that.
+
+- `--time-budget-minutes 43` — wall-clock guard inside the 45-minute limit:
+  after 70% it skips secondary crawls; at the limit, remaining companies are
+  closed as `budget_exhausted`, so the file is still complete.
+- `--request-budget` — self-imposed ceiling; the report sets
+  `request_budget_exceeded` if it is passed. The per-site crawl depth
+  auto-scales from it (`--max-secondary-pages` overrides).
+- Every request backs off on HTTP 429/503 and honours `Retry-After`.
+- **Live NAV jobs (on by default, `--no-nav-live` to disable).** NAV's official
+  public vacancy feed (pam-stilling-feed.nav.no, public token) is read once per
+  run, ~90–120 requests. An ad is published only when its own
+  `employer.orgnr` is the company or a sub-unit whose Brreg record names the
+  company as parent; a matching name alone never publishes.
+- `--no-discover-websites` — measured on 25 Oct: discovery added 6 sites on 100
+  companies, but 5 were not the company's own (a chain's site for a franchise,
+  a board-management SaaS for a housing co-op, parent or developer domains from
+  the registry e-mail). It stays off to protect precision.
+- `--no-wikidata` — measured +1 observation on 100 companies; off.
+- `--no-osm` — OpenStreetMap discovery off (requests, precision).
 
 ### Opt-in coverage lever: pre-built NAV hiring index (0 eval-time requests)
 

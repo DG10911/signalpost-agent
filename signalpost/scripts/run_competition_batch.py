@@ -60,6 +60,10 @@ def main() -> None:
                         help="Fail the build unless EVERY profile has exact registry_live identity (official_identity_complete gate).")
     parser.add_argument("--nav-index",
                         help="Path to a pre-built NAV orgnr->jobs index (scripts/build_nav_index_search.py) for exact-entity job_posting observations.")
+    parser.add_argument("--nav-live", action=argparse.BooleanOptionalAction, default=True,
+                        help="Read NAV's public vacancy feed once per run (background thread, ~120 requests) and publish "
+                             "ads only where the ad's employer.orgnr is the company or one of its Brreg sub-units.")
+    parser.add_argument("--nav-live-days", type=int, default=45)
     parser.add_argument("--nav-homepages",
                         help="Path to the NAV orgnr->homepage map (written next to --nav-index). Exact-entity website candidates for companies with no registry site.")
     parser.add_argument("--wikidata", action=argparse.BooleanOptionalAction, default=False,
@@ -77,9 +81,10 @@ def main() -> None:
     parser.add_argument("--max-secondary-pages", type=int, default=None,
                         help="Cap secondary pages crawled per site (request-efficiency knob). Default: website.DEFAULT_MAX_SECONDARY_PAGES.")
     parser.add_argument("--request-budget", type=int, default=9500,
-                        help="Self-imposed ceiling on total outbound requests; the run warns loudly if exceeded. The official limit is 10,000.")
+                        help="Self-imposed ceiling on total outbound requests; the run warns loudly if exceeded. "
+                             "The official allowance is 2,000 requests per 100 companies.")
     parser.add_argument("--time-budget-minutes", type=float, default=43.0,
-                        help="Hard wall-clock budget for the whole run (default 42 to finish inside the official 45, or SIGNALPOST_TIME_BUDGET_MINUTES). "
+                        help="Hard wall-clock budget for the whole run (default 43 to finish inside the official 45, or SIGNALPOST_TIME_BUDGET_MINUTES). "
                              "After 70%% it skips secondary crawls; at the limit remaining companies are closed "
                              "as budget_exhausted so the file is still complete.")
     args = parser.parse_args()
@@ -150,6 +155,14 @@ def main() -> None:
     if args.wikidata:
         from norway_company_agent.wikidata import query_p2333
         wikidata_index = query_p2333(orgs)
+
+    # Live NAV vacancy feed, read in the background while companies are enriched.
+    nav_live = None
+    if args.nav_live:
+        from norway_company_agent.nav_live import NavLive
+        live_seconds = max(60.0, (budget_deadline - _time.monotonic() - 120.0)) if budget_deadline else 900.0
+        nav_live = NavLive([(p["organisation_number"], p.get("name") or "") for p in profiles],
+                           days=args.nav_live_days, max_seconds=min(900.0, live_seconds)).start()
 
     def _budget_exhausted(profile: dict) -> tuple[dict, dict]:
         """Close a company without network when the wall-clock budget is spent.
@@ -296,6 +309,15 @@ def main() -> None:
                 checkpoint = [state[org] for org in orgs if org in state]
                 write_jsonl(profiles_output, checkpoint)
 
+    nav_live_diag = None
+    if nav_live is not None:
+        remaining = (budget_deadline - _time.monotonic() - 60.0) if budget_deadline else 900.0
+        for org, jobs in nav_live.index(wait_seconds=max(0.0, remaining)).items():
+            known = {job.get("job_id") for job in nav_index.get(org, [])}
+            nav_index.setdefault(org, []).extend(job for job in jobs if job.get("job_id") not in known)
+        nav_live_diag = nav_live.diagnostic()
+        operations["requests"] += int(nav_live_diag.get("requests", 0) or 0)
+
     completed_at = utc_now()
     ordered_profiles = [state[org] for org in orgs]
     # Re-derive artifacts for every profile (including resumed ones) so a code
@@ -355,6 +377,7 @@ def main() -> None:
         "modules": requested_modules,
         "registry": registry_metadata,
         "request_plan": request_plan,
+        "nav_live": nav_live_diag,
         "operations": operations,
         "validation": validation,
         "request_budget_exceeded": budget_exceeded,
