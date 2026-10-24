@@ -213,6 +213,14 @@ class PacingTest(unittest.TestCase):
         b.start_ts = 0.0
         self.assertEqual(b._aggression(10.0, self._rules(), volume=0.0), 1.0)
 
+    def test_served_config_never_loosens_when_behind(self):
+        from tuned_config import TUNED
+        b = botmod.Bot(config=TUNED)
+        b.start_ts = 0.0
+        # 90% of the window elapsed, almost no volume -> far behind pace.
+        now = 0.9 * 24 * 3600
+        self.assertLessEqual(b._aggression(now, self._rules(), volume=10.0), 1.0)
+
 
 class RobustnessInvariantTest(unittest.TestCase):
     """Across adverse regimes the bot must stay contract-safe: always finish

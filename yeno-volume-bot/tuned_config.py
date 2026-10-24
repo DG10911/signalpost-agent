@@ -41,7 +41,9 @@ TUNED = Config(
     defensive_max_entry_price=0.85,
     defensive_gap_multiplier=1.6,
     pacing_enabled=True,
-    max_aggression=1.5,
+    # Never lower the entry bar because volume is behind pace (organizer audit,
+    # 24 Oct): the real sample burned cash, so behind-pace stays at 1.0.
+    max_aggression=1.0,
     min_aggression=0.7,
 )
 
