@@ -12,6 +12,90 @@ LEGAL_AND_GENERIC = {
 }
 
 
+# domain -> registry organisation numbers that list it as homepage or e-mail
+# domain (built from the frozen Brreg bulk at run start; empty = check off).
+DOMAIN_OWNERS: dict[str, list[str]] = {}
+SHARED_SITE_MIN_OWNERS = 3
+_ORGNR_RE = re.compile(r"(?<!\d)(\d(?:[ .\u00a0]?\d){8})(?!\d)")
+_MOD11 = [3, 2, 7, 6, 5, 4, 3, 2]
+_LEGAL_FORMS = ("as", "asa", "ans", "da", "sa", "ba", "nuf", "ks", "hf", "iks", "sf", "kf", "stiftelse")
+
+
+def set_domain_owners(owners: dict[str, list[str]]) -> None:
+    DOMAIN_OWNERS.clear()
+    DOMAIN_OWNERS.update(owners)
+
+
+def host_key(url_or_host: Any) -> str:
+    text = str(url_or_host or "").strip().lower()
+    if "@" in text:
+        text = text.rsplit("@", 1)[1]
+    if "://" not in text:
+        text = "http://" + text
+    try:
+        host = urllib.parse.urlparse(text).hostname or ""
+    except ValueError:  # malformed registry values (e.g. stray brackets)
+        return ""
+    return host.removeprefix("www.").strip(".")
+
+
+def valid_orgnr(digits: str) -> bool:
+    if len(digits) != 9 or not digits.isdigit():
+        return False
+    remainder = sum(int(d) * w for d, w in zip(digits[:8], _MOD11)) % 11
+    check = 0 if remainder == 0 else 11 - remainder
+    return check != 10 and check == int(digits[8])
+
+
+def org_numbers_in(text: Any) -> set[str]:
+    found = {re.sub(r"\D", "", m.group(1)) for m in _ORGNR_RE.finditer(str(text or ""))}
+    return {d for d in found if valid_orgnr(d)}
+
+
+def _plain(value: Any) -> str:
+    text = str(value or "").translate(str.maketrans({"ø": "o", "Ø": "O", "å": "a", "Å": "A", "æ": "ae", "Æ": "AE"}))
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().casefold()
+    return " " + " ".join(re.findall(r"[a-z0-9]+", text)) + " "
+
+
+def full_legal_name_in(name: Any, text: Any) -> bool:
+    """True when the complete registered name, legal form included ("Saks og
+    Kam AS"), appears in ``text``. Norwegian registered names are unique, so this
+    is exact-entity evidence (unlike loose token overlap)."""
+    plain_name = _plain(name).strip()
+    tokens = plain_name.split()
+    if len(tokens) < 2 or tokens[-1] not in _LEGAL_FORMS or len("".join(tokens[:-1])) < 4:
+        return False
+    return (" " + plain_name + " ") in _plain(text)
+
+
+def shared_site_owners(url: Any, organisation_number: Any) -> list[str]:
+    """Other registry entities using the same homepage/e-mail domain, when the
+    URL is a bare domain (a company-specific path is not a shared site)."""
+    if not DOMAIN_OWNERS:
+        return []
+    try:
+        parsed = urllib.parse.urlparse(str(url or "") if "://" in str(url or "") else "http://" + str(url or ""))
+    except ValueError:
+        return []
+    if parsed.path.strip("/") or parsed.query:
+        return []
+    owners = DOMAIN_OWNERS.get(host_key(url), [])
+    org = re.sub(r"\D", "", str(organisation_number or ""))
+    return [o for o in owners if o != org]
+
+
+def is_shared_manager_site(name: Any, organisation_number: Any, url: Any) -> bool:
+    """A bare registry homepage domain listed by >= SHARED_SITE_MIN_OWNERS
+    entities whose label is not this entity's own compact name (obos.no for a
+    housing co-op; a chain's domain for one franchise store)."""
+    others = shared_site_owners(url, organisation_number)
+    if len(others) + 1 < SHARED_SITE_MIN_OWNERS:
+        return False
+    label = host_key(url).split(".")[0].replace("-", "")
+    return label != "".join(_tokens(name))
+
+
 def _tokens(value: Any) -> list[str]:
     text = str(value or "").translate(str.maketrans({"ø": "o", "Ø": "O", "å": "a", "Å": "A", "æ": "ae", "Æ": "AE"}))
     text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().casefold()
@@ -32,6 +116,14 @@ def _structured_names(value: Any) -> list[str]:
     return names
 
 
+STRONG_DISCOVERY_METHODS = {
+    "exact_org_number_on_discovered_site": 1.0,
+    "registry_contact_on_discovered_site": 0.95,
+    "full_legal_name_on_discovered_site": 0.95,
+    "unique_registry_email_domain_and_name": 0.95,
+}
+
+
 def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
     website = profile.get("evidence", {}).get("website", {})
     value = website.get("value") or {}
@@ -39,8 +131,9 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
     hostname = urllib.parse.urlparse(value.get("final_url") or website.get("source_url") or "").hostname or ""
     structured_names = _structured_names(value.get("structured_organisations") or [])
     rendered = value.get("js_fallback") or {}
+    identity_text = value.get("identity_text_excerpt") or ""
     homepage_identity_parts = [
-        value.get("title"), value.get("description"), value.get("identity_text_excerpt"), hostname, *structured_names,
+        value.get("title"), value.get("description"), hostname, *structured_names,
         rendered.get("title"),
     ]
     candidate_parts = [
@@ -51,12 +144,17 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
     ]
     candidate_parts.append(rendered.get("main_text_excerpt"))
     candidate_text = " ".join(str(part or "") for part in candidate_parts)
-    homepage_candidate_text = " ".join(str(part or "") for part in [*homepage_identity_parts, value.get("main_text_excerpt"), rendered.get("main_text_excerpt")])
+    homepage_candidate_text = " ".join(str(part or "") for part in [*homepage_identity_parts, identity_text, value.get("main_text_excerpt"), rendered.get("main_text_excerpt")])
     normalized_candidate_text = " ".join(_tokens(candidate_text))
     candidate_tokens = set(_tokens(candidate_text))
     org_digits = re.sub(r"\D", "", str(profile.get("organisation_number") or ""))
-    compact_candidate = re.sub(r"\D", "", candidate_text)
-    compact_homepage_candidate = re.sub(r"\D", "", homepage_candidate_text)
+    homepage_org_numbers = org_numbers_in(homepage_candidate_text)
+    discovery = value.get("discovery_identity") or {}
+    shared_with = shared_site_owners(value.get("requested_url") or website.get("source_url"), org_digits) \
+        if not value.get("discovered") else []
+    compact_core = "".join(core)
+    host_label = hostname.removeprefix("www.").split(".")[0].replace("-", "") if hostname else ""
+    owns_shared_domain = bool(compact_core) and host_label == compact_core
     overlap = sorted(set(core) & candidate_tokens)
     ratio = len(overlap) / len(set(core)) if core else 0.0
     reasons = []
@@ -76,11 +174,22 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
     elif is_business_sports_club and "bedriftsidrett" not in normalized_candidate_text and "b i l" not in normalized_candidate_text:
         score = 0.3
         reasons.append("business sports-club entity points to the operating company's site without club evidence")
-    elif org_digits and org_digits in compact_homepage_candidate:
+    elif value.get("discovered") and discovery.get("method") in STRONG_DISCOVERY_METHODS:
+        score = STRONG_DISCOVERY_METHODS[discovery["method"]]
+        reasons.append(f"discovered site verified by {discovery['method']}")
+    elif len(shared_with) + 1 >= SHARED_SITE_MIN_OWNERS and org_digits not in homepage_org_numbers \
+            and not owns_shared_domain:
+        # The registry homepage is a domain many registered entities list (a
+        # housing manager, chain or group site), and it does not name this
+        # entity. Keep the registry association, but never publish the site's
+        # social accounts, news or jobs as this company's (evaluator audit rule).
+        score = 0.6
+        reasons.append(f"registry homepage domain is shared by {len(shared_with) + 1} registered entities; "
+                       "treated as a manager/group site, cross-entity facts quarantined")
+    elif org_digits and org_digits in homepage_org_numbers:
         # Homepage only. An interior page may be a group/parent contact page
         # listing many subsidiaries' org numbers, so matching there is NOT exact
         # (adversarial-audit case). The homepage is the entity's own statement.
-        homepage_org_numbers = set(re.findall(r"\b\d{9}\b", homepage_candidate_text))
         if len(homepage_org_numbers) > 1 and ratio < 0.5:
             # The registry-linked domain looks like a parent/group site: it lists
             # several organisation numbers but its own identity does not carry
@@ -91,6 +200,9 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
         else:
             score = 1.0
             reasons.append("exact organisation number appears in homepage identity evidence")
+    elif full_legal_name_in(profile.get("name"), identity_text) and len(homepage_org_numbers - {org_digits}) == 0:
+        score = 0.95
+        reasons.append("full registered legal name (with legal form) appears in the homepage footer/imprint")
     elif len(core) >= 2 and exact_homepage_name:
         score = 0.95
         reasons.append("all normalized legal-name tokens appear together in homepage identity evidence")

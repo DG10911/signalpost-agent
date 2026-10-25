@@ -18,18 +18,19 @@ class TestRequestEfficiency(unittest.TestCase):
         self.assertLessEqual(website.DEFAULT_MAX_SECONDARY_PAGES, 8)
         self.assertGreaterEqual(website.DEFAULT_MAX_SECONDARY_PAGES, 4)
 
-    def test_canonical_probes_precede_discovered_links(self):
-        html = '<a href="/om-oss">Om oss</a><a href="/kontakt">Kontakt</a>'
-        soup = BeautifulSoup(html, "lxml")
-        ordered = website._ordered_secondary_urls("https://acme.no/", soup)
-        # canonical careers/news probes come first under a tight cap
-        self.assertTrue(ordered[0].endswith("/careers"))
+    def test_real_links_precede_guessed_paths(self):
+        html = '<a href="/om-oss">Om oss</a><a href="/kontakt">Kontakt</a><a href="/nyheter">Nyheter</a>'
+        ordered = website._ordered_secondary_urls("https://acme.no/", BeautifulSoup(html, "lxml"))
+        # a real news link outranks everything; real about/contact pages follow
+        self.assertEqual(ordered[0], "https://acme.no/nyheter")
+        self.assertLess(ordered.index("https://acme.no/om-oss"), ordered.index("https://acme.no/karriere"))
+        # news is not guessed when the homepage links to it; hiring still is
+        self.assertNotIn("https://acme.no/aktuelt", ordered)
         self.assertIn("https://acme.no/karriere", ordered)
-        # discovered links are still present, just later
-        self.assertIn("https://acme.no/om-oss", ordered)
-        idx_link = ordered.index("https://acme.no/om-oss")
-        idx_probe = ordered.index("https://acme.no/careers")
-        self.assertLess(idx_probe, idx_link)
+
+    def test_guessed_news_and_hiring_alternate_without_real_links(self):
+        ordered = website._ordered_secondary_urls("https://acme.no/", BeautifulSoup("<p>hei</p>", "lxml"))
+        self.assertEqual(ordered[:2], ["https://acme.no/nyheter", "https://acme.no/karriere"])
 
     def test_no_duplicate_targets(self):
         soup = BeautifulSoup('<a href="/nyheter">Nyheter</a>', "lxml")

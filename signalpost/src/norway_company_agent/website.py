@@ -4,6 +4,7 @@ import json
 import email.utils
 import ipaddress
 import re
+from itertools import zip_longest
 import socket
 import threading
 import time
@@ -249,19 +250,56 @@ def _priority_links(base_url: str, soup: BeautifulSoup, limit: int = 6) -> list[
     return [url for url, _ in sorted(candidates.items(), key=lambda item: (item[1], item[0]))[:limit]]
 
 
+_NEWS_TERMS = ("news", "press", "aktuelt", "nyheter", "siste-nytt", "blogg", "blog", "pressemelding", "presserom", "artikler")
+_HIRING_TERMS = ("career", "jobb", "ledige-stillinger", "stilling", "vacanc", "karriere", "rekrutt")
+_NEWS_PROBES = ("nyheter", "aktuelt", "news", "siste-nytt", "blogg", "pressemeldinger", "presserom", "press")
+_HIRING_PROBES = ("karriere", "careers", "jobb", "ledige-stillinger")
+
+
+def _family(url: str) -> str:
+    path = urllib.parse.urlparse(url).path.casefold()
+    if any(term in path for term in _HIRING_TERMS):
+        return "hiring"
+    if any(term in path for term in _NEWS_TERMS):
+        return "news"
+    return "other"
+
+
+def _interleave(*lists: list[str]) -> list[str]:
+    out: list[str] = []
+    for group in zip_longest(*lists):
+        out.extend(item for item in group if item)
+    return out
+
+
 def _ordered_secondary_urls(base_url: str, soup: BeautifulSoup) -> list[str]:
     """Ordered, de-duplicated secondary crawl targets for a site.
 
-    Canonical careers/news probes come first (they carry the hiring + dated-news
-    recall and are often invisible to static link discovery on JS sites), then
-    the best discovered same-domain links. Under a tight request cap this keeps
-    the highest-value coverage per request.
+    Links that really exist on the homepage come first -- news and hiring
+    alternating (the families the score counts), then about/contact pages.
+    Guessed canonical paths (/nyheter, /karriere, ...) follow, and only for a
+    family the homepage gave no real link for. Guessing first used to spend the
+    whole per-site cap on 404s for /careers, /karriere, /jobb on small sites, so
+    their real "Nyheter" pages were never read.
     """
+    real = _priority_links(base_url, soup, limit=12)
+    by_family = {"news": [], "hiring": [], "other": []}
+    for url in real:
+        by_family[_family(url)].append(url)
+    parsed = urllib.parse.urlparse(base_url)
+
+    def probes(paths: tuple[str, ...]) -> list[str]:
+        return [urllib.parse.urlunparse((parsed.scheme, parsed.netloc, "/" + path, "", "", "")) for path in paths]
+
+    guessed_news = [] if by_family["news"] else probes(_NEWS_PROBES)
+    guessed_hiring = [] if by_family["hiring"] else probes(_HIRING_PROBES)
+    candidates = (_interleave(by_family["news"], by_family["hiring"]) + by_family["other"]
+                  + _interleave(guessed_news, guessed_hiring))
     ordered: list[str] = []
     seen: set[str] = set()
-    for url in list(_canonical_probe_urls(base_url)) + list(_priority_links(base_url, soup)):
+    for url in candidates:
         key = url.rstrip("/")
-        if key not in seen:
+        if key not in seen and key != base_url.rstrip("/"):
             ordered.append(url)
             seen.add(key)
     return ordered
@@ -717,6 +755,35 @@ def _extraction_state(text: str, soup: BeautifulSoup) -> str:
     return "js_fallback_candidate" if len(text.strip()) < 100 and len(soup.select("script[src]")) >= 2 else "static_complete"
 
 
+_IDENTITY_LINE = re.compile(
+    r"(?:\b\d{3}[ .\u00a0]?\d{3}[ .\u00a0]?\d{3}\b|org\.?\s*n|foretaksregisteret|\b(?:AS|ASA|ANS|DA|SA|NUF)\b)")
+
+
+def identity_text_excerpt(soup: Any, limit: int = 3000) -> str:
+    """Footer / imprint lines where sites state who they are ("Firma AS ·
+    Org.nr 123 456 789"). The main-text extractor drops this boilerplate, so it
+    is kept separately and used only for exact evidence (org number, full legal
+    name with legal form), never for loose name-token matching."""
+    chunks: list[str] = []
+    for node in soup.select("footer, address, [class*=footer], [id*=footer], [class*=imprint], [class*=kontakt]")[:12]:
+        chunks.append(node.get_text(" ", strip=True))
+    visible = "\n".join(
+        str(node) for node in soup.find_all(string=True)
+        if node.parent is not None and node.parent.name not in {"script", "style", "noscript", "template"})
+    for line in visible.splitlines():
+        line = " ".join(line.split())
+        if 4 <= len(line) <= 300 and _IDENTITY_LINE.search(line):
+            chunks.append(line)
+    out: list[str] = []
+    seen: set[str] = set()
+    for chunk in chunks:
+        chunk = " ".join(chunk.split())[:600]
+        if chunk and chunk not in seen:
+            seen.add(chunk)
+            out.append(chunk)
+    return " | ".join(out)[:limit]
+
+
 def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_000_000,
                   max_secondary_pages: int | None = None) -> tuple[dict[str, Any], dict[str, Any]]:
     supplied_url = str(url or "").strip()
@@ -751,6 +818,7 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         description_tag = soup.select_one('meta[name="description"], meta[property="og:description"]')
         description = str(description_tag.get("content") or "").strip() if description_tag else ""
         structured_orgs = _jsonld_organisations(structured)
+        identity_text = identity_text_excerpt(soup)
         value = {
             "requested_url": normalized,
             "final_url": final_url,
@@ -758,6 +826,7 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
             "title": title[:500],
             "description": description[:2000],
             "main_text_excerpt": text[:5000],
+            "identity_text_excerpt": identity_text,
             "social_links": _social_links(final_url, soup),
             "structured_organisations": structured_orgs,
             "structured_facts": _jsonld_facts(structured_orgs),

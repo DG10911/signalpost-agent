@@ -11,7 +11,7 @@ uv run python scripts/run_competition_batch.py \
   --observations-output out/observations.jsonl \
   --contract-output out/submission-contract.jsonl \
   --run-id official --expected-count <N> \
-  --no-osm --no-discover-websites --no-wikidata \
+  --no-osm --no-wikidata \
   --request-budget <9.5 x N> --time-budget-minutes 43 --require-exact-identity
 ```
 
@@ -21,11 +21,13 @@ uv run python scripts/run_competition_batch.py \
 **Official limits:** 45 minutes per run and 2,000 requests per 100 companies,
 backing off when a site answers "too many requests".
 
-**Measured (live, 25 Oct 2026, fresh random 100 companies, these flags):**
-854 requests (8.5 per company, including the live NAV feed), 5 min 6 s,
-`exact_registry 1.0`, validation passed. That is under half of the 2,000
-allowance. 1,000-company runs measured ~38 min before the NAV feed was added;
-the feed runs in a background thread, so it does not extend that.
+**Measured (live, 25 Oct 2026, these flags, 1,000-company batch):** 35.8 min
+(inside the 43-minute guard, 45-minute limit), 8,478 requests (8.5 per company,
+under half of the 2,000-per-100 allowance), 0 companies closed by the time
+guard, `exact_registry 1.0`, validation passed. Against the 3 Oct run on the
+same 1,000 companies: companies with a confirmed website 42 -> 116, social
+profiles 25 -> 42, dated news 11 -> 36, hiring 10 -> 11. All 36 discovered
+websites in that run were reviewed by hand; none belongs to another entity.
 
 - `--time-budget-minutes 43` — wall-clock guard inside the 45-minute limit:
   after 70% it skips secondary crawls; at the limit, remaining companies are
@@ -39,10 +41,29 @@ the feed runs in a background thread, so it does not extend that.
   run, ~90–120 requests. An ad is published only when its own
   `employer.orgnr` is the company or a sub-unit whose Brreg record names the
   company as parent; a matching name alone never publishes.
-- `--no-discover-websites` — measured on 25 Oct: discovery added 6 sites on 100
-  companies, but 5 were not the company's own (a chain's site for a franchise,
-  a board-management SaaS for a housing co-op, parent or developer domains from
-  the registry e-mail). It stays off to protect precision.
+- **Website discovery (on by default).** Most companies list no homepage in the
+  registry (86 of a random 100). For those the agent tries the registry e-mail
+  domain and name-derived domains, and binds a site only on exact-entity proof:
+  our org number on the page; the registry phone or e-mail address *and* every
+  distinctive legal-name word; or the full registered name with its legal form
+  ("Saks og Kam AS" -- registered names are unique in Norway). It never binds a
+  domain another registered entity lists as its own (ownership table built
+  offline from the same frozen Brreg bulk), a page with a different org number,
+  or a redirect/sub-page without our org number.
+  *History:* the first version (25 Oct) trusted the e-mail domain itself and
+  bound 5 wrong sites out of 6 (a chain's site for a franchise, a housing
+  manager's SaaS, an owner's other company). The rules above were written
+  against those cases. Measured afterwards on two fresh random 100-company
+  samples: 6 new websites, 6 of 6 correct by manual review, 0 wrong.
+- **Shared manager/group homepages.** A registry homepage that is a bare domain
+  listed by 3 or more registered entities (obos.no for housing co-ops, a group's
+  domain for a subsidiary) and is not this entity's own name is published as
+  *ambiguous*, and its social accounts, news and jobs are never attributed to
+  the company (evaluator audit rule).
+- **Hard per-company limits:** site crawl 120 s, discovery 75 s, so one stuck
+  host or DNS lookup cannot consume the run budget. Registry calls reuse one
+  keep-alive connection per worker.
+- **Workers scale with the batch** (8 up to 480 companies, 16 at 1,000).
 - `--no-wikidata` — measured +1 observation on 100 companies; off.
 - `--no-osm` — OpenStreetMap discovery off (requests, precision).
 

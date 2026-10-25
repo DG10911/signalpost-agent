@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from norway_company_agent.batch import official_identity_complete, profile_complete_for_modules, profiles_from_bulk, read_organisation_inputs, terminal_envelope, validate_envelopes  # noqa: E402
-from norway_company_agent.evidence import utc_now  # noqa: E402
+from norway_company_agent.evidence import evidence as _evidence_record, utc_now  # noqa: E402
 from norway_company_agent.identity import apply_website_identity_gate  # noqa: E402
 from norway_company_agent.official import fetch_official_modules  # noqa: E402
 from norway_company_agent.website import fetch_website  # noqa: E402
@@ -24,6 +24,28 @@ from norway_company_agent.output_contract import to_contract  # noqa: E402
 
 sys.path.insert(0, str(ROOT / "scripts"))
 import run_annual_report_workforce_connector as workforce  # noqa: E402
+
+
+def bounded_call(fn, seconds: float, fallback):
+    """Run ``fn()`` with a hard wall-clock limit. Socket timeouts do not cover
+    DNS resolution or a server that trickles bytes, so one stuck host could
+    otherwise hold a worker for many minutes. On overrun the call is abandoned
+    on a daemon thread and ``fallback`` is returned; the company carries on."""
+    import threading
+    box: dict = {}
+
+    def run() -> None:
+        try:
+            box["result"] = fn()
+        except Exception as exc:  # surface as fallback, never crash the batch
+            box["error"] = exc
+
+    worker = threading.Thread(target=run, daemon=True)
+    worker.start()
+    worker.join(timeout=max(1.0, seconds))
+    if worker.is_alive() or "result" not in box:
+        return fallback
+    return box["result"]
 
 
 def write_jsonl(path: Path, rows: list[dict]) -> None:
@@ -44,7 +66,9 @@ def main() -> None:
     parser.add_argument("--report", required=True)
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--expected-count", type=int, default=100)
-    parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument("--workers", type=int, default=None,
+                        help="Parallel companies. Default scales with the batch: 8 up to 480 companies, "
+                             "then N/60 up to 16, so a 1,000-company batch fits the 45-minute window.")
     parser.add_argument("--checkpoint-every", type=int, default=25)
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--modules", default="registry,accounting_obligation,registry_live,financials,financial_history,roles,group,locations,website")
@@ -68,9 +92,15 @@ def main() -> None:
                         help="Path to the NAV orgnr->homepage map (written next to --nav-index). Exact-entity website candidates for companies with no registry site.")
     parser.add_argument("--wikidata", action=argparse.BooleanOptionalAction, default=False,
                         help="Query Wikidata (P2333 exact org-number match) for exact-entity facts/social/wikipedia. Batched, official public API. Default: OFF — the batch SPARQL query delays large runs (time budget).")
-    parser.add_argument("--discover-websites", action=argparse.BooleanOptionalAction, default=False,
-                        help="For companies with no registry-listed homepage, try deterministic domain guesses and accept ONLY on exact org-number / registry-contact presence. Default: off (measured ~0 yield on the holdco universe; opt in to protect the request/runtime budget).")
+    parser.add_argument("--discover-websites", action=argparse.BooleanOptionalAction, default=True,
+                        help="For companies with no registry-listed homepage, try the registry e-mail domain and name-derived "
+                             "domains; bind ONLY on the org number, registry contact plus full name, or the full registered "
+                             "legal name with legal form on the page, and never a domain another entity lists as its own.")
     parser.add_argument("--discover-max-candidates", type=int, default=3)
+    parser.add_argument("--discover-seconds", type=float, default=75.0,
+                        help="Hard wall-clock limit for website discovery per company.")
+    parser.add_argument("--site-seconds", type=float, default=120.0,
+                        help="Hard wall-clock limit for one company's site crawl.")
     parser.add_argument("--workforce-ocr-dpi", type=int, default=200)
     parser.add_argument("--google-places", action=argparse.BooleanOptionalAction, default=True,
                         help="Use Google Places (New) for website discovery + ratings/reviews. Requires GOOGLE_PLACES_API_KEY; inert without it.")
@@ -88,6 +118,8 @@ def main() -> None:
                              "After 70%% it skips secondary crawls; at the limit remaining companies are closed "
                              "as budget_exhausted so the file is still complete.")
     args = parser.parse_args()
+    if args.workers is None:
+        args.workers = max(8, min(16, -(-args.expected_count // 60)))
 
     import time as _time
     env_minutes = os.environ.get("SIGNALPOST_TIME_BUDGET_MINUTES")
@@ -115,6 +147,7 @@ def main() -> None:
         "max_secondary_pages": args.max_secondary_pages,
         "time_budget_minutes": args.time_budget_minutes,
         "discover_websites": bool(args.discover_websites),
+        "workers": args.workers,
         "osm": bool(args.osm),
     }
 
@@ -128,6 +161,12 @@ def main() -> None:
     if len(orgs) != args.expected_count:
         raise SystemExit(f"Expected {args.expected_count} organisations, received {len(orgs)}")
     profiles, registry_metadata = profiles_from_bulk(args.bulk, orgs)
+    # Registry domain ownership (offline, from the same frozen bulk): rejects a
+    # discovered domain another entity lists as its own and flags registry
+    # homepages shared by many entities (manager/chain/group sites).
+    from norway_company_agent.domain_discovery import build_domain_owners
+    from norway_company_agent.identity import set_domain_owners
+    set_domain_owners(build_domain_owners(args.bulk))
     annotations = {item["organisation_number"]: item for item in organisation_inputs}
     for profile in profiles:
         for key in ("evaluation_split", "sample_slice"):
@@ -192,8 +231,13 @@ def main() -> None:
         website_metrics = {"requests": 0, "bytes": 0, "latencies_ms": []}
         discovery_requests = 0
         if "website" in requested_modules:
-            website_record, website_metrics = fetch_website(
-                profile.get("website"), max_secondary_pages=secondary_pages)
+            website_record, website_metrics = bounded_call(
+                lambda: fetch_website(profile.get("website"), max_secondary_pages=secondary_pages),
+                args.site_seconds,
+                (_evidence_record("website", "source_error", "registry_linked_company_website",
+                                  str(profile.get("website") or "https://data.brreg.no/enhetsregisteret/api/enheter"),
+                                  note=f"site crawl exceeded the {args.site_seconds:.0f}s per-company limit"),
+                 {"requests": 2, "bytes": 0, "latencies_ms": []}))
             # Website discovery is OPT-IN. On the holdco-heavy universe it has
             # measured ~0 yield and it multiplies requests, so it is off by
             # default to stay inside the 10,000-request budget. When enabled, it
@@ -204,7 +248,7 @@ def main() -> None:
                 extra = [nav_home] if nav_home else []
                 from norway_company_agent.domain_discovery import candidate_domains_from_email
                 reg_value = (profile.get("evidence", {}) or {}).get("registry", {}).get("value") or {}
-                extra.extend(candidate_domains_from_email(reg_value.get("epostadresse")))
+                email_candidates = candidate_domains_from_email(reg_value.get("epostadresse"))
                 connector_requests = 0
                 # Google Places (key-gated): websiteUri candidate + ratings/reviews.
                 if places_key:
@@ -230,16 +274,31 @@ def main() -> None:
                 # Probe the homepage only (cheap): name guesses / email domains
                 # can be wrong and must not consume the deep-crawl budget. Only a
                 # candidate that passes the identity gate is deep-crawled.
-                discovered, ddiag = discover_website(
-                    profile, lambda u: fetch_website(u, max_secondary_pages=0),
-                    max_candidates=args.discover_max_candidates, extra_candidates=extra)
+                discovered, ddiag = bounded_call(
+                    lambda: discover_website(
+                        profile, lambda u: fetch_website(u, max_secondary_pages=0, timeout=8.0),
+                        max_candidates=args.discover_max_candidates, extra_candidates=extra,
+                        email_candidates=email_candidates),
+                    args.discover_seconds,
+                    (None, {"requests": 2 * (len(extra) + len(email_candidates) + args.discover_max_candidates),
+                            "verdict": "discovery_time_limit"}))
                 discovery_requests = int(ddiag.get("requests", 0) or 0)
                 if discovered is not None:
-                    full_record, full_metrics = fetch_website(
-                        discovered.get("value", {}).get("final_url"),
-                        max_secondary_pages=secondary_pages)
+                    found_url = discovered.get("value", {}).get("final_url")
+                    full_record, full_metrics = bounded_call(
+                        lambda: fetch_website(found_url, max_secondary_pages=secondary_pages),
+                        args.site_seconds,
+                        ({"status": "source_error"}, {"requests": 2, "bytes": 0, "latencies_ms": []}))
                     discovery_requests += int(full_metrics.get("requests", 0) or 0)
-                    website_record = full_record if full_record.get("status") == "available" else discovered
+                    if full_record.get("status") == "available":
+                        found_value = discovered.get("value") or {}
+                        full_value = full_record.setdefault("value", {})
+                        full_value["discovered"] = True
+                        full_value["discovery_identity"] = found_value.get("discovery_identity")
+                        full_value.setdefault("identity_text_excerpt", found_value.get("identity_text_excerpt"))
+                        website_record = full_record
+                    else:
+                        website_record = discovered
                 discovery_requests += connector_requests
             profile["evidence"]["website"] = apply_website_identity_gate(profile, website_record)["website"]
         workforce_requests = 0

@@ -11,6 +11,8 @@ evaluator reads them in the specified format instead of our internal module dump
 
 from __future__ import annotations
 
+from .identity import is_shared_manager_site
+
 import json
 from typing import Any
 
@@ -176,6 +178,11 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
         for k, v in sf.items():
             claim(f"website.{k}", v, "available",
                   [add_fact("ev-web", web, f"{k}: {str(v)[:200]}")], 0.9)
+    elif registry_site and is_shared_manager_site(profile.get("name"), profile.get("organisation_number"), registry_site):
+        # The registry homepage is a domain many entities list (housing manager,
+        # chain or group). It is not this company's own site: keep the registry
+        # association as ambiguous rather than claiming it as the company's.
+        claim("official_website", registry_site, "ambiguous", ["ev-registry"], 0.6)
     elif registry_site:
         # Registry-listed website: official association stands even if the crawl
         # could not confirm the entity from the (often JS-rendered) page.
