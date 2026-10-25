@@ -37,7 +37,7 @@ def test_nav_homepage_tried_first_and_accepted_on_orgnr():
     fetch, calls = _fetch({NAV_URL: f"Kontakt. Org.nr {OURS}. Example AS"})
     prof = {"organisation_number": OURS, "name": "Example AS"}
     rec, diag = dd.discover_website(prof, fetch, max_candidates=3, extra_candidates=[NAV_URL])
-    assert rec is not None and diag["verdict"] == "verified_orgnr"
+    assert rec is not None and diag["verdict"] == "verified_exact_org_number_on_discovered_site"
     assert calls[0] == NAV_URL                      # exact-entity candidate first
     assert diag["candidates"][0] == NAV_URL
 
