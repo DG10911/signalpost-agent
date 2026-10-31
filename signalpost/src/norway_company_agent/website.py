@@ -332,12 +332,13 @@ def _fetch_secondary_page(url: str, *, homepage_domain: str, timeout: float, max
         page_title = page.get("title") or ""
         try:
             structured = extruct.extract(page_html, base_url=final_url, syntaxes=["json-ld", "microdata", "opengraph"])
+            careers = is_careers_page(final_url, page_title)
             extras = {
-                "job_postings": _jsonld_jobpostings(structured),
+                "job_postings": _jsonld_jobpostings(structured) + (html_job_ads(page_soup, final_url) if careers else []),
                 "structured_social": structured_social_links(structured.get("json-ld", [])),
                 "structured_facts": _jsonld_facts(_jsonld_organisations(structured)),
                 "news_articles": _jsonld_articles(structured) + html_dated_items(page_soup, final_url),
-                "careers": is_careers_page(final_url, page_title),
+                "careers": careers,
             }
         except Exception:
             extras = dict(empty_extras)
@@ -510,6 +511,54 @@ def is_careers_page(url: str, title: str = "") -> bool:
     return any(term in haystack for term in CAREERS_TERMS)
 
 
+# Job-board / applicant-tracking hosts a company links its single ads to.
+JOB_AD_HOSTS = ("teamtailor.com", "jobbnorge.no", "webcruiter.", "recman.no", "reachmee.", "hrmanager.",
+                "hr-manager.net", "easycruit.", "jobylon.", "smartrecruiters.", "varbi.", "emply.",
+                "jobs.lever.co", "greenhouse.io", "simployer.", "workdayjobs.", "talenthub.")
+_JOB_AD_PATH = re.compile(r"/(?:stilling|stillinger|jobb|jobs?|vacanc\w*|ledig\w*|position|career|careers|karriere)/[^/?#]{3,}")
+_GENERIC_JOB_TEXT = {"ledige stillinger", "se alle stillinger", "alle stillinger", "se alle", "jobb hos oss",
+                     "karriere", "careers", "career", "jobs", "jobb", "stillinger", "les mer", "read more",
+                     "søk her", "søk nå", "apply", "apply now", "open positions", "ledige jobber", "se stillingen",
+                     "vis alle", "mer info", "send åpen søknad", "åpen søknad", "open application"}
+
+
+def html_job_ads(soup: BeautifulSoup, page_url: str, limit: int = 12) -> list[dict[str, Any]]:
+    """Single job ads listed on a company's own careers page: links to one
+    vacancy (an ad path on the company's domain, a FINN job ad, or a known
+    applicant-tracking host) with a role-like title. Listing hubs, "see all"
+    links and open-application forms are skipped -- the organiser audit counts
+    only single, current, company-matched ads as job postings."""
+    out: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    page_key = page_url.split("#")[0].rstrip("/")
+    for anchor in soup.select("a[href]"):
+        title = " ".join(anchor.get_text(" ", strip=True).split())
+        if not (4 <= len(title) <= 140) or title.casefold() in _GENERIC_JOB_TEXT:
+            continue
+        url = urllib.parse.urljoin(page_url, str(anchor.get("href") or "")).split("#")[0]
+        try:
+            parsed = urllib.parse.urlparse(url)
+        except ValueError:
+            continue
+        if parsed.scheme not in {"http", "https"} or url.rstrip("/") == page_key:
+            continue
+        host = (parsed.hostname or "").lower()
+        path = parsed.path.casefold()
+        is_finn_ad = host.endswith("finn.no") and "/job/" in path and ("finnkode" in parsed.query or "/ad" in path)
+        is_ats = any(marker in host for marker in JOB_AD_HOSTS) and len(path.strip("/")) > 0
+        is_own_ad = bool(_JOB_AD_PATH.search(path)) and _registered_domain(url) == _registered_domain(page_url)
+        if not (is_finn_ad or is_ats or is_own_ad):
+            continue
+        key = url.rstrip("/")
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append({"title": title, "url": url, "date_posted": None, "source": "careers_page_link"})
+        if len(out) >= limit:
+            break
+    return out
+
+
 _ARTICLE_PATH_TERMS = ("/nyhet", "/aktuelt", "/news", "/press", "/blog", "/artikkel", "/story",
                        "/siste-nytt", "/blogg", "/pressemelding", "/presserom")
 
@@ -611,7 +660,9 @@ def _parse_feed(raw: bytes, base_url: str) -> list[dict[str, Any]]:
             elif name == "link":
                 href = child.get("href")
                 link = href if href else (child.text or "").strip()
-            elif name in ("pubdate", "published", "updated", "date"):
+            elif name in ("pubdate", "published", "date") and not date:
+                # Publication dates only. Atom <updated> is a modification
+                # date and does not count as dated news (organiser audit).
                 date = (child.text or "").strip()
         if title and date:
             items.append({
@@ -643,6 +694,51 @@ def _fetch_feed(url: str, *, timeout: float, max_bytes: int) -> tuple[list[dict[
         return [], 2, 0, int((time.monotonic() - started) * 1000)
 
 
+def _is_wordpress(html: str) -> bool:
+    return "api.w.org" in html or "/wp-content/" in html or "/wp-json/" in html
+
+
+def _parse_wp_posts(raw: bytes, base_url: str) -> list[dict[str, Any]]:
+    """WordPress REST posts -> dated articles. ``date`` is the publication
+    date (``modified`` is never used)."""
+    try:
+        posts = json.loads(raw)
+    except ValueError:
+        return []
+    out: list[dict[str, Any]] = []
+    for post in posts if isinstance(posts, list) else []:
+        if not isinstance(post, dict):
+            continue
+        title = post.get("title")
+        title = title.get("rendered") if isinstance(title, dict) else title
+        title = " ".join(BeautifulSoup(str(title or ""), "lxml").get_text(" ", strip=True).split())
+        date = str(post.get("date") or "").strip()
+        link = str(post.get("link") or "").strip()
+        if title and date and link and _registered_domain(link) == _registered_domain(base_url):
+            out.append({"headline": title[:300], "date_published": date[:40], "url": link})
+    return out[:12]
+
+
+def _fetch_wp_posts(base_url: str, *, timeout: float, max_bytes: int) -> tuple[list[dict[str, Any]], int, int, int]:
+    """One request to the site's own WordPress REST API for recent posts."""
+    parsed = urllib.parse.urlparse(base_url)
+    url = urllib.parse.urlunparse((parsed.scheme, parsed.netloc, "/wp-json/wp/v2/posts", "",
+                                   "per_page=8&_fields=date,title,link", ""))
+    if not _robots_allowed(url, timeout):
+        return [], 1, 0, 0
+    started = time.monotonic()
+    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
+    try:
+        with SAFE_OPENER.open(request, timeout=timeout) as response:
+            raw = response.read(max_bytes + 1)
+            elapsed = int((time.monotonic() - started) * 1000)
+        if len(raw) > max_bytes:
+            return [], 2, len(raw), elapsed
+        return _parse_wp_posts(raw, base_url), 2, len(raw), elapsed
+    except (urllib.error.URLError, OSError, ValueError):
+        return [], 2, 0, int((time.monotonic() - started) * 1000)
+
+
 def _sitemap_candidates(soup: BeautifulSoup, base_url: str) -> list[str]:
     """Same-domain sitemap URLs declared by the site (or the conventional path)."""
     out: list[str] = []
@@ -667,7 +763,13 @@ def _headline_from_url(url: str) -> str:
 
 
 def _parse_sitemap(raw: bytes, base_url: str) -> list[dict[str, Any]]:
-    """Parse ``<url><loc><lastmod>`` entries into dated article records."""
+    """Dated articles from a Google-News sitemap only: ``<news:news>`` entries
+    with ``<news:publication_date>`` and ``<news:title>``.
+
+    A plain ``<lastmod>`` is the page's modification date, not a publication
+    date, and a headline guessed from the URL slug is not the article's title,
+    so ordinary sitemaps yield nothing (organiser audit: news needs a real
+    publication date)."""
     try:
         root = ET.fromstring(raw)
     except ET.ParseError:
@@ -680,23 +782,21 @@ def _parse_sitemap(raw: bytes, base_url: str) -> list[dict[str, Any]]:
     for node in root.iter():
         if local(node.tag) != "url":
             continue
-        loc = lastmod = None
-        for child in list(node):
+        loc = published = title = None
+        for child in node.iter():
             name = local(child.tag)
-            if name == "loc":
+            if name == "loc" and loc is None:
                 loc = (child.text or "").strip()
-            elif name == "lastmod":
-                lastmod = (child.text or "").strip()
-        if not loc or not lastmod:
-            continue
-        url = urllib.parse.urljoin(base_url, loc)
-        headline = _headline_from_url(url)
-        if not headline:
+            elif name == "publication_date":
+                published = (child.text or "").strip()
+            elif name == "title" and child is not node:
+                title = (child.text or "").strip()
+        if not loc or not published or not title:
             continue
         items.append({
-            "headline": headline,
-            "date_published": _normalize_feed_date(lastmod)[:40],
-            "url": url,
+            "headline": title[:300],
+            "date_published": _normalize_feed_date(published)[:40],
+            "url": urllib.parse.urljoin(base_url, loc),
         })
     items.sort(key=lambda a: str(a.get("date_published") or ""), reverse=True)
     return items[:25]
@@ -841,6 +941,8 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         social = list(value["social_links"]) + homepage_structured_social
         job_postings = list(value["job_postings"])
         news_articles = list(value["news_articles"]) + html_dated_items(soup, final_url)
+        if is_careers_page(final_url, title):
+            job_postings.extend(html_job_ads(soup, final_url))
         structured_facts = dict(value["structured_facts"])
         careers_pages: list[dict[str, Any]] = []
         if is_careers_page(final_url, title):
@@ -895,8 +997,19 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
                 news_articles.extend(feed_items)
                 feed_found = True
             break
-        # Fallback when the site has no feed: its sitemap carries dated URLs
-        # (lastmod), giving dated activity for one extra request.
+        # WordPress sites without a working feed: the site's own REST API lists
+        # recent posts with their publication date (one request).
+        if not feed_found and _is_wordpress(html):
+            wp_items, wp_requests, wp_bytes, wp_elapsed = _fetch_wp_posts(
+                final_url, timeout=timeout, max_bytes=min(max_bytes, 1_000_000))
+            requests += wp_requests
+            bytes_received += wp_bytes
+            if wp_elapsed:
+                page_latencies.append(wp_elapsed)
+            if wp_items:
+                news_articles.extend(wp_items)
+                feed_found = True
+        # Fallback: a Google-News sitemap (real publication dates only).
         if not feed_found:
             for sm_url in _sitemap_candidates(soup, final_url):
                 sm_items, sm_requests, sm_bytes, sm_elapsed = _fetch_sitemap(

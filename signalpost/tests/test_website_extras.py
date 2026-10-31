@@ -155,11 +155,14 @@ def _verified_profile(value):
                                      "content_sha256": "a" * 64}}}
 
 
-def test_careers_page_becomes_a_job_posting_observation():
+def test_careers_page_is_a_careers_signal_not_a_job_ad():
+    # Organiser audit: only single, current, company-matched ads are job postings.
     from norway_company_agent.external_observations import build_observations
     from norway_company_agent.external_footprint import publishable_observation
     prof = _verified_profile({"registered_domain": "example.no", "careers_pages": [{"url": "https://example.no/careers", "title": "Ledige stillinger"}]})
-    obs = [o for o in build_observations(prof) if o["signal_type"] == "job_posting" and o.get("metrics", {}).get("kind") == "careers_page"]
+    built = build_observations(prof)
+    assert not [o for o in built if o["signal_type"] == "job_posting" and o.get("metrics", {}).get("kind") == "careers_page"]
+    obs = [o for o in built if o["signal_type"] == "careers_page"]
     assert obs and publishable_observation(obs[0])
     assert obs[0]["organisation_number"] == "923609016"
 
@@ -209,3 +212,30 @@ def test_reviews_and_dated_activity_become_observations():
 def validate_reasons(o):
     from norway_company_agent.external_footprint import validate_observation
     return validate_observation(o)
+
+
+def test_single_job_ads_from_careers_page():
+    from bs4 import BeautifulSoup
+    from norway_company_agent.website import html_job_ads
+    html = """<a href="/karriere/ledige-stillinger">Ledige stillinger</a>
+    <a href="/karriere/stilling/prosjektleder-bygg">Prosjektleder bygg</a>
+    <a href="https://acme.teamtailor.com/jobs/123-elektriker">Elektriker</a>
+    <a href="https://www.finn.no/job/fulltime/ad.html?finnkode=123">Lagermedarbeider</a>
+    <a href="/karriere/apen-soknad">Åpen søknad</a>
+    <a href="https://other.no/jobs/x-y-z">Annen bedrift</a>"""
+    ads = html_job_ads(BeautifulSoup(html, "lxml"), "https://acme.no/karriere")
+    titles = [a["title"] for a in ads]
+    assert titles == ["Prosjektleder bygg", "Elektriker", "Lagermedarbeider"]
+
+
+def test_wordpress_posts_use_publication_date_and_same_site():
+    import json as _json
+    from norway_company_agent.website import _parse_wp_posts
+    raw = _json.dumps([
+        {"date": "2025-09-22T10:00:00", "modified": "2026-01-01T00:00:00",
+         "title": {"rendered": "Ny avtale &amp; vekst"}, "link": "https://acme.no/ny-avtale/"},
+        {"date": "2025-08-01T10:00:00", "title": {"rendered": "Ekstern"}, "link": "https://other.no/x/"},
+    ]).encode()
+    items = _parse_wp_posts(raw, "https://acme.no/")
+    assert items == [{"headline": "Ny avtale & vekst", "date_published": "2025-09-22T10:00:00",
+                      "url": "https://acme.no/ny-avtale/"}]

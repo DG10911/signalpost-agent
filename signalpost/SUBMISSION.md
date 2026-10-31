@@ -64,6 +64,16 @@ websites in that run were reviewed by hand; none belongs to another entity.
   host or DNS lookup cannot consume the run budget. Registry calls reuse one
   keep-alive connection per worker.
 - **Workers scale with the batch** (8 up to 480 companies, 16 at 1,000).
+- **Jobs are single ads only** (organiser audit: only single, current,
+  company-matched ads count). Careers landing pages are published as
+  `careers_page`, never as `job_posting`. Job postings come from JSON-LD
+  JobPosting, live NAV ads (employer org number), and single-ad links on the
+  company's own careers page (an ad path on its domain, a FINN ad, or a known
+  applicant-tracking host); "see all" and open-application links are skipped.
+- **News needs a real publication date.** RSS `pubDate` / Atom `published`,
+  JSON-LD `datePublished`, HTML `<time>`, WordPress REST `date`, or a
+  Google-News sitemap `publication_date`. Atom `<updated>` and plain sitemap
+  `<lastmod>` are modification dates and are not used.
 - `--no-wikidata` — measured +1 observation on 100 companies; off.
 - `--no-osm` — OpenStreetMap discovery off (requests, precision).
 

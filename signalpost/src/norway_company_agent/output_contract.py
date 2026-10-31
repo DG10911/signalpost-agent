@@ -165,11 +165,16 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
         for j in (wv.get("job_postings") or [])[:12]:
             claim("job_posting", {"title": j.get("title"), "date_posted": j.get("date_posted"), "url": j.get("url")}, "available",
                   [add_fact("ev-web", web, f"{j.get('title') or ''} {j.get('date_posted') or ''}".strip())], 0.9)
-        # A company careers page is itself a hiring signal (the shared reference
-        # set records the careers URL), even when the page carries no JobPosting
-        # structured data.
+        # A company careers page is a hiring signal, but it is not a job ad: the
+        # organiser audit counts only single, current, company-matched ads as
+        # job postings. Publish the page under its own field.
+        seen_careers: set[str] = set()
         for c in (wv.get("careers_pages") or [])[:6]:
-            claim("job_posting", {"title": c.get("title"), "url": c.get("url"), "kind": "careers_page"},
+            url = str(c.get("url") or "").rstrip("/")
+            if not url or url in seen_careers:
+                continue
+            seen_careers.add(url)
+            claim("careers_page", {"title": c.get("title"), "url": c.get("url")},
                   "available", [add_fact("ev-web", web, f"Careers: {c.get('title') or c.get('url') or ''}".strip())], 0.9)
         for a in (wv.get("news_articles") or [])[:12]:
             claim("news", {"headline": a.get("headline"), "date_published": a.get("date_published"), "url": a.get("url")},

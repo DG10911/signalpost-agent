@@ -197,13 +197,19 @@ def build_observations(profile: dict[str, Any], *, nav_index: dict | None = None
             metrics={"title": job.get("title"), "date_posted": job.get("date_posted")},
         ))
 
-    # 3b) Company careers/jobs pages are themselves hiring signals (the shared
-    #     reference set records the careers URL), even without JobPosting data.
+    # 3b) Company careers/jobs pages are hiring signals, but not job ads: the
+    #     organiser audit counts only single, current, company-matched ads as
+    #     job postings, so they carry their own signal type.
+    seen_careers: set[str] = set()
     for i, page in enumerate(value.get("careers_pages") or []):
+        key = str(page.get("url") or "").rstrip("/")
+        if key in seen_careers:
+            continue
+        seen_careers.add(key)
         append_rich(base(
             id=f"careers-{org}-{i}",
             platform="company_site",
-            signal_type="job_posting",
+            signal_type="careers_page",
             source_url=page.get("url") or final_url,
             evidence_span=(page.get("title") or "")[:300] or None,
             metrics={"kind": "careers_page", "title": page.get("title")},
