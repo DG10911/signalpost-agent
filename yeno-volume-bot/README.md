@@ -25,7 +25,7 @@ dependencies, no model/API calls, no network. Expected external cost: $0.**
 
 ```bash
 python server.py                      # serves POST http://127.0.0.1:8080/decide
-python -m unittest discover -s tests  # 34 tests, all pass
+python -m unittest discover -s tests  # 39 tests, all pass
 python simulator.py --paths 30        # synthetic sanity/stress harness
 python scenarios.py --paths 40        # adversarial regime battery (see below)
 ```
@@ -186,3 +186,25 @@ Unchanged: no loosening when behind pace, profit-target exit, thesis-flip exit,
 abort after a loss, crossing lock. 34 tests pass; synthetic battery
 terminal-flat in all 10 regimes, 0 invalid actions; decisions take < 3 ms.
 The synthetic harness cannot predict real volume; expect fewer, cheaper trades.
+
+## v6 — price the 60 s settlement TWAP (31 Oct 2026)
+
+Other entrants report that markets settle on the average BTC price over the
+final 60 seconds, not the spot price at close (one checked 139 resolved
+markets: TWAP matched 138, spot 124). On our 14 days of Binance 1 s BTC, spot
+and TWAP outcomes differ in 465 of 4,029 five-minute windows (11.5%), and
+against TWAP outcomes:
+
+| model (150–50 s before close) | log loss | tail ≥0.94 calibration |
+|---|---|---|
+| v5 spot model, vol ×1.2 | 0.32 | 1.3–1.4 pt under-confident |
+| v6 TWAP model, vol ×1.1 | 0.27 (all s) | +0.1 pt train / −0.6 pt held-out |
+
+v6 prices the TWAP (`fair_prob_twap`: Var = σ²(s − 20) before the window; inside
+it the observed part is fixed), so it finds about twice as many genuinely
+high-confidence entries. The thesis-flip exit now fires when the modelled
+probability of our side drops below 0.5, not on a spot wiggle that cannot change
+a TWAP settlement. Price history is cleared when a segmented replay rewinds the
+clock. The market makers price the real settlement rule, so this matters even
+though the bot exits before close. 39 tests pass; synthetic battery flat
+everywhere, 0 invalid actions.

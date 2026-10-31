@@ -105,6 +105,34 @@ def fair_prob(btc: float, target: float, seconds_left: float, annual_vol: float)
     return 0.5 * (1.0 + math.erf(d / math.sqrt(2.0)))
 
 
+def fair_prob_twap(btc: float, target: float, seconds_left: float, annual_vol: float,
+                   seen_avg: Optional[float] = None, window: float = 60.0) -> float:
+    """P(settlement > target) when the market settles on the average BTC price
+    over the final ``window`` seconds (TWAP), not the spot price at close.
+
+    Before the window the average is still fully ahead: Var = s2 * (s - w/3),
+    with s2 the per-second variance in dollars. Inside it, the part already
+    observed (``seen_avg`` over ``w - s`` seconds) is fixed and only the last
+    ``s`` seconds move it: SD = sigma * s**1.5 / (w * sqrt(3)).
+    Checked on 14 days of Binance 1 s BTC: 465 of 4,029 five-minute windows
+    resolve differently on TWAP than on spot.
+    """
+    if seconds_left <= 0.0:
+        settle = seen_avg if seen_avg is not None else btc
+        return 1.0 if settle > target else 0.0
+    sigma = annual_vol * btc / math.sqrt(365.0 * 24.0 * 3600.0)  # $ per sqrt(second)
+    if seconds_left >= window or seen_avg is None:
+        sd = sigma * math.sqrt(max(seconds_left - window / 3.0, 1e-9))
+        mean = btc
+    else:
+        elapsed = window - seconds_left
+        sd = sigma * seconds_left ** 1.5 / (window * math.sqrt(3.0))
+        mean = (seen_avg * elapsed + btc * seconds_left) / window
+    if sd <= 1e-12:
+        return 1.0 if mean > target else 0.0
+    return 0.5 * (1.0 + math.erf((mean - target) / (sd * math.sqrt(2.0))))
+
+
 # --------------------------------------------------------------------------- #
 # Defensive readers for the evaluator-owned position object (schema unverified).
 # --------------------------------------------------------------------------- #
@@ -237,6 +265,12 @@ class Config:
     # 1 s BTC (55-150 s before close): x1.0 is overconfident by ~1-3 points
     # when it says >= 0.97; x1.2 is within ~0.6 points on train and held-out.
     vol_multiplier: float = 1.0
+    # Settlement on the average of the final N seconds (0 = spot at close).
+    settlement_twap_seconds: float = 0.0
+    # Thesis-flip exit fires when the modelled probability of our side falls
+    # below this (instead of the raw spot-gap sign, which flips on noise that
+    # does not change a TWAP settlement). Used when settlement_twap_seconds > 0.
+    thesis_flip_prob: float = 0.5
 
     # Cost-aware edge: require the expected edge to cover the *actual* live
     # round-trip cost (both fee layers + the quoted spread) plus a safety margin,
@@ -315,6 +349,7 @@ class Bot:
     _price_hist: Deque[Tuple[float, float]] = field(default_factory=deque)
     entry_cost: Optional[float] = None
     loss_in_market: bool = False
+    _last_now: Optional[float] = None
 
     def decide(self, observation: dict) -> dict:
         try:
@@ -406,6 +441,12 @@ class Bot:
 
         if self.start_ts is None:
             self.start_ts = now
+        # Segmented replays can rewind the clock: never mix price history
+        # across segments (stale vol / TWAP estimates).
+        if self._last_now is not None and now < self._last_now - 5.0:
+            self._price_hist.clear()
+            self._ref_hist.clear()
+        self._last_now = now
 
         # Track drawdown for reporting / defensive posture.
         self.peak_cash = max(self.peak_cash, cash)
@@ -436,6 +477,19 @@ class Bot:
                 try:
                     current_gap = float(reference["btcMidUsd"]) - float(reference["openingTargetUsd"])
                 except (KeyError, TypeError, ValueError):
+                    current_gap = None
+            if cfg.settlement_twap_seconds > 0.0 and current_gap is not None:
+                # Record the feed while holding too, so vol and the TWAP window
+                # stay current; express the thesis as a modelled probability.
+                if self._record_reference(reference, now) is not None:
+                    fair = self._fair_yes(reference, seconds)
+                    side = _pos_side(position)
+                    if fair is not None and side in ("YES", "NO"):
+                        p_side = fair if side == "YES" else 1.0 - fair
+                        current_gap = p_side - cfg.thesis_flip_prob  # >0 keeps, <0 flips
+                        if side == "NO":
+                            current_gap = -current_gap
+                else:
                     current_gap = None
             if cfg.exit_on_market_change and isinstance(position, dict):
                 pos_market = position.get("market_id", position.get("marketId"))
@@ -616,6 +670,35 @@ class Bot:
         self.entry_cost = buy_cash
         return {"action": "BUY", "outcome": side, "maxCashUsd": round(buy_cash, 6)}
 
+    def _fair_yes(self, reference: Any, seconds: float) -> Optional[float]:
+        """Modelled P(YES) from the reference feed: spot-at-close lognormal, or
+        the final-window TWAP when ``settlement_twap_seconds`` is set."""
+        cfg = self.config
+        try:
+            btc = float(reference["btcMidUsd"])
+            target = float(reference["openingTargetUsd"])
+            observed = float(reference.get("observedAt", 0.0))
+        except (KeyError, TypeError, ValueError):
+            return None
+        if btc <= 0.0 or target <= 0.0:
+            return None
+        vol = cfg.assumed_annual_vol
+        if cfg.adaptive_vol:
+            est = self._realized_vol(observed)
+            if est is not None:
+                vol = est
+        vol *= cfg.vol_multiplier
+        window = cfg.settlement_twap_seconds
+        if window <= 0.0:
+            return fair_prob(btc, target, seconds, vol)
+        seen_avg = None
+        if seconds < window:
+            close_at = observed + seconds
+            inside = [px for ts, px in self._price_hist if ts >= close_at - window]
+            if inside:
+                seen_avg = sum(inside) / len(inside)
+        return fair_prob_twap(btc, target, seconds, vol, seen_avg, window)
+
     def _realized_vol(self, now: float) -> Optional[float]:
         """Annualised realised vol of BTC from the reference price history.
 
@@ -662,12 +745,9 @@ class Bot:
         except (KeyError, TypeError, ValueError):
             return None
 
-        vol = cfg.assumed_annual_vol
-        if cfg.adaptive_vol:
-            est = self._realized_vol(float(reference.get("observedAt", 0.0)))
-            if est is not None:
-                vol = est
-        fair = fair_prob(btc, target, seconds, vol * cfg.vol_multiplier)
+        fair = self._fair_yes(reference, seconds)
+        if fair is None:
+            return None
         side = "YES" if fair >= 0.5 else "NO"
         p_fav = fair if side == "YES" else 1.0 - fair
         book = books.get(side, {})

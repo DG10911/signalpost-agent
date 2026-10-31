@@ -40,7 +40,13 @@ TUNED = Config(
     edge_safety_margin=0.045,
     margin_variance_scaled=True,
     margin_ref_price=0.74,
-    vol_multiplier=1.2,
+    # v6: price the 60 s settlement TWAP (spot and TWAP outcomes differ in
+    # 11.5% of real 5-minute windows). On 14 days of Binance 1 s BTC, 150-50 s
+    # before close, TWAP model at vol x1.1: tail (>=0.94) overconfidence
+    # +0.1 pt train / -0.6 pt held-out; spot model was 1.3-1.4 pt
+    # under-confident against TWAP outcomes.
+    settlement_twap_seconds=60.0,
+    vol_multiplier=1.1,
     target_shares=6.0,
     min_entry_price=0.4,
     max_entry_price=0.969,

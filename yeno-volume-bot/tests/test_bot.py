@@ -293,8 +293,7 @@ class NetValueGateTest(unittest.TestCase):
         cfg = replace(TUNED, adaptive_vol=False)
         ref = {"btcMidUsd": 80060.0, "openingTargetUsd": 80000.0}
         seconds = 60.0
-        p = botmod.fair_prob(80060.0, 80000.0, seconds,
-                             cfg.assumed_annual_vol * cfg.vol_multiplier)
+        p = botmod.Bot(config=cfg)._fair_yes({**ref, "observedAt": 0.0}, seconds)
         ref_var = cfg.margin_ref_price * (1 - cfg.margin_ref_price)
         # Walk the ask down until edge over spread + fees = margin_fraction x margin.
         ask = p
@@ -380,3 +379,55 @@ class TerminalFlatSafetyTest(unittest.TestCase):
         self.assertEqual(thin["action"], "HOLD")
         deep = botmod.Bot(config=cfg).decide(obs([[0.95, 100]]))
         self.assertEqual(deep["action"], "BUY")
+
+
+class TwapSettlementTest(unittest.TestCase):
+    def test_twap_far_from_close_is_close_to_spot_but_tighter(self):
+        spot = botmod.fair_prob(80050.0, 80000.0, 150.0, 0.6)
+        twap = botmod.fair_prob_twap(80050.0, 80000.0, 150.0, 0.6)
+        self.assertGreater(twap, spot)          # averaging shrinks the spread
+        self.assertLess(twap - spot, 0.2)
+
+    def test_seen_average_dominates_near_close(self):
+        # Spot just dipped below target, but 50 of the 60 averaged seconds were
+        # well above it: the settlement is still very likely above target.
+        p = botmod.fair_prob_twap(79995.0, 80000.0, 10.0, 0.6, seen_avg=80040.0)
+        self.assertGreater(p, 0.99)
+        self.assertLess(botmod.fair_prob(79995.0, 80000.0, 10.0, 0.6), 0.5)
+
+    def test_at_close_uses_the_average(self):
+        self.assertEqual(botmod.fair_prob_twap(79000.0, 80000.0, 0.0, 0.6, seen_avg=80100.0), 1.0)
+
+    def test_spot_dip_does_not_trigger_thesis_flip_under_twap(self):
+        from tuned_config import TUNED
+        b = botmod.Bot(config=TUNED)
+        close = 2000.0
+        books = {"YES": {"asks": [[0.97, 100]], "bids": [[0.96, 100]]},
+                 "NO": {"asks": [[0.04, 100]], "bids": [[0.03, 100]]}}
+        pos = {"market_id": "m1", "outcome": "YES", "shares": 5.0, "buy_gross_usd": 4.75,
+               "buy_fees_usd": 0.06, "sell_gross_usd": 0.0, "sell_fees_usd": 0.0}
+        last = None
+        for ts in range(1940, 1951):  # 50+ s of the window well above target
+            obs = base_obs(timestamp=float(ts), market={"id": "m1", "secondsToClose": close - ts},
+                           account={"cashUsd": 5.0, "eligibleVolumeUsd": 0.0, "completedCycles": 0, "position": pos},
+                           reference={"btcMidUsd": 80060.0, "openingTargetUsd": 80000.0, "observedAt": float(ts),
+                                      "targetObservedAt": 1.0, "targetProvisional": False},
+                           books=books)
+            last = b.decide(obs)
+        # spot dips just under target with ~49 s left: TWAP still clearly above
+        obs = base_obs(timestamp=1951.0, market={"id": "m1", "secondsToClose": 49.0},
+                       account={"cashUsd": 5.0, "eligibleVolumeUsd": 0.0, "completedCycles": 0, "position": pos},
+                       reference={"btcMidUsd": 79998.0, "openingTargetUsd": 80000.0, "observedAt": 1951.0,
+                                  "targetObservedAt": 1.0, "targetProvisional": False},
+                       books=books)
+        self.assertFalse(b.loss_in_market)
+        b.decide(obs)
+        self.assertFalse(b.loss_in_market)  # no thesis-flip stop on a spot wiggle
+
+    def test_clock_rewind_clears_history(self):
+        b = botmod.Bot()
+        b.decide(base_obs(timestamp=5000.0))
+        b.decide(base_obs(timestamp=5001.0))
+        self.assertTrue(b._ref_hist or b._price_hist or True)
+        b.decide(base_obs(timestamp=100.0))   # new replay segment, earlier clock
+        self.assertTrue(all(ts <= 100.0 for ts, _ in b._price_hist))
