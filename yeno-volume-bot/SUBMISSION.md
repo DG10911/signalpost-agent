@@ -15,7 +15,7 @@ Email `submit@builderr.ai` with the fields below.
 
 ## Before you submit
 
-1. `python -m unittest discover -s tests` → **48 passing**.
+1. `python -m unittest discover -s tests` → **50 passing**.
 2. `python server.py` then run the kit's `yeno-smoke-test.py` → `contractSmokePassed: true`.
 3. `python scenarios.py --paths 40` → terminal-flat 100%, 0 invalid actions in
    all 10 regimes.

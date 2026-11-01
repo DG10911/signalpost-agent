@@ -16,7 +16,7 @@ accounting are evaluator-owned; the bot only returns `HOLD` / `BUY` / `SELL` and
 | `tuned_config.py` | **The frozen strategy that `server.py` serves.** |
 | `server.py` | `POST /decide` HTTP server (`python server.py`). |
 | `research/realsim.py` | Drives the real bot over recorded Polymarket BTC-5m L2 books under the published evaluator contract. |
-| `tests/test_bot.py` | `unittest` suite (48 tests), pure stdlib. |
+| `tests/test_bot.py` | `unittest` suite (50 tests), pure stdlib. |
 | `simulator.py` | Synthetic fee-accurate harness for contract/robustness checks. |
 | `scenarios.py` | 10 adversarial synthetic regimes; asserts terminal-flat and zero invalid actions. |
 
@@ -27,7 +27,7 @@ dependencies, no model/API calls, no network. Expected external cost: $0.**
 
 ```bash
 python server.py                      # serves POST http://127.0.0.1:8080/decide
-python -m unittest discover -s tests  # 48 tests, all pass
+python -m unittest discover -s tests  # 50 tests, all pass
 python scenarios.py --paths 40        # adversarial regime battery
 ```
 
@@ -60,6 +60,9 @@ probability, only when:
 * the best ask is in **0.30–0.85** (below 0.50 the book has not caught up with
   BTC yet; above ~0.85 the fees eat the remaining upside);
 * the spread is **≤ 2 cents** and the book is not crossed;
+* the midpoint-vs-settlement feed offset has been learned (when the book sits
+  tight at 0.47–0.53 the true gap is ~0, so the measured gap there is the
+  offset; a rolling median with an $8 deadband removes it);
 * at most **4 completed cycles** per market;
 * at least 16 seconds remain (the evaluator blocks new entries inside 15 s).
 

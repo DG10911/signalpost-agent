@@ -524,3 +524,30 @@ class SuperStrategyTest(unittest.TestCase):
         self.assertEqual(TUNED.final_guard_seconds, 16.0)
         self.assertTrue(TUNED.exit_on_market_change)
         self.assertTrue(TUNED.sell_partial_when_thin)
+
+
+class BasisLearnerTest(unittest.TestCase):
+    """The midpoint feed and the settlement feed can differ; when the book sits
+    tight at 0.50 the true gap is zero, so the measured gap is the offset."""
+
+    def _books(self, mid=0.50):
+        return {"YES": {"asks": [[mid + 0.005, 100]], "bids": [[mid - 0.005, 100]]},
+                "NO": {"asks": [[1 - mid + 0.005, 100]], "bids": [[1 - mid - 0.005, 100]]}}
+
+    def test_learns_and_subtracts_the_offset(self):
+        from tuned_config import TUNED
+        b = botmod.Bot(config=TUNED)
+        ref = {"btcMidUsd": 80020.0, "openingTargetUsd": 80000.0, "observedAt": 0.0}
+        for _ in range(12):
+            b._observe_basis(self._books(0.50), ref)
+        self.assertAlmostEqual(b._basis(), 20.0, places=6)
+        p = b._fair_yes(dict(ref, btcMidUsd=80020.0), 60.0)
+        self.assertAlmostEqual(p, 0.5, places=2)
+
+    def test_small_offset_is_ignored(self):
+        from tuned_config import TUNED
+        b = botmod.Bot(config=TUNED)
+        ref = {"btcMidUsd": 80002.0, "openingTargetUsd": 80000.0, "observedAt": 0.0}
+        for _ in range(12):
+            b._observe_basis(self._books(0.50), ref)
+        self.assertEqual(b._basis(), 0.0)

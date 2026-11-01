@@ -252,6 +252,19 @@ class Config:
     # is pending; this is the belt-and-braces guard against a duplicate order.
     buy_reconcile_seconds: float = 1.0
 
+    # The midpoint feed and the settlement feed can differ (the sample's mid
+    # ends in a half-cent, the target does not; Chainlink runs below Binance and
+    # drifts). When the book sits tight at ~0.50 the true settlement gap is ~0,
+    # so the measured gap at that moment is the feed offset. Learn it from the
+    # book itself and subtract it from every later gap.
+    basis_enabled: bool = True
+    basis_min_samples: int = 12
+    basis_deadband_usd: float = 8.0
+    basis_window: int = 40
+    basis_mid_lo: float = 0.47
+    basis_mid_hi: float = 0.53
+    basis_max_spread: float = 0.02
+
     # Exit rules validated on real L2 books: take profit when the bid is near
     # $1 (not merely at break-even), and cap the holding time.
     take_profit_bid: float = 0.0
@@ -367,6 +380,7 @@ class Bot:
     entry_cost: Optional[float] = None
     entry_at: Optional[float] = None
     pending_buy_at: Optional[float] = None
+    _basis_samples: Deque[float] = field(default_factory=lambda: deque(maxlen=40))
     loss_in_market: bool = False
     _last_now: Optional[float] = None
 
@@ -488,6 +502,10 @@ class Bot:
             self.entry_cost = None
             self.entry_at = None
         self.position_was_open = position is not None
+
+        # Learn the midpoint-vs-settlement feed offset from a tight 0.50 book.
+        if cfg.basis_enabled and position is None:
+            self._observe_basis(books, observation.get("reference"))
 
         # Clean-crossing lock: once the volume target is reached and we are flat,
         # never trade again — the ranking metric is cash at that first clean
@@ -734,6 +752,7 @@ class Bot:
         """Modelled P(YES) from the reference feed: spot-at-close lognormal, or
         the final-window TWAP when ``settlement_twap_seconds`` is set."""
         cfg = self.config
+        basis = self._basis()
         try:
             btc = float(reference["btcMidUsd"])
             target = float(reference["openingTargetUsd"])
@@ -742,6 +761,8 @@ class Bot:
             return None
         if btc <= 0.0 or target <= 0.0:
             return None
+        if basis:
+            btc -= basis
         vol = cfg.assumed_annual_vol
         if cfg.adaptive_vol:
             est = self._realized_vol(observed)
@@ -756,7 +777,7 @@ class Bot:
             close_at = observed + seconds
             inside = [px for ts, px in self._price_hist if ts >= close_at - window]
             if inside:
-                seen_avg = sum(inside) / len(inside)
+                seen_avg = sum(inside) / len(inside) - basis
         return fair_prob_twap(btc, target, seconds, vol, seen_avg, window)
 
     def _realized_vol(self, now: float) -> Optional[float]:
@@ -785,6 +806,38 @@ class Bot:
             return None
         sigma = math.sqrt(var_per_sec / n) * math.sqrt(365.0 * 24.0 * 3600.0)
         return min(max(sigma, cfg.vol_floor), cfg.vol_cap)
+
+    def _observe_basis(self, books: dict, reference: Any) -> None:
+        cfg = self.config
+        if not isinstance(reference, dict):
+            return
+        try:
+            gap = float(reference["btcMidUsd"]) - float(reference["openingTargetUsd"])
+        except (KeyError, TypeError, ValueError):
+            return
+        book = books.get("YES")
+        if not isinstance(book, dict):
+            return
+        bids = _levels(book.get("bids", []), reverse=True)
+        asks = _levels(book.get("asks", []), reverse=False)
+        if not bids or not asks:
+            return
+        best_bid, best_ask = bids[0][0], asks[0][0]
+        mid = (best_bid + best_ask) / 2.0
+        if not (cfg.basis_mid_lo <= mid <= cfg.basis_mid_hi):
+            return
+        if best_ask - best_bid > cfg.basis_max_spread + 1e-9:
+            return
+        if math.isfinite(gap):
+            self._basis_samples.append(gap)
+
+    def _basis(self) -> float:
+        cfg = self.config
+        if not cfg.basis_enabled or len(self._basis_samples) < cfg.basis_min_samples:
+            return 0.0
+        vals = sorted(self._basis_samples)
+        med = vals[len(vals) // 2]
+        return med if abs(med) >= cfg.basis_deadband_usd else 0.0
 
     def _edge_side(self, reference: Any, books: dict, seconds: float,
                    defensive: bool) -> Optional[str]:
