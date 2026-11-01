@@ -122,7 +122,8 @@ def fair_prob_twap(btc: float, target: float, seconds_left: float, annual_vol: f
         return 1.0 if settle > target else 0.0
     sigma = annual_vol * btc / math.sqrt(365.0 * 24.0 * 3600.0)  # $ per sqrt(second)
     if seconds_left >= window or seen_avg is None:
-        sd = sigma * math.sqrt(max(seconds_left - window / 3.0, 1e-9))
+        # Variance of the mean over the final window: sigma^2 (s - w/3) / w^2.
+        sd = sigma * math.sqrt(max(seconds_left - window / 3.0, 1e-9)) / window
         mean = btc
     else:
         elapsed = window - seconds_left
@@ -240,6 +241,22 @@ class Config:
     size_to_cap: bool = False
     cap_buffer_usd: float = 0.01
 
+    # Cash-fraction sizing (validated on real L2 books): risk a fraction of
+    # paper cash per BUY instead of the full $5 cap, so a losing streak cannot
+    # wipe the $10 bankroll before the target crossing. 0 disables.
+    size_fraction: float = 0.0
+    low_cash_fraction: float = 0.0
+    min_cash_usd: float = 0.0
+    # After a BUY, wait this long for the evaluator to show the position before
+    # issuing another BUY. The contract says it will not re-ask while an action
+    # is pending; this is the belt-and-braces guard against a duplicate order.
+    buy_reconcile_seconds: float = 1.0
+
+    # Exit rules validated on real L2 books: take profit when the bid is near
+    # $1 (not merely at break-even), and cap the holding time.
+    take_profit_bid: float = 0.0
+    max_hold_seconds: float = 0.0
+
     # Once the volume target is met and we are flat, stop trading forever so the
     # cash at the crossing is locked (ranking is cash at that first clean cross).
     lock_after_target: bool = True
@@ -348,13 +365,15 @@ class Bot:
     _ref_hist: Deque[Tuple[float, float]] = field(default_factory=deque)
     _price_hist: Deque[Tuple[float, float]] = field(default_factory=deque)
     entry_cost: Optional[float] = None
+    entry_at: Optional[float] = None
+    pending_buy_at: Optional[float] = None
     loss_in_market: bool = False
     _last_now: Optional[float] = None
 
     def decide(self, observation: dict) -> dict:
         try:
             return self._decide(observation)
-        except (KeyError, TypeError, ValueError, OverflowError):
+        except (KeyError, TypeError, ValueError, OverflowError, AttributeError, IndexError):
             # Never crash the evaluator loop; a bad observation means HOLD.
             return {"action": "HOLD"}
 
@@ -381,9 +400,12 @@ class Bot:
         if bool(reference.get("targetProvisional", True)):
             return None
         observed_at = float(reference.get("observedAt", -math.inf))
+        if observed_at > now + 1e-9:
+            return None  # future-stamped midpoint is not causal
         if now - observed_at > cfg.max_reference_age_seconds:
             return None
-        if float(reference.get("targetObservedAt", math.inf)) > now + 1e-9:
+        target_observed = float(reference.get("targetObservedAt", observed_at))
+        if target_observed > now + 1e-9:
             return None
         gap = float(reference["btcMidUsd"]) - float(reference["openingTargetUsd"])
         if not self._ref_hist or self._ref_hist[-1][0] != observed_at:
@@ -428,9 +450,11 @@ class Bot:
 
     def _decide(self, observation: dict) -> dict:
         cfg = self.config
-        market = observation["market"]
-        account = observation["account"]
-        books = observation["books"]
+        market = observation["market"] or {}
+        account = observation["account"] or {}
+        books = observation.get("books") or {}
+        if not isinstance(books, dict):
+            books = {}
         rules = observation.get("rules", {})
         now = self._now(observation)
         seconds = float(market["secondsToClose"])
@@ -455,11 +479,14 @@ class Bot:
         if market_id != self.market_id:
             self._reset_market(market_id)
 
+        if position is not None:
+            self.pending_buy_at = None
         # Cycle accounting: a position that closed since last tick = one cycle.
         if position is None and self.position_was_open:
             self.completed_cycles += 1
             self.last_flat_at = now
             self.entry_cost = None
+            self.entry_at = None
         self.position_was_open = position is not None
 
         # Clean-crossing lock: once the volume target is reached and we are flat,
@@ -495,9 +522,12 @@ class Bot:
                 pos_market = position.get("market_id", position.get("marketId"))
                 if pos_market is not None and str(pos_market) != market_id:
                     return {"action": "SELL"}
-            return self._decide_exit(position, books, seconds, current_gap)
+            return self._decide_exit(position, books, seconds, current_gap, now)
 
         # ---------------- Entry path (flat) ----------------------------- #
+        if self.pending_buy_at is not None and \
+                now - self.pending_buy_at < cfg.buy_reconcile_seconds - 1e-9:
+            return {"action": "HOLD"}
         aggression = self._aggression(now, rules, volume)
         return self._decide_entry(reference, books, rules, now, seconds, cash, aggression)
 
@@ -525,7 +555,8 @@ class Bot:
         return min(cfg.max_aggression, 1.0 + 0.8 * (1.0 - pace))
 
     def _decide_exit(self, position: dict, books: dict, seconds: float,
-                     current_gap: Optional[float] = None) -> dict:
+                     current_gap: Optional[float] = None,
+                     now: Optional[float] = None) -> dict:
         cfg = self.config
         # The evaluator owns the position object and its field names are not
         # documented, so read them defensively (never crash -> never fail flat).
@@ -558,11 +589,25 @@ class Bot:
         already = float(position.get("sell_gross_usd", 0.0)) - float(position.get("sell_fees_usd", 0.0))
         cycle_pnl = already + sell_gross - sell_fees - paid
 
+        # Take profit at a high bid (a near-certain win) rather than exiting at
+        # break-even: the measured distribution needs the winners to pay for the
+        # losers. Only sell if the whole cycle is not a loss.
+        if cfg.take_profit_bid > 0.0:
+            best_bid = bids[0][0] if bids else None
+            if best_bid is not None and best_bid >= cfg.take_profit_bid - 1e-9 \
+                    and cycle_pnl > 0.0:
+                return {"action": "SELL"}
         target_profit = cfg.min_profit_per_share_usd * shares
         if cfg.profit_floor_usd > 0.0:
             target_profit = max(target_profit, cfg.profit_floor_usd)
-        if cycle_pnl >= target_profit - 1e-9:
-            return {"action": "SELL"}
+        if cfg.profit_floor_usd > 0.0 or cfg.min_profit_per_share_usd > 0.0:
+            if cycle_pnl >= target_profit - 1e-9:
+                return {"action": "SELL"}
+        # Time stop: after max_hold_seconds the edge has been harvested (or the
+        # thesis is stale); release the capital for the next cycle.
+        if cfg.max_hold_seconds > 0.0 and now is not None and self.entry_at is not None:
+            if now - self.entry_at >= cfg.max_hold_seconds - 1e-9:
+                return {"action": "SELL"}
         if cfg.exit_on_thesis_flip and current_gap is not None:
             if side == "YES" and current_gap < 0.0 - 1e-9:
                 self.loss_in_market = True
@@ -581,6 +626,8 @@ class Bot:
     ) -> dict:
         cfg = self.config
 
+        if cfg.min_cash_usd > 0.0 and cash < cfg.min_cash_usd - 1e-9:
+            return {"action": "HOLD"}
         if self.completed_cycles >= cfg.max_cycles_per_market:
             return {"action": "HOLD"}
         if cfg.abort_market_after_loss and self.loss_in_market:
@@ -619,7 +666,14 @@ class Bot:
                 return {"action": "HOLD"}
             side = "YES" if gap >= 0 else "NO"
 
-        book = books.get(side, {})
+        book = books.get(side) or {}
+        if not isinstance(book, dict):
+            return {"action": "HOLD"}
+        if not book.get("minOrderSize"):
+            shared_min = books.get("minOrderSize") or rules.get("minOrderSize")
+            if shared_min:
+                book = dict(book)
+                book["minOrderSize"] = shared_min
         best_asks = _levels(book.get("asks", []), reverse=False)
         if not best_asks:
             return {"action": "HOLD"}
@@ -627,8 +681,12 @@ class Bot:
         if best_ask < cfg.min_entry_price - 1e-9 or best_ask > max_price + 1e-9:
             return {"action": "HOLD"}
         best_bids_for_spread = _levels(book.get("bids", []), reverse=True)
-        if best_bids_for_spread and best_ask - best_bids_for_spread[0][0] > cfg.max_spread + 1e-9:
-            return {"action": "HOLD"}
+        if best_bids_for_spread:
+            if best_ask - best_bids_for_spread[0][0] > cfg.max_spread + 1e-9:
+                return {"action": "HOLD"}
+            # A crossed book is not a tradable quote.
+            if best_ask <= best_bids_for_spread[0][0] + 1e-9:
+                return {"action": "HOLD"}
 
         # Book must agree the reference-favoured side is the favourite: its mid
         # should sit at/above parity. This rejects reference/book disagreement
@@ -668,6 +726,8 @@ class Bot:
 
         self.last_buy_attempt_at = now
         self.entry_cost = buy_cash
+        self.entry_at = now
+        self.pending_buy_at = now
         return {"action": "BUY", "outcome": side, "maxCashUsd": round(buy_cash, 6)}
 
     def _fair_yes(self, reference: Any, seconds: float) -> Optional[float]:
@@ -728,52 +788,55 @@ class Bot:
 
     def _edge_side(self, reference: Any, books: dict, seconds: float,
                    defensive: bool) -> Optional[str]:
-        """Return the side with positive expected edge, or None.
+        """Return the side with the largest positive expected edge, or None.
 
-        The reference feed (btcMid vs openingTarget) gives the current fair
-        probability of YES; the order book still reflects an older BTC level.
-        Enter the side whose ask is below its fair value by at least the required
-        edge (a fixed floor, or -- when ``cost_aware_edge`` -- the live
-        round-trip cost). That gap is the edge captured when the book catches up.
+        The reference feed (btcMid vs openingTarget) prices both outcomes; the
+        order book may still reflect an older BTC level. We check *both* sides
+        and take the larger edge: a skewed book can make the model's underdog
+        the cheaper side even when the model favours the other outcome.
         """
         cfg = self.config
         if not isinstance(reference, dict):
             return None
         try:
-            btc = float(reference["btcMidUsd"])
-            target = float(reference["openingTargetUsd"])
+            float(reference["btcMidUsd"])
+            float(reference["openingTargetUsd"])
         except (KeyError, TypeError, ValueError):
             return None
 
         fair = self._fair_yes(reference, seconds)
         if fair is None:
             return None
-        side = "YES" if fair >= 0.5 else "NO"
-        p_fav = fair if side == "YES" else 1.0 - fair
-        book = books.get(side, {})
-        asks = _levels(book.get("asks", []), reverse=False)
-        bids = _levels(book.get("bids", []), reverse=True)
-        if not asks:
+        if not (0.0 <= fair <= 1.0):
             return None
-        ask = asks[0][0]
 
-        if cfg.cost_aware_edge:
-            bid = bids[0][0] if bids else ask
-            fee_buy = ask * (0.01 + 0.07 * (1.0 - ask))
-            fee_sell = bid * (0.01 + 0.07 * (1.0 - bid))
-            margin = cfg.edge_safety_margin
-            if cfg.margin_variance_scaled:
-                ref = cfg.margin_ref_price * (1.0 - cfg.margin_ref_price)
-                margin *= (ask * (1.0 - ask)) / max(ref, 1e-9)
-            required = (ask - bid) + fee_buy + fee_sell + margin
-        else:
-            required = cfg.min_edge_per_share_usd
-        if defensive:
-            required *= cfg.defensive_gap_multiplier
-
-        if p_fav - ask < required - 1e-9:
-            return None
-        return side
+        best: Optional[Tuple[float, str]] = None
+        for side, p_side in (("YES", fair), ("NO", 1.0 - fair)):
+            book = books.get(side)
+            if not isinstance(book, dict):
+                continue
+            asks = _levels(book.get("asks", []), reverse=False)
+            bids = _levels(book.get("bids", []), reverse=True)
+            if not asks:
+                continue
+            ask = asks[0][0]
+            if cfg.cost_aware_edge:
+                bid = bids[0][0] if bids else ask
+                fee_buy = ask * (0.01 + 0.07 * (1.0 - ask))
+                fee_sell = bid * (0.01 + 0.07 * (1.0 - bid))
+                margin = cfg.edge_safety_margin
+                if cfg.margin_variance_scaled:
+                    ref = cfg.margin_ref_price * (1.0 - cfg.margin_ref_price)
+                    margin *= (ask * (1.0 - ask)) / max(ref, 1e-9)
+                required = (ask - bid) + fee_buy + fee_sell + margin
+            else:
+                required = cfg.min_edge_per_share_usd
+            if defensive:
+                required *= cfg.defensive_gap_multiplier
+            edge = p_side - ask
+            if edge >= required - 1e-9 and (best is None or edge > best[0]):
+                best = (edge, side)
+        return best[1] if best is not None else None
 
     def _size(self, book: dict, cash: float, rules: dict) -> float:
         """Largest share count that fits the fee-inclusive BUY cap.
@@ -784,9 +847,14 @@ class Bot:
         cfg = self.config
         min_order = float(book.get("minOrderSize", 0.0) or 0.0)
         ceiling = min(cash, float(rules.get("maximumBuyCashUsd", 5.0)))
+        if cfg.size_fraction > 0.0:
+            frac = cfg.size_fraction
+            if 0.0 < cfg.low_cash_fraction < frac and cash < cfg.starting_cash_usd:
+                frac = cfg.low_cash_fraction
+            ceiling = min(ceiling, cash * frac)
         asks = book.get("asks", [])
 
-        if cfg.size_to_cap:
+        if cfg.size_to_cap or cfg.size_fraction > 0.0:
             ceiling -= max(0.0, cfg.cap_buffer_usd)
             levels = _levels(asks, reverse=False)
             if not levels or ceiling <= 0.0:

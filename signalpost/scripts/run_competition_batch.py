@@ -393,11 +393,10 @@ def main() -> None:
     # its exact registry_live identity, or the whole submission scores zero.
     # Surface it loudly at build time rather than shipping a silent zero.
     exact_registry_ratio, identity_failures = official_identity_complete(ordered_profiles)
-    if args.require_exact_identity and identity_failures:
-        raise SystemExit(
-            f"official_identity_complete FAILED: {len(identity_failures)} profile(s) lack exact registry_live identity "
-            f"(e.g. {identity_failures[:10]}). Refusing to emit a submission that would score zero awardable."
-        )
+    # Do not abort here: the crawl is already paid for. Emit the complete
+    # artifacts (the evaluator will reject the identity gate, but the work is
+    # preserved for diagnosis and a targeted rerun), record the failures in the
+    # report, and exit non-zero at the end.
 
     envelopes = [
         terminal_envelope(profile, run_id=args.run_id, modules=requested_modules, started_at=started_at, completed_at=completed_at)
@@ -446,6 +445,7 @@ def main() -> None:
         "validation": validation,
         "request_budget_exceeded": budget_exceeded,
         "exact_registry": round(exact_registry_ratio, 4),
+        "identity_failures": identity_failures,
         "external_observations": sum(
             len(((p.get("evidence", {}) or {}).get("external_footprint", {}) or {}).get("observations", []))
             for p in ordered_profiles
@@ -454,6 +454,13 @@ def main() -> None:
     Path(args.report).parent.mkdir(parents=True, exist_ok=True)
     Path(args.report).write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False, indent=2))
+    if args.require_exact_identity and identity_failures:
+        print(json.dumps({
+            "ERROR": "official_identity_complete FAILED",
+            "profiles": identity_failures,
+            "note": "artifacts were written before this exit; rerun only the failing companies",
+        }, ensure_ascii=False), file=sys.stderr)
+        raise SystemExit(2)
     raise SystemExit(0 if validation["passed"] else 1)
 
 

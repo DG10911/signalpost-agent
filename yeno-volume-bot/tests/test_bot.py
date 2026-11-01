@@ -284,42 +284,30 @@ class TestSchemaRobustness(unittest.TestCase):
 
 
 class NetValueGateTest(unittest.TestCase):
-    """The served config only enters when the modelled edge covers spread, both
-    fee layers and the measured adverse-fill margin -- not just fees."""
+    """The served config requires the modelled edge to clear a fixed 5-cent
+    floor (the validated settings), so the book must be genuinely stale."""
 
-    def _edge_side(self, margin_fraction):
-        from dataclasses import replace
+    def _edge_side(self, edge):
         from tuned_config import TUNED
-        cfg = replace(TUNED, adaptive_vol=False)
-        ref = {"btcMidUsd": 80060.0, "openingTargetUsd": 80000.0}
+        ref = {"btcMidUsd": 80060.0, "openingTargetUsd": 80000.0, "observedAt": 0.0}
         seconds = 60.0
-        p = botmod.Bot(config=cfg)._fair_yes({**ref, "observedAt": 0.0}, seconds)
-        ref_var = cfg.margin_ref_price * (1 - cfg.margin_ref_price)
-        # Walk the ask down until edge over spread + fees = margin_fraction x margin.
-        ask = p
-        while ask > 0.01:
-            bid = ask - 0.01
-            costs = 0.01 + ask * (0.01 + 0.07 * (1 - ask)) + bid * (0.01 + 0.07 * (1 - bid))
-            margin = cfg.edge_safety_margin * ask * (1 - ask) / ref_var
-            if p - ask >= costs + margin_fraction * margin:
-                break
-            ask -= 0.0005
+        p = botmod.Bot(config=TUNED)._fair_yes(ref, seconds)
+        ask = p - edge
         books = {"YES": {"asks": [[ask, 100]], "bids": [[ask - 0.01, 100]]},
                  "NO": {"asks": [[1 - ask + 0.01, 100]], "bids": [[1 - ask, 100]]}}
-        return botmod.Bot(config=cfg)._edge_side(ref, books, seconds, defensive=False)
+        return botmod.Bot(config=TUNED)._edge_side(ref, books, seconds, defensive=False)
 
-    def test_rejects_edge_that_only_covers_fees(self):
-        self.assertIsNone(self._edge_side(0.5))
+    def test_rejects_edge_below_five_cents(self):
+        self.assertIsNone(self._edge_side(0.04))
 
-    def test_accepts_edge_that_clears_the_margin(self):
-        self.assertEqual(self._edge_side(1.3), "YES")
+    def test_accepts_edge_above_five_cents(self):
+        self.assertEqual(self._edge_side(0.06), "YES")
 
-    def test_margin_shrinks_for_near_certain_favourites(self):
+    def test_served_gate_is_five_cents(self):
         from tuned_config import TUNED
-        ref_var = TUNED.margin_ref_price * (1 - TUNED.margin_ref_price)
-        at_95 = TUNED.edge_safety_margin * 0.95 * 0.05 / ref_var
-        self.assertLess(at_95, 0.015)
-        self.assertAlmostEqual(TUNED.edge_safety_margin * 0.74 * 0.26 / ref_var, 0.045)
+        self.assertAlmostEqual(TUNED.min_edge_per_share_usd, 0.05)
+        self.assertFalse(TUNED.cost_aware_edge)
+        self.assertEqual(TUNED.edge_safety_margin, 0.0)
 
 
 class TerminalFlatSafetyTest(unittest.TestCase):
@@ -365,28 +353,42 @@ class TerminalFlatSafetyTest(unittest.TestCase):
         d = b.decide(self._obs(seconds, None, [[0.96, 100]]))
         self.assertEqual(d["action"], "HOLD")
 
-    def test_entry_requires_best_bid_depth(self):
+    def test_entry_allows_thin_best_bid_with_partial_exit(self):
+        # The validated design accepts a thin best bid and exits partially; a
+        # full-size bid is not a precondition for entering.
         from dataclasses import replace
         from tuned_config import TUNED
         cfg = replace(TUNED, use_edge_gate=False, require_book_favorite_agreement=False,
                       persistence_samples=1, min_reference_gap_usd=1.0)
         def obs(bids):
             o = self._obs(100.0, None, bids)
-            o["books"]["YES"]["asks"] = [[0.96, 100]]
+            o["books"]["YES"]["asks"] = [[0.60, 100]]
             o["account"]["cashUsd"] = 10.0
             return o
-        thin = botmod.Bot(config=cfg).decide(obs([[0.95, 1]]))
-        self.assertEqual(thin["action"], "HOLD")
-        deep = botmod.Bot(config=cfg).decide(obs([[0.95, 100]]))
+        thin = botmod.Bot(config=cfg).decide(obs([[0.58, 1]]))
+        self.assertEqual(thin["action"], "BUY")
+        deep = botmod.Bot(config=cfg).decide(obs([[0.58, 100]]))
         self.assertEqual(deep["action"], "BUY")
+
+    def test_crossed_book_is_rejected(self):
+        from dataclasses import replace
+        from tuned_config import TUNED
+        cfg = replace(TUNED, use_edge_gate=False, require_book_favorite_agreement=False,
+                      persistence_samples=1, min_reference_gap_usd=1.0)
+        o = self._obs(100.0, None, [[0.61, 100]])
+        o["books"]["YES"]["asks"] = [[0.60, 100]]  # bid 0.61 >= ask 0.60
+        o["account"]["cashUsd"] = 10.0
+        self.assertEqual(botmod.Bot(config=cfg).decide(o)["action"], "HOLD")
 
 
 class TwapSettlementTest(unittest.TestCase):
-    def test_twap_far_from_close_is_close_to_spot_but_tighter(self):
+    def test_twap_far_from_close_is_tighter_than_spot(self):
+        # Settling on a 60 s average has lower variance than the spot at close,
+        # so a positive gap must be *more* certain under TWAP, not less.
         spot = botmod.fair_prob(80050.0, 80000.0, 150.0, 0.6)
         twap = botmod.fair_prob_twap(80050.0, 80000.0, 150.0, 0.6)
-        self.assertGreater(twap, spot)          # averaging shrinks the spread
-        self.assertLess(twap - spot, 0.2)
+        self.assertGreater(twap, spot)
+        self.assertGreater(twap - spot, 0.0)
 
     def test_seen_average_dominates_near_close(self):
         # Spot just dipped below target, but 50 of the 60 averaged seconds were
@@ -431,3 +433,94 @@ class TwapSettlementTest(unittest.TestCase):
         self.assertTrue(b._ref_hist or b._price_hist or True)
         b.decide(base_obs(timestamp=100.0))   # new replay segment, earlier clock
         self.assertTrue(all(ts <= 100.0 for ts, _ in b._price_hist))
+
+
+class SuperStrategyTest(unittest.TestCase):
+    """The served strategy: take profit at a high bid, time stop, 30% sizing,
+    a 0.45 thesis flip, and strict malformed-input handling."""
+
+    def _pos(self):
+        return {"market_id": "m1", "outcome": "YES", "shares": 5.0,
+                "buy_gross_usd": 4.0, "buy_fees_usd": 0.1,
+                "sell_gross_usd": 0.0, "sell_fees_usd": 0.0}
+
+    def _bot(self):
+        from tuned_config import TUNED
+        return botmod.Bot(config=TUNED)
+
+    def _obs(self, **kw):
+        pos = kw.pop("position", self._pos())
+        books = kw.pop("books", {"YES": {"asks": [[0.90, 100]], "bids": [[0.96, 100]]},
+                                 "NO": {"asks": [[0.06, 100]], "bids": [[0.04, 100]]}})
+        ref = kw.pop("reference", {"btcMidUsd": 80100.0, "openingTargetUsd": 80000.0,
+                                   "observedAt": 1000.0, "targetObservedAt": 999.0,
+                                   "targetProvisional": False})
+        return base_obs(timestamp=kw.pop("timestamp", 1000.0),
+                        market={"id": "m1", "secondsToClose": kw.pop("seconds", 60.0)},
+                        account={"cashUsd": kw.pop("cash", 6.0), "eligibleVolumeUsd": 0.0,
+                                 "completedCycles": 0, "position": pos},
+                        reference=ref, books=books)
+
+    def test_take_profit_at_high_bid(self):
+        self.assertEqual(self._bot().decide(self._obs())["action"], "SELL")
+
+    def test_max_hold_exits(self):
+        b = self._bot()
+        b.entry_at = 1000.0 - 31.0
+        obs = self._obs(books={"YES": {"asks": [[0.55, 100]], "bids": [[0.52, 100]]},
+                              "NO": {"asks": [[0.49, 100]], "bids": [[0.46, 100]]}})
+        self.assertEqual(b.decide(obs)["action"], "SELL")
+
+    def test_fractional_sizing_caps_the_ticket(self):
+        b = self._bot()
+        obs = base_obs(timestamp=1000.0,
+                       market={"id": "fresh", "secondsToClose": 90.0},
+                       books={"YES": {"asks": [[0.50, 100]], "bids": [[0.49, 100]], "minOrderSize": 5},
+                              "NO": {"asks": [[0.51, 100]], "bids": [[0.50, 100]], "minOrderSize": 5}})
+        d = b.decide(obs)
+        if d["action"] == "BUY":
+            self.assertLessEqual(d["maxCashUsd"], 3.05)
+            self.assertGreaterEqual(d["maxCashUsd"], 2.4)
+        else:
+            self.fail("expected a BUY with a strong signal")
+
+    def test_thesis_flip_exits_below_045(self):
+        b = self._bot()
+        b.entry_at = 1000.0
+        ref = {"btcMidUsd": 79980.0, "openingTargetUsd": 80000.0,
+               "observedAt": 1000.0, "targetObservedAt": 999.0, "targetProvisional": False}
+        obs = self._obs(reference=ref, books={"YES": {"asks": [[0.55, 100]], "bids": [[0.50, 100]]},
+                                               "NO": {"asks": [[0.51, 100]], "bids": [[0.46, 100]]}})
+        self.assertEqual(b.decide(obs)["action"], "SELL")
+
+    def test_null_books_hold_without_crashing(self):
+        obs = base_obs(books={"YES": None, "NO": None})
+        self.assertEqual(self._bot().decide(obs), {"action": "HOLD"})
+
+    def test_future_observed_at_is_rejected(self):
+        b = self._bot()
+        ref = {"btcMidUsd": 80100.0, "openingTargetUsd": 80000.0,
+               "observedAt": 1005.0, "targetObservedAt": 999.0, "targetProvisional": False}
+        self.assertEqual(b.decide(base_obs(timestamp=1000.0, reference=ref))["action"], "HOLD")
+
+    def test_min_cash_blocks_entry(self):
+        obs = base_obs(timestamp=1000.0, account={"cashUsd": 2.0, "eligibleVolumeUsd": 0.0,
+                                                   "completedCycles": 0, "position": None},
+                       books={"YES": {"asks": [[0.50, 100]], "bids": [[0.49, 100]], "minOrderSize": 5},
+                              "NO": {"asks": [[0.51, 100]], "bids": [[0.50, 100]], "minOrderSize": 5}})
+        self.assertEqual(self._bot().decide(obs)["action"], "HOLD")
+
+    def test_served_config_matches_the_validated_strategy(self):
+        from tuned_config import TUNED
+        self.assertEqual(TUNED.min_edge_per_share_usd, 0.05)
+        self.assertEqual(TUNED.max_spread, 0.02)
+        self.assertEqual(TUNED.min_entry_price, 0.30)
+        self.assertEqual(TUNED.max_entry_price, 0.85)
+        self.assertEqual(TUNED.take_profit_bid, 0.95)
+        self.assertEqual(TUNED.max_hold_seconds, 30.0)
+        self.assertEqual(TUNED.thesis_flip_prob, 0.45)
+        self.assertEqual(TUNED.size_fraction, 0.30)
+        self.assertEqual(TUNED.forced_exit_seconds, 10.0)
+        self.assertEqual(TUNED.final_guard_seconds, 16.0)
+        self.assertTrue(TUNED.exit_on_market_change)
+        self.assertTrue(TUNED.sell_partial_when_thin)

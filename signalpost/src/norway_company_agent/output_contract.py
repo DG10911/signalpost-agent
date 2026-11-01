@@ -212,7 +212,9 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
     elif web.get("status") == "available" and not pub:
         claim("official_website", wv.get("final_url"), "ambiguous", ["ev-website"], 0.5)
     elif web:
-        claim("official_website", None, _avail(web.get("status")), ["ev-website"], 0.5)
+        # The registry record is the authority for "no website listed"; use its
+        # hashed evidence rather than an empty website record.
+        claim("official_website", None, _avail(web.get("status")), ["ev-registry"] if reg else ["ev-website"], 0.5)
     # Handle-verified social profiles publish on the handle's own identity proof
     # (e.g. linkedin.com/company/g3-gausdal-treindustrier-sa), even when the
     # homepage itself did not confirm the entity.
@@ -231,6 +233,8 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
               "available", [eid], 0.97, obs.get("effective_at"))
 
     rm = profile.get("run_metrics", {}) or {}
+    latencies = rm.get("latencies_ms") or []
+    runtime_ms = int(sum(latencies)) if latencies else None
     return {
         "organisation_number": org,
         "run": {"run_id": run_id, "started_at": started_at, "completed_at": completed_at,
@@ -239,5 +243,5 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
         "evidence": evidence,
         "changes": [],
         "errors": [],
-        "operations": {"requests": rm.get("requests", 0), "runtime_ms": None, "third_party_cost_usd": 0},
+        "operations": {"requests": rm.get("requests", 0), "runtime_ms": runtime_ms, "third_party_cost_usd": 0},
     }

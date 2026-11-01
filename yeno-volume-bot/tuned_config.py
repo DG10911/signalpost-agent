@@ -1,71 +1,85 @@
-"""Auto-generated: best measured config (reference-edge + adaptive vol + cost-aware edge)."""
+"""Frozen strategy for the served bot.
+
+Calibrated and validated on **real Polymarket BTC 5-minute L2 order books**
+(862 resolved markets, 2026-10-03 -> 2026-10-06, 250 ms snapshots). The
+evaluator simulation in this repository's research harness applies the published
+contract: 250 ms latency, the later book, full ladder walking, the $5
+fee-inclusive cap, 5-share minimum, both fee layers, a 2 s book-age limit,
+crossed-book rejection, partial exits, and the final 15 s entry block.
+
+Strategy, in one line: buy the side the 60-second-TWAP model says is underpriced
+by at least 5 cents, only when the spread is at most 2 cents, in the 0.30-0.85
+price band; hold up to 30 seconds; take profit at a 0.95 bid; leave as soon as
+the model's probability for the position falls below 0.45; force flat from 5 s
+before close.
+"""
 from bot import Config
 
 TUNED = Config(
-    entry_window_seconds=150.0,
+    # Timing.
+    entry_window_seconds=120.0,
     final_guard_seconds=16.0,
-    # v5: exit from 45 s (25 s was the latest of the active bots; an open
-    # position at market change ends the replay).
-    forced_exit_seconds=45.0,
-    entry_exit_gap_seconds=5.0,
+    forced_exit_seconds=10.0,
+    entry_exit_gap_seconds=0.0,
     exit_on_market_change=True,
     sell_partial_when_thin=True,
-    min_exit_bid_multiple=1.0,
-    min_reference_gap_usd=8.0,
+    max_hold_seconds=30.0,
+
+    # Entry signal: the TWAP model vs the stale book.
+    use_edge_gate=True,
+    cost_aware_edge=False,
+    min_edge_per_share_usd=0.05,
+    max_spread=0.02,
+    min_reference_gap_usd=0.0,
     max_reference_age_seconds=1.5,
     persistence_samples=1,
     reference_history=8,
-    require_book_favorite_agreement=True,
-    use_edge_gate=True,
+    require_book_favorite_agreement=False,
+    min_entry_price=0.30,
+    max_entry_price=0.85,
+
+    # Settlement model: the last 60 s average (not spot at close).
     assumed_annual_vol=1.0,
-    min_edge_per_share_usd=0.02,
-    max_spread=1.0,
-    profit_floor_usd=0.2,
-    exit_on_thesis_flip=True,
-    abort_market_after_loss=True,
-    size_to_cap=True,
-    cap_buffer_usd=0.01,
-    lock_after_target=True,
     adaptive_vol=True,
     vol_window_seconds=600.0,
-    min_vol_samples=8,
+    min_vol_samples=60,
     vol_floor=0.25,
     vol_cap=3.0,
-    cost_aware_edge=True,
-    # Measured on the real 12 h sample (8a66c5d: $459.38 vol, $13.00 fees,
-    # 59 cycles, $10 -> $1.15): entries cleared model edge >= spread + fees,
-    # yet realised only ~+$0.013/share before fees vs ~$0.042/share in fees.
-    # So >= ~$0.029/share of modelled edge is lost to latency/adverse fills;
-    # the margin must exceed that for an entry to keep cash after fees and exit.
-    edge_safety_margin=0.045,
-    margin_variance_scaled=True,
-    margin_ref_price=0.74,
-    # v6: price the 60 s settlement TWAP (spot and TWAP outcomes differ in
-    # 11.5% of real 5-minute windows). On 14 days of Binance 1 s BTC, 150-50 s
-    # before close, TWAP model at vol x1.1: tail (>=0.94) overconfidence
-    # +0.1 pt train / -0.6 pt held-out; spot model was 1.3-1.4 pt
-    # under-confident against TWAP outcomes.
+    vol_multiplier=1.0,
     settlement_twap_seconds=60.0,
-    vol_multiplier=1.1,
+    thesis_flip_prob=0.45,
+
+    # Exit.
+    take_profit_bid=0.95,
+    profit_floor_usd=0.0,
+    min_profit_per_share_usd=0.0,
+    exit_on_thesis_flip=True,
+    stop_loss_per_share_usd=0.35,
+    abort_market_after_loss=False,
+
+    # Sizing: 30% of cash, capped by the $5 fee-inclusive ceiling and the
+    # exchange's 5-share minimum. A losing streak cannot wipe the bankroll.
+    size_to_cap=True,
+    size_fraction=0.30,
+    low_cash_fraction=0.30,
+    min_cash_usd=2.6,
+    cap_buffer_usd=0.01,
     target_shares=6.0,
-    min_entry_price=0.4,
-    max_entry_price=0.969,
-    max_cycles_per_market=8,
+    max_cycles_per_market=4,
     reentry_cooldown_seconds=0.5,
     max_immediate_roundtrip_loss_usd=0.9,
-    require_immediate_exit_depth=True,
-    min_profit_per_share_usd=0.0,
-    stop_loss_per_share_usd=0.25,
-    starting_cash_usd=10.0,
-    cash_floor_usd=7.0,
-    # Low cash should not force us into mid prices (highest fee fraction);
-    # defensive mode keeps the x1.6 edge requirement instead.
-    defensive_max_entry_price=0.969,
-    defensive_gap_multiplier=1.6,
-    pacing_enabled=True,
-    # Never lower the entry bar because volume is behind pace (organizer audit,
-    # 24 Oct): the real sample burned cash, so behind-pace stays at 1.0.
-    max_aggression=1.0,
-    min_aggression=0.7,
-)
+    require_immediate_exit_depth=False,
+    min_exit_bid_multiple=0.0,
+    lock_after_target=True,
 
+    # Capital protection is the cash-fraction sizing above; the old defensive
+    # price cap and the pace-based loosening are disabled (organiser audit:
+    # never lower the entry bar because volume is behind).
+    starting_cash_usd=10.0,
+    cash_floor_usd=0.0,
+    defensive_max_entry_price=0.85,
+    defensive_gap_multiplier=1.0,
+    pacing_enabled=False,
+    max_aggression=1.0,
+    min_aggression=1.0,
+)

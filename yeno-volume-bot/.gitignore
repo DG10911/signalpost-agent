@@ -1,3 +1,6 @@
 frames/
 frames_test/
 frozen_config.json
+__pycache__/
+*.pyc
+research/data/
