@@ -1,116 +1,53 @@
-# Signalpost reference agent
+# Signalpost company research agent — Devansh Goenka
 
-This is a runnable starting point for the Signalpost company-research challenge. It is intentionally a solid baseline, not a winning submission.
+Researches Norwegian companies from their organisation numbers. It publishes
+only facts it can tie to the exact legal entity, and it cites every claim with
+the source URL, a content hash and the quoted text.
 
-The public universe contains 411,160 eligible companies. A valid entry must process at least 1,000; you may process 10,000 or the full universe.
+## Browse the results
 
-## What it already does
+Open **[`browse/index.html`](browse/index.html)** in a browser (download the
+folder, then double-click). It holds a fresh random sample of 100 companies
+with search, filters, a CSV export, and one page per company. Each page shows
+every published fact with its source and date, plus the items the agent
+deliberately left out and why.
 
-- reads a batch of Norwegian organisation numbers;
-- anchors identity in the Brønnøysund bulk registry;
-- fetches official financials, roles, group links and registered workplaces;
-- visits the registry-listed website and rejects weak entity matches;
-- emits one terminal JSONL envelope per input;
-- records sources, retrieval times, content hashes, request counts and latency;
-- supports checkpoint/resume and a deterministic refresh replay;
-- includes examples for external-footprint discovery and an evidence-bounded research agent.
-
-## First run: try one saved example
-
-Requires Python 3.12+. Open a terminal inside this extracted folder.
-
-Before downloading company data or running a full crawl, try the bundled public
-sample. It uses saved responses: no API key, registry download or live web requests.
+To build the same page from your own run:
 
 ```bash
-python3 scripts/run_refresh_replay.py \
-  --manifest tests/fixtures/refresh-snapshots.json \
-  --output out/refresh-demo.json
+uv run python scripts/build_profile_site.py --profiles out/profiles.jsonl --output out/site
 ```
 
-Open `out/refresh-demo.json`. The `events` list shows what changed between two
-versions of one company profile and the source evidence for each change. The sample
-should find two expected changes, no false changes, and no extra changes when the
-same data is checked again.
+There is also an interactive app: `uv run --with streamlit streamlit run app.py`.
 
-The report's `qualification_passed` field refers only to this public sample check.
-It does not qualify an entry for the competition or prove live information coverage.
-The printed request counts are reads from saved responses, not network calls.
+## Run it
 
-## Next: research live companies
+The exact official command is in [`SUBMISSION.md`](SUBMISSION.md). In short:
+`uv sync`, then `scripts/run_competition_batch.py` with the batch file and the
+Brreg bulk snapshot. A 1,000-company run takes about 36 minutes and 8.5
+requests per company. That fits the 45-minute window and the 2,000 requests
+per 100 companies allowance, and no API keys are used.
 
-Requires Python 3.12+ and `uv`. This step downloads data and makes live requests.
-The manifest selector requires at least 1,000 companies for a full entry. You can
-use its first ten rows for a private smoke test before running the full batch.
+## What it collects
 
-```bash
-uv sync
-curl -L 'https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv' -o brreg-enheter.csv
-curl -L 'https://builderr.ai/signalpost-company-universe-2025.jsonl.gz' -o signalpost-universe.jsonl.gz
+| Family | Source | How it is tied to the company |
+|---|---|---|
+| Registry, accounts, roles, sub-units | Brønnøysund APIs | organisation number |
+| Website | registry homepage; otherwise the registry e-mail domain or a name-derived domain | org number on the page, or the full registered name with legal form, or registry phone/e-mail plus the full name; never a domain another registered entity lists |
+| Social profiles | links on the verified site | handle carries the company's name |
+| Dated news | the verified site's news/press pages, RSS, WordPress posts, `<time>` dates | real publication date; second-pass check drops product pages, guides, opinion and ESG pieces, link-text headlines |
+| Jobs | NAV's public vacancy feed; single-ad links and JobPosting data on the careers page | ad's employer org number (or a registered sub-unit); careers pages only if they show a current opening |
 
-uv run python select_entry_batch.py \
-  --universe signalpost-universe.jsonl.gz \
-  --count 1000 \
-  --output entry-companies.jsonl
+## How accurate it is
 
-# Start with ten companies before the full 1,000-company run.
-head -n 10 entry-companies.jsonl > smoke-companies.jsonl
+A hand check of every published fact for a fresh random 100 companies found
+48 correct, 0 wrong and 3 that could not be re-checked (the sites did not
+load). Details per source type, and what was left blank and why, are in
+[`docs/validation/VALIDATION.md`](docs/validation/VALIDATION.md).
 
-uv run python scripts/run_competition_batch.py \
-  --organisations smoke-companies.jsonl \
-  --bulk brreg-enheter.csv \
-  --profiles-output out/smoke-profiles.jsonl \
-  --output out/smoke-envelopes.jsonl \
-  --report out/smoke-report.json \
-  --run-id smoke-001 \
-  --expected-count 10
+## Layout
 
-# When the smoke output looks right, run your full entry.
-uv run python scripts/run_competition_batch.py \
-  --organisations entry-companies.jsonl \
-  --bulk brreg-enheter.csv \
-  --profiles-output out/profiles.jsonl \
-  --output out/envelopes.jsonl \
-  --report out/run-report.json \
-  --run-id local-001 \
-  --expected-count 1000
-
-uv run --with pytest pytest -q
-```
-
-The published archive was clean-room verified on August 24, 2026: 104 tests and 5 subtests passed, followed by a one-company live BRREG smoke run with one terminal envelope, five requests and zero silent drops.
-
-Increase `--count` and `--expected-count` together if you want to publish more than the 1,000-company minimum. The ten-row smoke test above is practice only. Do not set `select_entry_batch.py --count 10`: the selector enforces the 1,000-company entry minimum.
-
-## The improvement loop
-
-1. Treat the organisation number as the anchor.
-2. Generate site/profile candidates from official data, the company site, lawful search providers and named people.
-3. Save every candidate and the evidence for or against it.
-4. Publish only exact-entity matches. Parent, brand, franchise and similarly named companies are not exact.
-5. Crawl static HTML first. Escalate to a browser only when a deterministic completeness check fails.
-6. Measure added supported coverage, wrong-company claims, runtime, requests and cost.
-7. Promote a strategy only when it improves coverage without weakening the accuracy gates.
-8. Freeze strategies and thresholds before the daily evaluation run.
-
-The strongest differentiator is external evidence that remains exact and auditable: official company pages, company-owned profiles, jobs, dated activity, ratings/reviews and permitted public signals. Do not trade accuracy for volume.
-
-## Important source rule
-
-Open-source code does not grant permission to scrape a platform. Follow each source's terms, robots policy, rate limits and licence. LinkedIn, Meta and Indeed are useful identity/discovery targets, but direct automated collection may be restricted. Use permitted APIs, licensed providers, company-owned outbound links, or return `blocked`/`not_available`.
-
-Read `docs/competition-control-loop.md`, `docs/external-connectors.md` and the public source policy before adding connectors.
-
-## Submission contract
-
-Submit a repository with:
-
-- at least 1,000 completed company profiles and the exact organisation-number manifest used;
-- one documented command that accepts a JSONL batch of organisation numbers;
-- exactly one terminal envelope per input;
-- pinned dependencies and reproducible setup;
-- a previous-snapshot input and material-change output;
-- a machine-readable run report with runtime, request count and third-party cost;
-- declared models, APIs, licences and source-rights assumptions.
-
-Email the repository URL, run command, models/APIs and expected cost per 100-company run to `submit@builderr.ai`.
+- `src/norway_company_agent/`: the agent (identity gate, crawler, discovery, NAV, content-quality check)
+- `scripts/run_competition_batch.py`: the batch entry point
+- `tests/`: unit tests (`uv run --with pytest python -m pytest -q`)
+- `docs/STARTER-KIT-README.md`: the original starter-kit notes this agent grew from

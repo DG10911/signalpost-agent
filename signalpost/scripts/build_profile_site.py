@@ -157,6 +157,16 @@ def render_company(profile: dict) -> str:
         for art in (wv.get("news_articles") or [])[:12]:
             link = f'<a href="{esc(art.get("url"))}" rel="noreferrer">{esc(art.get("headline"))}</a>' if art.get("url") else esc(art.get("headline"))
             body.append(_claim("Dated news", f'{link} ({esc(art.get("date_published"))})', web))
+        # Items the second-pass check left blank, with the reason (organiser
+        # feedback: leave an uncertain match blank and say why).
+        for label, key in (("Dated news", "excluded_news_articles"), ("Hiring page", "excluded_careers_pages")):
+            excluded = wv.get(key) or []
+            if excluded:
+                reasons: dict[str, int] = {}
+                for item in excluded:
+                    reasons[item.get("excluded_reason") or "excluded"] = reasons.get(item.get("excluded_reason") or "excluded", 0) + 1
+                why = "; ".join(f"{n} × {esc(r)}" for r, n in sorted(reasons.items(), key=lambda kv: -kv[1]))
+                body.append(f'<div class="claim warn"><b>{label} — left out ({len(excluded)}):</b> {why}</div>')
     elif web.get("status") == "available" and not pub:
         body.append('<div class="claim warn">A registry-linked website was fetched but exact-entity identity was not confirmed; its facts are quarantined (not published).</div>')
     else:

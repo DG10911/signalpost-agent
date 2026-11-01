@@ -5,6 +5,8 @@ import email.utils
 import ipaddress
 import re
 from itertools import zip_longest
+
+from .content_quality import careers_vacancy, is_generic_headline
 import socket
 import threading
 import time
@@ -333,8 +335,11 @@ def _fetch_secondary_page(url: str, *, homepage_domain: str, timeout: float, max
         try:
             structured = extruct.extract(page_html, base_url=final_url, syntaxes=["json-ld", "microdata", "opengraph"])
             careers = is_careers_page(final_url, page_title)
+            jsonld_jobs = _jsonld_jobpostings(structured)
+            page_ads = html_job_ads(page_soup, final_url) if careers else []
             extras = {
-                "job_postings": _jsonld_jobpostings(structured) + (html_job_ads(page_soup, final_url) if careers else []),
+                "job_postings": jsonld_jobs + page_ads,
+                "careers_vacancy": careers_vacancy(_visible_text(page_soup), len(page_ads), len(jsonld_jobs)) if careers else None,
                 "structured_social": structured_social_links(structured.get("json-ld", [])),
                 "structured_facts": _jsonld_facts(_jsonld_organisations(structured)),
                 "news_articles": _jsonld_articles(structured) + html_dated_items(page_soup, final_url),
@@ -522,6 +527,12 @@ _GENERIC_JOB_TEXT = {"ledige stillinger", "se alle stillinger", "alle stillinger
                      "vis alle", "mer info", "send åpen søknad", "åpen søknad", "open application"}
 
 
+def _visible_text(soup: BeautifulSoup, limit: int = 20000) -> str:
+    return " ".join(
+        str(node) for node in soup.find_all(string=True)
+        if node.parent is not None and node.parent.name not in {"script", "style", "noscript", "template"})[:limit]
+
+
 def html_job_ads(soup: BeautifulSoup, page_url: str, limit: int = 12) -> list[dict[str, Any]]:
     """Single job ads listed on a company's own careers page: links to one
     vacancy (an ad path on the company's domain, a FINN job ad, or a known
@@ -581,6 +592,15 @@ def html_dated_items(soup: BeautifulSoup, base_url: str) -> list[dict[str, Any]]
             parent = node.parent
             anchor = parent.find("a") if parent else None
         headline = (anchor.get_text(" ", strip=True) if anchor else "") or node.get_text(" ", strip=True)
+        if is_generic_headline(headline) or headline.strip() == node.get_text(" ", strip=True).strip():
+            # "Les mer" / date-only link text: use the card's own heading.
+            card = node.find_parent(["article", "li", "div", "section"])
+            heading = card.find(["h1", "h2", "h3", "h4"]) if card is not None else None
+            if heading is not None and heading.get_text(" ", strip=True):
+                headline = heading.get_text(" ", strip=True)
+                inner = heading.find("a", href=True) or heading.find_parent("a", href=True)
+                if inner is not None:
+                    anchor = inner
         href = anchor.get("href") if anchor is not None else None
         url = urllib.parse.urljoin(base_url, str(href)) if href else base_url
         if headline:
@@ -946,7 +966,10 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         structured_facts = dict(value["structured_facts"])
         careers_pages: list[dict[str, Any]] = []
         if is_careers_page(final_url, title):
-            careers_pages.append({"url": final_url, "title": title[:200]})
+            home_ads = html_job_ads(soup, final_url)
+            has_vacancy, vacancy_evidence = careers_vacancy(_visible_text(soup), len(home_ads), len(value["job_postings"]))
+            careers_pages.append({"url": final_url, "title": title[:200],
+                                  "vacancy": has_vacancy, "vacancy_evidence": vacancy_evidence})
         crawl_errors = []
         requests = 2
         bytes_received = len(raw)
@@ -975,7 +998,9 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
                 job_postings.extend(page_extras.get("job_postings", []))
                 news_articles.extend(page_extras.get("news_articles", []))
                 if page_extras.get("careers"):
-                    careers_pages.append({"url": page["url"], "title": (page.get("title") or "")[:200]})
+                    has_vacancy, vacancy_evidence = page_extras.get("careers_vacancy") or (False, "careers page lists no current opening")
+                    careers_pages.append({"url": page["url"], "title": (page.get("title") or "")[:200],
+                                          "vacancy": has_vacancy, "vacancy_evidence": vacancy_evidence})
                 # Fill missing structured facts from secondary pages (contact
                 # and locations pages often carry richer JSON-LD than the home).
                 for key, val in page_extras.get("structured_facts", {}).items():

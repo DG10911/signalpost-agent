@@ -1,0 +1,1770 @@
+{
+  "organisation_number": "915656064",
+  "name": "FILEKS AS",
+  "legal_form": "AS",
+  "employees": 24,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "ALVER",
+  "municipality_number": "4631",
+  "industry_code": "46.420",
+  "industry_label": "Engroshandel med klær og skotøy",
+  "website": "www.fileks.no",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "915656064",
+        "navn": "FILEKS AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "46.420",
+        "naeringskode1.beskrivelse": "Engroshandel med klær og skotøy",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "true",
+        "antallAnsatte": "24",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "2026-09-14",
+        "registreringsdatoantallansatteNAVAaregisteret": "2026-09-10",
+        "hjemmeside": "www.fileks.no",
+        "epostadresse": "post@fileks.no",
+        "telefon": "40 30 05 55",
+        "mobil": "",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "Rosslandsvegen 372",
+        "forretningsadresse.poststed": "FREKHAUG",
+        "forretningsadresse.postnummer": "5918",
+        "forretningsadresse.kommune": "ALVER",
+        "forretningsadresse.kommunenummer": "4631",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2015-07-13",
+        "stiftelsesdato": "2015-06-22",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2016-03-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2016-04-19",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2015-07-13",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2017-04-27",
+        "vedtektsfestetFormaal": "Innsamling og salg av brukte klær og husholdningsartikler og annet som naturlig faller sammen med dette",
+        "aktivitet": "Samle inn gjenstander til lagring og videresalg til EU-land.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "true",
+        "kapital.belop": "60000.00",
+        "kapital.antallAksjer": "600",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2017-05-29",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "915656064",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:38.826073Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "915656064",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/915656064",
+      "retrieved_at": "2026-11-01T06:21:59.704507Z",
+      "value": {
+        "organisation_number": "915656064",
+        "name": "FILEKS AS",
+        "legal_form": "AS",
+        "employees": 22,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "www.fileks.no",
+        "industry": {
+          "beskrivelse": "Engroshandel med klær og skotøy",
+          "kode": "46.420"
+        },
+        "business_address": {
+          "adresse": [
+            "Rosslandsvegen 372"
+          ],
+          "kommune": "ALVER",
+          "kommunenummer": "4631",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "5918",
+          "poststed": "FREKHAUG"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "07ee974bd0c07749d38cb85f6cbe0fd5c57963d96f59c055dd29b3be88033e06",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/915656064",
+      "retrieved_at": "2026-11-01T06:21:59.904697Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5427601,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 17784733.0,
+            "operating_result": 2449283.0,
+            "profit_before_tax": 749275.0,
+            "annual_result": 55315.0,
+            "assets": 5042770.0,
+            "equity": 289358.0,
+            "debt": 4753412.0
+          },
+          {
+            "record_id": 6235803,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 17676933.0,
+            "operating_result": 1512502.0,
+            "profit_before_tax": 2725461.0,
+            "annual_result": 2444143.0,
+            "assets": 9378852.0,
+            "equity": 2733501.0,
+            "debt": 6645350.0
+          },
+          {
+            "record_id": 7158483,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 22978165.0,
+            "operating_result": -3975367.0,
+            "profit_before_tax": -5350079.0,
+            "annual_result": -5221603.0,
+            "assets": 6604604.0,
+            "equity": -2488102.0,
+            "debt": 9092706.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "41de1083a9693c743d45e07079ef93a2642df258abd4c32c1b38138ee757a4fc",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/aar",
+      "retrieved_at": "2026-11-01T06:22:11.523605Z",
+      "value": {
+        "years": [
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915656064/2015"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "28c38f0ecfc55a226ca7189d10a2dda7842154d4aa51e4121ab7b37685bdc06d",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/915656064/roller",
+      "retrieved_at": "2026-11-01T06:22:11.723251Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Plamen Petkov",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2015-07-13",
+            "inactive": false
+          },
+          {
+            "name": "Plamen Petkov",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2022-09-29",
+            "inactive": false
+          },
+          {
+            "name": [
+              "FORVIS MAZARS AS"
+            ],
+            "organisation_number": "979605994",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2023-08-26",
+            "inactive": false
+          },
+          {
+            "name": [
+              "ECIT FORRETNINGSPARTNER AS"
+            ],
+            "organisation_number": "990945748",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2022-06-18",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "390ea95afb44d195b81db0ea4907369226fe827819662fb0ca48bd4c45c66583",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "available",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/915656064",
+      "retrieved_at": "2026-11-01T06:22:11.936603Z",
+      "value": {
+        "children": [
+          {
+            "dato": "2024-01-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "FILEKS SECOND HAND AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "932567172",
+            "parentNavn": "FILEKS AS",
+            "parentOrganisasjonsnummer": "915656064"
+          },
+          {
+            "dato": "2024-01-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "SAMMEN SECOND HAND GMBH",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Utenlandsk enhet",
+              "kode": "UTLA"
+            },
+            "organisasjonsnummer": "931213539",
+            "parentNavn": "FILEKS AS",
+            "parentOrganisasjonsnummer": "915656064"
+          }
+        ],
+        "navn": "FILEKS AS",
+        "organisasjonsform": {
+          "beskrivelse": "Aksjeselskap",
+          "kode": "AS"
+        },
+        "organisasjonsnummer": "915656064"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "c8c4b174496b0544615a81835f30d59363a21292f6e8e5dfba908a00d419eaad",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=915656064&size=1000",
+      "retrieved_at": "2026-11-01T06:22:12.135260Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "915662927",
+            "name": "FILEKS AS",
+            "address": {
+              "adresse": [
+                "Rosslandsvegen 372"
+              ],
+              "kommune": "ALVER",
+              "kommunenummer": "4631",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "5918",
+              "poststed": "FREKHAUG"
+            },
+            "industry": {
+              "beskrivelse": "Engroshandel med klær og skotøy",
+              "kode": "46.420"
+            },
+            "employees": 22
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "52161cd114bc5520a62d86ea5765299dae07c5af638cd8ccd724e44e7144c6e7",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://fileks.no/",
+      "retrieved_at": "2026-11-01T06:22:28.932640Z",
+      "value": {
+        "requested_url": "https://www.fileks.no/",
+        "final_url": "https://fileks.no/",
+        "registered_domain": "fileks.no",
+        "title": "Fileks - gi det videre",
+        "description": "Fileks samler inn tekstiler til gjenbruk. Vår visjon er \"gi det videre\" og vi deler vår omsetning med Norsk Luftambulanse og Barnekreftforeningen.",
+        "main_text_excerpt": "Enkelt for deg. Verdifullt for andre.\nGi klær nytt liv\nNår du leverer til Fileks, sørger vi for at mest mulig brukes videre – lokalt eller internasjonalt\n- \n      \n        \n          Donasjoner leveres i lukkede poser eller sekker. På denne måten blir kvalteten bevært og dine plag får en ukomplisert nytt liv.\n- \n      \n        \n      \n      Alt av tøy som vi får går først gjennom en grov sortering. Deretter blir det enten sortert i vår eget sorteringsanlegg eller send til en av våre samarbeidspartnere. Klær, sko, andre tekstiler og aksessoarer blir deretter til salgs i bruktbutikker.\n- \n      \n        \n      \n      Alle som har en eller litt mer kvadratmeter til å avse på eiendommen sin. Boksene våre er egnet for en trygt og stødig plassering på uansett av underlag.\n- \n      \n        \n      \n      Sammen med REEN arbeider vi smartere. Vi bruker et velutviklet sensorsystem i våre innsamlingsbokser. Dette forenkler og forbedrer vår logistiske effektivitet og fører til reduserte driftskostnader og CO2 utslipp. Systemet fører til redusert kjøretid og maksimerer innhentingen. Ved automatisert ruteplanlegging, status på fyllingsgrad og redusert drivstofforbruk, senker vi kostnader og kan tilpasse tiltak basert på sanntidsinformasjonen, noe som bidrar til mer effektiv innsamling.",
+        "identity_text_excerpt": "post@fileks.no +47 403 00 555 Rosslandsvegen 372, 5918 Frekhaug Følg oss",
+        "social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/fileksgidetvidere"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/fileks_gidetvidere"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/fileks_secondhand_bergen"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/fileks_secondhand_oslo"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/fileks-gidetvidere"
+          }
+        ],
+        "structured_organisations": [
+          {
+            "legalName": "Fileks AS",
+            "address": "Postboks 22 Myrdal\nVestland\nNorway",
+            "email": "post@fileks.no",
+            "telephone": "41376676",
+            "sameAs": [
+              "http://facebook.com/fileksgidetvidere/",
+              "http://il.linkedin.com/company/fileks-gidetvidere",
+              "http://instagram.com/fileks_gidetvidere"
+            ],
+            "@context": "http://schema.org",
+            "@type": "Organization"
+          },
+          {
+            "address": "Postboks 22 Myrdal\nVestland\nNorway",
+            "image": "https://static1.squarespace.com/static/6276d24fdeb78d0db8b9237c/t/675999a7a2d68d7c8d865e2b/1770628322348/",
+            "name": "Fileks AS",
+            "openingHours": ", , , , , , ",
+            "@context": "http://schema.org",
+            "@type": "LocalBusiness"
+          }
+        ],
+        "structured_facts": {
+          "telephone": "41376676",
+          "email": "post@fileks.no",
+          "address": {
+            "raw": "Postboks 22 Myrdal\nVestland\nNorway"
+          }
+        },
+        "job_postings": [],
+        "news_articles": [
+          {
+            "headline": "Nasjonalt prøveprosjekt",
+            "date_published": "13.03.2023",
+            "url": "https://fileks.no/nyheter/nasjonalt-prveprosjekt"
+          },
+          {
+            "headline": "Nyåpning i Berlin!",
+            "date_published": "13.03.2023",
+            "url": "https://fileks.no/nyheter/oyzq4tgstnjv7pgbhwb501nocoq7ia"
+          },
+          {
+            "headline": "Velkommen til åpning 05.des.2025!",
+            "date_published": "16.10.2025",
+            "url": "https://fileks.no/nyheter/ting-skjer-s-flg-med-noe-ekstra"
+          },
+          {
+            "headline": "Vi har åpnet enda en ny butikk i Berlin!",
+            "date_published": "17.07.2023",
+            "url": "https://fileks.no/nyheter/vi-har-pnet-enda-en-ny-butikk-i-berlin"
+          },
+          {
+            "headline": "Hentavfall.no + Fileks = Sant",
+            "date_published": "18.05.2022",
+            "url": "https://fileks.no/nyheter/hentavfallno-fileks-sant"
+          },
+          {
+            "headline": "Tekstil 2025",
+            "date_published": "18.05.2022",
+            "url": "https://fileks.no/nyheter/fileks-deltar-i-samarbeidsprosjektet-tekstil-25"
+          },
+          {
+            "headline": "Grønn lørdag i Bergen!",
+            "date_published": "18.11.2022",
+            "url": "https://fileks.no/nyheter/grnn-lrdag-i-bergen"
+          },
+          {
+            "headline": "Nettbutikken er åpen!",
+            "date_published": "19.11.2022",
+            "url": "https://fileks.no/nyheter/vi-pner-nettbutikk"
+          },
+          {
+            "headline": "Sammen gir vi det videre!",
+            "date_published": "20.03.2023",
+            "url": "https://fileks.no/nyheter/sammen-gir-vi-det-videre"
+          }
+        ],
+        "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://fileks.no/",
+            "title": "Fileks - gi det videre",
+            "main_text_excerpt": "Enkelt for deg. Verdifullt for andre.\nGi klær nytt liv\nNår du leverer til Fileks, sørger vi for at mest mulig brukes videre – lokalt eller internasjonalt\n- \n      \n        \n          Donasjoner leveres i lukkede poser eller sekker. På denne måten blir kvalteten bevært og dine plag får en ukomplisert nytt liv.\n- \n      \n        \n      \n      Alt av tøy som vi får går først gjennom en grov sortering. Deretter blir det enten sortert i vår eget sorteringsanlegg eller send til en av våre samarbeidspartnere. Klær, sko, andre tekstiler og aksessoarer blir deretter til salgs i bruktbutikker.\n- \n      \n        \n      \n      Alle som har en eller litt mer kvadratmeter til å avse på eiendommen sin. Boksene våre er egnet for en trygt og stødig plassering på uansett av underlag.\n- \n      \n        \n      \n      Sammen med REEN arbeider vi smartere. Vi bruker et velutviklet sensorsystem i våre innsamlingsbokser. Dette forenkler og forbedrer vår logistiske effektivitet og fører til reduserte driftskostnader og CO2 utslipp. Systemet fører til redusert kjøretid og maksimerer innhentingen. Ved automatisert ruteplanlegging, status på fyllingsgrad og redusert drivstofforbruk, senker vi kostnader og kan tilpasse tiltak basert på sanntidsinformasjonen, noe som bidrar til mer effektiv innsamling.",
+            "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0"
+          },
+          {
+            "url": "https://fileks.no/nyheter",
+            "title": "Nyheter | Utforsk nyheter - Bli inspirert nå — Fileks - gi det videre",
+            "main_text_excerpt": "Årets 2.bruktbutikk i Berlin er nå åpnet!\nVi er stolt og glade for å bli godt mottatt i storbyen Berlin.\nSAMMEN Secønd Hånd nr 2 ligger på Hermannplatz- Kreuzberg.\nVi gleder oss til fortsettelsen!\nSiden 2017 har Fileks og Stiftelsen Norsk Luftambulanse vært samarbeidspartnere.\nDenne uken hadde vi besøk av Erland Kroken som er markedssjef i Stiftelsen. Han var med oss og tømte innsamlingsbokser i Bergensområdet og besøkte vårt lager i Eidsvåg i Bergen.\nHvordan blir fremtidens tekstilinnsamling?\nInnen 2025 må alle kommuner ha en innsamlingsordning for tekstiler, klær og sko. Dette prosjektet vil gi et godt grunnlag for å finne de beste løsningene for innsamling av:\ntekstiler, klær og sko som kan brukes på nytt\nødelagte tekstiler, klær og sko som kan gå til materialgjenvinning og bli til nye produkter.\nVårt datterselskap har nettopp åpnet sin første bruktbutikk i Berlin. SAMMEN Secønd Hånd som ligger i Hackescher Markt i hjertet av Berlin er den første av flere secondhand butikker som vil åpne i løpet av første kvartal. Vi er strålende fornøyd og gleder oss til fortsettelsen!\nwww.sammensecondhand.de\n@sammensecondhand",
+            "content_sha256": "8104f77c8c5f49be801242dc2af0d5728291c5793de4a111496a8c986de3020e"
+          },
+          {
+            "url": "https://fileks.no/om-oss-1",
+            "title": "Om oss | Bli med å gjøre en forskjell  — Fileks - gi det videre",
+            "main_text_excerpt": "Siden 2015 har Fileks vært en engasjert aktør innen tekstilinnsamling\nFileks er en norsk aktør innen innsamling, gjenbruk og resirkulering av tekstiler, med et tydelig mål om å forlenge levetiden til klær og tekstiler gjennom effektive og bærekraftige løsninger siden 2015.\n“Gi det videre” er kjernen i alt vi gjør. Det handler om å skape verdi som ikke bare måles i penger, men i miljøgevinst og samfunnsbidrag.\nOm Fileks\nFileks er en norsk aktør innen innsamling, gjenbruk og resirkulering av tekstiler. Siden oppstarten i 2015 har vi jobbet for økt ombruk og avfallsreduksjon gjennom å gi klær nytt liv gjennom effektive og bærekraftige løsninger.\nVi kombinerer miljøarbeid med samfunnsansvar. En del av inntektene våre går til organisasjoner som Norsk Luftambulanse og Barnekreftforeningen. Jo mer vi samler inn, desto mer gir vi tilbake.\nHva vi gjør\nVi samler inn klær, sko og tekstiler gjennom et stadig voksende nettverk av innsamlingsbokser og samarbeidspartnere. Tekstilene blir sortert for gjenbruk eller videre bearbeiding, med mål om å minimere avfall og maksimere verdi.\nVår tilnærming\nVi bygger virksomheten på tre prinsipper:\n- Kunnskap og kontinuerlig forbedring\n- Fleksibilitet og nytenkning\n- Ansvar for miljø og samfunn\nDette gjør oss i stand til å utvikle løsninger som både er effektive og fremtidsrettede.\nVår visjon\n“Gi det videre” er kjernen i alt vi gjør. Det handler om å skape verdi som ikke bare måles i penger, men i miljøgevinst og samfunnsbidrag.\nResultater så langt\n- Over 1000 lokasjoner over hele Sør-Norge\n- Kontinuerlig vekst og utvidelse til nye regioner\n- Betydelige årlige bidrag til samarbeidspartnere\nHva har vi fått til frem til nå?\n- Fileks AS ble stiftet på Stranda 22. juni 2015\n- Vi samlet inn 8 tonn møbler for eksportert til gjenbruk.\n2015\n2016\n- De første 10 innsamlingsboksene ble plassert i Møre og Romsdal.\n- På høsten i 2016 skiftet vi fokus fra innsamlig av møbler til tekstiler og vi plasserte ut 22 nye innsamlingsbokser.\n2017\n- Vi utvidet nettverket av innsamlingspunkter.\n- Startet et samarbeid med Barnekreftforeningen og Norsk Luftambulanse.\n2018\n- Vi donerte ca. 280.000 kroner til våre støtteorganisasjoner Norsk Luftambulanse og Barnekreftforeningen.\n2019\n- Åpnet en ny avdeling i Bergen og utvidet med innsamlingspunkter i Hordaland.\n- Økte støtten til 410.000 kroner for våre støtteorganisasjoner Norsk Luftambulanse og Barnekreftforeningen.\n2020\n- I samarbeid med Avfall Norge deltar vi i samarbeidsprosjektet Tekstil 2025.\n- Vi når et nytt mål på 250 utplasserte innsamlingsbokser, samtidig som vi arbeider oss gjennom de store utfordringene knyttet til Covid-19 krisen.\n- Vi øker støtten og deler med glede ca. 480.000 kroner med våre støtteorganisasjoner Norsk Luftambulanse og Barnekreftforeningen.\n2021\n- Fileks ble kåret til Gasellebedrift 2021 fra DN Gaselle.\n- Åpnet nytt lager i Stavanger og gjør vår første utplassering av innsamlingsbokser i Rogaland.\n- Vi når nye høyder og har nå 350 innsamlingsbokser plassert i Møre og Romsdal, Sogn og Fjordane, Vestland og Rogaland.\nVi samarbeider med",
+            "content_sha256": "b3c9fdd7d4a73bb49b2342d277fbae367e0aa574599a9752b67a95af1d37ecda"
+          },
+          {
+            "url": "https://fileks.no/kontakt-oss-ny",
+            "title": "Kontakt oss | Få svar til dine spørsmål –  — Fileks - gi det videre",
+            "main_text_excerpt": "",
+            "content_sha256": "7e0e9c13de8beac2674ebee9606752d39d5adf6a4914cd2c53b2b0c409ada968"
+          },
+          {
+            "url": "https://fileks.no/butikker-1",
+            "title": "Fileks Secondhand - butikker i Oslo og Bergen. — Fileks - gi det videre",
+            "main_text_excerpt": "Våre butikker\nKlærne som kommer inn til våre innsamlingsbokser blir både nøye sortert og de aller beste plaggene havner i våre butikker i Oslo, Bergen og Berlin, eller sendt videre til sortering og salg i utlandet.\nBergen\nØvregaten 13\nÅpningstider\nMandag - Lørdag (11:00–18:00)\nVår første butikk i Norge ligger i hjertet av Bergen, rett ved Fløibanen og bak Bryggen. Her finner du garantert din neste favoritt. Alt fra moderne merkeklær til vintageklær, sko, vesker og tilbehør. Klærne er nøye sortert og utvalgt fra innsamlingen vår.\nBerlin\nOranienburger Str. 4\nÅpningstider\nMandag - Lørdag (10:30–20:00)\nVåre første tre butikker utenfor Norge ligger i hjertet av Berlin. Her finner man ett brett utvalg- alt fra moderne merkeklær til vintageklær, barneklær, sko, vesker og tilbehør. Klærne er nøye sortert og utvalgt fra innsamlingen vår.",
+            "content_sha256": "598f6dafd74bdbaa5c98700bcd1ce8e3a64700b210d09c1c654f60428cfaa654"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [
+          {
+            "url": "https://fileks.no/karriere",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          }
+        ],
+        "identity_assessment": {
+          "status": "exact",
+          "score": 0.95,
+          "publishable": true,
+          "legal_name_tokens": [
+            "fileks"
+          ],
+          "matched_tokens": [
+            "fileks"
+          ],
+          "reasons": [
+            "single distinctive legal-name token appears in homepage identity evidence with substantive content"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/fileksgidetvidere"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/fileks_gidetvidere"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/fileks_secondhand_bergen"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/fileks_secondhand_oslo"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/sammensecondhand"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/fileks-gidetvidere"
+          }
+        ],
+        "social_link_assessments": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/fileksgidetvidere",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "fileks"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/fileks_gidetvidere",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "fileks"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/fileks_secondhand_bergen",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "fileks"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/fileks_secondhand_oslo",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "fileks"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/sammensecondhand",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/fileks-gidetvidere",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "fileks"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          }
+        ],
+        "excluded_news_articles": [
+          {
+            "headline": "Les mer",
+            "date_published": "13.03.2023",
+            "url": "https://fileks.no/nyheter/nasjonalt-prveprosjekt",
+            "excluded_reason": "headline is link text (\"read more\") or a date, not an article title"
+          },
+          {
+            "headline": "Les mer",
+            "date_published": "16.10.2025",
+            "url": "https://fileks.no/nyheter/ting-skjer-s-flg-med-noe-ekstra",
+            "excluded_reason": "headline is link text (\"read more\") or a date, not an article title"
+          },
+          {
+            "headline": "Les mer",
+            "date_published": "17.07.2023",
+            "url": "https://fileks.no/nyheter/vi-har-pnet-enda-en-ny-butikk-i-berlin",
+            "excluded_reason": "headline is link text (\"read more\") or a date, not an article title"
+          },
+          {
+            "headline": "Les mer",
+            "date_published": "18.05.2022",
+            "url": "https://fileks.no/nyheter/hentavfallno-fileks-sant",
+            "excluded_reason": "headline is link text (\"read more\") or a date, not an article title"
+          },
+          {
+            "headline": "Les mer",
+            "date_published": "18.11.2022",
+            "url": "https://fileks.no/nyheter/grnn-lrdag-i-bergen",
+            "excluded_reason": "headline is link text (\"read more\") or a date, not an article title"
+          },
+          {
+            "headline": "Les mer",
+            "date_published": "19.11.2022",
+            "url": "https://fileks.no/nyheter/vi-pner-nettbutikk",
+            "excluded_reason": "headline is link text (\"read more\") or a date, not an article title"
+          },
+          {
+            "headline": "Les mer",
+            "date_published": "20.03.2023",
+            "url": "https://fileks.no/nyheter/sammen-gir-vi-det-videre",
+            "excluded_reason": "headline is link text (\"read more\") or a date, not an article title"
+          }
+        ],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://fileks.no/",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:28.932640Z",
+          "id": "company-profile-915656064",
+          "platform": "company_site",
+          "signal_type": "company_profile",
+          "metrics": {
+            "registered_domain": "fileks.no"
+          },
+          "evidence_span": "Fileks - gi det videre"
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://facebook.com/fileksgidetvidere",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:28.932640Z",
+          "id": "handle-915656064-facebook",
+          "platform": "facebook",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://instagram.com/fileks_gidetvidere",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:28.932640Z",
+          "id": "handle-915656064-instagram",
+          "platform": "instagram",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://instagram.com/fileks_secondhand_bergen",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:28.932640Z",
+          "id": "handle-915656064-instagram",
+          "platform": "instagram",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://instagram.com/fileks_secondhand_oslo",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:28.932640Z",
+          "id": "handle-915656064-instagram",
+          "platform": "instagram",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://linkedin.com/company/fileks-gidetvidere",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:28.932640Z",
+          "id": "handle-915656064-linkedin",
+          "platform": "linkedin",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://fileks.no/nyheter/nasjonalt-prveprosjekt",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "13.03.2023",
+          "id": "news-915656064-0",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Nasjonalt prøveprosjekt",
+          "metrics": {
+            "headline": "Nasjonalt prøveprosjekt",
+            "date_published": "13.03.2023"
+          }
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://fileks.no/nyheter/oyzq4tgstnjv7pgbhwb501nocoq7ia",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "13.03.2023",
+          "id": "news-915656064-1",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Nyåpning i Berlin!",
+          "metrics": {
+            "headline": "Nyåpning i Berlin!",
+            "date_published": "13.03.2023"
+          }
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://fileks.no/nyheter/ting-skjer-s-flg-med-noe-ekstra",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "16.10.2025",
+          "id": "news-915656064-2",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Velkommen til åpning 05.des.2025!",
+          "metrics": {
+            "headline": "Velkommen til åpning 05.des.2025!",
+            "date_published": "16.10.2025"
+          }
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://fileks.no/nyheter/vi-har-pnet-enda-en-ny-butikk-i-berlin",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "17.07.2023",
+          "id": "news-915656064-3",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Vi har åpnet enda en ny butikk i Berlin!",
+          "metrics": {
+            "headline": "Vi har åpnet enda en ny butikk i Berlin!",
+            "date_published": "17.07.2023"
+          }
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://fileks.no/nyheter/hentavfallno-fileks-sant",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "18.05.2022",
+          "id": "news-915656064-4",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Hentavfall.no + Fileks = Sant",
+          "metrics": {
+            "headline": "Hentavfall.no + Fileks = Sant",
+            "date_published": "18.05.2022"
+          }
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://fileks.no/nyheter/fileks-deltar-i-samarbeidsprosjektet-tekstil-25",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "18.05.2022",
+          "id": "news-915656064-5",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Tekstil 2025",
+          "metrics": {
+            "headline": "Tekstil 2025",
+            "date_published": "18.05.2022"
+          }
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://fileks.no/nyheter/grnn-lrdag-i-bergen",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "18.11.2022",
+          "id": "news-915656064-6",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Grønn lørdag i Bergen!",
+          "metrics": {
+            "headline": "Grønn lørdag i Bergen!",
+            "date_published": "18.11.2022"
+          }
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://fileks.no/nyheter/vi-pner-nettbutikk",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "19.11.2022",
+          "id": "news-915656064-7",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Nettbutikken er åpen!",
+          "metrics": {
+            "headline": "Nettbutikken er åpen!",
+            "date_published": "19.11.2022"
+          }
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://fileks.no/nyheter/sammen-gir-vi-det-videre",
+          "retrieved_at": "2026-11-01T06:22:28.932640Z",
+          "content_sha256": "a6cd3cb3b31a72cc6af56898a171240cffe823ddb935f2f2427495260ca5a7b0",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "915656064"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "20.03.2023",
+          "id": "news-915656064-8",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Sammen gir vi det videre!",
+          "metrics": {
+            "headline": "Sammen gir vi det videre!",
+            "date_published": "20.03.2023"
+          }
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "915656064",
+              "source_row_key": "915656064"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-915656064",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "FILEKS AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "FILEKS AS"
+        },
+        {
+          "organisation_number": "915656064",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "915656064",
+              "source_row_key": "915656064"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-workforce-915656064",
+          "signal_type": "workforce_snapshot",
+          "metrics": {
+            "employees_registered": 24,
+            "as_of": "2026-09-14"
+          },
+          "evidence_span": "FILEKS AS: 24 registered employees"
+        },
+        {
+          "id": "navjob-915656064-2a3e517a-8f80-4bbf-b76b-94c8a595dde6",
+          "organisation_number": "915656064",
+          "platform": "job_board",
+          "signal_type": "job_posting",
+          "source_url": "https://pam-stilling-feed.nav.no/api/v1/feedentry/2a3e517a-8f80-4bbf-b76b-94c8a595dde6",
+          "retrieved_at": "2026-11-01T06:18:35.695442Z",
+          "effective_at": "2026-10-13T15:24:55+02:00",
+          "content_sha256": "f3759d8ed8abb4f6cc75fa3b329f2537bb5e1ec7243c738fd12fdfe26acdccae",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "nav_feed_employer_orgnr",
+              "value": "915656064",
+              "employer_name": "Fileks As"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_job_board",
+          "evidence_span": "Tilkallingsvikar Sjåfør klasse B– innsamling av brukte tekstiler",
+          "metrics": {
+            "title": "Tilkallingsvikar Sjåfør klasse B– innsamling av brukte tekstiler",
+            "published": "2026-10-13T15:24:55+02:00",
+            "municipal": "ALVER"
+          }
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 18,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg",
+          "company_site",
+          "facebook",
+          "instagram",
+          "job_board",
+          "linkedin"
+        ],
+        "platform_counts": {
+          "brreg": 2,
+          "company_site": 10,
+          "facebook": 1,
+          "instagram": 3,
+          "job_board": 1,
+          "linkedin": 1
+        },
+        "fresh_observations": 1,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 1,
+        "public_item_count": 9,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 18,
+    "bytes": 2024615,
+    "latencies_ms": [
+      199,
+      199,
+      208,
+      199,
+      213,
+      198,
+      1196,
+      11626,
+      438,
+      506,
+      605,
+      577
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Samle inn gjenstander til lagring og videresalg til EU-land.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "articles_date",
+      "value": "2017-04-27",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "business_address",
+      "value": "Rosslandsvegen 372, 5918 FREKHAUG, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "email",
+      "value": "post@fileks.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "employees_nav_date",
+      "value": "2026-09-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "employees_registered",
+      "value": "24",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "employees_registered_date",
+      "value": "2026-09-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2015-07-13",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "founding_date",
+      "value": "2015-06-22",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "in_group",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "industry",
+      "value": "Engroshandel med klær og skotøy",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "industry_code",
+      "value": "46.420",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "legal_name",
+      "value": "FILEKS AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "municipality",
+      "value": "ALVER",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "municipality_number",
+      "value": "4631",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "phone",
+      "value": "40 30 05 55",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "postal_code",
+      "value": "5918",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "registered_at",
+      "value": "2015-07-13",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "60000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2017-05-29",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "share_count",
+      "value": "600",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Innsamling og salg av brukte klær og husholdningsartikler og annet som naturlig faller sammen med dette",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2016-03-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2016-03-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    },
+    {
+      "field": "website_registered",
+      "value": "www.fileks.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915656064"
+    }
+  ],
+  "summary": {
+    "headline": "FILEKS AS",
+    "narrative": "FILEKS AS is a AS company, operating in engroshandel med klær og skotøy, registered in Alver. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 17784733.0 NOK, operating result 2449283.0 NOK, annual result 55315.0 NOK. Registered leadership includes Plamen Petkov (Daglig leder) and 3 other registered role(s). 1 registered subunit(s)/workplace(s). Company-owned sources: verified official website https://fileks.no/, 9 dated news item(s), 5 company-linked social profile(s). Workforce reported in the None annual report: None (None).",
+    "statements": [
+      {
+        "text": "FILEKS AS is a AS company, operating in engroshandel med klær og skotøy, registered in Alver.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 17784733.0 NOK, operating result 2449283.0 NOK, annual result 55315.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/915656064",
+        "retrieved_at": "2026-11-01T06:21:59.904697Z"
+      },
+      {
+        "text": "Registered leadership includes Plamen Petkov (Daglig leder) and 3 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/915656064/roller",
+        "retrieved_at": "2026-11-01T06:22:11.723251Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=915656064&size=1000",
+        "retrieved_at": "2026-11-01T06:22:12.135260Z"
+      },
+      {
+        "text": "Company-owned sources: verified official website https://fileks.no/, 9 dated news item(s), 5 company-linked social profile(s).",
+        "evidence_field": "website",
+        "source_url": "https://fileks.no/",
+        "retrieved_at": "2026-11-01T06:22:28.932640Z"
+      },
+      {
+        "text": "Workforce reported in the None annual report: None (None).",
+        "evidence_field": "external_footprint",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      }
+    ],
+    "unknowns": [],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

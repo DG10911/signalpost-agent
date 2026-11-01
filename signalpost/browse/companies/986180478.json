@@ -1,0 +1,1141 @@
+{
+  "organisation_number": "986180478",
+  "name": "BACHESVEI TERRASSE BORETTSLAG",
+  "legal_form": "BRL",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "DRAMMEN",
+  "municipality_number": "3301",
+  "industry_code": "97.001",
+  "industry_label": "Aktiviteter i borettslag og boligsameier",
+  "website": "www.usbl.no",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "986180478",
+        "navn": "BACHESVEI TERRASSE BORETTSLAG",
+        "organisasjonsform.kode": "BRL",
+        "organisasjonsform.beskrivelse": "Borettslag",
+        "naeringskode1.kode": "97.001",
+        "naeringskode1.beskrivelse": "Aktiviteter i borettslag og boligsameier",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "false",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "",
+        "registreringsdatoantallansatteNAVAaregisteret": "",
+        "hjemmeside": "www.usbl.no",
+        "epostadresse": "usbl@usbl.no",
+        "telefon": "",
+        "mobil": "",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "c/o Boligbyggelaget Usbl\nNedre Storgate 15",
+        "forretningsadresse.poststed": "DRAMMEN",
+        "forretningsadresse.postnummer": "3015",
+        "forretningsadresse.kommune": "DRAMMEN",
+        "forretningsadresse.kommunenummer": "3301",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "8300",
+        "institusjonellSektorkode.beskrivelse": "Borettslag o.l.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2003-11-08",
+        "stiftelsesdato": "2003-09-25",
+        "registrertIMvaRegisteret": "false",
+        "registreringsdatoMerverdiavgiftsregisteret": "",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2003-11-08",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2024-05-06",
+        "vedtektsfestetFormaal": "Borettslag.",
+        "aktivitet": "Borettslag.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "false",
+        "kapital.belop": "",
+        "kapital.antallAksjer": "",
+        "kapital.type": "",
+        "kapital.bundet": "",
+        "kapital.valuta": "",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "986180478",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:50.928478Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "BRL",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "986180478",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/986180478",
+      "retrieved_at": "2026-11-01T06:20:01.950081Z",
+      "value": {
+        "organisation_number": "986180478",
+        "name": "BACHESVEI TERRASSE BORETTSLAG",
+        "legal_form": "BRL",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "www.usbl.no",
+        "industry": {
+          "beskrivelse": "Aktiviteter i borettslag og boligsameier",
+          "kode": "97.001"
+        },
+        "business_address": {
+          "adresse": [
+            "c/o Boligbyggelaget Usbl",
+            "Nedre Storgate 15"
+          ],
+          "kommune": "DRAMMEN",
+          "kommunenummer": "3301",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "3015",
+          "poststed": "DRAMMEN"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "89ad1f8531ef0e49e0d9884405fcba52f1bfaee67c0b8d61d4092da01495aff1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/986180478",
+      "retrieved_at": "2026-11-01T06:20:02.156334Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 4903035,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 946034.0,
+            "operating_result": 387412.0,
+            "profit_before_tax": 227793.0,
+            "annual_result": 227793.0,
+            "assets": 26951201.0,
+            "equity": 3646391.0,
+            "debt": 23304810.0
+          },
+          {
+            "record_id": 5732287,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 1007203.0,
+            "operating_result": 546849.0,
+            "profit_before_tax": 371944.0,
+            "annual_result": 371944.0,
+            "assets": 26928377.0,
+            "equity": 4018337.0,
+            "debt": 22910040.0
+          },
+          {
+            "record_id": 6698298,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 1022764.0,
+            "operating_result": 598291.0,
+            "profit_before_tax": null,
+            "annual_result": 461008.0,
+            "assets": 27059228.0,
+            "equity": 4479345.0,
+            "debt": 22579883.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "32571a54c67623ad9478925dbe2d27b2b5c79ebfbd9e8618852878d1cb92259f",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/aar",
+      "retrieved_at": "2026-11-01T06:20:17.937897Z",
+      "value": {
+        "years": [
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2013"
+          },
+          {
+            "year": "2012",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2012"
+          },
+          {
+            "year": "2011",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/986180478/2011"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "b7bcd20d8a4607bc9ca49fbdfebf5e51cb31e39858edb985dc98a82e8d2b7cd1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/986180478/roller",
+      "retrieved_at": "2026-11-01T06:20:18.142185Z",
+      "value": {
+        "roles": [
+          {
+            "name": [
+              "BOLIGBYGGELAGET USBL"
+            ],
+            "organisation_number": "950285680",
+            "role_code": "FFØR",
+            "role": "Forretningsfører",
+            "group_code": "FFØR",
+            "group": "Forretningsfører",
+            "last_changed": "2009-05-26",
+            "inactive": false
+          },
+          {
+            "name": "Børre Våraker",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2025-06-13",
+            "inactive": false
+          },
+          {
+            "name": "Egil Andreas Hansen",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2025-06-13",
+            "inactive": false
+          },
+          {
+            "name": "Erik Selbo",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2025-06-13",
+            "inactive": false
+          },
+          {
+            "name": "Karin Dahl Selmer",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2025-06-13",
+            "inactive": false
+          },
+          {
+            "name": "Marianne Spanli",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2025-06-13",
+            "inactive": false
+          },
+          {
+            "name": [
+              "KPMG AS"
+            ],
+            "organisation_number": "935174627",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2017-06-06",
+            "inactive": false
+          },
+          {
+            "name": [
+              "BOLIGBYGGELAGET USBL"
+            ],
+            "organisation_number": "950285680",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2010-05-01",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "fd0cf7db21f497d3391d07f5df3a24b2ce9615d8205b10dcc56d4c949e5163e6",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/986180478",
+      "retrieved_at": "2026-11-01T06:20:18.341047Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=986180478&size=1000",
+      "retrieved_at": "2026-11-01T06:20:18.544441Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "924162627",
+            "name": "BACHESVEI TERRASSE BORETTSLAG",
+            "address": {
+              "adresse": [
+                "c/o Boligbyggelaget Usbl",
+                "Nedre Storgate 15"
+              ],
+              "kommune": "DRAMMEN",
+              "kommunenummer": "3301",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "3015",
+              "poststed": "DRAMMEN"
+            },
+            "industry": {
+              "beskrivelse": "Aktiviteter i borettslag og boligsameier",
+              "kode": "97.001"
+            },
+            "employees": null
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "bdaa5399608dfe85d7d7dc7055586ac7e7d383b07a45f730f6821184c1a4e026",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://www.usbl.no/",
+      "retrieved_at": "2026-11-01T06:20:28.104433Z",
+      "value": {
+        "requested_url": "https://www.usbl.no/",
+        "final_url": "https://www.usbl.no/",
+        "registered_domain": "usbl.no",
+        "title": "Boligbyggelag, forretningsfører og boligutvikler | Usbl",
+        "description": "Med 75 års erfaring innen nye boliger og forvaltning av borettslag og sameier, skaper Usbl gode og trygge hjem for alle våre medlemmer.",
+        "main_text_excerpt": "Vi har alle tjenester som ditt borettslag eller sameie trenger, samlet under samme tak, som:\n- Forretningsførsel og økonomi\n- Prosjektstyring og energirådgivning\n- Rehabilitering og vedlikehold\n- Advokat og forsikring\n- Håndverker- og vaktmestertjenester\n- Kurs for styreledere og styremedlemmer",
+        "identity_text_excerpt": "Kundesenter 22 98 38 00 Våre åpningstider Ordinær telefontid mandag til fredag: 09:00-15:00 (stengt kl 11:15-12:00) Følg oss på Kontaktinfo Våre kontorer Fakturaadresser Varslingsskjema Ofte stilte spørsmål Om oss Om Usbl Bli en del av laget! Presserom Samfunnsansvar og miljø Personvern Nyttige lenker Nyheter Inspirasjon og tips Boligbyggelaget Usbl Arbeidersamfunnets plass 1 0181 Oslo Org.nr. 950 285 680 Postboks 8944 Youngstorget 0028 Oslo | Kundesenter 22 98 38 00 Våre åpningstider Ordinær telefontid mandag til fredag: 09:00-15:00 (stengt kl 11:15-12:00) Følg oss på | Kundesenter 22 98 38 00 Våre åpningstider Ordinær telefontid mandag til fredag: 09:00-15:00 (stengt kl 11:15-12:00) | Kundesenter 22 98 38 00 | Kundesenter | 22 98 38 00 | Våre åpningstider Ordinær telefontid mandag til fredag: 09:00-15:00 (stengt kl 11:15-12:00) | Våre åpningstider | Ordinær telefontid mandag til fredag: 09:00-15:00 (stengt kl 11:15-12:00) | Usbl og Medarbeiderne AS inngår samarbeid: Tilbyr medlemmer flyttehjelp | Org.nr. 950 285 680",
+        "social_links": [],
+        "structured_organisations": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://www.usbl.no/#organization",
+            "name": "Usbl",
+            "url": "https://www.usbl.no/",
+            "foundingDate": "1948",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Arbeidersamfunnets Plass 1",
+              "postalCode": "0181",
+              "addressLocality": "Oslo",
+              "addressCountry": "NO"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Tjenester",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "serviceType": "Eiendomsforvaltning",
+                    "areaServed": "NO"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "serviceType": "Boligforvaltning",
+                    "areaServed": "NO"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "serviceType": "Boligbyggelagtjenester",
+                    "areaServed": "NO"
+                  }
+                }
+              ]
+            },
+            "areaServed": "NO",
+            "logo": "https://www.usbl.no/forside?pid=MySite-FrontPage-Favicon180png&r_n_d=72192_",
+            "telephone": "22 98 38 00",
+            "sameAs": [
+              "https://facebook.com/boligbyggelaget.usbl/",
+              "https://linkedin.com/company/usbl",
+              "https://instagram.com/boligbyggelaget_usbl/"
+            ]
+          }
+        ],
+        "structured_facts": {},
+        "job_postings": [],
+        "news_articles": [],
+        "content_sha256": "74e60fe860856751700363aa1465f44601056de1f62772a88f6e36eb53bb5072",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://www.usbl.no/",
+            "title": "Boligbyggelag, forretningsfører og boligutvikler | Usbl",
+            "main_text_excerpt": "Vi har alle tjenester som ditt borettslag eller sameie trenger, samlet under samme tak, som:\n- Forretningsførsel og økonomi\n- Prosjektstyring og energirådgivning\n- Rehabilitering og vedlikehold\n- Advokat og forsikring\n- Håndverker- og vaktmestertjenester\n- Kurs for styreledere og styremedlemmer",
+            "content_sha256": "74e60fe860856751700363aa1465f44601056de1f62772a88f6e36eb53bb5072"
+          },
+          {
+            "url": "https://www.usbl.no/om-oss/nyheter",
+            "title": "Nyheter | Usbl",
+            "main_text_excerpt": "Nyheter\nHer finner du siste nytt om boligprosjektene våre, informasjon om aktuelle medlemstilbud og andre nyheter fra Usbl.\nÅrets Spire 2026 - Ildsjeler som gjør en forskjell\nÅrets Spire engasjerer. I år mottok vi 19 nominasjoner fra borettslag og sameier som gjennom små og store tiltak bidrar til grønnere, hyggeligere og mer inkluderende bomiljøer.\nSørby-saken i Sandefjord forklart: Derfor reagerer Usbl\nSørby-saken har blitt omtalt som en konflikt mellom boligbygging og jordvern. For Usbl handler saken om noe større. Kan kommuner, boligbyggere og boligkjøpere stole på vedtatte boligplaner når de investerer for fremtiden?\nUsbl etablerer Eida Eiendomsmegling\nUsbl tar nå et nytt steg i boligmarkedet og etablerer Eida Eiendomsmegling. Den nye meglerkjeden skal bygge på det Usbl har jobbet med siden 1948 - å gjøre det enklere og tryggere å eie og bo.\nUsbl inngår samarbeid med Heder Bank\nUsbl inngår et strategisk samarbeid med Heder Bank for å gi medlemmene bedre og mer forutsigbare boliglånsbetingelser. Samarbeidet gir tilgang til konkurransedyktige vilkår, en enkel digital prosess og ingen skjulte gebyrer.\nUsbl følger opp renovasjonssaken i Oslo\nI en rekke medieoppslag de siste ukene har det kommet frem opplysninger om at mange borettslag og sameier i Oslo kan ha betalt for renovasjonstjenester som ikke er levert fullt ut. Usbl har kontaktet kommunen og vært tydelig på at eventuelle feil må rettes opp.\nUsbl går inn i storsatsing på Verket i Moss\nUsbl går nå inn i et langsiktig partnerskap med Höegh Eiendom for videre utvikling av Verket i Moss. Samarbeidet innebærer bygging av rundt 1 000 nye boliger i Moss sentrum over de neste 10 til 15 årene, og gir Usbls medlemmer nye muligheter til å eie bolig i en attraktiv og fremtidsrettet bydel.\nUsbl kjøper boligtomt sammen med REBUS på Lambertseter\nUsbl har sammen med REBUS kjøpt utviklingseiendommen i Cecilie Thoresens vei 3 på Lambertseter. På sikt kan det bli rundt 90 til 100 nye boliger i et attraktivt område av Oslo, med forkjøpsrett for Usbls medlemmer.\nMøllers Gate er åpnet, og er innflyttingen i gang\nDenne uken ble Møllers Gate i Sandefjord offisielt åpnet. Med snorklipping, befaring og ros fra ordføreren markerte Usbl at et nytt boligprosjekt i sentrum er ferdig og klart for å fylles med liv.\nUsbl i 2025: Stabil drift, sterk medlemsvekst og tydelig samfunnsrolle\n2025 ble et krevende år for boligmarkedet, med lave igangsettingstall og høye kostnader. Likevel leverte Usbl solide resultater, sterk medlemsvekst og fortsatte investeringer i boliger, tjenester og levende nabolag.",
+            "content_sha256": "dcc8d751a60ca631bc9d63709d86b9e2ae7e93c4347560b2e7f46e102d64cf3b"
+          },
+          {
+            "url": "https://www.usbl.no/om-oss/jobb-hos-oss",
+            "title": "Jobb hos oss | Usbl",
+            "main_text_excerpt": "370 ansatte\nmed bred kompetanse innenfor mange områder\nUsbl er Norges nest største boligbyggelag og en fremtidsrettet samfunnsaktør, som er i vekst. Hos oss blir du del av et kompetansehus med prestasjonskultur, hvor du får utvikle deg selv samtidig som du påvirker omgivelsene.\nHos Usbl møter du et mangfold av fagmiljøer, bakgrunner og arbeidsoppgaver som skaper en lærende og variert arbeidshverdag. Vi jobber med eiendom på mange måter, og ønsker både erfarne og nyutdannede velkommen. Hos oss finner du blant annet:\nI tillegg til støttefunksjoner innen HR, Kommunikasjon, Salg, Digital utvikling og IT.\nHos oss samarbeider vi tett på tvers av fag og forretningsområder, og vi jobber aktivt for å bryte ned siloer.\nRådgiver\n\"Det beste med jobben min er kombinasjonen av faglige utfordringer og et sterkt lag av kollegaer som alltid støtter hverandre\"\nAdvokat\n\"Hos Usbl har jeg muligheten til å vokse som advokat, samtidig som jeg har et trygt og inspirerende miljø rundt meg\"\nTeamleder, Regnskap\n\"I Usbl opplever jeg stor tillit og frihet i rollen min, samtidig som vi heier hverandre frem og deler kompetanse\"\nDriftsleder, Boservice\n\"Vi jobber som et lag, og det gir både trygghet og energi i hverdagen\"\nI Usbl tror vi på kraften i kontinuerlig læring. Skal vi nå nye høyder som organisasjon, trenger vi medarbeidere som ønsker å bli litt bedre, hver dag. Derfor er kompetanseutvikling et av våre viktigste satsningsområder og i 2024 ble vi kåret til årets lærende bedrift!\nHos oss er læring en naturlig del av jobbhverdagen. Vi heier på initiativ, og vi legger til rette for at du kan bygge kompetanse som både styrker deg i rollen og åpner nye muligheter videre. Når du utvikler deg, utvikler vi oss som selskap.\n- I Usbl kombinerer vi samfunnsansvar med resultater. Som lag spiller vi hverandre gode, og med engasjement, kompetanse og prestasjonskultur skaper vi nabolag og tjenester som gir verdi både til samfunnet og til våre medlemmer.\nUsbl har et viktig samfunnsoppdrag: Vi bygger og tar vare på det viktigste folk har, nemlig hjemmet. Dettegjør vi med et langsiktig perspektiv.\nSom samfunn står vi midt i en bærekraftig omstilling og jobber kontinuerlig med å finne bedre løsninger i boligene vi bygger og forvalter. For å bidra til en mer bærekraftig boligbransje har vi blant annet forpliktet oss til bransjens felles strakstiltak.",
+            "content_sha256": "a42cc3cb46f98ba68cc6cdc736ce6695b6a3035105b00182917c09781c6380d0"
+          },
+          {
+            "url": "https://www.usbl.no/om-oss/nyheter/31-usbl-medlemmer-sikret-seg-bolig-i-fagerblom",
+            "title": "31 Usbl-medlemmer sikret seg bolig i Fagerblom  | Boligbyggelag, forretningsfører og boligutvikler | Usbl",
+            "main_text_excerpt": "31 Usbl-medlemmer sikret seg bolig i Fagerblom\nEstimert lesetid: ca.   minutt(er)\nTotalt ble 47 boliger solgt rundt salgsstart. Interessen for Fagerblom har vært enorm og hele 31 leiligheter gikk til medlemmer som brukte forkjøpsretten. Eldste ansiennitet var fra 1950-tallet og korteste var fra 2025.\n- Dette er et skoleeksempel på hvordan forkjøpsretten fungerer i praksis, sier Christian Vammervold Dreyer, administrerende direktør i Usbl.\nEnorm interesse\nFagerblom, som er utviklet av Usbl og AF Eiendom, hadde salgsstart 3. juni. Med over 5 500 interessenter og 112 innkomne bud ble det raskt tydelig at dette var et prosjekt som engasjerte.\n- Det har vært høy konkurranse om boligene, og spesielt for de minste leilighetene. Etterspørselen er stor for små leiligheter, så dette er helt klart noe vi må bygge mer av, sier Dreyer.\nFakta om forkjøpsrett:\n- Forkjøpsrett gjelder for deg som er medlem i Usbl.\n- Du stiller foran i køen, basert på hvor lenge du har vært medlem.\n- Forkjøpsrett gjelder både nybygg og brukte boliger i Usbl-tilknyttede borettslag.\nEn medlemsfordel som betyr noe\nUsbl-medlemmer har forkjøpsrett i boligprosjektene vi utvikler. Det betyr at du kan sikre deg akkurat den boligen du ønsker, basert på ansienniteten din. Og for Fagerblom ble denne fordelen brukt for alt den er verdt. En leilighet ble sikret med medlemskap fra 1952, og en annen leilighet ble kjøpt med ansiennitet fra mai 2025.\n- Det sier noe om hvor verdifullt det er å være medlem i Usbl, du kan sikre deg drømmeleiligheten med både lang og kort ansiennitet. Det viktigste er å være medlem, sier Dreyer.\nEt prosjekt med identitet\nFagerblom ligger ved Kirkeveien og Ullevålsveien, på en av de siste tilgjengelige tomtene på Fagerborg. Prosjektet består av 82 leiligheter, felles takterrasse og næringslokaler på bakkeplan.\nArkitekturen er tilpasset området og omgivelsene, og hver eneste planløsning er testet og optimalisert i fullskala for best mulig bokvalitet. Beliggenheten og prosjektets særpreg gjør at Fagerblom har truffet bredt i markedet.\nFremdeles leiligheter igjen\nNå er forkjøpsretten avklart, og det er fritt frem for alle som vil kjøpe. I skrivende stund har 47 av 82 boliger blitt solgt, så det er fortsatt mange gode muligheter for deg som vurderer å flytte til Fagerblom.\n- Nå ser vi frem til å sette spaden i jorden og komme i gang med byggingen, avslutter Dreyer.",
+            "content_sha256": "a32908c7f047fdf3a16d8adff10421ce9d23218a2b8ce915ca15220c16597458"
+          },
+          {
+            "url": "https://www.usbl.no/om-oss/nyheter/5000-signaturer-overlevert",
+            "title": "5000 signaturer overlevert | Boligbyggelag, forretningsfører og boligutvikler | Usbl",
+            "main_text_excerpt": "5000 signaturer overlevert\nUsbl har overlevert 5 132 signaturer til kommunal- og distriktsminister Bjørnar Skjæran. Oppropet, «Redd boligdrømmen», er et tydelig uttrykk for folkelig engasjement. Regjeringens forslag om å fjerne insentivet for nye borettslag vil gjøre det vanskeligere å bygge boliger folk har råd til.\n- Dette er et sterkt signal fra medlemmene våre og fra folk over hele landet. De ønsker at borettslagsmodellen skal bestå, fordi den har gjort det mulig å bygge rimelige og trygge boliger i mer enn hundre år, sier Christian V. Dreyer, administrerende direktør i Usbl.\nKommer på toppen av allerede skyhøye byggekostnader\nI statsbudsjettet foreslår regjeringen å fjerne fritaksmodellen for bygging nye borettslag. Beregninger fra NBBL viser at dette kan gjøre en typisk 50 m² leilighet opptil 150 000 kroner dyrere.\nDette kommer i tillegg til kraftig økte byggekostnader de siste årene, som allerede gjør det krevende å realisere nye boligprosjekter.\n- Når byggekostnadene er blant de høyeste i Europa, er det uforståelig å fjerne et av de få insentivene som faktisk bidrar til å gjøre nye boliger rimeligere. Resultatet blir færre prosjekter og færre muligheter for unge og førstegangskjøpere, sier Dreyer.\nTett skattehullet\nUsbl understreker at boligbyggelaget fullt og helt støtter regjeringens arbeid med å stoppe spekulativ omdanning av utleiegårder til borettslag.\n-Skattehull må tettes. Men det er fullt mulig å gjøre dette uten å ramme byggingen av nye borettslag. Vi har sammen med NBBL lagt frem en konkret juridisk løsning for regjeringen og Stortinget, som både stopper uønsket skatteplanlegging og samtidig bevarer insentivet for bygging av nye borettslag, sier Dreyer.\nEt folkelig krav\nDe 5 137 signaturene, som ble fysisk overlevert til kommunalministeren under Usbl og Norges Eiendomsmeglerfobund sitt boligpolitiske frokostseminar tidligere denne uken, representerer et bredt engasjement blant forbrukere, boligkjøpere og Usbl-medlemmer.\n- Det handler om muligheten til å kjøpe en trygg og rimelig bolig. Signaturene forplikter, og de sender et tydelig signal om å bevare en boligmodell som har tjent Norge, sier Dreyer.\nBehold det som fungerer, fjern det som fordyrer\nRegjeringen har satt som mål å nå 130 000 igangsettingstillatelser innen 2030. Usbl mener det må kraftigere og mer treffsikre virkemidler til dersom ambisjonen skal realiseres.\n- Å fjerne insentiver for borettslag vil bremse byggingen i hele landet. Skal vi klare å bygge mer, må vi holde fast ved det som fungerer og kutte krav som fordyrer. Borettslagsmodellen er et insentiv som fungerer og styrker boligforsyningen, ikke et skattehull, avslutter Dreyer.",
+            "content_sha256": "f86f06dd7d0975232da211781f85b39c85c57dc1c16407a65a64291684d14f0e"
+          },
+          {
+            "url": "https://www.usbl.no/om-oss/nyheter/arets-spire-2025",
+            "title": "Årets Spire 2025 | Boligbyggelag, forretningsfører og boligutvikler | Usbl",
+            "main_text_excerpt": "Bærekraft og miljø\nÅrets Spire 2025\nUsbls aller første Årets Spire-kåring er gjennomført, og i år klarte vi ikke å velge bare én vinner. Hele fire prosjekter løftes frem som Årets spirer 2025.\nDet kom inn 25 sterke nominasjoner fra borettslag og sameier, alle med imponerende innsats og gode tiltak for å gjøre nabolag triveligere, inkluderende og bærekraftige. Juryen lot seg begeistre av engasjementet, dugnadsånden og resultatene. Derfor landet juryen på fire vinnere som deler premiepotten fra Bomiljøfondet.\nVinnerne av Årets Spire 2025 er:\n- Schouterrassen borettslag (Oslo): Fra asfalt til sosiale og grønne soner med sykkelparkering, verksted, sittegrupper og kunst.\n- Kystabakken borettslag (Stavern): Et lite borettslag som har forvandlet en steinete tomt til grønt fellesareal med parsellhager, møteplasser og universell utforming.\n- Arups Gate 16 (Oslo): En nedslitt bakgård er blitt et nytt samlingspunkt gjennom ildsjelsinnsats, gjenbruk og fellesskap.\n- Grønnslett borettslag (Ski): Har etablert hønsegård med gjenbruksmaterialer, dyrking og samarbeid på tvers av generasjoner – fra jord til bord.\nHandler om mer enn enkeltprosjekter\nÅrets Spire viser at ildsjeler, dugnadsånd og gode initiativ gir varig verdi for både beboere og nærmiljø. Vi støtter og heier på de som bidrar til bedre nabolag og økt livskvalitet. For oss i Usbl er dette en viktig del av vårt samfunnsansvar. Gjennom Bomiljøfondet gir vi tilbake til samfunnet, kundene og medlemmene våre og bidrar til at gode ideer blir til virkelighet.",
+            "content_sha256": "abeebe33294b9034cb4a4bf8f48ec55b07e1f2f620b4fed4ff2c5039ef9e7032"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [],
+        "identity_assessment": {
+          "status": "related_or_uncertain",
+          "score": 0.6,
+          "publishable": false,
+          "legal_name_tokens": [
+            "bachesvei",
+            "terrasse",
+            "borettslag"
+          ],
+          "matched_tokens": [
+            "borettslag"
+          ],
+          "reasons": [
+            "registry homepage domain is shared by 6 registered entities; treated as a manager/group site, cross-entity facts quarantined"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/boligbyggelaget.usbl"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/boligbyggelaget_usbl"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/usbl"
+          }
+        ],
+        "social_link_assessments": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/boligbyggelaget.usbl",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/boligbyggelaget_usbl",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/usbl",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          }
+        ],
+        "quarantined_structured_facts": {
+          "telephone": "22 98 38 00",
+          "founding_date": "1948",
+          "address": {
+            "street": "Arbeidersamfunnets Plass 1",
+            "postal_code": "0181",
+            "locality": "Oslo",
+            "country": "NO"
+          }
+        },
+        "quarantined_job_postings": [],
+        "quarantined_news_articles": [
+          {
+            "headline": "Hopp til hovedinnhold",
+            "date_published": "12.6.2025",
+            "url": "https://www.usbl.no/om-oss/nyheter/31-usbl-medlemmer-sikret-seg-bolig-i-fagerblom#usbl-main-content"
+          },
+          {
+            "headline": "Nyheter",
+            "date_published": "2019-11-09T23:01:31+00:00",
+            "url": "https://www.usbl.no/om-oss/nyheter"
+          },
+          {
+            "headline": "Bli en del av laget!",
+            "date_published": "2022-06-17T13:10:08+00:00",
+            "url": "https://www.usbl.no/om-oss/jobb-hos-oss"
+          },
+          {
+            "headline": "31 Usbl-medlemmer sikret seg bolig i Fagerblom",
+            "date_published": "2025-06-12T13:16:37+00:00",
+            "url": "https://www.usbl.no/om-oss/nyheter/31-usbl-medlemmer-sikret-seg-bolig-i-fagerblom"
+          },
+          {
+            "headline": "Årets Spire 2025",
+            "date_published": "2025-10-16T08:38:19+00:00",
+            "url": "https://www.usbl.no/om-oss/nyheter/arets-spire-2025"
+          },
+          {
+            "headline": "5000 signaturer overlevert",
+            "date_published": "2025-12-03T13:26:11+00:00",
+            "url": "https://www.usbl.no/om-oss/nyheter/5000-signaturer-overlevert"
+          },
+          {
+            "headline": "Hopp til hovedinnhold",
+            "date_published": "24.11.2025",
+            "url": "https://www.usbl.no/om-oss/nyheter/arets-spire-2025#usbl-main-content"
+          },
+          {
+            "headline": "Hopp til hovedinnhold",
+            "date_published": "3.12.2025",
+            "url": "https://www.usbl.no/om-oss/nyheter/5000-signaturer-overlevert#usbl-main-content"
+          }
+        ],
+        "quarantined_careers_pages": [
+          {
+            "url": "https://www.usbl.no/om-oss/jobb-hos-oss",
+            "title": "Jobb hos oss | Usbl",
+            "vacancy": false,
+            "vacancy_evidence": "careers page lists no current opening"
+          }
+        ],
+        "excluded_news_articles": [],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "74e60fe860856751700363aa1465f44601056de1f62772a88f6e36eb53bb5072",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "986180478",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "986180478",
+              "source_row_key": "986180478"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-986180478",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "BACHESVEI TERRASSE BORETTSLAG",
+            "legal_form": "BRL"
+          },
+          "evidence_span": "BACHESVEI TERRASSE BORETTSLAG"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 1,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg"
+        ],
+        "platform_counts": {
+          "brreg": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 18,
+    "bytes": 1016806,
+    "latencies_ms": [
+      206,
+      205,
+      198,
+      203,
+      198,
+      203,
+      1192,
+      1039,
+      1157,
+      1109,
+      1029,
+      1035
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Borettslag.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "articles_date",
+      "value": "2024-05-06",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "business_address",
+      "value": "c/o Boligbyggelaget Usbl\nNedre Storgate 15, 3015 DRAMMEN, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "email",
+      "value": "usbl@usbl.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2003-11-08",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "founding_date",
+      "value": "2003-09-25",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "industry",
+      "value": "Aktiviteter i borettslag og boligsameier",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "industry_code",
+      "value": "97.001",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Borettslag o.l.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "8300",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "legal_form",
+      "value": "Borettslag",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "BRL",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "legal_name",
+      "value": "BACHESVEI TERRASSE BORETTSLAG",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "municipality",
+      "value": "DRAMMEN",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "municipality_number",
+      "value": "3301",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "postal_code",
+      "value": "3015",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "registered_at",
+      "value": "2003-11-08",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Borettslag.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    },
+    {
+      "field": "website_registered",
+      "value": "www.usbl.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "986180478"
+    }
+  ],
+  "summary": {
+    "headline": "BACHESVEI TERRASSE BORETTSLAG",
+    "narrative": "BACHESVEI TERRASSE BORETTSLAG is a BRL company, operating in aktiviteter i borettslag og boligsameier, registered in Drammen. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 946034.0 NOK, operating result 387412.0 NOK, annual result 227793.0 NOK. Registered leadership includes ['BOLIGBYGGELAGET USBL'] (Forretningsfører) and 7 other registered role(s). 1 registered subunit(s)/workplace(s).",
+    "statements": [
+      {
+        "text": "BACHESVEI TERRASSE BORETTSLAG is a BRL company, operating in aktiviteter i borettslag og boligsameier, registered in Drammen.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 946034.0 NOK, operating result 387412.0 NOK, annual result 227793.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/986180478",
+        "retrieved_at": "2026-11-01T06:20:02.156334Z"
+      },
+      {
+        "text": "Registered leadership includes ['BOLIGBYGGELAGET USBL'] (Forretningsfører) and 7 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/986180478/roller",
+        "retrieved_at": "2026-11-01T06:20:18.142185Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=986180478&size=1000",
+        "retrieved_at": "2026-11-01T06:20:18.544441Z"
+      }
+    ],
+    "unknowns": [
+      "verified company website"
+    ],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

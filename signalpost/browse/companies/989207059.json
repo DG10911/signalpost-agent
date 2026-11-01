@@ -1,0 +1,926 @@
+{
+  "organisation_number": "989207059",
+  "name": "VALSKAAR HOLDING AS",
+  "legal_form": "AS",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "OSLO",
+  "municipality_number": "0301",
+  "industry_code": "70.200",
+  "industry_label": "Bedriftsrådgivning og annen administrativ rådgivning",
+  "website": "",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "989207059",
+        "navn": "VALSKAAR HOLDING AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "70.200",
+        "naeringskode1.beskrivelse": "Bedriftsrådgivning og annen administrativ rådgivning",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "true",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "2026-04-13",
+        "registreringsdatoantallansatteNAVAaregisteret": "2026-04-10",
+        "hjemmeside": "",
+        "epostadresse": "",
+        "telefon": "",
+        "mobil": "45007095",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "Dorthes vei 6C",
+        "forretningsadresse.poststed": "OSLO",
+        "forretningsadresse.postnummer": "0287",
+        "forretningsadresse.kommune": "OSLO",
+        "forretningsadresse.kommunenummer": "0301",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2006-02-07",
+        "stiftelsesdato": "2005-12-20",
+        "registrertIMvaRegisteret": "false",
+        "registreringsdatoMerverdiavgiftsregisteret": "",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2006-02-07",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2018-08-01",
+        "vedtektsfestetFormaal": "Eie aksjer, investere i andre selskaper, samt dertil tilknyttet virksomhet.",
+        "aktivitet": "Eie aksjer og investere i andre selskaper, samt dertil tilknyttet virksomhet.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "2023-11-14",
+        "fravalgRevisjonBeslutningsDato": "2023-10-27",
+        "erIKonsern": "false",
+        "kapital.belop": "100000.00",
+        "kapital.antallAksjer": "100000",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2006-02-07",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "989207059",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:51.612696Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "989207059",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/989207059",
+      "retrieved_at": "2026-11-01T06:22:21.532756Z",
+      "value": {
+        "organisation_number": "989207059",
+        "name": "VALSKAAR HOLDING AS",
+        "legal_form": "AS",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": null,
+        "industry": {
+          "beskrivelse": "Bedriftsrådgivning og annen administrativ rådgivning",
+          "kode": "70.200"
+        },
+        "business_address": {
+          "adresse": [
+            "Dorthes vei 6C"
+          ],
+          "kommune": "OSLO",
+          "kommunenummer": "0301",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "0287",
+          "poststed": "OSLO"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "aba73f07549f41c193011e260c5f345c0bdcd5c5f0b37b3c5196735ade57d2e2",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/989207059",
+      "retrieved_at": "2026-11-01T06:22:21.730566Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5036965,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 197641.0,
+            "operating_result": -741557.0,
+            "profit_before_tax": 701970.0,
+            "annual_result": 701970.0,
+            "assets": 20890176.0,
+            "equity": 20859857.0,
+            "debt": 30320.0
+          },
+          {
+            "record_id": 5903267,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 316236.0,
+            "operating_result": -484106.0,
+            "profit_before_tax": 2794980.0,
+            "annual_result": 2794980.0,
+            "assets": 19676194.0,
+            "equity": 18654836.0,
+            "debt": 1021358.0
+          },
+          {
+            "record_id": 6660810,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 0.0,
+            "operating_result": -296984.0,
+            "profit_before_tax": 7506473.0,
+            "annual_result": 7506473.0,
+            "assets": 26832726.0,
+            "equity": 26161309.0,
+            "debt": 671417.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "04a605cab7096edf45cfd9dcb2c72cba84d277755e7bf9476d78ae08699181f2",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/aar",
+      "retrieved_at": "2026-11-01T06:22:28.343695Z",
+      "value": {
+        "years": [
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2013"
+          },
+          {
+            "year": "2012",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2012"
+          },
+          {
+            "year": "2011",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/989207059/2011"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "b7bcd20d8a4607bc9ca49fbdfebf5e51cb31e39858edb985dc98a82e8d2b7cd1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/989207059/roller",
+      "retrieved_at": "2026-11-01T06:22:28.540844Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Stig Valskaar",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2008-01-29",
+            "inactive": false
+          },
+          {
+            "name": "Veronika Valskaar",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2008-01-29",
+            "inactive": false
+          },
+          {
+            "name": "Tor Vermund Valskaar",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2008-01-29",
+            "inactive": false
+          },
+          {
+            "name": [
+              "AZETS INSIGHT AS"
+            ],
+            "organisation_number": "983338917",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2008-01-29",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "1d1061143f11ab8ba92867122409991df365a6de02ed154061ca5a5b7cf1909f",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/989207059",
+      "retrieved_at": "2026-11-01T06:22:28.740467Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=989207059&size=1000",
+      "retrieved_at": "2026-11-01T06:22:28.946930Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "923279040",
+            "name": "VALSKAAR HOLDING AS",
+            "address": {
+              "adresse": [
+                "Dorthes vei 6C"
+              ],
+              "kommune": "OSLO",
+              "kommunenummer": "0301",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "0287",
+              "poststed": "OSLO"
+            },
+            "industry": {
+              "beskrivelse": "Bedriftsrådgivning og annen administrativ rådgivning",
+              "kode": "70.200"
+            },
+            "employees": null
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "ec8d51b7ebb3ce1c7f3ae70df3bbe0342d03900fd40a4cbbce37be6c20529225",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "not_found",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter",
+      "retrieved_at": "2026-11-01T06:22:28.947164Z",
+      "value": null,
+      "as_of": null,
+      "note": "No valid registry website URL",
+      "content_sha256": null,
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "989207059",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "989207059",
+              "source_row_key": "989207059"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-989207059",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "VALSKAAR HOLDING AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "VALSKAAR HOLDING AS"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 1,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg"
+        ],
+        "platform_counts": {
+          "brreg": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 6,
+    "bytes": 9697,
+    "latencies_ms": [
+      198,
+      197,
+      195,
+      196,
+      199,
+      206
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Eie aksjer og investere i andre selskaper, samt dertil tilknyttet virksomhet.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "articles_date",
+      "value": "2018-08-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "audit_opt_out_date",
+      "value": "2023-11-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "business_address",
+      "value": "Dorthes vei 6C, 0287 OSLO, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "employees_nav_date",
+      "value": "2026-04-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "employees_registered_date",
+      "value": "2026-04-13",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2006-02-07",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "founding_date",
+      "value": "2005-12-20",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "industry",
+      "value": "Bedriftsrådgivning og annen administrativ rådgivning",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "industry_code",
+      "value": "70.200",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "legal_name",
+      "value": "VALSKAAR HOLDING AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "municipality",
+      "value": "OSLO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "municipality_number",
+      "value": "0301",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "phone",
+      "value": "45007095",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "postal_code",
+      "value": "0287",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "registered_at",
+      "value": "2006-02-07",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "100000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2006-02-07",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "share_count",
+      "value": "100000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Eie aksjer, investere i andre selskaper, samt dertil tilknyttet virksomhet.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "989207059"
+    }
+  ],
+  "summary": {
+    "headline": "VALSKAAR HOLDING AS",
+    "narrative": "VALSKAAR HOLDING AS is a AS company, operating in bedriftsrådgivning og annen administrativ rådgivning, registered in Oslo. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 197641.0 NOK, operating result -741557.0 NOK, annual result 701970.0 NOK. Registered leadership includes Stig Valskaar (Styrets leder) and 3 other registered role(s). 1 registered subunit(s)/workplace(s).",
+    "statements": [
+      {
+        "text": "VALSKAAR HOLDING AS is a AS company, operating in bedriftsrådgivning og annen administrativ rådgivning, registered in Oslo.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 197641.0 NOK, operating result -741557.0 NOK, annual result 701970.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/989207059",
+        "retrieved_at": "2026-11-01T06:22:21.730566Z"
+      },
+      {
+        "text": "Registered leadership includes Stig Valskaar (Styrets leder) and 3 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/989207059/roller",
+        "retrieved_at": "2026-11-01T06:22:28.540844Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=989207059&size=1000",
+        "retrieved_at": "2026-11-01T06:22:28.946930Z"
+      }
+    ],
+    "unknowns": [
+      "verified company website"
+    ],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

@@ -1,0 +1,1276 @@
+{
+  "organisation_number": "988370746",
+  "name": "OSLO OG OMEGN BOLIGFORVALTNING AS",
+  "legal_form": "AS",
+  "employees": 25,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "OSLO",
+  "municipality_number": "0301",
+  "industry_code": "68.320",
+  "industry_label": "Eiendomsforvaltning på oppdrag",
+  "website": "www.obf.no",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "988370746",
+        "navn": "OSLO OG OMEGN BOLIGFORVALTNING AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "68.320",
+        "naeringskode1.beskrivelse": "Eiendomsforvaltning på oppdrag",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "true",
+        "antallAnsatte": "25",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "2026-09-14",
+        "registreringsdatoantallansatteNAVAaregisteret": "2026-09-10",
+        "hjemmeside": "www.obf.no",
+        "epostadresse": "firmapost@obf.no",
+        "telefon": "22 12 23 40",
+        "mobil": "",
+        "postadresse.adresse": "Postboks 4301 Nydalen",
+        "postadresse.poststed": "OSLO",
+        "postadresse.postnummer": "0402",
+        "postadresse.kommune": "OSLO",
+        "postadresse.kommunenummer": "0301",
+        "postadresse.land": "Norge",
+        "postadresse.landkode": "NO",
+        "forretningsadresse.adresse": "Innspurten 11C",
+        "forretningsadresse.poststed": "OSLO",
+        "forretningsadresse.postnummer": "0663",
+        "forretningsadresse.kommune": "OSLO",
+        "forretningsadresse.kommunenummer": "0301",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2005-06-28",
+        "stiftelsesdato": "2005-04-26",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2005-05-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2005-07-06",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2005-06-28",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2005-04-26",
+        "vedtektsfestetFormaal": "Å tilby eiendomsrelaterte produkter og tjenester i eget navn eller ved annet selskap, og delta i eller erverv aksjer i selskaper med samme formål eller som har annen virksomhet som naturlig faller inn under formålet. Å tilby regnskapstjenester og andre administrative tjenester til andre virksomheter enn selskaper som knyttes opp mot eiendom.",
+        "aktivitet": "Å tilby eiendomsrelaterte produkter og tjenester i eget navn eller ved annet selskap, og delta i eller erverv aksjer i selskaper med samme formål eller som har annen virksomhet som naturlig faller inn under formålet, samt tilby regnskapstjenester og andre administrative tjenester til andre virksomheter.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "false",
+        "kapital.belop": "100000.00",
+        "kapital.antallAksjer": "100000",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2005-06-28",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "988370746",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:51.329379Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "988370746",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/988370746",
+      "retrieved_at": "2026-11-01T06:21:03.491644Z",
+      "value": {
+        "organisation_number": "988370746",
+        "name": "OSLO OG OMEGN BOLIGFORVALTNING AS",
+        "legal_form": "AS",
+        "employees": 22,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "www.obf.no",
+        "industry": {
+          "beskrivelse": "Eiendomsforvaltning på oppdrag",
+          "kode": "68.320"
+        },
+        "business_address": {
+          "adresse": [
+            "Innspurten 11C"
+          ],
+          "kommune": "OSLO",
+          "kommunenummer": "0301",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "0663",
+          "poststed": "OSLO"
+        },
+        "postal_address": {
+          "adresse": [
+            "Postboks 4301 Nydalen"
+          ],
+          "kommune": "OSLO",
+          "kommunenummer": "0301",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "0402",
+          "poststed": "OSLO"
+        },
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "cbf90e1629a96985b30d6237641f556edabab02e48d4eb140e81b66ab5998e7f",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/988370746",
+      "retrieved_at": "2026-11-01T06:21:03.694349Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5277545,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 34690406.0,
+            "operating_result": 7684486.0,
+            "profit_before_tax": 11780596.0,
+            "annual_result": 9647043.0,
+            "assets": 74113781.0,
+            "equity": 54177788.0,
+            "debt": 19935992.0
+          },
+          {
+            "record_id": 6236251,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 35238628.0,
+            "operating_result": 6143833.0,
+            "profit_before_tax": 12722080.0,
+            "annual_result": 10840283.0,
+            "assets": 80366506.0,
+            "equity": 59597930.0,
+            "debt": 20768576.0
+          },
+          {
+            "record_id": 7168265,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 39654012.0,
+            "operating_result": 7972490.0,
+            "profit_before_tax": 14140941.0,
+            "annual_result": 11765564.0,
+            "assets": 85993059.0,
+            "equity": 65480711.0,
+            "debt": 20512348.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "74bd150385988bcee9cc9765bdd4ac41bf53f9d4b173a0be7c68474a8cf3765e",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/aar",
+      "retrieved_at": "2026-11-01T06:21:18.930259Z",
+      "value": {
+        "years": [
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2013"
+          },
+          {
+            "year": "2012",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2012"
+          },
+          {
+            "year": "2011",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/988370746/2011"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "b7bcd20d8a4607bc9ca49fbdfebf5e51cb31e39858edb985dc98a82e8d2b7cd1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/988370746/roller",
+      "retrieved_at": "2026-11-01T06:21:19.134257Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Hans Kåre Laaveg",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2013-02-12",
+            "inactive": false
+          },
+          {
+            "name": "Rune Bjerkestrand",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-08-04",
+            "inactive": false
+          },
+          {
+            "name": "Mikkel Frøsig Pedersen",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-08-04",
+            "inactive": false
+          },
+          {
+            "name": "Sven Christian Stenvaag",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-08-04",
+            "inactive": false
+          },
+          {
+            "name": "Eline Hellebust Baltzersen",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-08-04",
+            "inactive": false
+          },
+          {
+            "name": "Hilde Bjørnstad",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-08-04",
+            "inactive": false
+          },
+          {
+            "name": "Liv Heidi Hansen Bjerke",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-08-04",
+            "inactive": false
+          },
+          {
+            "name": "Lasse Reiersen-Gravdal",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-08-04",
+            "inactive": false
+          },
+          {
+            "name": "Pia Bodahl",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-08-04",
+            "inactive": false
+          },
+          {
+            "name": [
+              "STIANSEN & CO AS"
+            ],
+            "organisation_number": "962990746",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2024-09-09",
+            "inactive": false
+          },
+          {
+            "name": [
+              "OBF REGNSKAPSBYRÅ AS"
+            ],
+            "organisation_number": "899326792",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2019-04-12",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "881bbaa11dc9a922089ef9850eead6747beb06a3e534b96bd642df5120ff5d06",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/988370746",
+      "retrieved_at": "2026-11-01T06:21:19.334938Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=988370746&size=1000",
+      "retrieved_at": "2026-11-01T06:21:19.537177Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "874127302",
+            "name": "OSLO OG OMEGN BOLIGFORVALTNING AS",
+            "address": {
+              "adresse": [
+                "Innspurten 11C"
+              ],
+              "kommune": "OSLO",
+              "kommunenummer": "0301",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "0663",
+              "poststed": "OSLO"
+            },
+            "industry": {
+              "beskrivelse": "Eiendomsforvaltning på oppdrag",
+              "kode": "68.320"
+            },
+            "employees": 22
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "4db42a26271ebc6e0f75adf57f29365eae15375ab11f278beb01a9d868f4d069",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://www.obf.no/",
+      "retrieved_at": "2026-11-01T06:21:26.632469Z",
+      "value": {
+        "requested_url": "https://www.obf.no/",
+        "final_url": "https://www.obf.no/",
+        "registered_domain": "obf.no",
+        "title": "Boligforvaltning og regnskapstjenester i Oslo og omegn | OBF",
+        "description": "Komplett boligforvaltning: vi tilbyr forretningsførsel, regnskap, juridisk bistand, HMS, ekstern styreleder og digitale verktøy – tilpasset boligselskaper.",
+        "main_text_excerpt": "500+\nforvaltede boligselskaper\n70 år\nbransjeerfaring\nFast rådgiver\nsom kjenner boligselskapet\nDine tjenester\nBli med mer enn 500 borettslag og sameier som allerede har valgt OBF. Med 70 års erfaring, lokalkunnskap og ekspertise tar vi hånd om forvaltningen, så kan du fokusere på det du er best på.\nVåre kunder er opptatt av å ha en trygg og serviceorientert samarbeidspartner i det daglige styrearbeidet.\nVi er opptatt av å innfri disse forventningene.\nSLIK BLIR DU KUNDE\nSlik foregår et bytte av forretningsfører\nÅ bytte forvalter høres ut som mye jobb for styret. Det er det ikke.\n1\nStyret sender en forespørsel\nStyret fyller ut skjemaet på nettsiden for å be om et tilbud.\n4\nStyret behandler tilbudet\nDersom styret ønsker å gå videre, blir vi enige om oppstartsdato.\n2\nInnledende samtale\nVi tar en kort samtale og blir kjent med boligselskapet og behovene deres.\n5\nAvtale signeres\nAvtalen sendes for digital signering til styreleder og ett styremedlem.\n3\nStyret mottar et tilpasset tilbud\nVi utarbeider et tilbud tilpasset boligselskapet og tjenestene dere trenger.\n6\nOppstart med OBF\nVi koordinerer overføringen fra tidligere forretningsfører og gjør klart for oppstart.\nKlar for å få den støtten dere trenger?\nFyll ut skjemaet, så sender vi et uforpliktende tilbud tilpasset deres boligselskap.\n✔\nUforpliktende\n✔\nVi tar oss av overgangen fra tidligere forvalter\n✔\n70 års erfaring – vi har gjort dette før",
+        "identity_text_excerpt": "OBF Innspurten 11 C 0663 Oslo 22 12 23 40 firmapost@obf.no ​ TJENESTER Boligforvaltning Regnskapstjenester Juridiske tjenester​ OBF gunstig Ekstern styreleder Naborom OBF TIPS Styrearbeid Forretningsførsel Regnskap og økonomi Bærekraft og miljø Utleie SNARVEIER Om oss FAQ Kontakt Jobb i OBF Personvernerklæring FOR KUNDER ➔ OBF Portal ➔ HMS Portal ➔ Styreskryt © 2026 OBF",
+        "social_links": [
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/oslo-og-omegn-boligforvaltning-as"
+          }
+        ],
+        "structured_organisations": [
+          {
+            "@context": "https://schema.org/",
+            "@type": "LocalBusiness",
+            "name": "OBF | Oslo og Omegn Boligforvaltning AS",
+            "url": "https://www.obf.no",
+            "image": "https://static.wixstatic.com/media/608aa9_b2fb20b14839465ba28c498888a0e3ea~mv2.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "NO",
+              "addressLocality": "Bydel Sagene",
+              "addressRegion": "03",
+              "postalCode": "0483",
+              "streetAddress": "64 Sandakerveien"
+            },
+            "telephone": "22 12 23 40"
+          }
+        ],
+        "structured_facts": {},
+        "job_postings": [],
+        "news_articles": [],
+        "content_sha256": "d0767c6278e22799d10b802bed3c4e0b2568f570617b669f5331e7355e14d3d5",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://www.obf.no/",
+            "title": "Boligforvaltning og regnskapstjenester i Oslo og omegn | OBF",
+            "main_text_excerpt": "500+\nforvaltede boligselskaper\n70 år\nbransjeerfaring\nFast rådgiver\nsom kjenner boligselskapet\nDine tjenester\nBli med mer enn 500 borettslag og sameier som allerede har valgt OBF. Med 70 års erfaring, lokalkunnskap og ekspertise tar vi hånd om forvaltningen, så kan du fokusere på det du er best på.\nVåre kunder er opptatt av å ha en trygg og serviceorientert samarbeidspartner i det daglige styrearbeidet.\nVi er opptatt av å innfri disse forventningene.\nSLIK BLIR DU KUNDE\nSlik foregår et bytte av forretningsfører\nÅ bytte forvalter høres ut som mye jobb for styret. Det er det ikke.\n1\nStyret sender en forespørsel\nStyret fyller ut skjemaet på nettsiden for å be om et tilbud.\n4\nStyret behandler tilbudet\nDersom styret ønsker å gå videre, blir vi enige om oppstartsdato.\n2\nInnledende samtale\nVi tar en kort samtale og blir kjent med boligselskapet og behovene deres.\n5\nAvtale signeres\nAvtalen sendes for digital signering til styreleder og ett styremedlem.\n3\nStyret mottar et tilpasset tilbud\nVi utarbeider et tilbud tilpasset boligselskapet og tjenestene dere trenger.\n6\nOppstart med OBF\nVi koordinerer overføringen fra tidligere forretningsfører og gjør klart for oppstart.\nKlar for å få den støtten dere trenger?\nFyll ut skjemaet, så sender vi et uforpliktende tilbud tilpasset deres boligselskap.\n✔\nUforpliktende\n✔\nVi tar oss av overgangen fra tidligere forvalter\n✔\n70 års erfaring – vi har gjort dette før",
+            "content_sha256": "d0767c6278e22799d10b802bed3c4e0b2568f570617b669f5331e7355e14d3d5"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [
+          {
+            "url": "https://www.obf.no/aktuelt",
+            "error": "unsupported or oversized page"
+          },
+          {
+            "url": "https://www.obf.no/jobb",
+            "error": "unsupported or oversized page"
+          },
+          {
+            "url": "https://www.obf.no/aktuelt/kom-godt-i-gang",
+            "error": "unsupported or oversized page"
+          },
+          {
+            "url": "https://www.obf.no/aktuelt/sommeraktiviteter",
+            "error": "unsupported or oversized page"
+          },
+          {
+            "url": "https://www.obf.no/aktuelt/sparetips",
+            "error": "unsupported or oversized page"
+          }
+        ],
+        "identity_assessment": {
+          "status": "related_or_uncertain",
+          "score": 0.6,
+          "publishable": false,
+          "legal_name_tokens": [
+            "oslo",
+            "omegn",
+            "boligforvaltning"
+          ],
+          "matched_tokens": [
+            "boligforvaltning",
+            "omegn",
+            "oslo"
+          ],
+          "reasons": [
+            "registry homepage domain is shared by 6 registered entities; treated as a manager/group site, cross-entity facts quarantined"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/obfas"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/obf_as"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/oslo-og-omegn-boligforvaltning-as"
+          }
+        ],
+        "social_link_assessments": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/obfas",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/obf_as",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/oslo-og-omegn-boligforvaltning-as",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "oslo",
+              "omegn",
+              "boligforvaltning"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          }
+        ],
+        "quarantined_structured_facts": {
+          "telephone": "22 12 23 40",
+          "address": {
+            "street": "64 Sandakerveien",
+            "postal_code": "0483",
+            "locality": "Bydel Sagene",
+            "region": "03",
+            "country": "NO"
+          }
+        },
+        "quarantined_job_postings": [],
+        "quarantined_news_articles": [],
+        "quarantined_careers_pages": [],
+        "excluded_news_articles": [],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "d0767c6278e22799d10b802bed3c4e0b2568f570617b669f5331e7355e14d3d5",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "988370746",
+          "source_url": "https://linkedin.com/company/oslo-og-omegn-boligforvaltning-as",
+          "retrieved_at": "2026-11-01T06:21:26.632469Z",
+          "content_sha256": "d0767c6278e22799d10b802bed3c4e0b2568f570617b669f5331e7355e14d3d5",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "related_or_uncertain",
+              "score": 0.6,
+              "organisation_number": "988370746"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:21:26.632469Z",
+          "id": "handle-988370746-linkedin",
+          "platform": "linkedin",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "988370746",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "988370746",
+              "source_row_key": "988370746"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-988370746",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "OSLO OG OMEGN BOLIGFORVALTNING AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "OSLO OG OMEGN BOLIGFORVALTNING AS"
+        },
+        {
+          "organisation_number": "988370746",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "988370746",
+              "source_row_key": "988370746"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-workforce-988370746",
+          "signal_type": "workforce_snapshot",
+          "metrics": {
+            "employees_registered": 25,
+            "as_of": "2026-09-14"
+          },
+          "evidence_span": "OSLO OG OMEGN BOLIGFORVALTNING AS: 25 registered employees"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 3,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg",
+          "linkedin"
+        ],
+        "platform_counts": {
+          "brreg": 2,
+          "linkedin": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 20,
+    "bytes": 6869444,
+    "latencies_ms": [
+      200,
+      202,
+      199,
+      203,
+      200,
+      201,
+      412,
+      243,
+      340,
+      342,
+      389,
+      319,
+      180
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Å tilby eiendomsrelaterte produkter og tjenester i eget navn eller ved annet selskap, og delta i eller erverv aksjer i selskaper med samme formål eller som har annen virksomhet som naturlig faller inn under formålet, samt tilby regnskapstjenester og andre administrative tjenester til andre virksomheter.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "articles_date",
+      "value": "2005-04-26",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "business_address",
+      "value": "Innspurten 11C, 0663 OSLO, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "email",
+      "value": "firmapost@obf.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "employees_nav_date",
+      "value": "2026-09-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "employees_registered",
+      "value": "25",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "employees_registered_date",
+      "value": "2026-09-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2005-06-28",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "founding_date",
+      "value": "2005-04-26",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "industry",
+      "value": "Eiendomsforvaltning på oppdrag",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "industry_code",
+      "value": "68.320",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "legal_name",
+      "value": "OSLO OG OMEGN BOLIGFORVALTNING AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "municipality",
+      "value": "OSLO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "municipality_number",
+      "value": "0301",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "phone",
+      "value": "22 12 23 40",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "postal_address",
+      "value": "Postboks 4301 Nydalen, 0402 OSLO, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "postal_code",
+      "value": "0663",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "registered_at",
+      "value": "2005-06-28",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "100000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2005-06-28",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "share_count",
+      "value": "100000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Å tilby eiendomsrelaterte produkter og tjenester i eget navn eller ved annet selskap, og delta i eller erverv aksjer i selskaper med samme formål eller som har annen virksomhet som naturlig faller inn under formålet. Å tilby regnskapstjenester og andre administrative tjenester til andre virksomheter enn selskaper som knyttes opp mot eiendom.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2005-05-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2005-05-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    },
+    {
+      "field": "website_registered",
+      "value": "www.obf.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "988370746"
+    }
+  ],
+  "summary": {
+    "headline": "OSLO OG OMEGN BOLIGFORVALTNING AS",
+    "narrative": "OSLO OG OMEGN BOLIGFORVALTNING AS is a AS company, operating in eiendomsforvaltning på oppdrag, registered in Oslo. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 34690406.0 NOK, operating result 7684486.0 NOK, annual result 9647043.0 NOK. Registered leadership includes Hans Kåre Laaveg (Daglig leder) and 10 other registered role(s). 1 registered subunit(s)/workplace(s). Workforce reported in the None annual report: None (None).",
+    "statements": [
+      {
+        "text": "OSLO OG OMEGN BOLIGFORVALTNING AS is a AS company, operating in eiendomsforvaltning på oppdrag, registered in Oslo.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 34690406.0 NOK, operating result 7684486.0 NOK, annual result 9647043.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/988370746",
+        "retrieved_at": "2026-11-01T06:21:03.694349Z"
+      },
+      {
+        "text": "Registered leadership includes Hans Kåre Laaveg (Daglig leder) and 10 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/988370746/roller",
+        "retrieved_at": "2026-11-01T06:21:19.134257Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=988370746&size=1000",
+        "retrieved_at": "2026-11-01T06:21:19.537177Z"
+      },
+      {
+        "text": "Workforce reported in the None annual report: None (None).",
+        "evidence_field": "external_footprint",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      }
+    ],
+    "unknowns": [
+      "verified company website"
+    ],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

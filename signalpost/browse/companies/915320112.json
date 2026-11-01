@@ -1,0 +1,876 @@
+{
+  "organisation_number": "915320112",
+  "name": "MOLDE HK ELITE",
+  "legal_form": "FLI",
+  "employees": 18,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "MOLDE",
+  "municipality_number": "1506",
+  "industry_code": "93.120",
+  "industry_label": "Aktiviteter i idrettslag og -klubber",
+  "website": "",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "915320112",
+        "navn": "MOLDE HK ELITE",
+        "organisasjonsform.kode": "FLI",
+        "organisasjonsform.beskrivelse": "Forening/lag/innretning",
+        "naeringskode1.kode": "93.120",
+        "naeringskode1.beskrivelse": "Aktiviteter i idrettslag og -klubber",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "true",
+        "antallAnsatte": "18",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "2026-09-14",
+        "registreringsdatoantallansatteNAVAaregisteret": "2026-09-10",
+        "hjemmeside": "",
+        "epostadresse": "",
+        "telefon": "",
+        "mobil": "",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "Hamnegata 35",
+        "forretningsadresse.poststed": "MOLDE",
+        "forretningsadresse.postnummer": "6413",
+        "forretningsadresse.kommune": "MOLDE",
+        "forretningsadresse.kommunenummer": "1506",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "7000",
+        "institusjonellSektorkode.beskrivelse": "Ideelle organisasjoner",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2015-04-29",
+        "stiftelsesdato": "2015-03-19",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2015-07-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2015-09-12",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "true",
+        "registreringsdatoFrivillighetsregisteret": "2015-04-29",
+        "registrertIForetaksregisteret": "false",
+        "registreringsdatoForetaksregisteret": "",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "",
+        "vedtektsfestetFormaal": "",
+        "aktivitet": "Drive idrett organisert i Norges idrettsforbund og olympiske og paralympiske komité (NIF). Arbeidet skal preges av frivillighet, demokrati, lojalitet og likeverd. All idrettslig aktivitet skal bygge på grunnverdier som idrettsglede, fellesskap, helse og ærlighet.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "false",
+        "kapital.belop": "",
+        "kapital.antallAksjer": "",
+        "kapital.type": "",
+        "kapital.bundet": "",
+        "kapital.valuta": "",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "915320112",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:38.723285Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "FLI",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "915320112",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/915320112",
+      "retrieved_at": "2026-11-01T06:19:53.506728Z",
+      "value": {
+        "organisation_number": "915320112",
+        "name": "MOLDE HK ELITE",
+        "legal_form": "FLI",
+        "employees": 21,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": null,
+        "industry": {
+          "beskrivelse": "Aktiviteter i idrettslag og -klubber",
+          "kode": "93.120"
+        },
+        "business_address": {
+          "adresse": [
+            "Hamnegata 35"
+          ],
+          "kommune": "MOLDE",
+          "kommunenummer": "1506",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "6413",
+          "poststed": "MOLDE"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "37efdce67266145ee4bb11773da6aaf5244fc2cbed4b5dc92c6cc19a351b6335",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/915320112",
+      "retrieved_at": "2026-11-01T06:19:53.706297Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5026885,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 10827811.0,
+            "operating_result": 304451.0,
+            "profit_before_tax": 304892.0,
+            "annual_result": 304892.0,
+            "assets": 5274213.0,
+            "equity": 3274015.0,
+            "debt": 2000198.0
+          },
+          {
+            "record_id": 5463081,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 10814920.0,
+            "operating_result": -509467.0,
+            "profit_before_tax": -510118.0,
+            "annual_result": -510118.0,
+            "assets": 4526923.0,
+            "equity": 2763897.0,
+            "debt": 1763026.0
+          },
+          {
+            "record_id": 6466831,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 10169994.0,
+            "operating_result": -1397836.0,
+            "profit_before_tax": -1400217.0,
+            "annual_result": -1400217.0,
+            "assets": 3441874.0,
+            "equity": 1363680.0,
+            "debt": 2078194.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "3a04cbae73eeccdf43bf127fd7f240fe4a9693b7bacce6c6d9cb91933fe264ec",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915320112/aar",
+      "retrieved_at": "2026-11-01T06:20:09.519919Z",
+      "value": {
+        "years": [
+          "2017",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915320112/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915320112/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915320112/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915320112/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915320112/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915320112/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915320112/2019"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/915320112/2017"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "3a20477cfd023de9425b47b20e27d6d218ab520ecc1974f3dd558174262e3270",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/915320112/roller",
+      "retrieved_at": "2026-11-01T06:20:09.719309Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Per Gjerde",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-01-14",
+            "inactive": false
+          },
+          {
+            "name": "Per Olav Myrstad",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-01-14",
+            "inactive": false
+          },
+          {
+            "name": "Hilde Bjørsvik",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-01-14",
+            "inactive": false
+          },
+          {
+            "name": "Britt Johanne Kjølstad",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-01-14",
+            "inactive": false
+          },
+          {
+            "name": [
+              "ROMSDAL REVISJON AS"
+            ],
+            "organisation_number": "912540715",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2016-03-14",
+            "inactive": false
+          },
+          {
+            "name": [
+              "SPAREBANK 1 REGNSKAPSHUSET SMN AS"
+            ],
+            "organisation_number": "936285066",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2018-01-23",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "149f1d188a749ab4a6b5231d54bd24edb8bb211294d10989e6f1c7d1dc20b39f",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/915320112",
+      "retrieved_at": "2026-11-01T06:20:09.919427Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=915320112&size=1000",
+      "retrieved_at": "2026-11-01T06:20:10.126501Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "915337031",
+            "name": "MOLDE HK ELITE",
+            "address": {
+              "adresse": [
+                "Hamnegata 35"
+              ],
+              "kommune": "MOLDE",
+              "kommunenummer": "1506",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "6413",
+              "poststed": "MOLDE"
+            },
+            "industry": {
+              "beskrivelse": "Aktiviteter i idrettslag og -klubber",
+              "kode": "93.120"
+            },
+            "employees": 21
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "eff331ad30d2ca6bc007e5f9159ecfc2cf60ca5ade19668db8c480638fd5bfbf",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "not_found",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter",
+      "retrieved_at": "2026-11-01T06:20:10.127049Z",
+      "value": null,
+      "as_of": null,
+      "note": "No valid registry website URL",
+      "content_sha256": null,
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "915320112",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "915320112",
+              "source_row_key": "915320112"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-915320112",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "MOLDE HK ELITE",
+            "legal_form": "FLI"
+          },
+          "evidence_span": "MOLDE HK ELITE"
+        },
+        {
+          "organisation_number": "915320112",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "915320112",
+              "source_row_key": "915320112"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-workforce-915320112",
+          "signal_type": "workforce_snapshot",
+          "metrics": {
+            "employees_registered": 18,
+            "as_of": "2026-09-14"
+          },
+          "evidence_span": "MOLDE HK ELITE: 18 registered employees"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 2,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg"
+        ],
+        "platform_counts": {
+          "brreg": 2
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 6,
+    "bytes": 10706,
+    "latencies_ms": [
+      200,
+      199,
+      197,
+      199,
+      199,
+      206
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Drive idrett organisert i Norges idrettsforbund og olympiske og paralympiske komité (NIF). Arbeidet skal preges av frivillighet, demokrati, lojalitet og likeverd. All idrettslig aktivitet skal bygge på grunnverdier som idrettsglede, fellesskap, helse og ærlighet.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "business_address",
+      "value": "Hamnegata 35, 6413 MOLDE, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "employees_nav_date",
+      "value": "2026-09-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "employees_registered",
+      "value": "18",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "employees_registered_date",
+      "value": "2026-09-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "founding_date",
+      "value": "2015-03-19",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "industry",
+      "value": "Aktiviteter i idrettslag og -klubber",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "industry_code",
+      "value": "93.120",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Ideelle organisasjoner",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "7000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "legal_form",
+      "value": "Forening/lag/innretning",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "FLI",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "legal_name",
+      "value": "MOLDE HK ELITE",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "municipality",
+      "value": "MOLDE",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "municipality_number",
+      "value": "1506",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "postal_code",
+      "value": "6413",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "registered_at",
+      "value": "2015-04-29",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2015-07-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2015-07-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "915320112"
+    }
+  ],
+  "summary": {
+    "headline": "MOLDE HK ELITE",
+    "narrative": "MOLDE HK ELITE is a FLI company, operating in aktiviteter i idrettslag og -klubber, registered in Molde. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 10827811.0 NOK, operating result 304451.0 NOK, annual result 304892.0 NOK. Registered leadership includes Per Gjerde (Styrets leder) and 5 other registered role(s). 1 registered subunit(s)/workplace(s). Workforce reported in the None annual report: None (None).",
+    "statements": [
+      {
+        "text": "MOLDE HK ELITE is a FLI company, operating in aktiviteter i idrettslag og -klubber, registered in Molde.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 10827811.0 NOK, operating result 304451.0 NOK, annual result 304892.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/915320112",
+        "retrieved_at": "2026-11-01T06:19:53.706297Z"
+      },
+      {
+        "text": "Registered leadership includes Per Gjerde (Styrets leder) and 5 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/915320112/roller",
+        "retrieved_at": "2026-11-01T06:20:09.719309Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=915320112&size=1000",
+        "retrieved_at": "2026-11-01T06:20:10.126501Z"
+      },
+      {
+        "text": "Workforce reported in the None annual report: None (None).",
+        "evidence_field": "external_footprint",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      }
+    ],
+    "unknowns": [
+      "verified company website"
+    ],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

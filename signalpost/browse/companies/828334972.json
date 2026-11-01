@@ -1,0 +1,816 @@
+{
+  "organisation_number": "828334972",
+  "name": "SOCIUS CAPITAL AS",
+  "legal_form": "AS",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "OSLO",
+  "municipality_number": "0301",
+  "industry_code": "68.110",
+  "industry_label": "Kjøp og salg av egen fast eiendom",
+  "website": "",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "828334972",
+        "navn": "SOCIUS CAPITAL AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "68.110",
+        "naeringskode1.beskrivelse": "Kjøp og salg av egen fast eiendom",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "false",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "",
+        "registreringsdatoantallansatteNAVAaregisteret": "",
+        "hjemmeside": "",
+        "epostadresse": "",
+        "telefon": "",
+        "mobil": "",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "c/o BA5 Invest AS\nCort Adelers gate 17",
+        "forretningsadresse.poststed": "OSLO",
+        "forretningsadresse.postnummer": "0254",
+        "forretningsadresse.kommune": "OSLO",
+        "forretningsadresse.kommunenummer": "0301",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2021-12-14",
+        "stiftelsesdato": "2021-11-15",
+        "registrertIMvaRegisteret": "false",
+        "registreringsdatoMerverdiavgiftsregisteret": "",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2021-12-14",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2021-11-15",
+        "vedtektsfestetFormaal": "Eie og investere i aksjer og andre selskaper og virksomheter, deltakelse av enhver art i andre virksomheter og hva dermed står i forbindelse, foreta låne finansierte investeringer, samt investere i eiendom.",
+        "aktivitet": "Eie og investere i aksjer og andre selskaper og virksomheter, deltakelse av enhver art i andre virksomheter og hva dermed står i forbindelse, foreta låne finansierte investeringer, samt investere i eiendom.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "2021-12-14",
+        "fravalgRevisjonBeslutningsDato": "2021-11-15",
+        "erIKonsern": "false",
+        "kapital.belop": "30000.00",
+        "kapital.antallAksjer": "30000",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2021-12-14",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "828334972",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:36.610330Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "828334972",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/828334972",
+      "retrieved_at": "2026-11-01T06:19:56.290239Z",
+      "value": {
+        "organisation_number": "828334972",
+        "name": "SOCIUS CAPITAL AS",
+        "legal_form": "AS",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": null,
+        "industry": {
+          "beskrivelse": "Kjøp og salg av egen fast eiendom",
+          "kode": "68.110"
+        },
+        "business_address": {
+          "adresse": [
+            "c/o BA5 Invest AS",
+            "Cort Adelers gate 17"
+          ],
+          "kommune": "OSLO",
+          "kommunenummer": "0301",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "0254",
+          "poststed": "OSLO"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "deb92a963e1fccd25053ee1c3a251643ae62b77a18c5987547adef4e3d50581b",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/828334972",
+      "retrieved_at": "2026-11-01T06:19:56.492612Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5109155,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": null,
+            "operating_result": -2609.0,
+            "profit_before_tax": -2609.0,
+            "annual_result": -2609.0,
+            "assets": 9046061.0,
+            "equity": 18499.0,
+            "debt": 9027562.0
+          },
+          {
+            "record_id": 5639739,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": null,
+            "operating_result": -2164.0,
+            "profit_before_tax": -2164.0,
+            "annual_result": -2164.0,
+            "assets": 9043902.0,
+            "equity": 16335.0,
+            "debt": 9027567.0
+          },
+          {
+            "record_id": 6718964,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": null,
+            "operating_result": -2566.0,
+            "profit_before_tax": -9026566.0,
+            "annual_result": -9026566.0,
+            "assets": 17336.0,
+            "equity": -9010231.0,
+            "debt": 9027567.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "bd71e28f7960265c063d9121fb3f98cca298ea539d07986f45b84b2ad57c1419",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/828334972/aar",
+      "retrieved_at": "2026-11-01T06:20:11.815555Z",
+      "value": {
+        "years": [
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/828334972/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/828334972/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/828334972/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/828334972/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/828334972/2021"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "3224f0706bd3ffc731997668057588188a2f2ceb01a45d0d434e8929f7100c8e",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/828334972/roller",
+      "retrieved_at": "2026-11-01T06:20:12.024341Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Kim Johnsen",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2022-03-30",
+            "inactive": false
+          },
+          {
+            "name": "Ole Fredrik Boldersløw Qvale",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2022-03-30",
+            "inactive": false
+          },
+          {
+            "name": "Lasse Røsnes",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2022-03-30",
+            "inactive": false
+          },
+          {
+            "name": "Jan Martin Fjellestad",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2022-03-30",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "07617652e574e327c1d3cfb9d728243005317c725b5e7465eb23b30b2f23ede9",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/828334972",
+      "retrieved_at": "2026-11-01T06:20:12.230546Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=828334972&size=1000",
+      "retrieved_at": "2026-11-01T06:20:12.440363Z",
+      "value": {
+        "locations": []
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "eec4542bd84a99466c2de4e47fecf09ae756a334137579213942cdce2c7be17b",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "not_found",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter",
+      "retrieved_at": "2026-11-01T06:20:12.440741Z",
+      "value": null,
+      "as_of": null,
+      "note": "No valid registry website URL",
+      "content_sha256": null,
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "828334972",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "828334972",
+              "source_row_key": "828334972"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-828334972",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "SOCIUS CAPITAL AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "SOCIUS CAPITAL AS"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 1,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg"
+        ],
+        "platform_counts": {
+          "brreg": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 12,
+    "bytes": 7674,
+    "latencies_ms": [
+      198,
+      202,
+      388,
+      208,
+      206,
+      209
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Eie og investere i aksjer og andre selskaper og virksomheter, deltakelse av enhver art i andre virksomheter og hva dermed står i forbindelse, foreta låne finansierte investeringer, samt investere i eiendom.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "articles_date",
+      "value": "2021-11-15",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "audit_opt_out_date",
+      "value": "2021-12-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "business_address",
+      "value": "c/o BA5 Invest AS\nCort Adelers gate 17, 0254 OSLO, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2021-12-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "founding_date",
+      "value": "2021-11-15",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "industry",
+      "value": "Kjøp og salg av egen fast eiendom",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "industry_code",
+      "value": "68.110",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "legal_name",
+      "value": "SOCIUS CAPITAL AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "municipality",
+      "value": "OSLO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "municipality_number",
+      "value": "0301",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "postal_code",
+      "value": "0254",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "registered_at",
+      "value": "2021-12-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "30000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2021-12-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "share_count",
+      "value": "30000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Eie og investere i aksjer og andre selskaper og virksomheter, deltakelse av enhver art i andre virksomheter og hva dermed står i forbindelse, foreta låne finansierte investeringer, samt investere i eiendom.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "828334972"
+    }
+  ],
+  "summary": {
+    "headline": "SOCIUS CAPITAL AS",
+    "narrative": "SOCIUS CAPITAL AS is a AS company, operating in kjøp og salg av egen fast eiendom, registered in Oslo. Latest filed accounts (2023-01-01 to 2023-12-31): operating result -2609.0 NOK, annual result -2609.0 NOK. Registered leadership includes Kim Johnsen (Styrets leder) and 3 other registered role(s).",
+    "statements": [
+      {
+        "text": "SOCIUS CAPITAL AS is a AS company, operating in kjøp og salg av egen fast eiendom, registered in Oslo.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): operating result -2609.0 NOK, annual result -2609.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/828334972",
+        "retrieved_at": "2026-11-01T06:19:56.492612Z"
+      },
+      {
+        "text": "Registered leadership includes Kim Johnsen (Styrets leder) and 3 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/828334972/roller",
+        "retrieved_at": "2026-11-01T06:20:12.024341Z"
+      }
+    ],
+    "unknowns": [
+      "registered subunits/locations",
+      "verified company website"
+    ],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

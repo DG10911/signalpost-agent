@@ -1,0 +1,856 @@
+{
+  "organisation_number": "977152569",
+  "name": "DNB BANKS ASAS JUBILEUMSFOND TIL UNIVERSITETET I BERGEN STI",
+  "legal_form": "STI",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "BERGEN",
+  "municipality_number": "4601",
+  "industry_code": "94.991",
+  "industry_label": "Aktiviteter i fond/legat som støtter veldedige og allmennyttige formål",
+  "website": "",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "977152569",
+        "navn": "DNB BANKS ASAS JUBILEUMSFOND TIL UNIVERSITETET I BERGEN STI",
+        "organisasjonsform.kode": "STI",
+        "organisasjonsform.beskrivelse": "Stiftelse",
+        "naeringskode1.kode": "94.991",
+        "naeringskode1.beskrivelse": "Aktiviteter i fond/legat som støtter veldedige og allmennyttige formål",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "false",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "",
+        "registreringsdatoantallansatteNAVAaregisteret": "",
+        "hjemmeside": "",
+        "epostadresse": "",
+        "telefon": "55 58 20 00",
+        "mobil": "",
+        "postadresse.adresse": "v/UiB, Økonomiavd./fondsforvaltn.\nPostboks 7800",
+        "postadresse.poststed": "BERGEN",
+        "postadresse.postnummer": "5020",
+        "postadresse.kommune": "BERGEN",
+        "postadresse.kommunenummer": "4601",
+        "postadresse.land": "Norge",
+        "postadresse.landkode": "NO",
+        "forretningsadresse.adresse": "v/Universitetet i Bergen\nMuséplassen 1",
+        "forretningsadresse.poststed": "BERGEN",
+        "forretningsadresse.postnummer": "5007",
+        "forretningsadresse.kommune": "BERGEN",
+        "forretningsadresse.kommunenummer": "4601",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "7000",
+        "institusjonellSektorkode.beskrivelse": "Ideelle organisasjoner",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "1997-03-17",
+        "stiftelsesdato": "1955-11-28",
+        "registrertIMvaRegisteret": "false",
+        "registreringsdatoMerverdiavgiftsregisteret": "",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "false",
+        "registreringsdatoForetaksregisteret": "",
+        "registrertIStiftelsesregisteret": "true",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "",
+        "vedtektsfestetFormaal": "",
+        "aktivitet": "Utlån av midler til bolig tilhørende universitetets professorer og andre tenestem.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "false",
+        "kapital.belop": "300000.00",
+        "kapital.antallAksjer": "",
+        "kapital.type": "Grunnkapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "300000.00",
+        "kapital.fulltInnbetalt": "true",
+        "kapital.innfortDato": "1998-04-03",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "977152569",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:49.666257Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "STI",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "977152569",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/977152569",
+      "retrieved_at": "2026-11-01T06:22:22.176357Z",
+      "value": {
+        "organisation_number": "977152569",
+        "name": "DNB BANKS ASAS JUBILEUMSFOND TIL UNIVERSITETET I BERGEN STI",
+        "legal_form": "STI",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": null,
+        "industry": {
+          "beskrivelse": "Aktiviteter i fond/legat som støtter veldedige og allmennyttige formål",
+          "kode": "94.991"
+        },
+        "business_address": {
+          "adresse": [
+            "v/Universitetet i Bergen",
+            "Muséplassen 1"
+          ],
+          "kommune": "BERGEN",
+          "kommunenummer": "4601",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "5007",
+          "poststed": "BERGEN"
+        },
+        "postal_address": {
+          "adresse": [
+            "v/UiB, Økonomiavd./fondsforvaltn.",
+            "Postboks 7800"
+          ],
+          "kommune": "BERGEN",
+          "kommunenummer": "4601",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "5020",
+          "poststed": "BERGEN"
+        },
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "48222b45ab478b2045b647e30668d2188f22f4274a54555df58c4e23683d4f46",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/977152569",
+      "retrieved_at": "2026-11-01T06:22:22.375083Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5158635,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 802.0,
+            "operating_result": -29454.0,
+            "profit_before_tax": 601970.0,
+            "annual_result": 601970.0,
+            "assets": 4188700.0,
+            "equity": 4184800.0,
+            "debt": 3900.0
+          },
+          {
+            "record_id": 5952177,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": null,
+            "operating_result": -832426.0,
+            "profit_before_tax": -123867.0,
+            "annual_result": -123867.0,
+            "assets": 4875874.0,
+            "equity": 4060933.0,
+            "debt": 814941.0
+          },
+          {
+            "record_id": 6993246,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": null,
+            "operating_result": -837863.0,
+            "profit_before_tax": -577008.0,
+            "annual_result": -577008.0,
+            "assets": 3505271.0,
+            "equity": 3483925.0,
+            "debt": 21346.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "854dc71e897b9b456bf234b643d5cab49fe7a1d5fd5c7801d12403bd36ef28b6",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/aar",
+      "retrieved_at": "2026-11-01T06:22:33.238537Z",
+      "value": {
+        "years": [
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2013"
+          },
+          {
+            "year": "2012",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2012"
+          },
+          {
+            "year": "2011",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/977152569/2011"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "b7bcd20d8a4607bc9ca49fbdfebf5e51cb31e39858edb985dc98a82e8d2b7cd1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/977152569/roller",
+      "retrieved_at": "2026-11-01T06:22:33.439400Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Tore Tungodden",
+            "organisation_number": null,
+            "role_code": "FFØR",
+            "role": "Forretningsfører",
+            "group_code": "FFØR",
+            "group": "Forretningsfører",
+            "last_changed": "2023-10-16",
+            "inactive": false
+          },
+          {
+            "name": "Margareth Hagen",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-01-07",
+            "inactive": false
+          },
+          {
+            "name": "Tore Tungodden",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-01-07",
+            "inactive": false
+          },
+          {
+            "name": "Line Sverdrup Ulvesæter",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-01-07",
+            "inactive": false
+          },
+          {
+            "name": [
+              "KPMG AS"
+            ],
+            "organisation_number": "935174627",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2000-05-18",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "695e6a51602e036583393f6bf198affa767520d0f8241d8b6b24378660ebdcef",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/977152569",
+      "retrieved_at": "2026-11-01T06:22:33.638032Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=977152569&size=1000",
+      "retrieved_at": "2026-11-01T06:22:33.839988Z",
+      "value": {
+        "locations": []
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "3f0c3cbf27369b5a04b9f25f4a225cb725469da616bbad120d84c9b9b55e3517",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "not_found",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter",
+      "retrieved_at": "2026-11-01T06:22:33.840410Z",
+      "value": null,
+      "as_of": null,
+      "note": "No valid registry website URL",
+      "content_sha256": null,
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "977152569",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "977152569",
+              "source_row_key": "977152569"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-977152569",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "DNB BANKS ASAS JUBILEUMSFOND TIL UNIVERSITETET I BERGEN STI",
+            "legal_form": "STI"
+          },
+          "evidence_span": "DNB BANKS ASAS JUBILEUMSFOND TIL UNIVERSITETET I BERGEN STI"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 1,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg"
+        ],
+        "platform_counts": {
+          "brreg": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 6,
+    "bytes": 8990,
+    "latencies_ms": [
+      197,
+      198,
+      880,
+      200,
+      198,
+      201
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Utlån av midler til bolig tilhørende universitetets professorer og andre tenestem.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "business_address",
+      "value": "v/Universitetet i Bergen\nMuséplassen 1, 5007 BERGEN, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "founding_date",
+      "value": "1955-11-28",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "industry",
+      "value": "Aktiviteter i fond/legat som støtter veldedige og allmennyttige formål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "industry_code",
+      "value": "94.991",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Ideelle organisasjoner",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "7000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "legal_form",
+      "value": "Stiftelse",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "STI",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "legal_name",
+      "value": "DNB BANKS ASAS JUBILEUMSFOND TIL UNIVERSITETET I BERGEN STI",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "municipality",
+      "value": "BERGEN",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "municipality_number",
+      "value": "4601",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "phone",
+      "value": "55 58 20 00",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "postal_address",
+      "value": "v/UiB, Økonomiavd./fondsforvaltn.\nPostboks 7800, 5020 BERGEN, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "postal_code",
+      "value": "5007",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "registered_at",
+      "value": "1997-03-17",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "300000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "1998-04-03",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Grunnkapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "977152569"
+    }
+  ],
+  "summary": {
+    "headline": "DNB BANKS ASAS JUBILEUMSFOND TIL UNIVERSITETET I BERGEN STI",
+    "narrative": "DNB BANKS ASAS JUBILEUMSFOND TIL UNIVERSITETET I BERGEN STI is a STI company, operating in aktiviteter i fond/legat som støtter veldedige og allmennyttige formål, registered in Bergen. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 802.0 NOK, operating result -29454.0 NOK, annual result 601970.0 NOK. Registered leadership includes Tore Tungodden (Forretningsfører) and 4 other registered role(s).",
+    "statements": [
+      {
+        "text": "DNB BANKS ASAS JUBILEUMSFOND TIL UNIVERSITETET I BERGEN STI is a STI company, operating in aktiviteter i fond/legat som støtter veldedige og allmennyttige formål, registered in Bergen.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 802.0 NOK, operating result -29454.0 NOK, annual result 601970.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/977152569",
+        "retrieved_at": "2026-11-01T06:22:22.375083Z"
+      },
+      {
+        "text": "Registered leadership includes Tore Tungodden (Forretningsfører) and 4 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/977152569/roller",
+        "retrieved_at": "2026-11-01T06:22:33.439400Z"
+      }
+    ],
+    "unknowns": [
+      "registered subunits/locations",
+      "verified company website"
+    ],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

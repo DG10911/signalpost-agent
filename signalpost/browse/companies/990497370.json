@@ -1,0 +1,1200 @@
+{
+  "organisation_number": "990497370",
+  "name": "ALFA VARME- OG PIPETEKNIKK AS",
+  "legal_form": "AS",
+  "employees": 7,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "MODUM",
+  "municipality_number": "3316",
+  "industry_code": "41.000",
+  "industry_label": "Oppføring av bygninger",
+  "website": "www.alfavarme.no",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "990497370",
+        "navn": "ALFA VARME- OG PIPETEKNIKK AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "41.000",
+        "naeringskode1.beskrivelse": "Oppføring av bygninger",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "true",
+        "antallAnsatte": "7",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "2025-11-12",
+        "registreringsdatoantallansatteNAVAaregisteret": "2025-11-10",
+        "hjemmeside": "www.alfavarme.no",
+        "epostadresse": "post@alfavarme.no",
+        "telefon": "32 78 44 00",
+        "mobil": "",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "Apalveien 1",
+        "forretningsadresse.poststed": "GEITHUS",
+        "forretningsadresse.postnummer": "3360",
+        "forretningsadresse.kommune": "MODUM",
+        "forretningsadresse.kommunenummer": "3316",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2006-11-10",
+        "stiftelsesdato": "2006-10-01",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2006-09-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2007-03-14",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2006-11-10",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2023-06-26",
+        "vedtektsfestetFormaal": "Rehabilitering og nyoppføring av skorsteiner og ildsteder. Kjøp og salg av ildsteder og tilbehør til ildsteder. Salg av konsulenttjenester innen varme- og sikkerhet.",
+        "aktivitet": "Bygg- og anlegg. Håndverk, konsulenttjenester",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "false",
+        "kapital.belop": "100000.00",
+        "kapital.antallAksjer": "1000",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2006-11-10",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "990497370",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:51.918410Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "990497370",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/990497370",
+      "retrieved_at": "2026-11-01T06:20:52.104637Z",
+      "value": {
+        "organisation_number": "990497370",
+        "name": "ALFA VARME- OG PIPETEKNIKK AS",
+        "legal_form": "AS",
+        "employees": 7,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "www.alfavarme.no",
+        "industry": {
+          "beskrivelse": "Oppføring av bygninger",
+          "kode": "41.000"
+        },
+        "business_address": {
+          "adresse": [
+            "Apalveien 1"
+          ],
+          "kommune": "MODUM",
+          "kommunenummer": "3316",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "3360",
+          "poststed": "GEITHUS"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "e0a380f6756d51085dab6d3aa990efb47ed954d2c6f94fed9da4e1fac7e95f71",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/990497370",
+      "retrieved_at": "2026-11-01T06:20:52.311735Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 4728821,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 29960082.0,
+            "operating_result": 1749861.0,
+            "profit_before_tax": 1316881.0,
+            "annual_result": 1020350.0,
+            "assets": 14716416.0,
+            "equity": 6468883.0,
+            "debt": 8247533.0
+          },
+          {
+            "record_id": 5488191,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 25267192.0,
+            "operating_result": -789365.0,
+            "profit_before_tax": -1192341.0,
+            "annual_result": -949073.0,
+            "assets": 11205364.0,
+            "equity": 5519809.0,
+            "debt": 5685555.0
+          },
+          {
+            "record_id": 6982804,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 15788760.0,
+            "operating_result": -541955.0,
+            "profit_before_tax": -795617.0,
+            "annual_result": -797553.0,
+            "assets": 8126173.0,
+            "equity": 4722257.0,
+            "debt": 3403917.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "70c81726890b51aa4f111f9af76354b0fdc3b1b29a91e4ef88a792f7bca2b61e",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/aar",
+      "retrieved_at": "2026-11-01T06:21:06.320476Z",
+      "value": {
+        "years": [
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2013"
+          },
+          {
+            "year": "2012",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2012"
+          },
+          {
+            "year": "2011",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/990497370/2011"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "b7bcd20d8a4607bc9ca49fbdfebf5e51cb31e39858edb985dc98a82e8d2b7cd1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/990497370/roller",
+      "retrieved_at": "2026-11-01T06:21:06.527158Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Preben Gibhardt Steensen",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2024-07-18",
+            "inactive": false
+          },
+          {
+            "name": "Nils Kristian Skretteberg",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2025-03-11",
+            "inactive": false
+          },
+          {
+            "name": "Preben Gibhardt Steensen",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2025-03-11",
+            "inactive": false
+          },
+          {
+            "name": "Arild Aune Fallan",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2025-03-11",
+            "inactive": false
+          },
+          {
+            "name": "Per Sønsteby",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2025-03-11",
+            "inactive": false
+          },
+          {
+            "name": [
+              "GYLLSTRØM & JOHANSEN AS"
+            ],
+            "organisation_number": "916467052",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2016-01-21",
+            "inactive": false
+          },
+          {
+            "name": [
+              "MODUM REGNSKAP AS"
+            ],
+            "organisation_number": "938712085",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2026-01-07",
+            "inactive": false
+          },
+          {
+            "name": [
+              "ACCOUNT REGNSKAP AS"
+            ],
+            "organisation_number": "997696565",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2026-01-07",
+            "inactive": true
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "df69a1fb72c506360e6b5c971895512e449a131b36c273d7da5ea50206be9643",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/990497370",
+      "retrieved_at": "2026-11-01T06:21:06.732970Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=990497370&size=1000",
+      "retrieved_at": "2026-11-01T06:21:06.943263Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "990517681",
+            "name": "ALFA VARME- OG PIPETEKNIKK AS",
+            "address": {
+              "adresse": [
+                "Apalveien 1"
+              ],
+              "kommune": "MODUM",
+              "kommunenummer": "3316",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "3360",
+              "poststed": "GEITHUS"
+            },
+            "industry": {
+              "beskrivelse": "Oppføring av bygninger",
+              "kode": "41.000"
+            },
+            "employees": 7
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "2e4b4dc0f738a9c78dabf4437aeb881909ed2330b7f60f31499d668ed9ad8c3c",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://alfavarme.no/",
+      "retrieved_at": "2026-11-01T06:21:30.440512Z",
+      "value": {
+        "requested_url": "https://www.alfavarme.no/",
+        "final_url": "https://alfavarme.no/",
+        "registered_domain": "alfavarme.no",
+        "title": "Montering og rehabilitering av Peis, Ovn og Pipe i Viken og Oslo • Alfa Varme",
+        "description": "Alfa Varme utfører rehabilitering av pipe og skorstein i Viken og Oslo. Vi installerer og monterer peisovner, kakkelovner, klebersteinsovner og peiser.",
+        "main_text_excerpt": "Alfa Varme er en aktør med bred og solid fagkompetanse. Vi består av flere dyktige medarbeidere med ulik bakgrunn, og det er sammensetningen av dette som utgjør vår unike styrke. Vi driver med rehabilitering av skorstein/pipe, stålpiper, peisbygging, ovnsinstallasjoner, gasspeiser m.m. I tillegg har vi egen peisbutikk med kjente merker og egne agenturer.",
+        "identity_text_excerpt": "Alfa Varme og Pipeteknikk AS Adresse: Apalveien 1, 3360 Geithus Telefon: 32 78 44 00 Epost: post@alfavarme.no Org.nr.: 990 497 370 Salgsbetingelser næring Salgsbetingelser privat Om oss Om oss Våre kjerneverdier Våre medarbeidere Sertifiseringer Montering Peisinnsatser Vedovner Rehabilitering Rehab-Kalkulator Stålpipe Nettbutikk Kontakt oss Lik oss på facebook Lik oss på facebook Copyright © 2026 Alfa Varme | Alfa Varme og Pipeteknikk AS Adresse: Apalveien 1, 3360 Geithus Telefon: 32 78 44 00 Epost: post@alfavarme.no Org.nr.: 990 497 370 Salgsbetingelser næring Salgsbetingelser privat Om oss Om oss Våre kjerneverdier Våre medarbeidere Sertifiseringer Montering Peisinnsatser Vedovner Rehabilitering Rehab-Kalkulator Stålpipe Nettbutikk Kontakt oss Lik oss på facebook Lik oss på facebook | LAGRE OG GODKJENN | DAGLIG LEDER - ALFA VARME OG PIPETEKNIKK AS | Alfa Varme og Pipeteknikk AS | 990 497 370",
+        "social_links": [],
+        "structured_organisations": [
+          {
+            "@type": "Organization",
+            "@id": "https://alfavarme.no/#organization",
+            "name": "Alfa Varme- og Pipeteknikk AS",
+            "url": "https://alfavarme.no/",
+            "logo": {
+              "@type": "ImageObject",
+              "inLanguage": "nb-NO",
+              "@id": "https://alfavarme.no/#/schema/logo/image/",
+              "url": "https://i1.wp.com/alfavarme.no/wp-content/uploads/2020/02/Endelig-logo-Alfavarme.no_.png?fit=1085%2C354&ssl=1",
+              "contentUrl": "https://i1.wp.com/alfavarme.no/wp-content/uploads/2020/02/Endelig-logo-Alfavarme.no_.png?fit=1085%2C354&ssl=1",
+              "width": 1085,
+              "height": 354,
+              "caption": "Alfa Varme- og Pipeteknikk AS"
+            },
+            "image": {
+              "@id": "https://alfavarme.no/#/schema/logo/image/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/Alfavarme/"
+            ]
+          }
+        ],
+        "structured_facts": {},
+        "job_postings": [],
+        "news_articles": [],
+        "content_sha256": "d01fecf6e2c90fc31331b96d1721b5858ae6f99b86fde8c1b273a954c84359c9",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://alfavarme.no/",
+            "title": "Montering og rehabilitering av Peis, Ovn og Pipe i Viken og Oslo • Alfa Varme",
+            "main_text_excerpt": "Alfa Varme er en aktør med bred og solid fagkompetanse. Vi består av flere dyktige medarbeidere med ulik bakgrunn, og det er sammensetningen av dette som utgjør vår unike styrke. Vi driver med rehabilitering av skorstein/pipe, stålpiper, peisbygging, ovnsinstallasjoner, gasspeiser m.m. I tillegg har vi egen peisbutikk med kjente merker og egne agenturer.",
+            "content_sha256": "d01fecf6e2c90fc31331b96d1721b5858ae6f99b86fde8c1b273a954c84359c9"
+          },
+          {
+            "url": "https://alfavarme.no/om-oss/",
+            "title": "Om oss • Alfa Varme",
+            "main_text_excerpt": "Velkommen \n til oss!\n\t\t\t\t\nAlfa Varme og Pipeteknikk AS ble etablert i 2006 og er i dag en veletablert håndverksbedrift med solid fagkompetanse. Vi har hovedkontor og lager i Modum, samt et ekstra lager på Lørenskog. Med denne strukturen dekker vi store deler av Østlandet, med særlig fokus på Oslo og områdene nordover mot Geilo.\nSelskapet har vært i sterk utvikling. Fra å være en ren håndverksbedrift med hovedvekt på pipe- og ildstedsmontering, tilbyr vi i dag et bredere tjenestespekter. Vi har egen butikk i Modum, samt en omfattende nettbutikk – www.ildstedbutikken.no – hvor vi fører anerkjente merkevarer.\nPreben Steensen er daglig leder og eier av Alfa Varme. Hans erfaring omfatter salg, logistikk og lagerarbeid, noe som gjør ham til en sentral figur i bedriftens drift. Han tar seg av kundeservice, lagerstyring, logistikk, butikksystemer og økonomiske oppgaver. Preben er også praktisk anlagt og bidrar ved monteringer og rehabiliteringer av piper.\nPreben Steensen\nDaglig Leder -Alfa Varme og Pipeteknikk AS\nLær mer om oss\nHvem er vi, og hvilke tjenester kan vi tilby? Alfa Varme og Pipeteknikk AS innehar spesialkompetanse innenfor en rekke felt i vår bransje. Vi monterer alt av vedovner, tilbyr installasjon av elementpeiser, eller designer og bygger større peisløsninger. Videre er vi spesialister på rehabilitering av piper og skorsteiner. Vi leverer og installerer også gasspeiser.",
+            "content_sha256": "3b23efb4b0ba82df890079f865135a8666ca87e8fc8736327fc62bda294e1328"
+          },
+          {
+            "url": "https://alfavarme.no/kontakt-oss/",
+            "title": "Kontakt oss • Alfa Varme",
+            "main_text_excerpt": "Vi brenner for deg!\nVi har vårt hovedkontor i Modum kommune, men betjener store deler av østlandet med våre tjenester. Vi har flere montør-team, og et eget team for Oslo og omegn. Alfa varme jobber i dag tett med profesjonelle aktører og utbyggere, men vi er også store i privatmarkedet. Hos oss er ingen oppdrag for store eller for små, ta kontakt med oss for en hyggelig prat og et uforpliktende tilbud.\nShowroom / Butikk\nApalveien 1, 3360 Geithus\nAlfa Varme har utviklet en av Norges største nettbutikker innenfor vår bransje, og her kan du se alle produktene vi fører til konkurransedyktige priser. På ildstedbutikken.no finner du alt du trenger av informasjon om produkter og informative artikler med tips og veiledning.",
+            "content_sha256": "19a2b1ceb0ea565789abc0bab464236d8e55d3f031e4cd1804d4816095cb5ced"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [
+          {
+            "url": "https://alfavarme.no/nyheter",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://alfavarme.no/karriere",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://alfavarme.no/aktuelt",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          }
+        ],
+        "identity_assessment": {
+          "status": "exact",
+          "score": 1.0,
+          "publishable": true,
+          "legal_name_tokens": [
+            "alfa",
+            "varme",
+            "pipeteknikk"
+          ],
+          "matched_tokens": [
+            "alfa",
+            "pipeteknikk",
+            "varme"
+          ],
+          "reasons": [
+            "exact organisation number appears in homepage identity evidence"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/Alfavarme"
+          }
+        ],
+        "social_link_assessments": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/Alfavarme",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [
+              "alfa",
+              "varme"
+            ],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          }
+        ],
+        "excluded_news_articles": [],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "d01fecf6e2c90fc31331b96d1721b5858ae6f99b86fde8c1b273a954c84359c9",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "990497370",
+          "source_url": "https://alfavarme.no/",
+          "retrieved_at": "2026-11-01T06:21:30.440512Z",
+          "content_sha256": "d01fecf6e2c90fc31331b96d1721b5858ae6f99b86fde8c1b273a954c84359c9",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 1.0,
+              "organisation_number": "990497370"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:21:30.440512Z",
+          "id": "company-profile-990497370",
+          "platform": "company_site",
+          "signal_type": "company_profile",
+          "metrics": {
+            "registered_domain": "alfavarme.no"
+          },
+          "evidence_span": "Montering og rehabilitering av Peis, Ovn og Pipe i Viken og Oslo • Alfa Varme"
+        },
+        {
+          "organisation_number": "990497370",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "990497370",
+              "source_row_key": "990497370"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-990497370",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "ALFA VARME- OG PIPETEKNIKK AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "ALFA VARME- OG PIPETEKNIKK AS"
+        },
+        {
+          "organisation_number": "990497370",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "990497370",
+              "source_row_key": "990497370"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-workforce-990497370",
+          "signal_type": "workforce_snapshot",
+          "metrics": {
+            "employees_registered": 7,
+            "as_of": "2025-11-12"
+          },
+          "evidence_span": "ALFA VARME- OG PIPETEKNIKK AS: 7 registered employees"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 3,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg",
+          "company_site"
+        ],
+        "platform_counts": {
+          "brreg": 2,
+          "company_site": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 22,
+    "bytes": 536872,
+    "latencies_ms": [
+      205,
+      206,
+      206,
+      206,
+      205,
+      210,
+      2695,
+      2785,
+      2352,
+      2042,
+      2123,
+      2021,
+      1550,
+      1742
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Bygg- og anlegg. Håndverk, konsulenttjenester",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "articles_date",
+      "value": "2023-06-26",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "business_address",
+      "value": "Apalveien 1, 3360 GEITHUS, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "email",
+      "value": "post@alfavarme.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "employees_nav_date",
+      "value": "2025-11-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "employees_registered",
+      "value": "7",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "employees_registered_date",
+      "value": "2025-11-12",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2006-11-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "founding_date",
+      "value": "2006-10-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "industry",
+      "value": "Oppføring av bygninger",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "industry_code",
+      "value": "41.000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "legal_name",
+      "value": "ALFA VARME- OG PIPETEKNIKK AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "municipality",
+      "value": "MODUM",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "municipality_number",
+      "value": "3316",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "phone",
+      "value": "32 78 44 00",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "postal_code",
+      "value": "3360",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "registered_at",
+      "value": "2006-11-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "100000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2006-11-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "share_count",
+      "value": "1000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Rehabilitering og nyoppføring av skorsteiner og ildsteder. Kjøp og salg av ildsteder og tilbehør til ildsteder. Salg av konsulenttjenester innen varme- og sikkerhet.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2006-09-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2006-09-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    },
+    {
+      "field": "website_registered",
+      "value": "www.alfavarme.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "990497370"
+    }
+  ],
+  "summary": {
+    "headline": "ALFA VARME- OG PIPETEKNIKK AS",
+    "narrative": "ALFA VARME- OG PIPETEKNIKK AS is a AS company, operating in oppføring av bygninger, registered in Modum. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 29960082.0 NOK, operating result 1749861.0 NOK, annual result 1020350.0 NOK. Registered leadership includes Preben Gibhardt Steensen (Daglig leder) and 6 other registered role(s). 1 registered subunit(s)/workplace(s). Company-owned sources: verified official website https://alfavarme.no/. Workforce reported in the None annual report: None (None).",
+    "statements": [
+      {
+        "text": "ALFA VARME- OG PIPETEKNIKK AS is a AS company, operating in oppføring av bygninger, registered in Modum.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 29960082.0 NOK, operating result 1749861.0 NOK, annual result 1020350.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/990497370",
+        "retrieved_at": "2026-11-01T06:20:52.311735Z"
+      },
+      {
+        "text": "Registered leadership includes Preben Gibhardt Steensen (Daglig leder) and 6 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/990497370/roller",
+        "retrieved_at": "2026-11-01T06:21:06.527158Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=990497370&size=1000",
+        "retrieved_at": "2026-11-01T06:21:06.943263Z"
+      },
+      {
+        "text": "Company-owned sources: verified official website https://alfavarme.no/.",
+        "evidence_field": "website",
+        "source_url": "https://alfavarme.no/",
+        "retrieved_at": "2026-11-01T06:21:30.440512Z"
+      },
+      {
+        "text": "Workforce reported in the None annual report: None (None).",
+        "evidence_field": "external_footprint",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      }
+    ],
+    "unknowns": [],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

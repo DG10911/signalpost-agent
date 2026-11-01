@@ -69,17 +69,23 @@ def full_legal_name_in(name: Any, text: Any) -> bool:
     return (" " + plain_name + " ") in _plain(text)
 
 
-def shared_site_owners(url: Any, organisation_number: Any) -> list[str]:
-    """Other registry entities using the same homepage/e-mail domain, when the
-    URL is a bare domain (a company-specific path is not a shared site)."""
+def shared_site_owners(url: Any, organisation_number: Any, name: Any = None) -> list[str]:
+    """Other registry entities using the same homepage/e-mail domain. A path is
+    company-specific only when it carries the entity's name (facebook.com/acme);
+    a generic path on a manager's domain (norian.no/eiendomsforvaltning) is
+    still that manager's site."""
     if not DOMAIN_OWNERS:
         return []
     try:
         parsed = urllib.parse.urlparse(str(url or "") if "://" in str(url or "") else "http://" + str(url or ""))
     except ValueError:
         return []
-    if parsed.path.strip("/") or parsed.query:
-        return []
+    path = urllib.parse.unquote(parsed.path or "").strip("/")
+    if path or parsed.query:
+        core = _tokens(name) if name else []
+        path_compact = "".join(_tokens(path))
+        if not core or all(token in path_compact for token in core):
+            return []
     owners = DOMAIN_OWNERS.get(host_key(url), [])
     org = re.sub(r"\D", "", str(organisation_number or ""))
     return [o for o in owners if o != org]
@@ -89,7 +95,7 @@ def is_shared_manager_site(name: Any, organisation_number: Any, url: Any) -> boo
     """A bare registry homepage domain listed by >= SHARED_SITE_MIN_OWNERS
     entities whose label is not this entity's own compact name (obos.no for a
     housing co-op; a chain's domain for one franchise store)."""
-    others = shared_site_owners(url, organisation_number)
+    others = shared_site_owners(url, organisation_number, name)
     if len(others) + 1 < SHARED_SITE_MIN_OWNERS:
         return False
     label = host_key(url).split(".")[0].replace("-", "")
@@ -150,7 +156,7 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
     org_digits = re.sub(r"\D", "", str(profile.get("organisation_number") or ""))
     homepage_org_numbers = org_numbers_in(homepage_candidate_text)
     discovery = value.get("discovery_identity") or {}
-    shared_with = shared_site_owners(value.get("requested_url") or website.get("source_url"), org_digits) \
+    shared_with = shared_site_owners(value.get("requested_url") or website.get("source_url"), org_digits, profile.get("name")) \
         if not value.get("discovered") else []
     compact_core = "".join(core)
     host_label = hostname.removeprefix("www.").split(".")[0].replace("-", "") if hostname else ""

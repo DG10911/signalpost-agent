@@ -300,7 +300,12 @@ def main() -> None:
                     else:
                         website_record = discovered
                 discovery_requests += connector_requests
-            profile["evidence"]["website"] = apply_website_identity_gate(profile, website_record)["website"]
+            gated = apply_website_identity_gate(profile, website_record)["website"]
+            # Second pass (organiser feedback, 1 Nov): keep only dated news about
+            # the company and careers pages that show a current opening; the
+            # rest are kept as exclusions with a reason.
+            from norway_company_agent.content_quality import apply_content_quality
+            profile["evidence"]["website"] = apply_content_quality(profile, gated)
         workforce_requests = 0
         wf_diag = {"status": "disabled"}
         if args.external_workforce:

@@ -1,0 +1,1267 @@
+{
+  "organisation_number": "985505829",
+  "name": "CHG-MERIDIAN SKIEN AS",
+  "legal_form": "AS",
+  "employees": 25,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "SKIEN",
+  "municipality_number": "4003",
+  "industry_code": "46.500",
+  "industry_label": "Engroshandel med informasjons- og kommunikasjonsteknologiutstyr",
+  "website": "www.chg-meridian.com",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "985505829",
+        "navn": "CHG-MERIDIAN SKIEN AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "46.500",
+        "naeringskode1.beskrivelse": "Engroshandel med informasjons- og kommunikasjonsteknologiutstyr",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "true",
+        "antallAnsatte": "25",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "2026-07-15",
+        "registreringsdatoantallansatteNAVAaregisteret": "2026-07-10",
+        "hjemmeside": "www.chg-meridian.com",
+        "epostadresse": "",
+        "telefon": "",
+        "mobil": "991 17 319",
+        "postadresse.adresse": "Postboks 133 Sentrum",
+        "postadresse.poststed": "OSLO",
+        "postadresse.postnummer": "0102",
+        "postadresse.kommune": "OSLO",
+        "postadresse.kommunenummer": "0301",
+        "postadresse.land": "Norge",
+        "postadresse.landkode": "NO",
+        "forretningsadresse.adresse": "Rødmyrlia 20",
+        "forretningsadresse.poststed": "SKIEN",
+        "forretningsadresse.postnummer": "3735",
+        "forretningsadresse.kommune": "SKIEN",
+        "forretningsadresse.kommunenummer": "4003",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2003-03-29",
+        "stiftelsesdato": "2003-02-24",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2003-03-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2003-05-12",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2003-03-29",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2016-01-15",
+        "vedtektsfestetFormaal": "Salg av brukt og nytt datautstyr i bedriftsmarkedet i inn- og utlandet.",
+        "aktivitet": "Kjøp og salg av brukt og nytt datautstyr og programvare til bedriftsmarkedet i Norge, Norden, Eurpa og Asia.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "true",
+        "kapital.belop": "655000.00",
+        "kapital.antallAksjer": "655",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2012-12-01",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "985505829",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:50.818707Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "985505829",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/985505829",
+      "retrieved_at": "2026-11-01T06:21:53.111250Z",
+      "value": {
+        "organisation_number": "985505829",
+        "name": "CHG-MERIDIAN SKIEN AS",
+        "legal_form": "AS",
+        "employees": 25,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "www.chg-meridian.com",
+        "industry": {
+          "beskrivelse": "Engroshandel med informasjons- og kommunikasjonsteknologiutstyr",
+          "kode": "46.500"
+        },
+        "business_address": {
+          "adresse": [
+            "Rødmyrlia 20"
+          ],
+          "kommune": "SKIEN",
+          "kommunenummer": "4003",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "3735",
+          "poststed": "SKIEN"
+        },
+        "postal_address": {
+          "adresse": [
+            "Postboks 133 Sentrum"
+          ],
+          "kommune": "OSLO",
+          "kommunenummer": "0301",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "0102",
+          "poststed": "OSLO"
+        },
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "efb21ec55205329cbb50c54c4a8dfd94d2f2bdf4444891cf1e7f2273f423448c",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/985505829",
+      "retrieved_at": "2026-11-01T06:21:53.313346Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 4941139,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 44040049.0,
+            "operating_result": 2389866.0,
+            "profit_before_tax": 2520849.0,
+            "annual_result": 1960620.0,
+            "assets": 19814763.0,
+            "equity": 10522522.0,
+            "debt": 9292242.0
+          },
+          {
+            "record_id": 5811871,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 75281049.0,
+            "operating_result": 6180156.0,
+            "profit_before_tax": 6182134.0,
+            "annual_result": 4813837.0,
+            "assets": 28560855.0,
+            "equity": 15336357.0,
+            "debt": 13224498.0
+          },
+          {
+            "record_id": 7088986,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 58665272.0,
+            "operating_result": 4337683.0,
+            "profit_before_tax": 4622913.0,
+            "annual_result": 3605849.0,
+            "assets": 26980974.0,
+            "equity": 18942206.0,
+            "debt": 8038769.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "fb382d162bcaf54481044cc9b1f16e683b39470716bbfaaefdff40b4fc1761de",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/aar",
+      "retrieved_at": "2026-11-01T06:22:05.208012Z",
+      "value": {
+        "years": [
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2013"
+          },
+          {
+            "year": "2012",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2012"
+          },
+          {
+            "year": "2011",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/985505829/2011"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "b7bcd20d8a4607bc9ca49fbdfebf5e51cb31e39858edb985dc98a82e8d2b7cd1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/985505829/roller",
+      "retrieved_at": "2026-11-01T06:22:05.410647Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Gisle Skoglund Andersen",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2015-09-02",
+            "inactive": false
+          },
+          {
+            "name": "Csaba Kallai",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2024-05-25",
+            "inactive": false
+          },
+          {
+            "name": "Lena Gausen",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2024-05-25",
+            "inactive": false
+          },
+          {
+            "name": "Riessen Dominic Hill",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2024-05-25",
+            "inactive": false
+          },
+          {
+            "name": [
+              "BDO AS"
+            ],
+            "organisation_number": "993606650",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2022-11-23",
+            "inactive": false
+          },
+          {
+            "name": [
+              "COLUMBI REGNSKAP AS"
+            ],
+            "organisation_number": "950070137",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2021-01-13",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "85c98e09620c535459d8ab7f0af3aafcef3ecfba7a562f373f213ebd0c9755c5",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "available",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/985505829",
+      "retrieved_at": "2026-11-01T06:22:05.614576Z",
+      "value": {
+        "children": [
+          {
+            "dato": "2007-06-26",
+            "grunnlag": "95,0%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "CHG-MERIDIAN SKIEN AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "985505829",
+            "parentNavn": "FIJO INVEST AS",
+            "parentOrganisasjonsnummer": "889190132"
+          }
+        ],
+        "navn": "FIJO INVEST AS",
+        "organisasjonsform": {
+          "beskrivelse": "Aksjeselskap",
+          "kode": "AS"
+        },
+        "organisasjonsnummer": "889190132"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "039982348903bcee351a9946d9dffd21f742f2a0b23c3ea6dc767342cff6b6bf",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=985505829&size=1000",
+      "retrieved_at": "2026-11-01T06:22:05.813441Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "985561494",
+            "name": "CHG-MERIDIAN SKIEN AS",
+            "address": {
+              "adresse": [
+                "Rødmyrlia 20"
+              ],
+              "kommune": "SKIEN",
+              "kommunenummer": "4003",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "3735",
+              "poststed": "SKIEN"
+            },
+            "industry": {
+              "beskrivelse": "Engroshandel med informasjons- og kommunikasjonsteknologiutstyr",
+              "kode": "46.500"
+            },
+            "employees": 25
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "01b10d162fc2e2bc06b698dfb6d07e675fc92128d8af5188cfaccb5bbeda9254",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://www.chg-meridian.com/",
+      "retrieved_at": "2026-11-01T06:22:21.332661Z",
+      "value": {
+        "requested_url": "https://www.chg-meridian.com/",
+        "final_url": "https://www.chg-meridian.com/",
+        "registered_domain": "chg-meridian.com",
+        "title": "Asset Lifecycle Experts | CHG-MERIDIAN",
+        "description": "Discover CHG-MERIDIAN’s innovative asset management solutions designed to enhance efficiency and sustainability.",
+        "main_text_excerpt": "Easy Usage. Global Scalability. Empowering Sustainability.\nWelcome to the age of use!\nAs a leading global technology2use company, we develop, finance, and manage customized technology usage models for companies across all sectors for IT, industrial, and healthcare equipment.\nOur innovative technology2use approach enables our customers to always be at the forefront of their industry without ever needing to buy cutting-edge technology.\nAlways one step ahead\nTo large corporations, SMEs, public authorities, and hospitals around the world, we offer integrated end-to-end asset management – including financing and many related services – from a single source, based on the principles of the circular economy.\nWith more than 45 years of experience and a deep understanding of various industries, we have integrated our expertise into use cases that show how we help solve our customers' missions and how a customized usage model can enhance business outcomes. Explore our technology overview pages to discover how we can help you achieve your full potential.",
+        "identity_text_excerpt": "Pioneering technology lifecycle solutions since 1979. Global expertise in financing and managing your technology investments. Overview Use Cases IT Use Cases Industry Use Cases Healthcare Insights Company Contact Locations Contact Us Careers Tools TeamViewer Social Media LinkedIn YouTube Instagram © 2026 CHG-MERIDIAN AG Imprint Data Protection Notice Cookie Policy Sales Conditions Remarketing Whistleblowing | Use Cases IT | Use Cases Industry | Use Cases Healthcare | Insights | Company | Locations | Contact Us | Careers | TeamViewer | LinkedIn | YouTube",
+        "social_links": [],
+        "structured_organisations": [],
+        "structured_facts": {},
+        "job_postings": [],
+        "news_articles": [],
+        "content_sha256": "9fdbb7c4a57ab49267f302a7db7f09efe22785c4bc4fccf4877f48cdc0291637",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://www.chg-meridian.com/",
+            "title": "Asset Lifecycle Experts | CHG-MERIDIAN",
+            "main_text_excerpt": "Easy Usage. Global Scalability. Empowering Sustainability.\nWelcome to the age of use!\nAs a leading global technology2use company, we develop, finance, and manage customized technology usage models for companies across all sectors for IT, industrial, and healthcare equipment.\nOur innovative technology2use approach enables our customers to always be at the forefront of their industry without ever needing to buy cutting-edge technology.\nAlways one step ahead\nTo large corporations, SMEs, public authorities, and hospitals around the world, we offer integrated end-to-end asset management – including financing and many related services – from a single source, based on the principles of the circular economy.\nWith more than 45 years of experience and a deep understanding of various industries, we have integrated our expertise into use cases that show how we help solve our customers' missions and how a customized usage model can enhance business outcomes. Explore our technology overview pages to discover how we can help you achieve your full potential.",
+            "content_sha256": "9fdbb7c4a57ab49267f302a7db7f09efe22785c4bc4fccf4877f48cdc0291637"
+          },
+          {
+            "url": "https://www.chg-meridian.com/global-en/news-media/media-center/",
+            "title": "News and Media",
+            "main_text_excerpt": "September 2, 2026 – Weingarten\n        \n    News & Media\nNews\n            July 23, 2026 - Weingarten\n        \n    \n            April 29, 2026 – Weingarten\n        \n    Put yourself in the picture!\nOn this page we have put together a selection of documents and photos for the media. Please feel free to use this material. If you need something specific for your report that you don't see here, please contact our media officer.",
+            "content_sha256": "93c2601887780c9b87ae4df17c5ee1f15e14674cb2ef6ae433106476f0339c89"
+          },
+          {
+            "url": "https://www.chg-meridian.com/global-en/career/global-contacts/",
+            "title": "Global Career Contacts, CHG-MERIDIAN",
+            "main_text_excerpt": "People & Culture Contacts\nYour global contacts\nDon't hesitate to contact us if you have any questions about global career matters.\nYour local contacts\nDo you have country-specific career questions? Find your local contact person here!\nOur People & Culture mission is to work with the CHG-MERIDIAN organization to attract, hire, develop, engage and retain the best people, effectively and efficiently, so that CHG-MERIDIAN can deliver the highest value to our customers and achieve our strategy and priorities, locally and globally.\nOn this journey, your well-being is our priority. Enjoy opportunities to further develop your skills, along with meaningful benefits that recognize your commitment.\nBecome part of our community and experience teamwork across borders. We are driven by diversity and flexibility to enable open, fluid and unbounded collaboration.",
+            "content_sha256": "1389eaa4c603c2b57ce324f37b82698560f24b09c1d2464bf4739f0f8c7a6e5f"
+          },
+          {
+            "url": "https://www.chg-meridian.com/global-en/press/chg-meridian-awarded-ecovadis-platinum-status-once-again/",
+            "title": "CHG-MERIDIAN Awarded EcoVadis Platinum Status Once Again",
+            "main_text_excerpt": "Following its first Platinum recognition last year, CHG-MERIDIAN has once again demonstrated its strong sustainability performance at an international level. The latest result highlights the company’s continuous progress in sustainability management and further strengthens its position as a reliable partner for customers, investors and other stakeholders.\nThe significant increase in points is primarily driven by CHG-MERIDIAN’s new sustainability targets. These targets demonstrate the maturity of the company’s sustainability governance and make progress measurable. EcoVadis assesses not only individual measures, but in particular the systematic integration of sustainability into governance structures, policies, processes and target-setting systems. The strategy is based on four key pillars: environment, labour and human rights, business ethics, and sustainable procurement.",
+            "content_sha256": "15f37e85014b13c0b5af494a8cecba7000aa404f1bbb9aff8a0a56df8a45bca8"
+          },
+          {
+            "url": "https://www.chg-meridian.com/global-en/career/start-career/",
+            "title": "Careers at CHG-MERIDIAN",
+            "main_text_excerpt": "Your career at CHG-MERIDIAN\nWelcome to CHG-MERIDIAN\nAs a leading technology2use® company, we develop, finance, and manage customized technology usage models for companies across all sectors for IT, industrial, and healthcare equipment.\nWith around 1,700 colleagues in more than 30 countries worldwide, we manage the entire technology lifecycle – independently, with customized solutions, and over 45 years of experience. Success in the ever-changing world of technology depends on the ability to come up with new ideas. This is what enables us to offer our customers the best possible customized business concepts for their technology.\nAt CHG-MERIDIAN, you can expect international collaboration and individual development opportunities. Join our international team. It's about you!\nWe are a Great Place to Work!\nCHG-MERIDIAN has been internationally certified as a Great Place To Work® as well as Top Company 2026 on kununu!  \nOur employees are the foundation of our success. Their passion is what strengthens and drives our company for the long term. That's why we are committed to create a work environment that is challenging, rewarding, and fulfilling for everyone.\nWe also would like to thank all applicants who have evaluated us.",
+            "content_sha256": "18ccc7090bdedda0ce8471c0ba74bac0759bbe39c31721fa9afe13405dbe7904"
+          },
+          {
+            "url": "https://www.chg-meridian.com/global-en/press/chg-meridian-exceeds-3-billion-in-lo/",
+            "title": "Strong demand for circular tech: CHG-MERIDIAN exceeds €3 billion in lease originations",
+            "main_text_excerpt": "The CHG-MERIDIAN Group, the international technology manager and tech financing expert, is continuing on its growth trajectory. The Group enjoyed another increase in lease originations and in its profit from ordinary activities (operating profit before taxes) in 2025. CHG-MERIDIAN also benefited from surging demand for circular tech solutions that cover the entire technology lifecycle from procurement and operation to remarketing.\nIn 2025, lease originations at CHG-MERIDIAN reached €3.12 billion, a year-on-year rise of 10 percent (2024: €2.83 billion). Profit from ordinary activities rose to €246 million, an increase of 40 percent year on year. At the same time, the Group expanded its managed technology portfolio in the asset classes IT, industrial technology, and healthcare technology to an aggregate value of €12.59 billion measured at acquisition cost – a year-on-year rise of around 7 percent (2024: €11.73 billion).\nThanks to its recently completed NEXT 2025 strategy, CHG-MERIDIAN met its own target of €3 billion in lease originations and systematically consolidated its position as an international provider of usage-based technology models.\n“Our results show that our growth strategy is the ideal response to a fast-moving market environment,” says Mathias Wagner, CEO of CHG-MERIDIAN. “Flexible usage models have become a key lever in this context by offering financial flexibility, opening up additional room for maneuver, and allowing companies to strategically manage their technology investments.”\nRising IT investment drives demand for circular tech\nThe CHG-MERIDIAN Group’s results reflect major trends in the market. After several weaker years, IT investments are picking up again. Gartner expects worldwide IT spending to grow 13.5 percent to US$ 6.31 trillion in 2026. In addition to catch-up effects, automation, data-driven applications, and artificial intelligence are the main drivers of demand for modern IT infrastructure and they are fundamentally changing how companies use technology and create value. At the same time, geopolitical tensions, volatile hardware prices, and supply chain risks are making it more difficult to implement transformation strategies and plan long-term investments. Against this backdrop, the importance of circular tech is growing, not just as an efficiency lever but also as a strategic instrument for hedging risk.\nExtensive offering and lifecycle expertise\nCHG-MERIDIAN supports around 13,000 customers globally along the entire lifecycle of their technology assets. The portfolio includes flexible usage models such as leasing, rental, and device-as-a-service, i.e. the financing of assets and the provision of wide-ranging services during the use phase: from procurement, rollout, and asset management through to returns and data erasure. At the end of the first usage cycle, CHG-MERIDIAN focuses on refurbishment and remarketing. In 2025, the Group gave around 1.1 million assets worldwide a second lifecycle. That equates to a remarketing ratio of 96 percent of all IT lease returns and is an important means of conserving resources and reducing carbon emissions.\nAlongside its core business, the Group offers devicenow as a global device-as-a-service solution that provides standardized, scalable end-device services across international borders. Berlin-based subsidiary circulee specializes in selling refurbished IT hardware for B2B use. It allows companies to expand their technology landscapes in a cost-effective manner while helping to conserve resources. Together, the Group’s two brands address the growing demand for affordable and sustainable IT usage models.\nInternational expansion provides platform for further growth\nCHG-MERIDIAN has also further expanded its international presence, with new locations in Malaysia and Thailand added in 2025. A wholly owned subsidiary in Romania was founded in March 2026.\nThis gives the Group a platform for rolling out circular tech as a strategic asset in both established and rapidly growing markets. Through its new medium-term SHAPE 2030 program, CHG-MERIDIAN will support its global customer base with flexible, scalable solutions and continue to look ahead to the future. The aim is to reconcile profitable and sustainable growth with fast-moving markets and the growing demands for resilience, while helping customers to safely navigate a market and technological environment characterized by constant change.",
+            "content_sha256": "bf610b8d1df30260feb535928821a131aed75e6539a6dd019c00eaf60f31a176"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [],
+        "identity_assessment": {
+          "status": "related_or_uncertain",
+          "score": 0.6,
+          "publishable": false,
+          "legal_name_tokens": [
+            "chg",
+            "meridian",
+            "skien"
+          ],
+          "matched_tokens": [
+            "chg",
+            "meridian"
+          ],
+          "reasons": [
+            "registry homepage domain is shared by 3 registered entities; treated as a manager/group site, cross-entity facts quarantined"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/chgmeridian"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/chg-meridian"
+          },
+          {
+            "platform": "youtube",
+            "url": "https://youtube.com/channel/UCVP4AS33NLmaV5l4KkIfD-w"
+          }
+        ],
+        "social_link_assessments": [
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/chgmeridian",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [
+              "chg",
+              "meridian"
+            ],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/chg-meridian",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [
+              "chg",
+              "meridian"
+            ],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "youtube",
+            "url": "https://youtube.com/channel/UCVP4AS33NLmaV5l4KkIfD-w",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          }
+        ],
+        "quarantined_structured_facts": {},
+        "quarantined_job_postings": [
+          {
+            "title": "February 2025 Non-Sales Kick-Off's Eight locations, one shared mission! Insights into our Non-sales Kick-Off's across the globe. Read on",
+            "url": "https://www.chg-meridian.com/global-en/career/people-culture-news/non-sales-kick-off-2025/",
+            "date_posted": null,
+            "source": "careers_page_link"
+          },
+          {
+            "title": "GERMAN",
+            "url": "https://www.chg-meridian.com/global-de/career/global-contacts/",
+            "date_posted": null,
+            "source": "careers_page_link"
+          },
+          {
+            "title": "GERMAN",
+            "url": "https://www.chg-meridian.com/global-de/career/start-career/",
+            "date_posted": null,
+            "source": "careers_page_link"
+          },
+          {
+            "title": "Global Contacts",
+            "url": "https://www.chg-meridian.com/global-en/career/global-contacts/",
+            "date_posted": null,
+            "source": "careers_page_link"
+          },
+          {
+            "title": "Job Market",
+            "url": "https://www.chg-meridian.com/global-en/career/jobs/",
+            "date_posted": null,
+            "source": "careers_page_link"
+          },
+          {
+            "title": "Start your Career At CHG-MERIDIAN",
+            "url": "https://www.chg-meridian.com/global-en/career/start-career/",
+            "date_posted": null,
+            "source": "careers_page_link"
+          },
+          {
+            "title": "Starting Points",
+            "url": "https://www.chg-meridian.com/global-en/career/starting-points/",
+            "date_posted": null,
+            "source": "careers_page_link"
+          },
+          {
+            "title": "Working At CHG-MERIDIAN",
+            "url": "https://www.chg-meridian.com/global-en/career/WorkingAtCHGMERIDIAN/",
+            "date_posted": null,
+            "source": "careers_page_link"
+          }
+        ],
+        "quarantined_news_articles": [],
+        "quarantined_careers_pages": [
+          {
+            "url": "https://www.chg-meridian.com/global-en/career/global-contacts/",
+            "title": "Global Career Contacts, CHG-MERIDIAN",
+            "vacancy": true,
+            "vacancy_evidence": "5 single job ad link(s) on the page"
+          },
+          {
+            "url": "https://www.chg-meridian.com/global-en/career/start-career/",
+            "title": "Careers at CHG-MERIDIAN",
+            "vacancy": true,
+            "vacancy_evidence": "6 single job ad link(s) on the page"
+          }
+        ],
+        "excluded_news_articles": [],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "9fdbb7c4a57ab49267f302a7db7f09efe22785c4bc4fccf4877f48cdc0291637",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "985505829",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "985505829",
+              "source_row_key": "985505829"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-985505829",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "CHG-MERIDIAN SKIEN AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "CHG-MERIDIAN SKIEN AS"
+        },
+        {
+          "organisation_number": "985505829",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "985505829",
+              "source_row_key": "985505829"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-workforce-985505829",
+          "signal_type": "workforce_snapshot",
+          "metrics": {
+            "employees_registered": 25,
+            "as_of": "2026-07-15"
+          },
+          "evidence_span": "CHG-MERIDIAN SKIEN AS: 25 registered employees"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 2,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg"
+        ],
+        "platform_counts": {
+          "brreg": 2
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 18,
+    "bytes": 1051603,
+    "latencies_ms": [
+      198,
+      201,
+      202,
+      201,
+      203,
+      198,
+      828,
+      2277,
+      915,
+      1966,
+      1273,
+      2207
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Kjøp og salg av brukt og nytt datautstyr og programvare til bedriftsmarkedet i Norge, Norden, Eurpa og Asia.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "articles_date",
+      "value": "2016-01-15",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "business_address",
+      "value": "Rødmyrlia 20, 3735 SKIEN, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "employees_nav_date",
+      "value": "2026-07-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "employees_registered",
+      "value": "25",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "employees_registered_date",
+      "value": "2026-07-15",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2003-03-29",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "founding_date",
+      "value": "2003-02-24",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "in_group",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "industry",
+      "value": "Engroshandel med informasjons- og kommunikasjonsteknologiutstyr",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "industry_code",
+      "value": "46.500",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "legal_name",
+      "value": "CHG-MERIDIAN SKIEN AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "municipality",
+      "value": "SKIEN",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "municipality_number",
+      "value": "4003",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "phone",
+      "value": "991 17 319",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "postal_address",
+      "value": "Postboks 133 Sentrum, 0102 OSLO, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "postal_code",
+      "value": "3735",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "registered_at",
+      "value": "2003-03-29",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "655000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2012-12-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "share_count",
+      "value": "655",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Salg av brukt og nytt datautstyr i bedriftsmarkedet i inn- og utlandet.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2003-03-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2003-03-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    },
+    {
+      "field": "website_registered",
+      "value": "www.chg-meridian.com",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "985505829"
+    }
+  ],
+  "summary": {
+    "headline": "CHG-MERIDIAN SKIEN AS",
+    "narrative": "CHG-MERIDIAN SKIEN AS is a AS company, operating in engroshandel med informasjons- og kommunikasjonsteknologiutstyr, registered in Skien. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 44040049.0 NOK, operating result 2389866.0 NOK, annual result 1960620.0 NOK. Registered leadership includes Gisle Skoglund Andersen (Daglig leder) and 5 other registered role(s). 1 registered subunit(s)/workplace(s). Workforce reported in the None annual report: None (None).",
+    "statements": [
+      {
+        "text": "CHG-MERIDIAN SKIEN AS is a AS company, operating in engroshandel med informasjons- og kommunikasjonsteknologiutstyr, registered in Skien.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 44040049.0 NOK, operating result 2389866.0 NOK, annual result 1960620.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/985505829",
+        "retrieved_at": "2026-11-01T06:21:53.313346Z"
+      },
+      {
+        "text": "Registered leadership includes Gisle Skoglund Andersen (Daglig leder) and 5 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/985505829/roller",
+        "retrieved_at": "2026-11-01T06:22:05.410647Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=985505829&size=1000",
+        "retrieved_at": "2026-11-01T06:22:05.813441Z"
+      },
+      {
+        "text": "Workforce reported in the None annual report: None (None).",
+        "evidence_field": "external_footprint",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      }
+    ],
+    "unknowns": [
+      "verified company website"
+    ],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

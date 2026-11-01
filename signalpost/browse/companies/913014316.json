@@ -1,0 +1,1087 @@
+{
+  "organisation_number": "913014316",
+  "name": "NORDIC EASY AS",
+  "legal_form": "AS",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "OSLO",
+  "municipality_number": "0301",
+  "industry_code": "62.100",
+  "industry_label": "Dataprogrammeringstjenester",
+  "website": "www.nordiceasy.no",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "913014316",
+        "navn": "NORDIC EASY AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "62.100",
+        "naeringskode1.beskrivelse": "Dataprogrammeringstjenester",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "false",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "",
+        "registreringsdatoantallansatteNAVAaregisteret": "",
+        "hjemmeside": "www.nordiceasy.no",
+        "epostadresse": "info@nordiceasy.com",
+        "telefon": "24 07 70 05",
+        "mobil": "",
+        "postadresse.adresse": "Postboks 117",
+        "postadresse.poststed": "VINTERBRO",
+        "postadresse.postnummer": "1429",
+        "postadresse.kommune": "ÅS",
+        "postadresse.kommunenummer": "3218",
+        "postadresse.land": "Norge",
+        "postadresse.landkode": "NO",
+        "forretningsadresse.adresse": "c/o Image day AS\nTrondheimsveien 2",
+        "forretningsadresse.poststed": "OSLO",
+        "forretningsadresse.postnummer": "0560",
+        "forretningsadresse.kommune": "OSLO",
+        "forretningsadresse.kommunenummer": "0301",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2014-03-19",
+        "stiftelsesdato": "2013-09-25",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2014-09-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2014-10-02",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2014-03-19",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2016-06-29",
+        "vedtektsfestetFormaal": "Audiovisuell kommunikasjon: TV-presentasjon, digitale møterom mm, samt annet som kan befattes med dette, og investering i tilsvarende virksomhet.",
+        "aktivitet": "Utvikling og drift av Software. Databehandling, datalagring og tilknyttede tjenester.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "false",
+        "kapital.belop": "30000.00",
+        "kapital.antallAksjer": "200",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2014-03-19",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "913014316",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:38.079476Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "913014316",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/913014316",
+      "retrieved_at": "2026-11-01T06:21:26.054202Z",
+      "value": {
+        "organisation_number": "913014316",
+        "name": "NORDIC EASY AS",
+        "legal_form": "AS",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "www.nordiceasy.no",
+        "industry": {
+          "beskrivelse": "Dataprogrammeringstjenester",
+          "kode": "62.100"
+        },
+        "business_address": {
+          "adresse": [
+            "c/o Image day AS",
+            "Trondheimsveien 2"
+          ],
+          "kommune": "OSLO",
+          "kommunenummer": "0301",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "0560",
+          "poststed": "OSLO"
+        },
+        "postal_address": {
+          "adresse": [
+            "Postboks 117"
+          ],
+          "kommune": "ÅS",
+          "kommunenummer": "3218",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "1429",
+          "poststed": "VINTERBRO"
+        },
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "e501ff38dacc1f379ed92ab264a711dc29b519836756c006274d16d8d0d45228",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/913014316",
+      "retrieved_at": "2026-11-01T06:21:26.259548Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5146557,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 942500.0,
+            "operating_result": 520148.0,
+            "profit_before_tax": -1460093.0,
+            "annual_result": -1549012.0,
+            "assets": 6872628.0,
+            "equity": 206592.0,
+            "debt": 6666036.0
+          },
+          {
+            "record_id": 6097497,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 1200000.0,
+            "operating_result": 677420.0,
+            "profit_before_tax": 37932.0,
+            "annual_result": -81832.0,
+            "assets": 6781729.0,
+            "equity": 117015.0,
+            "debt": 6664714.0
+          },
+          {
+            "record_id": 6745540,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 1230000.0,
+            "operating_result": 590182.0,
+            "profit_before_tax": 871221.0,
+            "annual_result": 767993.0,
+            "assets": 10232252.0,
+            "equity": 885008.0,
+            "debt": 9347244.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "c617ec9b7a32f565a46f3e29d9a2fe41ff6a6200f45b346e8327395cda391fad",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/aar",
+      "retrieved_at": "2026-11-01T06:21:33.644414Z",
+      "value": {
+        "years": [
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/913014316/2014"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "3385dcf20e991d21844be8dd7b5e4c94d5df5140399f910f5d1bf9d81127a7a1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/913014316/roller",
+      "retrieved_at": "2026-11-01T06:21:33.840655Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Robert Hald",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2016-01-27",
+            "inactive": false
+          },
+          {
+            "name": "Knut Christian Spange",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2019-11-08",
+            "inactive": false
+          },
+          {
+            "name": "Robert Hald",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2019-11-08",
+            "inactive": false
+          },
+          {
+            "name": [
+              "BDO AS"
+            ],
+            "organisation_number": "993606650",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2014-03-19",
+            "inactive": false
+          },
+          {
+            "name": [
+              "QUALITY REGNSKAP AS"
+            ],
+            "organisation_number": "915368670",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2021-11-08",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "27d3feae61516142f7d751cca3b6529d5a517f9784a7196a53a86bbec3881eb3",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/913014316",
+      "retrieved_at": "2026-11-01T06:21:34.040402Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=913014316&size=1000",
+      "retrieved_at": "2026-11-01T06:21:34.239706Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "913505875",
+            "name": "NORDIC EASY AS",
+            "address": {
+              "adresse": [
+                "c/o Image day AS",
+                "Trondheimsveien 2"
+              ],
+              "kommune": "OSLO",
+              "kommunenummer": "0301",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "0560",
+              "poststed": "OSLO"
+            },
+            "industry": {
+              "beskrivelse": "Dataprogrammeringstjenester",
+              "kode": "62.100"
+            },
+            "employees": null
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "1d9c68fab56a9b9ab8d99fc7ebd8120101c45bb677ef7743aa085d4f21ea2d61",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "http://www.nordiceasy.no/",
+      "retrieved_at": "2026-11-01T06:21:38.384768Z",
+      "value": {
+        "requested_url": "http://www.nordiceasy.no/",
+        "final_url": "http://www.nordiceasy.no/",
+        "registered_domain": "nordiceasy.no",
+        "title": "Nordic Easy - AI PropTech Markedsføring | Eiendomsteknologi Norge & Sverige",
+        "description": "",
+        "main_text_excerpt": "",
+        "identity_text_excerpt": "",
+        "social_links": [],
+        "structured_organisations": [],
+        "structured_facts": {},
+        "job_postings": [],
+        "news_articles": [],
+        "content_sha256": "0e1ea5114b4b1f93c2692811fe48970f4f3e8315dae60a22d77f888d37769524",
+        "extraction_state": "js_fallback_candidate",
+        "pages": [
+          {
+            "url": "http://www.nordiceasy.no/",
+            "title": "Nordic Easy - AI PropTech Markedsføring | Eiendomsteknologi Norge & Sverige",
+            "main_text_excerpt": "",
+            "content_sha256": "0e1ea5114b4b1f93c2692811fe48970f4f3e8315dae60a22d77f888d37769524"
+          },
+          {
+            "url": "http://www.nordiceasy.no/nyheter",
+            "title": "Nordic Easy - AI PropTech Markedsføring | Eiendomsteknologi Norge & Sverige",
+            "main_text_excerpt": "",
+            "content_sha256": "0e1ea5114b4b1f93c2692811fe48970f4f3e8315dae60a22d77f888d37769524"
+          },
+          {
+            "url": "http://www.nordiceasy.no/karriere",
+            "title": "Nordic Easy - AI PropTech Markedsføring | Eiendomsteknologi Norge & Sverige",
+            "main_text_excerpt": "",
+            "content_sha256": "0e1ea5114b4b1f93c2692811fe48970f4f3e8315dae60a22d77f888d37769524"
+          },
+          {
+            "url": "http://www.nordiceasy.no/aktuelt",
+            "title": "Nordic Easy - AI PropTech Markedsføring | Eiendomsteknologi Norge & Sverige",
+            "main_text_excerpt": "",
+            "content_sha256": "0e1ea5114b4b1f93c2692811fe48970f4f3e8315dae60a22d77f888d37769524"
+          },
+          {
+            "url": "http://www.nordiceasy.no/careers",
+            "title": "Nordic Easy - AI PropTech Markedsføring | Eiendomsteknologi Norge & Sverige",
+            "main_text_excerpt": "",
+            "content_sha256": "0e1ea5114b4b1f93c2692811fe48970f4f3e8315dae60a22d77f888d37769524"
+          },
+          {
+            "url": "http://www.nordiceasy.no/news",
+            "title": "Nordic Easy - AI PropTech Markedsføring | Eiendomsteknologi Norge & Sverige",
+            "main_text_excerpt": "",
+            "content_sha256": "0e1ea5114b4b1f93c2692811fe48970f4f3e8315dae60a22d77f888d37769524"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [],
+        "identity_assessment": {
+          "status": "exact",
+          "score": 0.95,
+          "publishable": true,
+          "legal_name_tokens": [
+            "nordic",
+            "easy"
+          ],
+          "matched_tokens": [
+            "easy",
+            "nordic"
+          ],
+          "reasons": [
+            "all normalized legal-name tokens appear together in homepage identity evidence"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [],
+        "social_link_assessments": [],
+        "excluded_news_articles": [],
+        "excluded_careers_pages": [
+          {
+            "url": "http://www.nordiceasy.no/careers",
+            "title": "Nordic Easy - AI PropTech Markedsføring | Eiendomsteknologi Norge & Sverige",
+            "vacancy": false,
+            "vacancy_evidence": "careers page lists no current opening",
+            "excluded_reason": "careers page lists no current opening"
+          },
+          {
+            "url": "http://www.nordiceasy.no/karriere",
+            "title": "Nordic Easy - AI PropTech Markedsføring | Eiendomsteknologi Norge & Sverige",
+            "vacancy": false,
+            "vacancy_evidence": "careers page lists no current opening",
+            "excluded_reason": "careers page lists no current opening"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "0e1ea5114b4b1f93c2692811fe48970f4f3e8315dae60a22d77f888d37769524",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "913014316",
+          "source_url": "http://www.nordiceasy.no/",
+          "retrieved_at": "2026-11-01T06:21:38.384768Z",
+          "content_sha256": "0e1ea5114b4b1f93c2692811fe48970f4f3e8315dae60a22d77f888d37769524",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "913014316"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:21:38.384768Z",
+          "id": "company-profile-913014316",
+          "platform": "company_site",
+          "signal_type": "company_profile",
+          "metrics": {
+            "registered_domain": "nordiceasy.no"
+          },
+          "evidence_span": "Nordic Easy - AI PropTech Markedsføring | Eiendomsteknologi Norge & Sverige"
+        },
+        {
+          "organisation_number": "913014316",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "913014316",
+              "source_row_key": "913014316"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-913014316",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "NORDIC EASY AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "NORDIC EASY AS"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 2,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg",
+          "company_site"
+        ],
+        "platform_counts": {
+          "brreg": 1,
+          "company_site": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 20,
+    "bytes": 36726,
+    "latencies_ms": [
+      199,
+      205,
+      195,
+      196,
+      199,
+      199,
+      407,
+      374,
+      393,
+      391,
+      378,
+      493,
+      416
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Utvikling og drift av Software. Databehandling, datalagring og tilknyttede tjenester.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "articles_date",
+      "value": "2016-06-29",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "business_address",
+      "value": "c/o Image day AS\nTrondheimsveien 2, 0560 OSLO, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "email",
+      "value": "info@nordiceasy.com",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2014-03-19",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "founding_date",
+      "value": "2013-09-25",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "industry",
+      "value": "Dataprogrammeringstjenester",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "industry_code",
+      "value": "62.100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "legal_name",
+      "value": "NORDIC EASY AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "municipality",
+      "value": "OSLO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "municipality_number",
+      "value": "0301",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "phone",
+      "value": "24 07 70 05",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "postal_address",
+      "value": "Postboks 117, 1429 VINTERBRO, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "postal_code",
+      "value": "0560",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "registered_at",
+      "value": "2014-03-19",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "30000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2014-03-19",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "share_count",
+      "value": "200",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Audiovisuell kommunikasjon: TV-presentasjon, digitale møterom mm, samt annet som kan befattes med dette, og investering i tilsvarende virksomhet.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2014-09-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2014-09-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    },
+    {
+      "field": "website_registered",
+      "value": "www.nordiceasy.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "913014316"
+    }
+  ],
+  "summary": {
+    "headline": "NORDIC EASY AS",
+    "narrative": "NORDIC EASY AS is a AS company, operating in dataprogrammeringstjenester, registered in Oslo. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 942500.0 NOK, operating result 520148.0 NOK, annual result -1549012.0 NOK. Registered leadership includes Robert Hald (Daglig leder) and 4 other registered role(s). 1 registered subunit(s)/workplace(s). Company-owned sources: verified official website http://www.nordiceasy.no/.",
+    "statements": [
+      {
+        "text": "NORDIC EASY AS is a AS company, operating in dataprogrammeringstjenester, registered in Oslo.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 942500.0 NOK, operating result 520148.0 NOK, annual result -1549012.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/913014316",
+        "retrieved_at": "2026-11-01T06:21:26.259548Z"
+      },
+      {
+        "text": "Registered leadership includes Robert Hald (Daglig leder) and 4 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/913014316/roller",
+        "retrieved_at": "2026-11-01T06:21:33.840655Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=913014316&size=1000",
+        "retrieved_at": "2026-11-01T06:21:34.239706Z"
+      },
+      {
+        "text": "Company-owned sources: verified official website http://www.nordiceasy.no/.",
+        "evidence_field": "website",
+        "source_url": "http://www.nordiceasy.no/",
+        "retrieved_at": "2026-11-01T06:21:38.384768Z"
+      }
+    ],
+    "unknowns": [],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

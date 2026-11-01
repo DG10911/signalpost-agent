@@ -1,0 +1,1405 @@
+{
+  "organisation_number": "959569541",
+  "name": "ACT GRUPPEN AS",
+  "legal_form": "AS",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "NANNESTAD",
+  "municipality_number": "3238",
+  "industry_code": "46.900",
+  "industry_label": "Uspesifisert engroshandel",
+  "website": "www.act-gruppen.com",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "959569541",
+        "navn": "ACT GRUPPEN AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "46.900",
+        "naeringskode1.beskrivelse": "Uspesifisert engroshandel",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "false",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "",
+        "registreringsdatoantallansatteNAVAaregisteret": "",
+        "hjemmeside": "www.act-gruppen.com",
+        "epostadresse": "info.no@act-gruppen.com",
+        "telefon": "63 94 61 00",
+        "mobil": "",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "Majorvegen 18",
+        "forretningsadresse.poststed": "NANNESTAD",
+        "forretningsadresse.postnummer": "2030",
+        "forretningsadresse.kommune": "NANNESTAD",
+        "forretningsadresse.kommunenummer": "3238",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "1995-02-20",
+        "stiftelsesdato": "1990-12-11",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2004-01-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2006-06-14",
+        "frivilligMvaRegistrertBeskrivelser": "Utleier av bygg eller anlegg",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "2021-02-27",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "1991-01-15",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2017-03-23",
+        "vedtektsfestetFormaal": "Kjøp og salg av handelsvarer, import, investering i andre selskaper, investering og utleie av fast eiendom, salg av konsulenttjenester og prosjektarbeid, utleie av maskiner samt hva hermed står i forbindelse.  ",
+        "aktivitet": "Kjøp og salg av handelsvarer samt import av tekstiler, sko, fritidstøy, gaveartikler, reklameartikler, klokker, anheng m.m. Investeringer i andre selskaper vil være kjøp av aksjer i norske og utenlandske selskap, børsnoterte og ikke børsnoterte. Investeringer og utleie av fast eiendom vil være deltagelse i eiendomsselskaper samt videreformidling av husleieavtaler. Salg av konsulenttjenester og prosjektledelse forbundet med administrasjon og aktiviteter primært i de selskap hvor Trymonor har eierinteresser. Utleie av maskiner vil være utleie av merkemaskiner, roboter for automatisering samt pakke og produksjonsmaskiner til industribedrifter.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "2025-09-16",
+        "fravalgRevisjonBeslutningsDato": "2025-09-05",
+        "erIKonsern": "false",
+        "kapital.belop": "1000000.00",
+        "kapital.antallAksjer": "100",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2017-06-06",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "959569541",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:48.672160Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "959569541",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/959569541",
+      "retrieved_at": "2026-11-01T06:19:16.528318Z",
+      "value": {
+        "organisation_number": "959569541",
+        "name": "ACT GRUPPEN AS",
+        "legal_form": "AS",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "www.act-gruppen.com",
+        "industry": {
+          "beskrivelse": "Uspesifisert engroshandel",
+          "kode": "46.900"
+        },
+        "business_address": {
+          "adresse": [
+            "Majorvegen 18"
+          ],
+          "kommune": "NANNESTAD",
+          "kommunenummer": "3238",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "2030",
+          "poststed": "NANNESTAD"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "68833e631ce676ed76af3083f84bc166de61f9a395a1307e5a6d90ef0c38ef30",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/959569541",
+      "retrieved_at": "2026-11-01T06:19:16.726708Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5117527,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 3611650.0,
+            "operating_result": -264510.0,
+            "profit_before_tax": 52837.0,
+            "annual_result": 205105.0,
+            "assets": 20953431.0,
+            "equity": 10335443.0,
+            "debt": 10617988.0
+          },
+          {
+            "record_id": 5833533,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": null,
+            "operating_result": -353066.0,
+            "profit_before_tax": 14591705.0,
+            "annual_result": 13181907.0,
+            "assets": 8789782.0,
+            "equity": 8789282.0,
+            "debt": 500.0
+          },
+          {
+            "record_id": 6617783,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 0.0,
+            "operating_result": -74605.0,
+            "profit_before_tax": -73040.0,
+            "annual_result": 123104.0,
+            "assets": 10322185.0,
+            "equity": 10322185.0,
+            "debt": 0.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "c31f1679c4405fbc5179ffbab64af49c1691a2b1cdff16ee4dba648ab55d5d1c",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/aar",
+      "retrieved_at": "2026-11-01T06:19:19.030947Z",
+      "value": {
+        "years": [
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2013"
+          },
+          {
+            "year": "2012",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2012"
+          },
+          {
+            "year": "2011",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/959569541/2011"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "b7bcd20d8a4607bc9ca49fbdfebf5e51cb31e39858edb985dc98a82e8d2b7cd1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/959569541/roller",
+      "retrieved_at": "2026-11-01T06:19:19.230086Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Morten Mathiesen",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2024-11-26",
+            "inactive": false
+          },
+          {
+            "name": "Morten Mathiesen",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2024-11-26",
+            "inactive": false
+          },
+          {
+            "name": [
+              "ØKONOMIAVDELINGEN ØST AS"
+            ],
+            "organisation_number": "915635474",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2025-02-05",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "a391a9512f364da97309e0f383520769d9c1bced25924e24f2ffa36238ace460",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/959569541",
+      "retrieved_at": "2026-11-01T06:19:19.426737Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=959569541&size=1000",
+      "retrieved_at": "2026-11-01T06:19:19.627113Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "987970588",
+            "name": "ACT GRUPPEN AS",
+            "address": {
+              "adresse": [
+                "Majorvegen 18"
+              ],
+              "kommune": "NANNESTAD",
+              "kommunenummer": "3238",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "2030",
+              "poststed": "NANNESTAD"
+            },
+            "industry": {
+              "beskrivelse": "Uspesifisert engroshandel",
+              "kode": "46.900"
+            },
+            "employees": null
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "6b5f5d425520ca84c9de6f5b00c158233d205b64662120976f0a5dbf66ddfd26",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://act-gruppen.com/",
+      "retrieved_at": "2026-11-01T06:19:28.981935Z",
+      "value": {
+        "requested_url": "https://www.act-gruppen.com/",
+        "final_url": "https://act-gruppen.com/",
+        "registered_domain": "act-gruppen.com",
+        "title": "ACT Logimark | Merking, sporing og kontroll satt i system!",
+        "description": "ACT Logimark AS leverer hardware, software, etiketter, RFID-tags og teknisk kompetanse for merking og sporing av produkter, emballasje og lastbærere.",
+        "main_text_excerpt": "Vi hjelper norsk industri med riktig merking på riktig produkt, og kontroll & sporbarhet på alle pakningsnivåer, fra produkt til pall.\nInnovative løsninger kombinert med 35 års erfaring.\nNoen av våre fornøyde kunder:\nIndustriell merking\nVekter og detektorer\nEtikettprintere, tilbehør og reservedeler\nACT Servicesenter\nLÆR MER OM CE-MERKING PÅ TRELAST\nFå tilsendt praktisk informasjon om hva CE-merket er, \nog hvilke produkter innen trelast som skal merkes.\nGS1 DIGITAL LINK\nFå tilsendt praktisk informasjon om hva GS1 Digital Link er, og hvilke fordeler det kan gi både produsenten og butikk/distribusjonsleddet. Det har ikke minst en svært positiv effekt på reduksjon av svinn.",
+        "identity_text_excerpt": "ACT Logimark AS +47 63 94 61 00 kontakt@act-gruppen.com Hovedkontor Majorvegen 18, 2030 Nannestad Avdeling Trondheim Ingvald Ystgaardsvei 15, 7047 Trondheim Våre produkter Industriell merking Vekter og detektorer Etikettprintere og tilbehør Strekkode- og RFID-utstyr LogiFlow® Software Snarveier Prosjekter ACT Maskinutleie ACT Servicesenter Salgs-, leverings- og returbetingelser Personvernerklæring Om ACT Logimark AS Kontakt oss Følg oss Facebook Instagram Youtube Linkedin PÅMELD NYHETSBREV © 2026 ACT Gruppen | Bygget av Codehouse | ACT Logimark AS +47 63 94 61 00 kontakt@act-gruppen.com Hovedkontor Majorvegen 18, 2030 Nannestad Avdeling Trondheim Ingvald Ystgaardsvei 15, 7047 Trondheim Våre produkter Industriell merking Vekter og detektorer Etikettprintere og tilbehør Strekkode- og RFID-utstyr LogiFlow® Software Snarveier Prosjekter ACT Maskinutleie ACT Servicesenter Salgs-, leverings- og returbetingelser Personvernerklæring Om ACT Logimark AS Kontakt oss Følg oss Facebook Instagram Youtube Linkedin PÅMELD NYHETSBREV | ACT Logimark AS +47 63 94 61 00 kontakt@act-gruppen.com Hovedkontor Majorvegen 18, 2030 Nannestad Avdeling Trondheim Ingvald Ystgaardsvei 15, 7047 Trondheim | Våre produkter Industriell merking Vekter og detektorer Etikettprintere og tilbehør Strekkode- og RFID-utstyr LogiFlow® Software | Snarveier Prosjekter ACT Maskinutleie ACT Servicesenter Salgs-, leverings- og returbetingelser Personvernerklæring Om ACT Logimark AS Kontakt oss | Følg oss Facebook Instagram Youtube Linkedin PÅMELD NYHETSBREV | © 2026 ACT Gruppen | Bygget av Codehouse | Delsum kr 0 Levering, avgifter og rabatter beregnes i kassen. Vis handlekurv Gå til kassen | Delsum kr 0 Levering, avgifter og rabatter beregnes i kassen. | Vis handlekurv Gå til kassen | ACT Logimark AS | Om ACT Logimark AS",
+        "social_links": [],
+        "structured_organisations": [
+          {
+            "@type": "Organization",
+            "@id": "https://act-gruppen.com/#organization",
+            "name": "ACT Logimark AS",
+            "url": "https://act-gruppen.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "inLanguage": "nb-NO",
+              "@id": "https://act-gruppen.com/#/schema/logo/image/",
+              "url": "https://act-gruppen.com/wp-content/uploads/2020/12/act-logo.svg",
+              "contentUrl": "https://act-gruppen.com/wp-content/uploads/2020/12/act-logo.svg",
+              "caption": "ACT Logimark AS"
+            },
+            "image": {
+              "@id": "https://act-gruppen.com/#/schema/logo/image/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/ACTlogimark",
+              "https://www.linkedin.com/company/act-logimark/"
+            ]
+          }
+        ],
+        "structured_facts": {},
+        "job_postings": [],
+        "news_articles": [
+          {
+            "headline": "Problemfri merking med Linx 9900-serien",
+            "date_published": "2026-05-07T14:30:58+00:00",
+            "url": "https://act-gruppen.com/nyheter/problemfri-merking-med-linx-9900-serien/"
+          },
+          {
+            "headline": "To møteplasser for norsk industri ga nye muligheter og verdifulle møter",
+            "date_published": "2026-06-18T06:01:08+00:00",
+            "url": "https://act-gruppen.com/messer-og-seminarer/to-moteplasser-for-norsk-industri-pa-en-uke-ga-nye-muligheter-og-verdifulle-moter/"
+          },
+          {
+            "headline": "Linx 9940 Spectrum – mer merking, mindre rengjøring!",
+            "date_published": "2026-06-24T06:00:00+00:00",
+            "url": "https://act-gruppen.com/nyheter/linx-8940-spectrum-mer-merking-mindre-rengjoring/"
+          },
+          {
+            "headline": "​Linx Iris® – kamerabasert printkontroll for industrielle blekkstråleskrivere",
+            "date_published": "2026-07-27T13:21:32+00:00",
+            "url": "https://act-gruppen.com/nyheter/linx-iris-kamerabasert-printkontroll-for-industrielle-blekkstraleskrivere/"
+          },
+          {
+            "headline": "Vi inviterer til pølselunsj fredag 25. september",
+            "date_published": "2026-08-27T09:11:45+00:00",
+            "url": "https://act-gruppen.com/messer-og-seminarer/vi-inviterer-til-polselunsj-fredag-25-september/"
+          },
+          {
+            "headline": "Møt oss på UMAMI Arena 2027",
+            "date_published": "2026-10-05T07:00:55+00:00",
+            "url": "https://act-gruppen.com/messer-og-seminarer/mot-act-logimark-pa-umami-arena-2027/"
+          },
+          {
+            "headline": "​ACT Logimark holder innlegg om merking på fagdag om styrkesortering av trelast",
+            "date_published": "2026-10-12T12:50:18+00:00",
+            "url": "https://act-gruppen.com/messer-og-seminarer/act-logimark-holder-innlegg-om-merking-pa-fagdag-om-styrkesortering-av-trelast/"
+          }
+        ],
+        "content_sha256": "2cd4a6fbb6f29cafcd004e6ccdb290c43cefd28697e48db0dd9d9c4d2d5c89fc",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://act-gruppen.com/",
+            "title": "ACT Logimark | Merking, sporing og kontroll satt i system!",
+            "main_text_excerpt": "Vi hjelper norsk industri med riktig merking på riktig produkt, og kontroll & sporbarhet på alle pakningsnivåer, fra produkt til pall.\nInnovative løsninger kombinert med 35 års erfaring.\nNoen av våre fornøyde kunder:\nIndustriell merking\nVekter og detektorer\nEtikettprintere, tilbehør og reservedeler\nACT Servicesenter\nLÆR MER OM CE-MERKING PÅ TRELAST\nFå tilsendt praktisk informasjon om hva CE-merket er, \nog hvilke produkter innen trelast som skal merkes.\nGS1 DIGITAL LINK\nFå tilsendt praktisk informasjon om hva GS1 Digital Link er, og hvilke fordeler det kan gi både produsenten og butikk/distribusjonsleddet. Det har ikke minst en svært positiv effekt på reduksjon av svinn.",
+            "content_sha256": "2cd4a6fbb6f29cafcd004e6ccdb290c43cefd28697e48db0dd9d9c4d2d5c89fc"
+          },
+          {
+            "url": "https://act-gruppen.com/leveranser-og-nyheter/",
+            "title": "Leveranser og nyheter | ACT Logimark AS",
+            "main_text_excerpt": "Linx 9940 Spectrum – mer merking, mindre rengjøring!",
+            "content_sha256": "fd8c12ffaca8ca5be20ca6aa54349ac9633b8dc4b59f85ff75a3c2337cf5973d"
+          },
+          {
+            "url": "https://act-gruppen.com/nyheter/nye-emballasjekrav-kan-gjore-testing-av-merketeknologi-nodvendig/",
+            "title": "Nye emballasjekrav kan gjøre testing av merketeknologi nødvendig",
+            "main_text_excerpt": "Den nye europeiske emballasjeforordningen, Packaging and Packaging Waste Regulation, også kalt PPWR, er et sett emballasjekrav som skal redusere emballasjeavfall, fremme ombruk og gjenvinning og harmonisere kravene til emballasje i EU. Forordningen gjelder for all emballasje, uavhengig av materiale, og omfatter hele emballasjens livsløp. PPWR begynte å gjelde i EU 12. august 2026. Forordningen er vurdert som EØS-relevant, og norske virksomheter bør derfor følge utviklingen tett, særlig dersom de eksporterer emballerte produkter til EU-markedet.\nPPWR får med sine emballasjekrav betydning for norske produsenter som setter sine varer på det europeiske markedet. Når emballasjen og emballasjematerialet endres, kan også ytelsen til dagens merketeknologi endres. I ACT Experience Center kan produsenter teste ulike merketeknologier på den nye emballasjen før de investerer i nytt utstyr.\nEmballasjematerialet påvirker merkingen\nMange produsenter må nå endre emballasjematerialet, coating/barrierelag eller andel resirkulert materiale i emballasjen for å tilfredsstille PPWR. Da er det viktig å huske at den nye overflaten kan ha andre egenskaper enn den gamle, og man bør kontrollere at eksisterende blekk, TTO-fargebånd, etikett/lim eller lasermerking fortsatt gir ønsket resultat.\nEn merketeknologi som fungerer godt på dagens emballasjemateriale, fungerer ikke nødvendigvis like godt på et nytt materiale. Endringer i overflaten kan få betydning for både kontrast, lesbarhet og varighet på merkingen, samt egenskapene til emballasjen (særlig ved lasermerking).\nDette gjelder blant annet produsenter innen:\n- Næringsmidler og drikkevarer\n- Kjøtt og kjøttforedling\n- Emballasjeproduksjon\n- Plast- og folieproduksjon\n- Meieri og snacks\n- Trelast og andre produserende industrier\nDet er derfor smart å teste merkingen tidlig i prosessen, slik at det blir enklere å avklare om eksisterende utstyr kan brukes videre, eller om produksjonslinjen trenger en annen teknologi eller innstillinger.\nTest flere teknologier på den nye emballasjen\nI ACT Experience Center kan produsenter teste merking på egne produkter og materialer. Målet er å finne en løsning som gir riktig resultat i den aktuelle produksjonen, før beslutningen om nytt utstyr tas.\nAktuelle teknologier kan være:\n- Blekkstråleskrivere, også kalt CIJ eller småkarakter blekkstråleskrivere, for dato, batch, produksjonsinformasjon og annen variabel tekst. Les mer.\n- Merkelasere, som CO₂-laser eller UV-laser for permanent merking og høy kontrast på egnede materialer. Les mer.\n- Print & apply, når etiketten skal printes og påføres automatisk i produksjonslinjen. Les mer.\n- Folieskriver TTO, for merking direkte på pakkefilm og annen produktemballasje. Les mer.\nHvilken teknologi som passer best, avhenger blant annet av emballasjematerialet, ønsket merkeinnhold, linjehastighet, krav til varighet og produksjonsmiljø. Testing på den faktiske emballasjen gir et langt bedre beslutningsgrunnlag enn å velge teknologi basert på materialbeskrivelser alene.\nRiktig merking er en del av en større emballasjeendring\nPPWRs emballasjekrav berører blant annet emballasjeavfall, materialbruk, gjenvinnbarhet, ombruk, merking og informasjon i verdikjeden. EU-kommisjonen opplyser blant annet at et harmonisert system for emballasjemerking skal innføres fra 2028, mens flere krav knyttet til emballasjedesign, gjenvinnbarhet og resirkulert plast kommer trinnvis fra 2030.\nFor produsenter kan dette bety at både emballasjedesign, produksjonsprosesser og informasjonsdeling må vurderes samlet. Merketeknologien må kunne levere tydelig og stabil informasjon, samtidig som den passer inn i produksjonslinjen og legger til rette for sporbarhet.\nACT Logimark anbefaler bruk av GS1-standarder for strekkoder (og andre informasjonsbærere). Standardisert merking gjør det enklere å identifisere produkter, registrere produksjonsdata og dele informasjon mellom produksjon, lager, transport og kunder.\nEt praktisk beslutningsgrunnlag før investering\nVed endring av emballasjen i henhold til nye emballasjekrav, kan en teknologitest gi svar på viktige spørsmål:\n- Blir merkingen tydelig nok på den nye overflaten?\n- Kan strekkoder og 2D-koder leses stabilt av skannere?\n- Tåler merkingen fukt, kulde, varme, kjemikalier eller fysisk slitasje?\n- Er merkingen permanent, eller skal den kunne fjernes?\n- Kan løsningen integreres i eksisterende produksjonslinje?\n- Bør produktet merkes direkte eller med etikett?\n- Kan dagens utstyr brukes videre med justeringer eller nye forbruksartikler?\nSlik testing kan redusere risikoen for feilinvesteringer og avdekke eventuelle utfordringer før et nytt emballasjemateriale tas i bruk i full produksjon.\nKom til ACT Experience Center\nProdusenter som vurderer nye emballasjematerialer for å møte emballasjekrav, trenger ikke vente til produksjonen nesten er i gang før merketeknologien blir testet. Ta med produktet eller emballasjematerialet til ACT Experience Center, og test aktuelle løsninger sammen med våre fagfolk.\nACT L",
+            "content_sha256": "fab88d24474fe64298ab7430b6298b6ca2517dd86fc26672ecc5dc9307c8af52"
+          },
+          {
+            "url": "https://act-gruppen.com/kontakt/",
+            "title": "Kontakt oss | ACT Logimark AS",
+            "main_text_excerpt": "ACT Logimark AS\nSentralbord: +47 63 94 61 00\nkontakt@act-gruppen.com\nACT Servicesenter: +47 63 94 61 01\nsupport@act-gruppen.com\nHovedkontor og lager\nMajorvegen 18, 2030 Nannestad\nSe kart i Google maps\nAvdeling Trondheim\nIngvald Ystgaardsvei 15, 7047 Trondheim\nSe kart i Google maps\nSend oss en melding\nSalg og ordrehåndtering\nACT Servicesenter\nSystemavdeling\nAdministrasjon\nSørg for god sporbarhet\nInkluderer du en 2D-kode i produktmerkingen din er veien kort til GS1 Digital Link.",
+            "content_sha256": "1cb4b8732c4782df57dcfb24695d63c5e863365b60b1284b6026d9909c6b81b4"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [
+          {
+            "url": "https://act-gruppen.com/karriere",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://act-gruppen.com/careers",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          }
+        ],
+        "identity_assessment": {
+          "status": "exact",
+          "score": 0.95,
+          "publishable": true,
+          "legal_name_tokens": [
+            "act",
+            "gruppen"
+          ],
+          "matched_tokens": [
+            "act",
+            "gruppen"
+          ],
+          "reasons": [
+            "all normalized legal-name tokens appear together in homepage identity evidence"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/ACTlogimark"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/act_shop.no"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/act-logimark"
+          },
+          {
+            "platform": "youtube",
+            "url": "https://youtube.com/channel/UCM1QvvcpLf4fqXtwYtZK0kQ"
+          }
+        ],
+        "social_link_assessments": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/ACTlogimark",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [
+              "act"
+            ],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/act_shop.no",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [
+              "act"
+            ],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/act-logimark",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [
+              "act"
+            ],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "youtube",
+            "url": "https://youtube.com/channel/UCM1QvvcpLf4fqXtwYtZK0kQ",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          }
+        ],
+        "excluded_news_articles": [
+          {
+            "headline": "Behov for nye etiketteringsløsninger?",
+            "date_published": "2026-06-11T08:49:32+00:00",
+            "url": "https://act-gruppen.com/nyheter/behov-for-nye-etiketteringslosninger/",
+            "excluded_reason": "page is a guide or advice article, not news about the company"
+          },
+          {
+            "headline": "Merking i produksjon: slik reduserer du feilmerking og nedetid",
+            "date_published": "2026-09-02T14:05:50+00:00",
+            "url": "https://act-gruppen.com/act-servicetips/merking-i-produksjon-slik-reduserer-du-feilmerking-og-nedetid/",
+            "excluded_reason": "page is a guide or advice article, not news about the company"
+          },
+          {
+            "headline": "Nye emballasjekrav kan gjøre testing av merketeknologi nødvendig",
+            "date_published": "2026-09-08T09:25:48+00:00",
+            "url": null,
+            "excluded_reason": "no article address"
+          },
+          {
+            "headline": "01/10/2026",
+            "date_published": "2026-10-01T13:42:39+02:00",
+            "url": "https://act-gruppen.com/nyheter/nye-emballasjekrav-kan-gjore-testing-av-merketeknologi-nodvendig/",
+            "excluded_reason": "headline is link text (\"read more\") or a date, not an article title"
+          },
+          {
+            "headline": "05/10/2026",
+            "date_published": "2026-10-05T09:00:55+02:00",
+            "url": "https://act-gruppen.com/nyheter/nye-emballasjekrav-kan-gjore-testing-av-merketeknologi-nodvendig/",
+            "excluded_reason": "headline is link text (\"read more\") or a date, not an article title"
+          },
+          {
+            "headline": "12/10/2026",
+            "date_published": "2026-10-12T14:50:18+02:00",
+            "url": "https://act-gruppen.com/nyheter/nye-emballasjekrav-kan-gjore-testing-av-merketeknologi-nodvendig/",
+            "excluded_reason": "headline is link text (\"read more\") or a date, not an article title"
+          }
+        ],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "2cd4a6fbb6f29cafcd004e6ccdb290c43cefd28697e48db0dd9d9c4d2d5c89fc",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "959569541",
+          "source_url": "https://act-gruppen.com/",
+          "retrieved_at": "2026-11-01T06:19:28.981935Z",
+          "content_sha256": "2cd4a6fbb6f29cafcd004e6ccdb290c43cefd28697e48db0dd9d9c4d2d5c89fc",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "959569541"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:19:28.981935Z",
+          "id": "company-profile-959569541",
+          "platform": "company_site",
+          "signal_type": "company_profile",
+          "metrics": {
+            "registered_domain": "act-gruppen.com"
+          },
+          "evidence_span": "ACT Logimark | Merking, sporing og kontroll satt i system!"
+        },
+        {
+          "organisation_number": "959569541",
+          "source_url": "https://act-gruppen.com/nyheter/problemfri-merking-med-linx-9900-serien/",
+          "retrieved_at": "2026-11-01T06:19:28.981935Z",
+          "content_sha256": "2cd4a6fbb6f29cafcd004e6ccdb290c43cefd28697e48db0dd9d9c4d2d5c89fc",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "959569541"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-05-07T14:30:58+00:00",
+          "id": "news-959569541-0",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Problemfri merking med Linx 9900-serien",
+          "metrics": {
+            "headline": "Problemfri merking med Linx 9900-serien",
+            "date_published": "2026-05-07T14:30:58+00:00"
+          }
+        },
+        {
+          "organisation_number": "959569541",
+          "source_url": "https://act-gruppen.com/messer-og-seminarer/to-moteplasser-for-norsk-industri-pa-en-uke-ga-nye-muligheter-og-verdifulle-moter/",
+          "retrieved_at": "2026-11-01T06:19:28.981935Z",
+          "content_sha256": "2cd4a6fbb6f29cafcd004e6ccdb290c43cefd28697e48db0dd9d9c4d2d5c89fc",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "959569541"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-06-18T06:01:08+00:00",
+          "id": "news-959569541-1",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "To møteplasser for norsk industri ga nye muligheter og verdifulle møter",
+          "metrics": {
+            "headline": "To møteplasser for norsk industri ga nye muligheter og verdifulle møter",
+            "date_published": "2026-06-18T06:01:08+00:00"
+          }
+        },
+        {
+          "organisation_number": "959569541",
+          "source_url": "https://act-gruppen.com/nyheter/linx-8940-spectrum-mer-merking-mindre-rengjoring/",
+          "retrieved_at": "2026-11-01T06:19:28.981935Z",
+          "content_sha256": "2cd4a6fbb6f29cafcd004e6ccdb290c43cefd28697e48db0dd9d9c4d2d5c89fc",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "959569541"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-06-24T06:00:00+00:00",
+          "id": "news-959569541-2",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Linx 9940 Spectrum – mer merking, mindre rengjøring!",
+          "metrics": {
+            "headline": "Linx 9940 Spectrum – mer merking, mindre rengjøring!",
+            "date_published": "2026-06-24T06:00:00+00:00"
+          }
+        },
+        {
+          "organisation_number": "959569541",
+          "source_url": "https://act-gruppen.com/nyheter/linx-iris-kamerabasert-printkontroll-for-industrielle-blekkstraleskrivere/",
+          "retrieved_at": "2026-11-01T06:19:28.981935Z",
+          "content_sha256": "2cd4a6fbb6f29cafcd004e6ccdb290c43cefd28697e48db0dd9d9c4d2d5c89fc",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "959569541"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-07-27T13:21:32+00:00",
+          "id": "news-959569541-3",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "​Linx Iris® – kamerabasert printkontroll for industrielle blekkstråleskrivere",
+          "metrics": {
+            "headline": "​Linx Iris® – kamerabasert printkontroll for industrielle blekkstråleskrivere",
+            "date_published": "2026-07-27T13:21:32+00:00"
+          }
+        },
+        {
+          "organisation_number": "959569541",
+          "source_url": "https://act-gruppen.com/messer-og-seminarer/vi-inviterer-til-polselunsj-fredag-25-september/",
+          "retrieved_at": "2026-11-01T06:19:28.981935Z",
+          "content_sha256": "2cd4a6fbb6f29cafcd004e6ccdb290c43cefd28697e48db0dd9d9c4d2d5c89fc",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "959569541"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-08-27T09:11:45+00:00",
+          "id": "news-959569541-4",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Vi inviterer til pølselunsj fredag 25. september",
+          "metrics": {
+            "headline": "Vi inviterer til pølselunsj fredag 25. september",
+            "date_published": "2026-08-27T09:11:45+00:00"
+          }
+        },
+        {
+          "organisation_number": "959569541",
+          "source_url": "https://act-gruppen.com/messer-og-seminarer/mot-act-logimark-pa-umami-arena-2027/",
+          "retrieved_at": "2026-11-01T06:19:28.981935Z",
+          "content_sha256": "2cd4a6fbb6f29cafcd004e6ccdb290c43cefd28697e48db0dd9d9c4d2d5c89fc",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "959569541"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-10-05T07:00:55+00:00",
+          "id": "news-959569541-5",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Møt oss på UMAMI Arena 2027",
+          "metrics": {
+            "headline": "Møt oss på UMAMI Arena 2027",
+            "date_published": "2026-10-05T07:00:55+00:00"
+          }
+        },
+        {
+          "organisation_number": "959569541",
+          "source_url": "https://act-gruppen.com/messer-og-seminarer/act-logimark-holder-innlegg-om-merking-pa-fagdag-om-styrkesortering-av-trelast/",
+          "retrieved_at": "2026-11-01T06:19:28.981935Z",
+          "content_sha256": "2cd4a6fbb6f29cafcd004e6ccdb290c43cefd28697e48db0dd9d9c4d2d5c89fc",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "959569541"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-10-12T12:50:18+00:00",
+          "id": "news-959569541-6",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "​ACT Logimark holder innlegg om merking på fagdag om styrkesortering av trelast",
+          "metrics": {
+            "headline": "​ACT Logimark holder innlegg om merking på fagdag om styrkesortering av trelast",
+            "date_published": "2026-10-12T12:50:18+00:00"
+          }
+        },
+        {
+          "organisation_number": "959569541",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "959569541",
+              "source_row_key": "959569541"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-959569541",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "ACT GRUPPEN AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "ACT GRUPPEN AS"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 9,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg",
+          "company_site"
+        ],
+        "platform_counts": {
+          "brreg": 1,
+          "company_site": 8
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 7,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 20,
+    "bytes": 1259510,
+    "latencies_ms": [
+      887,
+      198,
+      199,
+      198,
+      196,
+      200,
+      2176,
+      1014,
+      1057,
+      1394,
+      303,
+      504,
+      560
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Kjøp og salg av handelsvarer samt import av tekstiler, sko, fritidstøy, gaveartikler, reklameartikler, klokker, anheng m.m. Investeringer i andre selskaper vil være kjøp av aksjer i norske og utenlandske selskap, børsnoterte og ikke børsnoterte. Investeringer og utleie av fast eiendom vil være deltagelse i eiendomsselskaper samt videreformidling av husleieavtaler. Salg av konsulenttjenester og prosjektledelse forbundet med administrasjon og aktiviteter primært i de selskap hvor Trymonor har eierinteresser. Utleie av maskiner vil være utleie av merkemaskiner, roboter for automatisering samt pakke og produksjonsmaskiner til industribedrifter.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "articles_date",
+      "value": "2017-03-23",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "audit_opt_out_date",
+      "value": "2025-09-16",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "business_address",
+      "value": "Majorvegen 18, 2030 NANNESTAD, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "email",
+      "value": "info.no@act-gruppen.com",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "1991-01-15",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "founding_date",
+      "value": "1990-12-11",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "industry",
+      "value": "Uspesifisert engroshandel",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "industry_code",
+      "value": "46.900",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "legal_name",
+      "value": "ACT GRUPPEN AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "municipality",
+      "value": "NANNESTAD",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "municipality_number",
+      "value": "3238",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "phone",
+      "value": "63 94 61 00",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "postal_code",
+      "value": "2030",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "registered_at",
+      "value": "1995-02-20",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "1000000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2017-06-06",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "share_count",
+      "value": "100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Kjøp og salg av handelsvarer, import, investering i andre selskaper, investering og utleie av fast eiendom, salg av konsulenttjenester og prosjektarbeid, utleie av maskiner samt hva hermed står i forbindelse.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2004-01-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2004-01-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "voluntary_vat_date",
+      "value": "2021-02-27",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    },
+    {
+      "field": "website_registered",
+      "value": "www.act-gruppen.com",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "959569541"
+    }
+  ],
+  "summary": {
+    "headline": "ACT GRUPPEN AS",
+    "narrative": "ACT GRUPPEN AS is a AS company, operating in uspesifisert engroshandel, registered in Nannestad. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 3611650.0 NOK, operating result -264510.0 NOK, annual result 205105.0 NOK. Registered leadership includes Morten Mathiesen (Daglig leder) and 2 other registered role(s). 1 registered subunit(s)/workplace(s). Company-owned sources: verified official website https://act-gruppen.com/, 7 dated news item(s).",
+    "statements": [
+      {
+        "text": "ACT GRUPPEN AS is a AS company, operating in uspesifisert engroshandel, registered in Nannestad.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 3611650.0 NOK, operating result -264510.0 NOK, annual result 205105.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/959569541",
+        "retrieved_at": "2026-11-01T06:19:16.726708Z"
+      },
+      {
+        "text": "Registered leadership includes Morten Mathiesen (Daglig leder) and 2 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/959569541/roller",
+        "retrieved_at": "2026-11-01T06:19:19.230086Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=959569541&size=1000",
+        "retrieved_at": "2026-11-01T06:19:19.627113Z"
+      },
+      {
+        "text": "Company-owned sources: verified official website https://act-gruppen.com/, 7 dated news item(s).",
+        "evidence_field": "website",
+        "source_url": "https://act-gruppen.com/",
+        "retrieved_at": "2026-11-01T06:19:28.981935Z"
+      }
+    ],
+    "unknowns": [],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

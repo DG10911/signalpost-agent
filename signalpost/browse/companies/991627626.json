@@ -1,0 +1,1508 @@
+{
+  "organisation_number": "991627626",
+  "name": "GASSNOVA SF",
+  "legal_form": "SF",
+  "employees": 28,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "PORSGRUNN",
+  "municipality_number": "4001",
+  "industry_code": "84.130",
+  "industry_label": "Offentlig administrasjon tilknyttet næringsvirksomhet og arbeidsmarked",
+  "website": "www.gassnova.no",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "991627626",
+        "navn": "GASSNOVA SF",
+        "organisasjonsform.kode": "SF",
+        "organisasjonsform.beskrivelse": "Statsforetak",
+        "naeringskode1.kode": "84.130",
+        "naeringskode1.beskrivelse": "Offentlig administrasjon tilknyttet næringsvirksomhet og arbeidsmarked",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "true",
+        "antallAnsatte": "28",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "2026-09-14",
+        "registreringsdatoantallansatteNAVAaregisteret": "2026-09-10",
+        "hjemmeside": "www.gassnova.no",
+        "epostadresse": "postmottak@gassnova.no",
+        "telefon": "",
+        "mobil": "40005908",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "Dokkvegen 11",
+        "forretningsadresse.poststed": "PORSGRUNN",
+        "forretningsadresse.postnummer": "3920",
+        "forretningsadresse.kommune": "PORSGRUNN",
+        "forretningsadresse.kommunenummer": "4001",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "6100",
+        "institusjonellSektorkode.beskrivelse": "Statsforvaltningen",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2007-09-20",
+        "stiftelsesdato": "2007-07-03",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2007-11-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2008-03-27",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2007-09-20",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2026-06-19",
+        "vedtektsfestetFormaal": "Å forvalte statens interesser knyttet til C02 handtering (teknologiutvikling, fangst, transport, injeksjon, lagring av CO2), og å gjennomføre de prosjekter som foretaksmøtet bestemmer. Det er en målsetting at foretakets arbeid skal resultere i kostnadsreduksjoner knyttet til CO2-håndtering. Gassnova SF skal gi råd til Olje- og energidepartementet i forhold til spørsmål vedrørende C02-håndtering. Gassnova SF skal legge til rette for at statens deltakelse i C02-håndteringsprosjekter kan nyttiggjøres best mulig av staten eller statlig eide enheter. Gassnova SF skal bidra til gjennomføring av \"Climit-programmet\"\". Gassnova SF har ikke erverv til formål.\"",
+        "aktivitet": "Forvalte statens interesser knyttet til i C02 håndtering (teknologiutvikling, fangst, transport, injeksjon, lagring av C02), samt yte rådgivning mv ifm. dette.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "false",
+        "kapital.belop": "12000000.00",
+        "kapital.antallAksjer": "",
+        "kapital.type": "Innskuddskapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "12000000.00",
+        "kapital.fulltInnbetalt": "true",
+        "kapital.innfortDato": "2026-06-25",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "991627626",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:52.167170Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "SF",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "991627626",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/991627626",
+      "retrieved_at": "2026-11-01T06:21:21.863842Z",
+      "value": {
+        "organisation_number": "991627626",
+        "name": "GASSNOVA SF",
+        "legal_form": "SF",
+        "employees": 28,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "www.gassnova.no",
+        "industry": {
+          "beskrivelse": "Offentlig administrasjon tilknyttet næringsvirksomhet og arbeidsmarked",
+          "kode": "84.130"
+        },
+        "business_address": {
+          "adresse": [
+            "Dokkvegen 11"
+          ],
+          "kommune": "PORSGRUNN",
+          "kommunenummer": "4001",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "3920",
+          "poststed": "PORSGRUNN"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "c8472c3fd7005d427d4cba4da4dcf2f50c6156f7e473cbe40694b29c32f3402e",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/991627626",
+      "retrieved_at": "2026-11-01T06:21:22.064202Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5371899,
+            "account_type": "KONSERN",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 113657978.0,
+            "operating_result": 3980981.0,
+            "profit_before_tax": 9149220.0,
+            "annual_result": 9468933.0,
+            "assets": 153608870.0,
+            "equity": 56383135.0,
+            "debt": 97225735.0
+          },
+          {
+            "record_id": 5371897,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 87886144.0,
+            "operating_result": 6035537.0,
+            "profit_before_tax": 10602459.0,
+            "annual_result": 10602459.0,
+            "assets": 111759825.0,
+            "equity": 26367732.0,
+            "debt": 85392093.0
+          },
+          {
+            "record_id": 6114793,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 79983093.0,
+            "operating_result": 451585.0,
+            "profit_before_tax": 6260692.0,
+            "annual_result": 6260692.0,
+            "assets": 119876479.0,
+            "equity": 101263874.0,
+            "debt": 18612605.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "4f7da7c699f170d097db9bbbf1f0237a27955d6328fe14d882624786708c178a",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/aar",
+      "retrieved_at": "2026-11-01T06:21:29.451167Z",
+      "value": {
+        "years": [
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2013"
+          },
+          {
+            "year": "2012",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2012"
+          },
+          {
+            "year": "2011",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/991627626/2011"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "b7bcd20d8a4607bc9ca49fbdfebf5e51cb31e39858edb985dc98a82e8d2b7cd1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/991627626/roller",
+      "retrieved_at": "2026-11-01T06:21:29.654654Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Tove Dahl Mustad",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2026-09-08",
+            "inactive": false
+          },
+          {
+            "name": "Trond Moengen",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-06-25",
+            "inactive": false
+          },
+          {
+            "name": "Kristin Skofteland",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-06-25",
+            "inactive": false
+          },
+          {
+            "name": "May Britt Myhr",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-06-25",
+            "inactive": false
+          },
+          {
+            "name": "Camilla Bergsli",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-06-25",
+            "inactive": false
+          },
+          {
+            "name": "Sondre Dyrland",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-06-25",
+            "inactive": false
+          },
+          {
+            "name": "Bjørn Kjetil Mauritzen",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-06-25",
+            "inactive": false
+          },
+          {
+            "name": "Per Einar Solli",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-06-25",
+            "inactive": false
+          },
+          {
+            "name": "Cecilie Hyni Tveit",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-06-25",
+            "inactive": false
+          },
+          {
+            "name": [
+              "BDO AS"
+            ],
+            "organisation_number": "993606650",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2020-11-10",
+            "inactive": false
+          },
+          {
+            "name": [
+              "AZETS INSIGHT AS"
+            ],
+            "organisation_number": "983338917",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2016-08-01",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "05b5d6c457df7a1d521bc1b19f6e67f56d9b6603c142bb878fa70bbb78ffa157",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/991627626",
+      "retrieved_at": "2026-11-01T06:21:29.870459Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=991627626&size=1000",
+      "retrieved_at": "2026-11-01T06:21:30.078230Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "987497076",
+            "name": "GASSNOVA SF",
+            "address": {
+              "adresse": [
+                "Dokkvegen 11"
+              ],
+              "kommune": "PORSGRUNN",
+              "kommunenummer": "4001",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "3920",
+              "poststed": "PORSGRUNN"
+            },
+            "industry": {
+              "beskrivelse": "Offentlig administrasjon tilknyttet næringsvirksomhet og arbeidsmarked",
+              "kode": "84.130"
+            },
+            "employees": 28
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "dd2dcb633ac146518b15631971e40b29ff6ce4455d7481bf087697dfd83b75a4",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://gassnova.no/",
+      "retrieved_at": "2026-11-01T06:21:45.775786Z",
+      "value": {
+        "requested_url": "https://www.gassnova.no/",
+        "final_url": "https://gassnova.no/",
+        "registered_domain": "gassnova.no",
+        "title": "Gassnova - et statsforetak for karbonfangst og lagring | CCS",
+        "description": "Gassnova skal fremme teknologiutvikling og kompetanseoppbygging for kostnadseffektive og framtidsrettede løsninger for fangst, transport og lagring av CO2.",
+        "main_text_excerpt": "Gassnova skal fremme teknologiutvikling og kompetanseoppbygging for kostnadseffektive og framtidsrettede løsninger for fangst, transport og lagring av CO2.\nI år skal Gassnova ha fokus på:\nCLIMIT, TCM & Langskip\nGassnova skal være en faglig og strategisk rådgiver til departementet om CO2-håndtering som klimatiltak og bidra til effektiv deling av kompetanse og læring. Gassnova skal i sitt arbeid følge opp teknologi- og markedstrender knyttet til CO2-håndtering.\nOversikt\nHolde oversikt over CO2-håndteringsprosjekter i Norge, og redegjøre for markedsituasjonen innen 1. oktober.\nKartlegging\nKartlegge muligheter og tiltak for CO2-håndtering på forbrennings- og prosessanlegg i Norge, med utgangspunkt i eksisterende virkemidler\nVirkemiddelapparatet\nBidra til utredning av virkemiddelapparatet for CO2-håndtering, herunder videre arbeid med nye virkemidler og tiltak for CO2-fangst.\nIndustrielle klynger\nKartlegge muligheter for reduksjon av CO2-utslipp i industrien, med særlig vekt på\nindustrielle klynger.",
+        "identity_text_excerpt": "Gassnova SF er statens foretak for CO 2 -håndtering GASSNOVA SF Kontakt oss E-post: postmottak@gassnova.no gassnova © 2026 Webdesign og Webutvikling av Increo nettredaktør Personvern Tilgjengelighetserklæring",
+        "social_links": [
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/gassnova-sf"
+          },
+          {
+            "platform": "youtube",
+            "url": "https://youtube.com/user/Gassnovasf"
+          }
+        ],
+        "structured_organisations": [],
+        "structured_facts": {},
+        "job_postings": [],
+        "news_articles": [
+          {
+            "headline": "Over 400 deltakere fra nærmere 40 land til Knowledge Sharing 2026, CCS&CDR Summit",
+            "date_published": "2026-04-09T12:49:56",
+            "url": "https://gassnova.no/nyheter/over-400-deltakere-fra-naermere-40-land-til-knowledge-sharing-2026-ccscdr-summit"
+          },
+          {
+            "headline": "Over 400 participants from nearly 40 countries to attend Knowledge Sharing 2026, CCS & CDR Summit",
+            "date_published": "2026-04-09T12:58:58",
+            "url": "https://gassnova.no/en/news/over-400-participants-from-nearly-40-countries-to-attend-knowledge-sharing-2026-ccs-cdr-summit"
+          },
+          {
+            "headline": "Knowledge Sharing 2026: Fra hvorfor til hvordan",
+            "date_published": "2026-05-29T07:26:25",
+            "url": "https://gassnova.no/nyheter/knowledge-sharing-2026-fra-hvorfor-til-hvordan"
+          },
+          {
+            "headline": "Knowledge Sharing 2026: From Why to How",
+            "date_published": "2026-05-29T07:26:37",
+            "url": "https://gassnova.no/en/news/knowledge-sharing-2026-from-why-to-how"
+          },
+          {
+            "headline": "Thomas Skadal har sagt opp sin stilling i Gassnova",
+            "date_published": "2026-06-04T14:22:21",
+            "url": "https://gassnova.no/nyheter/thomas-skadal-har-sagt-opp-sin-stilling-i-gassnova"
+          },
+          {
+            "headline": "Longship receives international award for carbon management",
+            "date_published": "2026-10-21T09:52:05",
+            "url": "https://gassnova.no/en/news/longship-wins-international-carbon-management-award"
+          },
+          {
+            "headline": "Langskip mottar internasjonal pris for CO₂-håndtering",
+            "date_published": "2026-10-21T12:46:13",
+            "url": "https://gassnova.no/nyheter/langskip-far-internasjonal-pris-for-co%e2%82%82-handtering"
+          }
+        ],
+        "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://gassnova.no/",
+            "title": "Gassnova - et statsforetak for karbonfangst og lagring | CCS",
+            "main_text_excerpt": "Gassnova skal fremme teknologiutvikling og kompetanseoppbygging for kostnadseffektive og framtidsrettede løsninger for fangst, transport og lagring av CO2.\nI år skal Gassnova ha fokus på:\nCLIMIT, TCM & Langskip\nGassnova skal være en faglig og strategisk rådgiver til departementet om CO2-håndtering som klimatiltak og bidra til effektiv deling av kompetanse og læring. Gassnova skal i sitt arbeid følge opp teknologi- og markedstrender knyttet til CO2-håndtering.\nOversikt\nHolde oversikt over CO2-håndteringsprosjekter i Norge, og redegjøre for markedsituasjonen innen 1. oktober.\nKartlegging\nKartlegge muligheter og tiltak for CO2-håndtering på forbrennings- og prosessanlegg i Norge, med utgangspunkt i eksisterende virkemidler\nVirkemiddelapparatet\nBidra til utredning av virkemiddelapparatet for CO2-håndtering, herunder videre arbeid med nye virkemidler og tiltak for CO2-fangst.\nIndustrielle klynger\nKartlegge muligheter for reduksjon av CO2-utslipp i industrien, med særlig vekt på\nindustrielle klynger.",
+            "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11"
+          },
+          {
+            "url": "https://gassnova.no/nyheter/langskip-far-internasjonal-pris-for-co%e2%82%82-handtering",
+            "title": "Langskip mottar internasjonal pris for CO₂-håndtering - Gassnova",
+            "main_text_excerpt": "21.10.2026\nLangskip mottar internasjonal pris for CO₂-håndtering\nProsjektet er tildelt Carbon Management Project Award. Den fremhever betydningen av storskala CO2-håndtering og internasjonal kunnskapsdeling.\nDet er «Clean Energy Ministerial CCUS Initiative» (CEM CCUS) og «Mission Innovation Carbon Dioxide Removal Mission» (MI CDR) som deler ut prisen til Langskip.\nGigatonne by 2030\n«Carbon Management Project Award» er del av den internasjonale kampanjen Gigatonne by 2030, som har som mål å fremskynde utbredelsen av teknologier for CO2-håndtering. Den anerkjenner prosjekter som viser hvordan tekniske, kommersielle og regulatoriske utfordringer kan løses for å legge til rette for gjennomføring i stor skala.\n“Et viktig kriterium for Carbon Management Project Awards er viljen til å dele erfaringer og lærdom med fremtidige prosjekter.”\nFra ambisjon til drift\nLangskip demonstrerer hvordan statlig støtte og industrielt samarbeid kan bidra til å etablere en komplett verdikjede for fangst, transport og permanent lagring av CO2 (CCS). Prosjektet omfatter Brevik CCS (Heidelberg Materials) fangstanlegg i Brevik og Northern Lights infrastruktur for transport og lagring av CO2 utenfor Bergen. Hafslund Celsios CO2-fangstprosjekt Oslo CCS, er under utvikling.\nKunnskapsdeling står sentralt\nDa den første delen av verdikjeden kom i drift i 2025, gikk Langskip fra planlegging og utbygging til praktisk erfaring med CO2-håndtering i full skala. Gassnova koordinerer arbeidet med kunnskapsdeling fra Langskip og bidrar til at tekniske, kommersielle og regulatoriske erfaringer gjøres tilgjengelige internasjonalt.\nEt viktig kriterium for Carbon Management Project Awards er viljen til å dele erfaringer og lærdom med fremtidige prosjekter. – Den internasjonale anerkjennelsen understreker Langskips betydning for utvikling av praktiske løsninger, redusert risiko og videre utbredelse av CO2-håndtering, sier seniorrådgiver Jørild Svalestuen i Gassnova.",
+            "content_sha256": "aa3a2abe8059817a7471863acf10c5c0d326f893c6f0a17bc5b8cd07a79f7fb0"
+          },
+          {
+            "url": "https://gassnova.no/nyheter",
+            "title": "Nyheter - Gassnova",
+            "main_text_excerpt": "Nyheter\nVelg Avdeling\n                                \n                            \n                            - Gassnova\n- CLIMIT\n- Langskip\nVelg År\n                                \n                            \n                            - 2026\n- 2025\n- 2024\n- 2023\n- 2022\n- 2021\n- 2020\n21.10.2026\nLangskip mottar internasjonal pris for CO2-håndtering\n02.09.2026\nIEAGHG ExCo 69\n04.06.2026\nThomas Skadal har sagt opp sin stilling i Gassnova\n29.05.2026\nKnowledge Sharing 2026: Fra hvorfor til hvordan\n09.04.2026\nOver 400 deltakere fra nærmere 40 land til Knowledge Sharing 2026, CCS&CDR Summit\n02.03.2026\nTCM fortsetter driften ut 2027",
+            "content_sha256": "0356b49ed51424c52570761b37ba4ae1ea54f6da391f6c1fed0421a51ef85d8b"
+          },
+          {
+            "url": "https://gassnova.no/kontakt",
+            "title": "Kontaktinformasjon og pressekontakter | gassnova.no",
+            "main_text_excerpt": "Kontakt oss\nKontakt oss\nPresse/media\nGassnova\n            Telefon\n            +47 40 00 59 08 \n            E-post\n            postmottak@gassnova.no\n            Postadresse\n            \n                Gassnova SF\nDokkvegen 11,\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\n            \n        \n        \n    Dokkvegen 11,\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\nCLIMIT\n            Telefon\n            +47 40 00 59 08 \n            E-post\n            postmottak@gassnova.no\n            Postadresse\n            \n                Gassnova SF, CLIMIT\nDokkvegen 11\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\n        Dokkvegen 11\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\n            \n                                    Fakturaadresse                            \n            \n                Regnskapsrapport med utbetalingsanmodning og/eller eventuell faktura skal merkes med prosjektnummer, og sendes elektronisk (EHF-format) til: org.nr.  929314859 (Fond for CO2-håndtering).\n            \n                        \nSekretariatet\n    Sekretariatet\nTeknologisenter Mongstad (TCM)\n            Telefon\n            +47 56 34 52 20 \n            E-post\n            post@tcmda.com\n            Postadresse\n            \n                Technology Centre Mongstad (TCM)\nMongstad 71A\nN-5954 Mongstad Besøksadresse Mongstad 71A\nN-5954 Mongstad Åpningstider Mandag-fredag\n8:00-16:00\n        Mongstad 71A\nN-5954 Mongstad Besøksadresse Mongstad 71A\nN-5954 Mongstad Åpningstider Mandag-fredag\n8:00-16:00\n            \n                                    Fakturaadresse                            \n            \n                Technology Centre Mongstad (TCM)\nMongstad 71A\nN-5954 Mongstad\nFor faktura via e-post mb.15807@xledger.net\n                        \n            \n    Mongstad 71A\nN-5954 Mongstad\nFor faktura via e-post mb.15807@xledger.net\nVil du komme å besøke oss?\nAlle besøkende må ledsages av en vert fra TCM, og mediedeltakelse må godkjennes. Vær oppmerksom på at vi har stor etterspørsel og at alle besøk må planlegges i god tid, og at du kan registrere din forespørsel om besøk til TCM her.\nLedelse\nFullskalaprosjektet for CCS i Norge – Langskip\n            Telefon\n            +47 40 00 59 08 \n            E-post\n            postmottak@gassnova.no\n            Postadresse\n            \n                Gassnova SF\nDokkvegen 11\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\n        Dokkvegen 11\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\n            \n                                    Fakturaadresse                            \n            \n                Gassnova SF – 116152\nAzets Insight AS\nPostboks 6599\n7439 Trondheim\nFor faktura via e-post invoice.116152@vismabpo.no\n                        \n            \n    Azets Insight AS\nPostboks 6599\n7439 Trondheim\nFor faktura via e-post invoice.116152@vismabpo.no",
+            "content_sha256": "4fab9f3685e2bb1f0c6ac9ec01f0e71010b2d94da974a42d3c2f0f4d4757c08e"
+          },
+          {
+            "url": "https://gassnova.no/kontakt",
+            "title": "Kontaktinformasjon og pressekontakter | gassnova.no",
+            "main_text_excerpt": "Kontakt oss\nKontakt oss\nPresse/media\nGassnova\n            Telefon\n            +47 40 00 59 08 \n            E-post\n            postmottak@gassnova.no\n            Postadresse\n            \n                Gassnova SF\nDokkvegen 11,\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\n            \n        \n        \n    Dokkvegen 11,\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\nCLIMIT\n            Telefon\n            +47 40 00 59 08 \n            E-post\n            postmottak@gassnova.no\n            Postadresse\n            \n                Gassnova SF, CLIMIT\nDokkvegen 11\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\n        Dokkvegen 11\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\n            \n                                    Fakturaadresse                            \n            \n                Regnskapsrapport med utbetalingsanmodning og/eller eventuell faktura skal merkes med prosjektnummer, og sendes elektronisk (EHF-format) til: org.nr.  929314859 (Fond for CO2-håndtering).\n            \n                        \nSekretariatet\n    Sekretariatet\nTeknologisenter Mongstad (TCM)\n            Telefon\n            +47 56 34 52 20 \n            E-post\n            post@tcmda.com\n            Postadresse\n            \n                Technology Centre Mongstad (TCM)\nMongstad 71A\nN-5954 Mongstad Besøksadresse Mongstad 71A\nN-5954 Mongstad Åpningstider Mandag-fredag\n8:00-16:00\n        Mongstad 71A\nN-5954 Mongstad Besøksadresse Mongstad 71A\nN-5954 Mongstad Åpningstider Mandag-fredag\n8:00-16:00\n            \n                                    Fakturaadresse                            \n            \n                Technology Centre Mongstad (TCM)\nMongstad 71A\nN-5954 Mongstad\nFor faktura via e-post mb.15807@xledger.net\n                        \n            \n    Mongstad 71A\nN-5954 Mongstad\nFor faktura via e-post mb.15807@xledger.net\nVil du komme å besøke oss?\nAlle besøkende må ledsages av en vert fra TCM, og mediedeltakelse må godkjennes. Vær oppmerksom på at vi har stor etterspørsel og at alle besøk må planlegges i god tid, og at du kan registrere din forespørsel om besøk til TCM her.\nLedelse\nFullskalaprosjektet for CCS i Norge – Langskip\n            Telefon\n            +47 40 00 59 08 \n            E-post\n            postmottak@gassnova.no\n            Postadresse\n            \n                Gassnova SF\nDokkvegen 11\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\n        Dokkvegen 11\nN-3920 Porsgrunn Besøksadresse Dokkvegen 11, Porsgrunn Åpningstider Mandag-fredag\n08:00-16:00\n            \n                                    Fakturaadresse                            \n            \n                Gassnova SF – 116152\nAzets Insight AS\nPostboks 6599\n7439 Trondheim\nFor faktura via e-post invoice.116152@vismabpo.no\n                        \n            \n    Azets Insight AS\nPostboks 6599\n7439 Trondheim\nFor faktura via e-post invoice.116152@vismabpo.no",
+            "content_sha256": "7041ca09f016bc7ce9ae57924e5a848030263c19bda7b59a5b382d90f6edcbd4"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [
+          {
+            "url": "https://gassnova.no/nyheter/filmen-om-langskip",
+            "error": "redirected outside registered domain"
+          }
+        ],
+        "identity_assessment": {
+          "status": "exact",
+          "score": 0.95,
+          "publishable": true,
+          "legal_name_tokens": [
+            "gassnova",
+            "sf"
+          ],
+          "matched_tokens": [
+            "gassnova",
+            "sf"
+          ],
+          "reasons": [
+            "full registered legal name (with legal form) appears in the homepage footer/imprint"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/gassnova-sf"
+          },
+          {
+            "platform": "youtube",
+            "url": "https://youtube.com/user/Gassnovasf"
+          }
+        ],
+        "social_link_assessments": [
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/gassnova-sf",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "gassnova",
+              "sf"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "youtube",
+            "url": "https://youtube.com/user/Gassnovasf",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "gassnova",
+              "sf"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          }
+        ],
+        "excluded_news_articles": [
+          {
+            "headline": "IEAGHG ExCo 69",
+            "date_published": "2026-09-02T14:00:46",
+            "url": "https://gassnova.no/ukategorisert/ieaghg-exco-69",
+            "excluded_reason": "not in a news or press section and the headline does not name the company"
+          },
+          {
+            "headline": "Langskip mottar internasjonal pris for CO₂-håndtering",
+            "date_published": "2026-10-21T10:46:13+00:00",
+            "url": null,
+            "excluded_reason": "no article address"
+          }
+        ],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://gassnova.no/",
+          "retrieved_at": "2026-11-01T06:21:45.775786Z",
+          "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "991627626"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:21:45.775786Z",
+          "id": "company-profile-991627626",
+          "platform": "company_site",
+          "signal_type": "company_profile",
+          "metrics": {
+            "registered_domain": "gassnova.no"
+          },
+          "evidence_span": "Gassnova - et statsforetak for karbonfangst og lagring | CCS"
+        },
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://linkedin.com/company/gassnova-sf",
+          "retrieved_at": "2026-11-01T06:21:45.775786Z",
+          "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "991627626"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:21:45.775786Z",
+          "id": "handle-991627626-linkedin",
+          "platform": "linkedin",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://youtube.com/user/Gassnovasf",
+          "retrieved_at": "2026-11-01T06:21:45.775786Z",
+          "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "991627626"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:21:45.775786Z",
+          "id": "handle-991627626-youtube",
+          "platform": "youtube",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://gassnova.no/nyheter/over-400-deltakere-fra-naermere-40-land-til-knowledge-sharing-2026-ccscdr-summit",
+          "retrieved_at": "2026-11-01T06:21:45.775786Z",
+          "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "991627626"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-04-09T12:49:56",
+          "id": "news-991627626-0",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Over 400 deltakere fra nærmere 40 land til Knowledge Sharing 2026, CCS&CDR Summit",
+          "metrics": {
+            "headline": "Over 400 deltakere fra nærmere 40 land til Knowledge Sharing 2026, CCS&CDR Summit",
+            "date_published": "2026-04-09T12:49:56"
+          }
+        },
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://gassnova.no/en/news/over-400-participants-from-nearly-40-countries-to-attend-knowledge-sharing-2026-ccs-cdr-summit",
+          "retrieved_at": "2026-11-01T06:21:45.775786Z",
+          "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "991627626"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-04-09T12:58:58",
+          "id": "news-991627626-1",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Over 400 participants from nearly 40 countries to attend Knowledge Sharing 2026, CCS & CDR Summit",
+          "metrics": {
+            "headline": "Over 400 participants from nearly 40 countries to attend Knowledge Sharing 2026, CCS & CDR Summit",
+            "date_published": "2026-04-09T12:58:58"
+          }
+        },
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://gassnova.no/nyheter/knowledge-sharing-2026-fra-hvorfor-til-hvordan",
+          "retrieved_at": "2026-11-01T06:21:45.775786Z",
+          "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "991627626"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-05-29T07:26:25",
+          "id": "news-991627626-2",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Knowledge Sharing 2026: Fra hvorfor til hvordan",
+          "metrics": {
+            "headline": "Knowledge Sharing 2026: Fra hvorfor til hvordan",
+            "date_published": "2026-05-29T07:26:25"
+          }
+        },
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://gassnova.no/en/news/knowledge-sharing-2026-from-why-to-how",
+          "retrieved_at": "2026-11-01T06:21:45.775786Z",
+          "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "991627626"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-05-29T07:26:37",
+          "id": "news-991627626-3",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Knowledge Sharing 2026: From Why to How",
+          "metrics": {
+            "headline": "Knowledge Sharing 2026: From Why to How",
+            "date_published": "2026-05-29T07:26:37"
+          }
+        },
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://gassnova.no/nyheter/thomas-skadal-har-sagt-opp-sin-stilling-i-gassnova",
+          "retrieved_at": "2026-11-01T06:21:45.775786Z",
+          "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "991627626"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-06-04T14:22:21",
+          "id": "news-991627626-4",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Thomas Skadal har sagt opp sin stilling i Gassnova",
+          "metrics": {
+            "headline": "Thomas Skadal har sagt opp sin stilling i Gassnova",
+            "date_published": "2026-06-04T14:22:21"
+          }
+        },
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://gassnova.no/en/news/longship-wins-international-carbon-management-award",
+          "retrieved_at": "2026-11-01T06:21:45.775786Z",
+          "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "991627626"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-10-21T09:52:05",
+          "id": "news-991627626-5",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Longship receives international award for carbon management",
+          "metrics": {
+            "headline": "Longship receives international award for carbon management",
+            "date_published": "2026-10-21T09:52:05"
+          }
+        },
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://gassnova.no/nyheter/langskip-far-internasjonal-pris-for-co%e2%82%82-handtering",
+          "retrieved_at": "2026-11-01T06:21:45.775786Z",
+          "content_sha256": "8d91a740ddf08a0361833abfccab1812bd18146ba6bb2c93142f70a008207a11",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "991627626"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-10-21T12:46:13",
+          "id": "news-991627626-6",
+          "platform": "company_site",
+          "signal_type": "public_post",
+          "evidence_span": "Langskip mottar internasjonal pris for CO₂-håndtering",
+          "metrics": {
+            "headline": "Langskip mottar internasjonal pris for CO₂-håndtering",
+            "date_published": "2026-10-21T12:46:13"
+          }
+        },
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "991627626",
+              "source_row_key": "991627626"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-991627626",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "GASSNOVA SF",
+            "legal_form": "SF"
+          },
+          "evidence_span": "GASSNOVA SF"
+        },
+        {
+          "organisation_number": "991627626",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "991627626",
+              "source_row_key": "991627626"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-workforce-991627626",
+          "signal_type": "workforce_snapshot",
+          "metrics": {
+            "employees_registered": 28,
+            "as_of": "2026-09-14"
+          },
+          "evidence_span": "GASSNOVA SF: 28 registered employees"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 12,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg",
+          "company_site",
+          "linkedin",
+          "youtube"
+        ],
+        "platform_counts": {
+          "brreg": 2,
+          "company_site": 8,
+          "linkedin": 1,
+          "youtube": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 7,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 20,
+    "bytes": 357044,
+    "latencies_ms": [
+      210,
+      200,
+      208,
+      203,
+      215,
+      206,
+      2449,
+      1564,
+      1470,
+      2426,
+      1689,
+      2694,
+      1093
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Forvalte statens interesser knyttet til i C02 håndtering (teknologiutvikling, fangst, transport, injeksjon, lagring av C02), samt yte rådgivning mv ifm. dette.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "articles_date",
+      "value": "2026-06-19",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "business_address",
+      "value": "Dokkvegen 11, 3920 PORSGRUNN, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "email",
+      "value": "postmottak@gassnova.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "employees_nav_date",
+      "value": "2026-09-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "employees_registered",
+      "value": "28",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "employees_registered_date",
+      "value": "2026-09-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2007-09-20",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "founding_date",
+      "value": "2007-07-03",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "industry",
+      "value": "Offentlig administrasjon tilknyttet næringsvirksomhet og arbeidsmarked",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "industry_code",
+      "value": "84.130",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Statsforvaltningen",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "6100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "legal_form",
+      "value": "Statsforetak",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "SF",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "legal_name",
+      "value": "GASSNOVA SF",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "municipality",
+      "value": "PORSGRUNN",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "municipality_number",
+      "value": "4001",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "phone",
+      "value": "40005908",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "postal_code",
+      "value": "3920",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "registered_at",
+      "value": "2007-09-20",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "12000000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2026-06-25",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Innskuddskapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Å forvalte statens interesser knyttet til C02 handtering (teknologiutvikling, fangst, transport, injeksjon, lagring av CO2), og å gjennomføre de prosjekter som foretaksmøtet bestemmer. Det er en målsetting at foretakets arbeid skal resultere i kostnadsreduksjoner knyttet til CO2-håndtering. Gassnova SF skal gi råd til Olje- og energidepartementet i forhold til spørsmål vedrørende C02-håndtering. Gassnova SF skal legge til rette for at statens deltakelse i C02-håndteringsprosjekter kan nyttiggjøres best mulig av staten eller statlig eide enheter. Gassnova SF skal bidra til gjennomføring av \"Climit-programmet\"\". Gassnova SF har ikke erverv til formål.\"",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2007-11-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2007-11-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    },
+    {
+      "field": "website_registered",
+      "value": "www.gassnova.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "991627626"
+    }
+  ],
+  "summary": {
+    "headline": "GASSNOVA SF",
+    "narrative": "GASSNOVA SF is a SF company, operating in offentlig administrasjon tilknyttet næringsvirksomhet og arbeidsmarked, registered in Porsgrunn. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 113657978.0 NOK, operating result 3980981.0 NOK, annual result 9468933.0 NOK. Registered leadership includes Tove Dahl Mustad (Daglig leder) and 10 other registered role(s). 1 registered subunit(s)/workplace(s). Company-owned sources: verified official website https://gassnova.no/, 7 dated news item(s), 2 company-linked social profile(s). Workforce reported in the None annual report: None (None).",
+    "statements": [
+      {
+        "text": "GASSNOVA SF is a SF company, operating in offentlig administrasjon tilknyttet næringsvirksomhet og arbeidsmarked, registered in Porsgrunn.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 113657978.0 NOK, operating result 3980981.0 NOK, annual result 9468933.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/991627626",
+        "retrieved_at": "2026-11-01T06:21:22.064202Z"
+      },
+      {
+        "text": "Registered leadership includes Tove Dahl Mustad (Daglig leder) and 10 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/991627626/roller",
+        "retrieved_at": "2026-11-01T06:21:29.654654Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=991627626&size=1000",
+        "retrieved_at": "2026-11-01T06:21:30.078230Z"
+      },
+      {
+        "text": "Company-owned sources: verified official website https://gassnova.no/, 7 dated news item(s), 2 company-linked social profile(s).",
+        "evidence_field": "website",
+        "source_url": "https://gassnova.no/",
+        "retrieved_at": "2026-11-01T06:21:45.775786Z"
+      },
+      {
+        "text": "Workforce reported in the None annual report: None (None).",
+        "evidence_field": "external_footprint",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      }
+    ],
+    "unknowns": [],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

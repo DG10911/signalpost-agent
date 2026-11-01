@@ -1,0 +1,1152 @@
+{
+  "organisation_number": "962170382",
+  "name": "BORETTSLAGET KRONA",
+  "legal_form": "BRL",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "ÅLESUND",
+  "municipality_number": "1508",
+  "industry_code": "97.001",
+  "industry_label": "Aktiviteter i borettslag og boligsameier",
+  "website": "www.obos.no",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "962170382",
+        "navn": "BORETTSLAGET KRONA",
+        "organisasjonsform.kode": "BRL",
+        "organisasjonsform.beskrivelse": "Borettslag",
+        "naeringskode1.kode": "97.001",
+        "naeringskode1.beskrivelse": "Aktiviteter i borettslag og boligsameier",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "true",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "2026-02-12",
+        "registreringsdatoantallansatteNAVAaregisteret": "2026-02-10",
+        "hjemmeside": "www.obos.no",
+        "epostadresse": "krona@styrerommet.no",
+        "telefon": "22 86 55 00",
+        "mobil": "",
+        "postadresse.adresse": "v/ OBOS Eiendomsforvaltning AS\nS. 6529 BORETTSLAGET KRONA\nPostboks 393  Alnabru",
+        "postadresse.poststed": "OSLO",
+        "postadresse.postnummer": "0614",
+        "postadresse.kommune": "OSLO",
+        "postadresse.kommunenummer": "0301",
+        "postadresse.land": "Norge",
+        "postadresse.landkode": "NO",
+        "forretningsadresse.adresse": "Ystenesgata 6B",
+        "forretningsadresse.poststed": "ÅLESUND",
+        "forretningsadresse.postnummer": "6003",
+        "forretningsadresse.kommune": "ÅLESUND",
+        "forretningsadresse.kommunenummer": "1508",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "8300",
+        "institusjonellSektorkode.beskrivelse": "Borettslag o.l.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "1995-02-20",
+        "stiftelsesdato": "1968-05-06",
+        "registrertIMvaRegisteret": "false",
+        "registreringsdatoMerverdiavgiftsregisteret": "",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "1991-12-09",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2012-05-09",
+        "vedtektsfestetFormaal": "Borettslag.",
+        "aktivitet": "Borettslag.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "false",
+        "kapital.belop": "",
+        "kapital.antallAksjer": "",
+        "kapital.type": "",
+        "kapital.bundet": "",
+        "kapital.valuta": "",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "962170382",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:48.716572Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "BRL",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "962170382",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/962170382",
+      "retrieved_at": "2026-11-01T06:20:23.526234Z",
+      "value": {
+        "organisation_number": "962170382",
+        "name": "BORETTSLAGET KRONA",
+        "legal_form": "BRL",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "www.obos.no",
+        "industry": {
+          "beskrivelse": "Aktiviteter i borettslag og boligsameier",
+          "kode": "97.001"
+        },
+        "business_address": {
+          "adresse": [
+            "Ystenesgata 6B"
+          ],
+          "kommune": "ÅLESUND",
+          "kommunenummer": "1508",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "6003",
+          "poststed": "ÅLESUND"
+        },
+        "postal_address": {
+          "adresse": [
+            "v/ OBOS Eiendomsforvaltning AS",
+            "S. 6529 BORETTSLAGET KRONA",
+            "Postboks 393  Alnabru"
+          ],
+          "kommune": "OSLO",
+          "kommunenummer": "0301",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "0614",
+          "poststed": "OSLO"
+        },
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "eb5f614ba5603f5c1e51c9d90d70dd2a5ebe8b0bd043ff3dadb98c697ce39c23",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/962170382",
+      "retrieved_at": "2026-11-01T06:20:23.734668Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 4960343,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 2747793.0,
+            "operating_result": 1084721.0,
+            "profit_before_tax": -41776.0,
+            "annual_result": -41776.0,
+            "assets": 13986381.0,
+            "equity": -20011897.0,
+            "debt": 33998277.0
+          },
+          {
+            "record_id": 5574037,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 2947932.0,
+            "operating_result": 1304956.0,
+            "profit_before_tax": 159197.0,
+            "annual_result": 159197.0,
+            "assets": 14123478.0,
+            "equity": -19852700.0,
+            "debt": 33976178.0
+          },
+          {
+            "record_id": 6672804,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 3181248.0,
+            "operating_result": 1423719.0,
+            "profit_before_tax": 281777.0,
+            "annual_result": 281777.0,
+            "assets": 14415627.0,
+            "equity": -19570923.0,
+            "debt": 33986550.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "6fd26b51275f7dda12253d09a31ae11af0eabe3d35261c0f5919ff7edb5af966",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/aar",
+      "retrieved_at": "2026-11-01T06:20:34.773665Z",
+      "value": {
+        "years": [
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2013"
+          },
+          {
+            "year": "2012",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2012"
+          },
+          {
+            "year": "2011",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/962170382/2011"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "b7bcd20d8a4607bc9ca49fbdfebf5e51cb31e39858edb985dc98a82e8d2b7cd1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/962170382/roller",
+      "retrieved_at": "2026-11-01T06:20:34.980795Z",
+      "value": {
+        "roles": [
+          {
+            "name": [
+              "OBOS EIENDOMSFORVALTNING AS"
+            ],
+            "organisation_number": "934261585",
+            "role_code": "FFØR",
+            "role": "Forretningsfører",
+            "group_code": "FFØR",
+            "group": "Forretningsfører",
+            "last_changed": "2020-03-26",
+            "inactive": false
+          },
+          {
+            "name": "Nina Rødland Rabben",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-04-28",
+            "inactive": false
+          },
+          {
+            "name": "Geir Kvalsund Sandnes",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-04-28",
+            "inactive": false
+          },
+          {
+            "name": "Marte Skarmyr Gjerde",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-04-28",
+            "inactive": false
+          },
+          {
+            "name": "Vegard Johansen Sleipnes",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-04-28",
+            "inactive": false
+          },
+          {
+            "name": "Ken-Tonny Skipnes Opsahl",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-04-28",
+            "inactive": false
+          },
+          {
+            "name": "Kathrin Dahle",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-04-28",
+            "inactive": false
+          },
+          {
+            "name": "Helge Yndestad",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-04-28",
+            "inactive": false
+          },
+          {
+            "name": [
+              "CEDRA NORGE AS"
+            ],
+            "organisation_number": "935416779",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2026-10-05",
+            "inactive": false
+          },
+          {
+            "name": [
+              "OBOS EIENDOMSFORVALTNING AS"
+            ],
+            "organisation_number": "934261585",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2020-03-26",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "fbba40416e833f9e69141a59164e3596e3c1afc98280f419b7dd38d896836bb5",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/962170382",
+      "retrieved_at": "2026-11-01T06:20:35.186667Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=962170382&size=1000",
+      "retrieved_at": "2026-11-01T06:20:35.395654Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "995106876",
+            "name": "BORETTSLAGET KRONA",
+            "address": {
+              "adresse": [
+                "Ystenesgata 6B"
+              ],
+              "kommune": "ÅLESUND",
+              "kommunenummer": "1508",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "6003",
+              "poststed": "ÅLESUND"
+            },
+            "industry": {
+              "beskrivelse": "Aktiviteter i borettslag og boligsameier",
+              "kode": "97.001"
+            },
+            "employees": null
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "6899041046cc46dc115bebcba0b2f622c135f7b099266b3d74f5212f8c901182",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://www.obos.no/",
+      "retrieved_at": "2026-11-01T06:20:51.897948Z",
+      "value": {
+        "requested_url": "https://www.obos.no/",
+        "final_url": "https://www.obos.no/",
+        "registered_domain": "obos.no",
+        "title": "OBOS",
+        "description": "Norges største boligbyggelag, eid av medlemmene. Som OBOS-medlem får du forkjøpsrett på boliger, gode betingelser i banken og fordeler på bolig og hjem.",
+        "main_text_excerpt": "Som kunde i OBOS-banken bidrar du til noe større. Overskuddet banken skaper går tilbake til boligbygging, idrett, kultur og lokalsamfunn. Ikke til private aksjonærer.",
+        "identity_text_excerpt": "",
+        "social_links": [],
+        "structured_organisations": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://www.obos.no#organization",
+            "name": "OBOS",
+            "foundingDate": "1929-08-19",
+            "url": "https://www.obos.no",
+            "sameAs": [
+              "https://www.facebook.com/obosmedlem",
+              "https://www.instagram.com/obos/",
+              "https://www.tiktok.com/@obosnorge/",
+              "https://www.linkedin.com/company/obos"
+            ],
+            "iso6523Code": "0192:937052766",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://cdn.sanity.io/media-libraries/mln4u7f3Hc8r/images/containers/33gfEEWhL4QWAAB5Sb1KZ1RpzKO/47e9bd055125764967242383bc89e28d3189b7f0.png",
+              "width": "3542",
+              "height": "750"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+4722865500",
+              "email": "obos@obos.no",
+              "areaServed": "NO"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Postboks 393 Alnabru",
+              "addressLocality": "Oslo",
+              "postalCode": "0641",
+              "addressCountry": "NO"
+            }
+          }
+        ],
+        "structured_facts": {},
+        "job_postings": [],
+        "news_articles": [],
+        "content_sha256": "c46f8a94cd1841afb2cea496194e621795ebe2f6dc6b5626068cf29106bf97f4",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://www.obos.no/",
+            "title": "OBOS",
+            "main_text_excerpt": "Som kunde i OBOS-banken bidrar du til noe større. Overskuddet banken skaper går tilbake til boligbygging, idrett, kultur og lokalsamfunn. Ikke til private aksjonærer.",
+            "content_sha256": "c46f8a94cd1841afb2cea496194e621795ebe2f6dc6b5626068cf29106bf97f4"
+          },
+          {
+            "url": "https://www.obos.no/om-obos/nyheter",
+            "title": "Nyheter | OBOS",
+            "main_text_excerpt": "Nyheter\n- OBOS fikk et resultat før skatt i tredje kvartal på 140 millioner kroner, ned fra 387 millioner kroner i samme periode i fjor. Samtidig har OBOS gjennom året klart å øke boligproduksjonen og har per tredje kvartal 745 flere boliger under bygging enn på samme tid i fjor.\n- OBOS-banken fikk et resultat før skatt på 122 millioner kroner i tredje kvartal. – Vi står fortsatt i et marked med sterk konkurranse og press på marginene, sier banksjef Tore Weldingh.\n- Nils Bøhler har varslet at han fratrer som leder for næringseiendom i OBOS-konsernet etter 11 år i stillingen. Prosessen med å rekruttere hans etterfølger er i gang. Bøhler blir stående i stillingen til ny konserndirektør er ansatte.\n- OBOS fikk et resultat før skatt i andre kvartal 2026 på 456 millioner kroner, opp fra -10 millioner kroner i samme periode i fjor. For første halvår endte resultatet på 203 millioner kroner mot 145 millioner kroner i fjor.\n- OBOS, Swiss Life Asset Managers og Rebus Midt-Norge AS har inngått avtale om kjøp av NRK-eiendommen på Tyholt i Trondheim. Kjøpet åpner for bygging av rundt 650 boliger i et av Trondheims mest attraktive boligområder.\n- OBOS kjøper selskapet DKS i Kristiansand for å satse i byen. Det vil også bli tilbudt boligkjøp med Deleie. – Dette er starten på en langsiktig opptrapping i regionen, sier konsernsjef Marianne Gjertsen Ebbesen i OBOS.",
+            "content_sha256": "8af6f5dcbd47e6c771d5b8e16b3a4145f85fd831c9101f2bf67c6df7e5e4834c"
+          },
+          {
+            "url": "https://www.obos.no/medlem/medlemsfordeler/aktuelle-fordeler",
+            "title": "Aktuelle medlemsfordeler fra OBOS | OBOS",
+            "main_text_excerpt": "Skal du renovere boligen? \nSpar flere tusen kroner på energirådgivning fra Eeffy, inkludert energimerking av boligen din.",
+            "content_sha256": "4ce9fd5eef1f3b130f80b9f7fa09489da261b2ca192097b70327e4f692cb4289"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [
+          {
+            "url": "https://www.obos.no/karriere",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://www.obos.no/careers",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://www.obos.no/news",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          }
+        ],
+        "identity_assessment": {
+          "status": "related_or_uncertain",
+          "score": 0.6,
+          "publishable": false,
+          "legal_name_tokens": [
+            "borettslaget",
+            "krona"
+          ],
+          "matched_tokens": [],
+          "reasons": [
+            "registry homepage domain is shared by 6 registered entities; treated as a manager/group site, cross-entity facts quarantined"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/obosmedlem"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/obos"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/obos"
+          },
+          {
+            "platform": "tiktok",
+            "url": "https://tiktok.com/@obosnorge"
+          }
+        ],
+        "social_link_assessments": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/obosmedlem",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/obos",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/obos",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "tiktok",
+            "url": "https://tiktok.com/@obosnorge",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          }
+        ],
+        "quarantined_structured_facts": {
+          "founding_date": "1929-08-19",
+          "address": {
+            "street": "Postboks 393 Alnabru",
+            "postal_code": "0641",
+            "locality": "Oslo",
+            "country": "NO"
+          }
+        },
+        "quarantined_job_postings": [],
+        "quarantined_news_articles": [],
+        "quarantined_careers_pages": [],
+        "excluded_news_articles": [],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "c46f8a94cd1841afb2cea496194e621795ebe2f6dc6b5626068cf29106bf97f4",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "962170382",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "962170382",
+              "source_row_key": "962170382"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-962170382",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "BORETTSLAGET KRONA",
+            "legal_form": "BRL"
+          },
+          "evidence_span": "BORETTSLAGET KRONA"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 1,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg"
+        ],
+        "platform_counts": {
+          "brreg": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 18,
+    "bytes": 2149894,
+    "latencies_ms": [
+      208,
+      208,
+      204,
+      206,
+      205,
+      208,
+      1945,
+      1815,
+      3083,
+      1891,
+      3095,
+      3098
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Borettslag.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "articles_date",
+      "value": "2012-05-09",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "business_address",
+      "value": "Ystenesgata 6B, 6003 ÅLESUND, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "email",
+      "value": "krona@styrerommet.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "employees_nav_date",
+      "value": "2026-02-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "employees_registered_date",
+      "value": "2026-02-12",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "1991-12-09",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "founding_date",
+      "value": "1968-05-06",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "industry",
+      "value": "Aktiviteter i borettslag og boligsameier",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "industry_code",
+      "value": "97.001",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Borettslag o.l.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "8300",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "legal_form",
+      "value": "Borettslag",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "BRL",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "legal_name",
+      "value": "BORETTSLAGET KRONA",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "municipality",
+      "value": "ÅLESUND",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "municipality_number",
+      "value": "1508",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "phone",
+      "value": "22 86 55 00",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "postal_address",
+      "value": "v/ OBOS Eiendomsforvaltning AS\nS. 6529 BORETTSLAGET KRONA\nPostboks 393  Alnabru, 0614 OSLO, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "postal_code",
+      "value": "6003",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "registered_at",
+      "value": "1995-02-20",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Borettslag.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    },
+    {
+      "field": "website_registered",
+      "value": "www.obos.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "962170382"
+    }
+  ],
+  "summary": {
+    "headline": "BORETTSLAGET KRONA",
+    "narrative": "BORETTSLAGET KRONA is a BRL company, operating in aktiviteter i borettslag og boligsameier, registered in Ålesund. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 2747793.0 NOK, operating result 1084721.0 NOK, annual result -41776.0 NOK. Registered leadership includes ['OBOS EIENDOMSFORVALTNING AS'] (Forretningsfører) and 9 other registered role(s). 1 registered subunit(s)/workplace(s).",
+    "statements": [
+      {
+        "text": "BORETTSLAGET KRONA is a BRL company, operating in aktiviteter i borettslag og boligsameier, registered in Ålesund.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 2747793.0 NOK, operating result 1084721.0 NOK, annual result -41776.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/962170382",
+        "retrieved_at": "2026-11-01T06:20:23.734668Z"
+      },
+      {
+        "text": "Registered leadership includes ['OBOS EIENDOMSFORVALTNING AS'] (Forretningsfører) and 9 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/962170382/roller",
+        "retrieved_at": "2026-11-01T06:20:34.980795Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=962170382&size=1000",
+        "retrieved_at": "2026-11-01T06:20:35.395654Z"
+      }
+    ],
+    "unknowns": [
+      "verified company website"
+    ],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

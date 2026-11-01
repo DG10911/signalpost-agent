@@ -66,10 +66,13 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
         return ev_id
 
     def claim(field: str, value: Any, availability: str, ev_ids: list[str], confidence: float,
-              reporting_period: str | None = None) -> None:
-        claims.append({"field": field, "value": value, "availability": availability,
-                       "confidence": round(confidence, 3), "evidence_ids": ev_ids,
-                       "reporting_period": reporting_period})
+              reporting_period: str | None = None, reason: str | None = None) -> None:
+        row = {"field": field, "value": value, "availability": availability,
+               "confidence": round(confidence, 3), "evidence_ids": ev_ids,
+               "reporting_period": reporting_period}
+        if reason:
+            row["reason"] = reason
+        claims.append(row)
 
     # 1) Formalised official registry claims (V4) — one shared registry evidence.
     reg = ev.get("registry", {}) or {}
@@ -179,6 +182,18 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
         for a in (wv.get("news_articles") or [])[:12]:
             claim("news", {"headline": a.get("headline"), "date_published": a.get("date_published"), "url": a.get("url")},
                   "available", [add_fact("ev-web", web, f"{a.get('headline') or ''} ({a.get('date_published') or ''})".strip())], 0.9)
+        # Left blank with the reason when every candidate was excluded
+        # (e.g. "page is an opinion article"), so a reader sees why.
+        for family, kept_key, excluded_key in (("news", "news_articles", "excluded_news_articles"),
+                                               ("careers_page", "careers_pages", "excluded_careers_pages")):
+            excluded = wv.get(excluded_key) or []
+            if excluded and not (wv.get(kept_key) or []):
+                counts: dict[str, int] = {}
+                for item in excluded:
+                    counts[item.get("excluded_reason") or "excluded"] = counts.get(item.get("excluded_reason") or "excluded", 0) + 1
+                summary = "; ".join(f"{n} x {why}" for why, n in sorted(counts.items(), key=lambda kv: -kv[1]))
+                claim(family, None, "not_available", ["ev-website"], 0.9,
+                      reason=f"{len(excluded)} candidate item(s) on the company site excluded: {summary}")
         sf = wv.get("structured_facts") or {}
         for k, v in sf.items():
             claim(f"website.{k}", v, "available",

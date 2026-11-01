@@ -1,0 +1,1310 @@
+{
+  "organisation_number": "923532110",
+  "name": "LANARS AS",
+  "legal_form": "AS",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "BÆRUM",
+  "municipality_number": "3201",
+  "industry_code": "62.100",
+  "industry_label": "Dataprogrammeringstjenester",
+  "website": "lanars.no",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "923532110",
+        "navn": "LANARS AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "62.100",
+        "naeringskode1.beskrivelse": "Dataprogrammeringstjenester",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "true",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "2026-09-14",
+        "registreringsdatoantallansatteNAVAaregisteret": "2026-09-10",
+        "hjemmeside": "lanars.no",
+        "epostadresse": "hello@lanars.no",
+        "telefon": "",
+        "mobil": "",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "Martin Linges vei 25",
+        "forretningsadresse.poststed": "FORNEBU",
+        "forretningsadresse.postnummer": "1364",
+        "forretningsadresse.kommune": "BÆRUM",
+        "forretningsadresse.kommunenummer": "3201",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2019-11-25",
+        "stiftelsesdato": "2019-07-31",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2020-05-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2020-05-23",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2019-11-25",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2019-07-31",
+        "vedtektsfestetFormaal": "IT-utviklingstjenester: web,- mobil,- design,- og maskinvare kompetanse, til norske gründer og mellomstore bedrifter samt det som naturlig står i forbindelse med dette.",
+        "aktivitet": "IT-utviklingstjenester: web,- mobil,- design,- og maskinvare kompetanse.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "false",
+        "kapital.belop": "30000.00",
+        "kapital.antallAksjer": "3000",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2019-11-25",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "923532110",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:41.410106Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "923532110",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/923532110",
+      "retrieved_at": "2026-11-01T06:22:06.832782Z",
+      "value": {
+        "organisation_number": "923532110",
+        "name": "LANARS AS",
+        "legal_form": "AS",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "lanars.no",
+        "industry": {
+          "beskrivelse": "Dataprogrammeringstjenester",
+          "kode": "62.100"
+        },
+        "business_address": {
+          "adresse": [
+            "Martin Linges vei 25"
+          ],
+          "kommune": "BÆRUM",
+          "kommunenummer": "3201",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "1364",
+          "poststed": "FORNEBU"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "2c28de3d2d7b43bb55ad913e359f33bc8059ce0e5afb5f17d696f6248f3f71fd",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/923532110",
+      "retrieved_at": "2026-11-01T06:22:07.043285Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 4920743,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 13133309.0,
+            "operating_result": 1160174.0,
+            "profit_before_tax": 1108022.0,
+            "annual_result": 1032724.0,
+            "assets": 2440305.0,
+            "equity": 480778.0,
+            "debt": 1959528.0
+          },
+          {
+            "record_id": 5498491,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 7556833.0,
+            "operating_result": 766454.0,
+            "profit_before_tax": 729314.0,
+            "annual_result": 568873.0,
+            "assets": 2942707.0,
+            "equity": 1049650.0,
+            "debt": 1893056.0
+          },
+          {
+            "record_id": 7216178,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 6476808.0,
+            "operating_result": -327509.0,
+            "profit_before_tax": -351243.0,
+            "annual_result": -267100.0,
+            "assets": 1469265.0,
+            "equity": 782550.0,
+            "debt": 686715.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "9680197c33b352269e1190d0191bbd07beba2e0e50355dd3a33119fb1b0707a2",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/923532110/aar",
+      "retrieved_at": "2026-11-01T06:22:15.720494Z",
+      "value": {
+        "years": [
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/923532110/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/923532110/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/923532110/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/923532110/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/923532110/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/923532110/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/923532110/2019"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "d3cd03cd90fcf8ead9d634ead2451dfcb1810423727ef3e30655374948250f3e",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/923532110/roller",
+      "retrieved_at": "2026-11-01T06:22:15.919526Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Arslan Tayliyev",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2026-02-19",
+            "inactive": false
+          },
+          {
+            "name": "Arslan Tayliyev",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-02-19",
+            "inactive": false
+          },
+          {
+            "name": [
+              "BAKER TILLY GRIMSRUD & CO. ANS"
+            ],
+            "organisation_number": "948315963",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2026-09-10",
+            "inactive": true
+          },
+          {
+            "name": [
+              "APEX REGNSKAP AS"
+            ],
+            "organisation_number": "928690717",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2024-08-02",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "e5d7ab733eabbe60b606bcdd0e2317dc1e9df13af862f09c4e9902b853c906bb",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/923532110",
+      "retrieved_at": "2026-11-01T06:22:16.116898Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=923532110&size=1000",
+      "retrieved_at": "2026-11-01T06:22:16.321145Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "923981721",
+            "name": "LANARS AS",
+            "address": {
+              "adresse": [
+                "Martin Linges vei 25"
+              ],
+              "kommune": "BÆRUM",
+              "kommunenummer": "3201",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "1364",
+              "poststed": "FORNEBU"
+            },
+            "industry": {
+              "beskrivelse": "Dataprogrammeringstjenester",
+              "kode": "62.100"
+            },
+            "employees": null
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "26bb87f60115e189ceb0c75e5c5337693312a37bd8b3c81ccb5ecef9780a61ea",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://lanars.no/",
+      "retrieved_at": "2026-11-01T06:22:21.973899Z",
+      "value": {
+        "requested_url": "https://lanars.no/",
+        "final_url": "https://lanars.no/",
+        "registered_domain": "lanars.no",
+        "title": "Programvare - og maskinvareutviklingsselskap | LANARS",
+        "description": "Lanars er et fullsyklus webutviklingsbyrå • Vi hjelper bedrifter med å løse komplekse digitale utfordringer ➣ Apputvikling ➣ Design ➣ IoT ➣ Innebygde systemer ➣CRM- og ERP-systemer",
+        "main_text_excerpt": "Vi designer intelligente systemer som automatiserer arbeidsflyt og beslutningstaking med AI-drevne løsninger.\nVi bygger høyytelsesmobilapplikasjoner som sikrer sømløse brukeropplevelser.\nVi lager raske, skalerbare og moderne nettsteder, designet for ytelse, brukervennlighet og langsiktig vekst.\nVi utvikler og tilpasser systemer som effektiviserer driften din, og forbedrer effektivitet og kontroll på tvers av forretningsprosessene dine.\nVi bygger smarte tilkoblede løsninger for praktiske applikasjoner – fra maskinvareintegrasjon til programvare.\nVi lager fleksibel og skalerbar programvare, tilpasset dine unike forretningsbehov.\nCTO i LANARS\nOleksii Podolian\nAI-støttet utvikling\nTeamet vårt integrerer AI-drevne verktøy som CloudCode, Copilot og Codex direkte i utviklingsprosessen. Dette lar oss optimalisere arbeidsflyt, øke effektiviteten og opprettholde høy kvalitet i høyt tempo. Ved å bygge AI inn i hverdagen vår reduserer vi repetitive oppgaver, akselererer leveranser og fokuserer mer på å løse komplekse problemer – noe som sikrer bedre resultater for hvert prosjekt.\nGjennom dokumentert ekspertise i å levere en rekke vellykkede prosjekter bringer vi spesialisert kunnskap inn i hver fase av utviklingen – for å sikre at appen din skalerer og fungerer feilfritt.\n40+\nApper levert skrevet i Flutter\n1M+\nNedlastinger på tvers av alle plattformer\n1-2\nUtviklingsmåneder til MVP\nDefigo\nSmart dørklokke\nEn smart dørklokke- og tilgangsstyringsplattform som kobler beboere, eiendomsforvaltere og besøkende via sømløse digitale nøkler, videosamtaler og automatiserte inngangsarbeidsflyter — alt styrt fra én mobilapp.\nSelectAI\nAI-basert havbruksovervåking\nEn flytende enhet i merden som analyserer laks med tre synkroniserte kameraer og kant-AI — erstatter manuell ukentlig nettprøvetaking med automatisert lusatelling, velferdsscoring og Mattilsynet-klare rapporter som dekker 50 ganger flere fisk per økt.\nMIA\nDigital helseplatform\nEn digital helseplatform som gir brukerne mulighet til å spore symptomer, overvåke velvære og få tilgang til personlige helseinnsikter — og kobler folk med ekspertveiledning og verktøyene de trenger for å ta kontroll over sin helsereise.\nLiquid Tool\nEt fjernstyrt smart kjølemiddelovervåkingssystem\nEt fjernstyrt smart kjølemiddelovervåkingssystem som sporer væskenivåer, temperatur og forurensning på tvers av industrimaskiner i sanntid — muliggjør prediktivt vedlikehold, reduserer nedetid og kutter driftskostnader betydelig.\nVi tilbyr fleksible samarbeidsmodeller som er tilpasset prosjektkravene dine og sikrer effektivitet i alle faser\nIdeelt for oppstartsselskaper – denne modellen gir et tydelig budsjett og en klar tidslinje med definerte krav, og sikrer et produkt av høy kvalitet uten overraskelser.\nFå et dedikert team av eksperter som utelukkende fokuserer på prosjektet ditt for maksimalt samarbeid, fleksibilitet og kontroll over utviklingsprosessene.\nVelg maksimal fleksibilitet med fakturering basert på faktisk tidsbruk og ressurser. Ideelt for prosjekter i utvikling, der justeringer underveis er mulig.\nTjenesten gir rask tilgang til ekspertstøtte og tilbyr spesialiserte ferdigheter når du trenger dem – enkelt integrert med ditt interne team.\nDrevet av tydelig kommunikasjon og veldefinerte mål sikrer vi at hvert prosjekt går smidig fra start til slutt. Denne tilnærmingen gir vellykkede resultater og gode tilbakemeldinger fra kundene.\n\"Vi har prøvd mer enn 10 selskaper tidligere, men LANARS håndterte det utmerket\"\nVi forenkler kompleks innovasjon og leverer avanserte løsninger med minimalt klientarbeid. Med dyp ekspertise, fleksibilitet og en helhetlig tilnærming gjør vi digitale utfordringer om til reell forretningsverdi.\nTeknologi, case-studier, jobber... det er alltid noe!\n13.05.2026\nAI Coding 2026: Hvordan agentdrevet AI-utvikling forandret måten vi leverer tech-prosjekter påI 2026 erstattet et norsk byggeselskap to timers manuell renoveringskalkyle med en tretti-minutters AI-drevet gjennomgang - basert på seks historiske eksempler som lærte modellen reglene. Notater fra LANARS i Oslo om hva som faktisk endret seg i programvareutvikling i år: kodeagenter som lagkamerater, små seniorteam som leverer som store, og den nye begrensningen som ikke lenger er ingeniørkapasitet.Les mer\n27.02.2025\nKraften av IoT-hjemmeautomatisering: Transformasjon av moderne livFremveksten av IoT-hjemmeautomatisering revolusjonerer måten vi interagerer med våre hjem på. Tenk deg et hjem som forutser dine behov, automatiserer daglige oppgaver og forbedrer sikkerheten – alt sømløst koblet gjennom intelligent teknologi. Fra smart belysning som tilpasser seg humøret ditt til sikkerhetssystemer som gir sanntidsvarsler, endrer IoT hvordan vi administrerer hjemmene våre og gjør livet mer praktisk, effektivt og sikkert.Les mer\n24.05.2024\nKundeveiUtforske alle fasene bedriften eller personen går gjennom når det kommer til teknologisk prosjektutvikling, hvorfor det kan være nødvendig, hvordan velge riktig leverandør og hvordan du f",
+        "identity_text_excerpt": "[email protected] Org nr 923 532 110 Linkedin Facebook Instagram Youtube Github FAQ Guidelines for cookies Vilkår og betingelser Personvernerklæring © Lanars, 2016-2026. Alle rettigheter er forbeholdt | Org nr 923 532 110",
+        "social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/lanars.inc"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/lanars.inc"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/lanars"
+          },
+          {
+            "platform": "x",
+            "url": "https://x.com/lanars_inc"
+          }
+        ],
+        "structured_organisations": [
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://lanars.com/#organization",
+            "name": "LANARS",
+            "legalName": "LANARS AS",
+            "url": "https://lanars.no",
+            "logo": "https://lanars.no/img/logo.svg",
+            "description": "International hardware and software development company headquartered in Fornebu, Norway. We help businesses ship AI, IoT, embedded, mobile and web products.",
+            "foundingDate": "2018",
+            "sameAs": [
+              "https://www.linkedin.com/company/lanars/",
+              "https://github.com/lanars",
+              "https://twitter.com/lanars_inc"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Fornebuveien 7-9",
+              "addressLocality": "Fornebu",
+              "addressRegion": "Akershus",
+              "postalCode": "1366",
+              "addressCountry": "NO"
+            },
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "customer support",
+                "email": "hello@lanars.com",
+                "availableLanguage": [
+                  "en",
+                  "nb",
+                  "de"
+                ]
+              }
+            ]
+          }
+        ],
+        "structured_facts": {
+          "founding_date": "2018",
+          "address": {
+            "street": "Fornebuveien 7-9",
+            "postal_code": "1366",
+            "locality": "Fornebu",
+            "region": "Akershus",
+            "country": "NO"
+          }
+        },
+        "job_postings": [],
+        "news_articles": [],
+        "content_sha256": "4275e0622315df2c6ed552c68e23a7c490d3f18a9dfa8f2fe78b346cbf1a3faf",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://lanars.no/",
+            "title": "Programvare - og maskinvareutviklingsselskap | LANARS",
+            "main_text_excerpt": "Vi designer intelligente systemer som automatiserer arbeidsflyt og beslutningstaking med AI-drevne løsninger.\nVi bygger høyytelsesmobilapplikasjoner som sikrer sømløse brukeropplevelser.\nVi lager raske, skalerbare og moderne nettsteder, designet for ytelse, brukervennlighet og langsiktig vekst.\nVi utvikler og tilpasser systemer som effektiviserer driften din, og forbedrer effektivitet og kontroll på tvers av forretningsprosessene dine.\nVi bygger smarte tilkoblede løsninger for praktiske applikasjoner – fra maskinvareintegrasjon til programvare.\nVi lager fleksibel og skalerbar programvare, tilpasset dine unike forretningsbehov.\nCTO i LANARS\nOleksii Podolian\nAI-støttet utvikling\nTeamet vårt integrerer AI-drevne verktøy som CloudCode, Copilot og Codex direkte i utviklingsprosessen. Dette lar oss optimalisere arbeidsflyt, øke effektiviteten og opprettholde høy kvalitet i høyt tempo. Ved å bygge AI inn i hverdagen vår reduserer vi repetitive oppgaver, akselererer leveranser og fokuserer mer på å løse komplekse problemer – noe som sikrer bedre resultater for hvert prosjekt.\nGjennom dokumentert ekspertise i å levere en rekke vellykkede prosjekter bringer vi spesialisert kunnskap inn i hver fase av utviklingen – for å sikre at appen din skalerer og fungerer feilfritt.\n40+\nApper levert skrevet i Flutter\n1M+\nNedlastinger på tvers av alle plattformer\n1-2\nUtviklingsmåneder til MVP\nDefigo\nSmart dørklokke\nEn smart dørklokke- og tilgangsstyringsplattform som kobler beboere, eiendomsforvaltere og besøkende via sømløse digitale nøkler, videosamtaler og automatiserte inngangsarbeidsflyter — alt styrt fra én mobilapp.\nSelectAI\nAI-basert havbruksovervåking\nEn flytende enhet i merden som analyserer laks med tre synkroniserte kameraer og kant-AI — erstatter manuell ukentlig nettprøvetaking med automatisert lusatelling, velferdsscoring og Mattilsynet-klare rapporter som dekker 50 ganger flere fisk per økt.\nMIA\nDigital helseplatform\nEn digital helseplatform som gir brukerne mulighet til å spore symptomer, overvåke velvære og få tilgang til personlige helseinnsikter — og kobler folk med ekspertveiledning og verktøyene de trenger for å ta kontroll over sin helsereise.\nLiquid Tool\nEt fjernstyrt smart kjølemiddelovervåkingssystem\nEt fjernstyrt smart kjølemiddelovervåkingssystem som sporer væskenivåer, temperatur og forurensning på tvers av industrimaskiner i sanntid — muliggjør prediktivt vedlikehold, reduserer nedetid og kutter driftskostnader betydelig.\nVi tilbyr fleksible samarbeidsmodeller som er tilpasset prosjektkravene dine og sikrer effektivitet i alle faser\nIdeelt for oppstartsselskaper – denne modellen gir et tydelig budsjett og en klar tidslinje med definerte krav, og sikrer et produkt av høy kvalitet uten overraskelser.\nFå et dedikert team av eksperter som utelukkende fokuserer på prosjektet ditt for maksimalt samarbeid, fleksibilitet og kontroll over utviklingsprosessene.\nVelg maksimal fleksibilitet med fakturering basert på faktisk tidsbruk og ressurser. Ideelt for prosjekter i utvikling, der justeringer underveis er mulig.\nTjenesten gir rask tilgang til ekspertstøtte og tilbyr spesialiserte ferdigheter når du trenger dem – enkelt integrert med ditt interne team.\nDrevet av tydelig kommunikasjon og veldefinerte mål sikrer vi at hvert prosjekt går smidig fra start til slutt. Denne tilnærmingen gir vellykkede resultater og gode tilbakemeldinger fra kundene.\n\"Vi har prøvd mer enn 10 selskaper tidligere, men LANARS håndterte det utmerket\"\nVi forenkler kompleks innovasjon og leverer avanserte løsninger med minimalt klientarbeid. Med dyp ekspertise, fleksibilitet og en helhetlig tilnærming gjør vi digitale utfordringer om til reell forretningsverdi.\nTeknologi, case-studier, jobber... det er alltid noe!\n13.05.2026\nAI Coding 2026: Hvordan agentdrevet AI-utvikling forandret måten vi leverer tech-prosjekter påI 2026 erstattet et norsk byggeselskap to timers manuell renoveringskalkyle med en tretti-minutters AI-drevet gjennomgang - basert på seks historiske eksempler som lærte modellen reglene. Notater fra LANARS i Oslo om hva som faktisk endret seg i programvareutvikling i år: kodeagenter som lagkamerater, små seniorteam som leverer som store, og den nye begrensningen som ikke lenger er ingeniørkapasitet.Les mer\n27.02.2025\nKraften av IoT-hjemmeautomatisering: Transformasjon av moderne livFremveksten av IoT-hjemmeautomatisering revolusjonerer måten vi interagerer med våre hjem på. Tenk deg et hjem som forutser dine behov, automatiserer daglige oppgaver og forbedrer sikkerheten – alt sømløst koblet gjennom intelligent teknologi. Fra smart belysning som tilpasser seg humøret ditt til sikkerhetssystemer som gir sanntidsvarsler, endrer IoT hvordan vi administrerer hjemmene våre og gjør livet mer praktisk, effektivt og sikkert.Les mer\n24.05.2024\nKundeveiUtforske alle fasene bedriften eller personen går gjennom når det kommer til teknologisk prosjektutvikling, hvorfor det kan være nødvendig, hvordan velge riktig leverandør og hvordan du f",
+            "content_sha256": "4275e0622315df2c6ed552c68e23a7c490d3f18a9dfa8f2fe78b346cbf1a3faf"
+          },
+          {
+            "url": "https://lanars.no/blog/ai-coding-2026",
+            "title": "AI coding in 2026",
+            "main_text_excerpt": "I 2026 erstattet et norsk byggeselskap to timers manuell renoveringskalkyle med en tretti-minutters AI-drevet gjennomgang - basert på seks historiske eksempler som lærte modellen reglene. Notater fra LANARS i Oslo om hva som faktisk endret seg i programvareutvikling i år: kodeagenter som lagkamerater, små seniorteam som leverer som store, og den nye begrensningen som ikke lenger er ingeniørkapasitet. To casestudier (Lomundal, SelectAI), en praktisk 90-dagers plan for SMB-er, og risikoene som faktisk biter i produksjon. Cirka 13 minutter.\nEn tirsdag i Oslo. En Lomundal-inspektør lukker iPad-appen etter befaringen av en renovering han nettopp gikk gjennom - tre rom, original ledningsinstallasjon, et bad som har sett bedre tiår. Han trykker «finish» og setter seg i bilen. Når han er tilbake på kontoret, ligger det allerede et flersides Excel-kostnadsestimat i innboksen hans. Poster sortert etter fag, avhengigheter rangert, materialer og timer og uforutsette poster - den typen detaljert tilbud som tidligere tok en senior kalkulatør to-tre timer.\nIngen hos Lomundal eller LANARS programmerte disse reglene. Vi ga Claude seks historiske par - befaringsrapport og estimatet den hadde produsert, seks stykker, det var alt - og ba modellen skrive reglene selv. Dokumentet Claude produserte bor nå inne i en Make.com-arbeidsflyt. Ny befaring inn, Excel ut, før inspektøren er hjemme. Det er det som endret seg i 2026. Ikke et slagord om at datamaskiner tenker. Et norsk byggeselskap har erstattet den arbeidsintensive midten av sin kalkyleprosess med en modell som lærte selskapets egne regler fra seks historiske eksempler, og det er i produksjon nå, gjør arbeidet. Resten av dette innlegget handler om hva som gjorde det mulig, hva vi ser på tvers av prosjektene vi kjører fra kontoret på Fornebu, og hva vi venter av de neste tolv månedene.\nLANARS startet i Norge i 2018 som et lite team som samarbeidet med selskaper i StartUpLab i Oslo. Flaskehalsen for de gründerne var nesten alltid ingeniørkapasitet - backloggen var en liste med «det tar vi senere»-saker, hver ny funksjon betydde en sprint, hver sprint betydde en ansettelsessamtale. I 2026 har flaskehalsen flyttet seg. Ingeniørkapasitet er billig nok nå til at omfang ikke lenger er begrensningen; det er dømmekraft som er det. Det er hele premisset for det som følger.\nTre ting skjedde med programvareutvikling samtidig, og de forsterker hverandre. Resten av innlegget arbeider ut konsekvensene.\nI 2023 skrev en ingeniør hos LANARS et funksjonsnavn og lot modellen fullføre linjen. I 2026 åpner samme ingeniør en oppgave i Jira, gir den til Claude Code, og ser en fungerende pull request dukke opp tjue minutter senere - med tester, med en beskrivelse av avveiningene modellen vurderte, og med den typen små refaktoreringer en omhyggelig senioringeniør ville gjort underveis. Ingeniørens jobb har ikke forsvunnet. Den har flyttet seg, fra å skrive tegn til å spesifisere intensjon, gjennomgå differ og orkestrere flere parallelle agentsesjoner samtidig. Vi har ingeniører som kjører tre eller fire Claude Code-sesjoner i forskjellige worktrees samtidig: én sender en funksjon, én skriver tester for forrige ukes arbeid, én feilsøker en flaky CI-kjøring, én reviderer avhengighetsoppgraderinger. Resultatet blir fortsatt gjennomgått av et menneske. Genereringen blir det ikke.\nVi gjorde Claude Code til ingeniørstandarden hos LANARS i starten av 2026. Hver ingeniør bruker det hver dag. Nye ingeniører introduseres til det i sin første uke. Produktivitetsforskjellen mellom agentdrevne og ikke-agentdrevne arbeidsflyter er bred nok i 2026 til at det å la det være valgfritt, ærlig talt, var å legge igjen penger på bordet. Vi tok beslutningen om å standardisere, og vi angrer ikke.\nDet andre skiftet er roligere, men for oss viktigere. Gjennom 2024 og 2025 ansatte vi etter fagdisiplin: backend, frontend, mobil, DevOps. Vi var gode på det. Vi er det fortsatt. Men kostnaden ved å gå utenfor sin disiplin har kollapset i 2026, og ingeniørene som kan ta det skrittet er dramatisk mer verdifulle enn de som ikke kan.\nGrunnen er enkel. En ingeniør som forstår hva god arkitektur ser ut som - som kan lese et system, bestemme hva som bør bo hvor, og vurdere om en foreslått endring passer modellen - kan nå legitimt levere på tvers av hele stacken. De mekaniske delene av å arbeide i et ukjent rammeverk eller runtime er nettopp de avgrensede, godt spesifiserte oppgavene der agenter utmerker seg.\nSå flaskehalsen på «kan denne personen levere på tvers av web, mobil, embedded og infrastruktur?» er ikke lenger «kan de alle fire i lik dybde?». Den er «kan de resonnere om arkitekturen godt nok til å lede en agent som håndterer detaljene?». Listen for arkitektonisk leseferdighet har gått opp. Listen for stack-spesifikk kunnskap har gått ned.\nFor oss betyr dette at små seniorteam leverer enorme mengder arbeid. Seks personer på et prosjekt er nok, når hver av disse seks kan lede flere agenter gjennom den stacken arbeidet krever. Vi ",
+            "content_sha256": "ab3c4d660dd136d3147bfcac33a24faee43aa246dd9770d5e957d1cf5d8a1a53"
+          },
+          {
+            "url": "https://lanars.no/contact",
+            "title": "Kontakt LANARS — hovedkontor i Oslo | Programvare- og maskinvareutvikling",
+            "main_text_excerpt": "Del ideen din eller produktet du allerede har. Innen én virkedag får du et tydelig svar og konkrete neste steg.\nLANARS helps businesses build apps, websites, ERP/CRM systems, AI tools, and automation — with guaranteed results, ...\nFrom May 5–7, you’ll find LANARS and SelectAI Norway in Bergen as exhibitors at one of the key industry events bringing together the entire maritime and aquaculture ecosystem. Three days of insights, real conversations, and future-focused tech — exactly where we love to be. If you’re attending, let’s meet. We’d love to talk about how we build digital products that actually solve real-world challenges 🚀 See you at HavExpo As 2026💙\nA year ago, if someone had asked me: “Can you build a proper application with AI?” I would have categorically answered “no.” Today, my answer has changed to “yes,” but with important caveats. Over this past year, we’ve gone from experiments to real AI implementation in our development process, and the results have been surprising.\nAs a company actively involved in AI and aquaculture, LANARS is excited to be part of HavExpo AS 2026! This time together with our partner, @selectai_no ✨ From May 5–7, you’ll find LANARS and SelectAI Norway in Bergen as exhibitors at one of the key industry events bringing together the entire maritime and aquaculture ecosystem. Three days of insights, real conversations, and future-focused tech — exactly where we love to be. If you’re attending, let’s meet. We’d love to talk about how we build digital products that actually solve real-world challenges 🚀 See you at HavExpo As 2026💙 #LANARS #HavExpo #selectai #fishfarm\nOur frontend department prepared an easy tool for linear and radial gradients implementation.\nDefigo — a smart doorbell developed end-to-end with our partners — is appearing across offices and residential buildings throughout the city. And the momentum doesn't stop there: the product is now scaling globally. We recently sat down to discuss how it all came together, from initial concept to real-world deployment. The full interview «Defigo Video Intercom: From StartupLab to Global Expansion https://youtu.be/YEs1k4Qkob8» is on our channel — worth a watch 👀",
+            "content_sha256": "0c633c22ac9aa6e7a9fc7dcd6bad7dd73326aac228c46a11514a1fc8eedb90c5"
+          },
+          {
+            "url": "https://lanars.no/mdm-fleet-management",
+            "title": "Tilpassede MDM- og enhetsflåteløsninger — Lanars",
+            "main_text_excerpt": "Ferdige MDM-løsninger tar betalt per enhet, hver måned. Vi bygger en plattform rundt flåten din, slik at du beholder full kontroll og betaler minst 2,5× mindre.\nEt tiår med fremragende kvalitet \"i produksjon\"\nAI-assistert utvikling har kortet ned leveransetidene våre dramatisk. Tilpasset MDM pleide å ta et år — nå tar det et kvartal. Samtidig fortsetter SaaS-MDM-leverandører å øke prisene på produkter de leverte for fem år siden. Økonomien rettferdiggjør ikke modellen deres lenger.\nPOS-terminaler · Selvbetjeningskiosker · Digital skilting · Lagerstyrings-nettbrett\nFabrikksensorer · Edge-gateways · Kontrollpaneler · Maskin-HMI\nEV-ladere · Batteristyringssystemer · Nettovervåkingsnoder · Smarte målere\nNettbrett i kjøretøy · Fraktsporere · Lagerlokal-skannere · Telematikk-enheter\nSmartlåser · Calling-anlegg · Adgangsterminaler · Bygningssensorer\nEdge-enheter om bord · Fartøysovervåkingsnoder · Lastsensorer · Satellitt-tilkoblede terminaler\nMedisinske nettbrett · Pasientmonitorer · Bærbare helseenheter · Klinikk-kiosker\nServicerobotter · AGV-er · Droner · Autonome arbeidsstasjoner\nVi kartlegger flåten din, enhetene, arbeidsflytene og integrasjonene som faktisk betyr noe for driften din.\nVi designer systemet rundt din maskinvare og infrastruktur — selvhostet, sky eller hybrid.\nVi leverer et fungerende system på reelle enheter, integrerer din stack og ruller ut på tvers av flåten din.\nVi blir værende. Nye enheter, nye funksjoner, nye integrasjoner — systemet vokser med driften din.\nAI-assistert utvikling er ikke ingeniørarbeid på steroider — det er en ny standard. Men det er en grense de fleste visker ut: vibe coding og AI-assistert ingeniørarbeid er ikke det samme. Du kan ikke prompte deg gjennom arkitektur, sikkerhet eller skala hvis du ikke allerede forstår dem. AI-en forsterker det du tar med deg inn — og hvis det du tar med er overflatisk, blir også systemet du leverer det.\nDette omformer alt nedstrøms: team på over seks ingeniører på ett enkelt prosjekt gir ikke lenger mening. Vi leverer mer med færre, fordi hver ingeniør i rommet er senior, og hver senior ganges opp av Claude Code, Cursor og Codex som jobber ved siden av dem.\nVi har en referansearkitektur, beprøvde moduler og leveranseerfaring fra tidligere prosjekter. Det tilpasser vi flåten din — ikke en one-size-fits-all SaaS. Du får kildekode og eierskap.\nDe fleste prosjekter når en produksjonspilot på 8–12 uker. Tidslinjen for full flåteutrulling avhenger av OS-mixen og staging-miljøet ditt.\nSelvhostet i din sky eller on-prem som standard. Vi kan hoste og drifte det for deg hvis du foretrekker det, men du beholder eierskap og portabilitet.\nJa — CRM, fakturering, identitet (SSO/SAML/OIDC), analyse, ticketing. Vi behandler MDM som en del av din stack, ikke en øy.\nHvis flåten din er under noen hundre enheter, sannsynligvis ikke — SaaS-overheaden er lav. Over det betaler en tilpasset løsning seg som regel tilbake innen første år. Vi gir deg et ærlig svar etter kartleggingen.\nJa. Vi har migrert flåter fra Esper, Scalefusion og egenutviklede verktøy. Typisk fremgangsmåte: shadow-enroll parallelt, valider på en pilotgruppe, kutt over i bølger.\nDet gjør du. Kildekode, infrastruktur-konfigurasjon, datapipelines — alt leveres til ditt repository og dine kontoer. Ingen runtime-lisens, ingen avgifter per enhet etter levering, ingen escrow-spill. Hvis du noen gang vil fortsette uten oss, kan du det.\nNei. LANARS har vært i drift siden 2016 uten planer om å stoppe — men selv om det skulle endre seg, fortsetter systemet å fungere fordi du eier koden og driver infrastrukturen, uavhengig av om vi er på prosjektet eller ikke. Vi dokumenterer også arkitekturen og overleverer til ingeniørene dine eller en annen partner. Kontinuitet er bygget inn i leveransemodellen, ikke solgt som et tillegg.\nLANARS helps businesses build apps, websites, ERP/CRM systems, AI tools, and automation — with guaranteed results, ...\nFrom May 5–7, you’ll find LANARS and SelectAI Norway in Bergen as exhibitors at one of the key industry events bringing together the entire maritime and aquaculture ecosystem. Three days of insights, real conversations, and future-focused tech — exactly where we love to be. If you’re attending, let’s meet. We’d love to talk about how we build digital products that actually solve real-world challenges 🚀 See you at HavExpo As 2026💙\nA year ago, if someone had asked me: “Can you build a proper application with AI?” I would have categorically answered “no.” Today, my answer has changed to “yes,” but with important caveats. Over this past year, we’ve gone from experiments to real AI implementation in our development process, and the results have been surprising.\nAs a company actively involved in AI and aquaculture, LANARS is excited to be part of HavExpo AS 2026! This time together with our partner, @selectai_no ✨ From May 5–7, you’ll find LANARS and SelectAI Norway in Bergen as exhibitors at one of the key industry events bringing together the entire maritime and aquacult",
+            "content_sha256": "ff63eb08169daf67545296d20fc4f1b7b99d121302f8ed10c46d5f76dab9513e"
+          },
+          {
+            "url": "https://lanars.no/careers",
+            "title": "Karriere i Lanars - Bli en del av teamet vårt",
+            "main_text_excerpt": "Det kan være en utfordrende reise, men samtidig kan det bli et av de mest fascinerende høydepunktene i din karriere. Bli med oss!\nVi lager ting som forbedrer folks liv. Ved å bli med oss vil du samarbeide med ulike teknologiselskaper fra alle verdenshjørner. Du vil føle at du utgjør en forskjell.\nLANARS er vår virksomhet. Vi jobber med \"state-of-the-art\"-teknologi med det siste av digitale løsninger. LANARS er en åpen og uformell organisasjon med et internasjonalt og engasjerende miljø. Vi kan tilby konkurransedyktig lønn og bonuser til våre ansatte.\nVi jobber med de mest innovative teknologier, bransjer og bedrifter, og du vil få erfaring med å være en pioner innen utvikling av helt unike løsninger. Ingenting er skrevet i stein når det kommer til fremgang, så kontinuerlig utforskning av nye ting er også garantert.\nTeamets arbeid er alltid organisert på en komfortabel måte. Vi tilbyr en fleksibel arbeidsplan, og garanterer en kompensasjonsordning. Våre arbeidere kan velge om de vil jobbe eksternt eller på kontoret. Vårt firma ansetter i henhold til en ikke-diskrimineringspolitikk, slik at alle kan føle seg respekterte og frie.\nSom arbeidsgiver ønsker LANARS å være en arena for personlig utvikling. Hvert medlem av teamet vårt følger en egen utviklingsplan, og selskapet støtter fag, språkkurs, sportsaktiviteter og andre måter for personlig vekst.\nSelv om det ikke er ledige stillinger, er vi alltid på utkikk etter smarte, modige og nysgjerrige mennesker. Hvis du ikke fant en passende jobb, men du streber etter å bli med i LANARS, vennligst send din CV:\nDessverre er det ingen ledige stillinger for øyeblikket.",
+            "content_sha256": "754e7d3803ccd648349e65b3f0a1df0e70b46ffb9314132708ae75e8d295b71b"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [
+          {
+            "url": "https://lanars.no/karriere",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          }
+        ],
+        "identity_assessment": {
+          "status": "exact",
+          "score": 1.0,
+          "publishable": true,
+          "legal_name_tokens": [
+            "lanars"
+          ],
+          "matched_tokens": [
+            "lanars"
+          ],
+          "reasons": [
+            "exact organisation number appears in homepage identity evidence"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/lanars.inc"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/lanars.inc"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/lanars"
+          },
+          {
+            "platform": "x",
+            "url": "https://x.com/lanars_inc"
+          },
+          {
+            "platform": "youtube",
+            "url": "https://youtube.com/channel/UCaABC-VkSDTfanhtSnZ8Lrw"
+          }
+        ],
+        "social_link_assessments": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/lanars.inc",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "lanars"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/lanars.inc",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "lanars"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/lanars",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "lanars"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "x",
+            "url": "https://x.com/lanars_inc",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "lanars"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "youtube",
+            "url": "https://youtube.com/channel/UCaABC-VkSDTfanhtSnZ8Lrw",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          }
+        ],
+        "excluded_news_articles": [
+          {
+            "headline": "13.05.2026 AI Coding 2026: Hvordan agentdrevet AI-utvikling forandret måten vi leverer tech-prosjekter på I 2026 erstattet et norsk byggeselskap to timers manuell renoveringskalkyle med en tretti-minutters AI-drevet gjennomgang - basert på seks historiske eksempler som lærte modellen reglene. Notate",
+            "date_published": "13.05.2026",
+            "url": "https://lanars.no/blog/ai-coding-2026",
+            "excluded_reason": "page is a guide or advice article, not news about the company"
+          },
+          {
+            "headline": "24.05.2024 Kundevei Utforske alle fasene bedriften eller personen går gjennom når det kommer til teknologisk prosjektutvikling, hvorfor det kan være nødvendig, hvordan velge riktig leverandør og hvordan du får maksimal avkastning fra investeringen din. Les mer",
+            "date_published": "13.05.2026",
+            "url": "https://lanars.no/blog/kunde-vei",
+            "excluded_reason": "page is a guide or advice article, not news about the company"
+          },
+          {
+            "headline": "27.02.2025 Kraften av IoT-hjemmeautomatisering: Transformasjon av moderne liv Fremveksten av IoT-hjemmeautomatisering revolusjonerer måten vi interagerer med våre hjem på. Tenk deg et hjem som forutser dine behov, automatiserer daglige oppgaver og forbedrer sikkerheten – alt sømløst koblet gjennom i",
+            "date_published": "13.05.2026",
+            "url": "https://lanars.no/blog/iot-home-automation",
+            "excluded_reason": "not in a news or press section and the headline does not name the company"
+          },
+          {
+            "headline": "AI coding in 2026",
+            "date_published": "2026-05-13T09:51:23Z",
+            "url": null,
+            "excluded_reason": "no article address"
+          },
+          {
+            "headline": "13.06.2023 Alt om forretningsstrategier: Typer, fordeler og ulemper, og eksempler Det spiller nesten ingen rolle hvilken sektor du jobber i, for konkurransen er intens i alle sektorer. Bedrifter prøver konstant å oppnå fordeler ved å kutte kostnader, innføre unike løsninger eller investere i ekspans",
+            "date_published": "24.05.2024",
+            "url": "https://lanars.no/blog/all-about-business-strategies",
+            "excluded_reason": "not in a news or press section and the headline does not name the company"
+          },
+          {
+            "headline": "24.05.2024 Kundevei Utforske alle fasene bedriften eller personen går gjennom når det kommer til teknologisk prosjektutvikling, hvorfor det kan være nødvendig, hvordan velge riktig leverandør og hvordan du får maksimal avkastning fra investeringen din. Les mer",
+            "date_published": "24.05.2024",
+            "url": "https://lanars.no/blog/kunde-vei",
+            "excluded_reason": "page is a guide or advice article, not news about the company"
+          },
+          {
+            "headline": "31.05.2023 Fra Smarte Hjem til Smarte Byer: Påvirkningen av AI og IoT i Det Urbane Liv De siste årene har kunstig intelligens (AI) og tingenes internett (IoT) tatt hovedscenen og gitt oss et glimt av en verden der vi kan leve grønt, nyte bedre offentlig og personlig sikkerhet og kvitte oss med irrit",
+            "date_published": "24.05.2024",
+            "url": "https://lanars.no/blog/the-impact-of-ai-and-iot-on-urban-living",
+            "excluded_reason": "not in a news or press section and the headline does not name the company"
+          }
+        ],
+        "excluded_careers_pages": [
+          {
+            "url": "https://lanars.no/careers",
+            "title": "Karriere i Lanars - Bli en del av teamet vårt",
+            "vacancy": false,
+            "vacancy_evidence": "page says \"ingen ledige stillinger\"",
+            "excluded_reason": "page says \"ingen ledige stillinger\""
+          }
+        ]
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "4275e0622315df2c6ed552c68e23a7c490d3f18a9dfa8f2fe78b346cbf1a3faf",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "923532110",
+          "source_url": "https://lanars.no/",
+          "retrieved_at": "2026-11-01T06:22:21.973899Z",
+          "content_sha256": "4275e0622315df2c6ed552c68e23a7c490d3f18a9dfa8f2fe78b346cbf1a3faf",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 1.0,
+              "organisation_number": "923532110"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:21.973899Z",
+          "id": "company-profile-923532110",
+          "platform": "company_site",
+          "signal_type": "company_profile",
+          "metrics": {
+            "registered_domain": "lanars.no"
+          },
+          "evidence_span": "Programvare - og maskinvareutviklingsselskap | LANARS"
+        },
+        {
+          "organisation_number": "923532110",
+          "source_url": "https://facebook.com/lanars.inc",
+          "retrieved_at": "2026-11-01T06:22:21.973899Z",
+          "content_sha256": "4275e0622315df2c6ed552c68e23a7c490d3f18a9dfa8f2fe78b346cbf1a3faf",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 1.0,
+              "organisation_number": "923532110"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:21.973899Z",
+          "id": "handle-923532110-facebook",
+          "platform": "facebook",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "923532110",
+          "source_url": "https://instagram.com/lanars.inc",
+          "retrieved_at": "2026-11-01T06:22:21.973899Z",
+          "content_sha256": "4275e0622315df2c6ed552c68e23a7c490d3f18a9dfa8f2fe78b346cbf1a3faf",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 1.0,
+              "organisation_number": "923532110"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:21.973899Z",
+          "id": "handle-923532110-instagram",
+          "platform": "instagram",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "923532110",
+          "source_url": "https://linkedin.com/company/lanars",
+          "retrieved_at": "2026-11-01T06:22:21.973899Z",
+          "content_sha256": "4275e0622315df2c6ed552c68e23a7c490d3f18a9dfa8f2fe78b346cbf1a3faf",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 1.0,
+              "organisation_number": "923532110"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:21.973899Z",
+          "id": "handle-923532110-linkedin",
+          "platform": "linkedin",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "923532110",
+          "source_url": "https://x.com/lanars_inc",
+          "retrieved_at": "2026-11-01T06:22:21.973899Z",
+          "content_sha256": "4275e0622315df2c6ed552c68e23a7c490d3f18a9dfa8f2fe78b346cbf1a3faf",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 1.0,
+              "organisation_number": "923532110"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:21.973899Z",
+          "id": "handle-923532110-x",
+          "platform": "x",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "923532110",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "923532110",
+              "source_row_key": "923532110"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-923532110",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "LANARS AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "LANARS AS"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 6,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg",
+          "company_site",
+          "facebook",
+          "instagram",
+          "linkedin",
+          "x"
+        ],
+        "platform_counts": {
+          "brreg": 1,
+          "company_site": 1,
+          "facebook": 1,
+          "instagram": 1,
+          "linkedin": 1,
+          "x": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 18,
+    "bytes": 515525,
+    "latencies_ms": [
+      198,
+      210,
+      198,
+      198,
+      197,
+      204,
+      1101,
+      1022,
+      769,
+      414,
+      331,
+      594
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "IT-utviklingstjenester: web,- mobil,- design,- og maskinvare kompetanse.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "articles_date",
+      "value": "2019-07-31",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "business_address",
+      "value": "Martin Linges vei 25, 1364 FORNEBU, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "email",
+      "value": "hello@lanars.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "employees_nav_date",
+      "value": "2026-09-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "employees_registered_date",
+      "value": "2026-09-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2019-11-25",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "founding_date",
+      "value": "2019-07-31",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "industry",
+      "value": "Dataprogrammeringstjenester",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "industry_code",
+      "value": "62.100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "legal_name",
+      "value": "LANARS AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "municipality",
+      "value": "BÆRUM",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "municipality_number",
+      "value": "3201",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "postal_code",
+      "value": "1364",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "registered_at",
+      "value": "2019-11-25",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "30000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2019-11-25",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "share_count",
+      "value": "3000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "IT-utviklingstjenester: web,- mobil,- design,- og maskinvare kompetanse, til norske gründer og mellomstore bedrifter samt det som naturlig står i forbindelse med dette.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2020-05-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2020-05-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    },
+    {
+      "field": "website_registered",
+      "value": "lanars.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "923532110"
+    }
+  ],
+  "summary": {
+    "headline": "LANARS AS",
+    "narrative": "LANARS AS is a AS company, operating in dataprogrammeringstjenester, registered in Bærum. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 13133309.0 NOK, operating result 1160174.0 NOK, annual result 1032724.0 NOK. Registered leadership includes Arslan Tayliyev (Daglig leder) and 2 other registered role(s). 1 registered subunit(s)/workplace(s). Company-owned sources: verified official website https://lanars.no/, 4 company-linked social profile(s).",
+    "statements": [
+      {
+        "text": "LANARS AS is a AS company, operating in dataprogrammeringstjenester, registered in Bærum.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 13133309.0 NOK, operating result 1160174.0 NOK, annual result 1032724.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/923532110",
+        "retrieved_at": "2026-11-01T06:22:07.043285Z"
+      },
+      {
+        "text": "Registered leadership includes Arslan Tayliyev (Daglig leder) and 2 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/923532110/roller",
+        "retrieved_at": "2026-11-01T06:22:15.919526Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=923532110&size=1000",
+        "retrieved_at": "2026-11-01T06:22:16.321145Z"
+      },
+      {
+        "text": "Company-owned sources: verified official website https://lanars.no/, 4 company-linked social profile(s).",
+        "evidence_field": "website",
+        "source_url": "https://lanars.no/",
+        "retrieved_at": "2026-11-01T06:22:21.973899Z"
+      }
+    ],
+    "unknowns": [],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

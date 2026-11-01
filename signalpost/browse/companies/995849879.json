@@ -1,0 +1,1047 @@
+{
+  "organisation_number": "995849879",
+  "name": "VOLLAN TRAVEL AS",
+  "legal_form": "AS",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "PORSGRUNN",
+  "municipality_number": "4001",
+  "industry_code": "79.122",
+  "industry_label": "Reisearrangørvirksomhet ellers",
+  "website": "",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "995849879",
+        "navn": "VOLLAN TRAVEL AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "79.122",
+        "naeringskode1.beskrivelse": "Reisearrangørvirksomhet ellers",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "false",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "",
+        "registreringsdatoantallansatteNAVAaregisteret": "",
+        "hjemmeside": "",
+        "epostadresse": "pvollan@online.no",
+        "telefon": "",
+        "mobil": "907 79 064",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "Grønlivegen 50",
+        "forretningsadresse.poststed": "PORSGRUNN",
+        "forretningsadresse.postnummer": "3924",
+        "forretningsadresse.kommune": "PORSGRUNN",
+        "forretningsadresse.kommunenummer": "4001",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2010-08-24",
+        "stiftelsesdato": "2010-08-16",
+        "registrertIMvaRegisteret": "false",
+        "registreringsdatoMerverdiavgiftsregisteret": "",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2010-08-24",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2010-08-16",
+        "vedtektsfestetFormaal": "Drive reiseselskap, samt investeringer i aksjer og deltagelse i andre selskaper og verdipapirer.",
+        "aktivitet": "Reiseselskap.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "2013-06-25",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "false",
+        "kapital.belop": "100000.00",
+        "kapital.antallAksjer": "100",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2010-08-24",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "995849879",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:53.158031Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "995849879",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/995849879",
+      "retrieved_at": "2026-11-01T06:20:51.691283Z",
+      "value": {
+        "organisation_number": "995849879",
+        "name": "VOLLAN TRAVEL AS",
+        "legal_form": "AS",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": null,
+        "industry": {
+          "beskrivelse": "Reisearrangørvirksomhet ellers",
+          "kode": "79.122"
+        },
+        "business_address": {
+          "adresse": [
+            "Grønlivegen 50"
+          ],
+          "kommune": "PORSGRUNN",
+          "kommunenummer": "4001",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "3924",
+          "poststed": "PORSGRUNN"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "e668f417910750d3aa0256198fedd46a6c179ab34565acd937dffd3f6d777eb5",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/995849879",
+      "retrieved_at": "2026-11-01T06:20:51.890756Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 4669409,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 218155.0,
+            "operating_result": -23174.0,
+            "profit_before_tax": -21916.0,
+            "annual_result": -16270.0,
+            "assets": 76481.0,
+            "equity": 76482.0,
+            "debt": 0.0
+          },
+          {
+            "record_id": 5671895,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 170706.0,
+            "operating_result": -2478.0,
+            "profit_before_tax": 3494.0,
+            "annual_result": -405.0,
+            "assets": 76077.0,
+            "equity": 76077.0,
+            "debt": 0.0
+          },
+          {
+            "record_id": 6527715,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 165193.0,
+            "operating_result": -22188.0,
+            "profit_before_tax": -18871.0,
+            "annual_result": -13868.0,
+            "assets": 62209.0,
+            "equity": 62209.0,
+            "debt": null
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "48814307a2cfe1d8a7eb5954cf09138fd6c15984a4b781a441760705cda490d2",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/aar",
+      "retrieved_at": "2026-11-01T06:21:04.209785Z",
+      "value": {
+        "years": [
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2013"
+          },
+          {
+            "year": "2012",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2012"
+          },
+          {
+            "year": "2011",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/995849879/2011"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "b7bcd20d8a4607bc9ca49fbdfebf5e51cb31e39858edb985dc98a82e8d2b7cd1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/995849879/roller",
+      "retrieved_at": "2026-11-01T06:21:04.408152Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Per Vollan",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2010-08-24",
+            "inactive": false
+          },
+          {
+            "name": "Per Vollan",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2010-08-24",
+            "inactive": false
+          },
+          {
+            "name": "Anne Marie Moen Vollan",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2010-08-24",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "e6960139351a4b241f3a28b5d986b1c3a75bffd5de3e17da350c5e390d5156da",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/995849879",
+      "retrieved_at": "2026-11-01T06:21:04.605790Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=995849879&size=1000",
+      "retrieved_at": "2026-11-01T06:21:04.807299Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "895865362",
+            "name": "VOLLAN TRAVEL AS",
+            "address": {
+              "adresse": [
+                "Grønlivegen 50"
+              ],
+              "kommune": "PORSGRUNN",
+              "kommunenummer": "4001",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "3924",
+              "poststed": "PORSGRUNN"
+            },
+            "industry": {
+              "beskrivelse": "Reisearrangørvirksomhet ellers",
+              "kode": "79.122"
+            },
+            "employees": null
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "875f165eb456184816c90f5bb18ecb79d27fff1c16da9a5cdadd83786536a4e7",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://www.vollantravel.no/",
+      "retrieved_at": "2026-11-01T06:21:21.950182Z",
+      "value": {
+        "requested_url": "https://www.vollantravel.no/",
+        "final_url": "https://www.vollantravel.no/",
+        "registered_domain": "vollantravel.no",
+        "title": "Vollan Travel AS – Startside",
+        "description": "",
+        "main_text_excerpt": "Drømmer du om en ferie i Karibien, bli med Vollan Travel til Den Dominikanske Republikk med Punta Cana og Santo Domingo. I tillegg til Den Dominikanske Republikk er reisemålene Tsjekkia, Slovakia, Østerrike og Ungarn. Min kone Anne Marie og jeg har besøkt UNESCO-byer og ”oppdaget” sjarmerende, pittoreske byer og tettsteder som tidligere var ukjente for oss. Med vår familietilknytning til Den Dominikanske Republikk har vi opplevd kulturen, historien fra Columbus’ tid, kritthvite badestrender og vennligheten i dette fantastiske landet.\nMatnytelser hører med, vin og øl til gunstige priser. Vi anbefaler spisesteder med spesialiteter, særpreg og liflig atmosfære… Det er gode muligheter for å slappe av med spa i disse landene.\nNå ønsker jeg å dele mine spennende oppdagelser med dere, og deltar selv på turene.\nVelkommen til reise med Vollan Travel!\nHilsen\nPer Vollan\nTorsdag - Mandag\nOpplev Bratislava med sin sjarmerende gamleby, flotte restauranter, tradisjonsrike barer og avslappende atmosfære. Gamlebyen er byens juvel med sine trange gater og mange torg. Vi drar på vinsmaking i Slovakias vinsenter i byen Pezinok utenfor Bratislava. Senere forflytter vi oss med båt på Donau til Wien og avslutter turen med en dag i Wien med overnatting i sentrum.",
+        "identity_text_excerpt": "Vollan Travel as Daglig leder: Per Vollan :: Grønliveien 50, 3924 Porsgrunn :: E-mail: pv@vollantravel.no :: Tel: 90 77 90 64 :: Fax: 35 56 71 75 Kopirett © 2011 Vollan Travel as. Alle rettigheter reservert. | Vollan Travel as Daglig leder: Per Vollan :: Grønliveien 50, 3924 Porsgrunn :: E-mail: pv@vollantravel.no :: Tel: 90 77 90 64 :: Fax: 35 56 71 75 | Daglig leder: Per Vollan :: Grønliveien 50, 3924 Porsgrunn :: E-mail: pv@vollantravel.no :: Tel: 90 77 90 64 :: Fax: 35 56 71 75 | Kopirett © 2011 Vollan Travel as. Alle rettigheter reservert. | Vollan Travel AS – Startside",
+        "social_links": [],
+        "structured_organisations": [],
+        "structured_facts": {},
+        "job_postings": [],
+        "news_articles": [],
+        "content_sha256": "c11e3d19ed2a6b721d7993f34cfa9d716b7c0d2dda0736b4240e03a2da5aac16",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://www.vollantravel.no/",
+            "title": "Vollan Travel AS – Startside",
+            "main_text_excerpt": "Drømmer du om en ferie i Karibien, bli med Vollan Travel til Den Dominikanske Republikk med Punta Cana og Santo Domingo. I tillegg til Den Dominikanske Republikk er reisemålene Tsjekkia, Slovakia, Østerrike og Ungarn. Min kone Anne Marie og jeg har besøkt UNESCO-byer og ”oppdaget” sjarmerende, pittoreske byer og tettsteder som tidligere var ukjente for oss. Med vår familietilknytning til Den Dominikanske Republikk har vi opplevd kulturen, historien fra Columbus’ tid, kritthvite badestrender og vennligheten i dette fantastiske landet.\nMatnytelser hører med, vin og øl til gunstige priser. Vi anbefaler spisesteder med spesialiteter, særpreg og liflig atmosfære… Det er gode muligheter for å slappe av med spa i disse landene.\nNå ønsker jeg å dele mine spennende oppdagelser med dere, og deltar selv på turene.\nVelkommen til reise med Vollan Travel!\nHilsen\nPer Vollan\nTorsdag - Mandag\nOpplev Bratislava med sin sjarmerende gamleby, flotte restauranter, tradisjonsrike barer og avslappende atmosfære. Gamlebyen er byens juvel med sine trange gater og mange torg. Vi drar på vinsmaking i Slovakias vinsenter i byen Pezinok utenfor Bratislava. Senere forflytter vi oss med båt på Donau til Wien og avslutter turen med en dag i Wien med overnatting i sentrum.",
+            "content_sha256": "c11e3d19ed2a6b721d7993f34cfa9d716b7c0d2dda0736b4240e03a2da5aac16"
+          },
+          {
+            "url": "https://www.vollantravel.no/kontakt-oss/",
+            "title": "Kontakt oss",
+            "main_text_excerpt": "",
+            "content_sha256": "3054ca1f35bb64b600d7d409a5093b1fa0db0203368a00abb810eec846d828f6"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [
+          {
+            "url": "https://www.vollantravel.no/nyheter",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://www.vollantravel.no/karriere",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://www.vollantravel.no/aktuelt",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://www.vollantravel.no/careers",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          }
+        ],
+        "discovered": true,
+        "discovery_identity": {
+          "method": "registry_contact_on_discovered_site",
+          "organisation_number": "995849879",
+          "candidate_kind": "name_guess"
+        },
+        "identity_assessment": {
+          "status": "exact",
+          "score": 0.95,
+          "publishable": true,
+          "legal_name_tokens": [
+            "vollan",
+            "travel"
+          ],
+          "matched_tokens": [
+            "travel",
+            "vollan"
+          ],
+          "reasons": [
+            "discovered site verified by registry_contact_on_discovered_site"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [],
+        "social_link_assessments": [],
+        "excluded_news_articles": [
+          {
+            "headline": "Bratislava og Wien",
+            "date_published": "2021-09-24T09:02:25+00:00",
+            "url": "https://www.vollantravel.no/bratislava/",
+            "excluded_reason": "not in a news or press section and the headline does not name the company"
+          },
+          {
+            "headline": "Ljubljana – Pula og Rovinj på Istria-halvøya",
+            "date_published": "2021-09-24T11:13:16+00:00",
+            "url": "https://www.vollantravel.no/ljubljana-pula-og-rovinj-pa-istria-halvoya/",
+            "excluded_reason": "not in a news or press section and the headline does not name the company"
+          },
+          {
+            "headline": "Pilsen og Praha",
+            "date_published": "2021-09-24T11:17:27+00:00",
+            "url": "https://www.vollantravel.no/pilsen-og-praha/",
+            "excluded_reason": "not in a news or press section and the headline does not name the company"
+          },
+          {
+            "headline": "Vårtur til Budapest",
+            "date_published": "2021-09-24T11:22:24+00:00",
+            "url": "https://www.vollantravel.no/vartur-til-budapest/",
+            "excluded_reason": "not in a news or press section and the headline does not name the company"
+          },
+          {
+            "headline": "Pilsen og Praha",
+            "date_published": "2021-09-24T11:24:39+00:00",
+            "url": "https://www.vollantravel.no/hosttur-til-pilsen-og-praha/",
+            "excluded_reason": "not in a news or press section and the headline does not name the company"
+          },
+          {
+            "headline": "Český Krumlov og Wien",
+            "date_published": "2021-09-24T11:40:25+00:00",
+            "url": "https://www.vollantravel.no/cesky3/",
+            "excluded_reason": "not in a news or press section and the headline does not name the company"
+          }
+        ],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "c11e3d19ed2a6b721d7993f34cfa9d716b7c0d2dda0736b4240e03a2da5aac16",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "995849879",
+          "source_url": "https://www.vollantravel.no/",
+          "retrieved_at": "2026-11-01T06:21:21.950182Z",
+          "content_sha256": "c11e3d19ed2a6b721d7993f34cfa9d716b7c0d2dda0736b4240e03a2da5aac16",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "995849879"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:21:21.950182Z",
+          "id": "company-profile-995849879",
+          "platform": "company_site",
+          "signal_type": "company_profile",
+          "metrics": {
+            "registered_domain": "vollantravel.no"
+          },
+          "evidence_span": "Vollan Travel AS – Startside"
+        },
+        {
+          "organisation_number": "995849879",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "995849879",
+              "source_row_key": "995849879"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-995849879",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "VOLLAN TRAVEL AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "VOLLAN TRAVEL AS"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 2,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg",
+          "company_site"
+        ],
+        "platform_counts": {
+          "brreg": 1,
+          "company_site": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 24,
+    "bytes": 9282,
+    "latencies_ms": [
+      198,
+      199,
+      200,
+      198,
+      197,
+      201
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Reiseselskap.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "articles_date",
+      "value": "2010-08-16",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "audit_opt_out_date",
+      "value": "2013-06-25",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "business_address",
+      "value": "Grønlivegen 50, 3924 PORSGRUNN, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "email",
+      "value": "pvollan@online.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2010-08-24",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "founding_date",
+      "value": "2010-08-16",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "industry",
+      "value": "Reisearrangørvirksomhet ellers",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "industry_code",
+      "value": "79.122",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "legal_name",
+      "value": "VOLLAN TRAVEL AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "municipality",
+      "value": "PORSGRUNN",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "municipality_number",
+      "value": "4001",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "phone",
+      "value": "907 79 064",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "postal_code",
+      "value": "3924",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "registered_at",
+      "value": "2010-08-24",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "100000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2010-08-24",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "share_count",
+      "value": "100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Drive reiseselskap, samt investeringer i aksjer og deltagelse i andre selskaper og verdipapirer.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "995849879"
+    }
+  ],
+  "summary": {
+    "headline": "VOLLAN TRAVEL AS",
+    "narrative": "VOLLAN TRAVEL AS is a AS company, operating in reisearrangørvirksomhet ellers, registered in Porsgrunn. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 218155.0 NOK, operating result -23174.0 NOK, annual result -16270.0 NOK. Registered leadership includes Per Vollan (Daglig leder) and 2 other registered role(s). 1 registered subunit(s)/workplace(s). Company-owned sources: verified official website https://www.vollantravel.no/.",
+    "statements": [
+      {
+        "text": "VOLLAN TRAVEL AS is a AS company, operating in reisearrangørvirksomhet ellers, registered in Porsgrunn.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 218155.0 NOK, operating result -23174.0 NOK, annual result -16270.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/995849879",
+        "retrieved_at": "2026-11-01T06:20:51.890756Z"
+      },
+      {
+        "text": "Registered leadership includes Per Vollan (Daglig leder) and 2 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/995849879/roller",
+        "retrieved_at": "2026-11-01T06:21:04.408152Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=995849879&size=1000",
+        "retrieved_at": "2026-11-01T06:21:04.807299Z"
+      },
+      {
+        "text": "Company-owned sources: verified official website https://www.vollantravel.no/.",
+        "evidence_field": "website",
+        "source_url": "https://www.vollantravel.no/",
+        "retrieved_at": "2026-11-01T06:21:21.950182Z"
+      }
+    ],
+    "unknowns": [],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "scorer": "signalpost_profile_site_ux",
+  "score": 8,
+  "external_intelligence_presented": true,
+  "capabilities": [
+    "search",
+    "filters",
+    "csv_export",
+    "json_export",
+    "source_links",
+    "retrieval_dates",
+    "reporting_periods",
+    "explicit_unknowns",
+    "external_intelligence",
+    "news_and_hiring",
+    "responsive_mobile"
+  ],
+  "companies_with_published_external_intelligence": 100
+}

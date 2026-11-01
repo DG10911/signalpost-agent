@@ -1,0 +1,1199 @@
+{
+  "organisation_number": "998845394",
+  "name": "3-VISJON AS",
+  "legal_form": "AS",
+  "employees": 5,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "ENGERDAL",
+  "municipality_number": "3425",
+  "industry_code": "41.000",
+  "industry_label": "Oppføring av bygninger",
+  "website": "www.3-visjon.no",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "998845394",
+        "navn": "3-VISJON AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "41.000",
+        "naeringskode1.beskrivelse": "Oppføring av bygninger",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "true",
+        "antallAnsatte": "5",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "2026-03-12",
+        "registreringsdatoantallansatteNAVAaregisteret": "2026-03-10",
+        "hjemmeside": "www.3-visjon.no",
+        "epostadresse": "post@3-visjon.no",
+        "telefon": "",
+        "mobil": "418 41 249",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "Kopparleden 1069",
+        "forretningsadresse.poststed": "DREVSJØ",
+        "forretningsadresse.postnummer": "2443",
+        "forretningsadresse.kommune": "ENGERDAL",
+        "forretningsadresse.kommunenummer": "3425",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2012-10-04",
+        "stiftelsesdato": "2012-08-23",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2013-09-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2013-11-07",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2012-10-04",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2020-04-30",
+        "vedtektsfestetFormaal": "Utvikling og produksjon av høykvalitets hus og hytter med god isolasjon og strenge miljøhensyn, og som i tillegg er godt forankret i god Norsk byggeskikk.",
+        "aktivitet": "Utvikling og produksjon av høykvalitets hus og hytter med god isolasjon og strenge miljøhensyn, og som i tillegg er godt forankret i god Norsk byggeskikk.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "2026-01-05",
+        "fravalgRevisjonBeslutningsDato": "2025-09-17",
+        "erIKonsern": "false",
+        "kapital.belop": "3000000.00",
+        "kapital.antallAksjer": "300000",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2020-07-08",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "998845394",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:53.956535Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "998845394",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/998845394",
+      "retrieved_at": "2026-11-01T06:21:55.634959Z",
+      "value": {
+        "organisation_number": "998845394",
+        "name": "3-VISJON AS",
+        "legal_form": "AS",
+        "employees": 5,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "www.3-visjon.no",
+        "industry": {
+          "beskrivelse": "Oppføring av bygninger",
+          "kode": "41.000"
+        },
+        "business_address": {
+          "adresse": [
+            "Kopparleden 1069"
+          ],
+          "kommune": "ENGERDAL",
+          "kommunenummer": "3425",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "2443",
+          "poststed": "DREVSJØ"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "3b3c5415a1120d735eababbd284238961be6d968d65529b0d39c558c1b95a6ec",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/998845394",
+      "retrieved_at": "2026-11-01T06:21:55.834261Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5237933,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 13421490.0,
+            "operating_result": -1671242.0,
+            "profit_before_tax": -1821957.0,
+            "annual_result": -1421343.0,
+            "assets": 10824837.0,
+            "equity": 5544307.0,
+            "debt": 5280529.0
+          },
+          {
+            "record_id": 6235503,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 2890422.0,
+            "operating_result": -2760501.0,
+            "profit_before_tax": -3086908.0,
+            "annual_result": -2410540.0,
+            "assets": 8822786.0,
+            "equity": 3133767.0,
+            "debt": 5689019.0
+          },
+          {
+            "record_id": 7084297,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 1338265.0,
+            "operating_result": -2838583.0,
+            "profit_before_tax": -3235256.0,
+            "annual_result": -2523500.0,
+            "assets": 9409954.0,
+            "equity": 610267.0,
+            "debt": 8799687.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "17e17b6ca08a91f122ae1f618b3bcfcd66b76775ecb0bb88d6d697fda732f985",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/aar",
+      "retrieved_at": "2026-11-01T06:22:09.408549Z",
+      "value": {
+        "years": [
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/998845394/2013"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f114bcece4ed77bf82224268a945f6bbca61c2a5fa13f4d69cf03e3d0532bd22",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/998845394/roller",
+      "retrieved_at": "2026-11-01T06:22:09.608537Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Marie Louise Mosshäll",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2019-01-15",
+            "inactive": false
+          },
+          {
+            "name": "Jostein Takle",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-01-05",
+            "inactive": false
+          },
+          {
+            "name": "John Tamnes",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-01-05",
+            "inactive": false
+          },
+          {
+            "name": "Jarl Yngve Mosshäll",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-01-05",
+            "inactive": false
+          },
+          {
+            "name": "Björn Henrik Bergqvist",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-01-05",
+            "inactive": false
+          },
+          {
+            "name": [
+              "ØKORÅD ENGERDAL - TRYSIL SA"
+            ],
+            "organisation_number": "968316559",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2013-03-12",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "6ba97d1f7d055fc438d4b187a8f193470caf1d852251a9a74fd8ec6464d70ed6",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/998845394",
+      "retrieved_at": "2026-11-01T06:22:09.808519Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=998845394&size=1000",
+      "retrieved_at": "2026-11-01T06:22:10.014578Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "998931835",
+            "name": "3-VISJON AS",
+            "address": {
+              "adresse": [
+                "Kopparleden 1069"
+              ],
+              "kommune": "ENGERDAL",
+              "kommunenummer": "3425",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "2443",
+              "poststed": "DREVSJØ"
+            },
+            "industry": {
+              "beskrivelse": "Oppføring av bygninger",
+              "kode": "41.000"
+            },
+            "employees": 5
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "4027fcc04bfafe75fd619469ff335e1c6dd12ac514a53a58b7552b46e72eec09",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://www.3-visjon.no/",
+      "retrieved_at": "2026-11-01T06:22:11.834086Z",
+      "value": {
+        "requested_url": "https://www.3-visjon.no/",
+        "final_url": "https://www.3-visjon.no/",
+        "registered_domain": "3-visjon.no",
+        "title": "3-visjon | Prefabricerade väggelement",
+        "description": "Vi bygger klimatsmarta plastfria byggelement i timmer för byggprojekt som hus, stugor, lägenheter, garage och slogbodar.",
+        "main_text_excerpt": "Vår Produkt\nVåra väggelement i trä är skapade med fokus på hållbarhet och design. Med material utan plast och unika konstruktioner erbjuder vi högkvalitativa lösningar för moderna hem och byggnader.\nVåra väggelement\nSkapade för miljömedvetna byggare och privatpersoner\nVåra vägg element är enkla att montera och skapade för att minska klimatpåverkan.\nArkitektoniska Lösningar\nDesignade för att ge estetiskt tilltalande och funktionella byggnader\nVåra arkitektoniska produkter kombinerar stil med hållbarhet för moderna byggnader.\nSpecialanpassade Tjänster\nUnika lösningar för specifika byggprojekt\nVi erbjuder skräddarsydda produkter och tjänster för att möta varje kunds unika behov.",
+        "identity_text_excerpt": "3-visjon AS Kontakta oss för mer information Email * Telefon * Förnamn * Efternamn * Skicka (+47) 418 41 249 louise@3-visjon.no Kopparleden 1069 2443 Drevsjo Norge © 2026 by 3-visjon AS. | 3-visjon AS | © 2026 by 3-visjon AS.",
+        "social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/3Visjon"
+          }
+        ],
+        "structured_organisations": [
+          {
+            "@context": "https://schema.org/",
+            "@type": "LocalBusiness",
+            "name": "3-visjon AS",
+            "url": "https://www.3-visjon.no",
+            "image": "https://static.wixstatic.com/media/e5aa47_5cbb100003b74203acaf656ee7125327~mv2.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "NO",
+              "addressLocality": "Drevsjø",
+              "addressRegion": "34",
+              "postalCode": "2443",
+              "streetAddress": "1069 Kopparleden"
+            },
+            "telephone": "(+47) 418 41 249"
+          }
+        ],
+        "structured_facts": {
+          "telephone": "(+47) 418 41 249",
+          "address": {
+            "street": "1069 Kopparleden",
+            "postal_code": "2443",
+            "locality": "Drevsjø",
+            "region": "34",
+            "country": "NO"
+          }
+        },
+        "job_postings": [],
+        "news_articles": [],
+        "content_sha256": "7eb7d513a65b9d4b8c8a97687cb8052a06b8f065dd1cc6a833775db88052093c",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://www.3-visjon.no/",
+            "title": "3-visjon | Prefabricerade väggelement",
+            "main_text_excerpt": "Vår Produkt\nVåra väggelement i trä är skapade med fokus på hållbarhet och design. Med material utan plast och unika konstruktioner erbjuder vi högkvalitativa lösningar för moderna hem och byggnader.\nVåra väggelement\nSkapade för miljömedvetna byggare och privatpersoner\nVåra vägg element är enkla att montera och skapade för att minska klimatpåverkan.\nArkitektoniska Lösningar\nDesignade för att ge estetiskt tilltalande och funktionella byggnader\nVåra arkitektoniska produkter kombinerar stil med hållbarhet för moderna byggnader.\nSpecialanpassade Tjänster\nUnika lösningar för specifika byggprojekt\nVi erbjuder skräddarsydda produkter och tjänster för att möta varje kunds unika behov.",
+            "content_sha256": "7eb7d513a65b9d4b8c8a97687cb8052a06b8f065dd1cc6a833775db88052093c"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [
+          {
+            "url": "https://www.3-visjon.no/om-oss",
+            "error": "unsupported or oversized page"
+          },
+          {
+            "url": "https://www.3-visjon.no/contact-1",
+            "error": "unsupported or oversized page"
+          },
+          {
+            "url": "https://www.3-visjon.no/nyheter",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://www.3-visjon.no/karriere",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          },
+          {
+            "url": "https://www.3-visjon.no/aktuelt",
+            "error": "HTTPError: HTTP Error 404: Not Found"
+          }
+        ],
+        "identity_assessment": {
+          "status": "exact",
+          "score": 0.95,
+          "publishable": true,
+          "legal_name_tokens": [
+            "visjon"
+          ],
+          "matched_tokens": [
+            "visjon"
+          ],
+          "reasons": [
+            "full registered legal name (with legal form) appears in the homepage footer/imprint"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/3Visjon"
+          }
+        ],
+        "social_link_assessments": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/3Visjon",
+            "identity_score": 0.98,
+            "publishable": true,
+            "matched_tokens": [
+              "visjon"
+            ],
+            "reason": "normalized legal-name sequence appears in the social handle",
+            "method": "deterministic_social_handle_identity_v1"
+          }
+        ],
+        "excluded_news_articles": [],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "7eb7d513a65b9d4b8c8a97687cb8052a06b8f065dd1cc6a833775db88052093c",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "998845394",
+          "source_url": "https://www.3-visjon.no/",
+          "retrieved_at": "2026-11-01T06:22:11.834086Z",
+          "content_sha256": "7eb7d513a65b9d4b8c8a97687cb8052a06b8f065dd1cc6a833775db88052093c",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "998845394"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:11.834086Z",
+          "id": "company-profile-998845394",
+          "platform": "company_site",
+          "signal_type": "company_profile",
+          "metrics": {
+            "registered_domain": "3-visjon.no"
+          },
+          "evidence_span": "3-visjon | Prefabricerade väggelement"
+        },
+        {
+          "organisation_number": "998845394",
+          "source_url": "https://facebook.com/3Visjon",
+          "retrieved_at": "2026-11-01T06:22:11.834086Z",
+          "content_sha256": "7eb7d513a65b9d4b8c8a97687cb8052a06b8f065dd1cc6a833775db88052093c",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "998845394"
+            }
+          ],
+          "acquisition_mode": "company_authorized_export",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:22:11.834086Z",
+          "id": "handle-998845394-facebook",
+          "platform": "facebook",
+          "signal_type": "profile_handle",
+          "evidence_span": null
+        },
+        {
+          "organisation_number": "998845394",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "998845394",
+              "source_row_key": "998845394"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-998845394",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "3-VISJON AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "3-VISJON AS"
+        },
+        {
+          "organisation_number": "998845394",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "998845394",
+              "source_row_key": "998845394"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-workforce-998845394",
+          "signal_type": "workforce_snapshot",
+          "metrics": {
+            "employees_registered": 5,
+            "as_of": "2026-03-12"
+          },
+          "evidence_span": "3-VISJON AS: 5 registered employees"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 4,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg",
+          "company_site",
+          "facebook"
+        ],
+        "platform_counts": {
+          "brreg": 2,
+          "company_site": 1,
+          "facebook": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 18,
+    "bytes": 3232033,
+    "latencies_ms": [
+      200,
+      199,
+      197,
+      199,
+      199,
+      205,
+      283,
+      276,
+      386,
+      97,
+      169,
+      206
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Utvikling og produksjon av høykvalitets hus og hytter med god isolasjon og strenge miljøhensyn, og som i tillegg er godt forankret i god Norsk byggeskikk.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "articles_date",
+      "value": "2020-04-30",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "audit_opt_out_date",
+      "value": "2026-01-05",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "business_address",
+      "value": "Kopparleden 1069, 2443 DREVSJØ, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "email",
+      "value": "post@3-visjon.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "employees_nav_date",
+      "value": "2026-03-10",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "employees_registered",
+      "value": "5",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "employees_registered_date",
+      "value": "2026-03-12",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2012-10-04",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "founding_date",
+      "value": "2012-08-23",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "industry",
+      "value": "Oppføring av bygninger",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "industry_code",
+      "value": "41.000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "legal_name",
+      "value": "3-VISJON AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "municipality",
+      "value": "ENGERDAL",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "municipality_number",
+      "value": "3425",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "phone",
+      "value": "418 41 249",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "postal_code",
+      "value": "2443",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "registered_at",
+      "value": "2012-10-04",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "3000000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2020-07-08",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "share_count",
+      "value": "300000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Utvikling og produksjon av høykvalitets hus og hytter med god isolasjon og strenge miljøhensyn, og som i tillegg er godt forankret i god Norsk byggeskikk.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2013-09-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2013-09-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    },
+    {
+      "field": "website_registered",
+      "value": "www.3-visjon.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "998845394"
+    }
+  ],
+  "summary": {
+    "headline": "3-VISJON AS",
+    "narrative": "3-VISJON AS is a AS company, operating in oppføring av bygninger, registered in Engerdal. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 13421490.0 NOK, operating result -1671242.0 NOK, annual result -1421343.0 NOK. Registered leadership includes Marie Louise Mosshäll (Daglig leder) and 5 other registered role(s). 1 registered subunit(s)/workplace(s). Company-owned sources: verified official website https://www.3-visjon.no/, 1 company-linked social profile(s). Workforce reported in the None annual report: None (None).",
+    "statements": [
+      {
+        "text": "3-VISJON AS is a AS company, operating in oppføring av bygninger, registered in Engerdal.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 13421490.0 NOK, operating result -1671242.0 NOK, annual result -1421343.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/998845394",
+        "retrieved_at": "2026-11-01T06:21:55.834261Z"
+      },
+      {
+        "text": "Registered leadership includes Marie Louise Mosshäll (Daglig leder) and 5 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/998845394/roller",
+        "retrieved_at": "2026-11-01T06:22:09.608537Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=998845394&size=1000",
+        "retrieved_at": "2026-11-01T06:22:10.014578Z"
+      },
+      {
+        "text": "Company-owned sources: verified official website https://www.3-visjon.no/, 1 company-linked social profile(s).",
+        "evidence_field": "website",
+        "source_url": "https://www.3-visjon.no/",
+        "retrieved_at": "2026-11-01T06:22:11.834086Z"
+      },
+      {
+        "text": "Workforce reported in the None annual report: None (None).",
+        "evidence_field": "external_footprint",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      }
+    ],
+    "unknowns": [],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

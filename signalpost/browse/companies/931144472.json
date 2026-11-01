@@ -1,0 +1,1553 @@
+{
+  "organisation_number": "931144472",
+  "name": "LASKEN AS",
+  "legal_form": "AS",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "SANDEFJORD",
+  "municipality_number": "3907",
+  "industry_code": "68.200",
+  "industry_label": "Utleie av egen eller leid fast eiendom",
+  "website": "",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "931144472",
+        "navn": "LASKEN AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "68.200",
+        "naeringskode1.beskrivelse": "Utleie av egen eller leid fast eiendom",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "false",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "",
+        "registreringsdatoantallansatteNAVAaregisteret": "",
+        "hjemmeside": "",
+        "epostadresse": "",
+        "telefon": "",
+        "mobil": "",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "Thorsholmen 18",
+        "forretningsadresse.poststed": "SANDEFJORD",
+        "forretningsadresse.postnummer": "3209",
+        "forretningsadresse.kommune": "SANDEFJORD",
+        "forretningsadresse.kommunenummer": "3907",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2023-03-30",
+        "stiftelsesdato": "2023-03-14",
+        "registrertIMvaRegisteret": "false",
+        "registreringsdatoMerverdiavgiftsregisteret": "",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2023-03-30",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2023-03-14",
+        "vedtektsfestetFormaal": "Utleie og drift av egen eiendom og investering i andre selskaper med alt hva naturlig her hører innunder.",
+        "aktivitet": "Utleie av fast eiendom.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "true",
+        "kapital.belop": "100000.00",
+        "kapital.antallAksjer": "1000",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2023-03-30",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "931144472",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:44.633052Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "931144472",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/931144472",
+      "retrieved_at": "2026-11-01T06:20:45.123622Z",
+      "value": {
+        "organisation_number": "931144472",
+        "name": "LASKEN AS",
+        "legal_form": "AS",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": null,
+        "industry": {
+          "beskrivelse": "Utleie av egen eller leid fast eiendom",
+          "kode": "68.200"
+        },
+        "business_address": {
+          "adresse": [
+            "Thorsholmen 18"
+          ],
+          "kommune": "SANDEFJORD",
+          "kommunenummer": "3907",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "3209",
+          "poststed": "SANDEFJORD"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "8a7dc5164bf834a88cffc5c405a3a9119594d298942fa65afbcad7673e092c79",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/931144472",
+      "retrieved_at": "2026-11-01T06:20:45.329812Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5354213,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-03-14",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 204162.0,
+            "operating_result": 126148.0,
+            "profit_before_tax": 128887.0,
+            "annual_result": 95478.0,
+            "assets": 7104722.0,
+            "equity": 115478.0,
+            "debt": 6989243.0
+          },
+          {
+            "record_id": 6056203,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 584179.0,
+            "operating_result": 318180.0,
+            "profit_before_tax": 321915.0,
+            "annual_result": 235807.0,
+            "assets": 6826165.0,
+            "equity": 151285.0,
+            "debt": 6674880.0
+          },
+          {
+            "record_id": 6908858,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 642985.0,
+            "operating_result": 394791.0,
+            "profit_before_tax": 394736.0,
+            "annual_result": 292540.0,
+            "assets": 6730750.0,
+            "equity": 193825.0,
+            "debt": 6536925.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "5363f7d50632164f8c01d1dcd97991462e839d3d245bba12fe4e62de35d397c9",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/931144472/aar",
+      "retrieved_at": "2026-11-01T06:20:55.803066Z",
+      "value": {
+        "years": [
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/931144472/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/931144472/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/931144472/2023"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "fa62a3dbca03c249268cd2c02e05821c7da2c97ad23ce7e63241bec881b360a2",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/931144472/roller",
+      "retrieved_at": "2026-11-01T06:20:56.000909Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Per-Erik Stickler Holm",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2023-03-30",
+            "inactive": false
+          },
+          {
+            "name": "Jean Borrelly Linaae",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2023-03-30",
+            "inactive": false
+          },
+          {
+            "name": "Per-Erik Stickler Holm",
+            "organisation_number": null,
+            "role_code": "VARA",
+            "role": "Varamedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2023-03-30",
+            "inactive": false
+          },
+          {
+            "name": [
+              "HLO REVISJON & RÅDGIVNING AS"
+            ],
+            "organisation_number": "989027654",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2023-10-24",
+            "inactive": false
+          },
+          {
+            "name": [
+              "MIKI REGNSKAP AS"
+            ],
+            "organisation_number": "985148651",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2023-03-30",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "4a9eea1e887526257997f075b6e9df8867b2178c9ee8ca58ea33c1b14dbb6741",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "available",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/931144472",
+      "retrieved_at": "2026-11-01T06:20:56.310166Z",
+      "value": {
+        "children": [
+          {
+            "children": [
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EIENDOMSSELSKAPET STORGATA 8 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "998534518",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "TORVET 1A AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "998009480",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "BRANNVAKTSGATE 8 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "993001686",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "HVALFANGERGATA AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "991895337",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "TORGGATEN 18  SANDEFJORD AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "991895310",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "PUKKESTADVEIEN 18 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "991895280",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "TORGGATA 14 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "991346627",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EIENDOMSUTVIKLING VESTFOLD AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "991163506",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "KONGENSGATE 17 INVEST AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "990829314",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "KONGENSGATE 21 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "990545707",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "JERNBANEALLÈEN 27 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "989062220",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "KONGENSGATE 16 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "988996491",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "DRONNINGENSGATE 5 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "987569034",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "KOKERIET EIENDOM AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "984868707",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "GOKSTADVEIEN 18 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "982228174",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "STORGATA 10 B. AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "981692632",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "PARKTERRASSEN UTLEIE AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "980963659",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "STORGATEN 18 SANDEFJORD AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "980827992",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EIENDOMSSIDEN AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "980423050",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "TORVET EIENDOM SANDEFJORD AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "979849508",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "MUSEUMSGATEN 43 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "979493983",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "GOKSTADVEIEN 14 - 16 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "976764420",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "KONGENSGT 7 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "976556925",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "GUVAAGBYGGET AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "932596520",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "LASKEN AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "931144472",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "STORGATEN 14 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "930336904",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "PETER GRØNS GATE 2A AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "930077569",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "JBA 24 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "924518189",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "JERNBANEALLÈEN 27 BOLIG AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "923774653",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "PB EIENDOM AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "922578249",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "S 2 SANDEFJORD AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "921894244",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "KILEN BRYGGE 1 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "919591382",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "TORGET 1 EIENDOM AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "917374651",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "KONGENS GATE 15 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "916489862",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "JBA 26 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "915544436",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "NORDRE KULLERØD 6 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "915201083",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "RÅDHUSGATA 14 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "914720362",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "HVIDTS PLASS AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "912250385",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "URANIENBORGVEIEN 1 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "912118118",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              },
+              {
+                "dato": "2025-03-17",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "TORG AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "820338502",
+                "parentNavn": "LINHOLM AS",
+                "parentOrganisasjonsnummer": "879130352"
+              }
+            ],
+            "dato": "2024-10-03",
+            "grunnlag": "62,88%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "LINHOLM AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "879130352",
+            "parentNavn": "JBL AS",
+            "parentOrganisasjonsnummer": "922718318"
+          }
+        ],
+        "navn": "JBL AS",
+        "organisasjonsform": {
+          "beskrivelse": "Aksjeselskap",
+          "kode": "AS"
+        },
+        "organisasjonsnummer": "922718318"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "6437039cae2f2c5134164920f58057875199df61277eb47eed10156bdd33df7c",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=931144472&size=1000",
+      "retrieved_at": "2026-11-01T06:20:56.518407Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "931358189",
+            "name": "LASKEN AS",
+            "address": {
+              "adresse": [
+                "Thorsholmen 18"
+              ],
+              "kommune": "SANDEFJORD",
+              "kommunenummer": "3907",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "3209",
+              "poststed": "SANDEFJORD"
+            },
+            "industry": {
+              "beskrivelse": "Utleie av egen eller leid fast eiendom",
+              "kode": "68.200"
+            },
+            "employees": null
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "173c3e795e462af068fea94433e957b64754b3406fb4aafbc3fc684384815f0b",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "not_found",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter",
+      "retrieved_at": "2026-11-01T06:20:56.518576Z",
+      "value": null,
+      "as_of": null,
+      "note": "No valid registry website URL",
+      "content_sha256": null,
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "931144472",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "931144472",
+              "source_row_key": "931144472"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-931144472",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "LASKEN AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "LASKEN AS"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 1,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg"
+        ],
+        "platform_counts": {
+          "brreg": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 10,
+    "bytes": 22754,
+    "latencies_ms": [
+      206,
+      205,
+      204,
+      197,
+      309,
+      208
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Utleie av fast eiendom.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "articles_date",
+      "value": "2023-03-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "business_address",
+      "value": "Thorsholmen 18, 3209 SANDEFJORD, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2023-03-30",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "founding_date",
+      "value": "2023-03-14",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "in_group",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "industry",
+      "value": "Utleie av egen eller leid fast eiendom",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "industry_code",
+      "value": "68.200",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "legal_name",
+      "value": "LASKEN AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "municipality",
+      "value": "SANDEFJORD",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "municipality_number",
+      "value": "3907",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "postal_code",
+      "value": "3209",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "registered_at",
+      "value": "2023-03-30",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "100000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2023-03-30",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "share_count",
+      "value": "1000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Utleie og drift av egen eiendom og investering i andre selskaper med alt hva naturlig her hører innunder.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "931144472"
+    }
+  ],
+  "summary": {
+    "headline": "LASKEN AS",
+    "narrative": "LASKEN AS is a AS company, operating in utleie av egen eller leid fast eiendom, registered in Sandefjord. Latest filed accounts (2023-03-14 to 2023-12-31): revenue 204162.0 NOK, operating result 126148.0 NOK, annual result 95478.0 NOK. Registered leadership includes Per-Erik Stickler Holm (Daglig leder) and 4 other registered role(s). 1 registered subunit(s)/workplace(s).",
+    "statements": [
+      {
+        "text": "LASKEN AS is a AS company, operating in utleie av egen eller leid fast eiendom, registered in Sandefjord.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-03-14 to 2023-12-31): revenue 204162.0 NOK, operating result 126148.0 NOK, annual result 95478.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/931144472",
+        "retrieved_at": "2026-11-01T06:20:45.329812Z"
+      },
+      {
+        "text": "Registered leadership includes Per-Erik Stickler Holm (Daglig leder) and 4 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/931144472/roller",
+        "retrieved_at": "2026-11-01T06:20:56.000909Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=931144472&size=1000",
+        "retrieved_at": "2026-11-01T06:20:56.518407Z"
+      }
+    ],
+    "unknowns": [
+      "verified company website"
+    ],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

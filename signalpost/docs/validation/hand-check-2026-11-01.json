@@ -1,0 +1,512 @@
+[
+ {
+  "organisation_number": "926702734",
+  "company": "TRYGGHETSBOLIG AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "www.trygghetsboliger.no",
+  "headline": null,
+  "verdict": "unverifiable (site did not load); registry-listed",
+  "note": ""
+ },
+ {
+  "organisation_number": "959569541",
+  "company": "ACT GRUPPEN AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "https://act-gruppen.com/",
+  "headline": null,
+  "verdict": "correct",
+  "note": "group's own domain; news items are about its subsidiary brand ACT Logimark"
+ },
+ {
+  "organisation_number": "959569541",
+  "company": "ACT GRUPPEN AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://act-gruppen.com/nyheter/problemfri-merking-med-linx-9900-serien/",
+  "headline": "Problemfri merking med Linx 9900-serien",
+  "verdict": "correct",
+  "note": "group's own domain; news items are about its subsidiary brand ACT Logimark"
+ },
+ {
+  "organisation_number": "959569541",
+  "company": "ACT GRUPPEN AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://act-gruppen.com/messer-og-seminarer/to-moteplasser-for-norsk-industri-pa-en-uke-ga-nye-muligheter-og-verdifulle-moter/",
+  "headline": "To møteplasser for norsk industri ga nye muligheter og verdifulle møter",
+  "verdict": "correct",
+  "note": "group's own domain; news items are about its subsidiary brand ACT Logimark"
+ },
+ {
+  "organisation_number": "959569541",
+  "company": "ACT GRUPPEN AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://act-gruppen.com/nyheter/linx-8940-spectrum-mer-merking-mindre-rengjoring/",
+  "headline": "Linx 9940 Spectrum – mer merking, mindre rengjøring!",
+  "verdict": "correct",
+  "note": "group's own domain; news items are about its subsidiary brand ACT Logimark"
+ },
+ {
+  "organisation_number": "959569541",
+  "company": "ACT GRUPPEN AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://act-gruppen.com/nyheter/linx-iris-kamerabasert-printkontroll-for-industrielle-blekkstraleskrivere/",
+  "headline": "​Linx Iris® – kamerabasert printkontroll for industrielle blekkstråleskrivere",
+  "verdict": "correct",
+  "note": "group's own domain; news items are about its subsidiary brand ACT Logimark"
+ },
+ {
+  "organisation_number": "959569541",
+  "company": "ACT GRUPPEN AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://act-gruppen.com/messer-og-seminarer/vi-inviterer-til-polselunsj-fredag-25-september/",
+  "headline": "Vi inviterer til pølselunsj fredag 25. september",
+  "verdict": "correct",
+  "note": "group's own domain; news items are about its subsidiary brand ACT Logimark"
+ },
+ {
+  "organisation_number": "959569541",
+  "company": "ACT GRUPPEN AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://act-gruppen.com/messer-og-seminarer/mot-act-logimark-pa-umami-arena-2027/",
+  "headline": "Møt oss på UMAMI Arena 2027",
+  "verdict": "correct",
+  "note": "group's own domain; news items are about its subsidiary brand ACT Logimark"
+ },
+ {
+  "organisation_number": "959569541",
+  "company": "ACT GRUPPEN AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://act-gruppen.com/messer-og-seminarer/act-logimark-holder-innlegg-om-merking-pa-fagdag-om-styrkesortering-av-trelast/",
+  "headline": "​ACT Logimark holder innlegg om merking på fagdag om styrkesortering av trelast",
+  "verdict": "correct",
+  "note": "group's own domain; news items are about its subsidiary brand ACT Logimark"
+ },
+ {
+  "organisation_number": "995849879",
+  "company": "VOLLAN TRAVEL AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "https://www.vollantravel.no/",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "990497370",
+  "company": "ALFA VARME- OG PIPETEKNIKK AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "https://alfavarme.no/",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "928653900",
+  "company": "LITE-HOUSE AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "https://www.lite-house.no/",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "988370746",
+  "company": "OSLO OG OMEGN BOLIGFORVALTNING AS",
+  "source_type": "social",
+  "field": "social.linkedin",
+  "url": "https://linkedin.com/company/oslo-og-omegn-boligforvaltning-as",
+  "headline": null,
+  "verdict": "correct",
+  "note": "LinkedIn behind a captcha; handle is the full legal name"
+ },
+ {
+  "organisation_number": "991627626",
+  "company": "GASSNOVA SF",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "https://gassnova.no/",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "991627626",
+  "company": "GASSNOVA SF",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://gassnova.no/nyheter/over-400-deltakere-fra-naermere-40-land-til-knowledge-sharing-2026-ccscdr-summit",
+  "headline": "Over 400 deltakere fra nærmere 40 land til Knowledge Sharing 2026, CCS&CDR Summit",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "991627626",
+  "company": "GASSNOVA SF",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://gassnova.no/en/news/over-400-participants-from-nearly-40-countries-to-attend-knowledge-sharing-2026-ccs-cdr-summit",
+  "headline": "Over 400 participants from nearly 40 countries to attend Knowledge Sharing 2026, CCS & CDR Summit",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "991627626",
+  "company": "GASSNOVA SF",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://gassnova.no/nyheter/knowledge-sharing-2026-fra-hvorfor-til-hvordan",
+  "headline": "Knowledge Sharing 2026: Fra hvorfor til hvordan",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "991627626",
+  "company": "GASSNOVA SF",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://gassnova.no/en/news/knowledge-sharing-2026-from-why-to-how",
+  "headline": "Knowledge Sharing 2026: From Why to How",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "991627626",
+  "company": "GASSNOVA SF",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://gassnova.no/nyheter/thomas-skadal-har-sagt-opp-sin-stilling-i-gassnova",
+  "headline": "Thomas Skadal har sagt opp sin stilling i Gassnova",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "991627626",
+  "company": "GASSNOVA SF",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://gassnova.no/en/news/longship-wins-international-carbon-management-award",
+  "headline": "Longship receives international award for carbon management",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "991627626",
+  "company": "GASSNOVA SF",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://gassnova.no/nyheter/langskip-far-internasjonal-pris-for-co%e2%82%82-handtering",
+  "headline": "Langskip mottar internasjonal pris for CO₂-håndtering",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "991627626",
+  "company": "GASSNOVA SF",
+  "source_type": "social",
+  "field": "social.linkedin",
+  "url": "https://linkedin.com/company/gassnova-sf",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "991627626",
+  "company": "GASSNOVA SF",
+  "source_type": "social",
+  "field": "social.youtube",
+  "url": "https://youtube.com/user/Gassnovasf",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "913014316",
+  "company": "NORDIC EASY AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "http://www.nordiceasy.no/",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "979487894",
+  "company": "GS UTVIKLING AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "https://www.gsutvikling.no/",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "944440658",
+  "company": "GIGA AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "www.gigapower.org",
+  "headline": null,
+  "verdict": "unverifiable (site did not load); registry-listed",
+  "note": ""
+ },
+ {
+  "organisation_number": "993450421",
+  "company": "REGIHUSET AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "www.regihuset.no",
+  "headline": null,
+  "verdict": "unverifiable (site did not load); registry-listed",
+  "note": ""
+ },
+ {
+  "organisation_number": "998845394",
+  "company": "3-VISJON AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "https://www.3-visjon.no/",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "998845394",
+  "company": "3-VISJON AS",
+  "source_type": "social",
+  "field": "social.facebook",
+  "url": "https://facebook.com/3Visjon",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "https://fileks.no/",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://fileks.no/nyheter/nasjonalt-prveprosjekt",
+  "headline": "Nasjonalt prøveprosjekt",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://fileks.no/nyheter/oyzq4tgstnjv7pgbhwb501nocoq7ia",
+  "headline": "Nyåpning i Berlin!",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://fileks.no/nyheter/ting-skjer-s-flg-med-noe-ekstra",
+  "headline": "Velkommen til åpning 05.des.2025!",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://fileks.no/nyheter/vi-har-pnet-enda-en-ny-butikk-i-berlin",
+  "headline": "Vi har åpnet enda en ny butikk i Berlin!",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://fileks.no/nyheter/hentavfallno-fileks-sant",
+  "headline": "Hentavfall.no + Fileks = Sant",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://fileks.no/nyheter/fileks-deltar-i-samarbeidsprosjektet-tekstil-25",
+  "headline": "Tekstil 2025",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://fileks.no/nyheter/grnn-lrdag-i-bergen",
+  "headline": "Grønn lørdag i Bergen!",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://fileks.no/nyheter/vi-pner-nettbutikk",
+  "headline": "Nettbutikken er åpen!",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "news",
+  "field": "news",
+  "url": "https://fileks.no/nyheter/sammen-gir-vi-det-videre",
+  "headline": "Sammen gir vi det videre!",
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "social",
+  "field": "social.facebook",
+  "url": "https://facebook.com/fileksgidetvidere",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "social",
+  "field": "social.instagram",
+  "url": "https://instagram.com/fileks_gidetvidere",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "social",
+  "field": "social.instagram",
+  "url": "https://instagram.com/fileks_secondhand_bergen",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "social",
+  "field": "social.instagram",
+  "url": "https://instagram.com/fileks_secondhand_oslo",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "social",
+  "field": "social.linkedin",
+  "url": "https://linkedin.com/company/fileks-gidetvidere",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "915656064",
+  "company": "FILEKS AS",
+  "source_type": "job_ad",
+  "field": "job_board.job_posting",
+  "url": "NAV feed entry (token-gated)",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "994969919",
+  "company": "VVTEKNIKK AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "https://vvteknikk.no/",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "923532110",
+  "company": "LANARS AS",
+  "source_type": "website",
+  "field": "official_website",
+  "url": "https://lanars.no/",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "923532110",
+  "company": "LANARS AS",
+  "source_type": "social",
+  "field": "social.facebook",
+  "url": "https://facebook.com/lanars.inc",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "923532110",
+  "company": "LANARS AS",
+  "source_type": "social",
+  "field": "social.instagram",
+  "url": "https://instagram.com/lanars.inc",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "923532110",
+  "company": "LANARS AS",
+  "source_type": "social",
+  "field": "social.linkedin",
+  "url": "https://linkedin.com/company/lanars",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ },
+ {
+  "organisation_number": "923532110",
+  "company": "LANARS AS",
+  "source_type": "social",
+  "field": "social.x",
+  "url": "https://x.com/lanars_inc",
+  "headline": null,
+  "verdict": "correct",
+  "note": ""
+ }
+]

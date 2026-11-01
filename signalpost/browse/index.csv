@@ -1,0 +1,101 @@
+organisation_number,name,municipality,industry,coverage,has_financials,has_website,has_news_or_hiring
+998845394,3-VISJON AS,ENGERDAL,Oppføring av bygninger,website,True,True,False
+928289117,7-FJELL BERGEN EIENDOM AS,BERGEN,Utleie av egen eller leid fast eiendom,financials,True,False,False
+959569541,ACT GRUPPEN AS,NANNESTAD,Uspesifisert engroshandel,website,True,True,True
+911646072,AGRINA AS,TIME,Utleie av egen eller leid fast eiendom,financials,True,False,False
+935880270,ALBEDO AS,FÆRDER,Uoppgitt,financials,True,False,False
+935870291,ALBRIGTSEN EIENDOM AS,SKJERVØY,Utleie av egen eller leid fast eiendom,financials,True,False,False
+930100099,ALCANCIA MANAGEMENT AS,OSLO,Uoppgitt,financials,True,False,False
+990497370,ALFA VARME- OG PIPETEKNIKK AS,MODUM,Oppføring av bygninger,website,True,True,False
+826603712,APOSTROFEN AS,AUKRA,Reklamebyråvirksomhet,financials,True,False,False
+991570985,ARNES SVEIS AS,RISØR,Bearbeiding av metaller,financials,True,False,False
+931668668,AUJID AS,SARPSBORG,Annen virksomhet for distribuering av innhold,financials,True,False,False
+987825243,B.G. WEST AS,BERGEN,Detaljhandel med bredt vareutvalg med hovedvekt på nærings- og nytelsesmidler,financials,True,False,False
+986180478,BACHESVEI TERRASSE BORETTSLAG,DRAMMEN,Aktiviteter i borettslag og boligsameier,financials,True,False,False
+983706924,BEZZETTI FRISØR AS,MÅLSELV,Frisering og barbering,financials,True,False,False
+925233854,BJAALAND AS,OSLO,Uoppgitt,financials,True,False,False
+989810367,BM AVRETTING AS,MELHUS,Annen spesialisert bygge- og anleggsvirksomhet ikke nevnt annet sted,financials,True,False,False
+962170382,BORETTSLAGET KRONA,ÅLESUND,Aktiviteter i borettslag og boligsameier,financials,True,False,False
+934783344,BRATBAKKEN/KARLSEN HOLDING AS,HALDEN,Grunnarbeid,financials,True,False,False
+936864619,BREILI DRIFT AS,VIK,"All annen faglig, vitenskapelig og teknisk virksomhet ikke nevnt annet sted",financials,True,False,False
+915314104,BRUMUNDDAL SENTRUM AS,RINGSAKER,Bedriftsrådgivning og annen administrativ rådgivning,financials,True,False,False
+985505829,CHG-MERIDIAN SKIEN AS,SKIEN,Engroshandel med informasjons- og kommunikasjonsteknologiutstyr,financials,True,False,False
+995469634,CONECCO AS,SARPSBORG,Bedriftsrådgivning og annen administrativ rådgivning,financials,True,False,False
+925496197,DALSEGG EIENDOM AS,SURNADAL,Utleie av egen eller leid fast eiendom,financials,True,False,False
+977152569,DNB BANKS ASAS JUBILEUMSFOND TIL UNIVERSITETET I BERGEN STI,BERGEN,Aktiviteter i fond/legat som støtter veldedige og allmennyttige formål,financials,True,False,False
+988958980,EIKVIN AS,FROGN,Andre egeninvesteringsselskaper,financials,True,False,False
+929971434,ELG INVEST AS,BERGEN,Uoppgitt,financials,True,False,False
+994433296,ENGELSMINNEGATE 24 DA,STAVANGER,Utleie av egen eller leid fast eiendom,financials,True,False,False
+971195290,EQUINOR ANGOLA BLOCK 31 AS,STAVANGER,Utvinning av råolje,financials,True,False,False
+936575609,ERITECH RENHOLD AS,HORTEN,Rengjøring av bygninger,financials,True,False,False
+936442145,FARHAN HOLDING AS,OSLO,Uoppgitt,financials,True,False,False
+915656064,FILEKS AS,ALVER,Engroshandel med klær og skotøy,website,True,True,True
+968932772,FJORDGLAS EIGEDOM AS,LUSTER,Produksjon av dører og vinduer i tre,financials,True,False,False
+983226051,FRONT EIENDOM AS,MELHUS,Utleie av egen eller leid fast eiendom,financials,True,False,False
+991627626,GASSNOVA SF,PORSGRUNN,Offentlig administrasjon tilknyttet næringsvirksomhet og arbeidsmarked,website,True,True,True
+998291054,GAULA INVEST AS,MIDTRE GAULDAL,Utleie av egen eller leid fast eiendom,financials,True,False,False
+934904672,GERA HEIM AS,LEVANGER,Utvikling og salg av byggeprosjekter,financials,True,False,False
+944440658,GIGA AS,ASKER,Annen teknisk konsulentvirksomhet,financials,True,False,False
+920023568,GOLDEN TOUCH MEDIA AS,FREDRIKSTAD,"Produksjon av film, video og fjernsynsprogrammer",financials,True,False,False
+979487894,GS UTVIKLING AS,OSLO,Kjøp og salg av egen fast eiendom,website,True,True,False
+912162745,HEGGØYA EIENDOM AS,ORKLAND,Utleie av egen eller leid fast eiendom,financials,True,False,False
+914205816,HEIMSTADEN PROPERTY 2 AS,OSLO,Utleie av egen eller leid fast eiendom,financials,True,False,False
+918882340,HEISKOMPETANSE AS,OSLO,Uoppgitt,financials,True,False,False
+935566509,HELMERSEN POLARE AS,TROMSØ,Drift av restauranter,financials,True,False,False
+933745198,HUMLEPUNGEN AS,OSLO,Uoppgitt,financials,True,False,False
+933661334,HØYSPENT SØR AS,OSLO,Annen teknisk konsulentvirksomhet,financials,True,False,False
+916067135,JARU TRANSPORT AS,HØYLANDET,Godstransport på vei,financials,True,False,False
+920709206,JATBYGG AS,KRISTIANSAND,Byggeteknisk konsulentvirksomhet,financials,True,False,False
+929107128,JBG 14B HOLDING AS,OSLO,Utleie av egen eller leid fast eiendom,financials,True,False,False
+934751280,JPD HOLDING AS,FLESBERG,Utleie av arbeidskraft og andre personaladministrative tjenester,financials,True,False,False
+932844036,KASTANA AS,MOSS,Uoppgitt,financials,True,False,False
+926641697,KAV CAPITAL INVESTMENT RESEARCH AS,BÆRUM,Bedriftsrådgivning og annen administrativ rådgivning,financials,True,False,False
+920391648,KJØPMANNSGATA 36/38 AS,TRONDHEIM,Utleie av egen eller leid fast eiendom,financials,True,False,False
+923532110,LANARS AS,BÆRUM,Dataprogrammeringstjenester,website,True,True,False
+931144472,LASKEN AS,SANDEFJORD,Utleie av egen eller leid fast eiendom,financials,True,False,False
+980363090,LEIRVIKÅSEN 35 AS,BERGEN,Utleie av egen eller leid fast eiendom,financials,True,False,False
+928653900,LITE-HOUSE AS,ARENDAL,"Industri-, produkt- og motedesignvirksomhet",website,True,True,False
+980597849,LOKALHISTORISK FORLAG AS,LØTEN,Detaljhandel med brukte varer,financials,True,False,False
+929122194,LORIEN INVEST AS,STAVANGER,Uoppgitt,financials,True,False,False
+918905839,LYSAKER PARK EIENDOM AS,BÆRUM,Utleie av egen eller leid fast eiendom,financials,True,False,False
+990970203,MAGNE HELLAND AS,BJERKREIM,Grunnarbeid,financials,True,False,False
+983861903,MEDIEBEDRIFTENES KLARERINGSTJENESTE AS,OSLO,Andre informasjonstjenester,financials,True,False,False
+825757732,MENSTAD EIENDOMSINVEST AS,OSLO,Utleie av egen eller leid fast eiendom,financials,True,False,False
+915320112,MOLDE HK ELITE,MOLDE,Aktiviteter i idrettslag og -klubber,financials,True,False,False
+826420502,MONSRUD PARK AS,NORDRE FOLLO,Utleie av egen eller leid fast eiendom,financials,True,False,False
+913014316,NORDIC EASY AS,OSLO,Dataprogrammeringstjenester,website,True,True,False
+983638015,OLDERVIKA BORETTSLAG,ORKLAND,Aktiviteter i borettslag og boligsameier,financials,True,False,False
+988370746,OSLO OG OMEGN BOLIGFORVALTNING AS,OSLO,Eiendomsforvaltning på oppdrag,financials,True,False,False
+924455667,P BYGG AS,STAVANGER,Oppføring av bygninger,financials,True,False,False
+975804607,PRIME CONSULTING AS,BERGEN,Annen teknisk konsulentvirksomhet,financials,True,False,False
+934987462,PSP EIENDOM AS,KRISTIANSAND,Utleie av egen eller leid fast eiendom,financials,True,False,False
+937247079,PYZJ AS,SANDNES,Detaljhandel med klær,financials,True,False,False
+993450421,REGIHUSET AS,OSLO,"Produksjon av film, video og fjernsynsprogrammer",financials,True,False,False
+928957357,RR 35 INVEST AS,OSLO,Uoppgitt,financials,True,False,False
+996805654,SAMEIET DALSBERGSTIEN 10,OSLO,Aktiviteter i borettslag og boligsameier,financials,True,False,False
+921364776,SAMEIET LYSEREN STRANDPARK,NORDRE FOLLO,Aktiviteter i borettslag og boligsameier,financials,True,False,False
+987795875,SAMEIET ULLENSAKERGATA 8-12,OSLO,Aktiviteter i borettslag og boligsameier,financials,True,False,False
+918160485,SEAFOODLOGISTICS AS,LILLESTRØM,Godstransport på vei,financials,True,False,False
+860425432,SIMED AS,OSLO,Allmennlegetjenester,financials,True,False,False
+935667240,SKIN COACH AS,BERGEN,Skjønnhetspleie,financials,True,False,False
+928444163,SKOOG HOLDING AS,OSLO,Uoppgitt,financials,True,False,False
+828334972,SOCIUS CAPITAL AS,OSLO,Kjøp og salg av egen fast eiendom,financials,True,False,False
+992240857,SPITSBERGEN INVEST AS,BÆRUM,Annen teknisk konsulentvirksomhet,financials,True,False,False
+917268258,STEINAR OLAISEN AS,HERØY,Innenriks sjøfart med gods,financials,True,False,False
+938132348,STEINAR SAGEN AS,TRONDHEIM,Arkitektvirksomhet,financials,True,False,False
+988989320,TL-INVEST AS,OSLO,Utleie av egen eller leid fast eiendom,financials,True,False,False
+926628070,TO BI AS,OSLO,Uoppgitt,financials,True,False,False
+992511648,TRADEX AS,OSLO,Andre egeninvesteringsselskaper,financials,True,False,False
+926702734,TRYGGHETSBOLIG AS,TYSVÆR,Utvikling og salg av byggeprosjekter,financials,True,False,False
+917803994,UIR AS,TØNSBERG,Elektrisk installasjonsarbeid,financials,True,False,False
+936264360,ULRIKKE TRYDAL INVEST AS,KRISTIANSAND,Uoppgitt,financials,True,False,False
+930793434,URBAN SEA DEVELOPMENT AS,STAVANGER,Utvikling og salg av byggeprosjekter,financials,True,False,False
+989207059,VALSKAAR HOLDING AS,OSLO,Bedriftsrådgivning og annen administrativ rådgivning,financials,True,False,False
+943759383,VESTLIA 2 AS,ØSTRE TOTEN,Utleie av egen eller leid fast eiendom,financials,True,False,False
+911171473,VIMPELFABRIKKEN AS,FROGN,Utleie av egen eller leid fast eiendom,financials,True,False,False
+914154472,VIVELSTAD EIENDOM AS,LIER,Utleie av egen eller leid fast eiendom,financials,True,False,False
+995849879,VOLLAN TRAVEL AS,PORSGRUNN,Reisearrangørvirksomhet ellers,website,True,True,False
+994969919,VVTEKNIKK AS,MOSS,Rørleggerarbeid,website,True,True,False
+957122086,WILLIAM JACOBSEN AS,RANA,Detaljhandel med drivstoff til motorvogner,financials,True,False,False
+931956825,YOLO HOLDING AS,KRISTIANSAND,Reklamebyråvirksomhet,financials,True,False,False
+992488751,ÅNEGGA EIENDOM AS,RENNEBU,Uoppgitt,financials,True,False,False

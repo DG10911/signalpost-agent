@@ -1,0 +1,1879 @@
+{
+  "organisation_number": "971195290",
+  "name": "EQUINOR ANGOLA BLOCK 31 AS",
+  "legal_form": "AS",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "STAVANGER",
+  "municipality_number": "1103",
+  "industry_code": "06.100",
+  "industry_label": "Utvinning av råolje",
+  "website": "",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "971195290",
+        "navn": "EQUINOR ANGOLA BLOCK 31 AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "06.100",
+        "naeringskode1.beskrivelse": "Utvinning av råolje",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "false",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "",
+        "registreringsdatoantallansatteNAVAaregisteret": "",
+        "hjemmeside": "",
+        "epostadresse": "",
+        "telefon": "51 99 00 00",
+        "mobil": "",
+        "postadresse.adresse": "Postboks 8500 Forus",
+        "postadresse.poststed": "STAVANGER",
+        "postadresse.postnummer": "4035",
+        "postadresse.kommune": "STAVANGER",
+        "postadresse.kommunenummer": "1103",
+        "postadresse.land": "Norge",
+        "postadresse.landkode": "NO",
+        "forretningsadresse.adresse": "Forusbeen 50",
+        "forretningsadresse.poststed": "STAVANGER",
+        "forretningsadresse.postnummer": "4035",
+        "forretningsadresse.kommune": "STAVANGER",
+        "forretningsadresse.kommunenummer": "1103",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "1120",
+        "institusjonellSektorkode.beskrivelse": "Statlig eide aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "1995-02-20",
+        "stiftelsesdato": "1994-10-24",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2021-12-06",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2022-09-20",
+        "frivilligMvaRegistrertBeskrivelser": "Utleier av bygg eller anlegg",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "2022-09-20",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "1994-11-17",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2018-05-16",
+        "vedtektsfestetFormaal": "Drive virksomhet i forbindelse med utforskning, utbygging og produksjon av petroleum.",
+        "aktivitet": "Drive virksomhet i forbindelse med utforskning, utbygging og produksjon av petroleum.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "true",
+        "kapital.belop": "2315000.00",
+        "kapital.antallAksjer": "2315000",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2017-12-01",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "971195290",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:49.260744Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "971195290",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/971195290",
+      "retrieved_at": "2026-11-01T06:21:44.971284Z",
+      "value": {
+        "organisation_number": "971195290",
+        "name": "EQUINOR ANGOLA BLOCK 31 AS",
+        "legal_form": "AS",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": null,
+        "industry": {
+          "beskrivelse": "Utvinning av råolje",
+          "kode": "06.100"
+        },
+        "business_address": {
+          "adresse": [
+            "Forusbeen 50"
+          ],
+          "kommune": "STAVANGER",
+          "kommunenummer": "1103",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "4035",
+          "poststed": "STAVANGER"
+        },
+        "postal_address": {
+          "adresse": [
+            "Postboks 8500 Forus"
+          ],
+          "kommune": "STAVANGER",
+          "kommunenummer": "1103",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "4035",
+          "poststed": "STAVANGER"
+        },
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "430cb3ba18529a3e00c757d42d32db4d0eb33722b951df3db6fdbc88d9b8e982",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/971195290",
+      "retrieved_at": "2026-11-01T06:21:45.170901Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 4943729,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 2319950372.0,
+            "operating_result": 1517717420.0,
+            "profit_before_tax": 1602988214.0,
+            "annual_result": 649793028.0,
+            "assets": 3013448684.0,
+            "equity": 599658202.0,
+            "debt": 2413790482.0
+          },
+          {
+            "record_id": 5758997,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 3171976504.0,
+            "operating_result": 2413753769.0,
+            "profit_before_tax": 2672835158.0,
+            "annual_result": 2107223969.0,
+            "assets": 4461274387.0,
+            "equity": 872963763.0,
+            "debt": 3588310623.0
+          },
+          {
+            "record_id": 7032440,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 1233153619.0,
+            "operating_result": 854217131.0,
+            "profit_before_tax": 624063473.0,
+            "annual_result": -208529930.0,
+            "assets": 1816705607.0,
+            "equity": 816116960.0,
+            "debt": 1000588647.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "931f83b423678394d38d4ab8c85cde1e050db6c5b2de281f4403e7a083cb5982",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/aar",
+      "retrieved_at": "2026-11-01T06:21:54.685905Z",
+      "value": {
+        "years": [
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2014"
+          },
+          {
+            "year": "2013",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2013"
+          },
+          {
+            "year": "2012",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2012"
+          },
+          {
+            "year": "2011",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/971195290/2011"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "b7bcd20d8a4607bc9ca49fbdfebf5e51cb31e39858edb985dc98a82e8d2b7cd1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/971195290/roller",
+      "retrieved_at": "2026-11-01T06:21:54.886977Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Anine Preus",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-07-28",
+            "inactive": false
+          },
+          {
+            "name": "Ane Ellefsen Aubert",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-07-28",
+            "inactive": false
+          },
+          {
+            "name": "Arjan Vellekoop",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-07-28",
+            "inactive": false
+          },
+          {
+            "name": [
+              "ERNST & YOUNG AS"
+            ],
+            "organisation_number": "976389387",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2019-09-17",
+            "inactive": false
+          },
+          {
+            "name": [
+              "EQUINOR ASA"
+            ],
+            "organisation_number": "923609016",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2012-11-20",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "a869f4c5372cdf9f6c5831ed89a53a5f47eb4d86793ffd2d8be9ab8dc304b5cc",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "available",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/971195290",
+      "retrieved_at": "2026-11-01T06:21:55.222563Z",
+      "value": {
+        "children": [
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR ANGOLA BLOCK 40 AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "996576027",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "children": [
+              {
+                "dato": "2025-11-08",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EQUINOR RUSSIA ENERGY AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "980321932",
+                "parentNavn": "EQUINOR ENERGY AS",
+                "parentOrganisasjonsnummer": "990888213"
+              },
+              {
+                "dato": "2025-11-08",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "STATOIL ZAGROS OIL AND GAS AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "980189848",
+                "parentNavn": "EQUINOR ENERGY AS",
+                "parentOrganisasjonsnummer": "990888213"
+              },
+              {
+                "dato": "2025-11-08",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EQUINOR MURZUQ AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "979390122",
+                "parentNavn": "EQUINOR ENERGY AS",
+                "parentOrganisasjonsnummer": "990888213"
+              },
+              {
+                "dato": "2025-11-08",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "NORSK HYDRO SVERIGE AB",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Utenlandsk enhet",
+                  "kode": "UTLA"
+                },
+                "organisasjonsnummer": "979131186",
+                "parentNavn": "EQUINOR ENERGY AS",
+                "parentOrganisasjonsnummer": "990888213"
+              },
+              {
+                "dato": "2025-11-08",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EQUINOR ANGOLA BLOCK 25 AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "971142499",
+                "parentNavn": "EQUINOR ENERGY AS",
+                "parentOrganisasjonsnummer": "990888213"
+              },
+              {
+                "dato": "2025-11-08",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EQUINOR ENERGY LIBYA AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "970988629",
+                "parentNavn": "EQUINOR ENERGY AS",
+                "parentOrganisasjonsnummer": "990888213"
+              },
+              {
+                "dato": "2025-11-08",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EQUINOR ANGOLA AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "960533577",
+                "parentNavn": "EQUINOR ENERGY AS",
+                "parentOrganisasjonsnummer": "990888213"
+              },
+              {
+                "dato": "2025-11-08",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EQUINOR INTERNATIONAL WELL RESPONSE COMPANY AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "897971682",
+                "parentNavn": "EQUINOR ENERGY AS",
+                "parentOrganisasjonsnummer": "990888213"
+              },
+              {
+                "children": [
+                  {
+                    "dato": "2026-08-12",
+                    "grunnlag": "100%",
+                    "knytningsform": {
+                      "beskrivelse": "Konsern datter",
+                      "kode": "KDAT"
+                    },
+                    "navn": "EQUINOR ANGOLA BLOCK 16/21 AS",
+                    "nivaa": 3,
+                    "organisasjonsform": {
+                      "beskrivelse": "Aksjeselskap",
+                      "kode": "AS"
+                    },
+                    "organisasjonsnummer": "937785879",
+                    "parentNavn": "EQUINOR ENERGY INTERNATIONAL AS",
+                    "parentOrganisasjonsnummer": "889094532"
+                  },
+                  {
+                    "dato": "2026-08-12",
+                    "grunnlag": "100%",
+                    "knytningsform": {
+                      "beskrivelse": "Konsern datter",
+                      "kode": "KDAT"
+                    },
+                    "navn": "EQUINOR ANGOLA ULTRADEEP AS",
+                    "nivaa": 3,
+                    "organisasjonsform": {
+                      "beskrivelse": "Aksjeselskap",
+                      "kode": "AS"
+                    },
+                    "organisasjonsnummer": "937692676",
+                    "parentNavn": "EQUINOR ENERGY INTERNATIONAL AS",
+                    "parentOrganisasjonsnummer": "889094532"
+                  },
+                  {
+                    "dato": "2026-08-12",
+                    "grunnlag": "100%",
+                    "knytningsform": {
+                      "beskrivelse": "Konsern datter",
+                      "kode": "KDAT"
+                    },
+                    "navn": "EQUINOR ANGOLA BLOCK 31/21 AS",
+                    "nivaa": 3,
+                    "organisasjonsform": {
+                      "beskrivelse": "Aksjeselskap",
+                      "kode": "AS"
+                    },
+                    "organisasjonsnummer": "930816922",
+                    "parentNavn": "EQUINOR ENERGY INTERNATIONAL AS",
+                    "parentOrganisasjonsnummer": "889094532"
+                  },
+                  {
+                    "dato": "2026-08-12",
+                    "grunnlag": "100%",
+                    "knytningsform": {
+                      "beskrivelse": "Konsern datter",
+                      "kode": "KDAT"
+                    },
+                    "navn": "EQUINOR ANGOLA BLOCK 46 AS",
+                    "nivaa": 3,
+                    "organisasjonsform": {
+                      "beskrivelse": "Aksjeselskap",
+                      "kode": "AS"
+                    },
+                    "organisasjonsnummer": "928320715",
+                    "parentNavn": "EQUINOR ENERGY INTERNATIONAL AS",
+                    "parentOrganisasjonsnummer": "889094532"
+                  },
+                  {
+                    "dato": "2026-08-12",
+                    "grunnlag": "100%",
+                    "knytningsform": {
+                      "beskrivelse": "Konsern datter",
+                      "kode": "KDAT"
+                    },
+                    "navn": "EQUINOR ANGOLA BLOCK 47 AS",
+                    "nivaa": 3,
+                    "organisasjonsform": {
+                      "beskrivelse": "Aksjeselskap",
+                      "kode": "AS"
+                    },
+                    "organisasjonsnummer": "928320642",
+                    "parentNavn": "EQUINOR ENERGY INTERNATIONAL AS",
+                    "parentOrganisasjonsnummer": "889094532"
+                  },
+                  {
+                    "dato": "2026-08-12",
+                    "grunnlag": "100%",
+                    "knytningsform": {
+                      "beskrivelse": "Konsern datter",
+                      "kode": "KDAT"
+                    },
+                    "navn": "EQUINOR ANGOLA BLOCK 29 AS",
+                    "nivaa": 3,
+                    "organisasjonsform": {
+                      "beskrivelse": "Aksjeselskap",
+                      "kode": "AS"
+                    },
+                    "organisasjonsnummer": "925368962",
+                    "parentNavn": "EQUINOR ENERGY INTERNATIONAL AS",
+                    "parentOrganisasjonsnummer": "889094532"
+                  },
+                  {
+                    "dato": "2026-08-12",
+                    "grunnlag": "100%",
+                    "knytningsform": {
+                      "beskrivelse": "Konsern datter",
+                      "kode": "KDAT"
+                    },
+                    "navn": "EQUINOR ANGOLA BLOCK 1/14 AS",
+                    "nivaa": 3,
+                    "organisasjonsform": {
+                      "beskrivelse": "Aksjeselskap",
+                      "kode": "AS"
+                    },
+                    "organisasjonsnummer": "925337609",
+                    "parentNavn": "EQUINOR ENERGY INTERNATIONAL AS",
+                    "parentOrganisasjonsnummer": "889094532"
+                  },
+                  {
+                    "dato": "2026-08-12",
+                    "grunnlag": "95,00%",
+                    "knytningsform": {
+                      "beskrivelse": "Konsern datter",
+                      "kode": "KDAT"
+                    },
+                    "navn": "EQUINOR ARGENTINA AS",
+                    "nivaa": 3,
+                    "organisasjonsform": {
+                      "beskrivelse": "Aksjeselskap",
+                      "kode": "AS"
+                    },
+                    "organisasjonsnummer": "922031843",
+                    "parentNavn": "EQUINOR ENERGY INTERNATIONAL AS",
+                    "parentOrganisasjonsnummer": "889094532"
+                  }
+                ],
+                "dato": "2025-11-08",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EQUINOR ENERGY INTERNATIONAL AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "889094532",
+                "parentNavn": "EQUINOR ENERGY AS",
+                "parentOrganisasjonsnummer": "990888213"
+              },
+              {
+                "dato": "2025-11-08",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EQUINOR DEZASSETE AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "866009392",
+                "parentNavn": "EQUINOR ENERGY AS",
+                "parentOrganisasjonsnummer": "990888213"
+              }
+            ],
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR ENERGY AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "990888213",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR GAS MARKETING EUROPE AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "990836426",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR TANZANIA AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "990023476",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "SVANHOLMEN 8 AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "989972723",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR LIBYA AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "987634626",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR IN SALAH AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "985648085",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR IN AMENAS AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "985648026",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR ALGERIA AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "985619433",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "STATOIL SP GAS AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "985079056",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "children": [
+              {
+                "dato": "2025-02-24",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EQUINOR BTC CASPIAN AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "982265193",
+                "parentNavn": "EQUINOR BTC FINANCE AS",
+                "parentOrganisasjonsnummer": "984611439"
+              }
+            ],
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR BTC FINANCE AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "984611439",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "STATOIL IRAN AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "982924383",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR NORSK LNG AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "982771064",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR ASSET MANAGEMENT AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "981363876",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "STATHOLDING AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "981363140",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR NEW ENERGY AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "981269217",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR VENTURES AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "980516229",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR INDIA AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "979206755",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "NORSK HYDRO DANMARK AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Utenlandsk enhet",
+              "kode": "UTLA"
+            },
+            "organisasjonsnummer": "979130899",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR ANGOLA BLOCK 17 AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "977312043",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR ANGOLA BLOCK 15 AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "977311950",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR CHINA AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "976947584",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR APSHERON AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "975798658",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR ANGOLA BLOCK 31 AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "971195290",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR NIGERIA AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "967583936",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR PROJECTS HOLDING AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "933362140",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "Rafinor AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "929321316",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "children": [
+              {
+                "dato": "2025-02-24",
+                "grunnlag": "100%",
+                "knytningsform": {
+                  "beskrivelse": "Konsern datter",
+                  "kode": "KDAT"
+                },
+                "navn": "EQUINOR LNG TRADING AS",
+                "nivaa": 2,
+                "organisasjonsform": {
+                  "beskrivelse": "Aksjeselskap",
+                  "kode": "AS"
+                },
+                "organisasjonsnummer": "933236358",
+                "parentNavn": "EQUINOR MIDSTREAM & TRADING AS",
+                "parentOrganisasjonsnummer": "928927156"
+              }
+            ],
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR MIDSTREAM & TRADING AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "928927156",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR LOW CARBON SOLUTION AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "927998009",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR RUSSIA HOLDING AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "922320810",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR GLOBAL PROJECTS AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "921835086",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR LNG SHIP HOLDING AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "920022146",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR REFINING NORWAY AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "917209405",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          },
+          {
+            "dato": "2025-11-12",
+            "grunnlag": "100%",
+            "knytningsform": {
+              "beskrivelse": "Konsern datter",
+              "kode": "KDAT"
+            },
+            "navn": "EQUINOR INSURANCE AS",
+            "nivaa": 1,
+            "organisasjonsform": {
+              "beskrivelse": "Aksjeselskap",
+              "kode": "AS"
+            },
+            "organisasjonsnummer": "836771192",
+            "parentNavn": "EQUINOR ASA",
+            "parentOrganisasjonsnummer": "923609016"
+          }
+        ],
+        "navn": "EQUINOR ASA",
+        "organisasjonsform": {
+          "beskrivelse": "Allmennaksjeselskap",
+          "kode": "ASA"
+        },
+        "organisasjonsnummer": "923609016"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "153516c41820d98ff0c0ec22805f27242bf1e6b7a892af46c34f20bbea1f4811",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=971195290&size=1000",
+      "retrieved_at": "2026-11-01T06:21:55.426193Z",
+      "value": {
+        "locations": []
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "285050725c74507e9cfab75021febf6f7b62ecb6e1931102746ea39837937802",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "not_found",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter",
+      "retrieved_at": "2026-11-01T06:21:55.426766Z",
+      "value": null,
+      "as_of": null,
+      "note": "No valid registry website URL",
+      "content_sha256": null,
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "971195290",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "971195290",
+              "source_row_key": "971195290"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-971195290",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "EQUINOR ANGOLA BLOCK 31 AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "EQUINOR ANGOLA BLOCK 31 AS"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 1,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg"
+        ],
+        "platform_counts": {
+          "brreg": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 6,
+    "bytes": 26980,
+    "latencies_ms": [
+      198,
+      199,
+      199,
+      200,
+      335,
+      203
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Drive virksomhet i forbindelse med utforskning, utbygging og produksjon av petroleum.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "articles_date",
+      "value": "2018-05-16",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "business_address",
+      "value": "Forusbeen 50, 4035 STAVANGER, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "1994-11-17",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "founding_date",
+      "value": "1994-10-24",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "in_group",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "industry",
+      "value": "Utvinning av råolje",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "industry_code",
+      "value": "06.100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Statlig eide aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "1120",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "legal_name",
+      "value": "EQUINOR ANGOLA BLOCK 31 AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "municipality",
+      "value": "STAVANGER",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "municipality_number",
+      "value": "1103",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "phone",
+      "value": "51 99 00 00",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "postal_address",
+      "value": "Postboks 8500 Forus, 4035 STAVANGER, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "postal_code",
+      "value": "4035",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "registered_at",
+      "value": "1995-02-20",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "2315000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2017-12-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "share_count",
+      "value": "2315000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Drive virksomhet i forbindelse med utforskning, utbygging og produksjon av petroleum.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2021-12-06",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2021-12-06",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    },
+    {
+      "field": "voluntary_vat_date",
+      "value": "2022-09-20",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "971195290"
+    }
+  ],
+  "summary": {
+    "headline": "EQUINOR ANGOLA BLOCK 31 AS",
+    "narrative": "EQUINOR ANGOLA BLOCK 31 AS is a AS company, operating in utvinning av råolje, registered in Stavanger. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 2319950372.0 NOK, operating result 1517717420.0 NOK, annual result 649793028.0 NOK. Registered leadership includes Anine Preus (Styrets leder) and 4 other registered role(s).",
+    "statements": [
+      {
+        "text": "EQUINOR ANGOLA BLOCK 31 AS is a AS company, operating in utvinning av råolje, registered in Stavanger.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 2319950372.0 NOK, operating result 1517717420.0 NOK, annual result 649793028.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/971195290",
+        "retrieved_at": "2026-11-01T06:21:45.170901Z"
+      },
+      {
+        "text": "Registered leadership includes Anine Preus (Styrets leder) and 4 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/971195290/roller",
+        "retrieved_at": "2026-11-01T06:21:54.886977Z"
+      }
+    ],
+    "unknowns": [
+      "registered subunits/locations",
+      "verified company website"
+    ],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

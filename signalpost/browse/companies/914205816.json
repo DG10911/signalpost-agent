@@ -1,0 +1,1129 @@
+{
+  "organisation_number": "914205816",
+  "name": "HEIMSTADEN PROPERTY 2 AS",
+  "legal_form": "AS",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "OSLO",
+  "municipality_number": "0301",
+  "industry_code": "68.200",
+  "industry_label": "Utleie av egen eller leid fast eiendom",
+  "website": "Heimstaden.no",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "914205816",
+        "navn": "HEIMSTADEN PROPERTY 2 AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "68.200",
+        "naeringskode1.beskrivelse": "Utleie av egen eller leid fast eiendom",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "false",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "",
+        "registreringsdatoantallansatteNAVAaregisteret": "",
+        "hjemmeside": "Heimstaden.no",
+        "epostadresse": "",
+        "telefon": "",
+        "mobil": "",
+        "postadresse.adresse": "c/o Heimstaden Norway AS\nSognsveien 9C",
+        "postadresse.poststed": "OSLO",
+        "postadresse.postnummer": "0450",
+        "postadresse.kommune": "OSLO",
+        "postadresse.kommunenummer": "0301",
+        "postadresse.land": "Norge",
+        "postadresse.landkode": "NO",
+        "forretningsadresse.adresse": "Sognsveien 9C",
+        "forretningsadresse.poststed": "OSLO",
+        "forretningsadresse.postnummer": "0450",
+        "forretningsadresse.kommune": "OSLO",
+        "forretningsadresse.kommunenummer": "0301",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2014-09-25",
+        "stiftelsesdato": "2014-07-01",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2025-10-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2025-10-01",
+        "frivilligMvaRegistrertBeskrivelser": "Utleier av bygg eller anlegg",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "2025-10-01",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2014-09-25",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2024-09-30",
+        "vedtektsfestetFormaal": "Handels-, investerings- og eiendomsvirksomhet, samt å delta i andre selskaper med slik virksomhet.",
+        "aktivitet": "Eie og forvalte fast eiendom og hva som står i forbindelse dermed, samt deltakelse i andre selskaper.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "",
+        "fravalgRevisjonBeslutningsDato": "",
+        "erIKonsern": "false",
+        "kapital.belop": "44598.14",
+        "kapital.antallAksjer": "100",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2024-12-21",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "914205816",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:38.419883Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "914205816",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914205816",
+      "retrieved_at": "2026-11-01T06:21:47.597194Z",
+      "value": {
+        "organisation_number": "914205816",
+        "name": "HEIMSTADEN PROPERTY 2 AS",
+        "legal_form": "AS",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "Heimstaden.no",
+        "industry": {
+          "beskrivelse": "Utleie av egen eller leid fast eiendom",
+          "kode": "68.200"
+        },
+        "business_address": {
+          "adresse": [
+            "Sognsveien 9C"
+          ],
+          "kommune": "OSLO",
+          "kommunenummer": "0301",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "0450",
+          "poststed": "OSLO"
+        },
+        "postal_address": {
+          "adresse": [
+            "c/o Heimstaden Norway AS",
+            "Sognsveien 9C"
+          ],
+          "kommune": "OSLO",
+          "kommunenummer": "0301",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "0450",
+          "poststed": "OSLO"
+        },
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "7fc3faedc419f0577672fba56208300991c23599278c4d3e30fe84291ef7e40e",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/914205816",
+      "retrieved_at": "2026-11-01T06:21:47.806366Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 5245905,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 113879000.0,
+            "operating_result": 78444207.0,
+            "profit_before_tax": 67138956.0,
+            "annual_result": 52108193.0,
+            "assets": 259539693.0,
+            "equity": 184613.0,
+            "debt": 259355080.0
+          },
+          {
+            "record_id": 5995233,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 9643683.0,
+            "operating_result": 12207870.0,
+            "profit_before_tax": -949994.0,
+            "annual_result": 1153414.0,
+            "assets": 96854335.0,
+            "equity": 47809.0,
+            "debt": 96806526.0
+          },
+          {
+            "record_id": 7082833,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 2007713.0,
+            "operating_result": 3356216.0,
+            "profit_before_tax": 2210096.0,
+            "annual_result": 1723875.0,
+            "assets": 19164026.0,
+            "equity": 1771684.0,
+            "debt": 17392342.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "e915cdda8d21bd44e35e6824e7f7f39bbb2906b77811011d393f1894643fb144",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/aar",
+      "retrieved_at": "2026-11-01T06:22:01.006903Z",
+      "value": {
+        "years": [
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2022"
+          },
+          {
+            "year": "2021",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2021"
+          },
+          {
+            "year": "2020",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2020"
+          },
+          {
+            "year": "2019",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2019"
+          },
+          {
+            "year": "2018",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2018"
+          },
+          {
+            "year": "2017",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2017"
+          },
+          {
+            "year": "2016",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2016"
+          },
+          {
+            "year": "2015",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2015"
+          },
+          {
+            "year": "2014",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/914205816/2014"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "3385dcf20e991d21844be8dd7b5e4c94d5df5140399f910f5d1bf9d81127a7a1",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914205816/roller",
+      "retrieved_at": "2026-11-01T06:22:01.219702Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Alexander Berg",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-09-29",
+            "inactive": false
+          },
+          {
+            "name": "Christoffer Øvereng Haugan",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2026-09-29",
+            "inactive": false
+          },
+          {
+            "name": [
+              "ERNST & YOUNG AS"
+            ],
+            "organisation_number": "976389387",
+            "role_code": "REVI",
+            "role": "Revisor",
+            "group_code": "REVI",
+            "group": "Revisor",
+            "last_changed": "2017-10-10",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "a8d133949c84817a40ef698b34421fe22655208bb357ccc283500fccf99f628d",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/914205816",
+      "retrieved_at": "2026-11-01T06:22:01.425101Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=914205816&size=1000",
+      "retrieved_at": "2026-11-01T06:22:01.638279Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "914211948",
+            "name": "HEIMSTADEN PROPERTY 2 AS",
+            "address": {
+              "adresse": [
+                "Sognsveien 9C"
+              ],
+              "kommune": "OSLO",
+              "kommunenummer": "0301",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "0450",
+              "poststed": "OSLO"
+            },
+            "industry": {
+              "beskrivelse": "Utleie av egen eller leid fast eiendom",
+              "kode": "68.200"
+            },
+            "employees": null
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "e6f32c0506a96eb350282cd78809232a4f9acd5a9e2bbecc85460a12f49d1c93",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://heimstaden.com/no/",
+      "retrieved_at": "2026-11-01T06:22:18.549666Z",
+      "value": {
+        "requested_url": "https://Heimstaden.no/",
+        "final_url": "https://heimstaden.com/no/",
+        "registered_domain": "heimstaden.com",
+        "title": "Heimstaden – hjem med omtanke. Finn din neste bolig hos oss",
+        "description": "Se ledige leieboliger og næringslokaler. Heimstaden er et ledende europeisk boligeiendomsselskap som eier og forvalter eiendom.",
+        "main_text_excerpt": "For å oversette denne siden må du godta informasjonskapsler for Google Translate. Last inn siden på nytt etter at du har endret innstillingene for informasjonskapsler.",
+        "identity_text_excerpt": "Mer informasjon | For kunder MyHome Vårt kontor Hjelpesenter Kontrakt For interesserte Ledige leiligheter Fordeler Næring Om Heimstaden Om oss Vårt Kontor Varsling Om Heimstaden Bostad Tilgjengelighet på digitale plattformer Følg oss! LinkedIn Instagram Facebook Hjelpesenter Endre webside Translate this page © Heimstaden 2026 Informasjonskapselerklæring Personvernpolicy | For kunder MyHome Vårt kontor Hjelpesenter Kontrakt For interesserte Ledige leiligheter Fordeler Næring Om Heimstaden Om oss Vårt Kontor Varsling Om Heimstaden Bostad Tilgjengelighet på digitale plattformer Følg oss! LinkedIn Instagram Facebook Hjelpesenter | For kunder MyHome Vårt kontor Hjelpesenter Kontrakt | MyHome Vårt kontor Hjelpesenter Kontrakt | For interesserte Ledige leiligheter Fordeler Næring | Ledige leiligheter Fordeler Næring | Om Heimstaden Om oss Vårt Kontor Varsling Om Heimstaden Bostad Tilgjengelighet på digitale plattformer | Om oss Vårt Kontor Varsling Om Heimstaden Bostad Tilgjengelighet på digitale plattformer | Følg oss! LinkedIn Instagram Facebook Hjelpesenter",
+        "social_links": [],
+        "structured_organisations": [
+          {
+            "@type": "Organization",
+            "@id": "https://heimstaden.com/no/#organization",
+            "name": "Heimstaden AS",
+            "url": "https://heimstaden.com/no/",
+            "logo": {
+              "@type": "ImageObject",
+              "inLanguage": "nb-NO",
+              "@id": "https://heimstaden.com/no/#/schema/logo/image/",
+              "url": "https://heimstaden.com/app/uploads/sites/3/2021/12/Heimstaden_logo.png",
+              "contentUrl": "https://heimstaden.com/app/uploads/sites/3/2021/12/Heimstaden_logo.png",
+              "width": 1476,
+              "height": 214,
+              "caption": "Heimstaden AS"
+            },
+            "image": {
+              "@id": "https://heimstaden.com/no/#/schema/logo/image/"
+            },
+            "sameAs": [
+              "https://www.facebook.com/heimstadennorge",
+              "https://www.instagram.com/heimstaden_norge/",
+              "https://www.linkedin.com/company/10401437/",
+              "https://www.youtube.com/channel/UC8ZRGha4Yg9tZKhEpaoFuKg",
+              "https://sv.wikipedia.org/wiki/Heimstaden"
+            ]
+          }
+        ],
+        "structured_facts": {},
+        "job_postings": [],
+        "news_articles": [],
+        "content_sha256": "d2bf2f0effda5105fe9e7236921247257450540dc42d85994f37b5535cd02350",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://heimstaden.com/no/",
+            "title": "Heimstaden – hjem med omtanke. Finn din neste bolig hos oss",
+            "main_text_excerpt": "For å oversette denne siden må du godta informasjonskapsler for Google Translate. Last inn siden på nytt etter at du har endret innstillingene for informasjonskapsler.",
+            "content_sha256": "d2bf2f0effda5105fe9e7236921247257450540dc42d85994f37b5535cd02350"
+          },
+          {
+            "url": "https://heimstaden.com/no/jobbe-her/",
+            "title": "Jobbe hos Heimstaden",
+            "main_text_excerpt": "Vår kultur\nVi er et fargerikt selskap. Oransje står for det sunne, pålitelige og optimistiske i mange kulturer, men signaliserer også fleksibilitet, følsomhet og kreativitet. Disse egenskapene og verdiene beskriver også vår måte å være på. En oransje holdning er rett og slett en del av bedriftskulturen vår. Vi ser mangfold som en styrke og en forutsetning for utvikling.\nLes mer om hvordan det er å jobbe i Heimstaden her.",
+            "content_sha256": "3d90896f9379aa4b4853136fbb0e881cc1b5bc674e9ecda0c15c63b90032aa11"
+          },
+          {
+            "url": "https://heimstaden.com/no/om-oss/",
+            "title": "Heimstaden – Les om oss, vår visjon og kjerneverdier",
+            "main_text_excerpt": "Vår forretningsidé er å anskaffe, utvikle og forvalte eiendommer. I Norge har vi rundt 3 200 boliger for utleie. Gjennom en fullt integrert verdikjede jobber vi for å øke livskvaliteten til våre kunder, og tilby en trygg og god arbeidsplass for våre ansatte.\nSamfunnsbidrag er viktig for oss, og vår langsiktige strategi gjør det mulig å investere i produkter og løsninger som er sosialt bærekraftige og miljøvennlige – til det bedre for mennesker, eiendommer og planeten vår.\nHeimstaden ble stiftet i Malmø, Sverige i 1998. I dag finnes vi i Norge, Sverige, Danmark, Tyskland, Nederland, Tsjekkia, Finland, Polen og Storbritannia.\nLær mer om Heimstaden Bostad her.\nVåre verdier\nVi er en verdidrevet organisasjon. Vår arbeidsmetode er basert på våre verdier – Dare, Care, Share. Verdiene våre danner grunnlaget for hva vi velger å gjøre i dag, hva vi planlegger i fremtiden og måten vi gjør det på.\nForretningsmodell og strategi\nMed en verdidrevet kultur som er bygget på våre skandinaviske verdier og med solid styring, har vi en tydelig strategi for å oppfylle vår visjon om å skape hjem med omtanke for en enklere og bedre hverdag – Friendly Homes. Utover det å tilby boliger, sikrer vi bærekraftig, langsiktig avkastning for våre eiere og meningsfulle bidrag til samfunnet. Vi fremmer et inspirerende og inkluderende arbeidsmiljø, og sørger for at våre leietakeres behov blir møtt.",
+            "content_sha256": "9a3f0264e156a5e70357a0939f95be893c75cf8a196bee83683ceeb8525f4ff7"
+          },
+          {
+            "url": "https://heimstaden.com/no/om-oss/miljoansvar/",
+            "title": "Miljøansvar - omtanke for mennesker og miljø",
+            "main_text_excerpt": "Energieffektive eiendommer\nI flere aspekter er Heimstaden i forkant når det kommer til bærekraft, men vi vet at det er mer å gjøre for å takle og håndtere klimautfordringene fullt ut. Eiendomssektoren står for rundt 40 prosent av det totale energiforbruket i EU og 36 prosent av klimagassutslippene. Å redusere klimafotavtrykket er den eneste veien videre, og kampen mot klimaendringene er en av Heimstadens viktigste prioriteringer.\nSom et europeisk boligeiendomsselskap støtter vi EUs mål om å være klimanøytral innen 2050, men lokalt vurderer vi enda skarpere mål. For å sikre at klimaambisjonen vår er tilstrekkelig og i tråd med målene i Paris-avtalen, har vi sluttet oss til Science Based Targets Initiative (SBTi), som er en tredjepartsanmelder.\nVi har satt oss et mål om å redusere mengden kjøpt energi med 2 prosent per år innen 2025 (i sammenlignbar eiendomsportefølje). Vårt fokus er først og fremst å gjøre eiendommene våre mer energieffektive, og vi gjør dette ved å jobbe for lavere energibruk til samme nytte eller skape økt nytte med samme energibruk. Tiltakene inkluderer økt bruk av moderne og kostnadseffektiv teknologi, som installasjon av smarte kontrollsystemer og byggetekniske tiltak for å redusere varmetap. Vårt konsernmål er også å installere solceller på alle nye byggeprosjekter der det er aktuelt.\nLes mer om vårt bærekraftsarbeid i vår bærekraftsrapport fra 2020 (engelsk versjon).",
+            "content_sha256": "0b53b217129b1ff097a82c18b8c8b2927774f271dc065c2ef012b4be28d7ffde"
+          },
+          {
+            "url": "https://heimstaden.com/no/om-oss/sosialt-ansvar/",
+            "title": "Sosialt ansvar - engasjement og samarbeid bidrar til utvekling",
+            "main_text_excerpt": "I Heimstaden tror vi på like muligheter for alle, og vi ønsker å bidra til et samfunn der hvert barn trygt kan vokse og trives. Derfor har vi etablert A Home for a Home – et unikt partnerskap med SOS-barnebyer, som skal bidra til å gi så mange barn som mulig et trygt hjem og en god start på livet, lokalt i Heimstadens markeder og rundt om i verden. Les mer her.\nVi investerer i mennesker og lokalsamfunn\nSamarbeid\nVår visjon preger vårt syn på samarbeid og måten vi bidrar til et bedre samfunn. Vi engasjerer oss i samarbeid som støtter vår forretningsdrift på lokalt nivå, og det er viktig at samarbeidet skaper merverdi for våre leietakere og bidrar til å utvikle lokalområdet vi opererer i.\nVårt engasjement fokuserer på trygghet og på aktiviteter som fremmer integrasjon gjennom utdanning og helse, spesielt rettet mot barn og unge. Vi samarbeider med foreninger, organisasjoner og arrangementer av ideell eller samfunnsnyttig karakter. Vi samarbeider ikke med politiske virksomheter eller virksomheter som kun jobber for og med en spesifikk religion, og vi sponser heller ikke enkeltindivider.\nLeverandører\nVi ser det som en selvfølge at de leverandørene vi benytter oss av, lever opp til de krav vi stiller i våre etiske retningslinjer for leverandører (engelsk versjon): Business-Partner-Principles.\nHvordan Heimstaden forholder seg til, jobber med og etterfølger Åpenhetsloven kan du lese mer om her.\nGodt arbeidsmiljø\nVåre medarbeidere er vår mest verdifulle ressurs. Derfor setter vi stor pris på å ha et sunt og trygt arbeidsmiljø der våre medarbeidere har det bra og kjenner samhørighet. Vi har en dedikert arbeidsmiljøgruppe som sikrestiller at vi jobber systematisk med disse spørsmålene. Våre etiske retningslinjer gir veiledning i hvordan vi vil at vi skal oppføre oss som medarbeidere i Heimstaden – mot hverandre, mot våre kunder og alle andre interessenter som vi kommer i kontakt med.\nFor å øke helse og trivsel jobber vi aktivt med egenomsorg, og oppfordrer våre ansatte til trening og mosjon. Vi har også en ambisjon om at alle ansatte skal være i kontinuerlig utvikling, og jobber derfor aktivt med videreutdanning og personlig utvikling for våre ansatte.",
+            "content_sha256": "09901f3042eae06cd3cbe9b8525aa519ebd49c04fb199b8d25497112c8dda3be"
+          },
+          {
+            "url": "https://heimstaden.com/no/om-oss/vart-kontor/",
+            "title": "Vårt kontor: Du finner oss i Sognsveien 9 - Heimstaden",
+            "main_text_excerpt": "Våre åpningstider er som følger:\nKundeservice er tilgjengelig tirsdag og torsdag mellom kl. 10.00 – 14.00. Henvendelser i MyHome besvares mandag til fredag kl. 08:00 – 16:00.\nVi holder til i Sognsveien 9C, 0450 Oslo. Se kart her.\nØnsker du å besøke oss på kontoret kan du legge inn en henvendelse i MyHome for å avtale tid.",
+            "content_sha256": "308ff2830b5c074babf54cebddc176786eb44066e43167ce033b147038d52138"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [],
+        "identity_assessment": {
+          "status": "related_or_uncertain",
+          "score": 0.6,
+          "publishable": false,
+          "legal_name_tokens": [
+            "heimstaden",
+            "property"
+          ],
+          "matched_tokens": [
+            "heimstaden"
+          ],
+          "reasons": [
+            "registry homepage domain is shared by 6 registered entities; treated as a manager/group site, cross-entity facts quarantined"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/heimstadennorge"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/heimstaden_norge"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/10401437"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/heimstadenbostad"
+          },
+          {
+            "platform": "youtube",
+            "url": "https://youtube.com/channel/UC8ZRGha4Yg9tZKhEpaoFuKg"
+          }
+        ],
+        "social_link_assessments": [
+          {
+            "platform": "facebook",
+            "url": "https://facebook.com/heimstadennorge",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [
+              "heimstaden"
+            ],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "instagram",
+            "url": "https://instagram.com/heimstaden_norge",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [
+              "heimstaden"
+            ],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/10401437",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "linkedin",
+            "url": "https://linkedin.com/company/heimstadenbostad",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [
+              "heimstaden"
+            ],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          },
+          {
+            "platform": "youtube",
+            "url": "https://youtube.com/channel/UC8ZRGha4Yg9tZKhEpaoFuKg",
+            "identity_score": 0.3,
+            "publishable": false,
+            "matched_tokens": [],
+            "reason": "social handle lacks strong exact-entity name evidence",
+            "method": "deterministic_social_handle_identity_v1"
+          }
+        ],
+        "quarantined_structured_facts": {},
+        "quarantined_job_postings": [
+          {
+            "title": "Se ledige stillinger",
+            "url": "https://careers.smartrecruiters.com/Heimstaden/heimstadenbostad-norway",
+            "date_posted": null,
+            "source": "careers_page_link"
+          }
+        ],
+        "quarantined_news_articles": [
+          {
+            "headline": "Hello world!",
+            "date_published": "2021-06-03T11:58:35",
+            "url": "https://heimstaden.com/2021/06/03/hello-world/"
+          }
+        ],
+        "quarantined_careers_pages": [
+          {
+            "url": "https://heimstaden.com/no/jobbe-her/",
+            "title": "Jobbe hos Heimstaden",
+            "vacancy": true,
+            "vacancy_evidence": "1 single job ad link(s) on the page"
+          }
+        ],
+        "excluded_news_articles": [],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "d2bf2f0effda5105fe9e7236921247257450540dc42d85994f37b5535cd02350",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "914205816",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "914205816",
+              "source_row_key": "914205816"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-914205816",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "HEIMSTADEN PROPERTY 2 AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "HEIMSTADEN PROPERTY 2 AS"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 1,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg"
+        ],
+        "platform_counts": {
+          "brreg": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 20,
+    "bytes": 1838714,
+    "latencies_ms": [
+      204,
+      208,
+      208,
+      212,
+      205,
+      212,
+      2865,
+      1771,
+      1532,
+      1427,
+      3858,
+      1486,
+      631
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Eie og forvalte fast eiendom og hva som står i forbindelse dermed, samt deltakelse i andre selskaper.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "articles_date",
+      "value": "2024-09-30",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "business_address",
+      "value": "Sognsveien 9C, 0450 OSLO, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2014-09-25",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "founding_date",
+      "value": "2014-07-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "industry",
+      "value": "Utleie av egen eller leid fast eiendom",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "industry_code",
+      "value": "68.200",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "legal_name",
+      "value": "HEIMSTADEN PROPERTY 2 AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "municipality",
+      "value": "OSLO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "municipality_number",
+      "value": "0301",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "postal_address",
+      "value": "c/o Heimstaden Norway AS\nSognsveien 9C, 0450 OSLO, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "postal_code",
+      "value": "0450",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "registered_at",
+      "value": "2014-09-25",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "44598.14",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2024-12-21",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "share_count",
+      "value": "100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Handels-, investerings- og eiendomsvirksomhet, samt å delta i andre selskaper med slik virksomhet.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2025-10-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2025-10-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "voluntary_vat_date",
+      "value": "2025-10-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    },
+    {
+      "field": "website_registered",
+      "value": "Heimstaden.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "914205816"
+    }
+  ],
+  "summary": {
+    "headline": "HEIMSTADEN PROPERTY 2 AS",
+    "narrative": "HEIMSTADEN PROPERTY 2 AS is a AS company, operating in utleie av egen eller leid fast eiendom, registered in Oslo. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 113879000.0 NOK, operating result 78444207.0 NOK, annual result 52108193.0 NOK. Registered leadership includes Alexander Berg (Styrets leder) and 2 other registered role(s). 1 registered subunit(s)/workplace(s).",
+    "statements": [
+      {
+        "text": "HEIMSTADEN PROPERTY 2 AS is a AS company, operating in utleie av egen eller leid fast eiendom, registered in Oslo.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 113879000.0 NOK, operating result 78444207.0 NOK, annual result 52108193.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/914205816",
+        "retrieved_at": "2026-11-01T06:21:47.806366Z"
+      },
+      {
+        "text": "Registered leadership includes Alexander Berg (Styrets leder) and 2 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/914205816/roller",
+        "retrieved_at": "2026-11-01T06:22:01.219702Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=914205816&size=1000",
+        "retrieved_at": "2026-11-01T06:22:01.638279Z"
+      }
+    ],
+    "unknowns": [
+      "verified company website"
+    ],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}

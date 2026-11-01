@@ -1,0 +1,1009 @@
+{
+  "organisation_number": "928653900",
+  "name": "LITE-HOUSE AS",
+  "legal_form": "AS",
+  "employees": null,
+  "bankrupt": false,
+  "liquidating": false,
+  "municipality": "ARENDAL",
+  "municipality_number": "4203",
+  "industry_code": "74.110",
+  "industry_label": "Industri-, produkt- og motedesignvirksomhet",
+  "website": "www.lite-house.no",
+  "latest_submitted_accounts": "2025",
+  "evidence": {
+    "registry": {
+      "field": "registry",
+      "status": "available",
+      "source_type": "official_registry_bulk",
+      "source_class": "official_registry_bulk",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "value": {
+        "organisasjonsnummer": "928653900",
+        "navn": "LITE-HOUSE AS",
+        "organisasjonsform.kode": "AS",
+        "organisasjonsform.beskrivelse": "Aksjeselskap",
+        "naeringskode1.kode": "74.110",
+        "naeringskode1.beskrivelse": "Industri-, produkt- og motedesignvirksomhet",
+        "naeringskode2.kode": "",
+        "naeringskode2.beskrivelse": "",
+        "naeringskode3.kode": "",
+        "naeringskode3.beskrivelse": "",
+        "hjelpeenhetskode.kode": "",
+        "hjelpeenhetskode.beskrivelse": "",
+        "harRegistrertAntallAnsatte": "false",
+        "antallAnsatte": "",
+        "registreringsdatoAntallAnsatteEnhetsregisteret": "",
+        "registreringsdatoantallansatteNAVAaregisteret": "",
+        "hjemmeside": "www.lite-house.no",
+        "epostadresse": "asle@lite-house.no",
+        "telefon": "",
+        "mobil": "977 07 888",
+        "postadresse.adresse": "",
+        "postadresse.poststed": "",
+        "postadresse.postnummer": "",
+        "postadresse.kommune": "",
+        "postadresse.kommunenummer": "",
+        "postadresse.land": "",
+        "postadresse.landkode": "",
+        "forretningsadresse.adresse": "Vesterveien 563",
+        "forretningsadresse.poststed": "NEDENES",
+        "forretningsadresse.postnummer": "4823",
+        "forretningsadresse.kommune": "ARENDAL",
+        "forretningsadresse.kommunenummer": "4203",
+        "forretningsadresse.land": "Norge",
+        "forretningsadresse.landkode": "NO",
+        "institusjonellSektorkode.kode": "2100",
+        "institusjonellSektorkode.beskrivelse": "Private aksjeselskaper mv.",
+        "sisteInnsendteAarsregnskap": "2025",
+        "registreringsdatoenhetsregisteret": "2022-02-16",
+        "stiftelsesdato": "2022-02-01",
+        "registrertIMvaRegisteret": "true",
+        "registreringsdatoMerverdiavgiftsregisteret": "2022-01-01",
+        "registreringsdatoMerverdiavgiftsregisteretEnhetsregisteret": "2022-02-21",
+        "frivilligMvaRegistrertBeskrivelser": "",
+        "registreringsdatoFrivilligMerverdiavgiftsregisteret": "",
+        "registrertIFrivillighetsregisteret": "false",
+        "registreringsdatoFrivillighetsregisteret": "",
+        "registrertIForetaksregisteret": "true",
+        "registreringsdatoForetaksregisteret": "2022-02-16",
+        "registrertIStiftelsesregisteret": "false",
+        "registrertIPartiregisteret": "false",
+        "registreringsdatoPartiregisteret": "",
+        "konkurs": "false",
+        "konkursdato": "",
+        "underAvvikling": "false",
+        "underAvviklingDato": "",
+        "underTvangsavviklingEllerTvangsopplosning": "false",
+        "tvangsopplostPgaManglendeDagligLederDato": "",
+        "tvangsopplostPgaManglendeRevisorDato": "",
+        "tvangsopplostPgaManglendeRegnskapDato": "",
+        "tvangsopplostPgaMangelfulltStyreDato": "",
+        "tvangsavvikletPgaManglendeSlettingDato": "",
+        "overordnetEnhet": "",
+        "maalform": "Bokmål",
+        "vedtektsdato": "2022-02-01",
+        "vedtektsfestetFormaal": "Design, utvikling og produksjon av stasjonære og mobile, landbaserte og flytende skalerbare enheter og løsninger. Selskapet kan også drive med kjøp, salg og utleie av slike løsninger, samt hva som naturlig hører sammen med dette. Lite-House sine løsninger omfatter båter, husbåter, anneks, hotellrom, hytter, badstuer og habitater for tekniske installasjoner som ladestasjoner og lignende. Selskapet kan også delta med eierandeler i andre selskap.",
+        "aktivitet": "Design, utvikling, kjøp, salg og utleie av stasjonæreproduksjon og salg av båter og andre konstruksjoner egnet for bruk på vannet eller på land.",
+        "paategninger": "false",
+        "underUtenlandskInsolvensbehandlingDato": "",
+        "underRekonstruksjonsforhandlingDato": "",
+        "fravalgRevisjonDato": "2022-02-16",
+        "fravalgRevisjonBeslutningsDato": "2022-02-01",
+        "erIKonsern": "false",
+        "kapital.belop": "30000.00",
+        "kapital.antallAksjer": "1000",
+        "kapital.type": "Aksjekapital",
+        "kapital.bundet": "",
+        "kapital.valuta": "NOK",
+        "kapital.innbetalt": "",
+        "kapital.fulltInnbetalt": "",
+        "kapital.innfortDato": "2022-02-16",
+        "registreringsnummerIHjemlandet": "",
+        "utenlandskRegisterNavn": "",
+        "utenlandskRegisterAdresse.land": "",
+        "utenlandskRegisterAdresse.poststed": "",
+        "utenlandskRegisterAdresse.adresse": "",
+        "underlagtLovgivningLand": "",
+        "underlagtLovgivningLandKode": "",
+        "foretaksformIHjemlandet.kode": "",
+        "foretaksformIHjemlandet.beskrivelse": "",
+        "foretaksformIHjemlandet.beskrivelseBokmaal": ""
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "source_row_key": "928653900",
+      "effective_at": null
+    },
+    "accounting_obligation": {
+      "field": "accounting_obligation",
+      "status": "available",
+      "source_type": "official_rule_interpretation",
+      "source_class": "official_rule_interpretation",
+      "source_url": "https://www.brreg.no/en/submission-of-annual-accounts/reporting-obligations-to-the-register-of-company-accounts/who-has-an-accounting-obligation/",
+      "retrieved_at": "2026-11-01T06:18:43.458916Z",
+      "value": {
+        "classification": "filing_observed",
+        "legal_form": "AS",
+        "latest_submitted_accounts": "2025",
+        "reason": "The registry snapshot reports a latest submitted annual-account year.",
+        "ruleset_version": "brreg_accounting_obligation_rules_2024-08-09_v1"
+      },
+      "as_of": "2024-08-09",
+      "note": null,
+      "content_sha256": "b94e22c6da7667d1ae10db3dcb20f1b279634a1ce07b21111fc0f56758b3b6fb",
+      "source_row_key": "928653900",
+      "effective_at": null
+    },
+    "registry_live": {
+      "field": "registry_live",
+      "status": "available",
+      "source_type": "official_registry_live",
+      "source_class": "official_registry_live",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/928653900",
+      "retrieved_at": "2026-11-01T06:20:56.670757Z",
+      "value": {
+        "organisation_number": "928653900",
+        "name": "LITE-HOUSE AS",
+        "legal_form": "AS",
+        "employees": null,
+        "bankrupt": false,
+        "liquidating": false,
+        "website": "www.lite-house.no",
+        "industry": {
+          "beskrivelse": "Industri-, produkt- og motedesignvirksomhet",
+          "kode": "74.110"
+        },
+        "business_address": {
+          "adresse": [
+            "Vesterveien 563"
+          ],
+          "kommune": "ARENDAL",
+          "kommunenummer": "4203",
+          "land": "Norge",
+          "landkode": "NO",
+          "postnummer": "4823",
+          "poststed": "NEDENES"
+        },
+        "postal_address": null,
+        "latest_submitted_accounts": "2025"
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "3b389d55742a4ea099f24115df65040807b2d0faeb083ccb3cc089b014b8691d",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financials": {
+      "field": "financials",
+      "status": "available",
+      "source_type": "official_annual_accounts",
+      "source_class": "official_annual_accounts",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/928653900",
+      "retrieved_at": "2026-11-01T06:20:56.866658Z",
+      "value": {
+        "records": [
+          {
+            "record_id": 4732421,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2023-01-01",
+              "tilDato": "2023-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 2589786.0,
+            "operating_result": 86927.0,
+            "profit_before_tax": 65832.0,
+            "annual_result": 51050.0,
+            "assets": 1331255.0,
+            "equity": 187086.0,
+            "debt": 1144169.0
+          },
+          {
+            "record_id": 5875977,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2024-01-01",
+              "tilDato": "2024-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 4195635.0,
+            "operating_result": 102336.0,
+            "profit_before_tax": 53062.0,
+            "annual_result": 41187.0,
+            "assets": 3727251.0,
+            "equity": 228273.0,
+            "debt": 3498979.0
+          },
+          {
+            "record_id": 6596783,
+            "account_type": "SELSKAP",
+            "period": {
+              "fraDato": "2025-01-01",
+              "tilDato": "2025-12-31"
+            },
+            "currency": "NOK",
+            "revenue": 2084718.0,
+            "operating_result": 26887.0,
+            "profit_before_tax": -35723.0,
+            "annual_result": -29728.0,
+            "assets": 1633043.0,
+            "equity": 198545.0,
+            "debt": 1434498.0
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "f66a6b053252c3579fee1fa9fb2ddb4994a4ec727217a39dc950e97c03ec1480",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "financial_history": {
+      "field": "financial_history",
+      "status": "available",
+      "source_type": "official_annual_account_copies",
+      "source_class": "official_annual_account_copies",
+      "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/928653900/aar",
+      "retrieved_at": "2026-11-01T06:21:10.514536Z",
+      "value": {
+        "years": [
+          "2022",
+          "2023",
+          "2024",
+          "2025"
+        ],
+        "pdfs": [
+          {
+            "year": "2025",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/928653900/2025"
+          },
+          {
+            "year": "2024",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/928653900/2024"
+          },
+          {
+            "year": "2023",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/928653900/2023"
+          },
+          {
+            "year": "2022",
+            "url": "https://data.brreg.no/regnskapsregisteret/regnskap/aarsregnskap/kopi/928653900/2022"
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "8777589904e2ac253b73d38c04570834020e4e1d5b225ce7078e99d6487ffa3d",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "roles": {
+      "field": "roles",
+      "status": "available",
+      "source_type": "official_roles",
+      "source_class": "official_roles",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/928653900/roller",
+      "retrieved_at": "2026-11-01T06:21:10.713229Z",
+      "value": {
+        "roles": [
+          {
+            "name": "Arild Hansen",
+            "organisation_number": null,
+            "role_code": "DAGL",
+            "role": "Daglig leder",
+            "group_code": "DAGL",
+            "group": "Daglig leder",
+            "last_changed": "2022-02-16",
+            "inactive": false
+          },
+          {
+            "name": "Arild Hansen",
+            "organisation_number": null,
+            "role_code": "LEDE",
+            "role": "Styrets leder",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2022-02-16",
+            "inactive": false
+          },
+          {
+            "name": "Asle Wikanes Hansen",
+            "organisation_number": null,
+            "role_code": "MEDL",
+            "role": "Styremedlem",
+            "group_code": "STYR",
+            "group": "Styre",
+            "last_changed": "2022-02-16",
+            "inactive": false
+          },
+          {
+            "name": [
+              "IT REGNSKAP AS"
+            ],
+            "organisation_number": "996041727",
+            "role_code": "REGN",
+            "role": "Regnskapsfører",
+            "group_code": "REGN",
+            "group": "Regnskapsfører",
+            "last_changed": "2024-05-07",
+            "inactive": false
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "8511f4b873a3356051bc8509779e39f1af2767978471d55eb6534633beb62bae",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "group": {
+      "field": "group",
+      "status": "not_found",
+      "source_type": "official_group_structure",
+      "source_class": "official_group_structure",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/konsernstruktur/928653900",
+      "retrieved_at": "2026-11-01T06:21:10.910510Z",
+      "value": null,
+      "as_of": null,
+      "note": "HTTP 404",
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "locations": {
+      "field": "locations",
+      "status": "available",
+      "source_type": "official_subunits",
+      "source_class": "official_subunits",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=928653900&size=1000",
+      "retrieved_at": "2026-11-01T06:21:11.112157Z",
+      "value": {
+        "locations": [
+          {
+            "organisation_number": "928790975",
+            "name": "LITE-HOUSE AS",
+            "address": {
+              "adresse": [
+                "Vesterveien 563"
+              ],
+              "kommune": "ARENDAL",
+              "kommunenummer": "4203",
+              "land": "Norge",
+              "landkode": "NO",
+              "postnummer": "4823",
+              "poststed": "NEDENES"
+            },
+            "industry": {
+              "beskrivelse": "Industri-, produkt- og motedesignvirksomhet",
+              "kode": "74.110"
+            },
+            "employees": null
+          }
+        ]
+      },
+      "as_of": null,
+      "note": null,
+      "content_sha256": "dae9fb53c8af1ec928957765d4e7a8e0936b4bec994277861c5cdff0fff7399d",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "website": {
+      "field": "website",
+      "status": "available",
+      "source_type": "registry_linked_company_website",
+      "source_class": "registry_linked_company_website",
+      "source_url": "https://www.lite-house.no/",
+      "retrieved_at": "2026-11-01T06:21:33.099322Z",
+      "value": {
+        "requested_url": "https://www.lite-house.no/",
+        "final_url": "https://www.lite-house.no/",
+        "registered_domain": "lite-house.no",
+        "title": "Lite-House – Delivering Tailormade Floating Modular Solutions",
+        "description": "Floating Modular Solutions for cities, communities, individuals, sports clubs, professionals, property developers, restaurants, hotels, yacht clubs, etc.",
+        "main_text_excerpt": "Solutions for professionals, inluding property developers, restaurants, hotels, yacht clubs, etc.\nPrivacy Overview\nThis website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.",
+        "identity_text_excerpt": "Modular Solutions Public applications Private applications Professional applications Our Portfolio Swimming pools Shower- & changing room Saunas Multi-function Unit Beach Club Bridge solutions HC Access Floater Reference projects Floating mobile charging station About us Our Partners HSE and Q Corporate Governance Career Contact About us Velg en side modular GRP solutions Public applications Solutions for cities and communities. Private applications Solutions for private individuals and sports clubs. Professional applications Solutions for professionals, inluding property developers, restauran | Designet av Elegant Themes | Drevet med WordPress | LAGRE OG GODKJENN",
+        "social_links": [],
+        "structured_organisations": [],
+        "structured_facts": {},
+        "job_postings": [],
+        "news_articles": [],
+        "content_sha256": "2f764ce55c7292a68a7ceeaf2e1487a57b650e5856d7ba2490fde29223857606",
+        "extraction_state": "static_complete",
+        "pages": [
+          {
+            "url": "https://www.lite-house.no/",
+            "title": "Lite-House – Delivering Tailormade Floating Modular Solutions",
+            "main_text_excerpt": "Solutions for professionals, inluding property developers, restaurants, hotels, yacht clubs, etc.\nPrivacy Overview\nThis website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.",
+            "content_sha256": "2f764ce55c7292a68a7ceeaf2e1487a57b650e5856d7ba2490fde29223857606"
+          },
+          {
+            "url": "https://www.lite-house.no/om-oss/",
+            "title": "About us - Lite-House",
+            "main_text_excerpt": "About us\nLite-House designer og bygger toppmoderne flytende modulære løsninger for nesten enhver bruk og enhver klient. Referanseprosjektet vårt er marinaen i Arendal, hvor vi har levert en rekke flytende løsninger. Dette prosjektet startet som et utviklingsprosjekt delvis finansiert av Innovasjon Norge og Arendal havn, i nært samarbeid med en meget dyktig båt- og offshore-industri i Sør-Norge.\nI dag kan Lite-House tilby et bredt spekter av produkter, der vi sammen med våre partnere er i stand til å påta oss alle typer oppgaver, alt fra enkle designstudier til nøkkelferdige leveranser av avanserte flytende anlegg. Nye produkter utvikles kontinuerlig, så sjekk inn regelmessig for å holde deg oppdatert på produktporteføljen vår.",
+            "content_sha256": "f8a7c21189ff49376b1071346ac1ebb1a3cfb21423ae8c42e9a17c18715b50a4"
+          },
+          {
+            "url": "https://www.lite-house.no/about-us/",
+            "title": "About us - Lite-House",
+            "main_text_excerpt": "About us\nLite-House designs and builds state-of-the-art floating modular solutions for almost any use and any client. Our reference project is the marina in Arendal, where we have supplied a number of floating solutions. This project started off as a development project partially funded by Innovasjon Norge and the harbour of Arendal, in close cooperation with a very capable boat and offshore manufacturing industry in the southern part of Norway.\nToday Lite-House can offer a wide range of products, where we together with our partners are able to take on any type of task ranging from simple design studies up to turn-key deliveries of advanced floating facilities. New products are being developed continuously, so please check in regularly to stay updated on our product portfolio.",
+            "content_sha256": "6537966b8a95efb274fad20ebf54338f04e0d759a8cb211960928f599ce30a7b"
+          },
+          {
+            "url": "https://www.lite-house.no/about-us/corporate-governance/",
+            "title": "Corporate Governance - Lite-House",
+            "main_text_excerpt": "Corporate Governance\nLite-House’s objective is to ensure long-term value creation for its shareholders and clients through engaging in design, development and supply of State-of-the-art floating modular solutions\nWe believe that the best way to achieve this goal is through a value-based performance culture, stringent ethical requirements and a code of conduct that promotes personal integrity and respect for the environment. Lite-House’s corporate governance is therefore based on the company’s corporate values and ethical guidelines.\nWe believe that good corporate governance is more than just a technical exercise – it is instead a fundamental element in the practical work of the company’s governing bodies, and it defines the criteria on which the trust of the company’s shareholders is based.",
+            "content_sha256": "831aefe6992b2ac4caf7346a4815f986bc2874de2fcd1082006fe48155575ccb"
+          },
+          {
+            "url": "https://www.lite-house.no/about-us/hse-and-q/",
+            "title": "HSE and Q - Lite-House",
+            "main_text_excerpt": "HSE & Q\nHealth, Safety, Environment and Quality (HSE&Q) is regarded as one of the key subject areas in the company and is thus given careful consideration throughout the organization.\n- Lite-House shall demonstrate a long term and sustainable commitment to safety, occupational health, quality management and environmentally responsible performance. Lite-House will implement efficient management systems and routines with a focus on continuous improvement in all its endeavours.\n- The company works according to ISO 9001 and ISO 14001 international standards, which recognize the way it manages its business processes, its commitment to environmental excellence and its robust health and safety systems.\n- Lite-House works under a strict “0” lost time incident philosophy and prioritizes HSE matters in all its operations. Lite-House’s management believes that all incidents resulting in harm to people, the environment and to property can be prevented. The company’s goal is to be an industry leader, with the lowest reasonably possible frequencies for lost time injuries, high risk incidents, including spills to the environment and unplanned emissions, and occupational illnesses. The company continually monitors trends and takes prompt action to prevent or reverse any unwanted developments.",
+            "content_sha256": "29feaf8ef0aed15141ed07e0e16570b74624dad75890e51768b90ce1549751f6"
+          },
+          {
+            "url": "https://www.lite-house.no/about-us/our-partners/",
+            "title": "Our Partners - Lite-House",
+            "main_text_excerpt": "Our Partners\nLite-House has co-operation agreements with selected key partners, including:\nErtec has vast experience from design and manufacturing of products in aluminum, stainless steel and glass, from being a major supplier to the leisure boat industry in Norway and internationally. Their product range includes doors, windows, hatches, fences, etc. They are located close to Arendal in the neighbor city of Tvedestrand. Based on their extensive experience as a supplier of products in the marine environment, they bring a lot of knowledge and valuable experience into the cooperation with Lite-House.\nEnwa Badeanlegg AS is part of Enwa AS, which is one of Scandinavia’s leading companies in water treatment and bathing equipment, process water and drinking water. With a large number of references for public pool project. Enwa Badeanlegg has a full scale project and service department.\nCFD is our partner when it comes to marine hydrodynamics, wind and current analysis, stability analysis, etc. The company is owned and managed by Hans Jørgen Bjelke Mørch, who is one of the leading experts within the field of CFD World-wide. He is located in Tvedestrand, a short drive away from our offices in Arendal and main fabrication site at Eydehavn..\nArendal Havn has their facilities at Eydehavn, where Lite-House carries out assembly and load-out of our various products. Facilities includes assembly line, warehousing, crane coverage, utilities and access to a deepwater quay. For local deliveries, Arendal Havn may also be a supplier of marine services such as towing and installation of mooring equipment.\nSeilfisken can assist in financing as well as operation of swimming pools, in close co-operation with local swimming pools and municipalities.\nSeilfisken is established in co-operation with Lite-House.",
+            "content_sha256": "1cf389cdaeefb7e55c5bb4dfd8b40b316f9c5033f0476de290cbba3c2cc0410f"
+          }
+        ],
+        "careers_pages": [],
+        "crawl_errors": [],
+        "identity_assessment": {
+          "status": "exact",
+          "score": 0.95,
+          "publishable": true,
+          "legal_name_tokens": [
+            "lite",
+            "house"
+          ],
+          "matched_tokens": [
+            "house",
+            "lite"
+          ],
+          "reasons": [
+            "all normalized legal-name tokens appear together in homepage identity evidence"
+          ],
+          "method": "deterministic_name_org_evidence_v2"
+        },
+        "discovered_social_links": [],
+        "social_link_assessments": [],
+        "excluded_news_articles": [],
+        "excluded_careers_pages": []
+      },
+      "as_of": null,
+      "note": "Company-controlled claim layer; not an official registry fact",
+      "content_sha256": "2f764ce55c7292a68a7ceeaf2e1487a57b650e5856d7ba2490fde29223857606",
+      "source_row_key": null,
+      "effective_at": null
+    },
+    "external_footprint": {
+      "observations": [
+        {
+          "organisation_number": "928653900",
+          "source_url": "https://www.lite-house.no/",
+          "retrieved_at": "2026-11-01T06:21:33.099322Z",
+          "content_sha256": "2f764ce55c7292a68a7ceeaf2e1487a57b650e5856d7ba2490fde29223857606",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "website_identity_gate",
+              "assessment": "exact",
+              "score": 0.95,
+              "organisation_number": "928653900"
+            }
+          ],
+          "acquisition_mode": "permitted_public_page",
+          "rights_status": "approved",
+          "source_class": "company_owned",
+          "effective_at": "2026-11-01T06:21:33.099322Z",
+          "id": "company-profile-928653900",
+          "platform": "company_site",
+          "signal_type": "company_profile",
+          "metrics": {
+            "registered_domain": "lite-house.no"
+          },
+          "evidence_span": "Lite-House – Delivering Tailormade Floating Modular Solutions"
+        },
+        {
+          "organisation_number": "928653900",
+          "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+          "retrieved_at": "2026-11-01T06:18:36.048806Z",
+          "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+          "exact_entity": true,
+          "identity_proof": [
+            {
+              "type": "official_registry_exact_match",
+              "organisation_number": "928653900",
+              "source_row_key": "928653900"
+            }
+          ],
+          "acquisition_mode": "official_api",
+          "rights_status": "approved",
+          "source_class": "official_registry",
+          "effective_at": "2026-11-01T06:18:36.048806Z",
+          "platform": "brreg",
+          "id": "brreg-entity-928653900",
+          "signal_type": "company_profile",
+          "metrics": {
+            "name": "LITE-HOUSE AS",
+            "legal_form": "AS"
+          },
+          "evidence_span": "LITE-HOUSE AS"
+        }
+      ],
+      "summary": {
+        "status": "available",
+        "accepted_observations": 2,
+        "rejected_observations": 0,
+        "rejections": [],
+        "platforms": [
+          "brreg",
+          "company_site"
+        ],
+        "platform_counts": {
+          "brreg": 1,
+          "company_site": 1
+        },
+        "fresh_observations": 0,
+        "freshness_days": 45,
+        "review_signal_count": 0,
+        "active_job_count": 0,
+        "public_item_count": 0,
+        "public_engagement": 0,
+        "sentiment": {
+          "status": "abstain",
+          "score_0_100": null,
+          "items": 0,
+          "independent_sources": 0,
+          "independent_reviewers": 0,
+          "label_counts": {},
+          "warning": "Dated contextual signal, not a timeless fact about the company."
+        }
+      },
+      "diagnostic": {
+        "status": "disabled"
+      }
+    }
+  },
+  "run_metrics": {
+    "requests": 22,
+    "bytes": 1371927,
+    "latencies_ms": [
+      196,
+      195,
+      195,
+      198,
+      197,
+      201,
+      1819,
+      1889,
+      1987,
+      2074,
+      3151,
+      1754,
+      720,
+      1074
+    ]
+  },
+  "registry_claims": [
+    {
+      "field": "activity_description",
+      "value": "Design, utvikling, kjøp, salg og utleie av stasjonæreproduksjon og salg av båter og andre konstruksjoner egnet for bruk på vannet eller på land.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "articles_date",
+      "value": "2022-02-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "audit_opt_out_date",
+      "value": "2022-02-16",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "business_address",
+      "value": "Vesterveien 563, 4823 NEDENES, Norge",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "country_code",
+      "value": "NO",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "email",
+      "value": "asle@lite-house.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "employees_registered_flag",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "foretaksregisteret_date",
+      "value": "2022-02-16",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "foretaksregisteret_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "foundation_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "founding_date",
+      "value": "2022-02-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "industry",
+      "value": "Industri-, produkt- og motedesignvirksomhet",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "industry_code",
+      "value": "74.110",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "institutional_sector",
+      "value": "Private aksjeselskaper mv.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "institutional_sector_code",
+      "value": "2100",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "language_form",
+      "value": "Bokmål",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "legal_form",
+      "value": "Aksjeselskap",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "legal_form_code",
+      "value": "AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "legal_name",
+      "value": "LITE-HOUSE AS",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "municipality",
+      "value": "ARENDAL",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "municipality_number",
+      "value": "4203",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "party_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "phone",
+      "value": "977 07 888",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "postal_code",
+      "value": "4823",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "registered_at",
+      "value": "2022-02-16",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "share_capital",
+      "value": {
+        "amount": "30000.00",
+        "currency": "NOK"
+      },
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "share_capital_date",
+      "value": "2022-02-16",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "share_capital_type",
+      "value": "Aksjekapital",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "share_count",
+      "value": "1000",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "statutory_purpose",
+      "value": "Design, utvikling og produksjon av stasjonære og mobile, landbaserte og flytende skalerbare enheter og løsninger. Selskapet kan også drive med kjøp, salg og utleie av slike løsninger, samt hva som naturlig hører sammen med dette. Lite-House sine løsninger omfatter båter, husbåter, anneks, hotellrom, hytter, badstuer og habitater for tekniske installasjoner som ladestasjoner og lignende. Selskapet kan også delta med eierandeler i andre selskap.",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "vat_registered",
+      "value": true,
+      "availability": "available",
+      "reporting_period": "2022-01-01",
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "vat_registered_date",
+      "value": "2022-01-01",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "voluntary_register_registered",
+      "value": false,
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    },
+    {
+      "field": "website_registered",
+      "value": "www.lite-house.no",
+      "availability": "available",
+      "reporting_period": null,
+      "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+      "source_class": "official_registry_bulk",
+      "retrieved_at": "2026-11-01T06:18:36.048806Z",
+      "content_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+      "organisation_number": "928653900"
+    }
+  ],
+  "summary": {
+    "headline": "LITE-HOUSE AS",
+    "narrative": "LITE-HOUSE AS is a AS company, operating in industri-, produkt- og motedesignvirksomhet, registered in Arendal. Latest filed accounts (2023-01-01 to 2023-12-31): revenue 2589786.0 NOK, operating result 86927.0 NOK, annual result 51050.0 NOK. Registered leadership includes Arild Hansen (Daglig leder) and 3 other registered role(s). 1 registered subunit(s)/workplace(s). Company-owned sources: verified official website https://www.lite-house.no/.",
+    "statements": [
+      {
+        "text": "LITE-HOUSE AS is a AS company, operating in industri-, produkt- og motedesignvirksomhet, registered in Arendal.",
+        "evidence_field": "registry",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/lastned/csv",
+        "retrieved_at": "2026-11-01T06:18:36.048806Z"
+      },
+      {
+        "text": "Latest filed accounts (2023-01-01 to 2023-12-31): revenue 2589786.0 NOK, operating result 86927.0 NOK, annual result 51050.0 NOK.",
+        "evidence_field": "financials",
+        "source_url": "https://data.brreg.no/regnskapsregisteret/regnskap/928653900",
+        "retrieved_at": "2026-11-01T06:20:56.866658Z"
+      },
+      {
+        "text": "Registered leadership includes Arild Hansen (Daglig leder) and 3 other registered role(s).",
+        "evidence_field": "roles",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/enheter/928653900/roller",
+        "retrieved_at": "2026-11-01T06:21:10.713229Z"
+      },
+      {
+        "text": "1 registered subunit(s)/workplace(s).",
+        "evidence_field": "locations",
+        "source_url": "https://data.brreg.no/enhetsregisteret/api/underenheter?overordnetEnhet=928653900&size=1000",
+        "retrieved_at": "2026-11-01T06:21:11.112157Z"
+      },
+      {
+        "text": "Company-owned sources: verified official website https://www.lite-house.no/.",
+        "evidence_field": "website",
+        "source_url": "https://www.lite-house.no/",
+        "retrieved_at": "2026-11-01T06:21:33.099322Z"
+      }
+    ],
+    "unknowns": [],
+    "policy": "Deterministic template over verified structured evidence only; no inference, estimation, or generated prose. Every statement cites its evidence field and source."
+  }
+}
