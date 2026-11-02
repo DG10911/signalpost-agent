@@ -945,6 +945,9 @@ _UNICODE_ESCAPE = re.compile(r"\\u([0-9a-fA-F]{4})")
 _TAG = re.compile(r"<[^>]+>")
 
 
+_QUOTED_ATTR = re.compile(r'\b(content|title|alt|value)\s*=\s*"([^"]{1,2000})"', re.I)
+
+
 def source_text(raw: Any) -> str:
     """Normalised text of a fetched document (HTML, feed XML or JSON), tags and
     entities removed, script/JSON-LD text kept -- what a quoted excerpt is
@@ -953,6 +956,10 @@ def source_text(raw: Any) -> str:
     from .identity import _plain
     text = raw.decode("utf-8", errors="replace") if isinstance(raw, (bytes, bytearray)) else str(raw or "")
     text = _UNICODE_ESCAPE.sub(lambda m: chr(int(m.group(1), 16)), text)
+    # Keep attribute text that claims quote from (meta descriptions, og:/twitter:
+    # content, title/alt), which tag stripping would otherwise remove.
+    attrs = " ".join(m.group(2) for m in _QUOTED_ATTR.finditer(text))
+    text = text + " " + attrs
     text = _TAG.sub(" ", _html.unescape(_TAG.sub(" ", text)))  # twice: escaped HTML inside CDATA/JSON
     return _plain(text)
 

@@ -23,8 +23,10 @@ SOURCES_KEY = "_source_texts"
 
 
 def _found(excerpt: Any, text: str) -> bool:
-    needle = _plain(excerpt)
-    return needle.strip() == "" or needle in (text or "")
+    import html as _html
+    needle = _plain(_html.unescape(str(excerpt)) if excerpt is not None else excerpt)
+    needle = (needle or "").strip()  # a cut excerpt can end in a dangling space
+    return needle == "" or needle in (text or "")
 
 
 def _texts_for(item: dict[str, Any], texts: dict[str, str]) -> list[str]:
@@ -54,7 +56,7 @@ def recheck_excerpts(website: dict[str, Any]) -> dict[str, Any]:
                 dropped += 1
         value[kept_key] = kept
     homepage = texts.get(value.get("final_url")) or " ".join(texts.values())
-    if value.get("description") and not _found(value["description"][:300], homepage):
+    if value.get("description") and not any(_found(value["description"][:300], t) for t in (homepage, " ".join(texts.values()))):
         value["excluded_description"] = {"value": value.pop("description"), "excluded_reason": EXCERPT_MISSING}
         dropped += 1
     facts = value.get("structured_facts") or {}
