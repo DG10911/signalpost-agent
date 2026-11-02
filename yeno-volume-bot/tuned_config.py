@@ -28,7 +28,7 @@ TUNED = Config(
     # Entry signal: the TWAP model vs the stale book.
     use_edge_gate=True,
     cost_aware_edge=False,
-    min_edge_per_share_usd=0.05,
+    min_edge_per_share_usd=0.055,
     max_spread=0.02,
     min_reference_gap_usd=0.0,
     max_reference_age_seconds=1.5,

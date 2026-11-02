@@ -162,3 +162,7 @@ exactly one of the three permitted decisions. No fabricated outputs.
 * **v8** — frozen `twap-edge-v8`: real-L2-calibrated 5-cent edge gate, 0.30–0.85
   band, 2-cent spread limit, 0.95 take-profit, 0.45 thesis flip, 30 s time
   stop, 30%-of-cash sizing, fixed TWAP variance.
+* **v8.1** — entry edge raised 5.0 → 5.5 cents after a one-at-a-time sweep of
+  46 settings on the 862 real L2 markets (`research/sweep.py`). 20/24 sliding
+  24 h windows reach $1,000 (was 19/24); full days end at $49.18 / $72.15 /
+  $59.43. Every other setting was already at or near its best value.

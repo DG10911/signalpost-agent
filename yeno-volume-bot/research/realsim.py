@@ -72,6 +72,10 @@ def run_window(markets, closes, btc_start, start_idx=0, n_markets=288, verbose=F
             if 0 <= i < len(closes):
                 bot._price_hist.append((float(k), float(closes[i])))
     cash, volume = 10.0, 0.0
+    fees = 0.0
+    cycles = 0
+    peak = 10.0
+    mdd = 0.0
     position = None
     i_end = start_idx + n_markets
     for m in markets[start_idx:i_end]:
@@ -105,6 +109,7 @@ def run_window(markets, closes, btc_start, start_idx=0, n_markets=288, verbose=F
                 if shares < 5.0 - 1e-9 or gross + fee > 5.0 + 1e-9:
                     continue
                 cash -= gross + fee
+                fees += fee
                 position = {"market_id": m["slug"], "outcome": side, "shares": shares,
                             "buy_gross_usd": gross, "buy_fees_usd": fee,
                             "sell_gross_usd": 0.0, "sell_fees_usd": 0.0}
@@ -121,21 +126,27 @@ def run_window(markets, closes, btc_start, start_idx=0, n_markets=288, verbose=F
                 if filled <= 1e-9:
                     continue
                 cash += gross - fee
+                fees += fee
                 position["shares"] -= filled
                 position["sell_gross_usd"] += gross
                 position["sell_fees_usd"] += fee
                 if position["shares"] <= 1e-9:
                     volume += position["buy_gross_usd"] + position["sell_gross_usd"]
+                    cycles += 1
+                    peak = max(peak, cash)
+                    mdd = max(mdd, peak - cash)
                     position = None
                     if volume >= 1000.0 - 1e-9:
-                        return {"cash": cash, "volume": volume,
+                        return {"cash": cash, "volume": volume, "fees": fees,
+                                "cycles": cycles, "mdd": mdd,
                                 "hours": (m["start"] + (300 - s) - markets[start_idx]["start"]) / 3600.0}
         if position is not None:
             # Market changed with inventory: the replay would end. Resolve at 0/1.
             won = (position["outcome"] == "YES") == (m["winner"] == "Up")
             cash += position["shares"] * (1.0 if won else 0.0)
             position = None
-    return {"cash": cash, "volume": volume, "hours": None}
+    return {"cash": cash, "volume": volume, "fees": fees, "cycles": cycles,
+            "mdd": mdd, "hours": None}
 
 
 def main():
@@ -153,6 +164,7 @@ def main():
             r = run_window(markets, closes, btc_start, off, 288)
             hours = "" if r["hours"] is None else f" at {r['hours']:.1f} h"
             print(f"window {off:4d}: cash ${r['cash']:8.2f} volume ${r['volume']:7.1f} "
+                  f"fees ${r['fees']:6.2f} cycles {r['cycles']:3d} mdd ${r['mdd']:5.1f} "
                   f"cross={'yes' if r['volume'] >= 1000 else 'no'}{hours}")
     if args.offset_step > 0:
         q = 0

@@ -305,7 +305,7 @@ class NetValueGateTest(unittest.TestCase):
 
     def test_served_gate_is_five_cents(self):
         from tuned_config import TUNED
-        self.assertAlmostEqual(TUNED.min_edge_per_share_usd, 0.05)
+        self.assertAlmostEqual(TUNED.min_edge_per_share_usd, 0.055)
         self.assertFalse(TUNED.cost_aware_edge)
         self.assertEqual(TUNED.edge_safety_margin, 0.0)
 
@@ -512,7 +512,7 @@ class SuperStrategyTest(unittest.TestCase):
 
     def test_served_config_matches_the_validated_strategy(self):
         from tuned_config import TUNED
-        self.assertEqual(TUNED.min_edge_per_share_usd, 0.05)
+        self.assertEqual(TUNED.min_edge_per_share_usd, 0.055)
         self.assertEqual(TUNED.max_spread, 0.02)
         self.assertEqual(TUNED.min_entry_price, 0.30)
         self.assertEqual(TUNED.max_entry_price, 0.85)
