@@ -199,6 +199,20 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
         for k, v in sf.items():
             claim(f"website.{k}", v, "available",
                   [add_fact("ev-web", web, f"{k}: {str(v)[:200]}")], 0.9)
+    if web.get("status") == "available" and not pub and wv.get("group_site"):
+        # Group/parent/sister site: items whose own page names this company
+        # (full registered name or org number) are still this company's.
+        for j in (wv.get("job_postings") or [])[:12]:
+            claim("job_posting", {"title": j.get("title"), "date_posted": j.get("date_posted"), "url": j.get("url")}, "available",
+                  [add_fact("ev-web", web, f"{j.get('title') or ''} {j.get('date_posted') or ''}".strip())], 0.9)
+        for c in (wv.get("careers_pages") or [])[:6]:
+            claim("careers_page", {"title": c.get("title"), "url": c.get("url")},
+                  "available", [add_fact("ev-web", web, f"Careers: {c.get('title') or c.get('url') or ''}".strip())], 0.9)
+        for a in (wv.get("news_articles") or [])[:12]:
+            claim("news", {"headline": a.get("headline"), "date_published": a.get("date_published"), "url": a.get("url")},
+                  "available", [add_fact("ev-web", web, f"{a.get('headline') or ''} ({a.get('date_published') or ''})".strip())], 0.9)
+    if web.get("status") == "available" and pub:
+        pass
     elif registry_site and is_shared_manager_site(profile.get("name"), profile.get("organisation_number"), registry_site):
         # The registry homepage is a domain many entities list (housing manager,
         # chain or group). It is not this company's own site: keep the registry

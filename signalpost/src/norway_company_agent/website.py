@@ -337,6 +337,7 @@ def _fetch_secondary_page(url: str, *, homepage_domain: str, timeout: float, max
             "title": page_soup.title.get_text(" ", strip=True)[:500] if page_soup.title else "",
             "main_text_excerpt": page_text[:5000],
             "content_sha256": __import__("hashlib").sha256(raw).hexdigest(),
+            "_source_text": source_text(page_html),
         }
         page_title = page.get("title") or ""
         try:
@@ -720,7 +721,8 @@ def _parse_feed(raw: bytes, base_url: str) -> list[dict[str, Any]]:
     return items[:25]
 
 
-def _fetch_feed(url: str, *, timeout: float, max_bytes: int) -> tuple[list[dict[str, Any]], int, int, int]:
+def _fetch_feed(url: str, *, timeout: float, max_bytes: int,
+                texts: dict[str, str] | None = None) -> tuple[list[dict[str, Any]], int, int, int]:
     """Fetch and parse one feed. Returns (items, requests, bytes, elapsed_ms)."""
     if not _robots_allowed(url, timeout):
         return [], 1, 0, 0
@@ -736,7 +738,9 @@ def _fetch_feed(url: str, *, timeout: float, max_bytes: int) -> tuple[list[dict[
             final_url = response.geturl()
         if len(raw) > max_bytes:
             return [], 2, len(raw), elapsed
-        return _parse_feed(raw, final_url), 2, len(raw), elapsed
+        items = _parse_feed(raw, final_url)
+        _remember_source(texts, final_url, raw, items)
+        return items, 2, len(raw), elapsed
     except (urllib.error.URLError, OSError, ValueError):
         return [], 2, 0, int((time.monotonic() - started) * 1000)
 
@@ -766,7 +770,8 @@ def _parse_wp_posts(raw: bytes, base_url: str) -> list[dict[str, Any]]:
     return out[:12]
 
 
-def _fetch_wp_posts(base_url: str, *, timeout: float, max_bytes: int) -> tuple[list[dict[str, Any]], int, int, int]:
+def _fetch_wp_posts(base_url: str, *, timeout: float, max_bytes: int,
+                    texts: dict[str, str] | None = None) -> tuple[list[dict[str, Any]], int, int, int]:
     """One request to the site's own WordPress REST API for recent posts."""
     parsed = urllib.parse.urlparse(base_url)
     url = urllib.parse.urlunparse((parsed.scheme, parsed.netloc, "/wp-json/wp/v2/posts", "",
@@ -781,7 +786,9 @@ def _fetch_wp_posts(base_url: str, *, timeout: float, max_bytes: int) -> tuple[l
             elapsed = int((time.monotonic() - started) * 1000)
         if len(raw) > max_bytes:
             return [], 2, len(raw), elapsed
-        return _parse_wp_posts(raw, base_url), 2, len(raw), elapsed
+        items = _parse_wp_posts(raw, base_url)
+        _remember_source(texts, url, raw, items)
+        return items, 2, len(raw), elapsed
     except (urllib.error.URLError, OSError, ValueError):
         return [], 2, 0, int((time.monotonic() - started) * 1000)
 
@@ -849,7 +856,8 @@ def _parse_sitemap(raw: bytes, base_url: str) -> list[dict[str, Any]]:
     return items[:25]
 
 
-def _fetch_sitemap(url: str, *, timeout: float, max_bytes: int) -> tuple[list[dict[str, Any]], int, int, int]:
+def _fetch_sitemap(url: str, *, timeout: float, max_bytes: int,
+                   texts: dict[str, str] | None = None) -> tuple[list[dict[str, Any]], int, int, int]:
     """Fetch and parse one sitemap. Returns (items, requests, bytes, elapsed_ms)."""
     if not _robots_allowed(url, timeout):
         return [], 1, 0, 0
@@ -865,7 +873,9 @@ def _fetch_sitemap(url: str, *, timeout: float, max_bytes: int) -> tuple[list[di
             final_url = response.geturl()
         if len(raw) > max_bytes:
             return [], 2, len(raw), elapsed
-        return _parse_sitemap(raw, final_url), 2, len(raw), elapsed
+        items = _parse_sitemap(raw, final_url)
+        _remember_source(texts, final_url, raw, items)
+        return items, 2, len(raw), elapsed
     except (urllib.error.URLError, OSError, ValueError):
         return [], 2, 0, int((time.monotonic() - started) * 1000)
 
@@ -929,6 +939,34 @@ def identity_text_excerpt(soup: Any, limit: int = 3000) -> str:
             seen.add(chunk)
             out.append(chunk)
     return " | ".join(out)[:limit]
+
+
+_UNICODE_ESCAPE = re.compile(r"\\u([0-9a-fA-F]{4})")
+_TAG = re.compile(r"<[^>]+>")
+
+
+def source_text(raw: Any) -> str:
+    """Normalised text of a fetched document (HTML, feed XML or JSON), tags and
+    entities removed, script/JSON-LD text kept -- what a quoted excerpt is
+    re-checked against before a claim is emitted."""
+    import html as _html
+    from .identity import _plain
+    text = raw.decode("utf-8", errors="replace") if isinstance(raw, (bytes, bytearray)) else str(raw or "")
+    text = _UNICODE_ESCAPE.sub(lambda m: chr(int(m.group(1), 16)), text)
+    text = _TAG.sub(" ", _html.unescape(_TAG.sub(" ", text)))  # twice: escaped HTML inside CDATA/JSON
+    return _plain(text)
+
+
+def _stamp_source(items: list[dict[str, Any]], url: str) -> None:
+    for item in items:
+        if isinstance(item, dict):
+            item.setdefault("source_page", url)
+
+
+def _remember_source(texts: dict[str, str] | None, url: str, raw: bytes, items: list[dict[str, Any]]) -> None:
+    _stamp_source(items, url)
+    if texts is not None:
+        texts[url] = source_text(raw)
 
 
 def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_000_000,
@@ -998,6 +1036,12 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
             careers_pages.append({"url": final_url, "title": title[:200],
                                   "vacancy": has_vacancy, "vacancy_evidence": vacancy_evidence})
         crawl_errors = []
+        # Normalised text of every document fetched for this company (transient:
+        # used by the pre-emit excerpt re-check, never written out).
+        source_texts: dict[str, str] = {final_url: source_text(html)}
+        _stamp_source(job_postings, final_url)
+        _stamp_source(news_articles, final_url)
+        _stamp_source(careers_pages, final_url)
         requests = 2
         bytes_received = len(raw)
         page_latencies = [elapsed]
@@ -1019,6 +1063,9 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
             if page_elapsed:
                 page_latencies.append(page_elapsed)
             if page:
+                source_texts[page["url"]] = page.pop("_source_text", "")
+                _stamp_source(page_extras.get("job_postings", []), page["url"])
+                _stamp_source(page_extras.get("news_articles", []), page["url"])
                 pages.append(page)
                 social.extend(page_social)
                 social.extend(page_extras.get("structured_social", []))
@@ -1027,7 +1074,8 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
                 if page_extras.get("careers"):
                     has_vacancy, vacancy_evidence = page_extras.get("careers_vacancy") or (False, "careers page lists no current opening")
                     careers_pages.append({"url": page["url"], "title": (page.get("title") or "")[:200],
-                                          "vacancy": has_vacancy, "vacancy_evidence": vacancy_evidence})
+                                          "vacancy": has_vacancy, "vacancy_evidence": vacancy_evidence,
+                                          "source_page": page["url"]})
                 # Fill missing structured facts from secondary pages (contact
                 # and locations pages often carry richer JSON-LD than the home).
                 for key, val in page_extras.get("structured_facts", {}).items():
@@ -1040,7 +1088,7 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         feed_found = False
         for feed_url in _feed_links(soup, final_url):
             feed_items, feed_requests, feed_bytes, feed_elapsed = _fetch_feed(
-                feed_url, timeout=timeout, max_bytes=min(max_bytes, 1_000_000))
+                feed_url, timeout=timeout, max_bytes=min(max_bytes, 1_000_000), texts=source_texts)
             requests += feed_requests
             bytes_received += feed_bytes
             if feed_elapsed:
@@ -1053,7 +1101,7 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         # recent posts with their publication date (one request).
         if not feed_found and _is_wordpress(html):
             wp_items, wp_requests, wp_bytes, wp_elapsed = _fetch_wp_posts(
-                final_url, timeout=timeout, max_bytes=min(max_bytes, 1_000_000))
+                final_url, timeout=timeout, max_bytes=min(max_bytes, 1_000_000), texts=source_texts)
             requests += wp_requests
             bytes_received += wp_bytes
             if wp_elapsed:
@@ -1065,7 +1113,7 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         if not feed_found:
             for sm_url in _sitemap_candidates(soup, final_url):
                 sm_items, sm_requests, sm_bytes, sm_elapsed = _fetch_sitemap(
-                    sm_url, timeout=timeout, max_bytes=min(max_bytes, 2_000_000))
+                    sm_url, timeout=timeout, max_bytes=min(max_bytes, 2_000_000), texts=source_texts)
                 if sm_items:
                     requests += sm_requests
                     bytes_received += sm_bytes
@@ -1087,6 +1135,7 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
             key=lambda item: (item["url"], item["title"]),
         )
         value["crawl_errors"] = crawl_errors
+        value["_source_texts"] = source_texts
         return evidence("website", "available", "registry_linked_company_website", final_url, value=value, note="Company-controlled claim layer; not an official registry fact", content_sha256=value["content_sha256"]), {"requests": requests, "bytes": bytes_received, "latencies_ms": page_latencies}
     except urllib.error.HTTPError as exc:
         elapsed = int((time.monotonic() - started) * 1000)

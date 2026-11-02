@@ -164,6 +164,17 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
     overlap = sorted(set(core) & candidate_tokens)
     ratio = len(overlap) / len(set(core)) if core else 0.0
     reasons = []
+    group_site = False
+    # Parent / sister entities: the Brreg parent (overordnetEnhet) or another
+    # registered entity lists this site's domain as its own.
+    reg_value = ((profile.get("evidence") or {}).get("registry") or {}).get("value") or {}
+    parent_org = re.sub(r"\D", "", str(reg_value.get("overordnetEnhet") or ""))
+    site_url = value.get("requested_url") or website.get("source_url")
+    parent_owns_site = bool(parent_org) and not value.get("discovered") \
+        and parent_org != org_digits and parent_org in DOMAIN_OWNERS.get(host_key(site_url), [])
+    names_us_on_homepage = (org_digits and org_digits in homepage_org_numbers) \
+        or full_legal_name_in(profile.get("name"), homepage_candidate_text)
+    other_orgs_only = bool(homepage_org_numbers) and org_digits not in homepage_org_numbers
     parked_markers = (
         "domain is for sale", "domain for sale", "hugedomains", "parked at", "miss hosting",
         "her flytter snart en ny gjest", "has been informing visitors",
@@ -190,8 +201,23 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
         # entity. Keep the registry association, but never publish the site's
         # social accounts, news or jobs as this company's (evaluator audit rule).
         score = 0.6
+        group_site = True
         reasons.append(f"registry homepage domain is shared by {len(shared_with) + 1} registered entities; "
                        "treated as a manager/group site, cross-entity facts quarantined")
+    elif (parent_owns_site or shared_with) and not owns_shared_domain and not names_us_on_homepage:
+        # Fewer than SHARED_SITE_MIN_OWNERS owners, but the domain is also the
+        # registered site of the parent entity or a sister entity, and the
+        # homepage names neither our org number nor our full registered name.
+        score = 0.6
+        group_site = True
+        who = f"parent entity {parent_org}" if parent_owns_site else f"registered entity {shared_with[0]}"
+        reasons.append(f"registry homepage domain is also the site of {who}; treated as a group site, "
+                       "items published only where their page names this company")
+    elif other_orgs_only and not names_us_on_homepage and not value.get("discovered"):
+        score = 0.6
+        group_site = True
+        reasons.append("homepage shows another entity's organisation number and not this company's; "
+                       "treated as a parent/group site")
     elif org_digits and org_digits in homepage_org_numbers:
         # Homepage only. An interior page may be a group/parent contact page
         # listing many subsidiaries' org numbers, so matching there is NOT exact
@@ -202,6 +228,7 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
             # this legal name. Publish the site association, but never its social
             # accounts, news or jobs as this company's (evaluator audit rule).
             score = 0.6
+            group_site = True
             reasons.append("group/parent site lists multiple organisation numbers without matching this legal name; cross-entity facts quarantined")
         else:
             score = 1.0
@@ -236,6 +263,7 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
         "status": status,
         "score": score,
         "publishable": status == "exact",
+        "group_site": group_site and status != "exact",
         "legal_name_tokens": core,
         "matched_tokens": overlap,
         "reasons": reasons,

@@ -300,12 +300,17 @@ def main() -> None:
                     else:
                         website_record = discovered
                 discovery_requests += connector_requests
+            from norway_company_agent.claim_checks import (drop_source_texts, recheck_excerpts,
+                                                           rescue_group_site_items)
             gated = apply_website_identity_gate(profile, website_record)["website"]
+            # Group/parent/sister site: only items whose own page names us.
+            gated = rescue_group_site_items(profile, gated)
             # Second pass (organiser feedback, 1 Nov): keep only dated news about
             # the company and careers pages that show a current opening; the
             # rest are kept as exclusions with a reason.
             from norway_company_agent.content_quality import apply_content_quality
-            profile["evidence"]["website"] = apply_content_quality(profile, gated)
+            checked = recheck_excerpts(apply_content_quality(profile, gated))
+            profile["evidence"]["website"] = drop_source_texts(checked)
         workforce_requests = 0
         wf_diag = {"status": "disabled"}
         if args.external_workforce:
@@ -404,6 +409,7 @@ def main() -> None:
         for profile in ordered_profiles
     ]
     validation = validate_envelopes(envelopes, args.expected_count)
+    from norway_company_agent.claim_checks import withheld_counts
     write_jsonl(profiles_output, ordered_profiles)
     write_jsonl(Path(args.output), envelopes)
     if args.contract_output:
@@ -446,6 +452,7 @@ def main() -> None:
         "validation": validation,
         "request_budget_exceeded": budget_exceeded,
         "exact_registry": round(exact_registry_ratio, 4),
+        "withheld": withheld_counts(ordered_profiles),
         "external_observations": sum(
             len(((p.get("evidence", {}) or {}).get("external_footprint", {}) or {}).get("observations", []))
             for p in ordered_profiles
