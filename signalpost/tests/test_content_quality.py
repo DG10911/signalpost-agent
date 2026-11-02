@@ -23,7 +23,7 @@ def test_keeps_headline_naming_company_outside_news_section():
 
 def test_rejects_product_and_policy_pages():
     assert "site page" in classify_news(art("Elko termostat med wifi", "https://x.no/produkt/elko-termostat"), CO)
-    assert "site page" in classify_news(art("Personvernerklæring", "https://x.no/personvern"), CO)
+    assert "privacy" in classify_news(art("Personvernerklæring", "https://x.no/personvern"), CO)
 
 
 def test_rejects_opinion_guide_esg_and_placeholders():

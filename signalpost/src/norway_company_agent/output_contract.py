@@ -185,6 +185,7 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
         # Left blank with the reason when every candidate was excluded
         # (e.g. "page is an opinion article"), so a reader sees why.
         for family, kept_key, excluded_key in (("news", "news_articles", "excluded_news_articles"),
+                                               ("job_posting", "job_postings", "excluded_job_postings"),
                                                ("careers_page", "careers_pages", "excluded_careers_pages")):
             excluded = wv.get(excluded_key) or []
             if excluded and not (wv.get(kept_key) or []):

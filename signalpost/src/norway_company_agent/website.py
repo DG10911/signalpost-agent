@@ -6,7 +6,7 @@ import ipaddress
 import re
 from itertools import zip_longest
 
-from .content_quality import careers_vacancy, is_generic_headline
+from .content_quality import careers_vacancy, is_generic_headline, parse_date
 import socket
 import threading
 import time
@@ -178,15 +178,22 @@ def normalize_social_url(url: str) -> dict[str, str] | None:
     parts = [part.strip() for part in parsed.path.split("/") if part.strip()]
     lowered = [part.casefold() for part in parts]
     rejected_first = {
-        "facebook": {"sharer", "sharer.php", "share.php", "dialog", "policy.php", "privacy", "events", "groups", "plugins"},
-        "instagram": {"p", "reel", "reels", "stories", "explore"},
-        "x": {"intent", "share", "home", "search", "i"},
+        "facebook": {"sharer", "sharer.php", "share.php", "share", "dialog", "policy.php", "privacy", "events",
+                     "groups", "plugins", "tr", "login", "login.php", "watch", "help", "hashtag", "photo.php",
+                     "permalink.php", "story.php", "home.php", "business", "legal", "policies", "pages",
+                     "people", "marketplace", "gaming", "facebook", "l.php", "v2.0", "ads"},
+        "instagram": {"p", "reel", "reels", "stories", "explore", "accounts", "about", "developer", "legal",
+                      "instagram", "tv", "direct"},
+        "x": {"intent", "share", "home", "search", "i", "hashtag", "privacy", "tos", "login", "twitter", "x",
+              "settings", "explore"},
     }
     if not parts or lowered[0] in rejected_first.get(platform, set()):
         return None
     if platform == "facebook" and lowered[0] == "profile.php":
         return None
-    if platform == "linkedin" and (lowered[0] != "company" or len(parts) < 2):
+    if platform == "linkedin" and (lowered[0] != "company" or len(parts) < 2 or lowered[1] in {"linkedin", "linkedin.com"}):
+        return None
+    if platform == "youtube" and lowered[0] in {"@youtube", "youtube"}:
         return None
     if platform == "youtube" and lowered[0] not in {"channel", "user", "c"} and not parts[0].startswith("@"):
         return None
@@ -527,6 +534,15 @@ _GENERIC_JOB_TEXT = {"ledige stillinger", "se alle stillinger", "alle stillinger
                      "vis alle", "mer info", "send åpen søknad", "åpen søknad", "open application"}
 
 
+# Last path segments that are listing hubs or standing invitations, not one ad.
+_GENERIC_JOB_SLUGS = {"ledige-stillinger", "ledigestillinger", "stillinger", "stilling", "jobs", "job", "jobb",
+                      "jobber", "career", "careers", "karriere", "apen-soknad", "open-application",
+                      "spontaneous-application", "alle-stillinger", "jobbe-hos-oss", "hvorfor-jobbe-hos-oss",
+                      "jobb-hos-oss", "work-with-us", "join-us", "vacancies", "vacancies.aspx", "positions",
+                      "openings", "connect", "talent-community", "departments", "locations", "people",
+                      "candidate", "login", "jobs.aspx", "list", "search", "sok"}
+
+
 def _visible_text(soup: BeautifulSoup, limit: int = 20000) -> str:
     return " ".join(
         str(node) for node in soup.find_all(string=True)
@@ -556,6 +572,9 @@ def html_job_ads(soup: BeautifulSoup, page_url: str, limit: int = 12) -> list[di
         host = (parsed.hostname or "").lower()
         path = parsed.path.casefold()
         is_finn_ad = host.endswith("finn.no") and "/job/" in path and ("finnkode" in parsed.query or "/ad" in path)
+        last_seg = path.rstrip("/").rsplit("/", 1)[-1]
+        if last_seg in _GENERIC_JOB_SLUGS and not parsed.query:
+            continue
         is_ats = any(marker in host for marker in JOB_AD_HOSTS) and len(path.strip("/")) > 0
         is_own_ad = bool(_JOB_AD_PATH.search(path)) and _registered_domain(url) == _registered_domain(page_url)
         if not (is_finn_ad or is_ats or is_own_ad):
@@ -614,12 +633,20 @@ def html_dated_items(soup: BeautifulSoup, base_url: str) -> list[dict[str, Any]]
             parent = anchor.find_parent(["li", "article", "div"])
             if parent is None:
                 continue
+            # The container must hold this one item: a wrapper around the whole
+            # list would hand the first item's date to every link in it.
+            item_links = {urllib.parse.urljoin(base_url, str(a.get("href") or "")).split("#")[0].rstrip("/")
+                          for a in parent.select("a[href]")
+                          if any(term in urllib.parse.urlparse(urllib.parse.urljoin(base_url, str(a.get("href") or ""))).path.casefold()
+                                 for term in _ARTICLE_PATH_TERMS)}
+            if len(item_links) > 1:
+                continue
             text = parent.get_text(" ", strip=True)
-            match = re.search(r"\b(\d{1,2}[.\-/]\d{1,2}[.\-/]\d{2,4}|\d{4}-\d{2}-\d{2})\b", text)
-            if match:
+            published = parse_date(text)
+            if published:
                 headline = anchor.get_text(" ", strip=True)
-                if headline:
-                    out.append({"headline": headline[:300], "date_published": match.group(1), "url": url})
+                if headline and not is_generic_headline(headline):
+                    out.append({"headline": headline[:300], "date_published": published.isoformat(), "url": url})
     return out[:25]
 
 
