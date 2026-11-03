@@ -238,9 +238,21 @@ def _url_key(url: Any) -> str:
     return f"{host}{path}?{query}" if query else f"{host}{path}"
 
 
+# A recruiting landing page, not one vacancy: "Jobb i Torghatten", "Karriere hos X",
+# "Work for us", "Søk plass som lærling og kadett". Only applied to undated ads.
+_GENERIC_JOB_TITLE = re.compile(
+    r"^(?:jobb(?:e)?|karriere|careers?|jobs?|work|ledige stillinger|stillinger|join us|bli med|bli en av oss)"
+    r"(?:\s+(?:i|hos|for|at|in|med|with|us|oss)\b.*)?$"
+    r"|^(?:sok|soke|apply)\s+(?:plass|jobb|stilling)?\s*(?:som\s+)?(?:laerling|larling|kadett|apprentice)")
+
+
 def classify_job(posting: dict[str, Any], today: _dt.date | None = None) -> str | None:
     """None when a job ad is plausibly current; otherwise the reason."""
     now = _today(today)
+    title = _plain(posting.get("title")).strip()
+    if (title and _GENERIC_JOB_TITLE.match(title)
+            and not posting.get("date_posted") and not posting.get("valid_through")):
+        return "recruiting landing page, not a single job ad"
     valid_through = parse_date(posting.get("valid_through"))
     if valid_through is not None and valid_through < now:
         return f"application deadline passed ({valid_through.isoformat()})"

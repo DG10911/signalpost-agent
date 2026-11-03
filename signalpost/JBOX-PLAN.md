@@ -1,3 +1,8 @@
+> **Update 3 Nov 2026:** the organisers confirmed the JBox bonus is for the best
+> Signalpost *website* built with JBox (agent output or sample data is fine),
+> scored on UX, separate from the agent score. The eligibility question below is
+> settled. Use **`JBOX-SITE-BRIEF.md`** and the data in `jbox-data/`.
+
 # JBOX bonus — $500 execution plan
 
 The Signalpost page lists a **separate $500 JBOX bonus** ($250 / $150 / $100) "for
