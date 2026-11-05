@@ -121,3 +121,43 @@ uv run python scripts/run_competition_batch.py ... --contract-output out/submiss
 uv run python scripts/export_jbox_dataset.py out/submission-contract.jsonl jbox-data/
 ```
 Commit `jbox-data/` and redeploy the JBox site so it picks up the new JSON.
+
+## Round 2 — UI upgrade prompt (5 Nov)
+
+> Round 2: make Signalpost look and feel premium. Keep every working feature (search, filters, example chips, company pages, the Source panel, compare, About page, URLs, accessibility). Change the presentation as below.
+> 
+> DATA. Reload the JSON from the same URL (it was updated): https://raw.githubusercontent.com/DG10911/signalpost-agent/signalpost-upgrade-nov2/signalpost/jbox-data/companies.json
+> New fields per company: source_count, and highlights = { latest_finances: {Revenue, Operating result, Annual result, Equity, Total assets, Debt → {year, value, fact_id, change_pct_vs_previous_year (may be null)}}, finance_series: {metric → [{year, value, fact_id}]}, coverage: {section → {found, not_found}}, sources: {source name → count} }. fact_id links to the matching fact, so its Source panel can open. Never invent values; when change_pct is null, show no arrow.
+> 
+> 1. HOME
+> - Compact hero (one line headline + one line subtitle) so the search box is above the fold on laptop and phone.
+> - Stats strip under the search: "100 companies · 3,159 cited facts · 5 official and company sources · retrieved 3 Nov 2026".
+> - Replace the long single-column list with a responsive card grid (3 columns laptop, 2 tablet, 1 phone), 24 cards then "Show more".
+> - Each card: company name (serif), org number (mono), municipality · industry, the latest revenue with its year (e.g. "Revenue 2025: NOK 149.2 m") when available, a small coverage meter of 6 dots (one per section, filled when that section has facts), and icon badges (globe = website, newspaper = news, briefcase = hiring, chart = accounts, people = social). Compare checkbox stays.
+> - Sort menu: Name, Revenue (high→low), Employees, Most facts. Filter chips show counts, e.g. "Has website (37)". Add a municipality dropdown.
+> 
+> 2. COMPANY PAGE
+> - "At a glance" band under the header: 4 KPI tiles (Revenue, Operating result, Equity, Employees), each with value in NOK millions, year, and a green/red arrow with % change when available. Clicking a tile opens that fact's Source panel.
+> - Two side cards next to the KPIs (stacked on phone): "What we found" (the 6 sections with ✓ found / – not found, from coverage) and "Sources used" (from highlights.sources, with counts and a small coloured dot per source type).
+> - Finances: a small bar or line chart per metric from finance_series (years on the x-axis; clicking a bar opens its Source), plus ONE combined table (rows = metrics, columns = years), instead of a separate "earlier periods" table per metric.
+> - News and Hiring as timeline cards with a date chip and the source domain. People as name chips with role.
+> - Make fact rows more compact. Source button = small document icon + "Source" (no ↗ arrow; keep ↗ only for links that leave the site).
+> 
+> 3. SOURCE PANEL
+> - Add a coloured source-type badge: Official registry (deep blue), Company website (teal), Job board (amber), Social (violet). Use the same colours everywhere a source is shown.
+> - Add "Previous / Next fact" buttons to step through facts without closing the panel.
+> - Smooth slide-in animation; bottom sheet on phone with a drag handle.
+> 
+> 4. COMPARE
+> - One aligned table: a sticky header with both company names, rows = facts, two value columns. Each value has a small Source icon.
+> - For revenue, operating result, equity and employees, show thin horizontal bars so the larger value is obvious.
+> - A "Show differences only" toggle. On phone, keep both columns side by side with a sticky first column for row labels, or let the user swipe between the two companies.
+> - Missing values show the fact's availability_text in grey italics.
+> 
+> 5. POLISH
+> - Consistent 8px spacing scale, card radius 12px, subtle shadows on hover, visible focus rings.
+> - Skeleton loaders instead of "Loading…" text.
+> - A tasteful empty state for "no results".
+> - Dark mode toggle in the header (respect system setting).
+> - Favicon and a social share image with the Signalpost wordmark.
+> - Lighthouse: aim for 90+ on performance and accessibility on mobile.

@@ -91,6 +91,58 @@ def _period(p: Any) -> str:
     return ""
 
 
+def _clean_period(p: str) -> str:
+    """Registry placeholder dates (1970-01-01 etc.) are not real periods."""
+    return "" if p and p[:4] < "1980" else p
+
+
+METRICS = [("financials.revenue", "Revenue"), ("financials.operating_result", "Operating result"),
+           ("financials.annual_result", "Annual result"), ("financials.equity", "Equity"),
+           ("financials.assets", "Total assets"), ("financials.debt", "Debt")]
+
+
+def _number(text: str) -> float | None:
+    try:
+        return float(text.replace(" ", "").replace("\u00a0", ""))
+    except ValueError:
+        return None
+
+
+def _highlights(facts: list[dict[str, Any]]) -> dict[str, Any]:
+    """Ready-made, derived summaries for the site (each points back to fact ids)."""
+    series: dict[str, list[dict[str, Any]]] = {}
+    for key, name in METRICS:
+        pts = []
+        for f in facts:
+            if f["field"] == key and f["availability"] == "available" and f["period"]:
+                n = _number(f["value"])
+                if n is not None:
+                    pts.append({"year": f["period"][:4], "value": n, "fact_id": f["id"]})
+        pts.sort(key=lambda x: x["year"])
+        if pts:
+            series[name] = pts
+    latest = {}
+    for name, pts in series.items():
+        last = pts[-1]
+        prev = pts[-2] if len(pts) >= 2 else None
+        change = None
+        if prev and prev["value"] > 0 and last["value"] > 0:  # % only between two positive figures
+            change = round((last["value"] - prev["value"]) / abs(prev["value"]) * 100, 1)
+        latest[name] = {"year": last["year"], "value": last["value"], "fact_id": last["fact_id"],
+                        "change_pct_vs_previous_year": change}
+    coverage = {}
+    for sec in SECTIONS:
+        sec_facts = [f for f in facts if f["section"] == sec]
+        coverage[sec] = {"found": sum(f["availability"] == "available" for f in sec_facts),
+                         "not_found": sum(f["availability"] != "available" for f in sec_facts)}
+    sources: dict[str, int] = {}
+    for f in facts:
+        if f["availability"] == "available" and f["source_name"]:
+            sources[f["source_name"]] = sources.get(f["source_name"], 0) + 1
+    return {"finance_series": series, "latest_finances": latest, "coverage": coverage,
+            "sources": dict(sorted(sources.items(), key=lambda kv: -kv[1]))}
+
+
 def _text(field: str, v: Any) -> tuple[str, str]:
     """(display text, link) for a claim value."""
     if v is None:
@@ -99,6 +151,12 @@ def _text(field: str, v: Any) -> tuple[str, str]:
         return "; ".join(f"{r.get('name')} ({r.get('role')})" for r in v if isinstance(r, dict)), ""
     if isinstance(v, list):
         return ", ".join(str(x) for x in v), ""
+    if isinstance(v, dict) and "amount" in v:
+        try:
+            amount = round(float(v["amount"]))
+            return f"{amount:,}".replace(",", " ") + f" {v.get('currency') or ''}".rstrip(), ""
+        except (TypeError, ValueError):
+            return str(v["amount"]), ""
     if isinstance(v, dict):
         title = v.get("headline") or v.get("title") or v.get("name") or ""
         date = v.get("date_published") or v.get("published") or v.get("date_posted") or ""
@@ -121,6 +179,16 @@ def _source(ev: dict[str, Any]) -> dict[str, str]:
     cls = ev.get("source_class") or ""
     url = ev.get("source_url") or ""
     name = SOURCE_NAMES.get(cls)
+    host = url.split("/")[2] if url.count("/") >= 2 else url
+    host = host[4:] if host.startswith("www.") else host
+    if not name and "company_website" in cls:
+        name = f"Company website ({host})"
+    elif not name and "account" in cls:
+        name = "Brønnøysund annual accounts register"
+    elif not name and ("nav" in host or "job_board" in cls):
+        name = "NAV job board (official)"
+    elif not name and any(k in host for k in ("facebook", "instagram", "linkedin", "x.com", "twitter")):
+        name = f"Social profile ({host})"
     if not name:
         host = url.split("/")[2] if url.count("/") >= 2 else url
         name = f"{cls.replace('_', ' ').capitalize() or 'Source'} – {host}"
@@ -145,12 +213,14 @@ def convert(contract_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 continue
             section, label = FIELDS[field]
             text, link = _text(field, c.get("value"))
+            if field == "statutory_purpose" and text and text == str(head.get("activity_description") or ""):
+                continue  # same text as "What the company does"; show it once
             ev = next((evidence[e] for e in c.get("evidence_ids") or [] if e in evidence), {})
             facts.append({"id": f"{org}-{i}", "section": section, "label": label, "field": field,
                           "value": text, "link": link,
                           "availability": c.get("availability"),
                           "availability_text": AVAILABILITY_TEXT.get(c.get("availability"), c.get("availability")),
-                          "period": _period(c.get("reporting_period")),
+                          "period": _clean_period(_period(c.get("reporting_period"))),
                           **_source(ev)})
         facts.sort(key=lambda f: (SECTIONS.index(f["section"]), f["label"]))
         found = [f for f in facts if f["availability"] == "available"]
@@ -169,6 +239,8 @@ def convert(contract_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "has_news": any(f["section"] == "News" for f in found),
             "has_hiring": any(f["section"] == "Hiring" for f in found),
             "fact_count": len(found),
+            "source_count": len({f["source_url"] for f in found if f["source_url"]}),
+            "highlights": _highlights(facts),
             "facts": facts,
         })
     companies.sort(key=lambda c: c["name"])
@@ -181,7 +253,7 @@ def main(src: str, out_dir: str) -> None:
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     (out / "companies.json").write_text(json.dumps(companies, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    cols = [k for k in companies[0] if k != "facts"]
+    cols = [k for k in companies[0] if k not in ("facts", "highlights")]
     with open(out / "companies.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()
