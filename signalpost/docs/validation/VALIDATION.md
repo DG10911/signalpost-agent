@@ -87,6 +87,32 @@ Careers pages (2):
 - NAV job ads were re-fetched from the NAV feed with NAV's published public token. All 3 are ACTIVE with 1 position each. The employer's sub-unit org number was looked up in Brønnøysund and belongs to the company in each case.
 - "Dead registry link" is counted as wrong only when the failure is certain: NXDOMAIN, a parked, for-sale, suspended or expired page, a CDN or host configuration error, or a 404 from two vantage points. A timeout or reset counts as "could not re-check".
 
+
+### After the fix (same 100 companies, re-run with the fixed build)
+
+The check showed the main cause: registry homepages were published as the
+company's website even when the crawl never reached a live company page. The
+fixed build leaves the website blank, with the reason, when the registry
+domain does not exist, the homepage returns an error (404/400/403, connection
+closed), the page is a placeholder (default server page, suspended account,
+expired site), or it redirects to another business. Errors that only reflect
+the local network (connection reset, DNS filter, robots.txt) do not count as
+dead. A shared link to another site's article that does not name the company
+is no longer news.
+
+Re-run of the same 100 companies, matched against the verdicts above:
+
+| | Before | After |
+|---|---|---|
+| Correct facts published | 67 | 65 |
+| Wrong facts published | 21 | 2 |
+| Precision on re-checkable facts | 76% | 97% |
+
+Still wrong: AS ÅRVOLLVEIEN 15 (`sgf.no`, its owner's site, which loads and
+never names it) and one careers page. The two correct websites lost
+(`mediqnorge.no` returned 404; `vitosetermoen.no` closed the connection) are
+the cost of the stricter rule.
+
 # Hand check of published facts (1 Nov 2026)
 
 A check that does not use the agent's own rules: every external fact the agent

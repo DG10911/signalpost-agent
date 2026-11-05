@@ -155,7 +155,13 @@ def _looks_like_slug(headline: str, url: str) -> bool:
     return bool(head) and headline == headline.lower() and head == " ".join(last.split())
 
 
-def classify_news(article: dict[str, Any], company_name: Any, today: _dt.date | None = None) -> str | None:
+def _site_of(url: str) -> str:
+    host = (urllib.parse.urlparse(url).hostname or "").lower()
+    return ".".join(host.split(".")[-2:])
+
+
+def classify_news(article: dict[str, Any], company_name: Any, today: _dt.date | None = None,
+                  site_url: str | None = None) -> str | None:
     """None when the item is publishable company news; otherwise the reason."""
     headline = str(article.get("headline") or "").strip()
     url = str(article.get("url") or "")
@@ -197,6 +203,8 @@ def classify_news(article: dict[str, Any], company_name: Any, today: _dt.date | 
         return "page is ESG/sustainability content, not dated company news"
     tokens = _name_tokens(company_name)
     names_company = bool(tokens) and any(token in plain_head for token in tokens)
+    if site_url and _site_of(url) and _site_of(url) != _site_of(site_url) and not names_company:
+        return "link to another site's article that does not name the company"
     if not in_news_section and not names_company:
         return "not in a news or press section and the headline does not name the company"
     return None
@@ -276,7 +284,8 @@ def apply_content_quality(profile: dict[str, Any], website: dict[str, Any],
     seen_items: set[tuple[str, str]] = set()
     for article in value.get("news_articles") or []:
         key = _url_key(str(article.get("url") or "").split("#")[0])
-        reason = classify_news(article, profile.get("name"), today)
+        reason = classify_news(article, profile.get("name"), today,
+                               site_url=value.get("final_url") or value.get("requested_url"))
         published = parse_date(article.get("date_published"))
         item_key = (_plain(article.get("headline")), published.isoformat() if published else "")
         if reason is None and key in seen_urls:

@@ -12,6 +12,7 @@ evaluator reads them in the specified format instead of our internal module dump
 from __future__ import annotations
 
 from .identity import is_shared_manager_site
+from .site_health import dead_page_reason, registry_site_problem
 
 import json
 from typing import Any
@@ -151,6 +152,10 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
     web = ev.get("website", {}) or {}
     wv = web.get("value") or {}
     pub = (wv.get("identity_assessment") or {}).get("publishable")
+    # A default, parked, expired or suspended page is no company's site, even if
+    # it happens to pass the identity check ("Welcome to nginx!").
+    if pub and dead_page_reason(wv.get("title"), wv.get("main_text_excerpt")):
+        pub = False
     if web:
         add_ev("ev-website", web, (wv.get("title") or "")[:300] or "Company website")
     # The official registry's own website field is authoritative on its own: it
@@ -218,6 +223,11 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
         # chain or group). It is not this company's own site: keep the registry
         # association as ambiguous rather than claiming it as the company's.
         claim("official_website", registry_site, "ambiguous", ["ev-registry"], 0.6)
+    elif registry_site and (problem := registry_site_problem(registry_site, web, profile.get("name"))):
+        # The registry still lists the address (see website_registered), but the
+        # crawl shows no live company site there: dead domain, error page,
+        # placeholder, or a redirect to another business.
+        claim("official_website", None, "not_available", ["ev-registry"], 0.8, reason=problem)
     elif registry_site:
         # Registry-listed website: official association stands even if the crawl
         # could not confirm the entity from the (often JS-rendered) page.
