@@ -69,12 +69,13 @@ SOURCE_NAMES = {
 
 AVAILABILITY_TEXT = {
     "available": "Found",
-    "not_available": "Looked, nothing found",
-    "blocked": "Source refused access",
+    "not_available": "Not found",
+    "blocked": "Source blocked access",
     "not_applicable": "Does not apply",
-    "ambiguous": "Could not confirm it is this company",
+    "ambiguous": "Unconfirmed match",
     "failed": "Lookup failed",
 }
+DISPLAY_FIXES = {"Uoppgitt": "Not specified"}
 
 
 _DATES = re.compile(r"(\d{4}-\d{2}-\d{2})")
@@ -213,6 +214,7 @@ def convert(contract_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 continue
             section, label = FIELDS[field]
             text, link = _text(field, c.get("value"))
+            text = DISPLAY_FIXES.get(text, text)
             if field == "statutory_purpose" and text and text == str(head.get("activity_description") or ""):
                 continue  # same text as "What the company does"; show it once
             ev = next((evidence[e] for e in c.get("evidence_ids") or [] if e in evidence), {})
@@ -229,7 +231,7 @@ def convert(contract_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
             "name": head.get("legal_name") or org,
             "legal_form": head.get("legal_form") or "",
             "municipality": head.get("municipality") or "",
-            "industry": head.get("industry") or "",
+            "industry": DISPLAY_FIXES.get(head.get("industry") or "", head.get("industry") or ""),
             "summary": head.get("activity_description") or "",
             "employees": head.get("employees_registered") or "",
             "website": head.get("official_website") or "",
@@ -247,11 +249,40 @@ def convert(contract_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return companies
 
 
-def main(src: str, out_dir: str) -> None:
+def write_split(companies: list[dict[str, Any]], out: Path) -> None:
+    """index.json (light, for search and cards) + companies/<org>.json (full)."""
+    (out / "companies").mkdir(parents=True, exist_ok=True)
+    index = []
+    for c in companies:
+        h = c["highlights"]
+        index.append({k: c[k] for k in c if k not in ("facts", "highlights")} | {
+            "latest_finances": h["latest_finances"],
+            "coverage": {sec: v["found"] for sec, v in h["coverage"].items()}})
+        (out / "companies" / f"{c['organisation_number']}.json").write_text(
+            json.dumps(c, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    (out / "index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    facts = sum(len(c["facts"]) for c in companies)
+    found = sum(c["fact_count"] for c in companies)
+    sources = sorted({f["source_name"].split(" (")[0] for c in companies for f in c["facts"] if f["source_name"]})
+    dates = sorted({f["retrieved_at"][:10] for c in companies for f in c["facts"] if f["retrieved_at"]})
+    stats = {"companies": len(companies), "facts": facts, "cited_facts_found": found,
+             "source_types": sources, "retrieved_from": dates[0] if dates else "", "retrieved_to": dates[-1] if dates else "",
+             "with_website": sum(c["has_website"] for c in companies), "with_news": sum(c["has_news"] for c in companies),
+             "with_hiring": sum(c["has_hiring"] for c in companies), "with_social": sum(c["has_social"] for c in companies),
+             "with_accounts": sum(c["has_finances"] for c in companies),
+             "municipalities": len({c["municipality"] for c in companies if c["municipality"]})}
+    (out / "stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"split: {len(companies)} companies -> {out}/index.json + companies/*.json; stats {stats}")
+
+
+def main(src: str, out_dir: str, split: bool = False) -> None:
     rows = [json.loads(l) for l in Path(src).read_text(encoding="utf-8").splitlines() if l.strip()]
     companies = convert(rows)
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
+    if split:
+        write_split(companies, out)
+        return
     (out / "companies.json").write_text(json.dumps(companies, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     cols = [k for k in companies[0] if k not in ("facts", "highlights")]
     with open(out / "companies.csv", "w", newline="", encoding="utf-8") as f:
@@ -271,4 +302,4 @@ def main(src: str, out_dir: str) -> None:
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2])
+    main(sys.argv[1], sys.argv[2], split="--split" in sys.argv[3:])

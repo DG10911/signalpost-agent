@@ -1,0 +1,20 @@
+{
+ "companies": 1000,
+ "facts": 29659,
+ "cited_facts_found": 28723,
+ "source_types": [
+  "Brønnøysund Register Centre",
+  "Brønnøysund annual accounts register",
+  "Brønnøysund roles register",
+  "Company website",
+  "NAV job board"
+ ],
+ "retrieved_from": "2026-11-05",
+ "retrieved_to": "2026-11-05",
+ "with_website": 88,
+ "with_news": 11,
+ "with_hiring": 6,
+ "with_social": 38,
+ "with_accounts": 1000,
+ "municipalities": 191
+}
