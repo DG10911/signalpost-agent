@@ -214,7 +214,7 @@ class PacingTest(unittest.TestCase):
         self.assertEqual(b._aggression(10.0, self._rules(), volume=0.0), 1.0)
 
     def test_served_config_never_loosens_when_behind(self):
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         b = botmod.Bot(config=TUNED)
         b.start_ts = 0.0
         # 90% of the window elapsed, almost no volume -> far behind pace.
@@ -288,7 +288,7 @@ class NetValueGateTest(unittest.TestCase):
     floor (the validated settings), so the book must be genuinely stale."""
 
     def _edge_side(self, edge):
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         ref = {"btcMidUsd": 80060.0, "openingTargetUsd": 80000.0, "observedAt": 0.0}
         seconds = 60.0
         p = botmod.Bot(config=TUNED)._fair_yes(ref, seconds)
@@ -304,7 +304,7 @@ class NetValueGateTest(unittest.TestCase):
         self.assertEqual(self._edge_side(0.06), "YES")
 
     def test_served_gate_is_five_cents(self):
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         self.assertAlmostEqual(TUNED.min_edge_per_share_usd, 0.055)
         self.assertFalse(TUNED.cost_aware_edge)
         self.assertEqual(TUNED.edge_safety_margin, 0.0)
@@ -326,7 +326,7 @@ class TerminalFlatSafetyTest(unittest.TestCase):
                 "sell_gross_usd": 0.0, "sell_fees_usd": 0.0}
 
     def _bot(self):
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         return botmod.Bot(config=TUNED)
 
     def test_sells_position_left_from_previous_market(self):
@@ -347,7 +347,7 @@ class TerminalFlatSafetyTest(unittest.TestCase):
         self.assertEqual(d["action"], "HOLD")
 
     def test_no_entry_too_close_to_forced_exit(self):
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         b = self._bot()
         seconds = TUNED.forced_exit_seconds + TUNED.entry_exit_gap_seconds - 1.0
         d = b.decide(self._obs(seconds, None, [[0.96, 100]]))
@@ -357,7 +357,7 @@ class TerminalFlatSafetyTest(unittest.TestCase):
         # The validated design accepts a thin best bid and exits partially; a
         # full-size bid is not a precondition for entering.
         from dataclasses import replace
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         cfg = replace(TUNED, use_edge_gate=False, require_book_favorite_agreement=False,
                       persistence_samples=1, min_reference_gap_usd=1.0)
         def obs(bids):
@@ -372,7 +372,7 @@ class TerminalFlatSafetyTest(unittest.TestCase):
 
     def test_crossed_book_is_rejected(self):
         from dataclasses import replace
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         cfg = replace(TUNED, use_edge_gate=False, require_book_favorite_agreement=False,
                       persistence_samples=1, min_reference_gap_usd=1.0)
         o = self._obs(100.0, None, [[0.61, 100]])
@@ -401,7 +401,7 @@ class TwapSettlementTest(unittest.TestCase):
         self.assertEqual(botmod.fair_prob_twap(79000.0, 80000.0, 0.0, 0.6, seen_avg=80100.0), 1.0)
 
     def test_spot_dip_does_not_trigger_thesis_flip_under_twap(self):
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         b = botmod.Bot(config=TUNED)
         close = 2000.0
         books = {"YES": {"asks": [[0.97, 100]], "bids": [[0.96, 100]]},
@@ -445,7 +445,7 @@ class SuperStrategyTest(unittest.TestCase):
                 "sell_gross_usd": 0.0, "sell_fees_usd": 0.0}
 
     def _bot(self):
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         return botmod.Bot(config=TUNED)
 
     def _obs(self, **kw):
@@ -511,7 +511,7 @@ class SuperStrategyTest(unittest.TestCase):
         self.assertEqual(self._bot().decide(obs)["action"], "HOLD")
 
     def test_served_config_matches_the_validated_strategy(self):
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         self.assertEqual(TUNED.min_edge_per_share_usd, 0.055)
         self.assertEqual(TUNED.max_spread, 0.02)
         self.assertEqual(TUNED.min_entry_price, 0.30)
@@ -535,7 +535,7 @@ class BasisLearnerTest(unittest.TestCase):
                 "NO": {"asks": [[1 - mid + 0.005, 100]], "bids": [[1 - mid - 0.005, 100]]}}
 
     def test_learns_and_subtracts_the_offset(self):
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         b = botmod.Bot(config=TUNED)
         ref = {"btcMidUsd": 80020.0, "openingTargetUsd": 80000.0, "observedAt": 0.0}
         for _ in range(12):
@@ -545,9 +545,153 @@ class BasisLearnerTest(unittest.TestCase):
         self.assertAlmostEqual(p, 0.5, places=2)
 
     def test_small_offset_is_ignored(self):
-        from tuned_config import TUNED
+        from tuned_config import TUNED_V81 as TUNED
         b = botmod.Bot(config=TUNED)
         ref = {"btcMidUsd": 80002.0, "openingTargetUsd": 80000.0, "observedAt": 0.0}
         for _ in range(12):
             b._observe_basis(self._books(0.50), ref)
         self.assertEqual(b._basis(), 0.0)
+
+
+class V9StrategyTest(unittest.TestCase):
+    """The v9 contract strategy (strategy='v9'): safety rails and the model."""
+
+    def _cfg(self, **kw):
+        import dataclasses
+        base = botmod.Config(strategy="v9", exact_twap_variance=True, record_reference_always=True,
+                             adaptive_vol=True, settlement_twap_seconds=60.0, min_vol_samples=60,
+                             basis_enabled=False)
+        return dataclasses.replace(base, **kw)
+
+    def _obs(self, t, s, btc=80000.0, target=80000.0, yes=(0.95, 0.94), no=(0.07, 0.05),
+             cash=10.0, position=None, market="m1", volume=0.0, with_target=True):
+        ref = {"btcMidUsd": btc, "observedAt": t, "targetObservedAt": t - s - 1.0,
+               "targetProvisional": False}
+        if with_target:
+            ref["openingTargetUsd"] = target
+        return {"timestamp": t, "market": {"id": market, "secondsToClose": s},
+                "account": {"cashUsd": cash, "eligibleVolumeUsd": volume, "position": position},
+                "rules": {"maximumBuyCashUsd": 5.0, "targetVolumeUsd": 1000.0},
+                "reference": ref,
+                "books": {"YES": {"asks": [[yes[0], 500]], "bids": [[yes[1], 500]], "minOrderSize": 5},
+                          "NO": {"asks": [[no[0], 500]], "bids": [[no[1], 500]], "minOrderSize": 5}}}
+
+    def _warm(self, b, t_end, start=None, btc=80000.0, wiggle=1.0, market="m0"):
+        """Feed ~5 minutes of a slowly wiggling BTC so the vol estimator is live."""
+        t = start if start is not None else t_end - 300
+        k = 0
+        while t < t_end:
+            b.decide(self._obs(t, 299.0 - (k % 299), btc=btc + wiggle * math.sin(k / 3.0),
+                               yes=(0.6, 0.5), no=(0.5, 0.4), market=market))
+            t += 1.0
+            k += 1
+
+    def test_exact_pre_window_variance(self):
+        sigma_ann, btc = 0.5, 80000.0
+        s, gap = 120.0, 30.0
+        sigma = sigma_ann * (btc + gap) / math.sqrt(365.0 * 24.0 * 3600.0)
+        p = botmod.fair_prob_twap(btc + gap, btc, s, sigma_ann, None, 60.0, exact_pre_window=True)
+        sd = sigma * math.sqrt(s - 40.0)
+        self.assertAlmostEqual(p, 0.5 * (1 + math.erf(gap / (sd * math.sqrt(2)))), places=6)
+        legacy = botmod.fair_prob_twap(btc + gap, btc, s, sigma_ann, None, 60.0)
+        self.assertGreater(legacy, p)  # the legacy formula is overconfident
+
+    def test_malformed_is_hold(self):
+        b = botmod.Bot(config=self._cfg())
+        self.assertEqual(b.decide({"market": None}), {"action": "HOLD"})
+        self.assertEqual(b.decide({}), {"action": "HOLD"})
+
+    def test_fav_buy_respects_cap_and_minimum(self):
+        b = botmod.Bot(config=self._cfg(v9_value_enabled=False))
+        self._warm(b, 10000.0)
+        d = b.decide(self._obs(10000.0, 40.0, btc=80150.0, yes=(0.97, 0.96), no=(0.04, 0.03)))
+        self.assertEqual(d["action"], "BUY")
+        self.assertEqual(d["outcome"], "YES")
+        self.assertLessEqual(d["maxCashUsd"], 5.0)
+        cost = 5 * 0.97 + botmod.side_fees([(0.97, 5.0)])
+        self.assertGreaterEqual(d["maxCashUsd"], cost - 1e-9)
+
+    def test_no_entry_inside_final_15s(self):
+        b = botmod.Bot(config=self._cfg(v9_value_enabled=False))
+        self._warm(b, 10000.0)
+        d = b.decide(self._obs(10000.0, 15.0, btc=80150.0, yes=(0.97, 0.96), no=(0.04, 0.03)))
+        self.assertEqual(d["action"], "HOLD")
+
+    def test_pending_buy_guard(self):
+        b = botmod.Bot(config=self._cfg(v9_value_enabled=False))
+        self._warm(b, 10000.0)
+        d1 = b.decide(self._obs(10000.0, 40.0, btc=80150.0, yes=(0.97, 0.96), no=(0.04, 0.03)))
+        d2 = b.decide(self._obs(10000.5, 39.5, btc=80150.0, yes=(0.97, 0.96), no=(0.04, 0.03)))
+        self.assertEqual(d1["action"], "BUY")
+        self.assertEqual(d2["action"], "HOLD")
+
+    def test_sells_position_from_another_market(self):
+        b = botmod.Bot(config=self._cfg())
+        pos = {"market_id": "old", "outcome": "YES", "shares": 5.0}
+        d = b.decide(self._obs(10000.0, 200.0, position=pos, market="new"))
+        self.assertEqual(d["action"], "SELL")
+
+    def test_sells_into_the_close_and_holds_one_sided(self):
+        b = botmod.Bot(config=self._cfg())
+        pos = {"market_id": "m1", "outcome": "YES", "shares": 5.0}
+        self.assertEqual(b.decide(self._obs(10000.0, 2.0, position=pos, yes=(0.99, 0.98)))["action"], "SELL")
+        obs = self._obs(10001.0, 1.0, position={"market_id": "m1", "outcome": "NO", "shares": 5.0})
+        obs["books"]["NO"]["bids"] = []
+        self.assertEqual(b.decide(obs)["action"], "HOLD")
+
+    def test_locks_after_target(self):
+        b = botmod.Bot(config=self._cfg(v9_value_enabled=False))
+        self._warm(b, 10000.0)
+        d = b.decide(self._obs(10000.0, 40.0, btc=80150.0, yes=(0.97, 0.96), no=(0.04, 0.03), volume=1000.0))
+        self.assertEqual(d["action"], "HOLD")
+
+    def test_derives_missing_target_from_own_history(self):
+        b = botmod.Bot(config=self._cfg(v9_value_enabled=False))
+        # The market opened at t=10000-260=9740; we saw the feed at 80000 before that.
+        self._warm(b, 10000.0, start=9400.0, btc=80000.0, wiggle=0.5)
+        d = b.decide(self._obs(10000.0, 40.0, btc=80150.0, yes=(0.97, 0.96), no=(0.04, 0.03),
+                               with_target=False))
+        self.assertEqual(d["action"], "BUY")
+        self.assertAlmostEqual(b._derived_targets["m1"], 80000.0, delta=1.0)
+
+    def test_no_target_and_no_history_is_hold(self):
+        b = botmod.Bot(config=self._cfg())
+        d = b.decide(self._obs(10000.0, 40.0, btc=80150.0, with_target=False))
+        self.assertEqual(d["action"], "HOLD")
+
+
+class ServedConfigTest(unittest.TestCase):
+    """The config server.py serves is the v9 contract strategy."""
+
+    def test_served_is_v9_and_safe(self):
+        from tuned_config import TUNED
+        self.assertEqual(TUNED.strategy, "v9")
+        self.assertTrue(TUNED.exact_twap_variance)
+        self.assertLessEqual(TUNED.v9_fav_max_ask, 0.98)       # 5 shares must fit $5 incl. fees
+        self.assertGreater(TUNED.v9_entry_block_seconds, 15.0 - 1e-9)
+        self.assertTrue(TUNED.lock_after_target)
+        b = botmod.Bot(config=TUNED)
+        self.assertEqual(b.decide({"market": {"id": "x"}}), {"action": "HOLD"})
+
+    def test_served_buy_is_capped(self):
+        from tuned_config import TUNED
+        b = botmod.Bot(config=TUNED)
+        t = 20000.0
+        for k in range(300):   # warm the vol estimator on a wiggling feed
+            b.decide({"timestamp": t - 300 + k, "market": {"id": "w", "secondsToClose": 299.0 - k % 299},
+                      "account": {"cashUsd": 10.0, "eligibleVolumeUsd": 0.0, "position": None},
+                      "rules": {"maximumBuyCashUsd": 5.0, "targetVolumeUsd": 1000.0},
+                      "reference": {"btcMidUsd": 80000.0 + math.sin(k / 3.0), "openingTargetUsd": 80000.0,
+                                    "observedAt": t - 300 + k, "targetProvisional": False},
+                      "books": {"YES": {"asks": [[0.6, 100]], "bids": [[0.5, 100]]},
+                                "NO": {"asks": [[0.5, 100]], "bids": [[0.4, 100]]}}})
+        d = b.decide({"timestamp": t, "market": {"id": "m", "secondsToClose": 100.0},
+                      "account": {"cashUsd": 10.0, "eligibleVolumeUsd": 0.0, "position": None},
+                      "rules": {"maximumBuyCashUsd": 5.0, "targetVolumeUsd": 1000.0},
+                      "reference": {"btcMidUsd": 80200.0, "openingTargetUsd": 80000.0,
+                                    "observedAt": t, "targetProvisional": False},
+                      "books": {"YES": {"asks": [[0.96, 100]], "bids": [[0.95, 100]], "minOrderSize": 5},
+                                "NO": {"asks": [[0.05, 100]], "bids": [[0.04, 100]], "minOrderSize": 5}}})
+        self.assertEqual(d["action"], "BUY")
+        self.assertEqual(d["outcome"], "YES")
+        self.assertLessEqual(d["maxCashUsd"], 5.0)

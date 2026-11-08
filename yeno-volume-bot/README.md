@@ -1,4 +1,4 @@
-# YeNo × Builderr Volume Bot — `twap-edge-v8`
+# YeNo × Builderr Volume Bot — `contract-v9`
 
 A `/decide` trading agent for the [YeNo × Builderr Volume Bot Challenge](https://builderr.ai).
 Start with $10 paper cash; in 24 h produce ≥ $1,000 of eligible BUY+SELL
@@ -15,8 +15,8 @@ accounting are evaluator-owned; the bot only returns `HOLD` / `BUY` / `SELL` and
 | `bot.py` | Strategy + fee/TWAP models. `Bot` class and a module-level `decide()`. |
 | `tuned_config.py` | **The frozen strategy that `server.py` serves.** |
 | `server.py` | `POST /decide` HTTP server (`python server.py`). |
-| `research/realsim.py` | Drives the real bot over recorded Polymarket BTC-5m L2 books under the published evaluator contract. |
-| `tests/test_bot.py` | `unittest` suite (50 tests), pure stdlib. |
+| `research/realsim.py` | Drives the real bot over recorded Polymarket BTC-5m L2 books. `--mode faithful` (use the causal `*_lag1s.bin` BTC files) is the published contract; `--mode legacy` is the old 120..16 s loop. |
+| `tests/test_bot.py` | `unittest` suite (62 tests), pure stdlib. |
 | `simulator.py` | Synthetic fee-accurate harness for contract/robustness checks. |
 | `scenarios.py` | 10 adversarial synthetic regimes; asserts terminal-flat and zero invalid actions. |
 
@@ -40,7 +40,46 @@ python yeno-smoke-test.py --url http://127.0.0.1:8080/decide \
 # -> {"contractSmokePassed": true, ...}
 ```
 
-## The served strategy
+## v9 — designed for P(qualify) under the published contract
+
+**Why v8.1 had to go.** In a faithful replay (causal BTC, the bot called to the
+close, 250 ms then the next *later* L2 update, 2 s book age, 15 s entry block)
+v8.1 crossed $1,000 on 0/21 full days and 8/240 sliding 24 h windows: its edge
+was a 1 s BTC look-ahead in the old lab. It also had a model bug: before the final
+minute the TWAP spread was `sigma*sqrt(s-w/3)/w` (~60x too confident); the exact
+value is `sigma*sqrt(s-2w/3)` (`exact_twap_variance`).
+
+**Economics.** The 1% overlay alone on $1,000 of volume is $10 — the whole
+bankroll — and the book is calibrated at the top (fill ask ≈ realised win rate),
+so qualifying is a bankroll-survival problem: buy volume as cheaply as possible
+and never stall. Measured costs per $ of volume: favourites at 0.85–0.98 held to
+the deep 0.99 closing bid ≈ 1–1.5%; mid-price churn ≈ 5%+; longshots 20–45%. Five
+shares at 0.99 exceed the $5 fee-inclusive cap, so 0.98 is the top usable ask.
+The only gross edge found: inside the settlement minute the causal TWAP model
+beats the book on mid-priced sides (+5..9c/share held to expiry), but it is
+binary-variance and losers become unsellable (bids vanish when the market is
+decided), so it is used only when the run would otherwise be dead.
+
+**Strategy (`strategy="v9"`, see `tuned_config.py`).** FAV volume engine (model
+≥ 0.90, ask 0.85–0.98, spread ≤ 2c, full ticket with 3% cash headroom so a worse
+later book still fills ≥ 5 shares; sell at a 0.99 bid / 2 s before close; exit
+early if the model drops below 0.5 while bids exist). Low-cash mode below $5.50:
+VALUE entries (edge ≥ 16c in the final minute) with 70% of cash. Never holds
+across markets, HOLD on malformed input, pending-BUY guard, entry block at 15 s,
+missing opening target rebuilt from the bot's own record of the feed, lock after
+the first clean crossing.
+
+**Faithful-lab results** (selected on Oct 3–6 + Oct 17–26, held out Oct 27 – Nov 4):
+
+| | train days | train 24 h windows | held-out days | held-out windows | cash at crossing (med) | hours to target (med) |
+|---|---|---|---|---|---|---|
+| v8.1 | 0/12 | 7/133 (5%) | 0/9 | 1/96 (1%) | $26 | 13 |
+| **v9** | 7/12 | 60/133 (45%) | 4/9 | 32/96 (33%) | $9.6 | 10 |
+
+Non-crossing windows end near $1 (the bot spends its bankroll trying), which is
+the intended trade-off: rank 1 needs a crossing first.
+
+## v8 strategy (superseded, kept as `TUNED_V81`)
 
 These are the numbers in `tuned_config.py`. They were chosen on real order-book
 data, not on the synthetic simulator.

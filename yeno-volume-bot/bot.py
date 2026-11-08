@@ -384,6 +384,14 @@ class Config:
     v9_value_max_ask: float = 0.85
     v9_value_stop_prob: float = 0.15
     v9_value_size_fraction: float = 0.30
+    v9_value_min_cash: float = 0.0
+    # Low-cash mode: below this cash a full favourite ticket no longer fits, so
+    # sitting out guarantees a failed window. Take VALUE entries with this size
+    # fraction / edge instead (0 disables): a loss ends a run that was already
+    # over, a win revives it (and a cheap winner brings large sell volume).
+    v9_low_cash_usd: float = 0.0
+    v9_low_cash_value_fraction: float = 1.0
+    v9_low_cash_min_edge: float = 0.08
     v9_fav_enabled: bool = True
     v9_fav_min_s: float = 16.0
     v9_fav_max_s: float = 120.0
@@ -1119,7 +1127,12 @@ class Bot:
             return book, ask
 
         choice = None  # (kind, side, book, budget)
-        if cfg.v9_value_enabled and cfg.v9_value_min_s <= seconds <= cfg.v9_value_max_s:
+        low_cash = cfg.v9_low_cash_usd > 0.0 and cash < cfg.v9_low_cash_usd - 1e-9
+        value_on = cfg.v9_value_enabled and cash >= cfg.v9_value_min_cash - 1e-9
+        min_edge, fraction = cfg.v9_value_min_edge, cfg.v9_value_size_fraction
+        if low_cash:
+            value_on, min_edge, fraction = True, cfg.v9_low_cash_min_edge, cfg.v9_low_cash_value_fraction
+        if value_on and cfg.v9_value_min_s <= seconds <= cfg.v9_value_max_s:
             best = None
             for side, p_side in (("YES", fair), ("NO", 1.0 - fair)):
                 q = quote(side)
@@ -1129,10 +1142,10 @@ class Bot:
                 if not (cfg.v9_value_min_ask - 1e-6 <= ask <= cfg.v9_value_max_ask + 1e-6):
                     continue
                 edge = p_side - ask
-                if edge >= cfg.v9_value_min_edge - 1e-9 and (best is None or edge > best[0]):
+                if edge >= min_edge - 1e-9 and (best is None or edge > best[0]):
                     best = (edge, side, book)
             if best is not None:
-                choice = ("V", best[1], best[2], min(5.0, cfg.v9_value_size_fraction * cash))
+                choice = ("V", best[1], best[2], min(5.0, fraction * cash))
         if choice is None and cfg.v9_fav_enabled and cash >= cfg.v9_fav_min_cash - 1e-9 \
                 and cfg.v9_fav_min_s <= seconds <= cfg.v9_fav_max_s:
             for side, p_side in (("YES", fair), ("NO", 1.0 - fair)):

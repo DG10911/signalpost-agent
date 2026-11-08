@@ -1,21 +1,35 @@
-"""Frozen strategy for the served bot.
+"""Frozen strategy for the served bot: v9 "contract" (strategy='v9').
 
-Calibrated and validated on **real Polymarket BTC 5-minute L2 order books**
-(862 resolved markets, 2026-10-03 -> 2026-10-06, 250 ms snapshots). The
-evaluator simulation in this repository's research harness applies the published
-contract: 250 ms latency, the later book, full ladder walking, the $5
-fee-inclusive cap, 5-share minimum, both fee layers, a 2 s book-age limit,
-crossed-book rejection, partial exits, and the final 15 s entry block.
+Selected in a faithful replay of the published contract (research/realsim.py
+--mode faithful): causal BTC, the bot called every second to the close, 250 ms
+then the next later L2 update of the action's outcome, 2 s book-age rejection,
+15 s entry block (SELLs allowed after), 5-share minimum, both fee layers,
+partial exits, positions left at the close settle with no volume credit.
+Selected on Oct 3-6 + Oct 17-26 2026 sliding 24 h windows; confirmed on held-out
+Oct 27 - Nov 4 (real Polymarket BTC-5m L2 books).
 
-Strategy, in one line: buy the side the 60-second-TWAP model says is underpriced
-by at least 5 cents, only when the spread is at most 2 cents, in the 0.30-0.85
-price band; hold up to 30 seconds; take profit at a 0.95 bid; leave as soon as
-the model's probability for the position falls below 0.45; force flat from 5 s
-before close.
+Economics. The 1% overlay alone on $1,000 of volume is $10 = the whole bankroll,
+and the books are calibrated near the top, so volume must be bought as cheaply
+as possible and the bankroll must not stall:
+  * FAV (volume engine): a clear favourite (causal TWAP model >= 0.90, ask
+    0.85-0.98, spread <= 2c, any time before the 15 s block) bought with the
+    full fee-inclusive ticket and sold into the deep 0.99 closing bid (or at a
+    0.99 bid earlier) -- ~$9.8 of volume for ~1-1.5% cost. Exit early if the
+    model probability for the position drops below 0.5 (while bids exist), so a
+    reversal completes the cycle instead of becoming an unsellable loser.
+  * Low-cash mode: below $5.50 a full favourite ticket no longer reliably fits,
+    so an idle bot has already failed. It then takes the one measured gross edge
+    -- inside the settlement minute the TWAP model prices a side >= 16c above its
+    ask -- with 70% of cash: a loss ends a run that was over anyway, a win
+    restores the engine (and a cheap winner brings large sell volume).
+  * Locks after the first clean crossing (rank 1 = cash at that crossing).
 """
+import dataclasses
+
 from bot import Config
 
-TUNED = Config(
+# v8.1 (previous submission), kept for reference and regression tests.
+TUNED_V81 = Config(
     # Timing.
     entry_window_seconds=120.0,
     final_guard_seconds=16.0,
@@ -82,4 +96,39 @@ TUNED = Config(
     pacing_enabled=False,
     max_aggression=1.0,
     min_aggression=1.0,
+)
+
+
+TUNED = dataclasses.replace(
+    TUNED_V81,
+    strategy="v9",
+    exact_twap_variance=True,        # pre-window TWAP spread sigma*sqrt(s - 2w/3)
+    record_reference_always=True,    # vol / seen-average / derived target
+    max_cycles_per_market=4,
+    reentry_cooldown_seconds=0.5,
+    # FAV volume engine.
+    v9_fav_enabled=True,
+    v9_fav_min_prob=0.90,
+    v9_fav_min_ask=0.85,
+    v9_fav_max_ask=0.98,             # 5 shares at 0.99 exceed the $5 fee-inclusive cap
+    v9_fav_min_s=16.0,
+    v9_fav_max_s=299.0,
+    v9_fav_min_cash=0.0,
+    v9_fav_stop_prob=0.5,
+    v9_fav_stop_bid=0.0,
+    v9_max_spread=0.02,
+    v9_exit_seconds=2.0,
+    v9_take_profit_bid=0.99,
+    v9_buy_headroom=0.03,
+    # VALUE only in low-cash mode.
+    v9_value_enabled=False,
+    v9_value_min_s=16.0,
+    v9_value_max_s=58.0,
+    v9_value_min_ask=0.15,
+    v9_value_max_ask=0.85,
+    v9_value_stop_prob=0.15,
+    v9_low_cash_usd=5.5,
+    v9_low_cash_min_edge=0.16,
+    v9_low_cash_value_fraction=0.7,
+    v9_derive_missing_target=True,
 )

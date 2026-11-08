@@ -23,16 +23,20 @@ Email `submit@builderr.ai` with the fields below.
 
 ## What the served config does
 
-`tuned_config.py` is the frozen strategy:
+`tuned_config.py` is the frozen v9 "contract" strategy (`strategy="v9"`):
 
-* settles on the 60 s TWAP, not spot at close;
-* buys a side only when its ask is ≥ 5 cents below the model's fair
-  probability, in the 0.30–0.85 band, with a ≤ 2-cent spread;
-* takes profit at a 0.95 bid, exits when the thesis flips below 0.45, and
-  times out after 30 s;
-* risks 30% of paper cash per BUY (minimum 5 shares, $5 fee-inclusive cap);
-* never carries a position across a market change and force-flattens from 10 s;
-* stops trading forever at the first clean $1,000 crossing.
+* FAV volume engine: buys a clear favourite (causal TWAP model >= 0.90, ask
+  0.85-0.98, spread <= 2c) with the full $5 fee-inclusive ticket (5-share
+  minimum, 3% cash headroom) and sells into the 0.99 bid / 2 s before close;
+  exits early if the model probability falls below 0.5 while bids exist;
+* low-cash mode (< $5.50): final-minute TWAP-value entries (edge >= 16c) with
+  70% of cash, because an idle bot below a full ticket has already failed;
+* never enters inside the final 15 s, never carries a position across a market
+  change, HOLDs on malformed input, rebuilds a missing opening target from its
+  own record of the feed, and stops trading at the first clean $1,000 crossing.
+
+Faithful replay (see README, "v9"): 45% of train and 33% of held-out 24 h
+windows cross (v8.1: 5% / 1%).
 
 ## Validation
 
