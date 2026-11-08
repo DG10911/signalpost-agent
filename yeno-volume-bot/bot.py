@@ -106,7 +106,8 @@ def fair_prob(btc: float, target: float, seconds_left: float, annual_vol: float)
 
 
 def fair_prob_twap(btc: float, target: float, seconds_left: float, annual_vol: float,
-                   seen_avg: Optional[float] = None, window: float = 60.0) -> float:
+                   seen_avg: Optional[float] = None, window: float = 60.0,
+                   exact_pre_window: bool = False) -> float:
     """P(settlement > target) when the market settles on the average BTC price
     over the final ``window`` seconds (TWAP), not the spot price at close.
 
@@ -122,8 +123,13 @@ def fair_prob_twap(btc: float, target: float, seconds_left: float, annual_vol: f
         return 1.0 if settle > target else 0.0
     sigma = annual_vol * btc / math.sqrt(365.0 * 24.0 * 3600.0)  # $ per sqrt(second)
     if seconds_left >= window or seen_avg is None:
-        # Variance of the mean over the final window: sigma^2 (s - w/3) / w^2.
-        sd = sigma * math.sqrt(max(seconds_left - window / 3.0, 1e-9)) / window
+        if exact_pre_window:
+            # Exact: the window mean is W(s - w) plus the mean of a w-second walk,
+            # Var = sigma^2 (s - w) + sigma^2 w / 3 = sigma^2 (s - 2w/3).
+            sd = sigma * math.sqrt(max(seconds_left - 2.0 * window / 3.0, 1e-9))
+        else:
+            # Legacy (v8): understates the spread ~w-fold before the window opens.
+            sd = sigma * math.sqrt(max(seconds_left - window / 3.0, 1e-9)) / window
         mean = btc
     else:
         elapsed = window - seconds_left
@@ -358,6 +364,45 @@ class Config:
     max_aggression: float = 1.5             # behind pace -> up to this
     min_aggression: float = 0.7             # ahead of pace -> down to this
 
+    # ---- v9 contract strategy (strategy="v9"; the fields above are unused then
+    # except the TWAP/vol model, basis, lock_after_target and reconcile guard).
+    # Two entry kinds, both held toward the close where the book resolves:
+    #  VALUE: inside the settlement window the causal TWAP model prices a side
+    #         above its ask by >= min_edge (the book prices spot, not the partly
+    #         fixed average). This is the only measured gross edge.
+    #  FAV:   a clear favourite (model >= min_prob, ask 0.90-0.98) bought with the
+    #         full ticket and sold into the deep 0.99 closing bid: the cheapest
+    #         volume available (~1-1.5% of notional), paid for by VALUE.
+    strategy: str = "v8"
+    exact_twap_variance: bool = False
+    record_reference_always: bool = False
+    v9_value_enabled: bool = True
+    v9_value_min_s: float = 16.0
+    v9_value_max_s: float = 58.0
+    v9_value_min_edge: float = 0.08
+    v9_value_min_ask: float = 0.15
+    v9_value_max_ask: float = 0.85
+    v9_value_stop_prob: float = 0.15
+    v9_value_size_fraction: float = 0.30
+    v9_fav_enabled: bool = True
+    v9_fav_min_s: float = 16.0
+    v9_fav_max_s: float = 120.0
+    v9_fav_min_prob: float = 0.90
+    v9_fav_min_ask: float = 0.90
+    v9_fav_max_ask: float = 0.98
+    v9_fav_min_cash: float = 5.0
+    v9_fav_stop_bid: float = 0.0
+    v9_fav_stop_prob: float = 0.0
+    v9_max_spread: float = 0.02
+    v9_exit_seconds: float = 2.0
+    v9_take_profit_bid: float = 0.99
+    v9_buy_headroom: float = 0.03
+    v9_entry_block_seconds: float = 15.0
+    # Missing openingTargetUsd: rebuild it from our own record of the reference
+    # feed over the 60 s before the market opened (needs >= this many samples).
+    v9_derive_missing_target: bool = True
+    v9_derived_target_min_samples: int = 45
+
 
 # --------------------------------------------------------------------------- #
 # Bot
@@ -383,6 +428,10 @@ class Bot:
     _basis_samples: Deque[float] = field(default_factory=lambda: deque(maxlen=40))
     loss_in_market: bool = False
     _last_now: Optional[float] = None
+    v9_kind: Optional[str] = None
+    _derived_targets: dict = field(default_factory=dict)
+    _vol_terms: Deque[Tuple[float, float]] = field(default_factory=deque)
+    _vol_sum: float = 0.0
 
     def decide(self, observation: dict) -> dict:
         try:
@@ -484,6 +533,8 @@ class Bot:
         if self._last_now is not None and now < self._last_now - 5.0:
             self._price_hist.clear()
             self._ref_hist.clear()
+            self._vol_terms.clear()
+            self._vol_sum = 0.0
         self._last_now = now
 
         # Track drawdown for reporting / defensive posture.
@@ -506,6 +557,8 @@ class Bot:
         # Learn the midpoint-vs-settlement feed offset from a tight 0.50 book.
         if cfg.basis_enabled and position is None:
             self._observe_basis(books, observation.get("reference"))
+        if cfg.record_reference_always:
+            self._record_price(observation.get("reference"), now)
 
         # Clean-crossing lock: once the volume target is reached and we are flat,
         # never trade again — the ranking metric is cash at that first clean
@@ -514,6 +567,10 @@ class Bot:
         target_volume = float(rules.get("targetVolumeUsd", 1000.0))
         if cfg.lock_after_target and position is None and volume >= target_volume - 1e-9:
             return {"action": "HOLD"}
+
+        if cfg.strategy == "v9":
+            return self._decide_v9(observation, reference, books, rules, now, seconds,
+                                   market_id, position, cash)
 
         # ---------------- Exit path (position open) --------------------- #
         if position is not None:
@@ -765,7 +822,7 @@ class Bot:
             btc -= basis
         vol = cfg.assumed_annual_vol
         if cfg.adaptive_vol:
-            est = self._realized_vol(observed)
+            est = self._v9_vol() if cfg.strategy == "v9" else self._realized_vol(observed)
             if est is not None:
                 vol = est
         vol *= cfg.vol_multiplier
@@ -778,7 +835,8 @@ class Bot:
             inside = [px for ts, px in self._price_hist if ts >= close_at - window]
             if inside:
                 seen_avg = sum(inside) / len(inside) - basis
-        return fair_prob_twap(btc, target, seconds, vol, seen_avg, window)
+        return fair_prob_twap(btc, target, seconds, vol, seen_avg, window,
+                              exact_pre_window=cfg.exact_twap_variance)
 
     def _realized_vol(self, now: float) -> Optional[float]:
         """Annualised realised vol of BTC from the reference price history.
@@ -890,6 +948,221 @@ class Bot:
             if edge >= required - 1e-9 and (best is None or edge > best[0]):
                 best = (edge, side)
         return best[1] if best is not None else None
+
+    # ---------------- v9 contract strategy ------------------------------- #
+
+    def _record_price(self, reference: Any, now: float) -> None:
+        """Keep the reference price history current on every call (vol, TWAP
+        seen-average and derived targets), whatever the strategy is doing."""
+        if not isinstance(reference, dict):
+            return
+        try:
+            observed_at = float(reference.get("observedAt", now))
+            btc = float(reference["btcMidUsd"])
+        except (KeyError, TypeError, ValueError):
+            return
+        if observed_at > now + 1e-9 or not math.isfinite(btc) or btc <= 0.0:
+            return
+        if not self._price_hist or self._price_hist[-1][0] < observed_at:
+            if self._price_hist:
+                ts0, px0 = self._price_hist[-1]
+                term = math.log(btc / px0) ** 2 / (observed_at - ts0)
+                self._vol_terms.append((observed_at, term))
+                self._vol_sum += term
+            self._price_hist.append((observed_at, btc))
+        horizon = max(self.config.vol_window_seconds, 400.0)
+        while self._price_hist and observed_at - self._price_hist[0][0] > horizon:
+            self._price_hist.popleft()
+        while self._vol_terms and observed_at - self._vol_terms[0][0] > self.config.vol_window_seconds - 1.0:
+            self._vol_sum -= self._vol_terms.popleft()[1]
+
+    def _v9_vol(self) -> Optional[float]:
+        """Realised vol from the running sum of r^2/dt (same estimator as
+        _realized_vol, O(1) per call)."""
+        cfg = self.config
+        n = len(self._vol_terms)
+        if n + 1 < cfg.min_vol_samples or n == 0:
+            return None
+        sigma = math.sqrt(max(self._vol_sum, 0.0) / n) * math.sqrt(365.0 * 24.0 * 3600.0)
+        return min(max(sigma, cfg.vol_floor), cfg.vol_cap)
+
+    def _v9_reference(self, reference: Any, now: float, seconds: float,
+                      market_id: str) -> Optional[dict]:
+        """A causal, final reference with an opening target, or None.
+
+        A missing target is rebuilt from our own record of the feed over the
+        60 s before the open (the published rule), if we saw enough of it."""
+        cfg = self.config
+        if not isinstance(reference, dict):
+            return None
+        try:
+            observed_at = float(reference.get("observedAt", now))
+            btc = float(reference["btcMidUsd"])
+        except (KeyError, TypeError, ValueError):
+            return None
+        if observed_at > now + 1e-9 or now - observed_at > cfg.max_reference_age_seconds:
+            return None
+        if not math.isfinite(btc) or btc <= 0.0:
+            return None
+        target = reference.get("openingTargetUsd")
+        provisional = bool(reference.get("targetProvisional", False))
+        t_obs = reference.get("targetObservedAt")
+        ok = target is not None and not provisional
+        if ok:
+            try:
+                target = float(target)
+                ok = math.isfinite(target) and target > 0.0
+                if t_obs is not None and float(t_obs) > now + 1e-9:
+                    ok = False
+            except (TypeError, ValueError):
+                ok = False
+        if not ok:
+            if not cfg.v9_derive_missing_target:
+                return None
+            target = self._derived_targets.get(market_id)
+            if target is None:
+                open_at = now + seconds - 300.0
+                pts = [px for ts, px in self._price_hist if open_at - 60.0 <= ts < open_at]
+                if len(pts) < cfg.v9_derived_target_min_samples:
+                    return None
+                target = sum(pts) / len(pts)
+                self._derived_targets[market_id] = target
+                if len(self._derived_targets) > 64:
+                    self._derived_targets.pop(next(iter(self._derived_targets)))
+        return {"btcMidUsd": btc, "openingTargetUsd": target, "observedAt": observed_at}
+
+    def _v9_ticket(self, book: dict, cash: float, rules: dict, budget: float) -> Optional[Tuple[float, float]]:
+        """(shares, maxCashUsd) for the largest whole-share BUY whose modelled cost
+        fits ``budget`` and the fee-inclusive cap, >= the 5-share minimum. The cash
+        limit carries headroom so a slightly worse later book still fills >= 5."""
+        cfg = self.config
+        cap = min(cash, float(rules.get("maximumBuyCashUsd", 5.0))) - max(0.0, cfg.cap_buffer_usd)
+        budget = min(budget, cap)
+        min_order = max(5.0, float(book.get("minOrderSize", 0.0) or 0.0))
+        asks = _levels(book.get("asks", []), reverse=False)
+        if not asks or budget <= 0.0:
+            return None
+        rows = [[p, q] for p, q in asks]
+        n = int(budget / (asks[0][0] * 1.0107)) + 1
+        while n >= min_order:
+            req = buy_cost(rows, float(n))
+            if req is not None and (req[0] + req[1]) * (1.0 + cfg.v9_buy_headroom) <= budget + 1e-9:
+                return float(n), round((req[0] + req[1]) * (1.0 + cfg.v9_buy_headroom), 6)
+            n -= 1
+        # The 5-share minimum alone, using whatever headroom the cap still allows.
+        req = buy_cost(rows, min_order)
+        if req is not None and req[0] + req[1] <= budget + 1e-9:
+            return min_order, round(min(budget, (req[0] + req[1]) * (1.0 + cfg.v9_buy_headroom)), 6)
+        return None
+
+    def _decide_v9(self, observation: dict, reference: Any, books: dict, rules: dict,
+                   now: float, seconds: float, market_id: str, position: Any,
+                   cash: float) -> dict:
+        cfg = self.config
+        self._record_price(reference, now)
+        ref = self._v9_reference(reference, now, seconds, market_id)
+        fair = self._fair_yes(ref, seconds) if ref is not None else None
+        if fair is not None and not (0.0 <= fair <= 1.0):
+            fair = None
+
+        # ---------------- exit ---------------- #
+        if position is not None:
+            if isinstance(position, dict):
+                pos_market = position.get("market_id", position.get("marketId"))
+                if pos_market is not None and str(pos_market) != market_id:
+                    return {"action": "SELL"}
+            side = _pos_side(position)
+            shares = _pos_shares(position)
+            if side is None or shares is None or shares <= 0.0:
+                return {"action": "HOLD"}
+            bids = _levels((books.get(side) or {}).get("bids", []), reverse=True)
+            if not bids:
+                return {"action": "HOLD"}  # nothing to sell into (one-sided book)
+            if seconds <= cfg.v9_exit_seconds + 1e-9:
+                return {"action": "SELL"}
+            if bids[0][0] >= cfg.v9_take_profit_bid - 1e-6:
+                return {"action": "SELL"}
+            p_side = None if fair is None else (fair if side == "YES" else 1.0 - fair)
+            kind = self.v9_kind or "V"
+            if kind == "F":
+                if cfg.v9_fav_stop_bid > 0.0 and bids[0][0] <= cfg.v9_fav_stop_bid + 1e-6:
+                    return {"action": "SELL"}
+                if p_side is not None and p_side < cfg.v9_fav_stop_prob - 1e-9:
+                    return {"action": "SELL"}
+            else:
+                if p_side is not None and p_side < cfg.v9_value_stop_prob - 1e-9:
+                    return {"action": "SELL"}
+            return {"action": "HOLD"}
+
+        # ---------------- entry ---------------- #
+        if self.pending_buy_at is not None and \
+                now - self.pending_buy_at < cfg.buy_reconcile_seconds - 1e-9:
+            return {"action": "HOLD"}
+        if fair is None or seconds <= cfg.v9_entry_block_seconds + 1e-9:
+            return {"action": "HOLD"}
+        if now - self.last_flat_at < cfg.reentry_cooldown_seconds - 1e-9:
+            return {"action": "HOLD"}
+        if self.completed_cycles >= cfg.max_cycles_per_market:
+            return {"action": "HOLD"}
+
+        def quote(side: str):
+            book = books.get(side)
+            if not isinstance(book, dict):
+                return None
+            asks = _levels(book.get("asks", []), reverse=False)
+            bids = _levels(book.get("bids", []), reverse=True)
+            if not asks or not bids:
+                return None
+            ask, bid = asks[0][0], bids[0][0]
+            if ask <= bid + 1e-9 or ask - bid > cfg.v9_max_spread + 1e-6:
+                return None
+            return book, ask
+
+        choice = None  # (kind, side, book, budget)
+        if cfg.v9_value_enabled and cfg.v9_value_min_s <= seconds <= cfg.v9_value_max_s:
+            best = None
+            for side, p_side in (("YES", fair), ("NO", 1.0 - fair)):
+                q = quote(side)
+                if q is None:
+                    continue
+                book, ask = q
+                if not (cfg.v9_value_min_ask - 1e-6 <= ask <= cfg.v9_value_max_ask + 1e-6):
+                    continue
+                edge = p_side - ask
+                if edge >= cfg.v9_value_min_edge - 1e-9 and (best is None or edge > best[0]):
+                    best = (edge, side, book)
+            if best is not None:
+                choice = ("V", best[1], best[2], min(5.0, cfg.v9_value_size_fraction * cash))
+        if choice is None and cfg.v9_fav_enabled and cash >= cfg.v9_fav_min_cash - 1e-9 \
+                and cfg.v9_fav_min_s <= seconds <= cfg.v9_fav_max_s:
+            for side, p_side in (("YES", fair), ("NO", 1.0 - fair)):
+                if p_side < cfg.v9_fav_min_prob - 1e-9:
+                    continue
+                q = quote(side)
+                if q is None:
+                    continue
+                book, ask = q
+                if cfg.v9_fav_min_ask - 1e-6 <= ask <= cfg.v9_fav_max_ask + 1e-6:
+                    choice = ("F", side, book, 5.0)
+                    break
+        if choice is None:
+            return {"action": "HOLD"}
+        kind, side, book, budget = choice
+        if not book.get("minOrderSize"):
+            shared_min = books.get("minOrderSize") or rules.get("minOrderSize")
+            if shared_min:
+                book = dict(book)
+                book["minOrderSize"] = shared_min
+        ticket = self._v9_ticket(book, cash, rules, budget)
+        if ticket is None:
+            return {"action": "HOLD"}
+        shares, max_cash = ticket
+        self.v9_kind = kind
+        self.last_buy_attempt_at = now
+        self.entry_cost = max_cash
+        self.entry_at = now
+        self.pending_buy_at = now
+        return {"action": "BUY", "outcome": side, "maxCashUsd": max_cash}
 
     def _size(self, book: dict, cash: float, rules: dict) -> float:
         """Largest share count that fits the fee-inclusive BUY cap.
