@@ -6,8 +6,23 @@ the source URL, a content hash and the quoted text.
 
 ## Browse the results
 
-Open **[`browse/index.html`](browse/index.html)** in a browser (download the
-folder, then double-click). It holds a fresh random sample of 100 companies
+- **Hosted viewer: https://dg10911.github.io/signalpost-agent/**. All 1,000
+  companies. You can search by name or organisation number (with or without
+  æ/ø/å and spaces), filter, compare 2–4 companies side by side, and press
+  **Source** on any fact. That opens the original source link, retrieval
+  time, quoted text and SHA-256. It works on desktop and phone. The source is
+  in [`viewer/`](viewer/), built by `scripts/build_viewer.py` from the agent's
+  contract output. See [`viewer/HOSTING.md`](viewer/HOSTING.md).
+- **Second viewer (JBox-built):** https://oxd0l7ewxjleaulg541cm79t.preview.jboxai.com/
+
+Rebuild the hosted viewer from a run:
+
+```bash
+uv run python scripts/build_viewer.py --contract out/submission-contract.jsonl --out viewer
+```
+
+Offline option: open **[`browse/index.html`](browse/index.html)** in a browser
+(download the folder, then double-click). It holds a fresh random sample of 100 companies
 with search, filters, a CSV export, and one page per company. Each page shows
 every published fact with its source and date, plus the items the agent
 deliberately left out and why.

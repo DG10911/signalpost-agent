@@ -1,5 +1,12 @@
 # Signalpost submission — one command
 
+**Browse the results:** https://dg10911.github.io/signalpost-agent/ (hosted
+viewer covering all 1,000 companies: find, compare 2–4, and verify every fact
+with its source, quote and SHA-256, on desktop and phone). A second viewer is
+the JBox-built site at https://oxd0l7ewxjleaulg541cm79t.preview.jboxai.com/.
+To rebuild the viewer from a run, use `scripts/build_viewer.py`; hosting steps
+are in [`viewer/HOSTING.md`](viewer/HOSTING.md).
+
 ```bash
 uv sync
 uv run python scripts/run_competition_batch.py \
