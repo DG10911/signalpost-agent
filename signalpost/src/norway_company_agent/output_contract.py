@@ -12,6 +12,7 @@ evaluator reads them in the specified format instead of our internal module dump
 from __future__ import annotations
 
 from .identity import is_shared_manager_site
+from .material_changes import apply_refresh
 from .site_health import dead_page_reason, registry_site_problem
 
 import json
@@ -47,7 +48,9 @@ def _ev_entry(ev_id: str, record: dict, span: str | None) -> dict:
 
 
 def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, completed_at: str,
-                terminal_status: str) -> dict[str, Any]:
+                terminal_status: str, previous: dict[str, Any] | None = None) -> dict[str, Any]:
+    """``previous``: this organisation's envelope from the previous run, if any.
+    Material changes since then go to ``changes[]``; see material_changes.py."""
     org = profile.get("organisation_number")
     ev = profile.get("evidence", {}) or {}
     claims: list[dict] = []
@@ -111,11 +114,18 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
     if roles_rec:
         add_ev("ev-roles", roles_rec, "Official roles")
         active_roles = [p for p in ((roles_rec.get("value") or {}).get("roles") or []) if not p.get("inactive")][:20]
+
+        def role_name(p: dict) -> Any:
+            # Organisation role holders (auditor, accountant) carry their name as a list of lines.
+            name = p.get("name")
+            if isinstance(name, list):
+                name = " ".join(str(part) for part in name if part) or None
+            return name or p.get("organisation_number")
         if active_roles:
-            claim("roles", [{"name": p.get("name") or p.get("organisation_number"), "role": p.get("role")} for p in active_roles],
+            claim("roles", [{"name": role_name(p), "role": p.get("role")} for p in active_roles],
                   "available", ["ev-roles"], 0.97)
             for p in active_roles:
-                name = p.get("name") or p.get("organisation_number")
+                name = role_name(p)
                 code = str(p.get("role_code") or p.get("group_code") or "role").lower()
                 if name:
                     quote = f"{name} — {p.get('role') or code}"
@@ -255,14 +265,38 @@ def to_contract(profile: dict[str, Any], *, run_id: str, started_at: str, comple
         claim(f"{obs.get('platform')}.{obs.get('signal_type')}", obs.get("metrics") or obs.get("source_url"),
               "available", [eid], 0.97, obs.get("effective_at"))
 
+    # 5b) Brønnøysund update feed: dated official registry events (not news).
+    upd = ev.get("registry_updates", {}) or {}
+    if upd:
+        add_ev("ev-registry-updates", upd, "Brønnøysund registry update feed")
+        events = (upd.get("value") or {}).get("events") or []
+        for event in events:
+            claim("registry_event", {k: event.get(k) for k in ("update_id", "date", "change_type", "fields_changed",
+                                                              "description", "patch")},
+                  "available", [add_fact("ev-regupd", upd, f"{event.get('datetime')} {event.get('change_type')} "
+                                                           f"{', '.join(event.get('fields_changed') or [])}".strip())],
+                  0.97, event.get("date"))
+        if not events:
+            claim("registry_event", None, _avail(upd.get("status")) if upd.get("status") != "available" else "not_available",
+                  ["ev-registry-updates"], 0.9,
+                  reason=("no registry updates in the last %s days" % (upd.get("value") or {}).get("lookback_days", 730))
+                  if upd.get("status") == "available" else "the registry update feed could not be read in this run")
+
+    # 6) Deterministic synthesis over the claims above (cites their evidence ids).
+    from .synthesis import synthesis_claims
+    claims.extend(synthesis_claims(profile, claims, evidence))
+
     rm = profile.get("run_metrics", {}) or {}
-    return {
+    envelope = {
         "organisation_number": org,
         "run": {"run_id": run_id, "started_at": started_at, "completed_at": completed_at,
-                "terminal_status": terminal_status},
+                "terminal_status": terminal_status,
+                **({"source_checks": profile["source_checks"]} if profile.get("source_checks") else {})},
         "claims": claims,
         "evidence": evidence,
         "changes": [],
         "errors": [],
         "operations": {"requests": rm.get("requests", 0), "runtime_ms": None, "third_party_cost_usd": 0},
     }
+    # 7) Refresh metadata and material changes (dated in source / since previous run).
+    return apply_refresh(envelope, previous, completed_at or None)

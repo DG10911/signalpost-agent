@@ -78,6 +78,13 @@ def main() -> None:
                         help="OCR the first N pages of scanned annual reports (0 = digital text only). Needs pdftoppm+tesseract.")
     parser.add_argument("--observations-output",
                         help="Write all published external-footprint observations to this JSONL (for external scoring).")
+    parser.add_argument("--registry-updates", action=argparse.BooleanOptionalAction, default=True,
+                        help="Read Brønnøysund's update feed for each company (1 keyless request): dated registry "
+                             "change events for 'what changed' and changes[].")
+    parser.add_argument("--previous-contract", "--previous-snapshot", dest="previous_contract",
+                        help="Previous run's --contract-output JSONL. Material changes since that run go to each "
+                             "envelope's changes[] (with the prior evidence preserved), plus refresh metadata. "
+                             "May be the same path as --contract-output: it is archived under snapshots/ first.")
     parser.add_argument("--contract-output",
                         help="Write results in the exact OUTPUT_CONTRACT.md shape (flat claims/evidence/6-state availability) — the evaluator-facing artifact.")
     parser.add_argument("--require-exact-identity", action="store_true",
@@ -228,6 +235,11 @@ def main() -> None:
         secondary_pages = 0 if soft else args.max_secondary_pages
         records, metrics = fetch_official_modules(profile["organisation_number"], fetch_modules)
         profile["evidence"].update(records)
+        if args.registry_updates:
+            from norway_company_agent.registry_updates import fetch_registry_updates
+            updates_record, updates_result = fetch_registry_updates(profile["organisation_number"])
+            profile["evidence"]["registry_updates"] = updates_record
+            metrics = list(metrics) + [updates_result]
         website_metrics = {"requests": 0, "bytes": 0, "latencies_ms": []}
         discovery_requests = 0
         if "website" in requested_modules:
@@ -412,13 +424,43 @@ def main() -> None:
     from norway_company_agent.claim_checks import withheld_counts
     write_jsonl(profiles_output, ordered_profiles)
     write_jsonl(Path(args.output), envelopes)
+    # Which run-wide sources were actually read: a job list from an unread NAV
+    # feed is not evidence that ads were removed (refresh compares only read sources).
+    nav_read = bool(nav_index) if nav_live_diag is None else bool(nav_live_diag.get("complete"))
+    for profile in ordered_profiles:
+        profile["source_checks"] = {"nav_jobs": "read" if nav_read or args.nav_index else "not_read"}
+    refresh_report = None
     if args.contract_output:
+        previous_rows: dict[str, dict] = {}
+        if args.previous_contract and Path(args.previous_contract).exists():
+            raw_previous = Path(args.previous_contract).read_text(encoding="utf-8")
+            for line in raw_previous.splitlines():
+                if line.strip():
+                    row = json.loads(line)
+                    previous_rows[str(row.get("organisation_number"))] = row
+            # Prior snapshots are preserved: archive the previous file before it can be overwritten.
+            previous_run_id = next(iter(previous_rows.values()), {}).get("run", {}).get("run_id") or "previous"
+            archive = Path(args.contract_output).parent / "snapshots" / f"{previous_run_id}.contract.jsonl"
+            if not archive.exists():
+                archive.parent.mkdir(parents=True, exist_ok=True)
+                archive.write_text(raw_previous, encoding="utf-8")
         contract_rows = [
             to_contract(profile, run_id=args.run_id, started_at=started_at, completed_at=completed_at,
-                        terminal_status="completed" if envelope["state"] == "complete" else envelope["state"])
+                        terminal_status="completed" if envelope["state"] == "complete" else envelope["state"],
+                        previous=previous_rows.get(str(profile["organisation_number"])))
             for profile, envelope in zip(ordered_profiles, envelopes)
         ]
         write_jsonl(Path(args.contract_output), contract_rows)
+        refresh_report = {
+            "previous_contract": args.previous_contract,
+            "companies_with_baseline": sum(1 for r in contract_rows if (r.get("refresh") or {}).get("baseline")),
+            "material_changes": sum(len(r.get("changes") or []) for r in contract_rows),
+            "since_previous_run": sum(1 for r in contract_rows for c in r.get("changes") or []
+                                      if c.get("change_type") == "since_previous_run"),
+            "dated_in_source": sum(1 for r in contract_rows for c in r.get("changes") or []
+                                   if c.get("change_type") == "dated_in_source"),
+            "prior_evidence_preserved": sum((r.get("refresh") or {}).get("prior_evidence_preserved", 0) for r in contract_rows),
+        }
     if args.observations_output:
         all_observations = [
             obs
@@ -453,6 +495,7 @@ def main() -> None:
         "request_budget_exceeded": budget_exceeded,
         "exact_registry": round(exact_registry_ratio, 4),
         "withheld": withheld_counts(ordered_profiles),
+        "refresh": refresh_report,
         "external_observations": sum(
             len(((p.get("evidence", {}) or {}).get("external_footprint", {}) or {}).get("observations", []))
             for p in ordered_profiles

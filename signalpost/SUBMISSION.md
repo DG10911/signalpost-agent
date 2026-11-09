@@ -36,6 +36,24 @@ websites in that run were reviewed by hand; none belongs to another entity.
   `request_budget_exceeded` if it is passed. The per-site crawl depth
   auto-scales from it (`--max-secondary-pages` overrides).
 - Every request backs off on HTTP 429/503 and honours `Retry-After`.
+- **Refresh (previous-snapshot input).** Add `--previous-contract
+  <previous submission-contract.jsonl>` (it may be the same path as
+  `--contract-output`; the old file is first copied to `snapshots/<run_id>.contract.jsonl`).
+  Each envelope then gets `changes[]` entries `{field, before, after, detected_at,
+  evidence_ids, previous_evidence_ids}` for material fields (name, employees, address,
+  status, website, CEO/board, latest accounts, job ads, newer dated news, social
+  profiles). The evidence the previous run cited is copied in under `prev-` ids,
+  and a `refresh` block records the baseline, the compared fields and the skipped
+  fields. A source that failed in either run is skipped, not reported as a change.
+  Re-running the same snapshot gives zero changes. Without a baseline, `changes[]`
+  holds the changes the sources date themselves: year-on-year filed accounts,
+  roles-register groups changed in the last 12 months, and the Brønnøysund update
+  feed (`registry_event`, 1 request per company, `--no-registry-updates` to skip).
+- **Synthesis.** Each envelope carries `synthesis.summary` (≤120 words, labelled
+  blocks: What it does / Size / Leadership / Footprint / Online / What changed /
+  Unknowns). It is a deterministic template over the envelope's own claims, with
+  no model. Every block cites evidence ids with their source URLs and retrieval
+  times. Each unknown has a state and a reason.
 - **Live NAV jobs (on by default, `--no-nav-live` to disable).** NAV's official
   public vacancy feed (pam-stilling-feed.nav.no, public token) is read once per
   run, ~90–120 requests. An ad is published only when its own
