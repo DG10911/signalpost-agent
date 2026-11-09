@@ -976,8 +976,102 @@ def _remember_source(texts: dict[str, str] | None, url: str, raw: bytes, items: 
         texts[url] = source_text(raw)
 
 
+# Failures specific to one host name (no DNS record, a certificate issued for the
+# other name, nothing listening). Connection resets are left out: measured on
+# the 9 Nov sample they hit both twins alike (network filtering / a host refusing
+# this client), so retrying only spent requests.
+_HOST_FAILURE_MARKERS = ("Hostname did not resolve", "CERTIFICATE_VERIFY_FAILED", "SSL:", "Connection refused",
+                         "Errno 61", "Errno 111", "nodename nor servname", "Name or service not known")
+
+
+def _twin_url(url: str) -> str | None:
+    """The same address on the www / apex twin host (www.example.no <-> example.no)."""
+    parsed = urllib.parse.urlparse(url)
+    host = (parsed.hostname or "").lower()
+    if not host or "." not in host or re.fullmatch(r"[\d.]+", host):
+        return None
+    twin = host[4:] if host.startswith("www.") else "www." + host
+    if "." not in twin:
+        return None
+    netloc = twin + (f":{parsed.port}" if parsed.port else "")
+    return urllib.parse.urlunparse((parsed.scheme or "https", netloc, parsed.path or "/", "", "", ""))
+
+
 def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_000_000,
                   max_secondary_pages: int | None = None) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Fetch a company homepage. When the host itself fails (no DNS, connection
+    reset or refused, TLS failure) the same address is tried once on its www /
+    apex twin, and an obvious typo in the address ("wwwexample.no",
+    "ww.example.no", "wwwexample") is repaired. Either fallback is the SAME
+    address, never a new name; the value records it (``host_fallback_from`` /
+    ``registry_url_repaired``) so a registry homepage reached this way is
+    published only when the identity gate confirms the company
+    (``site_health.registry_site_problem``). A homepage root answering 404/410
+    is also tried on its twin (www.skottneset.no 404s, skottneset.no is the
+    site); other HTTP errors are answers from the host and are not retried."""
+    record, metrics = _fetch_website_once(url, timeout=timeout, max_bytes=max_bytes,
+                                          max_secondary_pages=max_secondary_pages)
+    note = str(record.get("note") or "")
+    host_failed = any(marker in note for marker in _HOST_FAILURE_MARKERS)
+    root_missing = note in {"HTTP 404", "HTTP 410"}
+    if record.get("status") == "available" or not (host_failed or root_missing):
+        return record, metrics
+    from .site_health import repair_homepage
+    supplied = str(url or "").strip()
+    normalized = normalize_homepage(supplied) or ""
+    if urllib.parse.urlparse(normalized).path not in {"", "/"}:
+        return record, metrics          # a sub-page, not a homepage: nothing to fall back to
+    alternates: list[tuple[str, str]] = []
+    repaired = repair_homepage(supplied) if "Hostname did not resolve" in note else None
+    if repaired:
+        repaired_url = normalize_homepage(repaired) or ""
+        alternates.append((repaired_url, "registry_url_repaired"))
+        alternates.append((_twin_url(repaired_url) or "", "registry_url_repaired"))
+    twin = _twin_url(normalized) if normalized else None
+    if twin:
+        alternates.append((twin, "host_fallback_from"))
+    tried = {normalized}
+    for alternate, flag in alternates:
+        if not alternate or alternate in tried:
+            continue
+        tried.add(alternate)
+        alt_record, alt_metrics = _fetch_website_once(alternate, timeout=timeout, max_bytes=max_bytes,
+                                                      max_secondary_pages=max_secondary_pages)
+        metrics = {"requests": metrics.get("requests", 0) + alt_metrics.get("requests", 0),
+                   "bytes": metrics.get("bytes", 0) + alt_metrics.get("bytes", 0),
+                   "latencies_ms": list(metrics.get("latencies_ms", [])) + list(alt_metrics.get("latencies_ms", []))}
+        if alt_record.get("status") == "available":
+            alt_record.setdefault("value", {})[flag] = supplied
+            return alt_record, metrics
+    return record, metrics
+
+
+_IDENTITY_LINK = re.compile(r"kontakt|contact|om-oss|om_oss|omoss|om oss|about|personvern|privacy|impressum|imprint", re.I)
+
+
+def identity_links(base_url: str, soup: Any, limit: int = 3) -> list[str]:
+    """Same-host contact / about / privacy pages: where a small company states
+    its legal name and organisation number when the homepage does not."""
+    base_host = (urllib.parse.urlparse(base_url).hostname or "").removeprefix("www.")
+    out: list[str] = []
+    for anchor in soup.select("a[href]"):
+        url = urllib.parse.urljoin(base_url, str(anchor.get("href") or "").strip())
+        parsed = urllib.parse.urlparse(url)
+        if parsed.scheme not in {"http", "https"} or (parsed.hostname or "").removeprefix("www.") != base_host:
+            continue
+        if not (_IDENTITY_LINK.search(parsed.path) or _IDENTITY_LINK.search(anchor.get_text(" ", strip=True)[:60])):
+            continue
+        clean = urllib.parse.urlunparse((parsed.scheme, parsed.netloc, parsed.path or "/", "", "", ""))
+        if clean.rstrip("/") == base_url.split("#")[0].rstrip("/") or clean in out:
+            continue
+        out.append(clean)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _fetch_website_once(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_000_000,
+                        max_secondary_pages: int | None = None) -> tuple[dict[str, Any], dict[str, Any]]:
     supplied_url = str(url or "").strip()
     supplied_scheme = bool(re.match(r"^https?://", supplied_url, re.I))
     normalized = normalize_homepage(url)
@@ -1019,6 +1113,7 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
             "description": description[:2000],
             "main_text_excerpt": text[:5000],
             "identity_text_excerpt": identity_text,
+            "identity_links": identity_links(final_url, soup),
             "social_links": _social_links(final_url, soup),
             "structured_organisations": structured_orgs,
             "structured_facts": _jsonld_facts(structured_orgs),
@@ -1151,7 +1246,8 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
     except urllib.error.URLError as exc:
         if not supplied_scheme and normalized.startswith("https://"):
             first_elapsed = int((time.monotonic() - started) * 1000)
-            record, metrics = fetch_website("http://" + supplied_url, timeout=timeout, max_bytes=max_bytes)
+            record, metrics = _fetch_website_once("http://" + supplied_url, timeout=timeout, max_bytes=max_bytes,
+                                                  max_secondary_pages=max_secondary_pages)
             metrics["requests"] += 2
             metrics["latencies_ms"].insert(0, first_elapsed)
             return record, metrics

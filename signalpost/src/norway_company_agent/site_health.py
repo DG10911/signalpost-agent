@@ -61,10 +61,45 @@ def dead_page_reason(title: Any, text: Any) -> str | None:
     return f"the address shows a placeholder page ({m.group(0)!r}), not a company site" if m else None
 
 
+def repair_homepage(value: Any) -> str | None:
+    """The obvious correction of a mistyped registry homepage, or None.
+
+    "wwwexample.no" -> "www.example.no", "ww.example.no" / "wwww.example.no" ->
+    "www.example.no", "wwwexample" -> "www.example.no", "www,example,no" ->
+    "www.example.no". Only the "www" prefix, separators and a missing TLD are
+    touched; the name itself never changes. Callers try it only after the
+    address as written fails, and a repaired address is published only when the
+    identity gate confirms the company on it."""
+    raw = str(value or "").strip()
+    match = re.match(r"^(?:https?:?/*)?([^/\s?#]+)", raw, re.I)
+    if not match:
+        return None
+    original = match.group(1).lower().strip(".")
+    host = original.replace(",", ".").strip(".")
+    fixed = re.sub(r"^w{2,5}\.(?=[^.]+\.[a-z]{2,})", "www.", host)
+    if re.match(r"^www[a-z0-9æøå]", fixed) and not fixed.startswith("www."):
+        fixed = "www." + fixed[3:]
+    label = fixed.removeprefix("www.")
+    if not label or not re.fullmatch(r"[a-z0-9æøå-]+(?:\.[a-z0-9æøå-]+)*", label):
+        return None
+    if "." not in label:
+        fixed = fixed + ".no"
+    return fixed if fixed != original else None
+
+
 def registry_site_problem(registry_site: str, web: dict[str, Any], company_name: Any) -> str | None:
     """None when the registry homepage may be published as the company's website;
     otherwise a short reason to publish it as not confirmed instead."""
     site = str(registry_site or "").strip()
+    value = (web or {}).get("value") or {}
+    reached_via = value.get("registry_url_repaired") or value.get("host_fallback_from") \
+        if isinstance(value, dict) else None
+    if reached_via and (web or {}).get("status") == "available" \
+            and not (value.get("identity_assessment") or {}).get("publishable"):
+        # The address as written failed; a corrected or www/apex twin address
+        # loaded, but it does not confirm this company: do not publish it.
+        return (f"the registry lists {site}, which does not load as written; "
+                f"{value.get('final_url')} loads but does not confirm the company")
     if not _host_ok(site):
         return f"the registry lists {site!r}, which is not a web address"
     note = str((web or {}).get("note") or "")
