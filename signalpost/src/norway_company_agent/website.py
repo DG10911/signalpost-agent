@@ -350,7 +350,9 @@ def _fetch_secondary_page(url: str, *, homepage_domain: str, timeout: float, max
                 "careers_vacancy": careers_vacancy(_visible_text(page_soup), len(page_ads), len(jsonld_jobs)) if careers else None,
                 "structured_social": structured_social_links(structured.get("json-ld", [])),
                 "structured_facts": _jsonld_facts(_jsonld_organisations(structured)),
-                "news_articles": _jsonld_articles(structured) + html_dated_items(page_soup, final_url),
+                "news_articles": _jsonld_articles(structured) + html_dated_items(page_soup, final_url)
+                # sp-news hook: dated listing blocks (news_sources.py), no extra request
+                + _news_sources().listing_items(page_soup, final_url, page_title=page_title),
                 "careers": careers,
             }
         except Exception:
@@ -359,6 +361,11 @@ def _fetch_secondary_page(url: str, *, homepage_domain: str, timeout: float, max
         return page, _social_links(final_url, page_soup), 2, len(raw), elapsed, None, extras
     except Exception as exc:
         return None, [], 2, 0, int((time.monotonic() - started) * 1000), f"{type(exc).__name__}: {str(exc)[:120]}", empty_extras
+
+
+def _news_sources():  # sp-news: imported lazily (news_sources imports this module)
+    from . import news_sources
+    return news_sources
 
 
 def _jsonld_organisations(metadata: dict[str, Any]) -> list[dict[str, Any]]:
@@ -1033,6 +1040,8 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
         social = list(value["social_links"]) + homepage_structured_social
         job_postings = list(value["job_postings"])
         news_articles = list(value["news_articles"]) + html_dated_items(soup, final_url)
+        # sp-news hook: dated listing blocks on the homepage (news_sources.py), no extra request
+        news_articles += _news_sources().listing_items(soup, final_url, page_title=title)
         if is_careers_page(final_url, title):
             job_postings.extend(html_job_ads(soup, final_url))
         structured_facts = dict(value["structured_facts"])
@@ -1116,18 +1125,20 @@ def fetch_website(url: str | None, *, timeout: float = 15.0, max_bytes: int = 2_
             if wp_items:
                 news_articles.extend(wp_items)
                 feed_found = True
-        # Fallback: a Google-News sitemap (real publication dates only).
-        if not feed_found:
-            for sm_url in _sitemap_candidates(soup, final_url):
-                sm_items, sm_requests, sm_bytes, sm_elapsed = _fetch_sitemap(
-                    sm_url, timeout=timeout, max_bytes=min(max_bytes, 2_000_000), texts=source_texts)
-                if sm_items:
-                    requests += sm_requests
-                    bytes_received += sm_bytes
-                    if sm_elapsed:
-                        page_latencies.append(sm_elapsed)
-                    news_articles.extend(sm_items)
-                break
+        # --- sp-news hook (news_sources.py) -----------------------------------
+        # Replaces the Google-News sitemap fallback: the same sitemap fetch also
+        # yields ordinary news URLs whose pages are read for their own date, and
+        # press-release links (NewsWeb/Cision/Mynewsdesk) are resolved. At most
+        # news_sources.EXTRA_REQUEST_BUDGET requests beyond the old fallback; off
+        # for homepage-only probes (max_secondary_pages=0).
+        news_articles, news_metrics = _news_sources().collect_extra_news(
+            soup=soup, html=html, final_url=final_url, candidates=news_articles, feed_found=feed_found,
+            texts=source_texts, timeout=timeout, max_bytes=max_bytes, enabled=max_secondary_pages != 0)
+        requests += news_metrics["requests"]
+        bytes_received += news_metrics["bytes"]
+        page_latencies.extend(news_metrics["latencies_ms"])
+        value["news_sources"] = {k: v for k, v in news_metrics.items() if k not in ("bytes", "latencies_ms")}
+        # --- end sp-news hook -------------------------------------------------
         value["pages"] = pages
         # Deterministic order so a refresh diff never fires on mere reordering.
         value["social_links"] = sorted(
