@@ -94,7 +94,15 @@ def main() -> None:
     parser.add_argument("--nav-live", action=argparse.BooleanOptionalAction, default=True,
                         help="Read NAV's public vacancy feed once per run (background thread, ~120 requests) and publish "
                              "ads only where the ad's employer.orgnr is the company or one of its Brreg sub-units.")
-    parser.add_argument("--nav-live-days", type=int, default=45)
+    parser.add_argument("--nav-live-days", type=int, default=90,
+                        help="How far back the NAV feed is read. Measured 9 Nov 2026: 90 days holds 98%% of the ads "
+                             "active in a 150-day read (45 days: 93%%).")
+    parser.add_argument("--nav-live-requests", type=int, default=None,
+                        help="Fixed NAV request budget shared across the batch (feed pages + ad details + one sub-unit "
+                             "bulk download if not cached). Default: 300 + 0.5 per company.")
+    parser.add_argument("--nav-subunits",
+                        help="Brreg sub-unit (underenheter) CSV bulk used to map NAV workplace orgnrs to their parent. "
+                             "Default: brreg-underenheter.csv.gz next to --bulk; downloaded once (keyless) if absent.")
     parser.add_argument("--nav-homepages",
                         help="Path to the NAV orgnr->homepage map (written next to --nav-index). Exact-entity website candidates for companies with no registry site.")
     parser.add_argument("--wikidata", action=argparse.BooleanOptionalAction, default=False,
@@ -207,8 +215,11 @@ def main() -> None:
     if args.nav_live:
         from norway_company_agent.nav_live import NavLive
         live_seconds = max(60.0, (budget_deadline - _time.monotonic() - 120.0)) if budget_deadline else 900.0
+        nav_subunits = Path(args.nav_subunits) if args.nav_subunits else Path(args.bulk).with_name("brreg-underenheter.csv.gz")
+        nav_requests = args.nav_live_requests or (300 + len(profiles) // 2)
         nav_live = NavLive([(p["organisation_number"], p.get("name") or "") for p in profiles],
-                           days=args.nav_live_days, max_seconds=min(900.0, live_seconds)).start()
+                           days=args.nav_live_days, subunits_path=nav_subunits, max_requests=nav_requests,
+                           max_seconds=min(900.0, live_seconds)).start()
 
     def _budget_exhausted(profile: dict) -> tuple[dict, dict]:
         """Close a company without network when the wall-clock budget is spent.

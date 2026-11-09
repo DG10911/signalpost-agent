@@ -22,6 +22,12 @@ from typing import Any, Iterable
 
 UA = "builderr-signalpost-poc/0.3 (+https://builderr.ai)"
 FEED_BASE = "https://pam-stilling-feed.nav.no"
+PUBLIC_AD_BASE = "https://arbeidsplassen.nav.no/stillinger/stilling/"
+
+
+def public_ad_url(uuid: str) -> str:
+    """The public NAV ad page (no token needed) for a feed uuid."""
+    return PUBLIC_AD_BASE + str(uuid)
 
 
 def _norm_orgnr(value: Any) -> str:
@@ -128,25 +134,29 @@ def job_observation(organisation_number: str, job: dict[str, Any], *, retrieved_
     time), so downstream freshness reflects the source, not the fetch.
     """
     org = _norm_orgnr(organisation_number)
-    url = job["url"]
-    if url.startswith("/"):
-        url = FEED_BASE + url
+    # Cite the public ad page a reader can open, not the token-gated feed API.
+    url = str(job.get("url") or "")
+    if not url.startswith(PUBLIC_AD_BASE):
+        url = public_ad_url(job["job_id"])
     return {
         "id": f"navjob-{org}-{job['job_id']}",
         "organisation_number": org,
         "platform": "job_board",
         "signal_type": "job_posting",
         "source_url": url,
-        "retrieved_at": retrieved_at,
+        "retrieved_at": job.get("retrieved_at") or retrieved_at,
         "effective_at": job.get("published") or job.get("updated"),
         "content_sha256": job["content_sha256"],
         "exact_entity": True,
-        "identity_proof": [{"type": "nav_feed_employer_orgnr", "value": org, "employer_name": job.get("employer_name")}],
+        "identity_proof": [{"type": "nav_feed_employer_orgnr", "value": job.get("employer_orgnr") or org,
+                            "employer_name": job.get("employer_name"),
+                            **({"registered_subunit_of": org} if job.get("employer_orgnr") not in (None, org) else {})}],
         "acquisition_mode": "official_api",
         "rights_status": "approved",
         "source_class": "official_job_board",
         "evidence_span": (job.get("title") or "")[:300] or None,
-        "metrics": {"title": job.get("title"), "published": job.get("published"), "municipal": job.get("municipal")},
+        "metrics": {"title": job.get("title"), "published": job.get("published"), "expires": job.get("expires"),
+                    "municipal": job.get("municipal"), "employer_name": job.get("employer_name"), "url": url},
     }
 
 

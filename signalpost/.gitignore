@@ -6,6 +6,8 @@ __pycache__/
 # Large downloaded data (reproducible via documented commands)
 brreg-enheter.csv
 brreg-enheter.csv.gz
+brreg-underenheter.csv.gz
+brreg-underenheter.csv.gz.part
 signalpost-universe.jsonl.gz
 
 # Run artifacts: ignore the directory but keep the submission deliverables.

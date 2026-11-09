@@ -55,10 +55,28 @@ websites in that run were reviewed by hand; none belongs to another entity.
   no model. Every block cites evidence ids with their source URLs and retrieval
   times. Each unknown has a state and a reason.
 - **Live NAV jobs (on by default, `--no-nav-live` to disable).** NAV's official
-  public vacancy feed (pam-stilling-feed.nav.no, public token) is read once per
-  run, ~90–120 requests. An ad is published only when its own
-  `employer.orgnr` is the company or a sub-unit whose Brreg record names the
-  company as parent; a matching name alone never publishes.
+  public vacancy feed (pam-stilling-feed.nav.no, NAV's published public token)
+  is read once per run in the background under a fixed NAV request budget
+  (`--nav-live-requests`, default 300 + 0.5 per company). Six parallel cursors
+  read the last 90 days (~180 pages, ~8,800 active ads; 90 days holds 98% of
+  the ads active in a 150-day read). NAV ads name the workplace (Brreg
+  sub-unit), not the legal entity, so the Brreg sub-unit bulk
+  (`brreg-underenheter.csv.gz` next to `--bulk`; downloaded once, keyless, if
+  absent) maps each sub-unit to its parent. Company and sub-unit names only
+  choose which ads to open; an ad is published only when its own
+  `employer.orgnr` is the company or one of its registered sub-units. Expired,
+  inactive, anonymous-employer and open-application ads are dropped and
+  re-posts collapsed. Source URL: the public ad page
+  (arbeidsplassen.nav.no/stillinger/stilling/<uuid>).
+  *Measured 9 Nov 2026:* every active ad in the feed was resolved once offline
+  (8,942 details) as ground truth: 7 of the 1,000 entry companies own an
+  active NAV ad (8 ads). The old exact-name/45-day selection reaches 3 of
+  them; the new selection reaches all 7 (~390 ad opens per 1,000 companies).
+  Live 100-company run: 0 -> 1 company with a job (ground truth: 1), NAV
+  requests 87 -> 227 (incl. the 62 MB sub-unit download), 133 s in the
+  background, run wall time unchanged. 10 of 10 published ads hand-checked on
+  the NAV page and in Brreg: all active, all employed by the company itself
+  or its registered sub-unit.
 - **Website discovery (on by default).** Most companies list no homepage in the
   registry (86 of a random 100). For those the agent tries the registry e-mail
   domain and name-derived domains, and binds a site only on exact-entity proof:
