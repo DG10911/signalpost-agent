@@ -79,9 +79,11 @@ def test_email_domain_match_alone_is_not_evidence():
 
 def test_domain_owned_by_another_entity_is_rejected(monkeypatch):
     from norway_company_agent import identity
-    monkeypatch.setattr(identity, "DOMAIN_OWNERS", {"example.no": [OTHER]})
+    monkeypatch.setattr(identity, "DOMAIN_OWNERS", {"example.no": [OTHER], "example.com": [OTHER]})
     rec, diag = dd.discover_website(_prof(), _fetch(f"Example AS org {OURS}"), max_candidates=1)
     assert rec is None and diag["verdict"] == "rejected_domain_owned_by_other_entity"
+    # A skipped (owned) guess costs no request and does not use up the cap.
+    assert diag["requests"] == 0
 
 
 def test_unique_email_domain_with_name_in_title_binds(monkeypatch):

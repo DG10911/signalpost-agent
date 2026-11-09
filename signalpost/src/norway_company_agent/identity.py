@@ -125,6 +125,7 @@ def _structured_names(value: Any) -> list[str]:
 STRONG_DISCOVERY_METHODS = {
     "exact_org_number_on_discovered_site": 1.0,
     "registry_contact_on_discovered_site": 0.95,
+    "registry_address_on_discovered_site": 0.95,
     "full_legal_name_on_discovered_site": 0.95,
     "unique_registry_email_domain_and_name": 0.95,
 }
@@ -174,6 +175,13 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
         and parent_org != org_digits and parent_org in DOMAIN_OWNERS.get(host_key(site_url), [])
     names_us_on_homepage = (org_digits and org_digits in homepage_org_numbers) \
         or full_legal_name_in(profile.get("name"), homepage_candidate_text)
+    # The homepage TITLE (or its structured Organization name) is this entity's
+    # full registered name with legal form ("Ledende på stillas | Brenden & CO
+    # Stillasutleie AS"): the site presents itself as this company, even when
+    # sister entities list the same domain. A footer listing several group
+    # companies does not count -- only the title / structured name.
+    titled_as_us = full_legal_name_in(
+        profile.get("name"), " | ".join(str(p or "") for p in (value.get("title"), *structured_names, rendered.get("title"))))
     other_orgs_only = bool(homepage_org_numbers) and org_digits not in homepage_org_numbers
     parked_markers = (
         "domain is for sale", "domain for sale", "hugedomains", "parked at", "miss hosting",
@@ -195,7 +203,7 @@ def assess_website_identity(profile: dict[str, Any]) -> dict[str, Any]:
         score = STRONG_DISCOVERY_METHODS[discovery["method"]]
         reasons.append(f"discovered site verified by {discovery['method']}")
     elif len(shared_with) + 1 >= SHARED_SITE_MIN_OWNERS and org_digits not in homepage_org_numbers \
-            and not owns_shared_domain:
+            and not owns_shared_domain and not titled_as_us:
         # The registry homepage is a domain many registered entities list (a
         # housing manager, chain or group site), and it does not name this
         # entity. Keep the registry association, but never publish the site's
