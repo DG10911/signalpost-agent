@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Signalpost — verified profiles of Norwegian companies</title>
+<meta name="description" content="Find, compare and verify Norwegian company profiles researched by the Signalpost agent. Every fact links to its source, retrieval time, quoted text and SHA-256 hash.">
+<meta name="theme-color" content="#0b3d5c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b3d5c'/%3E%3Cpath d='M9 22V10m7 12V14m7 8v-5' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/app.css">
+<script src="assets/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#/" aria-label="Signalpost home">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0b3d5c"/><path d="M9 22V10m7 12V14m7 8v-5" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+      <span>Signalpost</span>
+    </a>
+    <nav class="topnav" aria-label="Main">
+      <a href="#/" data-nav="home">Companies</a>
+      <a href="#/compare" data-nav="compare">Compare <span class="pill" id="nav-count" hidden></span></a>
+      <a href="#/about" data-nav="about">About<span class="hide-sm"> the data</span></a>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+  <div class="loading" role="status">Loading companies…</div>
+</main>
+
+<div class="tray" id="tray" hidden>
+  <div class="tray-in">
+    <div class="tray-list" id="tray-list" aria-label="Companies selected for comparison"></div>
+    <div class="tray-actions">
+      <button type="button" class="btn ghost sm" id="tray-clear">Clear</button>
+      <a class="btn primary" id="tray-go" href="#/compare">Compare</a>
+    </div>
+  </div>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dr-title" hidden>
+  <div class="dr-head">
+    <span class="grab" aria-hidden="true"></span>
+    <div>
+      <p class="dr-kicker" id="dr-kicker">Evidence</p>
+      <h2 id="dr-title" tabindex="-1">Source</h2>
+    </div>
+    <button type="button" class="icon-btn" id="dr-close" aria-label="Close evidence panel (Esc)">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="dr-body" id="dr-body"></div>
+  <div class="dr-foot">
+    <button type="button" class="btn ghost sm" id="dr-prev">← Previous</button>
+    <span class="dr-pos" id="dr-pos" aria-live="polite"></span>
+    <button type="button" class="btn ghost sm" id="dr-next">Next →</button>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><p class="wrap">This viewer needs JavaScript. The raw data is in <a href="data/index.json">data/index.json</a> and <a href="data/c/">data/c/</a>.</p></noscript>
+</body>
+</html>
