@@ -257,12 +257,14 @@ def main() -> None:
         profile["evidence"].update(records)
         if args.registry_updates:
             from norway_company_agent.registry_updates import fetch_registry_updates
+            from norway_company_agent.http import FetchResult as _FetchResult
             updates_record, updates_result = bounded_call(
                 lambda: fetch_registry_updates(profile["organisation_number"]), 20.0,
                 (_evidence_record("registry_updates", "source_error", "official_registry_updates",
                                   "https://data.brreg.no/enhetsregisteret/api/oppdateringer/enheter",
                                   note="registry update feed exceeded the 20s per-company limit"),
-                 {"requests": 1, "bytes": 0, "latencies_ms": []}))
+                 _FetchResult(url="https://data.brreg.no/enhetsregisteret/api/oppdateringer/enheter",
+                              status=0, elapsed_ms=20000, bytes_received=0, error="timeout")))
             profile["evidence"]["registry_updates"] = updates_record
             metrics = list(metrics) + [updates_result]
         website_metrics = {"requests": 0, "bytes": 0, "latencies_ms": []}
@@ -442,7 +444,13 @@ def main() -> None:
         if isinstance(future, str):
             profile, metric = _budget_exhausted(pristine[future])
         else:
-            profile, metric = future.result()
+            try:
+                profile, metric = future.result()
+            except Exception as exc:  # one company's bug must never sink the batch
+                org = futures[future]
+                print(f"WARNING enrich failed for {org}: {type(exc).__name__}: {exc}", file=sys.stderr)
+                profile, metric = _budget_exhausted(pristine[org])
+                operations["company_errors"] = operations.get("company_errors", 0) + 1
         if True:
             state[profile["organisation_number"]] = profile
             operations["requests"] += metric["requests"]
@@ -585,4 +593,12 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit:
+        raise
+    except BaseException:
+        import traceback
+        traceback.print_exc()
+        sys.stderr.flush()
+        os._exit(2)  # never hang on abandoned worker threads after a crash
