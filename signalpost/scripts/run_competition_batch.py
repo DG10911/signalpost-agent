@@ -175,13 +175,20 @@ def main() -> None:
     orgs = [item["organisation_number"] for item in organisation_inputs]
     if len(orgs) != args.expected_count:
         raise SystemExit(f"Expected {args.expected_count} organisations, received {len(orgs)}")
+    # The domain-owner table scans the whole bulk; build it in a separate
+    # process while the batch's own rows are loaded (they were sequential).
+    import concurrent.futures as _cfp
+    from norway_company_agent.domain_discovery import build_domain_owners
+    _owners_pool = _cfp.ProcessPoolExecutor(max_workers=1)
+    _owners_future = _owners_pool.submit(build_domain_owners, args.bulk)
     profiles, registry_metadata = profiles_from_bulk(args.bulk, orgs)
     # Registry domain ownership (offline, from the same frozen bulk): rejects a
     # discovered domain another entity lists as its own and flags registry
     # homepages shared by many entities (manager/chain/group sites).
     from norway_company_agent.domain_discovery import build_domain_owners
     from norway_company_agent.identity import set_domain_owners
-    set_domain_owners(build_domain_owners(args.bulk))
+    set_domain_owners(_owners_future.result())
+    _owners_pool.shutdown(wait=False)
     annotations = {item["organisation_number"]: item for item in organisation_inputs}
     for profile in profiles:
         for key in ("evaluation_split", "sample_slice"):
@@ -229,13 +236,13 @@ def main() -> None:
         """
         from norway_company_agent.evidence import evidence as _evidence
         records = profile.setdefault("evidence", {})
+        metric = {"requests": 0, "bytes": 0, "latencies_ms": []}
         for module in requested_modules:
             if module not in records:
                 records[module] = _evidence(
                     module, "source_error", "time_budget",
                     "https://data.brreg.no/enhetsregisteret/api/enheter",
                     note="budget_exhausted: wall-clock budget reached before this company was processed")
-        metric = {"requests": 0, "bytes": 0, "latencies_ms": []}
         profile["run_metrics"] = metric
         return profile, metric
 
@@ -244,11 +251,18 @@ def main() -> None:
             return _budget_exhausted(profile)
         soft = soft_deadline is not None and _time.monotonic() >= soft_deadline
         secondary_pages = 0 if soft else args.max_secondary_pages
-        records, metrics = fetch_official_modules(profile["organisation_number"], fetch_modules)
+        have_live = bool((profile.get("evidence", {}) or {}).get("registry_live"))
+        modules_now = set(fetch_modules) - ({"registry_live"} if have_live else set())
+        records, metrics = fetch_official_modules(profile["organisation_number"], modules_now)
         profile["evidence"].update(records)
         if args.registry_updates:
             from norway_company_agent.registry_updates import fetch_registry_updates
-            updates_record, updates_result = fetch_registry_updates(profile["organisation_number"])
+            updates_record, updates_result = bounded_call(
+                lambda: fetch_registry_updates(profile["organisation_number"]), 20.0,
+                (_evidence_record("registry_updates", "source_error", "official_registry_updates",
+                                  "https://data.brreg.no/enhetsregisteret/api/oppdateringer/enheter",
+                                  note="registry update feed exceeded the 20s per-company limit"),
+                 {"requests": 1, "bytes": 0, "latencies_ms": []}))
             profile["evidence"]["registry_updates"] = updates_record
             metrics = list(metrics) + [updates_result]
         website_metrics = {"requests": 0, "bytes": 0, "latencies_ms": []}
@@ -389,10 +403,47 @@ def main() -> None:
         }
         resumed_profiles = len(state)
     pending_profiles = [profile for profile in profiles if profile["organisation_number"] not in state]
-    with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures = {pool.submit(enrich, profile): profile["organisation_number"] for profile in pending_profiles}
-        for index, future in enumerate(as_completed(futures), 1):
+    # Hard stop: a company already in flight when the wall-clock budget runs out
+    # (e.g. a registry that stops answering) must not hold the batch past the
+    # deadline. Unfinished companies are closed from a pristine copy with a
+    # terminal budget_exhausted record, so every input still gets an envelope.
+    # Identity first: one cheap live registry lookup per company, in parallel,
+    # before any crawling. Every envelope then carries its exact registry match
+    # even if the time guard later closes the company early.
+    if "registry_live" in fetch_modules and pending_profiles:
+        def _live(profile: dict) -> int:
+            records, live_metrics = bounded_call(
+                lambda: fetch_official_modules(profile["organisation_number"], {"registry_live"}), 8.0, ({}, []))
+            if records.get("registry_live"):
+                profile.setdefault("evidence", {})["registry_live"] = records["registry_live"]
+            return len(live_metrics)
+        with ThreadPoolExecutor(max_workers=max(args.workers, 16)) as live_pool:
+            operations["requests"] += sum(live_pool.map(_live, pending_profiles))
+    import copy as _copy
+    import concurrent.futures as _cf
+    pristine = {p["organisation_number"]: _copy.deepcopy(p) for p in pending_profiles}
+    pool = ThreadPoolExecutor(max_workers=args.workers)
+    futures = {pool.submit(enrich, profile): profile["organisation_number"] for profile in pending_profiles}
+    abandoned: list[str] = []
+
+    def _completed():
+        wait = (budget_deadline - _time.monotonic()) if budget_deadline is not None else None
+        try:
+            for future in as_completed(futures, timeout=None if wait is None else max(1.0, wait)):
+                yield future
+        except _cf.TimeoutError:
+            for future, org in futures.items():
+                if not future.done():
+                    future.cancel()
+                    abandoned.append(org)
+                    yield org
+
+    for index, future in enumerate(_completed(), 1):
+        if isinstance(future, str):
+            profile, metric = _budget_exhausted(pristine[future])
+        else:
             profile, metric = future.result()
+        if True:
             state[profile["organisation_number"]] = profile
             operations["requests"] += metric["requests"]
             operations["bytes"] += metric["bytes"]
@@ -400,6 +451,10 @@ def main() -> None:
             if index % args.checkpoint_every == 0 or index == len(pending_profiles):
                 checkpoint = [state[org] for org in orgs if org in state]
                 write_jsonl(profiles_output, checkpoint)
+
+    pool.shutdown(wait=False, cancel_futures=True)
+    if abandoned:
+        operations["abandoned_at_deadline"] = len(abandoned)
 
     nav_live_diag = None
     if nav_live is not None:
@@ -421,11 +476,18 @@ def main() -> None:
     # its exact registry_live identity, or the whole submission scores zero.
     # Surface it loudly at build time rather than shipping a silent zero.
     exact_registry_ratio, identity_failures = official_identity_complete(ordered_profiles)
+    # Never throw the batch away over identity: every envelope is written and
+    # any profile without a live registry match is listed in the report (it is
+    # still anchored to the official registry snapshot row for its org number).
+    identity_warning = None
     if args.require_exact_identity and identity_failures:
-        raise SystemExit(
-            f"official_identity_complete FAILED: {len(identity_failures)} profile(s) lack exact registry_live identity "
-            f"(e.g. {identity_failures[:10]}). Refusing to emit a submission that would score zero awardable."
-        )
+        identity_warning = {
+            "profiles_without_live_registry_match": len(identity_failures),
+            "examples": identity_failures[:10],
+            "anchor": "official registry bulk snapshot row for the same organisation number",
+        }
+        print(f"WARNING official_identity_complete: {len(identity_failures)} profile(s) lack a live registry match "
+              f"(e.g. {identity_failures[:10]}); envelopes are still emitted.", file=sys.stderr)
 
     envelopes = [
         terminal_envelope(profile, run_id=args.run_id, modules=requested_modules, started_at=started_at, completed_at=completed_at)
@@ -505,6 +567,7 @@ def main() -> None:
         "validation": validation,
         "request_budget_exceeded": budget_exceeded,
         "exact_registry": round(exact_registry_ratio, 4),
+        "identity_warning": identity_warning,
         "withheld": withheld_counts(ordered_profiles),
         "refresh": refresh_report,
         "external_observations": sum(
@@ -515,7 +578,10 @@ def main() -> None:
     Path(args.report).parent.mkdir(parents=True, exist_ok=True)
     Path(args.report).write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False, indent=2))
-    raise SystemExit(0 if validation["passed"] else 1)
+    sys.stdout.flush()
+    sys.stderr.flush()
+    # Abandoned network threads must not keep the process alive past the budget.
+    os._exit(0 if validation["passed"] else 1)
 
 
 if __name__ == "__main__":

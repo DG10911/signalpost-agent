@@ -343,10 +343,18 @@ def build_domain_owners(bulk_path: str, *, max_owners: int = 5) -> dict[str, lis
     owners: dict[str, list[str]] = {}
     opener = gzip.open if str(bulk_path).endswith(".gz") else open
     with opener(bulk_path, "rt", encoding="utf-8", newline="") as handle:
-        for row in csv.DictReader(handle):
-            org = row.get("organisasjonsnummer") or ""
-            for field in ("hjemmeside", "epostadresse"):
-                host = host_key(row.get(field))
+        reader = csv.reader(handle)  # plain reader + column indices: ~2x faster than DictReader
+        header = next(reader, [])
+        idx = {name: i for i, name in enumerate(header)}
+        i_org, i_home, i_mail = idx.get("organisasjonsnummer"), idx.get("hjemmeside"), idx.get("epostadresse")
+        if i_org is None:
+            return owners
+        for cells in reader:
+            org = cells[i_org] if len(cells) > i_org else ""
+            for col in (i_home, i_mail):
+                if col is None or len(cells) <= col or not cells[col]:
+                    continue
+                host = host_key(cells[col])
                 if not host or "." not in host or host in FREEMAIL_DOMAINS:
                     continue
                 bucket = owners.setdefault(host, [])
