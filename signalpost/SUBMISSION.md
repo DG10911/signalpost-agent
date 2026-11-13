@@ -19,7 +19,7 @@ uv run python scripts/run_competition_batch.py \
   --contract-output out/submission-contract.jsonl \
   --run-id official --expected-count <N> \
   --no-osm --no-wikidata \
-  --request-budget <9.5 x N> --time-budget-minutes 43 --require-exact-identity
+  --request-budget <14 x N> --time-budget-minutes 43 --require-exact-identity
 ```
 
 `<N>` is the number of companies in the batch (e.g. `--expected-count 1000

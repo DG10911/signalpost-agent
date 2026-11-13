@@ -250,7 +250,7 @@ class NavLive:
             if not self.download_subunits:
                 return
             status, body = self._get(BRREG_SUBUNIT_BULK, {"Accept": "application/vnd.brreg.enhetsregisteret.underenhet.v2+gzip"},
-                                     timeout=300.0)
+                                     timeout=120.0)
             if status != 200 or not body:
                 self.subunit_source = f"download failed (HTTP {status})"
                 return
@@ -447,9 +447,15 @@ class NavLive:
                 self.error = "NAV public token unavailable"
                 return
             auth = {"Authorization": f"Bearer {token}"}
-            active = self._active_set(auth, deadline)
+            # Keep at least 35% of the window for opening ads: the feed walk must
+            # never starve the detail step (a slow network once used it all up).
+            feed_deadline = started + 0.65 * self.max_seconds
+            active = self._active_set(auth, feed_deadline)
             self.active_ads = len(active)
-            loader.join(timeout=max(0.0, deadline - time.monotonic()))
+            # Never block on the sub-unit download: without it, candidates are
+            # chosen by name and each opened ad's employer is resolved to its
+            # parent with one Brreg lookup.
+            loader.join(timeout=max(0.0, min(60.0, deadline - time.monotonic())))
             self._build_keys()
             self._match(active, auth, deadline)
         finally:
