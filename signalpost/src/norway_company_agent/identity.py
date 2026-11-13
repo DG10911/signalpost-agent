@@ -319,14 +319,53 @@ def assess_social_identity(profile: dict[str, Any], link: dict[str, str]) -> dic
     else:
         score = 0.3
         reason = "social handle lacks strong exact-entity name evidence"
+    if score >= 0.9:
+        segments = [seg for seg in handle_text.strip("/").split("/") if seg]
+        handle_only = [seg for seg in segments if seg.lower().lstrip("@") not in _PLATFORM_PATH_WORDS]
+        veto = _social_parent_veto(profile, "".join(_tokens(" ".join(handle_only))), core)
+        if veto:
+            score, reason = 0.4, veto
     return {
         **link,
         "identity_score": score,
         "publishable": score >= 0.9,
         "matched_tokens": matched,
         "reason": reason,
-        "method": "deterministic_social_handle_identity_v1",
+        "method": "deterministic_social_handle_identity_v2",
     }
+
+
+# Words that mark a group-level / global account, not the Norwegian entity
+# (organiser audit: youtube.com/user/OtisElevatorCompany and
+# linkedin.com/company/otis_elevators are global Otis, not OTIS AS).
+_GLOBAL_HANDLE_WORDS = ("company", "inc", "corp", "corporation", "group", "global", "international",
+                        "worldwide", "world", "studios", "elevator", "elevators", "usa", "europe", "holdings",
+                        "plc", "gmbh", "ltd", "llc")
+_NORWAY_MARKERS = ("norge", "norway", "norwegian", "noreg")
+_PLATFORM_PATH_WORDS = {"company", "user", "c", "channel", "p", "pages", "page", "in", "school", "showcase",
+                        "people", "profile", "profile.php", "groups", "about"}
+
+
+def _social_parent_veto(profile: dict[str, Any], handle_compact: str, core: list[str]) -> str | None:
+    residual = handle_compact
+    for token in sorted(core, key=len, reverse=True):
+        residual = residual.replace(token, " ")
+    residual_words = residual.split()
+    joined = "".join(residual_words)
+    if any(word in joined for word in _GLOBAL_HANDLE_WORDS) and not any(m in joined for m in _NORWAY_MARKERS):
+        return "social handle names a group/global account (extra corporate words beyond the registered name)"
+    site = (((profile.get("evidence", {}) or {}).get("website", {}) or {}).get("value") or {})
+    final_url = str(site.get("final_url") or site.get("requested_url") or "")
+    if final_url:
+        parsed = urllib.parse.urlparse(final_url)
+        host = (parsed.hostname or "").lower()
+        first_seg = (parsed.path or "/").strip("/").split("/")[0].lower()
+        country_page = first_seg in ("no", "nb", "nn", "no-no", "nb-no", "no_no", "nb_no", "en-no", "norge", "norway") \
+            or host.startswith(("no.", "nor.", "norway.", "norge."))
+        if host and not host.endswith(".no") and country_page and not any(m in handle_compact for m in _NORWAY_MARKERS) \
+                and not handle_compact.endswith("no"):
+            return "company site is a country page of a multinational domain; its social accounts are the group's, not this entity's"
+    return None
 
 
 def apply_website_identity_gate(profile: dict[str, Any], website: dict[str, Any]) -> dict[str, Any]:

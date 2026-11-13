@@ -221,7 +221,7 @@ def _words(text: str) -> int:
 
 # --------------------------------------------------------------- synthesis
 
-_PART_LABELS = (("what_it_does", "What it does"), ("size_and_trend", "Size"), ("leadership", "Leadership"),
+_PART_LABELS = (("key_fact", "Key fact"), ("what_it_does", "What it does"), ("size_and_trend", "Size"), ("leadership", "Leadership"),
                 ("footprint", "Footprint"), ("online_presence", "Online"), ("what_changed", "What changed"),
                 ("unknowns", "Unknowns"))
 # Shrink order when the summary is over budget (first = shortened first).
@@ -591,6 +591,41 @@ def synthesis_claims(profile: dict[str, Any], claims: list[dict], evidence: list
                 items.append(f"{lab} ({u['reason']})" if with_reasons and key else lab)
             return _cap("; ".join(items)) + ".", unknown_ids
         variants["unknowns"] = [unknown_variant(True), unknown_variant(False)]
+
+    # 8b) Key fact: the one thing a buyer would want first, with where it came from.
+    key: tuple[str, list[str]] | None = None
+    nav_jobs = [c for c in jobs if c.get("field") == "job_board.job_posting"]
+    if jobs:
+        where = ("the NAV job board" if nav_jobs and len(nav_jobs) == len(jobs)
+                 else "the company's own website" if not nav_jobs else "the NAV job board and the company's website")
+        key = (f"hiring now, with {len(jobs)} open job ad{'s' if len(jobs) != 1 else ''} (source: {where}).",
+               _ids(*jobs, valid=valid))
+    elif latest is not None and _fin_claim(claims, "revenue", latest) is not None \
+            and (_num(_fin_claim(claims, "revenue", latest)["value"]) or 0) > 0:
+        c = _fin_claim(claims, "revenue", latest)
+        cur = latest.get("currency") or "NOK"
+        txt = f"revenue was {_money(_num(c['value']), cur)} in {period_label(latest.get('period'))}"
+        pc = _fin_claim(claims, "revenue", prior) if prior else None
+        ids = _ids(c, pc, valid=valid) if pc else _ids(c, valid=valid)
+        if pc is not None:
+            before, after = _num(pc["value"]), _num(c["value"])
+            if before and before > 0 and after is not None:
+                pct = round((after - before) / before * 100, 1)
+                txt += f", {'up' if pct > 0 else 'down' if pct < 0 else 'unchanged'}" + (f" {abs(pct)}%" if pct else "") \
+                       + f" on {period_label(prior.get('period'))}"
+        key = (txt + " (source: Brønnøysund Register of Company Accounts).", ids)
+    elif latest is not None and (_fin_claim(claims, "equity", latest) or _fin_claim(claims, "operating_result", latest)):
+        metric, label_txt = ("equity", "equity") if _fin_claim(claims, "equity", latest) else ("operating_result", "operating result")
+        c = _fin_claim(claims, metric, latest)
+        key = (f"{label_txt} was {_money(_num(c['value']), latest.get('currency') or 'NOK')} in "
+               f"{period_label(latest.get('period'))} (source: Brønnøysund Register of Company Accounts).", _ids(c, valid=valid))
+    elif emp_c:
+        key = (f"{emp_c['value']} registered employees (source: Brønnøysund Central Coordinating Register).",
+               _ids(emp_c, emp_date_c, valid=valid))
+    elif site_verified:
+        key = (f"its own website is {site_c.get('value')} (source: identity confirmed on the site).", _ids(site_c, valid=valid))
+    if key and key[1]:
+        variants["key_fact"] = [(_cap(key[0]), key[1])]
 
     # 9) Compose labelled blocks within the word budget ------------------------------------
     pick = {part: 0 for part in variants}

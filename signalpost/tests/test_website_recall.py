@@ -259,3 +259,29 @@ def test_single_word_name_needs_norwegian_domain_for_name_rule():
     assert not _full_name_rule_ok("ANGEL AS", "https://www.angel.com/")
     assert _full_name_rule_ok("ANGEL AS", "https://angel.no/")
     assert _full_name_rule_ok("HANSEN OG ANDERSEN AS", "https://hansenandersen.com/")
+
+
+def _otis_profile(site="https://www.otis.com/no/no"):
+    return {"organisation_number": "933264069", "name": "OTIS AS",
+            "evidence": {"website": {"status": "available", "value": {"final_url": site}}}}
+
+
+def test_global_parent_social_accounts_are_rejected():
+    from norway_company_agent.identity import assess_social_identity
+    for url in ("https://www.youtube.com/user/OtisElevatorCompany", "https://www.linkedin.com/company/otis_elevators"):
+        assert not assess_social_identity(_otis_profile(), {"url": url})["publishable"], url
+
+
+def test_country_page_of_multinational_needs_norway_marker():
+    from norway_company_agent.identity import assess_social_identity
+    assert not assess_social_identity(_otis_profile(), {"url": "https://www.facebook.com/otis"})["publishable"]
+    assert assess_social_identity(_otis_profile(), {"url": "https://www.facebook.com/otisnorge"})["publishable"]
+
+
+def test_local_handles_with_product_words_still_pass():
+    from norway_company_agent.identity import assess_social_identity
+    p = {"organisation_number": "1", "name": "T-RAILING AS",
+         "evidence": {"website": {"status": "available", "value": {"final_url": "https://www.t-railing.no/"}}}}
+    assert assess_social_identity(p, {"url": "https://facebook.com/TRailingGlassrekkverk"})["publishable"]
+    b = {"organisation_number": "2", "name": "BILMAGASINET AS", "evidence": {}}
+    assert assess_social_identity(b, {"url": "https://facebook.com/BilmagasinetNorge"})["publishable"]
