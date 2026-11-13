@@ -23,7 +23,7 @@ uv run python scripts/run_competition_batch.py \
 ```
 
 `<N>` is the number of companies in the batch (e.g. `--expected-count 1000
---request-budget 9500`).
+--request-budget 14000`).
 
 **Official limits:** 45 minutes per run and 2,000 requests per 100 companies,
 backing off when a site answers "too many requests".
