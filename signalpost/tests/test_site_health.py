@@ -52,3 +52,13 @@ def test_shared_link_to_other_sites_article_is_not_company_news():
                          site_url="https://arenanord.no/hjem") == "link to another site's article that does not name the company"
     art2 = {**art, "headline": "Arena Nord får ny kontrakt"}
     assert classify_news(art2, "ARENA NORD UTVIKLING AS", dt.date(2026, 11, 5), site_url="https://arenanord.no/hjem") is None
+
+
+def test_parked_and_unnamed_registry_sites_are_not_published():
+    w = web(title="www.Hjelmen-as.no is parked at Miss Hosting Web Hosting", final="https://www.hjelmen-as.no/")
+    assert registry_site_problem("www.Hjelmen-as.no", w, "HJELMEN AS")
+    sgf = web(title="SGF | Vårt mål er å gjøre SGF til et foretrukket hjem", text="Vi forvalter boliger",
+              final="https://www.sgf.no/")
+    assert "never names the company" in registry_site_problem("www.sgf.no", sgf, "AS ÅRVOLLVEIEN 15")
+    own = web(title="Advokatfirmaet Høivang - Advokatfirma i Sandefjord", final="https://www.hoivang.no/")
+    assert registry_site_problem("www.hoivang.no", own, "ADVOKAT AMALIE HØIVANG") is None

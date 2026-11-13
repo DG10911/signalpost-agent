@@ -23,7 +23,7 @@ from .identity import _plain
 _DEAD_PAGE = re.compile(
     r"welcome to nginx|apache2? (?:ubuntu |debian )?default page|test page for the apache"
     r"|account suspended|suspendedpage|website expired|this domain (?:is|may be) for sale"
-    r"|buy this domain|domenet er til salgs|parked free|domain parking"
+    r"|buy this domain|domenet er til salgs|parked free|domain parking|is parked at|is parked free|domenet er parkert|parkert hos"
     r"|isn.t connected to a site|domain is not connected to a website",
 )
 # Kept narrow on purpose: these markers are only read on the title and the first
@@ -46,6 +46,11 @@ def _host_ok(url: str) -> bool:
     raw = url if "://" in url else f"http://{url}"
     host = urllib.parse.urlparse(raw).hostname or ""
     return "." in host and not host.startswith(".") and not host.endswith(".")
+
+
+def _usable_tokens(name: Any) -> list[str]:
+    return [t for t in _plain(name).split() if len(t) >= 4 and t not in {"holding", "invest", "eiendom", "gruppen"}
+            and not t.isdigit()]
 
 
 def _names_company(text: str, name: Any) -> bool:
@@ -111,6 +116,13 @@ def registry_site_problem(registry_site: str, web: dict[str, Any], company_name:
         dead = dead_page_reason(value.get("title"), value.get("main_text_excerpt") or value.get("description"))
         if dead:
             return f"the registry lists {site}, but {dead}"
+        # A loaded registry homepage that never names the company is usually an
+        # owner's, manager's or buyer's site (sgf.no for AS ÅRVOLLVEIEN 15).
+        page_text = " ".join(str(value.get(k) or "") for k in ("title", "description", "main_text_excerpt",
+                                                              "identity_text_excerpt", "final_url"))
+        if _usable_tokens(company_name) and not _names_company(page_text, company_name) \
+                and not _names_company(site, company_name):
+            return f"the registry lists {site}, but the site never names the company"
         final = str(value.get("final_url") or "")
         if final and _registered(final) and _registered(site) and _registered(final) != _registered(site):
             if not _names_company(f"{value.get('title') or ''} {final}", company_name):
