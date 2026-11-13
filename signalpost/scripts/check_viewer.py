@@ -56,7 +56,10 @@ class Checker:
 
     def no_overflow(self, page: Page, where: str) -> None:
         sw, iw = page.evaluate("[document.documentElement.scrollWidth, window.innerWidth]")
-        self.ok(f"no horizontal overflow: {where}", sw <= iw, f"scrollWidth {sw} vs {iw}")
+        vw = (page.viewport_size or {}).get("width", iw)
+        # Compare with the device width too: a wide element makes a phone browser
+        # zoom out, so scrollWidth == innerWidth can hide the overflow.
+        self.ok(f"no horizontal overflow: {where}", sw <= vw and iw <= vw, f"scrollWidth {sw}, innerWidth {iw} vs device {vw}")
 
     def shot(self, page: Page, name: str, full: bool = False) -> None:
         page.screenshot(path=str(self.shots / f"{name}.png"), full_page=full)

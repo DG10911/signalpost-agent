@@ -1,0 +1,128 @@
+{
+  "run_id": "official",
+  "started_at": "2026-11-13T16:31:10.029078Z",
+  "completed_at": "2026-11-13T17:08:08.714799Z",
+  "expected_count": 1000,
+  "emitted_envelopes": 1000,
+  "resumed_profiles": 0,
+  "profiles_fetched_this_run": 1000,
+  "modules": [
+    "registry",
+    "accounting_obligation",
+    "registry_live",
+    "financials",
+    "financial_history",
+    "roles",
+    "group",
+    "locations",
+    "website"
+  ],
+  "registry": {
+    "registry_snapshot_sha256": "f7223f9f032b91d7d9d0c84a5eac985de7b9d63018ddc6aec5f2088999485e7a",
+    "registry_rows_scanned": 1174867,
+    "requested": 1000,
+    "selected": 1000,
+    "absent_from_snapshot": 0
+  },
+  "request_plan": {
+    "budget": 14000,
+    "companies": 1000,
+    "per_company_allowance": 14,
+    "max_secondary_pages": 5,
+    "time_budget_minutes": 43.0,
+    "discover_websites": true,
+    "workers": 16,
+    "osm": false
+  },
+  "nav_live": {
+    "source": "pam-stilling-feed.nav.no",
+    "days": 90,
+    "pages": 186,
+    "requests": 572,
+    "request_budget": 800,
+    "active_ads": 9909,
+    "candidates": 422,
+    "details_opened": 385,
+    "subunits_mapped": 841,
+    "subunit_source": "cache:brreg-underenheter.csv.gz",
+    "companies_with_jobs": 8,
+    "jobs": 9,
+    "dropped": {
+      "employer_not_in_batch": 347,
+      "no_employer_orgnr": 9,
+      "expired": 15
+    },
+    "seconds": 258.6,
+    "complete": true,
+    "error": null
+  },
+  "operations": {
+    "requests": 10924,
+    "bytes": 55303835,
+    "p50_ms": 242,
+    "p95_ms": 2167,
+    "request_budget": 14000
+  },
+  "validation": {
+    "passed": true,
+    "checks": {
+      "exact_expected_count": true,
+      "unique_organisation_numbers": true,
+      "all_entity_states_terminal": true,
+      "all_module_states_terminal": true,
+      "zero_silent_drops": true
+    },
+    "invalid_states": []
+  },
+  "request_budget_exceeded": false,
+  "exact_registry": 1.0,
+  "identity_warning": null,
+  "withheld": {
+    "website": {
+      "registry homepage domain is shared by 6 registered entities; treated as a manager/group site, cross-entity facts quarantined": 14,
+      "registry-linked URL lacks strong exact-entity identity evidence": 11,
+      "registry homepage domain is shared by 5 registered entities; treated as a manager/group site, cross-entity facts quarantined": 4,
+      "registry homepage domain is shared by 4 registered entities; treated as a manager/group site, cross-entity facts quarantined": 3,
+      "most legal-name tokens appear, but exact identity is incomplete": 2,
+      "registry homepage domain is also the site of registered entity 985937699; treated as a group site, items published only where their page names this company": 1,
+      "business sports-club entity points to the operating company's site without club evidence": 1,
+      "captured page is a parked, for-sale, or generic hosting placeholder": 1
+    },
+    "news": {
+      "group/parent/sister site: item's page does not name the company": 108,
+      "not in a news or press section and the headline does not name the company": 102,
+      "website identity not confirmed as this company": 57,
+      "page is a guide or advice article, not news about the company": 19,
+      "duplicate of another item at the same address": 14,
+      "no article address": 12,
+      "headline is link text (\"read more\") or a date, not an article title": 12,
+      "page is an ordinary site page (product, service, policy or contact), not news": 8,
+      "placeholder post from the site template": 3,
+      "page is ESG/sustainability content, not dated company news": 2,
+      "link to another site's article that does not name the company": 1
+    },
+    "jobs": {
+      "recruiting landing page, not a single job ad": 2,
+      "group/parent/sister site: item's page does not name the company": 1,
+      "website identity not confirmed as this company": 1
+    },
+    "careers": {
+      "careers page lists no current opening": 11,
+      "group/parent/sister site: item's page does not name the company": 11,
+      "website identity not confirmed as this company": 3,
+      "page says \"ingen ledige stillinger\"": 1
+    },
+    "social": {
+      "social handle lacks strong exact-entity name evidence": 91
+    }
+  },
+  "refresh": {
+    "previous_contract": null,
+    "companies_with_baseline": 0,
+    "material_changes": 4898,
+    "since_previous_run": 0,
+    "dated_in_source": 4898,
+    "prior_evidence_preserved": 0
+  },
+  "external_observations": 1364
+}

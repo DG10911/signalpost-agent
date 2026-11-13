@@ -1,3 +1,4 @@
+html,body{overflow-x:clip}
 /* Signalpost viewer — no framework, no build step. Colours chosen for WCAG AA
    (body text >= 7:1, muted text >= 4.5:1, accents on tints >= 4.5:1). */
 :root{
@@ -224,14 +225,15 @@ table.cmp td.best{font-weight:700}
 
 /* evidence drawer */
 .scrim{position:fixed;inset:0;background:rgba(17,24,39,.42);z-index:40}
-.drawer{position:fixed;z-index:50;background:#fff;display:flex;flex-direction:column;top:0;right:0;bottom:0;width:min(480px,100vw);box-shadow:-10px 0 40px rgba(17,24,39,.2)}
+.drawer{max-width:100vw;position:fixed;z-index:50;background:#fff;display:flex;flex-direction:column;top:0;right:0;bottom:0;width:min(480px,100vw);box-shadow:-10px 0 40px rgba(17,24,39,.2)}
 .drawer[hidden],.scrim[hidden]{display:none}
 .dr-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:16px 16px 12px 20px;border-bottom:1px solid var(--line);position:relative}
 .dr-kicker{margin:0;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 .dr-head h2{font-size:18px;margin-top:2px;outline:none;overflow-wrap:anywhere}
 .grab{display:none}
-.dr-body{padding:16px 20px;overflow-y:auto;flex:1;overscroll-behavior:contain}
-.dr-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+.dr-body{padding:16px 20px;overflow-y:auto;overflow-x:hidden;flex:1 1 auto;min-height:0;min-width:0;overscroll-behavior:contain}
+.dr-body *{overflow-wrap:anywhere;min-width:0;max-width:100%}
+.dr-foot{flex-shrink:0;position:relative;z-index:1;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
 .dr-pos{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
 .ev-value{font-size:17px;font-weight:650;overflow-wrap:anywhere;margin:0 0 4px}
 .ev-src{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:14px 0 6px}
