@@ -66,7 +66,27 @@ def full_legal_name_in(name: Any, text: Any) -> bool:
     tokens = plain_name.split()
     if len(tokens) < 2 or tokens[-1] not in _LEGAL_FORMS or len("".join(tokens[:-1])) < 4:
         return False
-    return (" " + plain_name + " ") in _plain(text)
+    if (" " + plain_name + " ") not in _plain(text):
+        return False
+    # The legal form must be written as a legal form (upper case: "Angel AS"),
+    # not an ordinary word: English "... an angel as ..." is not "ANGEL AS".
+    folded = _fold_keep_case(text)
+    if not re.search(r"[A-Z]", folded):
+        return True  # text was already normalised to lower case; case cannot be checked
+    core = r"[^A-Za-z0-9]+".join(re.escape(t) for t in tokens[:-1])
+    form = re.escape(tokens[-1].upper())
+    return re.search(rf"(?<![A-Za-z0-9])(?i:{core})[^A-Za-z0-9]+{form}(?![A-Za-z0-9])", folded) is not None
+
+
+def _fold_keep_case(value: Any) -> str:
+    text = str(value or "").translate(str.maketrans({"ø": "o", "Ø": "O", "å": "a", "Å": "A", "æ": "ae", "Æ": "AE"}))
+    return unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+
+
+def single_word_name(name: Any) -> bool:
+    """A registered name whose distinctive part is one word ("ANGEL AS")."""
+    tokens = _plain(name).split()
+    return len(tokens) == 2 and tokens[-1] in _LEGAL_FORMS
 
 
 def shared_site_owners(url: Any, organisation_number: Any, name: Any = None) -> list[str]:

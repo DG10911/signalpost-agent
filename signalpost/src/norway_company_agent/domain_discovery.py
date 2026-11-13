@@ -12,6 +12,7 @@ identity. This trades recall for ~1.0 precision, per the competition's
 from __future__ import annotations
 
 import re
+import urllib.parse
 from typing import Any, Callable, Optional
 
 MOD11_WEIGHTS = [3, 2, 7, 6, 5, 4, 3, 2]
@@ -156,7 +157,7 @@ def _identity_page_method(org: str, name: Any, fingerprint: dict[str, Any], page
         return "exact_org_number_on_discovered_site"
     if verdict == "conflict":
         return "conflict"
-    if full_legal_name_in(name, _page_text(page)):
+    if full_legal_name_in(name, _page_text(page)) and _full_name_rule_ok(name, page.get("final_url") or ""):
         return "full_legal_name_on_discovered_site"
     if names_us and contact_verdict(fingerprint, page, page.get("final_url") or ""):
         return "registry_contact_on_discovered_site"
@@ -289,7 +290,8 @@ def discover_website(
             # Same phone/e-mail alone is shared by sister companies of one owner;
             # the page must also name this entity.
             method = "registry_contact_on_discovered_site"
-        elif full_legal_name_in(profile.get("name"), _page_text(value)):
+        elif full_legal_name_in(profile.get("name"), _page_text(value)) and \
+                _full_name_rule_ok(profile.get("name"), value.get("final_url") or url):
             method = "full_legal_name_on_discovered_site"
         elif names_us and address_verdict(fingerprint, value):
             method = "registry_address_on_discovered_site"
@@ -330,6 +332,17 @@ def discover_website(
     if not diag["verdict"].startswith("rejected"):
         diag["verdict"] = "no_match"
     return None, diag
+
+
+def _full_name_rule_ok(name: Any, url: str) -> bool:
+    """A one-word registered name ("ANGEL AS") is too common to identify a
+    guessed foreign domain by name alone: require a Norwegian (.no) site; the
+    org-number and registry-contact rules still apply anywhere."""
+    from .identity import single_word_name
+    if not single_word_name(name):
+        return True
+    host = (urllib.parse.urlparse(url if "://" in url else "http://" + url).hostname or "").lower()
+    return host.endswith(".no")
 
 
 def build_domain_owners(bulk_path: str, *, max_owners: int = 5) -> dict[str, list[str]]:

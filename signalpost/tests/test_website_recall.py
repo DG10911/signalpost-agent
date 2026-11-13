@@ -245,3 +245,17 @@ def test_a_shared_domain_without_our_name_in_the_title_stays_a_group_site(monkey
     from norway_company_agent.identity import assess_website_identity
     result = assess_website_identity(_shared_profile("Brenden – stillas, miljø og rådgivning", monkeypatch))
     assert not result["publishable"] and result["group_site"]
+
+
+def test_english_as_is_not_a_legal_form():
+    from norway_company_agent.identity import full_legal_name_in
+    assert not full_legal_name_in("ANGEL AS", "Watch an angel as never before. Stream uplifting shows.")
+    assert full_legal_name_in("ANGEL AS", "Copyright 2026 Angel AS, Haugesund")
+    assert full_legal_name_in("SAKS OG KAM AS", "Velkommen til Saks og Kam AS")
+
+
+def test_single_word_name_needs_norwegian_domain_for_name_rule():
+    from norway_company_agent.domain_discovery import _full_name_rule_ok
+    assert not _full_name_rule_ok("ANGEL AS", "https://www.angel.com/")
+    assert _full_name_rule_ok("ANGEL AS", "https://angel.no/")
+    assert _full_name_rule_ok("HANSEN OG ANDERSEN AS", "https://hansenandersen.com/")

@@ -132,12 +132,12 @@ class Checker:
         page.keyboard.press("Enter")
         drawer = page.locator("#drawer")
         expect(drawer).to_be_visible()
-        body = page.locator("#dr-body").inner_text()
+        body = page.locator("#dr-body").first.inner_text()
         self.ok(f"{tag} verify: drawer shows source, retrieved time, quote, SHA-256",
                 all(k in body for k in ("Open original source", "Retrieved", "SHA-256", "Quoted from the source")))
-        sha = page.locator("#dr-body .hash code").inner_text()
+        sha = page.locator("#dr-body .hash code").first.inner_text()
         self.ok(f"{tag} verify: hash looks like SHA-256", len(sha) == 64 and all(ch in "0123456789abcdef" for ch in sha), sha)
-        href = page.locator("#dr-body a.ev-open").get_attribute("href") or ""
+        href = page.locator("#dr-body a.ev-open").first.get_attribute("href") or ""
         self.ok(f"{tag} verify: original source link", href.startswith("http"), href)
         self.ok(f"{tag} verify: focus moved into drawer", page.evaluate("document.getElementById('drawer').contains(document.activeElement)"))
         self.ok(f"{tag} verify: fact deep link in URL", "?fact=" in page.url, page.url)
@@ -195,7 +195,7 @@ class Checker:
         self.no_overflow(page, f"{tag} compare (4)")
         page.locator("table.cmp [data-fact]").first.click()
         expect(page.locator("#drawer")).to_be_visible()
-        self.ok(f"{tag} compare: source icon opens evidence", "SHA-256" in page.locator("#dr-body").inner_text())
+        self.ok(f"{tag} compare: source icon opens evidence", "SHA-256" in page.locator("#dr-body").first.inner_text())
         self.shot(page, f"{tag}-7-compare-evidence")
         page.keyboard.press("Escape")
         page.locator("#only-diff").click()
