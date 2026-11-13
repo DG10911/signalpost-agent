@@ -1,0 +1,26 @@
+{
+ "companies": 1000,
+ "facts": 31667,
+ "cited_facts_found": 28782,
+ "sources": 3090,
+ "retrieved_from": "2026-11-13",
+ "retrieved_to": "2026-11-13",
+ "with_website": 100,
+ "with_news": 14,
+ "with_hiring": 11,
+ "with_social": 44,
+ "with_accounts": 1000,
+ "with_synthesis": 1000,
+ "with_changes": 1000,
+ "municipalities": 191,
+ "sections": [
+  "Overview",
+  "Finances",
+  "People",
+  "Website & social",
+  "Hiring",
+  "News"
+ ],
+ "origin": "contract:c.jsonl",
+ "built_at": "2026-11-13 17:13 UTC"
+}
